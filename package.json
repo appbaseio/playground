@@ -1,0 +1,42 @@
+{
+  "name": "reactive-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appbaseio/reactive-playground.git"
+  },
+  "author": "metagrover",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/appbaseio/reactive-playground/issues"
+  },
+  "homepage": "https://github.com/appbaseio/reactive-playground#readme",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "@appbaseio/reactivemaps-manual": "^1.0.0-alpha",
+    "@appbaseio/reactivesearch": "^0.2.1",
+    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storybook-addon-options": "^1.0.2",
+    "babel-preset-env": "^1.2.2",
+    "css-loader": "^0.27.3",
+    "jquery": "^3.2.1",
+    "json-loader": "^0.5.4",
+    "materialize-css": "^0.98.1",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.3",
+    "shebang-loader": "0.0.1",
+    "storybook-readme": "^2.0.2",
+    "sumoselect": "^3.0.3"
+  }
+}
