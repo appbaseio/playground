@@ -24,6 +24,10 @@ import DataControllerReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/com
 import ReactiveElementReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/ReactiveElement.md";
 import ReactiveListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/ReactiveList.md";
 import ReactivePaginatedListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/ReactivePaginatedList.md";
+import GeoDistanceSliderReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/GeoDistanceSlider.md";
+import GeoDistanceDropdownReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/GeoDistanceDropdown.md";
+import PlacesSearchReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/PlacesSearch.md";
+import ReactiveMapReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/ReactiveMap.md";
 
 // import reactivebase components
 import SingleListDefault from "./reactivebase/SingleList.stories";
@@ -47,7 +51,13 @@ import ReactiveElement from "./reactivebase/ReactiveElement";
 import ReactiveListDefault from "./reactivebase/ReactiveList.stories";
 import ReactivePaginatedListDefault from "./reactivebase/ReactivePaginatedList.stories";
 
-// import ReactiveSearch Components
+// import reactivemaps components
+import GeoDistanceSliderDefault from "./reactivemaps/GeoDistanceSlider.stories";
+import GeoDistanceDropdownDefault from "./reactivemaps/GeoDistanceDropdown.stories";
+import PlacesSearchDefault from "./reactivemaps/PlacesSearch.stories";
+import ReactiveMapDefault from "./reactivemaps/ReactiveMap.stories";
+
+// import reactivesearch components
 import NestedListDefault from "./reactivesearch/NestedList.stories";
 import ToggleListDefault from "./reactivesearch/ToggleList.stories";
 import DynamicRangeSliderDefault from "./reactivesearch/DynamicRangeSlider.stories";
@@ -624,6 +634,196 @@ storiesOf("ReactivePaginatedList", module)
 		/>
 	)));
 
+// Reactivemaps components
+
+storiesOf("GeoDistanceSlider", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			placeholder="Search Location"
+		/>
+	)))
+	.add("With Title", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			title="Geo Distance Search"
+			placeholder="Search Location"
+		/>
+	)))
+	.add("With Range Labels", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			title="Geo Distance Search"
+			placeholder="Search Location"
+			rangeLabels={{
+				start: "Start",
+				end: "End"
+			}}
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				location: "London",
+				distance: 5
+			}}
+			unit="mi"
+			title="Geo Distance Search"
+			placeholder="Search Location"
+			rangeLabels={{
+				start: "Start",
+				end: "End"
+			}}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={object("defaultSelected", {
+				location: "London",
+				distance: 5
+			})}
+			stepValue={number("stepValue", 1)}
+			unit={text("unit", "mi")}
+			title={text("title", "Geo Distance Slider")}
+			placeholder={text("placeholder", "Search Location")}
+			range={object("range", {
+				start: 0,
+				end: 50
+			})}
+			rangeLabels={object("rangeLabels", {
+				start: "Start",
+				end: "End"
+			})}
+		/>
+	)));
+
+storiesOf("GeoDistanceDropdown", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+			[{ start: 1, end: 100, label: "Less than 100 miles" },
+				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
+				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
+				{ start: 501, end: 1000, label: "Above 500 miles" }]
+			}
+			// distanceOptions={[20,50,100,150]}
+			placeholder="Search Location"
+		/>
+	)))
+	.add("With Title", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+			[{ start: 1, end: 100, label: "Less than 100 miles" },
+				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
+				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
+				{ start: 501, end: 1000, label: "Above 500 miles" }]
+			}
+			// distanceOptions={[20,50,100,150]}
+			title="Geo Distance Search"
+			placeholder="Search Location"
+		/>
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+			[{ start: 1, end: 100, label: "Less than 100 miles" },
+				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
+				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
+				{ start: 501, end: 1000, label: "Above 500 miles" }]
+			}
+			defaultSelected={{
+				label: "Less than 100 miles",
+				location: "London"
+			}}
+			title="Geo Distance Search"
+			placeholder="Search Location"
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			data={
+			[{ start: 1, end: 100, label: "Less than 100 miles" },
+				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
+				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
+				{ start: 501, end: 1000, label: "Above 500 miles" }]
+			}
+			unit={select("unit", { mi: "mi", miles: "miles", yd: "yd", yards: "yards", ft: "ft", feet: "feet", in: "in", inch: "inch", km: "km", kilometers: "kilometers", m: "m", meters: "meters", cm: "cm", centimeters: "centimeters", mm: "mm", millimeters: "millimeters", NM: "NM", nmi: "nmi", nauticalmiles: "nauticalmiles" }, "mi")}
+			title={text("title", "Geo Distance Slider")}
+			defaultSelected={object("defaultSelected", {
+				label: "Less than 100 miles",
+				location: "London"
+			})}
+			placeholder={text("placeholder", "Search Location")}
+		/>
+	)));
+
+storiesOf("PlacesSearch", module)
+	.addDecorator(withKnobs)
+	.add("Basic - Direction Demo", withReadme(removeFirstLine(PlacesSearchReadme), () => (
+		<PlacesSearchDefault />
+	)));
+
+storiesOf("ReactiveMap", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(ReactiveMapReadme, 3), () => (
+		<ReactiveMapDefault />
+	)))
+	.add("With Title", withReadme(removeFirstLine(ReactiveMapReadme, 3), () => (
+		<ReactiveMapDefault
+			title="Reactive Maps"
+		/>
+	)))
+	.add("With Popover onClick", withReadme(removeFirstLine(ReactiveMapReadme, 3), () => (
+		<ReactiveMapDefault
+			title="Reactive Maps"
+			showPopoverOn="click"
+		/>
+	)))
+	.add("With Popover onMouseOver", withReadme(removeFirstLine(ReactiveMapReadme), () => (
+		<ReactiveMapDefault
+			title="Reactive Maps"
+			showPopoverOn="mouseover"
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(ReactiveMapReadme), () => (
+		<ReactiveMapDefault
+			title={text("title", "Reactive maps")}
+			showPopoverOn={select("showPopoverOn", { click: "click", mouseover: "mouseover" }, "click")}
+			setMarkerCluster={boolean("setMarkerCluster", true)}
+			autoCenter={boolean("autoCenter", true)}
+			showSearchAsMove={boolean("showSearchAsMove", true)}
+			setSearchAsMove={boolean("setSearchAsMove", false)}
+			showMapStyles={boolean("showMapStyles", false)}
+			defaultMapStyle={select("defaultMapStyle", { Standard: "Standard", "Blue Essence": "Blue Essence", "Blue Water": "Blue Water", "Flat Map": "Flat Map", "Light Monochrome": "Light Monochrome", "Midnight Commander": "Midnight Commander", "Unsaturated Browns": "Unsaturated Browns" }, "Standard")}
+			size={number("size", 100)}
+			streamTTL={number("streamTTL", 5)}
+			streamAutoCenter={boolean("streamAutoCenter", true)}
+			autoMarkerPosition={boolean("autoMarkerPosition", false)}
+			showMarkers={boolean("showMarkers", true)}
+			autoMapRender={boolean("autoMapRender", true)}
+			defaultZoom={number("defaultZoom", 13)}
+			defaultCenter={object("defaultCenter", {
+				lat: 37.74,
+				lon: -122.45
+			})}
+			defaultMarkerImage={text("defaultMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/historic-pin.png")}
+			streamMarkerImage={text("streamMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/stream-pin.png")}
+		/>
+	)));
 
 // Reactivesearch components
 

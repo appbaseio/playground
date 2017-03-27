@@ -19,7 +19,12 @@ const map = {
 		"ResultCard",
 		"ViewSwitcher"
 	],
-	ReactiveMap: [],
+	ReactiveMaps: [
+		"GeoDistanceSlider",
+		"GeoDistanceDropdown",
+		"PlacesSearch",
+		"ReactiveMap",
+	],
 	ReactiveBase: [
 		"SingleList",
 		"MultiList",
@@ -46,7 +51,7 @@ const map = {
 
 const options = [
 	{value: "ReactiveBase", text: "ReactiveBase"},
-	{value: "ReactiveMap", text: "ReactiveMap"},
+	{value: "ReactiveMaps", text: "ReactiveMaps"},
 	{value: "ReactiveSearch", text: "ReactiveSearch"}
 ];
 

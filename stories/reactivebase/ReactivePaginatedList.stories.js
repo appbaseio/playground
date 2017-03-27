@@ -14,7 +14,7 @@ export default class ReactivePaginatedListDefault extends Component {
 	}
 
 	componentDidUpdate() {
-		ResponsiveStory();
+		helper.ResponsiveStory();
 	}
 
 	onData(res, err) {
