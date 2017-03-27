@@ -1,23 +1,9 @@
 import React, { Component } from "react";
-import { ReactiveBase, ToggleList, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, CategorySearch, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
-require("./list.css");
-
-export default class ToggleListDefault extends Component {
+export default class CategorySearchDefault extends Component {
 	constructor(props) {
 		super(props);
-
-		this.toggleData = [{
-			label: "Social",
-			value: "Social"
-		}, {
-			label: "Travel",
-			value: "Travel"
-		}, {
-			label: "Outdoors",
-			value: "Outdoors"
-		}];
-
 		this.onData = this.onData.bind(this);
 	}
 
@@ -48,25 +34,18 @@ export default class ToggleListDefault extends Component {
 		return (
 			<a
 				className="full_row single-record single_record_for_clone"
-				href={marker.event ? marker.event.event_url : ""}
-				target="_blank"
-				rel="noopener noreferrer"
 				key={markerData._id}
 			>
 				<div className="text-container full_row" style={{ paddingLeft: "10px" }}>
 					<div className="text-head text-overflow full_row">
 						<span className="text-head-info text-overflow">
-							{marker.member ? marker.member.member_name : ""} is going to {marker.event ? marker.event.event_name : ""}
+							{marker.name ? marker.name : ""} - {marker.brand ? marker.brand : ""}
 						</span>
-						<span className="text-head-city">{marker.group ? marker.group.group_city : ""}</span>
+						<span className="text-head-city">{marker.brand ? marker.brand : ""}</span>
 					</div>
 					<div className="text-description text-overflow full_row">
 						<ul className="highlight_tags">
-							{
-								marker.group.group_topics.map(tag => (
-									<li key={tag.topic_name}>{tag.topic_name}</li>
-								))
-							}
+							{marker.price ? `Priced at $${marker.price}` : "Free Test Drive"}
 						</ul>
 					</div>
 				</div>
@@ -77,16 +56,16 @@ export default class ToggleListDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="meetup_demo"
-				credentials="LPpISlEBe:2a8935f5-0f63-4084-bc3e-2b2b4d1a8e02"
+				app="car-store"
+				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
-						<ToggleList
-							appbaseField={this.props.mapping.topic}
-							componentId="MeetupTops"
-							title="ToggleList"
-							data={this.toggleData}
+						<CategorySearch
+							appbaseField="name"
+							categoryField="brand.raw"
+							componentId="CarSensor"
+							title="CategorySearch"
 							{...this.props}
 						/>
 					</div>
@@ -94,14 +73,14 @@ export default class ToggleListDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ReactiveList
 							componentId="SearchResult"
-							appbaseField="group.group_topics.topic_name_raw"
+							appbaseField="name"
 							title="Results"
 							sortBy="asc"
 							from={0}
 							size={20}
 							onData={this.onData}
 							react={{
-								and: "MeetupTops"
+								and: "CarSensor"
 							}}
 						/>
 					</div>
@@ -110,15 +89,3 @@ export default class ToggleListDefault extends Component {
 		);
 	}
 }
-
-ToggleListDefault.defaultProps = {
-	mapping: {
-		topic: "group.group_topics.topic_name_raw.raw"
-	}
-};
-
-ToggleListDefault.propTypes = {
-	mapping: React.PropTypes.shape({
-		topic: React.PropTypes.string
-	})
-};

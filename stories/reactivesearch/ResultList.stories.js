@@ -1,14 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, RatingsFilter, ResultCard, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
-
-require("./list.css");
+import { ReactiveBase, RatingsFilter, ResultList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
 export default class ResultCardDefault extends Component {
-	constructor(props) {
-		super(props);
-		this.onData = this.onData.bind(this);
-	}
-
 	componentDidMount() {
 		helper.ResponsiveStory();
 	}
@@ -32,7 +25,7 @@ export default class ResultCardDefault extends Component {
 			>
 				<div className="row reverse-labels">
 					<div className="col s6 col-xs-6">
-						<ResultCard
+						<ResultList
 							componentId="SearchResult"
 							appbaseField={this.props.mapping.name}
 							title="Results"

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, NestedList, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, MultiLevelMenu, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
-require("./list.css");
-
-export default class NestedListDefault extends Component {
+export default class MultiLevelMenuDefault extends Component {
 	constructor(props) {
 		super(props);
 		this.onData = this.onData.bind(this);
@@ -63,10 +61,17 @@ export default class NestedListDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
-						<NestedList
+						<MultiLevelMenu
 							componentId="CategorySensor"
-							appbaseField={[this.props.mapping.brand, this.props.mapping.model]}
-							title="NestedList"
+							appbaseField={["brand.raw", "vehicleType.raw", "model.raw"]}
+							title="MultiLevelMenu"
+							data={[
+								{ label: "Volkswagen", value: "volkswagen" },
+								{ label: "BMW", value: "bmw" },
+								{ label: "Audi", value: "audi" },
+								{ label: "Nissan", value: "nissan" },
+								{ label: "Fiat", value: "fiat" }
+							]}
 							{...this.props}
 						/>
 					</div>
@@ -74,7 +79,7 @@ export default class NestedListDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ReactiveList
 							componentId="SearchResult"
-							appbaseField={this.props.mapping.brand}
+							appbaseField="brand"
 							title="Results"
 							from={0}
 							size={20}
@@ -89,17 +94,3 @@ export default class NestedListDefault extends Component {
 		);
 	}
 }
-
-NestedListDefault.defaultProps = {
-	mapping: {
-		brand: "brand.raw",
-		model: "model.raw"
-	}
-};
-
-NestedListDefault.propTypes = {
-	mapping: React.PropTypes.shape({
-		brand: React.PropTypes.string,
-		model: React.PropTypes.string
-	})
-};

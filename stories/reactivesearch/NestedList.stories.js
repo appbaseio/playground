@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, RatingsFilter, ResultCard, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, NestedList, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
-require("./list.css");
-
-export default class RatingsFilterDefault extends Component {
+export default class NestedListDefault extends Component {
 	constructor(props) {
 		super(props);
 		this.onData = this.onData.bind(this);
@@ -14,13 +12,21 @@ export default class RatingsFilterDefault extends Component {
 	}
 
 	onData(res) {
-		const result = {
-			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
-			title: res.name,
-			rating: res.rating,
-			desc: res.brand,
-			url: "#"
-		};
+		let result = null;
+		if (res) {
+			let combineData = res.currentData;
+			if (res.mode === "historic") {
+				combineData = res.currentData.concat(res.newData);
+			} else if (res.mode === "streaming") {
+				combineData = helper.combineStreamData(res.currentData, res.newData);
+			}
+			if (combineData) {
+				result = combineData.map((markerData) => {
+					const marker = markerData._source;
+					return this.itemMarkup(marker, markerData);
+				});
+			}
+		}
 		return result;
 	}
 
@@ -40,7 +46,6 @@ export default class RatingsFilterDefault extends Component {
 					<div className="text-description text-overflow full_row">
 						<ul className="highlight_tags">
 							{marker.price ? `Priced at $${marker.price}` : "Free Test Drive"}
-							{`Rated ${marker.rating}`}
 						</ul>
 					</div>
 				</div>
@@ -56,30 +61,24 @@ export default class RatingsFilterDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
-						<RatingsFilter
-							componentId="RatingsSensor"
-							appbaseField={this.props.mapping.rating}
-							title="RatingsFilter"
-							data={
-							[{ start: 4, end: 5, label: "4 stars and up" },
-								{ start: 3, end: 5, label: "3 stars and up" },
-								{ start: 2, end: 5, label: "2 stars and up" },
-								{ start: 1, end: 5, label: "> 1 stars" }]
-							}
+						<NestedList
+							componentId="CategorySensor"
+							appbaseField={[this.props.mapping.brand, this.props.mapping.model]}
+							title="NestedList"
 							{...this.props}
 						/>
 					</div>
 
 					<div className="col s6 col-xs-6">
-						<ResultCard
+						<ReactiveList
 							componentId="SearchResult"
-							appbaseField={this.props.mapping.name}
+							appbaseField={this.props.mapping.brand}
 							title="Results"
 							from={0}
 							size={20}
 							onData={this.onData}
 							react={{
-								and: "RatingsSensor"
+								and: "CategorySensor"
 							}}
 						/>
 					</div>
@@ -89,16 +88,16 @@ export default class RatingsFilterDefault extends Component {
 	}
 }
 
-RatingsFilterDefault.defaultProps = {
+NestedListDefault.defaultProps = {
 	mapping: {
-		rating: "rating",
-		name: "name"
+		brand: "brand.raw",
+		model: "model.raw"
 	}
 };
 
-RatingsFilterDefault.propTypes = {
+NestedListDefault.propTypes = {
 	mapping: React.PropTypes.shape({
-		rating: React.PropTypes.string,
-		name: React.PropTypes.string
+		brand: React.PropTypes.string,
+		model: React.PropTypes.string
 	})
 };

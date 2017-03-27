@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, TagCloud, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, DynamicRangeSlider, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
-require("./list.css");
-
-export default class TagCloudDefault extends Component {
+export default class DynamicRangeSliderDefault extends Component {
 	constructor(props) {
 		super(props);
 		this.onData = this.onData.bind(this);
@@ -19,7 +17,7 @@ export default class TagCloudDefault extends Component {
 			let combineData = res.currentData;
 			if (res.mode === "historic") {
 				combineData = res.currentData.concat(res.newData);
-			}			else if (res.mode === "streaming") {
+			} else if (res.mode === "streaming") {
 				combineData = helper.combineStreamData(res.currentData, res.newData);
 			}
 			if (combineData) {
@@ -51,7 +49,9 @@ export default class TagCloudDefault extends Component {
 					<div className="text-description text-overflow full_row">
 						<ul className="highlight_tags">
 							{
-								marker.group.group_topics.map(tag => (<li key={tag.topic_name}>{tag.topic_name}</li>))
+								marker.group.group_topics.map(tag => (
+									<li key={tag.topic_name}>{tag.topic_name}</li>
+								))
 							}
 						</ul>
 					</div>
@@ -63,21 +63,20 @@ export default class TagCloudDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="meetup_demo"
-				credentials="LPpISlEBe:2a8935f5-0f63-4084-bc3e-2b2b4d1a8e02"
-				type="meetupdata1"
+				app="reactivemap_demo"
+				credentials="y4pVxY2Ok:c92481e2-c07f-4473-8326-082919282c18"
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
-						<TagCloud
-							componentId="CitySensor"
-							appbaseField={this.props.mapping.city}
-							title="TagCloud"
-							size={100}
-							customQuery={this.customQuery}
+						<DynamicRangeSlider
+							componentId="RangeSensor"
+							appbaseField={this.props.mapping.guests}
+							stepValue={2}
+							title="DynamicRangeSlider"
 							{...this.props}
 						/>
 					</div>
+
 					<div className="col s6 col-xs-6">
 						<ReactiveList
 							componentId="SearchResult"
@@ -87,9 +86,8 @@ export default class TagCloudDefault extends Component {
 							from={0}
 							size={20}
 							onData={this.onData}
-							requestOnScroll
 							react={{
-								and: ["CitySensor"]
+								and: "RangeSensor"
 							}}
 						/>
 					</div>
@@ -99,16 +97,16 @@ export default class TagCloudDefault extends Component {
 	}
 }
 
-TagCloudDefault.defaultProps = {
+DynamicRangeSliderDefault.defaultProps = {
 	mapping: {
-		city: "group.group_city.raw",
+		guests: "guests",
 		topic: "group.group_topics.topic_name_raw"
 	}
 };
 
-TagCloudDefault.propTypes = {
+DynamicRangeSliderDefault.propTypes = {
 	mapping: React.PropTypes.shape({
-		city: React.PropTypes.string,
+		guests: React.PropTypes.string,
 		topic: React.PropTypes.string
 	})
 };

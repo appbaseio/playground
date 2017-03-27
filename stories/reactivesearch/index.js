@@ -11,21 +11,16 @@ import SingleRangeReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/compon
 import DataSearchReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/DataSearch.md";
 import ReactiveListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/ReactiveList.md";
 
-// ReactiveSearch Components
-import NestedListDefault from "./reactivesearch/NestedList.stories";
-import ToggleListDefault from "./reactivesearch/ToggleList.stories";
-import DynamicRangeSliderDefault from "./reactivesearch/DynamicRangeSlider.stories";
-import TagCloudDefault from "./reactivesearch/TagCloud.stories";
-import RatingsFilterDefault from "./reactivesearch/RatingsFilter.stories";
-import CategorySearchDefault from "./reactivesearch/CategorySearch.stories";
-import MultiLevelMenuDefault from "./reactivesearch/MultiLevelMenu.stories";
-import ResultCardDefault from "./reactivesearch/ResultCard.stories";
-import ResultListDefault from "./reactivesearch/ResultList.stories";
-import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
-
-require("materialize-css/dist/css/materialize.min.css");
-require("@appbaseio/reactivesearch/dist/css/style.min.css");
-require("./styles.css");
+import NestedListDefault from "./NestedList.stories";
+import ToggleListDefault from "./ToggleList.stories";
+import DynamicRangeSliderDefault from "./DynamicRangeSlider.stories";
+import TagCloudDefault from "./TagCloud.stories";
+import RatingsFilterDefault from "./RatingsFilter.stories";
+import CategorySearchDefault from "./CategorySearch.stories";
+import MultiLevelMenuDefault from "./MultiLevelMenu.stories";
+import ResultCardDefault from "./ResultCard.stories";
+import ResultListDefault from "./ResultList.stories";
+import ViewSwitcherDefault from "./ViewSwitcher.stories";
 
 function removeFirstLine(str) {
 	return str.substring(str.indexOf("\n") + 1);

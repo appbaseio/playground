@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { ReactiveBase, RatingsFilter, ResultCard, ResultList, ViewSwitcher, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
-require("./list.css");
-
 export default class ViewSwitcherDefault extends Component {
 	constructor(props) {
 		super(props);
