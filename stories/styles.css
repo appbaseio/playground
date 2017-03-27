@@ -22,7 +22,7 @@ html {
 
 .rbc-base > .row > .col.s6:first-child::after,
 .rbc-base > .row > .col.s6:last-child::after {
-	content: 'Actuator';
+	content: "Actuator";
 	display: block;
 	position: absolute;
 	text-align: center;
@@ -38,15 +38,15 @@ html {
 }
 
 .rbc-base > .row > .col.s6:first-child::after {
-	content: 'Sensor';
+	content: "Sensor";
 }
 
 .rbc-base > .row.reverse-labels > .col.s6:first-child::after {
-	content: 'Actuator';
+	content: "Actuator";
 }
 
 .rbc-base > .row.reverse-labels > .col.s6:last-child::after {
-	content: 'Sensor';
+	content: "Sensor";
 }
 
 .listResult {

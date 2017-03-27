@@ -19,11 +19,28 @@ const map = {
 		"ResultCard",
 		"ViewSwitcher"
 	],
-	ReactiveMap: [
-		
-	],
+	ReactiveMap: [],
 	ReactiveBase: [
-		
+		"SingleList",
+		"MultiList",
+		"SingleDropdownList",
+		"MultiDropdownList",
+		"SingleRange",
+		"MultiRange",
+		"SingleDropdownRange",
+		"MultiDropdownRange",
+		"RangeSlider",
+		"NumberBox",
+		"ToggleButton",
+		"TextField",
+		"DataSearch",
+		"DataController",
+		"DatePicker",
+		"DateRange",
+		"PoweredBy",
+		"ReactiveElement",
+		"ReactiveList",
+		"ReactivePaginatedList"
 	]
 }
 
