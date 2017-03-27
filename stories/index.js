@@ -57,6 +57,21 @@ import GeoDistanceDropdownDefault from "./reactivemaps/GeoDistanceDropdown.stori
 import PlacesSearchDefault from "./reactivemaps/PlacesSearch.stories";
 import ReactiveMapDefault from "./reactivemaps/ReactiveMap.stories";
 
+import SingleListMapDefault from "./reactivemaps/SingleList.stories";
+import MultiListMapDefault from "./reactivemaps/MultiList.stories";
+import SingleDropdownListMapDefault from "./reactivemaps/SingleDropdownList.stories";
+import MultiDropdownListMapDefault from "./reactivemaps/MultiDropdownList.stories";
+import SingleRangeMapDefault from "./reactivemaps/SingleRange.stories";
+import MultiRangeMapDefault from "./reactivemaps/MultiRange.stories";
+import SingleDropdownRangeMapDefault from "./reactivemaps/SingleDropdownRange.stories";
+import MultiDropdownRangeMapDefault from "./reactivemaps/MultiDropdownRange.stories";
+import DataSearchMapDefault from "./reactivemaps/DataSearch.stories";
+import NestedListMapDefault from "./reactivemaps/NestedList.stories";
+import RangeSliderMapDefault from "./reactivemaps/RangeSlider.stories";
+import NumberBoxMapDefault from "./reactivemaps/NumberBox.stories";
+import DatePickerMapDefault from "./reactivemaps/DatePicker.stories";
+import DateRangeMapDefault from "./reactivemaps/DateRange.stories";
+
 // import reactivesearch components
 import NestedListDefault from "./reactivesearch/NestedList.stories";
 import ToggleListDefault from "./reactivesearch/ToggleList.stories";
@@ -822,6 +837,385 @@ storiesOf("ReactiveMap", module)
 			})}
 			defaultMarkerImage={text("defaultMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/historic-pin.png")}
 			streamMarkerImage={text("streamMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/stream-pin.png")}
+		/>
+	)));
+
+storiesOf("m/SingleList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListMapDefault showSearch placeholder="Search City" />
+	)))
+	.add("Without Search", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListMapDefault showSearch={false} placeholder="Search City" />
+	)))
+	.add("Default Selected", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListMapDefault showSearch defaultSelected="San Francisco" placeholder="Search City" />
+	)))
+	.add("Custom Sort", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListMapDefault title="SingleList: Ascending Sort" showSearch defaultSelected="London" sortBy="asc" placeholder="Search City" />
+	)))
+	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListMapDefault showSearch selectAllLabel="All Cities" placeholder="Search City" />
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListMapDefault
+			title={text("title", "SingleList: City Filter")}
+			size={number("size", 100)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			defaultSelected={text("defaultSelected", "San Francisco")}
+			showCount={boolean("showCount", true)}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search City")}
+			selectAllLabel={text("selectAllLabel", "All cities")}
+		/>
+	)));
+
+storiesOf("m/MultiList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showSearch placeholder="Search City" />
+	)))
+	.add("Without Search", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showSearch={false} placeholder="Search City" />
+	)))
+	.add("Default Selected", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showSearch defaultSelected={["London", "Sydney"]} placeholder="Search City" />
+	)))
+	.add("Custom Sort", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault title="MultiList: Ascending Sort" showSearch defaultSelected={["London"]} sortBy="asc" placeholder="Search City" />
+	)))
+	.add("With Select All", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showSearch selectAllLabel="All Cities" placeholder="Search City" />
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault
+			title={text("title", "MultiList: City Filter")}
+			size={number("size", 10)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			defaultSelected={array("defaultSelected", ["London", "Sydney"])}
+			showCount={boolean("showCount", true)}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search City")}
+			selectAllLabel={text("selectAllLabel", "All cities")}
+		/>
+	)));
+
+storiesOf("m/SingleDropdownList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault />
+	)))
+	.add("With Select All", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault
+			selectAllLabel="All Cities"
+		/>
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault
+			selectAllLabel="All Cities"
+			defaultSelected="London"
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault
+			title={text("title", "SingleDropdownList")}
+			size={number("size", 100)}
+			showCount={boolean("showCount", true)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			selectAllLabel={text("selectAllLabel", "All Cities")}
+			defaultSelected={text("defaultSelected", "London")}
+			placeholder={text("placeholder", "Select a City")}
+		/>
+	)));
+
+storiesOf("m/MultiDropdownList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListMapDefault />
+	)))
+	.add("With Placeholder", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListMapDefault
+			placeholder="Select Cities"
+		/>
+	)))
+	.add("With Select All", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListMapDefault
+			placeholder="Select Cities"
+			selectAllLabel="All Cities"
+		/>
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListMapDefault
+			placeholder="Select Cities"
+			size={100}
+			sortBy="count"
+			defaultSelected={["London", "Melbourne"]}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListMapDefault
+			title={text("title", "MultiDropdownList")}
+			size={number("size", 100)}
+			showCount={boolean("showCount", true)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			selectAllLabel={text("selectAllLabel", "All Cities")}
+			defaultSelected={array("defaultSelected", ["London", "Melbourne"])}
+			placeholder={text("placeholder", "Select Cities")}
+		/>
+	)));
+
+storiesOf("m/SingleRange", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeMapDefault />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeMapDefault defaultSelected="Strong" />
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeMapDefault
+			title={text("title", "SingleRange: Earthquake Magnitude")}
+			defaultSelected={text("defaultSelected", "Strong")}
+		/>
+	)));
+
+storiesOf("m/MultiRange", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeMapDefault />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeMapDefault defaultSelected={["Moderate", "Strong"]} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeMapDefault
+			title={text("title", "MultiRange: Earthquake Magnitude")}
+			defaultSelected={array("defaultSelected", ["Moderate", "Strong"])}
+			showTags={boolean("showTags", "false")}
+		/>
+	)));
+
+storiesOf("m/SingleDropdownRange", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeMapDefault />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeMapDefault defaultSelected="Strong" />
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeMapDefault
+			title={text("title", "SingleDropdownRange: Earthquake Magnitude")}
+			defaultSelected={text("defaultSelected", "Strong")}
+		/>
+	)));
+
+storiesOf("m/MultiDropdownRange", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
+		<MultiDropdownRangeMapDefault />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
+		<MultiDropdownRangeMapDefault defaultSelected={["Moderate", "Strong"]} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
+		<MultiDropdownRangeMapDefault
+			title={text("title", "MultiDropdownRange: Earthquake Magnitude")}
+			defaultSelected={array("defaultSelected", ["Moderate", "Strong"])}
+		/>
+	)));
+
+storiesOf("m/DataSearch", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title="DataSearch"
+			placeholder="Search Venue"
+		/>
+	)))
+	.add("Without Autocomplete", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title="DataSearch"
+			placeholder="Search Venue"
+			autocomplete={false}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title={text("title", "DataSearch: Meetups")}
+			placeholder={text("placeholder", "Search Venue")}
+			autocomplete={boolean("autocomplete", true)}
+		/>
+	)));
+
+storiesOf("m/NestedList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedListMapDefault />
+	)))
+	.add("With Title", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedListMapDefault
+			title={text("title", "City-wise Meetups")}
+		/>
+	)))
+	.add("Default selection", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedListMapDefault
+			defaultSelected={["London", "Travel"]}
+		/>
+	))).add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedListMapDefault
+			title={text("title", "NestedList: City-wise Meetup Topics")}
+			size={number("size", 100)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			defaultSelected={array("defaultSelected", ["London", "Travel"])}
+			showCount={boolean("showCount", true)}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search Topics")}
+		/>
+	)));
+
+storiesOf("m/RangeSlider", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderMapDefault />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderMapDefault
+			defaultSelected={{
+				start: 0,
+				end: 2
+			}}
+		/>
+	)))
+	.add("With Range Labels", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderMapDefault
+			defaultSelected={{
+				start: 0,
+				end: 2
+			}}
+			rangeLabels={{
+				start: "Start",
+				end: "End"
+			}}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderMapDefault
+			title={text("title", "RangeSlider: Guest RSVPs")}
+			range={object("range", {
+				start: 0,
+				end: 5
+			})}
+			stepValue={number("stepValue", 1)}
+			defaultSelected={object("defaultSelected", {
+				start: 0,
+				end: 2
+			})}
+			rangeLabels={object("rangeLabels", {
+				start: "Start",
+				end: "End"
+			})}
+		/>
+	)));
+
+storiesOf("m/NumberBox", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxMapDefault
+			defaultSelected={3}
+			data={{
+				label: "Guests",
+				start: 1,
+				end: 5
+			}}
+			labelPosition="left"
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxMapDefault
+			defaultSelected={number("defaultSelected", 3)}
+			data={object("data", {
+				start: 1,
+				end: 5,
+				label: "Guests"
+			})}
+			labelPosition={select("labelPosition", { bottom: "bottom", top: "top", left: "left", right: "right" }, "right")}
+		/>
+	)));
+
+
+storiesOf("m/DatePicker", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault />
+	)))
+	.add("Show more than 1 month", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault
+			numberOfMonths={2}
+		/>
+	)))
+	.add("Default date", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault
+			defaultSelected={moment().subtract(1, "day")}
+		/>
+	)))
+	.add("Enable days from today only", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault
+			allowAllDates={false}
+		/>
+	)))
+	.add("Using extra prop object", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault
+			extra={{
+				withFullScreenPortal: true,
+				showClearDate: true
+			}}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault
+			title={text("title", "Date Picker")}
+			numberOfMonths={number("numberOfMonths", 1)}
+			allowAllDates={boolean("allowAllDates", true)}
+		/>
+	)));
+
+storiesOf("m/DateRange", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault />
+	)))
+	.add("Show more than 1 month", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault
+			numberOfMonths={3}
+		/>
+	)))
+	.add("Default date", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault
+			defaultSelected={{
+				start: moment().subtract(7, "days"),
+				end: moment()
+			}}
+		/>
+	)))
+	.add("Enable days from today only", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault
+			allowAllDates={false}
+		/>
+	)))
+	.add("Using extra prop object", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault
+			extra={{
+				withFullScreenPortal: true,
+				showClearDate: true
+			}}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault
+			title={text("title", "Date Range")}
+			numberOfMonths={number("numberOfMonths", 2)}
+			allowAllDates={boolean("allowAllDates", true)}
 		/>
 	)));
 
