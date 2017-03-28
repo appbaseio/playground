@@ -111,7 +111,7 @@ $(document).ready(() => {
 				})
 			})
 		}
-	}, 2000);
+	}, 1500);
 });
 
 function filterStories(stories) {
