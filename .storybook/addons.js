@@ -86,7 +86,7 @@ $(document).ready(() => {
 		let search = new URLSearchParams(window.location.search);
 		filterBy = search.has("filterBy") ? search.get("filterBy").split(",") : [];
 
-		$(".Pane.vertical.Pane1 > div > div > div input").replaceWith(select);
+		$(".Pane.vertical.Pane1 > div > div > div:eq(1)").prepend(select);
 		$(".filter").SumoSelect({captionFormatAllSelected: "All Selected"});
 
 		const stories = Array.from($(".Pane.vertical.Pane1 > div > div > div > div > ul > li > a"));
