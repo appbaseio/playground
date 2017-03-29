@@ -3,7 +3,7 @@ import { setOptions } from "@kadira/storybook-addon-options";
 
 setOptions({
 	name: "appbase.io",
-	url: "https://github.com/appbaseio/reactive-playground",
+	url: "https://github.com/appbaseio/playground",
 	goFullScreen: false,
 	showLeftPanel: true,
 	showDownPanel: true,
