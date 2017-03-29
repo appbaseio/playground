@@ -83,7 +83,7 @@ $(document).ready(() => {
 	});
 
 	setTimeout(() => {
-		const search = new URLSearchParams(window.location.search);
+		let search = new URLSearchParams(window.location.search);
 		filterBy = search.has("filterBy") ? search.get("filterBy").split(",") : [];
 
 		$(".Pane.vertical.Pane1 > div > div > div input").replaceWith(select);
@@ -111,7 +111,18 @@ $(document).ready(() => {
 				})
 			})
 		}
+
+		$(".Pane.vertical.Pane1 > div > div > div > div > ul > li").on("click", () => {
+			setTimeout(() => {
+				search = new URLSearchParams(window.location.search);
+				if (filterBy && filterBy.length) {
+					search.set("filterBy", filterBy.join());
+					history.pushState({}, "", window.location.pathname + "?" + search.toString());
+				}
+			}, 1500);
+		});
 	}, 1500);
+
 });
 
 function filterStories(stories) {
