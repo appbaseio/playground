@@ -33,6 +33,7 @@ const map = {
 		"m/SingleDropdownRange",
 		"m/MultiDropdownRange",
 		"m/DataSearch",
+		"m/TextField",
 		"m/NestedList",
 		"m/RangeSlider",
 		"m/NumberBox",

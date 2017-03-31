@@ -66,6 +66,7 @@ import MultiRangeMapDefault from "./reactivemaps/MultiRange.stories";
 import SingleDropdownRangeMapDefault from "./reactivemaps/SingleDropdownRange.stories";
 import MultiDropdownRangeMapDefault from "./reactivemaps/MultiDropdownRange.stories";
 import DataSearchMapDefault from "./reactivemaps/DataSearch.stories";
+import TextFieldMapDefault from "./reactivemaps/TextField.stories";
 import NestedListMapDefault from "./reactivemaps/NestedList.stories";
 import RangeSliderMapDefault from "./reactivemaps/RangeSlider.stories";
 import NumberBoxMapDefault from "./reactivemaps/NumberBox.stories";
@@ -1045,6 +1046,22 @@ storiesOf("m/DataSearch", module)
 			title={text("title", "DataSearch: Meetups")}
 			placeholder={text("placeholder", "Search Venue")}
 			autocomplete={boolean("autocomplete", true)}
+		/>
+	)));
+
+storiesOf("m/TextField", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldMapDefault />
+	)))
+	.add("DefaultSelected", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldMapDefault defaultSelected="London" />
+	)))
+	.add("Playground", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldMapDefault
+			title={text("title", "DataSearch: Meetups")}
+			placeholder={text("placeholder", "Search Venue")}
+			defaultSelected={text("defaultSelected", "London")}
 		/>
 	)));
 
