@@ -34,6 +34,7 @@ const map = {
 		"m/MultiDropdownRange",
 		"m/DataSearch",
 		"m/TextField",
+		"m/ToggleButton",
 		"m/NestedList",
 		"m/RangeSlider",
 		"m/NumberBox",

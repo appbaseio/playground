@@ -67,6 +67,7 @@ import SingleDropdownRangeMapDefault from "./reactivemaps/SingleDropdownRange.st
 import MultiDropdownRangeMapDefault from "./reactivemaps/MultiDropdownRange.stories";
 import DataSearchMapDefault from "./reactivemaps/DataSearch.stories";
 import TextFieldMapDefault from "./reactivemaps/TextField.stories";
+import ToggleButtonMapDefault from "./reactivemaps/ToggleButton.stories";
 import NestedListMapDefault from "./reactivemaps/NestedList.stories";
 import RangeSliderMapDefault from "./reactivemaps/RangeSlider.stories";
 import NumberBoxMapDefault from "./reactivemaps/NumberBox.stories";
@@ -1062,6 +1063,22 @@ storiesOf("m/TextField", module)
 			title={text("title", "DataSearch: Meetups")}
 			placeholder={text("placeholder", "Search Venue")}
 			defaultSelected={text("defaultSelected", "London")}
+		/>
+	)));
+
+storiesOf("m/ToggleButton", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonMapDefault />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonMapDefault defaultSelected={["Social"]} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonMapDefault
+			title={text("title", "ToggleButton: Meetup Categories")}
+			multiSelect={boolean("multiSelect", true)}
+			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
 		/>
 	)));
 
