@@ -89,6 +89,7 @@ import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
 import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
 import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
+import SingleListRSDefault from "./reactivesearch/SingleList.stories";
 
 
 const moment = require("moment");
@@ -1526,5 +1527,35 @@ storiesOf("s/NumberBox", module)
 				label: "Guests"
 			})}
 			labelPosition={select("labelPosition", { bottom: "bottom", top: "top", left: "left", right: "right" }, "right")}
+		/>
+	)));
+
+storiesOf("s/SingleList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" />
+	)))
+	.add("Without Search", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch={false} placeholder="Search City" />
+	)))
+	.add("Default Selected", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch defaultSelected="San Francisco" placeholder="Search City" />
+	)))
+	.add("Custom Sort", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault title="SingleList: Ascending Sort" showSearch defaultSelected="London" sortBy="asc" placeholder="Search City" />
+	)))
+	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch selectAllLabel="All Cities" placeholder="Search City" />
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault
+			title={text("title", "SingleList: City Filter")}
+			size={number("size", 100)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			defaultSelected={text("defaultSelected", "San Francisco")}
+			showCount={boolean("showCount", true)}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search City")}
+			selectAllLabel={text("selectAllLabel", "All cities")}
 		/>
 	)));
