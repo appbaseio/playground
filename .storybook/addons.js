@@ -19,7 +19,8 @@ const map = {
 		"ResultCard",
 		"ViewSwitcher",
 		"s/DataSearch",
-		"s/TextField"
+		"s/TextField",
+		"s/NumberBox"
 	],
 	ReactiveMaps: [
 		"GeoDistanceSlider",

@@ -88,6 +88,7 @@ import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
 
 import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
 import TextFieldRSDefault from "./reactivesearch/TextField.stories";
+import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
 
 
 const moment = require("moment");
@@ -1501,5 +1502,29 @@ storiesOf("s/TextField", module)
 			title={text("title", "TextField: Car Search")}
 			placeholder={text("placeholder", "Type a car name")}
 			defaultSelected={text("defaultSelected", "nissan")}
+		/>
+	)));
+
+storiesOf("s/NumberBox", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxRSDefault
+			defaultSelected={2}
+			data={{
+				start: 1,
+				end: 16
+			}}
+			labelPosition="left"
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxRSDefault
+			defaultSelected={number("defaultSelected", 3)}
+			data={object("data", {
+				start: 1,
+				end: 16,
+				label: "Guests"
+			})}
+			labelPosition={select("labelPosition", { bottom: "bottom", top: "top", left: "left", right: "right" }, "right")}
 		/>
 	)));
