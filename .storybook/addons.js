@@ -17,7 +17,8 @@ const map = {
 		"MultiLevelMenu",
 		"ResultList",
 		"ResultCard",
-		"ViewSwitcher"
+		"ViewSwitcher",
+		"s/DataSearch"
 	],
 	ReactiveMaps: [
 		"GeoDistanceSlider",

@@ -1,7 +1,12 @@
 import React, { Component } from "react";
-import { ReactiveBase, RatingsFilter, ResultCard, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import {
+	ReactiveBase,
+	DataSearch,
+	ResultCard,
+	AppbaseSensorHelper as helper
+} from "@appbaseio/reactivesearch";
 
-export default class RatingsFilterDefault extends Component {
+export default class DataSearchRSDefault extends Component {
 	constructor(props) {
 		super(props);
 		this.onData = this.onData.bind(this);
@@ -30,16 +35,10 @@ export default class RatingsFilterDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
-						<RatingsFilter
-							componentId="RatingsSensor"
-							appbaseField={this.props.mapping.rating}
-							title="RatingsFilter"
-							data={
-							[{ start: 4, end: 5, label: "4 stars and up" },
-								{ start: 3, end: 5, label: "3 stars and up" },
-								{ start: 2, end: 5, label: "2 stars and up" },
-								{ start: 1, end: 5, label: "> 1 stars" }]
-							}
+						<DataSearch
+							appbaseField="name"
+							componentId="CarSensor"
+							placeholder="Search Cars"
 							{...this.props}
 						/>
 					</div>
@@ -47,13 +46,13 @@ export default class RatingsFilterDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField={this.props.mapping.name}
+							appbaseField="name"
 							title="Results"
 							from={0}
 							size={20}
 							onData={this.onData}
 							react={{
-								and: "RatingsSensor"
+								and: "CarSensor"
 							}}
 						/>
 					</div>
@@ -62,17 +61,3 @@ export default class RatingsFilterDefault extends Component {
 		);
 	}
 }
-
-RatingsFilterDefault.defaultProps = {
-	mapping: {
-		rating: "rating",
-		name: "name"
-	}
-};
-
-RatingsFilterDefault.propTypes = {
-	mapping: React.PropTypes.shape({
-		rating: React.PropTypes.string,
-		name: React.PropTypes.string
-	})
-};

@@ -86,6 +86,9 @@ import ResultCardDefault from "./reactivesearch/ResultCard.stories";
 import ResultListDefault from "./reactivesearch/ResultList.stories";
 import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
 
+import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
+
+
 const moment = require("moment");
 require("materialize-css/dist/css/materialize.min.css");
 require("@appbaseio/reactivesearch/dist/css/style.min.css");
@@ -1459,4 +1462,27 @@ storiesOf("ViewSwitcher", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
 		<ViewSwitcherDefault />
+	)));
+
+storiesOf("s/DataSearch", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Venue"
+		/>
+	)))
+	.add("Without Autocomplete", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Venue"
+			autocomplete={false}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title={text("title", "DataSearch: Meetups")}
+			placeholder={text("placeholder", "Search Venue")}
+			autocomplete={boolean("autocomplete", true)}
+		/>
 	)));
