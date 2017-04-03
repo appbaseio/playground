@@ -93,7 +93,7 @@ import SingleListRSDefault from "./reactivesearch/SingleList.stories";
 import MultiListRSDefault from "./reactivesearch/MultiList.stories";
 import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
 import MultiDropdownListRSDefault from "./reactivesearch/MultiDropdownList.stories";
-
+import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
 
 const moment = require("moment");
 require("materialize-css/dist/css/materialize.min.css");
@@ -1654,5 +1654,20 @@ storiesOf("s/MultiDropdownList", module)
 			selectAllLabel={text("selectAllLabel", "All Cities")}
 			defaultSelected={array("defaultSelected", ["London", "Melbourne"])}
 			placeholder={text("placeholder", "Select Cities")}
+		/>
+	)));
+
+storiesOf("s/SingleRange", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault defaultSelected="Cheap" />
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault
+			title={text("title", "SingleRange: Price Filter")}
+			defaultSelected={text("defaultSelected", "Cheap")}
 		/>
 	)));
