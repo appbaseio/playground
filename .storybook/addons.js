@@ -27,7 +27,8 @@ const map = {
 		"s/SingleRange",
 		"s/MultiRange",
 		"s/SingleDropdownRange",
-		"s/MultiDropdownRange"
+		"s/MultiDropdownRange",
+		"s/ToggleButton"
 	],
 	ReactiveMaps: [
 		"GeoDistanceSlider",

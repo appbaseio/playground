@@ -97,6 +97,7 @@ import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
 import MultiRangeRSDefault from "./reactivesearch/MultiRange.stories";
 import SingleDropdownRangeRSDefault from "./reactivesearch/SingleDropdownRange.stories";
 import MultiDropdownRangeRSDefault from "./reactivesearch/MultiDropdownRange.stories";
+import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
 
 const moment = require("moment");
 require("materialize-css/dist/css/materialize.min.css");
@@ -1717,5 +1718,21 @@ storiesOf("s/MultiDropdownRange", module)
 		<MultiDropdownRangeRSDefault
 			title={text("title", "MultiDropdownRange: Price Filter")}
 			defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
+		/>
+	)));
+
+storiesOf("s/ToggleButton", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault defaultSelected={["Social"]} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault
+			title={text("title", "ToggleButton: Meetup Categories")}
+			multiSelect={boolean("multiSelect", true)}
+			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
 		/>
 	)));
