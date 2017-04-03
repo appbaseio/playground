@@ -18,7 +18,8 @@ const map = {
 		"ResultList",
 		"ResultCard",
 		"ViewSwitcher",
-		"s/DataSearch"
+		"s/DataSearch",
+		"s/TextField"
 	],
 	ReactiveMaps: [
 		"GeoDistanceSlider",

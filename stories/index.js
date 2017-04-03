@@ -87,6 +87,7 @@ import ResultListDefault from "./reactivesearch/ResultList.stories";
 import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
 
 import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
+import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 
 
 const moment = require("moment");
@@ -1484,5 +1485,21 @@ storiesOf("s/DataSearch", module)
 			title={text("title", "DataSearch: Meetups")}
 			placeholder={text("placeholder", "Search Venue")}
 			autocomplete={boolean("autocomplete", true)}
+		/>
+	)));
+
+storiesOf("s/TextField", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldRSDefault />
+	)))
+	.add("DefaultSelected", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldRSDefault defaultSelected="nissan" />
+	)))
+	.add("Playground", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldRSDefault
+			title={text("title", "TextField: Car Search")}
+			placeholder={text("placeholder", "Type a car name")}
+			defaultSelected={text("defaultSelected", "nissan")}
 		/>
 	)));
