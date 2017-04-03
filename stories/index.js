@@ -94,6 +94,7 @@ import MultiListRSDefault from "./reactivesearch/MultiList.stories";
 import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
 import MultiDropdownListRSDefault from "./reactivesearch/MultiDropdownList.stories";
 import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
+import MultiRangeRSDefault from "./reactivesearch/MultiRange.stories";
 
 const moment = require("moment");
 require("materialize-css/dist/css/materialize.min.css");
@@ -1669,5 +1670,20 @@ storiesOf("s/SingleRange", module)
 		<SingleRangeRSDefault
 			title={text("title", "SingleRange: Price Filter")}
 			defaultSelected={text("defaultSelected", "Cheap")}
+		/>
+	)));
+
+storiesOf("s/MultiRange", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault defaultSelected={["Cheap", "Moderate"]} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault
+			title={text("title", "MultiRange: Price Filter")}
+			defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
 		/>
 	)));
