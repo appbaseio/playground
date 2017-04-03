@@ -92,6 +92,7 @@ import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
 import SingleListRSDefault from "./reactivesearch/SingleList.stories";
 import MultiListRSDefault from "./reactivesearch/MultiList.stories";
 import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
+import MultiDropdownListRSDefault from "./reactivesearch/MultiDropdownList.stories";
 
 
 const moment = require("moment");
@@ -1617,5 +1618,41 @@ storiesOf("s/SingleDropdownList", module)
 			selectAllLabel={text("selectAllLabel", "All Cities")}
 			defaultSelected={text("defaultSelected", "London")}
 			placeholder={text("placeholder", "Select a City")}
+		/>
+	)));
+
+storiesOf("s/MultiDropdownList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListRSDefault />
+	)))
+	.add("With Placeholder", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListRSDefault
+			placeholder="Select Cities"
+		/>
+	)))
+	.add("With Select All", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListRSDefault
+			placeholder="Select Cities"
+			selectAllLabel="All Cities"
+		/>
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListRSDefault
+			placeholder="Select Cities"
+			size={100}
+			sortBy="count"
+			defaultSelected={["London", "Melbourne"]}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListRSDefault
+			title={text("title", "MultiDropdownList")}
+			size={number("size", 100)}
+			showCount={boolean("showCount", true)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			selectAllLabel={text("selectAllLabel", "All Cities")}
+			defaultSelected={array("defaultSelected", ["London", "Melbourne"])}
+			placeholder={text("placeholder", "Select Cities")}
 		/>
 	)));
