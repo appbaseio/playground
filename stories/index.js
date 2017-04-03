@@ -99,6 +99,7 @@ import SingleDropdownRangeRSDefault from "./reactivesearch/SingleDropdownRange.s
 import MultiDropdownRangeRSDefault from "./reactivesearch/MultiDropdownRange.stories";
 import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
 import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
+import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 
 const moment = require("moment");
 require("materialize-css/dist/css/materialize.min.css");
@@ -1770,6 +1771,45 @@ storiesOf("s/DatePicker", module)
 		<DatePickerRSDefault
 			title={text("title", "Date Picker")}
 			numberOfMonths={number("numberOfMonths", 1)}
+			allowAllDates={boolean("allowAllDates", true)}
+		/>
+	)));
+
+storiesOf("s/DateRange", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault />
+	)))
+	.add("Show more than 1 month", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault
+			numberOfMonths={3}
+		/>
+	)))
+	.add("Default date", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault
+			defaultSelected={{
+				start: moment().subtract(7, "days"),
+				end: moment()
+			}}
+		/>
+	)))
+	.add("Enable days from today only", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault
+			allowAllDates={false}
+		/>
+	)))
+	.add("Using extra prop object", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault
+			extra={{
+				withFullScreenPortal: true,
+				showClearDate: true
+			}}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault
+			title={text("title", "Date Range")}
+			numberOfMonths={number("numberOfMonths", 2)}
 			allowAllDates={boolean("allowAllDates", true)}
 		/>
 	)));
