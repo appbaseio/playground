@@ -20,7 +20,9 @@ const map = {
 		"ViewSwitcher",
 		"s/DataSearch",
 		"s/TextField",
-		"s/NumberBox"
+		"s/NumberBox",
+		"s/SingleList",
+		"s/MultiList"
 	],
 	ReactiveMaps: [
 		"GeoDistanceSlider",

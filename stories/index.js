@@ -90,6 +90,7 @@ import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
 import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
 import SingleListRSDefault from "./reactivesearch/SingleList.stories";
+import MultiListRSDefault from "./reactivesearch/MultiList.stories";
 
 
 const moment = require("moment");
@@ -1553,6 +1554,36 @@ storiesOf("s/SingleList", module)
 			size={number("size", 100)}
 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
 			defaultSelected={text("defaultSelected", "San Francisco")}
+			showCount={boolean("showCount", true)}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search City")}
+			selectAllLabel={text("selectAllLabel", "All cities")}
+		/>
+	)));
+
+storiesOf("s/MultiList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" />
+	)))
+	.add("Without Search", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch={false} placeholder="Search City" />
+	)))
+	.add("Default Selected", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch defaultSelected={["London", "Sydney"]} placeholder="Search City" />
+	)))
+	.add("Custom Sort", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault title="MultiList: Ascending Sort" showSearch defaultSelected={["London"]} sortBy="asc" placeholder="Search City" />
+	)))
+	.add("With Select All", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch selectAllLabel="All Cities" placeholder="Search City" />
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault
+			title={text("title", "MultiList: City Filter")}
+			size={number("size", 10)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			defaultSelected={array("defaultSelected", ["London", "Sydney"])}
 			showCount={boolean("showCount", true)}
 			showSearch={boolean("showSearch", true)}
 			placeholder={text("placeholder", "Search City")}
