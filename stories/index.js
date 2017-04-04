@@ -73,6 +73,7 @@ import RangeSliderMapDefault from "./reactivemaps/RangeSlider.stories";
 import NumberBoxMapDefault from "./reactivemaps/NumberBox.stories";
 import DatePickerMapDefault from "./reactivemaps/DatePicker.stories";
 import DateRangeMapDefault from "./reactivemaps/DateRange.stories";
+import DataControllerMapDefault from "./reactivemaps/DataController.stories";
 
 // import reactivesearch components
 import NestedListDefault from "./reactivesearch/NestedList.stories";
@@ -451,7 +452,7 @@ storiesOf("DataController", module)
 			showUI={boolean("showUI", true)}
 			dataLabel={text("dataLabel", "★  A customizable UI widget ★")}
 			defaultSelected={text("defaultSelected", "default")}
-			componentStyle={object("componentStyle", { "padding-bottom": "10px" })}
+			componentStyle={object("componentStyle", { "paddingBottom": "10px" })}
 		/>
 	)));
 
@@ -1268,6 +1269,30 @@ storiesOf("m/DateRange", module)
 		/>
 	)));
 
+storiesOf("m/DataController", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerMapDefault />
+	)))
+	.add("With UI", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerMapDefault
+			title="DataController"
+			showUI={true}
+			dataLabel={
+				<p>★ A customizable UI widget ★</p>
+			}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerMapDefault
+			title={text("title", "DataController")}
+			showUI={boolean("showUI", true)}
+			dataLabel={text("dataLabel", "★  A customizable UI widget ★")}
+			defaultSelected={text("defaultSelected", "default")}
+			componentStyle={object("componentStyle", { "paddingBottom": "10px" })}
+		/>
+	)));
+
 // Reactivesearch components
 
 storiesOf("s/NestedList", module)
@@ -1884,6 +1909,6 @@ storiesOf("s/DataController", module)
 			showUI={boolean("showUI", true)}
 			dataLabel={text("dataLabel", "★  A customizable UI widget ★")}
 			defaultSelected={text("defaultSelected", "default")}
-			componentStyle={object("componentStyle", { "padding-bottom": "10px" })}
+			componentStyle={object("componentStyle", { "paddingBottom": "10px" })}
 		/>
 	)));

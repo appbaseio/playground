@@ -54,7 +54,8 @@ const map = {
 		"m/RangeSlider",
 		"m/NumberBox",
 		"m/DatePicker",
-		"m/DateRange"
+		"m/DateRange",
+		"m/DataController"
 	],
 	ReactiveBase: [
 		"SingleList",
