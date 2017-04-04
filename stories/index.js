@@ -100,6 +100,7 @@ import MultiDropdownRangeRSDefault from "./reactivesearch/MultiDropdownRange.sto
 import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
 import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
 import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
+import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
 
 const moment = require("moment");
 require("materialize-css/dist/css/materialize.min.css");
@@ -1811,5 +1812,55 @@ storiesOf("s/DateRange", module)
 			title={text("title", "Date Range")}
 			numberOfMonths={number("numberOfMonths", 2)}
 			allowAllDates={boolean("allowAllDates", true)}
+		/>
+	)));
+
+storiesOf("s/RangeSlider", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderRSDefault />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderRSDefault
+			defaultSelected={{
+				start: 20,
+				end: 70
+			}}
+		/>
+	)))
+	.add("Without histogram", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderRSDefault
+			showHistogram={false}
+		/>
+	)))
+	.add("With Range Labels", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderRSDefault
+			defaultSelected={{
+				start: 10,
+				end: 50
+			}}
+			rangeLabels={{
+				start: "$10",
+				end: "$250"
+			}}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderRSDefault
+			title={text("title", "RangeSlider: Prices")}
+			range={object("range", {
+				start: 10,
+				end: 250
+			})}
+			stepValue={number("stepValue", 10)}
+			defaultSelected={object("defaultSelected", {
+				start: 10,
+				end: 50
+			})}
+			rangeLabels={object("rangeLabels", {
+				start: "$10",
+				end: "$250"
+			})}
+			showHistogram={boolean("showHistogram", true)}
 		/>
 	)));

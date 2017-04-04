@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { ReactiveBase, DynamicRangeSlider, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import {
+	ReactiveBase,
+	DynamicRangeSlider,
+	ReactiveList,
+	AppbaseSensorHelper as helper
+} from "@appbaseio/reactivesearch";
 
 export default class DynamicRangeSliderDefault extends Component {
 	constructor(props) {
