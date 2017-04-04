@@ -669,7 +669,7 @@ storiesOf("ReactivePaginatedList", module)
 
 // Reactivemaps components
 
-storiesOf("GeoDistanceSlider", module)
+storiesOf("m/GeoDistanceSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
 		<GeoDistanceSliderDefault
@@ -740,7 +740,7 @@ storiesOf("GeoDistanceSlider", module)
 		/>
 	)));
 
-storiesOf("GeoDistanceDropdown", module)
+storiesOf("m/GeoDistanceDropdown", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceDropdownDefault
@@ -804,13 +804,13 @@ storiesOf("GeoDistanceDropdown", module)
 		/>
 	)));
 
-storiesOf("PlacesSearch", module)
+storiesOf("m/PlacesSearch", module)
 	.addDecorator(withKnobs)
 	.add("Basic - Direction Demo", withReadme(removeFirstLine(PlacesSearchReadme), () => (
 		<PlacesSearchDefault />
 	)));
 
-storiesOf("ReactiveMap", module)
+storiesOf("m/ReactiveMap", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ReactiveMapReadme, 3), () => (
 		<ReactiveMapDefault />
@@ -1271,7 +1271,7 @@ storiesOf("m/DateRange", module)
 
 // Reactivesearch components
 
-storiesOf("NestedList", module)
+storiesOf("s/NestedList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
@@ -1299,7 +1299,7 @@ storiesOf("NestedList", module)
 		/>
 	)));
 
-storiesOf("ToggleList", module)
+storiesOf("s/ToggleList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault />
@@ -1322,7 +1322,7 @@ storiesOf("ToggleList", module)
 		/>
 	)));
 
-storiesOf("DynamicRangeSlider", module)
+storiesOf("s/DynamicRangeSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<DynamicRangeSliderDefault />
@@ -1351,7 +1351,7 @@ storiesOf("DynamicRangeSlider", module)
 		/>
 	)));
 
-storiesOf("TagCloud", module)
+storiesOf("s/TagCloud", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault />
@@ -1382,7 +1382,7 @@ storiesOf("TagCloud", module)
 		/>
 	)));
 
-storiesOf("RatingsFilter", module)
+storiesOf("s/RatingsFilter", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<RatingsFilterDefault />
@@ -1403,7 +1403,7 @@ storiesOf("RatingsFilter", module)
 		/>
 	)));
 
-storiesOf("CategorySearch", module)
+storiesOf("s/CategorySearch", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<CategorySearchDefault
@@ -1421,7 +1421,7 @@ storiesOf("CategorySearch", module)
 		/>
 	)));
 
-storiesOf("MultiLevelMenu", module)
+storiesOf("s/MultiLevelMenu", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
 		<MultiLevelMenuDefault />
@@ -1453,7 +1453,7 @@ storiesOf("MultiLevelMenu", module)
 		/>
 	)));
 
-storiesOf("ResultCard", module)
+storiesOf("s/ResultCard", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
 		<ResultCardDefault />
@@ -1462,7 +1462,7 @@ storiesOf("ResultCard", module)
 		<ResultCardDefault  showPagination />
 	)));
 
-storiesOf("ResultList", module)
+storiesOf("s/ResultList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
 		<ResultListDefault />
@@ -1471,7 +1471,7 @@ storiesOf("ResultList", module)
 		<ResultCardDefault showPagination />
 	)));
 
-storiesOf("ViewSwitcher", module)
+storiesOf("s/ViewSwitcher", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
 		<ViewSwitcherDefault />
