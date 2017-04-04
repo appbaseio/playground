@@ -6,7 +6,7 @@ import {
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivesearch";
 
-import { Img } from "../reactivebase/Img.js";
+import { Img } from "./Img.js";
 const historyPin = require("./placeholder.svg");
 
 export default class MultiListMapDefault extends Component {

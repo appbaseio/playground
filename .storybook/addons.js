@@ -56,33 +56,10 @@ const map = {
 		"m/DatePicker",
 		"m/DateRange",
 		"m/DataController"
-	],
-	ReactiveBase: [
-		"SingleList",
-		"MultiList",
-		"SingleDropdownList",
-		"MultiDropdownList",
-		"SingleRange",
-		"MultiRange",
-		"SingleDropdownRange",
-		"MultiDropdownRange",
-		"RangeSlider",
-		"NumberBox",
-		"ToggleButton",
-		"TextField",
-		"DataSearch",
-		"DataController",
-		"DatePicker",
-		"DateRange",
-		"PoweredBy",
-		"ReactiveElement",
-		"ReactiveList",
-		"ReactivePaginatedList"
 	]
 }
 
 const options = [
-	{value: "ReactiveBase", text: "ReactiveBase"},
 	{value: "ReactiveMaps", text: "ReactiveMaps"},
 	{value: "ReactiveSearch", text: "ReactiveSearch"}
 ];
