@@ -50,7 +50,6 @@ const map = {
 		"m/DataSearch",
 		"m/TextField",
 		"m/ToggleButton",
-		"m/NestedList",
 		"m/RangeSlider",
 		"m/NumberBox",
 		"m/DatePicker",

@@ -46,7 +46,6 @@ import MultiDropdownRangeMapDefault from "./reactivemaps/MultiDropdownRange.stor
 import DataSearchMapDefault from "./reactivemaps/DataSearch.stories";
 import TextFieldMapDefault from "./reactivemaps/TextField.stories";
 import ToggleButtonMapDefault from "./reactivemaps/ToggleButton.stories";
-import NestedListMapDefault from "./reactivemaps/NestedList.stories";
 import RangeSliderMapDefault from "./reactivemaps/RangeSlider.stories";
 import NumberBoxMapDefault from "./reactivemaps/NumberBox.stories";
 import DatePickerMapDefault from "./reactivemaps/DatePicker.stories";
@@ -522,32 +521,6 @@ storiesOf("m/ToggleButton", module)
 			title={text("title", "ToggleButton: Meetup Categories")}
 			multiSelect={boolean("multiSelect", true)}
 			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
-		/>
-	)));
-
-storiesOf("m/NestedList", module)
-	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
-		<NestedListMapDefault />
-	)))
-	.add("With Title", withReadme(removeFirstLine(NestedListReadme), () => (
-		<NestedListMapDefault
-			title={text("title", "City-wise Meetups")}
-		/>
-	)))
-	.add("Default selection", withReadme(removeFirstLine(NestedListReadme), () => (
-		<NestedListMapDefault
-			defaultSelected={["London", "Travel"]}
-		/>
-	))).add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
-		<NestedListMapDefault
-			title={text("title", "NestedList: City-wise Meetup Topics")}
-			size={number("size", 100)}
-			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
-			defaultSelected={array("defaultSelected", ["London", "Travel"])}
-			showCount={boolean("showCount", true)}
-			showSearch={boolean("showSearch", true)}
-			placeholder={text("placeholder", "Search Topics")}
 		/>
 	)));
 
