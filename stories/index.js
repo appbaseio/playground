@@ -101,6 +101,7 @@ import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
 import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
 import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
+import DataControllerRSDefault from "./reactivesearch/DataController.stories";
 
 const moment = require("moment");
 require("materialize-css/dist/css/materialize.min.css");
@@ -430,7 +431,6 @@ storiesOf("DataSearch", module)
 		/>
 	)));
 
-
 storiesOf("DataController", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DataControllerReadme), () => (
@@ -454,7 +454,6 @@ storiesOf("DataController", module)
 			componentStyle={object("componentStyle", { "padding-bottom": "10px" })}
 		/>
 	)));
-
 
 storiesOf("DatePicker", module)
 	.addDecorator(withKnobs)
@@ -1862,5 +1861,29 @@ storiesOf("s/RangeSlider", module)
 				end: "$250"
 			})}
 			showHistogram={boolean("showHistogram", true)}
+		/>
+	)));
+
+storiesOf("s/DataController", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault />
+	)))
+	.add("With UI", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault
+			title="DataController"
+			showUI={true}
+			dataLabel={
+				<p>★ A customizable UI widget ★</p>
+			}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault
+			title={text("title", "DataController")}
+			showUI={boolean("showUI", true)}
+			dataLabel={text("dataLabel", "★  A customizable UI widget ★")}
+			defaultSelected={text("defaultSelected", "default")}
+			componentStyle={object("componentStyle", { "padding-bottom": "10px" })}
 		/>
 	)));

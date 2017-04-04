@@ -31,7 +31,8 @@ const map = {
 		"s/ToggleButton",
 		"s/DatePicker",
 		"s/DateRange",
-		"s/RangeSlider"
+		"s/RangeSlider",
+		"s/DataController"
 	],
 	ReactiveMaps: [
 		"m/GeoDistanceSlider",
