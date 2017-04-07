@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@appbaseio/reactivebase@^1.0.0-alpha9":
+"@appbaseio/reactivebase@^1.0.0-alpha11":
   version "1.0.0-alpha9"
   resolved "https://registry.yarnpkg.com/@appbaseio/reactivebase/-/reactivebase-1.0.0-alpha9.tgz#8399def36b2d0d08d8d858c172e390d1b9297ade"
   dependencies:
@@ -29,11 +29,11 @@
     grunt "~0.4.0"
     serve-static "^1.10.2"
 
-"@appbaseio/reactivemaps@^1.0.0-alpha4":
-  version "1.0.0-alpha6"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivemaps/-/reactivemaps-1.0.0-alpha6.tgz#39480fc1d0ccb1c15a5236d37813b20f29494a89"
+"@appbaseio/reactivemaps@^1.0.0-alpha7":
+  version "1.0.0-alpha7"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivemaps/-/reactivemaps-1.0.0-alpha7.tgz#0965b2c4355ece93f7eac517c1ee2299289190ac"
   dependencies:
-    "@appbaseio/reactivebase" "^1.0.0-alpha9"
+    "@appbaseio/reactivebase" "^1.0.0-alpha11"
     "@appbaseio/reactivemaps-manual" "^1.0.0-alpha"
     appbase-js "^0.11.0"
     axios "^0.15.2"
@@ -52,11 +52,11 @@
     react-select "^1.0.0-rc.3"
     react-tooltip "^3.1.8"
 
-"@appbaseio/reactivesearch@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-0.2.2.tgz#7f1bba9d5e13df99cc34d738c2c973a94600d531"
+"@appbaseio/reactivesearch@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-0.3.0.tgz#57c655c7f7a1b0bc997e5a57345e8f7660743769"
   dependencies:
-    "@appbaseio/reactivemaps" "^1.0.0-alpha4"
+    "@appbaseio/reactivemaps" "^1.0.0-alpha7"
     classnames "^2.2.5"
     jquery "^3.1.1"
     lodash "^4.15.0"

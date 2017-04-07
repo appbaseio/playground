@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@appbaseio/reactivemaps-manual": "^1.0.0-alpha",
-    "@appbaseio/reactivesearch": "^0.2.2",
+    "@appbaseio/reactivesearch": "^0.3.0",
     "@kadira/storybook": "^2.21.0",
     "@kadira/storybook-addon-knobs": "^1.7.1",
     "@kadira/storybook-addon-options": "^1.0.2",
