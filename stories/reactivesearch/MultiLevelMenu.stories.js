@@ -64,7 +64,6 @@ export default class MultiLevelMenuDefault extends Component {
 						<MultiLevelMenu
 							componentId="CategorySensor"
 							appbaseField={["brand.raw", "vehicleType.raw", "model.raw"]}
-							title="MultiLevelMenu"
 							data={[
 								{ label: "Volkswagen", value: "volkswagen" },
 								{ label: "BMW", value: "bmw" },

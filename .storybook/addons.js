@@ -24,6 +24,7 @@ const map = {
 		"s/SingleList",
 		"s/MultiList",
 		"s/SingleDropdownList",
+		"s/MultiDropdownList",
 		"s/SingleRange",
 		"s/MultiRange",
 		"s/SingleDropdownRange",
