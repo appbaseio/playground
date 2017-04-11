@@ -24,6 +24,7 @@
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "@appbaseio/reactivemaps": "^1.0.0-alpha9",
     "@appbaseio/reactivemaps-manual": "^1.0.0-alpha",
     "@appbaseio/reactivesearch": "^0.3.0",
     "@kadira/storybook": "^2.21.0",

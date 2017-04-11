@@ -4,7 +4,7 @@ import {
 	SingleRange,
 	ReactiveMap,
 	AppbaseSensorHelper as helper
-} from "@appbaseio/reactivesearch";
+} from "@appbaseio/reactivemaps";
 
 import { Img } from "./Img.js";
 const historyPin = require("./placeholder.svg");
