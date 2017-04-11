@@ -3,7 +3,7 @@ import {
 	ReactiveBase,
 	ReactiveMap,
 	PlacesSearch
-} from "@appbaseio/reactivesearch";
+} from "@appbaseio/reactivemaps";
 
 export default class PlacesSearchDefault extends Component {
 	constructor(props) {
