@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/appbaseio/reactive-playground#readme",
   "dependencies": {
+    "@appbaseio/reactivebase": "^1.0.0-alpha15",
+    "@appbaseio/reactivemaps": "^1.0.0-alpha9",
     "@kadira/storybook-deployer": "^1.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
