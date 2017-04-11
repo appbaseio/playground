@@ -8,11 +8,6 @@ import {
 } from "@appbaseio/reactivesearch";
 
 export default class DateRangeRSDefault extends Component {
-	constructor(props) {
-		super(props);
-		this.onData = this.onData.bind(this);
-	}
-
 	componentDidMount() {
 		helper.ResponsiveStory();
 	}

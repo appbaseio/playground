@@ -7,35 +7,12 @@ import {
 } from "@appbaseio/reactivesearch";
 
 export default class DynamicRangeSliderDefault extends Component {
-	constructor(props) {
-		super(props);
-		this.onData = this.onData.bind(this);
-	}
-
 	componentDidMount() {
 		helper.ResponsiveStory();
 	}
 
-	onData(res) {
-		let result = null;
-		if (res) {
-			let combineData = res.currentData;
-			if (res.mode === "historic") {
-				combineData = res.currentData.concat(res.newData);
-			} else if (res.mode === "streaming") {
-				combineData = helper.combineStreamData(res.currentData, res.newData);
-			}
-			if (combineData) {
-				result = combineData.map((markerData) => {
-					const marker = markerData._source;
-					return this.itemMarkup(marker, markerData);
-				});
-			}
-		}
-		return result;
-	}
-
-	itemMarkup(marker, markerData) {
+	onData(markerData) {
+		const marker = markerData._source;
 		return (
 			<a
 				className="full_row single-record single_record_for_clone"
@@ -62,7 +39,7 @@ export default class DynamicRangeSliderDefault extends Component {
 					</div>
 				</div>
 			</a>
-		);
+		)
 	}
 
 	render() {

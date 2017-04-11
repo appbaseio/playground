@@ -7,12 +7,6 @@ import {
 } from "@appbaseio/reactivesearch";
 
 export default class DataControllerRSDefault extends Component {
-	constructor(props) {
-		super(props);
-		this.onData = this.onData.bind(this);
-		this.customQuery = this.customQuery.bind(this);
-	}
-
 	componentDidMount() {
 		helper.ResponsiveStory();
 	}
