@@ -77,7 +77,14 @@ $(document).ready(() => {
 		$("<option />", option).appendTo(select);
 	});
 
-	setTimeout(() => {
+	let interval = setInterval(() => {
+		if ($(".Pane.vertical.Pane1 > div > div > div > div > ul > li").length) {
+			main();
+		}
+	}, 500);
+
+	function main() {
+		clearInterval(interval);
 		let search = new URLSearchParams(window.location.search);
 		filterBy = search.has("filterBy") ? search.get("filterBy").split(",") : [];
 
@@ -116,8 +123,7 @@ $(document).ready(() => {
 				}
 			}, 1500);
 		});
-	}, 1500);
-
+	}
 });
 
 function filterStories(stories) {
