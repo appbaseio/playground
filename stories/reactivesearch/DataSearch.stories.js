@@ -36,7 +36,7 @@ export default class DataSearchRSDefault extends Component {
 				<div className="row">
 					<div className="col s6 col-xs-6">
 						<DataSearch
-							appbaseField="name"
+							appbaseField={"name", "brand"}
 							componentId="CarSensor"
 							placeholder="Search Cars"
 							{...this.props}

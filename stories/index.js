@@ -484,11 +484,19 @@ storiesOf("m/DataSearch", module)
 			autocomplete={false}
 		/>
 	)))
+	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title="DataSearch"
+			placeholder="Search Venue"
+			weights={[1, 3]}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchMapDefault
 			title={text("title", "DataSearch: Meetups")}
 			placeholder={text("placeholder", "Search Venue")}
 			autocomplete={boolean("autocomplete", true)}
+			weights={array("weights", [1,3])}
 		/>
 	)));
 
@@ -537,6 +545,11 @@ storiesOf("m/RangeSlider", module)
 			}}
 		/>
 	)))
+	.add("Without histogram", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderDefault
+			showHistogram={false}
+		/>
+	)))
 	.add("With Range Labels", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderMapDefault
 			defaultSelected={{
@@ -565,6 +578,7 @@ storiesOf("m/RangeSlider", module)
 				start: "Start",
 				end: "End"
 			})}
+			showHistogram={boolean("showHistogram", true)}
 		/>
 	)));
 
@@ -627,6 +641,7 @@ storiesOf("m/DatePicker", module)
 			title={text("title", "Date Picker")}
 			numberOfMonths={number("numberOfMonths", 1)}
 			allowAllDates={boolean("allowAllDates", true)}
+			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
 		/>
 	)));
 
@@ -666,6 +681,7 @@ storiesOf("m/DateRange", module)
 			title={text("title", "Date Range")}
 			numberOfMonths={number("numberOfMonths", 2)}
 			allowAllDates={boolean("allowAllDates", true)}
+			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
 		/>
 	)));
 
@@ -835,6 +851,12 @@ storiesOf("s/CategorySearch", module)
 			placeholder="Search Car"
 		/>
 	)))
+	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			weights={[1, 3]}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<CategorySearchDefault
 			title={text("title", "CategorySearch")}
@@ -842,6 +864,7 @@ storiesOf("s/CategorySearch", module)
 			categoryField={text("categoryField", "brand.raw")}
 			defaultSelected={text("defaultSelected", "")}
 			placeholder={text("placeholder", "Search Car")}
+			weights={array("weights", [1,3])}
 		/>
 	)));
 
@@ -916,11 +939,19 @@ storiesOf("s/DataSearch", module)
 			autocomplete={false}
 		/>
 	)))
+	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Venue"
+			weights={[1, 3]}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title={text("title", "DataSearch: Meetups")}
 			placeholder={text("placeholder", "Search Venue")}
 			autocomplete={boolean("autocomplete", true)}
+			weights={array("weights", [1,3])}
 		/>
 	)));
 
@@ -1197,6 +1228,7 @@ storiesOf("s/DatePicker", module)
 			title={text("title", "Date Picker")}
 			numberOfMonths={number("numberOfMonths", 1)}
 			allowAllDates={boolean("allowAllDates", true)}
+			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
 		/>
 	)));
 
@@ -1236,6 +1268,7 @@ storiesOf("s/DateRange", module)
 			title={text("title", "Date Range")}
 			numberOfMonths={number("numberOfMonths", 2)}
 			allowAllDates={boolean("allowAllDates", true)}
+			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
 		/>
 	)));
 
