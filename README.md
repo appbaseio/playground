@@ -8,12 +8,6 @@ A storybook playground for ReactiveMaps and ReactiveSearch projects.
 npm run storybook
 ```
 
-# Building
-
-```
-npm run build-storybook
-```
-
 # Deploying
 
 ```

@@ -49,7 +49,7 @@ export default class DataSearchMapDefault extends Component {
 				<div className="row">
 					<div className="col s6 col-xs-6">
 						<DataSearch
-							appbaseField={this.props.mapping.venue}
+							appbaseField={[this.props.mapping.venue, this.props.mapping.topic]}
 							componentId="VenueSensor"
 							placeholder="Search Venue"
 							{...this.props}
@@ -85,6 +85,7 @@ export default class DataSearchMapDefault extends Component {
 DataSearchMapDefault.defaultProps = {
 	mapping: {
 		venue: "venue_name_ngrams",
+		topic: "group.group_topics.topic_name_raw",
 		location: "location"
 	}
 };
