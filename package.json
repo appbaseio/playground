@@ -1,7 +1,7 @@
 {
   "name": "playground",
   "version": "1.0.0",
-  "description": "",
+  "description": "Reactive<x> storybook playground",
   "main": "index.js",
   "scripts": {
     "storybook": "start-storybook -p 9009",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appbaseio/reactive-playground.git"
+    "url": "git+https://github.com/appbaseio/playground.git"
   },
   "author": "metagrover",
   "license": "Apache-2.0",
@@ -19,30 +19,24 @@
   },
   "homepage": "https://github.com/appbaseio/reactive-playground#readme",
   "dependencies": {
-    "@appbaseio/reactivebase": "^1.0.0-alpha17",
-    "@appbaseio/reactivemaps": "^1.0.0-alpha13",
-    "@appbaseio/reactivesearch": "^0.4.1",
-    "@kadira/storybook-deployer": "^1.2.0",
+    "@appbaseio/reactivesearch": "^1.0.0-beta03",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "@appbaseio/reactivemaps": "^1.0.0-alpha9",
-    "@appbaseio/reactivemaps-manual": "^1.0.0-alpha",
-    "@appbaseio/reactivesearch": "^0.3.0",
-    "@kadira/storybook": "^2.21.0",
-    "@kadira/storybook-addon-knobs": "^1.7.1",
-    "@kadira/storybook-addon-options": "^1.0.2",
-    "@kadira/storybook-addons": "^1.6.1",
-    "babel-preset-env": "^1.2.2",
+    "@appbaseio/reactivemaps-manual": "1.0.0-alpha",
+    "@storybook/addon-info": "^3.1.6",
+    "@storybook/addon-knobs": "^3.1.8",
+    "@storybook/addon-options": "^3.1.6",
+    "@storybook/react": "^3.1.6",
+    "@storybook/storybook-deployer": "^2.0.0",
     "css-loader": "^0.27.3",
     "jquery": "^3.2.1",
     "json-loader": "^0.5.4",
     "materialize-css": "^0.98.1",
     "raw-loader": "^0.5.1",
-    "sass-loader": "^6.0.3",
     "shebang-loader": "0.0.1",
-    "storybook-readme": "^2.0.2",
+    "storybook-readme": "^3.0.5",
     "sumoselect": "^3.0.3"
   }
 }

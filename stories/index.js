@@ -1,6 +1,6 @@
 import React from "react";
-import { storiesOf } from "@kadira/storybook";
-import { withKnobs, text, boolean, number, array, select, object } from "@kadira/storybook-addon-knobs";
+import { storiesOf } from "@storybook/react";
+import { withKnobs, text, boolean, number, array, select, object } from "@storybook/addon-knobs";
 import withReadme from "storybook-readme/with-readme";
 
 // import READMEs for each component
@@ -95,7 +95,7 @@ function removeFirstLine(str, number=1) {
 
 // Reactivemaps components
 
-storiesOf("m/GeoDistanceSlider", module)
+storiesOf("map/GeoDistanceSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
 		<GeoDistanceSliderDefault
@@ -166,7 +166,7 @@ storiesOf("m/GeoDistanceSlider", module)
 		/>
 	)));
 
-storiesOf("m/GeoDistanceDropdown", module)
+storiesOf("map/GeoDistanceDropdown", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceDropdownDefault
@@ -230,13 +230,13 @@ storiesOf("m/GeoDistanceDropdown", module)
 		/>
 	)));
 
-storiesOf("m/PlacesSearch", module)
+storiesOf("map/PlacesSearch", module)
 	.addDecorator(withKnobs)
 	.add("Basic - Direction Demo", withReadme(removeFirstLine(PlacesSearchReadme), () => (
 		<PlacesSearchDefault />
 	)));
 
-storiesOf("m/ReactiveMap", module)
+storiesOf("map/ReactiveMap", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ReactiveMapReadme, 3), () => (
 		<ReactiveMapDefault />
@@ -284,7 +284,7 @@ storiesOf("m/ReactiveMap", module)
 		/>
 	)));
 
-storiesOf("m/SingleList", module)
+storiesOf("map/SingleList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
 		<SingleListMapDefault showSearch placeholder="Search City" />
@@ -314,7 +314,7 @@ storiesOf("m/SingleList", module)
 		/>
 	)));
 
-storiesOf("m/MultiList", module)
+storiesOf("map/MultiList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListMapDefault showSearch placeholder="Search City" />
@@ -344,7 +344,7 @@ storiesOf("m/MultiList", module)
 		/>
 	)));
 
-storiesOf("m/SingleDropdownList", module)
+storiesOf("map/SingleDropdownList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListMapDefault />
@@ -372,7 +372,7 @@ storiesOf("m/SingleDropdownList", module)
 		/>
 	)));
 
-storiesOf("m/MultiDropdownList", module)
+storiesOf("map/MultiDropdownList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 		<MultiDropdownListMapDefault />
@@ -408,7 +408,7 @@ storiesOf("m/MultiDropdownList", module)
 		/>
 	)));
 
-storiesOf("m/SingleRange", module)
+storiesOf("map/SingleRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<SingleRangeMapDefault />
@@ -423,7 +423,7 @@ storiesOf("m/SingleRange", module)
 		/>
 	)));
 
-storiesOf("m/MultiRange", module)
+storiesOf("map/MultiRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiRangeReadme), () => (
 		<MultiRangeMapDefault />
@@ -439,7 +439,7 @@ storiesOf("m/MultiRange", module)
 		/>
 	)));
 
-storiesOf("m/SingleDropdownRange", module)
+storiesOf("map/SingleDropdownRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeMapDefault />
@@ -454,7 +454,7 @@ storiesOf("m/SingleDropdownRange", module)
 		/>
 	)));
 
-storiesOf("m/MultiDropdownRange", module)
+storiesOf("map/MultiDropdownRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeMapDefault />
@@ -469,7 +469,7 @@ storiesOf("m/MultiDropdownRange", module)
 		/>
 	)));
 
-storiesOf("m/DataSearch", module)
+storiesOf("map/DataSearch", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchMapDefault
@@ -492,7 +492,7 @@ storiesOf("m/DataSearch", module)
 		/>
 	)));
 
-storiesOf("m/TextField", module)
+storiesOf("map/TextField", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(TextFieldReadme), () => (
 		<TextFieldMapDefault />
@@ -508,7 +508,7 @@ storiesOf("m/TextField", module)
 		/>
 	)));
 
-storiesOf("m/ToggleButton", module)
+storiesOf("map/ToggleButton", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleButtonMapDefault />
@@ -524,7 +524,7 @@ storiesOf("m/ToggleButton", module)
 		/>
 	)));
 
-storiesOf("m/RangeSlider", module)
+storiesOf("map/RangeSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderMapDefault />
@@ -568,7 +568,7 @@ storiesOf("m/RangeSlider", module)
 		/>
 	)));
 
-storiesOf("m/NumberBox", module)
+storiesOf("map/NumberBox", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(NumberBoxReadme), () => (
 		<NumberBoxMapDefault
@@ -594,7 +594,7 @@ storiesOf("m/NumberBox", module)
 	)));
 
 
-storiesOf("m/DatePicker", module)
+storiesOf("map/DatePicker", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerMapDefault />
@@ -630,7 +630,7 @@ storiesOf("m/DatePicker", module)
 		/>
 	)));
 
-storiesOf("m/DateRange", module)
+storiesOf("map/DateRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeMapDefault />
@@ -669,7 +669,7 @@ storiesOf("m/DateRange", module)
 		/>
 	)));
 
-storiesOf("m/DataController", module)
+storiesOf("map/DataController", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DataControllerReadme), () => (
 		<DataControllerMapDefault />
@@ -695,7 +695,7 @@ storiesOf("m/DataController", module)
 
 // Reactivesearch components
 
-storiesOf("s/NestedList", module)
+storiesOf("search/NestedList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
@@ -723,7 +723,7 @@ storiesOf("s/NestedList", module)
 		/>
 	)));
 
-storiesOf("s/ToggleList", module)
+storiesOf("search/ToggleList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault />
@@ -746,7 +746,7 @@ storiesOf("s/ToggleList", module)
 		/>
 	)));
 
-storiesOf("s/DynamicRangeSlider", module)
+storiesOf("search/DynamicRangeSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<DynamicRangeSliderDefault />
@@ -775,7 +775,7 @@ storiesOf("s/DynamicRangeSlider", module)
 		/>
 	)));
 
-storiesOf("s/TagCloud", module)
+storiesOf("search/TagCloud", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault />
@@ -806,7 +806,7 @@ storiesOf("s/TagCloud", module)
 		/>
 	)));
 
-storiesOf("s/RatingsFilter", module)
+storiesOf("search/RatingsFilter", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<RatingsFilterDefault />
@@ -827,7 +827,7 @@ storiesOf("s/RatingsFilter", module)
 		/>
 	)));
 
-storiesOf("s/CategorySearch", module)
+storiesOf("search/CategorySearch", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<CategorySearchDefault
@@ -845,7 +845,7 @@ storiesOf("s/CategorySearch", module)
 		/>
 	)));
 
-storiesOf("s/MultiLevelMenu", module)
+storiesOf("search/MultiLevelMenu", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
 		<MultiLevelMenuDefault />
@@ -877,7 +877,7 @@ storiesOf("s/MultiLevelMenu", module)
 		/>
 	)));
 
-storiesOf("s/ResultCard", module)
+storiesOf("search/ResultCard", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
 		<ResultCardDefault />
@@ -886,7 +886,7 @@ storiesOf("s/ResultCard", module)
 		<ResultCardDefault  showPagination />
 	)));
 
-storiesOf("s/ResultList", module)
+storiesOf("search/ResultList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
 		<ResultListDefault />
@@ -895,13 +895,13 @@ storiesOf("s/ResultList", module)
 		<ResultCardDefault showPagination />
 	)));
 
-storiesOf("s/ViewSwitcher", module)
+storiesOf("search/ViewSwitcher", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
 		<ViewSwitcherDefault />
 	)));
 
-storiesOf("s/DataSearch", module)
+storiesOf("search/DataSearch", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
@@ -924,7 +924,7 @@ storiesOf("s/DataSearch", module)
 		/>
 	)));
 
-storiesOf("s/TextField", module)
+storiesOf("search/TextField", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(TextFieldReadme), () => (
 		<TextFieldRSDefault />
@@ -940,7 +940,7 @@ storiesOf("s/TextField", module)
 		/>
 	)));
 
-storiesOf("s/NumberBox", module)
+storiesOf("search/NumberBox", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(NumberBoxReadme), () => (
 		<NumberBoxRSDefault
@@ -964,7 +964,7 @@ storiesOf("s/NumberBox", module)
 		/>
 	)));
 
-storiesOf("s/SingleList", module)
+storiesOf("search/SingleList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
 		<SingleListRSDefault showSearch placeholder="Search City" />
@@ -994,7 +994,7 @@ storiesOf("s/SingleList", module)
 		/>
 	)));
 
-storiesOf("s/MultiList", module)
+storiesOf("search/MultiList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListRSDefault showSearch placeholder="Search City" />
@@ -1024,7 +1024,7 @@ storiesOf("s/MultiList", module)
 		/>
 	)));
 
-storiesOf("s/SingleDropdownList", module)
+storiesOf("search/SingleDropdownList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListRSDefault />
@@ -1052,7 +1052,7 @@ storiesOf("s/SingleDropdownList", module)
 		/>
 	)));
 
-storiesOf("s/MultiDropdownList", module)
+storiesOf("search/MultiDropdownList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 		<MultiDropdownListRSDefault />
@@ -1088,7 +1088,7 @@ storiesOf("s/MultiDropdownList", module)
 		/>
 	)));
 
-storiesOf("s/SingleRange", module)
+storiesOf("search/SingleRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<SingleRangeRSDefault />
@@ -1103,7 +1103,7 @@ storiesOf("s/SingleRange", module)
 		/>
 	)));
 
-storiesOf("s/MultiRange", module)
+storiesOf("search/MultiRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiRangeReadme), () => (
 		<MultiRangeRSDefault />
@@ -1118,7 +1118,7 @@ storiesOf("s/MultiRange", module)
 		/>
 	)));
 
-storiesOf("s/SingleDropdownRange", module)
+storiesOf("search/SingleDropdownRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeRSDefault />
@@ -1133,7 +1133,7 @@ storiesOf("s/SingleDropdownRange", module)
 		/>
 	)));
 
-storiesOf("s/MultiDropdownRange", module)
+storiesOf("search/MultiDropdownRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeRSDefault />
@@ -1148,7 +1148,7 @@ storiesOf("s/MultiDropdownRange", module)
 		/>
 	)));
 
-storiesOf("s/ToggleButton", module)
+storiesOf("search/ToggleButton", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleButtonRSDefault />
@@ -1164,7 +1164,7 @@ storiesOf("s/ToggleButton", module)
 		/>
 	)));
 
-storiesOf("s/DatePicker", module)
+storiesOf("search/DatePicker", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerRSDefault />
@@ -1200,7 +1200,7 @@ storiesOf("s/DatePicker", module)
 		/>
 	)));
 
-storiesOf("s/DateRange", module)
+storiesOf("search/DateRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeRSDefault />
@@ -1239,7 +1239,7 @@ storiesOf("s/DateRange", module)
 		/>
 	)));
 
-storiesOf("s/RangeSlider", module)
+storiesOf("search/RangeSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderRSDefault />
@@ -1289,7 +1289,7 @@ storiesOf("s/RangeSlider", module)
 		/>
 	)));
 
-storiesOf("s/DataController", module)
+storiesOf("search/DataController", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DataControllerReadme), () => (
 		<DataControllerRSDefault />

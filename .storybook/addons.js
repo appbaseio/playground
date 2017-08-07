@@ -1,6 +1,7 @@
-import "@kadira/storybook-addon-knobs/register";
 import "storybook-readme/register";
-import "@kadira/storybook-addon-options/register";
+import "@storybook/addon-knobs/register";
+import "@storybook/addon-options/register";
+
 import "./styles.css";
 
 const $ = require("jquery");
@@ -8,54 +9,54 @@ import SumoSelect from "sumoselect";
 
 const map = {
 	ReactiveSearch: [
-		"s/NestedList",
-		"s/ToggleList",
-		"s/DynamicRangeSlider",
-		"s/TagCloud",
-		"s/RatingsFilter",
-		"s/CategorySearch",
-		"s/MultiLevelMenu",
-		"s/ResultList",
-		"s/ResultCard",
-		"s/ViewSwitcher",
-		"s/DataSearch",
-		"s/TextField",
-		"s/NumberBox",
-		"s/SingleList",
-		"s/MultiList",
-		"s/SingleDropdownList",
-		"s/MultiDropdownList",
-		"s/SingleRange",
-		"s/MultiRange",
-		"s/SingleDropdownRange",
-		"s/MultiDropdownRange",
-		"s/ToggleButton",
-		"s/DatePicker",
-		"s/DateRange",
-		"s/RangeSlider",
-		"s/DataController"
+		"search/NestedList",
+		"search/ToggleList",
+		"search/DynamicRangeSlider",
+		"search/TagCloud",
+		"search/RatingsFilter",
+		"search/CategorySearch",
+		"search/MultiLevelMenu",
+		"search/ResultList",
+		"search/ResultCard",
+		"search/ViewSwitcher",
+		"search/DataSearch",
+		"search/TextField",
+		"search/NumberBox",
+		"search/SingleList",
+		"search/MultiList",
+		"search/SingleDropdownList",
+		"search/MultiDropdownList",
+		"search/SingleRange",
+		"search/MultiRange",
+		"search/SingleDropdownRange",
+		"search/MultiDropdownRange",
+		"search/ToggleButton",
+		"search/DatePicker",
+		"search/DateRange",
+		"search/RangeSlider",
+		"search/DataController"
 	],
 	ReactiveMaps: [
-		"m/GeoDistanceSlider",
-		"m/GeoDistanceDropdown",
-		"m/PlacesSearch",
-		"m/ReactiveMap",
-		"m/SingleList",
-		"m/MultiList",
-		"m/SingleDropdownList",
-		"m/MultiDropdownList",
-		"m/SingleRange",
-		"m/MultiRange",
-		"m/SingleDropdownRange",
-		"m/MultiDropdownRange",
-		"m/DataSearch",
-		"m/TextField",
-		"m/ToggleButton",
-		"m/RangeSlider",
-		"m/NumberBox",
-		"m/DatePicker",
-		"m/DateRange",
-		"m/DataController"
+		"map/GeoDistanceSlider",
+		"map/GeoDistanceDropdown",
+		"map/PlacesSearch",
+		"map/ReactiveMap",
+		"map/SingleList",
+		"map/MultiList",
+		"map/SingleDropdownList",
+		"map/MultiDropdownList",
+		"map/SingleRange",
+		"map/MultiRange",
+		"map/SingleDropdownRange",
+		"map/MultiDropdownRange",
+		"map/DataSearch",
+		"map/TextField",
+		"map/ToggleButton",
+		"map/RangeSlider",
+		"map/NumberBox",
+		"map/DatePicker",
+		"map/DateRange",
+		"map/DataController"
 	]
 }
 
