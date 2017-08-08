@@ -779,6 +779,12 @@ storiesOf("search/DynamicRangeSlider", module)
 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<DynamicRangeSliderDefault />
 	)))
+	.add("With Title", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<DynamicRangeSliderDefault title={text("title", "Guests")} />
+	)))
+	.add("With custom stepValue", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<DynamicRangeSliderDefault stepValue={number("stepValue", 1)} />
+	)))
 	.add("Without histogram", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			showHistogram={boolean("showHistogram", false)}
