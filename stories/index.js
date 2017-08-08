@@ -727,7 +727,13 @@ storiesOf("search/NestedList", module)
 		<NestedListDefault
 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
 		/>
-	))).add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
+	)))
+	.add("Custom filter", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedListDefault
+			filterLabel="Cars"
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
 			title={text("title", "NestedList: Car Filter")}
 			size={number("size", 100)}
