@@ -750,6 +750,12 @@ storiesOf("search/ToggleList", module)
 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault />
 	)))
+	.add("With Title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleListDefault title={text("title", "Choose category")} />
+	)))
+	.add("With Custom filter label", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleListDefault filterLabel="Meetup Filter" />
+	)))
 	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault
 			defaultSelected={array("defaultSelected", ["Social"])}
@@ -760,9 +766,9 @@ storiesOf("search/ToggleList", module)
 			title={text("title", "ToggleList: Meetup Categories")}
 			multiSelect={boolean("multiSelect", true)}
 			data={object("data", [
-					{ label: "Social", value: "Social" },
-					{ label: "Travel", value: "Travel" },
-					{ label: "Outdoors", value: "Outdoors" }
+				{ label: "Social", value: "Social" },
+				{ label: "Travel", value: "Travel" },
+				{ label: "Outdoors", value: "Outdoors" }
 			])}
 			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
 		/>
