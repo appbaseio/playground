@@ -854,6 +854,12 @@ storiesOf("search/RatingsFilter", module)
 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<RatingsFilterDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<RatingsFilterDefault title={text("title", "Ratings")} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<RatingsFilterDefault filterLabel="Ratings Label" />
+	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<RatingsFilterDefault
 			defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
