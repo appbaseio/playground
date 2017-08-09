@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	TextField,
 	ResultCard,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivesearch";
 
@@ -35,6 +36,7 @@ export default class TextFieldRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="CarSensor" />
 						<TextField
 							appbaseField="name"
 							componentId="CarSensor"

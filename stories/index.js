@@ -1135,10 +1135,16 @@ storiesOf("search/DataSearch", module)
 storiesOf("search/TextField", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(TextFieldReadme), () => (
-		<TextFieldRSDefault />
+		<TextFieldRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldRSDefault title={text("title", "Cars")} showFilter={false} />
 	)))
 	.add("DefaultSelected", withReadme(removeFirstLine(TextFieldReadme), () => (
-		<TextFieldRSDefault defaultSelected="nissan" />
+		<TextFieldRSDefault defaultSelected={text("defaultSelected", "Nissan")} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldRSDefault filterLabel="Cars filter" />
 	)))
 	.add("Playground", withReadme(removeFirstLine(TextFieldReadme), () => (
 		<TextFieldRSDefault
