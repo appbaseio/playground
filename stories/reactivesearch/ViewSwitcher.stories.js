@@ -59,7 +59,7 @@ export default class ViewSwitcherDefault extends Component {
 							appbaseField={this.props.mapping.rating}
 							title="RatingsFilter"
 							data={
-							[{ start: 4, end: 5, label: "4 stars and up" },
+								[{ start: 4, end: 5, label: "4 stars and up" },
 								{ start: 3, end: 5, label: "3 stars and up" },
 								{ start: 2, end: 5, label: "2 stars and up" },
 								{ start: 1, end: 5, label: "> 1 stars" }]
@@ -69,6 +69,7 @@ export default class ViewSwitcherDefault extends Component {
 					</div>
 
 					<div className="col s6 col-xs-6">
+						<br />
 						<ViewSwitcher
 							data={[
 								{
