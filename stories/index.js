@@ -890,12 +890,66 @@ storiesOf("search/CategorySearch", module)
 		<CategorySearchDefault
 			title="CategorySearch"
 			placeholder="Search Car"
+			showFilter={false}
+		/>
+	)))
+	.add("With title", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title={text("title", "Cars")}
+			placeholder="Search Car"
+			showFilter={false}
+		/>
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			filterLabel="Cars Filter"
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			defaultSelected={text("defaultSelected", "")}
+			showFilter={false}
+		/>
+	)))
+	.add("With initialSuggestions", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			initialSuggestions={[{label: "Opel", value: "Opel"}, {label: "VW", value: "VW"}]}
+			showFilter={false}
 		/>
 	)))
 	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
-			weights={[1, 3]}
+			weights={array("weights", [1,3])}
+			showFilter={false}
+		/>
+	)))
+	.add("With fuzziness", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			showFilter={false}
+			fuzziness={number("fuzziness", 1)}
+		/>
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			showFilter={false}
+			queryFormat={text("queryFormat", "and")}
+		/>
+	)))
+	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			showFilter={false}
+			autoSuggest={boolean("autoSuggest", false)}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
@@ -905,7 +959,10 @@ storiesOf("search/CategorySearch", module)
 			categoryField={text("categoryField", "brand.raw")}
 			defaultSelected={text("defaultSelected", "")}
 			placeholder={text("placeholder", "Search Car")}
+			queryFormat={text("queryFormat", "or")}
 			weights={array("weights", [1,3])}
+			fuzziness={number("fuzziness", 1)}
+			autoSuggest={boolean("autoSuggest", true)}
 		/>
 	)));
 
