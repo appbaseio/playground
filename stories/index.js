@@ -1320,17 +1320,34 @@ storiesOf("search/MultiList", module)
 storiesOf("search/SingleDropdownList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-		<SingleDropdownListRSDefault />
+		<SingleDropdownListRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} title={text("title", "City list")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} size={number("size", 10)} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault filterLabel="Cities filter" />
+	)))
+	.add("With custom sort", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} />
+	)))
+	.add("Without count", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} showCount={boolean("showCount", false)} />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListRSDefault
-			selectAllLabel="All Cities"
+			selectAllLabel={text("selectAllLabel", "All Cities")}
+			showFilter={false}
 		/>
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListRSDefault
 			selectAllLabel="All Cities"
-			defaultSelected="London"
+			defaultSelected={text("defaultSelected", "London")}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleDropdownListReadme), () => (

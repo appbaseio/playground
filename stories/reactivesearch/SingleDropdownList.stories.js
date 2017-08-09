@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	SingleDropdownList,
 	ResultList,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivesearch";
 
@@ -39,6 +40,7 @@ export default class SingleDropdownListRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="CitySensor" />
 						<SingleDropdownList
 							componentId="CitySensor"
 							appbaseField="group.group_city.raw"
