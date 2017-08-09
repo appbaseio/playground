@@ -716,16 +716,19 @@ storiesOf("search/NestedList", module)
 	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
 			title=""
+			showFilter={false}
 		/>
 	)))
 	.add("With Title", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
 			title={text("title", "Car Category")}
+			showFilter={false}
 		/>
 	)))
 	.add("Default selection", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
+			showFilter={false}
 		/>
 	)))
 	.add("Custom filter", withReadme(removeFirstLine(NestedListReadme), () => (
@@ -748,10 +751,10 @@ storiesOf("search/NestedList", module)
 storiesOf("search/ToggleList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault />
+		<ToggleListDefault showFilter={false} />
 	)))
 	.add("With Title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault title={text("title", "Choose category")} />
+		<ToggleListDefault title={text("title", "Choose category")} showFilter={false} />
 	)))
 	.add("With Custom filter label", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault filterLabel="Meetup Filter" />
@@ -759,6 +762,7 @@ storiesOf("search/ToggleList", module)
 	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault
 			defaultSelected={array("defaultSelected", ["Social"])}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
@@ -812,13 +816,13 @@ storiesOf("search/DynamicRangeSlider", module)
 storiesOf("search/TagCloud", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
-		<TagCloudDefault />
+		<TagCloudDefault showFilter={false} />
 	)))
 	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
-		<TagCloudDefault title={text("title", "Cities")} />
+		<TagCloudDefault title={text("title", "Cities")} showFilter={false} />
 	)))
 	.add("Without showCount", withReadme(removeFirstLine(SingleListReadme), () => (
-		<TagCloudDefault showCount={boolean("showCount", false)} />
+		<TagCloudDefault showCount={boolean("showCount", false)} showFilter={false} />
 	)))
 	.add("With custom filterLabel", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault filterLabel="Cities filter" />
@@ -826,17 +830,20 @@ storiesOf("search/TagCloud", module)
 	.add("With multiSelect", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault
 			multiSelect={boolean("multiSelect", true)}
+			showFilter={false}
 		/>
 	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault
 			defaultSelected={text("defaultSelected", "Auckland")}
+			showFilter={false}
 		/>
 	)))
 	.add("With multiSelect and defaultSelected", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault
 			multiSelect={boolean("multiSelect", true)}
 			defaultSelected={array("defaultSelected", ["Auckland", "Amsterdam"])}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
@@ -852,10 +859,10 @@ storiesOf("search/TagCloud", module)
 storiesOf("search/RatingsFilter", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<RatingsFilterDefault />
+		<RatingsFilterDefault showFilter={false} />
 	)))
 	.add("With title", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<RatingsFilterDefault title={text("title", "Ratings")} />
+		<RatingsFilterDefault title={text("title", "Ratings")} showFilter={false} />
 	)))
 	.add("With filterLabel", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<RatingsFilterDefault filterLabel="Ratings Label" />
@@ -863,6 +870,7 @@ storiesOf("search/RatingsFilter", module)
 	.add("With defaultSelected", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<RatingsFilterDefault
 			defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
