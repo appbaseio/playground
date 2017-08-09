@@ -1030,8 +1030,26 @@ storiesOf("search/ResultList", module)
 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
 		<ResultListDefault />
 	)))
-	.add("With Pagination", withReadme(removeFirstLine(ReactiveListReadme), () => (
-		<ResultCardDefault showPagination />
+	.add("With title", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultListDefault title={text("title", "Cars list")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultListDefault size={text("size", 5)} />
+	)))
+	.add("Hide resultStats", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultListDefault showResultStats={boolean("showResultStats", false)} />
+	)))
+	.add("With pagination", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultListDefault pagination={boolean("pagination", true)} paginationAt={text("paginationAt", "bottom")} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultListDefault
+			title={text("title", "Cars result")}
+			size={number("size", 5)}
+			showResultStats={boolean("showResultStats", true)}
+			pagination={boolean("pagination", true)}
+			paginationAt={text("paginationAt", "bottom")}
+		/>
 	)));
 
 storiesOf("search/ViewSwitcher", module)
