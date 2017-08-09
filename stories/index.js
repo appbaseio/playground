@@ -1063,29 +1063,72 @@ storiesOf("search/DataSearch", module)
 	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title="DataSearch"
-			placeholder="Search Venue"
+			placeholder="Search Cars"
+			showFilter={false}
 		/>
 	)))
-	.add("Without Autocomplete", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With title", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title={text("title", "Cars Search")}
+			placeholder="Search Cars"
+			showFilter={false}
+		/>
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			filterLabel="Cars filter"
+		/>
+	)))
+	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title="DataSearch"
 			placeholder="Search Venue"
-			autocomplete={false}
+			autoSuggest={boolean("autoSuggest", false)}
+			showFilter={false}
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			defaultSelected={text("defaultSelected", "Audi")}
+		/>
+	)))
+	.add("With initialSuggestions", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			initialSuggestions={[{label: "Audi", value: "Audi"}, {label: "Hyundai", value: "Hyundai"}]}
 		/>
 	)))
 	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title="DataSearch"
-			placeholder="Search Venue"
+			placeholder="Search Cars"
 			weights={[1, 3]}
+			showFilter={false}
+		/>
+	)))
+	.add("With fuzziness", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			fuzziness={number("fuzziness", 1)}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
-			title={text("title", "DataSearch: Meetups")}
-			placeholder={text("placeholder", "Search Venue")}
-			autocomplete={boolean("autocomplete", true)}
+			title={text("title", "DataSearch: Cars")}
+			placeholder={text("placeholder", "Search Cars")}
+			autoSuggest={boolean("autoSuggest", true)}
+			defaultSelected={text("defaultSelected", "")}
 			weights={array("weights", [1,3])}
+			fuzziness={number("fuzziness", 1)}
 		/>
 	)));
 

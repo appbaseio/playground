@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	DataSearch,
 	ResultCard,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivesearch";
 
@@ -35,6 +36,7 @@ export default class DataSearchRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="CarSensor" />
 						<DataSearch
 							appbaseField={"name", "brand"}
 							componentId="CarSensor"
