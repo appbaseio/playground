@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, TagCloud, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, TagCloud, ReactiveList, SelectedFilters, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
 export default class TagCloudDefault extends Component {
 	constructor(props) {
@@ -48,6 +48,7 @@ export default class TagCloudDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="CitySensor" />
 						<TagCloud
 							componentId="CitySensor"
 							appbaseField={this.props.mapping.city}

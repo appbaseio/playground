@@ -814,6 +814,15 @@ storiesOf("search/TagCloud", module)
 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
+		<TagCloudDefault title={text("title", "Cities")} />
+	)))
+	.add("Without showCount", withReadme(removeFirstLine(SingleListReadme), () => (
+		<TagCloudDefault showCount={boolean("showCount", false)} />
+	)))
+	.add("With custom filterLabel", withReadme(removeFirstLine(SingleListReadme), () => (
+		<TagCloudDefault filterLabel="Cities filter" />
+	)))
 	.add("With multiSelect", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault
 			multiSelect={boolean("multiSelect", true)}
