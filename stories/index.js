@@ -1224,19 +1224,34 @@ storiesOf("search/NumberBox", module)
 storiesOf("search/SingleList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListRSDefault showSearch placeholder="Search City" />
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} title={text("title", "Cities")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
+	)))
+	.add("Without count", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
 	)))
 	.add("Without Search", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListRSDefault showSearch={false} placeholder="Search City" />
+		<SingleListRSDefault showSearch={boolean("showSearch", false)} placeholder="Search City" showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" filterLabel="City filter" />
+	)))
+	.add("Wihout radio buttons", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} showRadio={boolean("showRadio", false)} />
 	)))
 	.add("Default Selected", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListRSDefault showSearch defaultSelected="San Francisco" placeholder="Search City" />
+		<SingleListRSDefault showSearch defaultSelected={text("defaultSelected", "London")} placeholder="Search City" showFilter={false} />
 	)))
 	.add("Custom Sort", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListRSDefault title="SingleList: Ascending Sort" showSearch defaultSelected="London" sortBy="asc" placeholder="Search City" />
+		<SingleListRSDefault title="SingleList: Custom Sort" showSearch defaultSelected="London" sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} placeholder="Search City" showFilter={false} />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListRSDefault showSearch selectAllLabel="All Cities" placeholder="Search City" />
+		<SingleListRSDefault showSearch selectAllLabel={text("selectAllLabel", "All Cities")} placeholder="Search City" showFilter={false} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
 		<SingleListRSDefault
@@ -1248,6 +1263,7 @@ storiesOf("search/SingleList", module)
 			showSearch={boolean("showSearch", true)}
 			placeholder={text("placeholder", "Search City")}
 			selectAllLabel={text("selectAllLabel", "All cities")}
+			showRadio={boolean("showRadio", true)}
 		/>
 	)));
 
