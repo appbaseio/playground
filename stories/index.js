@@ -941,7 +941,7 @@ storiesOf("search/CategorySearch", module)
 		<CategorySearchDefault
 			title="CategorySearch"
 			showFilter={false}
-			queryFormat={text("queryFormat", "and")}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
 		/>
 	)))
 	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
@@ -959,7 +959,7 @@ storiesOf("search/CategorySearch", module)
 			categoryField={text("categoryField", "brand.raw")}
 			defaultSelected={text("defaultSelected", "")}
 			placeholder={text("placeholder", "Search Car")}
-			queryFormat={text("queryFormat", "or")}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 			weights={array("weights", [1,3])}
 			fuzziness={number("fuzziness", 1)}
 			autoSuggest={boolean("autoSuggest", true)}
