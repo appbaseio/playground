@@ -1365,17 +1365,34 @@ storiesOf("search/SingleDropdownList", module)
 storiesOf("search/MultiDropdownList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
-		<MultiDropdownListRSDefault />
+		<MultiDropdownListRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListRSDefault showFilter={false} title={text("title", "City list")} />
 	)))
 	.add("With Placeholder", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 		<MultiDropdownListRSDefault
-			placeholder="Select Cities"
+			placeholder={text("placeholder", "Select Cities")}
+			showFilter={false}
 		/>
+	)))
+	.add("With size", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListRSDefault showFilter={false} size={number("size", 10)} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListRSDefault filterLabel="Cities filter" />
+	)))
+	.add("Without count", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListRSDefault showFilter={false} showCount={boolean("showCount", false)} />
+	)))
+	.add("With custom sort", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListRSDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 		<MultiDropdownListRSDefault
 			placeholder="Select Cities"
-			selectAllLabel="All Cities"
+			selectAllLabel={text("selectAllLabel", "All Cities")}
+			showFilter={false}
 		/>
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
@@ -1383,7 +1400,8 @@ storiesOf("search/MultiDropdownList", module)
 			placeholder="Select Cities"
 			size={100}
 			sortBy="count"
-			defaultSelected={["London", "Melbourne"]}
+			defaultSelected={array("defaultSelected", ["London", "Melbourne"])}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
