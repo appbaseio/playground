@@ -1652,29 +1652,31 @@ storiesOf("search/RangeSlider", module)
 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderRSDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderRSDefault title={text("title", "RangeSlider: Prices")} />
+	)))
 	.add("With Default Selected", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderRSDefault
-			defaultSelected={{
-				start: 20,
-				end: 70
-			}}
+			defaultSelected={object("defaultSelected", {
+				start: 10,
+				end: 50
+			})}
 		/>
 	)))
 	.add("Without histogram", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderRSDefault
-			showHistogram={false}
+			showHistogram={boolean("showHistogram", false)}
 		/>
+	)))
+	.add("With custom histogram interval", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderRSDefault interval={number("interval", 50)} />
 	)))
 	.add("With Range Labels", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderRSDefault
-			defaultSelected={{
-				start: 10,
-				end: 50
-			}}
-			rangeLabels={{
+			rangeLabels={object("rangeLabels", {
 				start: "$10",
 				end: "$250"
-			}}
+			})}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(RangeSliderReadme), () => (
@@ -1685,6 +1687,7 @@ storiesOf("search/RangeSlider", module)
 				end: 250
 			})}
 			stepValue={number("stepValue", 10)}
+			interval={number("interval", 20)}
 			defaultSelected={object("defaultSelected", {
 				start: 10,
 				end: 50
