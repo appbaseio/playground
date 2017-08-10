@@ -1703,7 +1703,7 @@ storiesOf("search/RangeSlider", module)
 storiesOf("search/DataController", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DataControllerReadme), () => (
-		<DataControllerRSDefault />
+		<DataControllerRSDefault showFilter={false} />
 	)))
 	.add("With UI", withReadme(removeFirstLine(DataControllerReadme), () => (
 		<DataControllerRSDefault
@@ -1712,7 +1712,11 @@ storiesOf("search/DataController", module)
 			dataLabel={
 				<p>★ A customizable UI widget ★</p>
 			}
+			showFilter={false}
 		/>
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault filterLabel="Data filter" />
 	)))
 	.add("Playground", withReadme(removeFirstLine(DataControllerReadme), () => (
 		<DataControllerRSDefault
