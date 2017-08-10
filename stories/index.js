@@ -1419,15 +1419,25 @@ storiesOf("search/MultiDropdownList", module)
 storiesOf("search/SingleRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<SingleRangeRSDefault />
+		<SingleRangeRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault showFilter={false} title={text("title", "SingleRange: Price Filter")} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<SingleRangeRSDefault defaultSelected="Cheap" />
+		<SingleRangeRSDefault defaultSelected={text("defaultSelected", "Cheap")} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault filterLabel="Price filter" />
+	)))
+	.add("Without radio buttons", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault showFilter={false} showRadio={boolean("showRadio", false)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<SingleRangeRSDefault
 			title={text("title", "SingleRange: Price Filter")}
 			defaultSelected={text("defaultSelected", "Cheap")}
+			showRadio={boolean("showRadio", true)}
 		/>
 	)));
 
