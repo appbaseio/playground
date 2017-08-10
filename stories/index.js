@@ -1444,15 +1444,25 @@ storiesOf("search/SingleRange", module)
 storiesOf("search/MultiRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiRangeReadme), () => (
-		<MultiRangeRSDefault />
+		<MultiRangeRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault title={text("title", "MultiRange: Price Filter")} showFilter={false} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(MultiRangeReadme), () => (
-		<MultiRangeRSDefault defaultSelected={["Cheap", "Moderate"]} />
+		<MultiRangeRSDefault defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault filterLabel="Price range filter" />
+	)))
+	.add("Without checkbox", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiRangeReadme), () => (
 		<MultiRangeRSDefault
 			title={text("title", "MultiRange: Price Filter")}
 			defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
+			showCheckbox={boolean("showCheckbox", true)}
 		/>
 	)));
 
