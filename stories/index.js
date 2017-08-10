@@ -1596,15 +1596,23 @@ storiesOf("search/DatePicker", module)
 storiesOf("search/DateRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DateRangeReadme), () => (
-		<DateRangeRSDefault />
+		<DateRangeRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault showFilter={false} title={text("title", "Date Range")} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault filterLabel="Date range" />
 	)))
 	.add("Show more than 1 month", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeRSDefault
-			numberOfMonths={3}
+			numberOfMonths={number("numberOfMonths", 3)}
+			showFilter={false}
 		/>
 	)))
 	.add("Default date", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeRSDefault
+			showFilter={false}
 			defaultSelected={{
 				start: moment().subtract(7, "days"),
 				end: moment()
@@ -1613,15 +1621,17 @@ storiesOf("search/DateRange", module)
 	)))
 	.add("Enable days from today only", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeRSDefault
-			allowAllDates={false}
+			allowAllDates={boolean("allowAllDates", false)}
+			showFilter={false}
 		/>
 	)))
 	.add("Using extra prop object", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeRSDefault
-			extra={{
+			showFilter={false}
+			extra={object("extra", {
 				withFullScreenPortal: true,
 				showClearDate: true
-			}}
+			})}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DateRangeReadme), () => (
@@ -1629,6 +1639,10 @@ storiesOf("search/DateRange", module)
 			title={text("title", "Date Range")}
 			numberOfMonths={number("numberOfMonths", 2)}
 			allowAllDates={boolean("allowAllDates", true)}
+			extra={object("extra", {
+				withFullScreenPortal: true,
+				showClearDate: true
+			})}
 			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
 		/>
 	)));
