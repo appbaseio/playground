@@ -1471,12 +1471,19 @@ storiesOf("search/SingleDropdownRange", module)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeRSDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeRSDefault title={text("title", "SingleDropdownRange: Price Filter")} />
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeRSDefault placeholder={text("placeholder", "Search prices")} />
+	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeRSDefault defaultSelected="Cheap" />
+		<SingleDropdownRangeRSDefault defaultSelected={text("defaultSelected", "Cheap")} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeRSDefault
 			title={text("title", "SingleDropdownRange: Price Filter")}
+			placeholder={text("placeholder", "Search prices")}
 			defaultSelected={text("defaultSelected", "Cheap")}
 		/>
 	)));
