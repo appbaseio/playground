@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, RatingsFilter, ResultCard, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, RatingsFilter, ResultCard, SelectedFilters, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
 export default class RatingsFilterDefault extends Component {
 	constructor(props) {
@@ -30,6 +30,7 @@ export default class RatingsFilterDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="RatingsSensor" />
 						<RatingsFilter
 							componentId="RatingsSensor"
 							appbaseField={this.props.mapping.rating}

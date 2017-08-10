@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	SingleRange,
 	ResultCard,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivesearch";
 
@@ -37,6 +38,7 @@ export default class SingleRangeRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="PriceSensor" />
 						<SingleRange
 							componentId="PriceSensor"
 							appbaseField="price"

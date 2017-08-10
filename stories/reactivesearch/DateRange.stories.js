@@ -4,6 +4,7 @@ import {
 	ReactiveBase,
 	DateRange,
 	ResultCard,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivesearch";
 
@@ -59,6 +60,7 @@ export default class DateRangeRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="DateSensor" />
 						<DateRange
 							componentId="DateSensor"
 							appbaseField="date_from"

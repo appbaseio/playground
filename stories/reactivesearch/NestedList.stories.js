@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, NestedList, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, NestedList, ReactiveList, SelectedFilters, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
 export default class NestedListDefault extends Component {
 	constructor(props) {
@@ -42,6 +42,7 @@ export default class NestedListDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="CategorySensor" />
 						<NestedList
 							componentId="CategorySensor"
 							appbaseField={[this.props.mapping.brand, this.props.mapping.model]}

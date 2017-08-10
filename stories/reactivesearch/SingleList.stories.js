@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	SingleList,
 	ResultList,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivesearch";
 
@@ -39,6 +40,7 @@ export default class SingleListRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="CitySensor" />
 						<SingleList
 							componentId="CitySensor"
 							appbaseField="group.group_city.raw"

@@ -716,18 +716,27 @@ storiesOf("search/NestedList", module)
 	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
 			title=""
+			showFilter={false}
 		/>
 	)))
 	.add("With Title", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
 			title={text("title", "Car Category")}
+			showFilter={false}
 		/>
 	)))
 	.add("Default selection", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
+			showFilter={false}
 		/>
-	))).add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
+	)))
+	.add("Custom filter", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedListDefault
+			filterLabel="Cars"
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
 			title={text("title", "NestedList: Car Filter")}
 			size={number("size", 100)}
@@ -742,11 +751,18 @@ storiesOf("search/NestedList", module)
 storiesOf("search/ToggleList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault />
+		<ToggleListDefault showFilter={false} />
+	)))
+	.add("With Title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleListDefault title={text("title", "Choose category")} showFilter={false} />
+	)))
+	.add("With Custom filter label", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleListDefault filterLabel="Meetup Filter" />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault
 			defaultSelected={array("defaultSelected", ["Social"])}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
@@ -754,9 +770,9 @@ storiesOf("search/ToggleList", module)
 			title={text("title", "ToggleList: Meetup Categories")}
 			multiSelect={boolean("multiSelect", true)}
 			data={object("data", [
-					{ label: "Social", value: "Social" },
-					{ label: "Travel", value: "Travel" },
-					{ label: "Outdoors", value: "Outdoors" }
+				{ label: "Social", value: "Social" },
+				{ label: "Travel", value: "Travel" },
+				{ label: "Outdoors", value: "Outdoors" }
 			])}
 			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
 		/>
@@ -766,6 +782,12 @@ storiesOf("search/DynamicRangeSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<DynamicRangeSliderDefault />
+	)))
+	.add("With Title", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<DynamicRangeSliderDefault title={text("title", "Guests")} />
+	)))
+	.add("With custom stepValue", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<DynamicRangeSliderDefault stepValue={number("stepValue", 1)} />
 	)))
 	.add("Without histogram", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
@@ -794,22 +816,34 @@ storiesOf("search/DynamicRangeSlider", module)
 storiesOf("search/TagCloud", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
-		<TagCloudDefault />
+		<TagCloudDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
+		<TagCloudDefault title={text("title", "Cities")} showFilter={false} />
+	)))
+	.add("Without showCount", withReadme(removeFirstLine(SingleListReadme), () => (
+		<TagCloudDefault showCount={boolean("showCount", false)} showFilter={false} />
+	)))
+	.add("With custom filterLabel", withReadme(removeFirstLine(SingleListReadme), () => (
+		<TagCloudDefault filterLabel="Cities filter" />
 	)))
 	.add("With multiSelect", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault
 			multiSelect={boolean("multiSelect", true)}
+			showFilter={false}
 		/>
 	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault
 			defaultSelected={text("defaultSelected", "Auckland")}
+			showFilter={false}
 		/>
 	)))
 	.add("With multiSelect and defaultSelected", withReadme(removeFirstLine(SingleListReadme), () => (
 		<TagCloudDefault
 			multiSelect={boolean("multiSelect", true)}
 			defaultSelected={array("defaultSelected", ["Auckland", "Amsterdam"])}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
@@ -825,11 +859,18 @@ storiesOf("search/TagCloud", module)
 storiesOf("search/RatingsFilter", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<RatingsFilterDefault />
+		<RatingsFilterDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<RatingsFilterDefault title={text("title", "Ratings")} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<RatingsFilterDefault filterLabel="Ratings Label" />
 	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<RatingsFilterDefault
 			defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
@@ -849,12 +890,66 @@ storiesOf("search/CategorySearch", module)
 		<CategorySearchDefault
 			title="CategorySearch"
 			placeholder="Search Car"
+			showFilter={false}
+		/>
+	)))
+	.add("With title", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title={text("title", "Cars")}
+			placeholder="Search Car"
+			showFilter={false}
+		/>
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			filterLabel="Cars Filter"
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			defaultSelected={text("defaultSelected", "")}
+			showFilter={false}
+		/>
+	)))
+	.add("With initialSuggestions", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			initialSuggestions={[{label: "Opel", value: "Opel"}, {label: "VW", value: "VW"}]}
+			showFilter={false}
 		/>
 	)))
 	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
-			weights={[1, 3]}
+			weights={array("weights", [1,3])}
+			showFilter={false}
+		/>
+	)))
+	.add("With fuzziness", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			showFilter={false}
+			fuzziness={number("fuzziness", 1)}
+		/>
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			showFilter={false}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
+		/>
+	)))
+	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			showFilter={false}
+			autoSuggest={boolean("autoSuggest", false)}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
@@ -864,7 +959,10 @@ storiesOf("search/CategorySearch", module)
 			categoryField={text("categoryField", "brand.raw")}
 			defaultSelected={text("defaultSelected", "")}
 			placeholder={text("placeholder", "Search Car")}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 			weights={array("weights", [1,3])}
+			fuzziness={number("fuzziness", 1)}
+			autoSuggest={boolean("autoSuggest", true)}
 		/>
 	)));
 
@@ -905,8 +1003,26 @@ storiesOf("search/ResultCard", module)
 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
 		<ResultCardDefault />
 	)))
-	.add("With Pagination", withReadme(removeFirstLine(ReactiveListReadme), () => (
-		<ResultCardDefault  showPagination />
+	.add("With title", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultCardDefault title={text("title", "Cars result")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultCardDefault size={number("size", 5)} />
+	)))
+	.add("Hide resultStats", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultCardDefault showResultStats={boolean("showResultStats", false)} />
+	)))
+	.add("With pagination", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultCardDefault  pagination={boolean("pagination", true)} paginationAt={text("paginationAt", "bottom")} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultCardDefault
+			title={text("title", "Cars result")}
+			size={number("size", 5)}
+			showResultStats={boolean("showResultStats", true)}
+			pagination={boolean("pagination", true)}
+			paginationAt={text("paginationAt", "bottom")}
+		/>
 	)));
 
 storiesOf("search/ResultList", module)
@@ -914,8 +1030,26 @@ storiesOf("search/ResultList", module)
 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
 		<ResultListDefault />
 	)))
-	.add("With Pagination", withReadme(removeFirstLine(ReactiveListReadme), () => (
-		<ResultCardDefault showPagination />
+	.add("With title", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultListDefault title={text("title", "Cars list")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultListDefault size={text("size", 5)} />
+	)))
+	.add("Hide resultStats", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultListDefault showResultStats={boolean("showResultStats", false)} />
+	)))
+	.add("With pagination", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultListDefault pagination={boolean("pagination", true)} paginationAt={text("paginationAt", "bottom")} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(ReactiveListReadme), () => (
+		<ResultListDefault
+			title={text("title", "Cars result")}
+			size={number("size", 5)}
+			showResultStats={boolean("showResultStats", true)}
+			pagination={boolean("pagination", true)}
+			paginationAt={text("paginationAt", "bottom")}
+		/>
 	)));
 
 storiesOf("search/ViewSwitcher", module)
@@ -929,39 +1063,88 @@ storiesOf("search/DataSearch", module)
 	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title="DataSearch"
-			placeholder="Search Venue"
+			placeholder="Search Cars"
+			showFilter={false}
 		/>
 	)))
-	.add("Without Autocomplete", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With title", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title={text("title", "Cars Search")}
+			placeholder="Search Cars"
+			showFilter={false}
+		/>
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			filterLabel="Cars filter"
+		/>
+	)))
+	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title="DataSearch"
 			placeholder="Search Venue"
-			autocomplete={false}
+			autoSuggest={boolean("autoSuggest", false)}
+			showFilter={false}
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			defaultSelected={text("defaultSelected", "Audi")}
+		/>
+	)))
+	.add("With initialSuggestions", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			initialSuggestions={[{label: "Audi", value: "Audi"}, {label: "Hyundai", value: "Hyundai"}]}
 		/>
 	)))
 	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title="DataSearch"
-			placeholder="Search Venue"
+			placeholder="Search Cars"
 			weights={[1, 3]}
+			showFilter={false}
+		/>
+	)))
+	.add("With fuzziness", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			fuzziness={number("fuzziness", 1)}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
-			title={text("title", "DataSearch: Meetups")}
-			placeholder={text("placeholder", "Search Venue")}
-			autocomplete={boolean("autocomplete", true)}
+			title={text("title", "DataSearch: Cars")}
+			placeholder={text("placeholder", "Search Cars")}
+			autoSuggest={boolean("autoSuggest", true)}
+			defaultSelected={text("defaultSelected", "")}
 			weights={array("weights", [1,3])}
+			fuzziness={number("fuzziness", 1)}
 		/>
 	)));
 
 storiesOf("search/TextField", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(TextFieldReadme), () => (
-		<TextFieldRSDefault />
+		<TextFieldRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldRSDefault title={text("title", "Cars")} showFilter={false} />
 	)))
 	.add("DefaultSelected", withReadme(removeFirstLine(TextFieldReadme), () => (
-		<TextFieldRSDefault defaultSelected="nissan" />
+		<TextFieldRSDefault defaultSelected={text("defaultSelected", "Nissan")} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldRSDefault filterLabel="Cars filter" />
 	)))
 	.add("Playground", withReadme(removeFirstLine(TextFieldReadme), () => (
 		<TextFieldRSDefault
@@ -983,8 +1166,50 @@ storiesOf("search/NumberBox", module)
 			labelPosition="left"
 		/>
 	)))
+	.add("With title", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxRSDefault
+			defaultSelected={2}
+			data={{
+				start: 1,
+				end: 16
+			}}
+			labelPosition="left"
+			title={text("title", "Number of Guests")}
+		/>
+	)))
+	.add("With data", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxRSDefault
+			defaultSelected={2}
+			data={object("data", {
+				start: 1,
+				end: 16,
+				label: "Guests"
+			})}
+			labelPosition="right"
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxRSDefault
+			defaultSelected={number("defaultSelected", 2)}
+			data={{
+				start: 1,
+				end: 16
+			}}
+		/>
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxRSDefault
+			defaultSelected={2}
+			data={{
+				start: 1,
+				end: 16
+			}}
+			queryFormat={select("queryFormat", { exact: "exact", gte: "gte", lte: "lte" }, "exact")}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(NumberBoxReadme), () => (
 		<NumberBoxRSDefault
+			title={text("title", "Number of Guests")}
 			defaultSelected={number("defaultSelected", 3)}
 			data={object("data", {
 				start: 1,
@@ -992,25 +1217,41 @@ storiesOf("search/NumberBox", module)
 				label: "Guests"
 			})}
 			labelPosition={select("labelPosition", { bottom: "bottom", top: "top", left: "left", right: "right" }, "right")}
+			queryFormat={select("queryFormat", { exact: "exact", gte: "gte", lte: "lte" }, "exact")}
 		/>
 	)));
 
 storiesOf("search/SingleList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListRSDefault showSearch placeholder="Search City" />
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} title={text("title", "Cities")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
+	)))
+	.add("Without count", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
 	)))
 	.add("Without Search", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListRSDefault showSearch={false} placeholder="Search City" />
+		<SingleListRSDefault showSearch={boolean("showSearch", false)} placeholder="Search City" showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" filterLabel="City filter" />
+	)))
+	.add("Wihout radio buttons", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} showRadio={boolean("showRadio", false)} />
 	)))
 	.add("Default Selected", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListRSDefault showSearch defaultSelected="San Francisco" placeholder="Search City" />
+		<SingleListRSDefault showSearch defaultSelected={text("defaultSelected", "London")} placeholder="Search City" showFilter={false} />
 	)))
 	.add("Custom Sort", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListRSDefault title="SingleList: Ascending Sort" showSearch defaultSelected="London" sortBy="asc" placeholder="Search City" />
+		<SingleListRSDefault title="SingleList: Custom Sort" showSearch defaultSelected="London" sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} placeholder="Search City" showFilter={false} />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListRSDefault showSearch selectAllLabel="All Cities" placeholder="Search City" />
+		<SingleListRSDefault showSearch selectAllLabel={text("selectAllLabel", "All Cities")} placeholder="Search City" showFilter={false} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
 		<SingleListRSDefault
@@ -1022,25 +1263,44 @@ storiesOf("search/SingleList", module)
 			showSearch={boolean("showSearch", true)}
 			placeholder={text("placeholder", "Search City")}
 			selectAllLabel={text("selectAllLabel", "All cities")}
+			showRadio={boolean("showRadio", true)}
 		/>
 	)));
 
 storiesOf("search/MultiList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListRSDefault showSearch placeholder="Search City" />
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} title={text("title", "MultiList: City Filter")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" filterLabel="City filter" />
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")} />
+	)))
+	.add("Wihout count", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
 	)))
 	.add("Without Search", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListRSDefault showSearch={false} placeholder="Search City" />
+		<MultiListRSDefault showSearch={boolean("showSearch", false)} placeholder="Search City" showFilter={false} />
+	)))
+	.add("Without checkbox", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
 	)))
 	.add("Default Selected", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListRSDefault showSearch defaultSelected={["London", "Sydney"]} placeholder="Search City" />
+		<MultiListRSDefault showSearch defaultSelected={array("defaultSelected", ["London", "Sydney"])} placeholder="Search City" showFilter={false} />
 	)))
 	.add("Custom Sort", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListRSDefault title="MultiList: Ascending Sort" showSearch defaultSelected={["London"]} sortBy="asc" placeholder="Search City" />
+		<MultiListRSDefault title="MultiList: Custom Sort" showSearch defaultSelected={["London"]} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} placeholder="Search City" showFilter={false} />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListRSDefault showSearch selectAllLabel="All Cities" placeholder="Search City" />
+		<MultiListRSDefault showSearch selectAllLabel={text("selectAllLabel", "All Cities")} placeholder="Search City" showFilter={false} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListRSDefault
@@ -1050,25 +1310,44 @@ storiesOf("search/MultiList", module)
 			defaultSelected={array("defaultSelected", ["London", "Sydney"])}
 			showCount={boolean("showCount", true)}
 			showSearch={boolean("showSearch", true)}
+			showCheckbox={boolean("showCheckbox", true)}
 			placeholder={text("placeholder", "Search City")}
 			selectAllLabel={text("selectAllLabel", "All cities")}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 		/>
 	)));
 
 storiesOf("search/SingleDropdownList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-		<SingleDropdownListRSDefault />
+		<SingleDropdownListRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} title={text("title", "City list")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} size={number("size", 10)} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault filterLabel="Cities filter" />
+	)))
+	.add("With custom sort", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} />
+	)))
+	.add("Without count", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} showCount={boolean("showCount", false)} />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListRSDefault
-			selectAllLabel="All Cities"
+			selectAllLabel={text("selectAllLabel", "All Cities")}
+			showFilter={false}
 		/>
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListRSDefault
 			selectAllLabel="All Cities"
-			defaultSelected="London"
+			defaultSelected={text("defaultSelected", "London")}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
@@ -1086,17 +1365,34 @@ storiesOf("search/SingleDropdownList", module)
 storiesOf("search/MultiDropdownList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
-		<MultiDropdownListRSDefault />
+		<MultiDropdownListRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListRSDefault showFilter={false} title={text("title", "City list")} />
 	)))
 	.add("With Placeholder", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 		<MultiDropdownListRSDefault
-			placeholder="Select Cities"
+			placeholder={text("placeholder", "Select Cities")}
+			showFilter={false}
 		/>
+	)))
+	.add("With size", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListRSDefault showFilter={false} size={number("size", 10)} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListRSDefault filterLabel="Cities filter" />
+	)))
+	.add("Without count", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListRSDefault showFilter={false} showCount={boolean("showCount", false)} />
+	)))
+	.add("With custom sort", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListRSDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 		<MultiDropdownListRSDefault
 			placeholder="Select Cities"
-			selectAllLabel="All Cities"
+			selectAllLabel={text("selectAllLabel", "All Cities")}
+			showFilter={false}
 		/>
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
@@ -1104,7 +1400,8 @@ storiesOf("search/MultiDropdownList", module)
 			placeholder="Select Cities"
 			size={100}
 			sortBy="count"
-			defaultSelected={["London", "Melbourne"]}
+			defaultSelected={array("defaultSelected", ["London", "Melbourne"])}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
@@ -1122,30 +1419,50 @@ storiesOf("search/MultiDropdownList", module)
 storiesOf("search/SingleRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<SingleRangeRSDefault />
+		<SingleRangeRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault showFilter={false} title={text("title", "SingleRange: Price Filter")} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<SingleRangeRSDefault defaultSelected="Cheap" />
+		<SingleRangeRSDefault defaultSelected={text("defaultSelected", "Cheap")} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault filterLabel="Price filter" />
+	)))
+	.add("Without radio buttons", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault showFilter={false} showRadio={boolean("showRadio", false)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<SingleRangeRSDefault
 			title={text("title", "SingleRange: Price Filter")}
 			defaultSelected={text("defaultSelected", "Cheap")}
+			showRadio={boolean("showRadio", true)}
 		/>
 	)));
 
 storiesOf("search/MultiRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiRangeReadme), () => (
-		<MultiRangeRSDefault />
+		<MultiRangeRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault title={text("title", "MultiRange: Price Filter")} showFilter={false} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(MultiRangeReadme), () => (
-		<MultiRangeRSDefault defaultSelected={["Cheap", "Moderate"]} />
+		<MultiRangeRSDefault defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault filterLabel="Price range filter" />
+	)))
+	.add("Without checkbox", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiRangeReadme), () => (
 		<MultiRangeRSDefault
 			title={text("title", "MultiRange: Price Filter")}
 			defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
+			showCheckbox={boolean("showCheckbox", true)}
 		/>
 	)));
 
@@ -1154,12 +1471,19 @@ storiesOf("search/SingleDropdownRange", module)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeRSDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeRSDefault title={text("title", "SingleDropdownRange: Price Filter")} />
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeRSDefault placeholder={text("placeholder", "Search prices")} />
+	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeRSDefault defaultSelected="Cheap" />
+		<SingleDropdownRangeRSDefault defaultSelected={text("defaultSelected", "Cheap")} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeRSDefault
 			title={text("title", "SingleDropdownRange: Price Filter")}
+			placeholder={text("placeholder", "Search prices")}
 			defaultSelected={text("defaultSelected", "Cheap")}
 		/>
 	)));
@@ -1169,23 +1493,39 @@ storiesOf("search/MultiDropdownRange", module)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeRSDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<MultiDropdownRangeRSDefault title={text("title", "SingleDropdownRange: Price Filter")} />
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<MultiDropdownRangeRSDefault placeholder={text("placeholder", "Search prices")} />
+	)))
 	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
-		<MultiDropdownRangeRSDefault defaultSelected={["Cheap", "Moderate"]} />
+		<MultiDropdownRangeRSDefault defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeRSDefault
 			title={text("title", "MultiDropdownRange: Price Filter")}
 			defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
+			placeholder={text("placeholder", "Search prices")}
 		/>
 	)));
 
 storiesOf("search/ToggleButton", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleButtonRSDefault />
+		<ToggleButtonRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault showFilter={false} title={text("title", "ToggleButton: Meetup Categories")} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleButtonRSDefault defaultSelected={["Social"]} />
+		<ToggleButtonRSDefault defaultSelected={array("defaultSelected", ["Social", "Travel"])} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault filterLabel="Category filter" />
+	)))
+	.add("Without multiSelect", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault showFilter={false} multiSelect={boolean("multiSelect", false)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleButtonRSDefault
@@ -1198,36 +1538,57 @@ storiesOf("search/ToggleButton", module)
 storiesOf("search/DatePicker", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DatePickerReadme), () => (
-		<DatePickerRSDefault />
+		<DatePickerRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerRSDefault title={text("title", "Date Picker")} showFilter={false} />
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerRSDefault placeholder={text("placeholder", "Pick date")} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerRSDefault filterLabel="Date" />
+	)))
+	.add("Without focus", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerRSDefault showFilter={false} focused={boolean("focused", false)} />
 	)))
 	.add("Show more than 1 month", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerRSDefault
-			numberOfMonths={2}
+			numberOfMonths={number("numberOfMonths", 2)}
+			showFilter={false}
 		/>
 	)))
 	.add("Default date", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerRSDefault
 			defaultSelected={moment().subtract(1, "day")}
+			showFilter={false}
 		/>
 	)))
 	.add("Enable days from today only", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerRSDefault
-			allowAllDates={false}
+			allowAllDates={boolean("allowAllDates", false)}
+			showFilter={false}
 		/>
 	)))
 	.add("Using extra prop object", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerRSDefault
-			extra={{
+			extra={object("extra", {
 				withFullScreenPortal: true,
 				showClearDate: true
-			}}
+			})}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerRSDefault
 			title={text("title", "Date Picker")}
+			placeholder={text("placeholder", "Pick date")}
 			numberOfMonths={number("numberOfMonths", 1)}
 			allowAllDates={boolean("allowAllDates", true)}
+			extra={object("extra", {
+				withFullScreenPortal: false,
+				showClearDate: false
+			})}
 			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
 		/>
 	)));
@@ -1235,15 +1596,23 @@ storiesOf("search/DatePicker", module)
 storiesOf("search/DateRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DateRangeReadme), () => (
-		<DateRangeRSDefault />
+		<DateRangeRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault showFilter={false} title={text("title", "Date Range")} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault filterLabel="Date range" />
 	)))
 	.add("Show more than 1 month", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeRSDefault
-			numberOfMonths={3}
+			numberOfMonths={number("numberOfMonths", 3)}
+			showFilter={false}
 		/>
 	)))
 	.add("Default date", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeRSDefault
+			showFilter={false}
 			defaultSelected={{
 				start: moment().subtract(7, "days"),
 				end: moment()
@@ -1252,15 +1621,17 @@ storiesOf("search/DateRange", module)
 	)))
 	.add("Enable days from today only", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeRSDefault
-			allowAllDates={false}
+			allowAllDates={boolean("allowAllDates", false)}
+			showFilter={false}
 		/>
 	)))
 	.add("Using extra prop object", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeRSDefault
-			extra={{
+			showFilter={false}
+			extra={object("extra", {
 				withFullScreenPortal: true,
 				showClearDate: true
-			}}
+			})}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DateRangeReadme), () => (
@@ -1268,6 +1639,10 @@ storiesOf("search/DateRange", module)
 			title={text("title", "Date Range")}
 			numberOfMonths={number("numberOfMonths", 2)}
 			allowAllDates={boolean("allowAllDates", true)}
+			extra={object("extra", {
+				withFullScreenPortal: true,
+				showClearDate: true
+			})}
 			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
 		/>
 	)));
@@ -1277,29 +1652,31 @@ storiesOf("search/RangeSlider", module)
 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderRSDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderRSDefault title={text("title", "RangeSlider: Prices")} />
+	)))
 	.add("With Default Selected", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderRSDefault
-			defaultSelected={{
-				start: 20,
-				end: 70
-			}}
+			defaultSelected={object("defaultSelected", {
+				start: 10,
+				end: 50
+			})}
 		/>
 	)))
 	.add("Without histogram", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderRSDefault
-			showHistogram={false}
+			showHistogram={boolean("showHistogram", false)}
 		/>
+	)))
+	.add("With custom histogram interval", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderRSDefault interval={number("interval", 50)} />
 	)))
 	.add("With Range Labels", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderRSDefault
-			defaultSelected={{
-				start: 10,
-				end: 50
-			}}
-			rangeLabels={{
+			rangeLabels={object("rangeLabels", {
 				start: "$10",
 				end: "$250"
-			}}
+			})}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(RangeSliderReadme), () => (
@@ -1310,6 +1687,7 @@ storiesOf("search/RangeSlider", module)
 				end: 250
 			})}
 			stepValue={number("stepValue", 10)}
+			interval={number("interval", 20)}
 			defaultSelected={object("defaultSelected", {
 				start: 10,
 				end: 50
@@ -1325,7 +1703,7 @@ storiesOf("search/RangeSlider", module)
 storiesOf("search/DataController", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DataControllerReadme), () => (
-		<DataControllerRSDefault />
+		<DataControllerRSDefault showFilter={false} />
 	)))
 	.add("With UI", withReadme(removeFirstLine(DataControllerReadme), () => (
 		<DataControllerRSDefault
@@ -1334,7 +1712,11 @@ storiesOf("search/DataController", module)
 			dataLabel={
 				<p>★ A customizable UI widget ★</p>
 			}
+			showFilter={false}
 		/>
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault filterLabel="Data filter" />
 	)))
 	.add("Playground", withReadme(removeFirstLine(DataControllerReadme), () => (
 		<DataControllerRSDefault

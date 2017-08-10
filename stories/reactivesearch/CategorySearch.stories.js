@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, CategorySearch, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, CategorySearch, ReactiveList, SelectedFilters, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
 export default class CategorySearchDefault extends Component {
 	componentDidMount() {
@@ -38,6 +38,7 @@ export default class CategorySearchDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="CarSensor" />
 						<CategorySearch
 							appbaseField={["name", "vehicleType"]}
 							categoryField="brand.raw"

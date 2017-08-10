@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, ToggleList, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, ToggleList, ReactiveList, SelectedFilters, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
 
 export default class ToggleListDefault extends Component {
 	constructor(props) {
@@ -61,6 +61,7 @@ export default class ToggleListDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="MeetupTops" />
 						<ToggleList
 							appbaseField={this.props.mapping.topic}
 							componentId="MeetupTops"
