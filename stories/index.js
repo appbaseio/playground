@@ -27,7 +27,6 @@ import ReactivePaginatedListReadme from "@appbaseio/reactivemaps-manual/docs/v1.
 import GeoDistanceSliderReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/GeoDistanceSlider.md";
 import GeoDistanceDropdownReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/GeoDistanceDropdown.md";
 import PlacesSearchReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/PlacesSearch.md";
-import ReactiveMapReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/ReactiveMap.md";
 
 // import reactivemaps components
 import GeoDistanceSliderDefault from "./reactivemaps/GeoDistanceSlider.stories";
@@ -238,27 +237,27 @@ storiesOf("map/PlacesSearch", module)
 
 storiesOf("map/ReactiveMap", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(ReactiveMapReadme, 3), () => (
+	.add("Basic", () => (
 		<ReactiveMapDefault />
-	)))
-	.add("With Title", withReadme(removeFirstLine(ReactiveMapReadme, 3), () => (
+	))
+	.add("With Title", () => (
 		<ReactiveMapDefault
 			title="Reactive Maps"
 		/>
-	)))
-	.add("With Popover onClick", withReadme(removeFirstLine(ReactiveMapReadme, 3), () => (
+	))
+	.add("With Popover onClick", () => (
 		<ReactiveMapDefault
 			title="Reactive Maps"
 			showPopoverOn="click"
 		/>
-	)))
-	.add("With Popover onMouseOver", withReadme(removeFirstLine(ReactiveMapReadme), () => (
+	))
+	.add("With Popover onMouseOver", () => (
 		<ReactiveMapDefault
 			title="Reactive Maps"
 			showPopoverOn="mouseover"
 		/>
-	)))
-	.add("Playground", withReadme(removeFirstLine(ReactiveMapReadme), () => (
+	))
+	.add("Playground", () => (
 		<ReactiveMapDefault
 			title={text("title", "Reactive maps")}
 			showPopoverOn={select("showPopoverOn", { click: "click", mouseover: "mouseover" }, "click")}
@@ -282,7 +281,7 @@ storiesOf("map/ReactiveMap", module)
 			defaultMarkerImage={text("defaultMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/historic-pin.png")}
 			streamMarkerImage={text("streamMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/stream-pin.png")}
 		/>
-	)));
+	));
 
 storiesOf("map/SingleList", module)
 	.addDecorator(withKnobs)
