@@ -1493,23 +1493,39 @@ storiesOf("search/MultiDropdownRange", module)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeRSDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<MultiDropdownRangeRSDefault title={text("title", "SingleDropdownRange: Price Filter")} />
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<MultiDropdownRangeRSDefault placeholder={text("placeholder", "Search prices")} />
+	)))
 	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
-		<MultiDropdownRangeRSDefault defaultSelected={["Cheap", "Moderate"]} />
+		<MultiDropdownRangeRSDefault defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeRSDefault
 			title={text("title", "MultiDropdownRange: Price Filter")}
 			defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
+			placeholder={text("placeholder", "Search prices")}
 		/>
 	)));
 
 storiesOf("search/ToggleButton", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleButtonRSDefault />
+		<ToggleButtonRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault showFilter={false} title={text("title", "ToggleButton: Meetup Categories")} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleButtonRSDefault defaultSelected={["Social"]} />
+		<ToggleButtonRSDefault defaultSelected={array("defaultSelected", ["Social", "Travel"])} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault filterLabel="Category filter" />
+	)))
+	.add("Without multiSelect", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault showFilter={false} multiSelect={boolean("multiSelect", false)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleButtonRSDefault

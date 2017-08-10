@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	ToggleButton,
 	ResultList,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivesearch";
 
@@ -50,6 +51,7 @@ export default class ToggleButtonDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="MeetupTops" />
 						<ToggleButton
 							appbaseField="group.group_topics.topic_name_raw.raw"
 							componentId="MeetupTops"
