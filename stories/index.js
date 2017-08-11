@@ -742,15 +742,21 @@ storiesOf("map/DataSearch", module)
 storiesOf("map/TextField", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(TextFieldReadme), () => (
-		<TextFieldMapDefault />
+		<TextFieldMapDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldMapDefault title={text("title", "Meetups")} showFilter={false} />
 	)))
 	.add("DefaultSelected", withReadme(removeFirstLine(TextFieldReadme), () => (
-		<TextFieldMapDefault defaultSelected="London" />
+		<TextFieldMapDefault defaultSelected={text("defaultSelected", "London")} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldMapDefault filterLabel="Meetups filter" />
 	)))
 	.add("Playground", withReadme(removeFirstLine(TextFieldReadme), () => (
 		<TextFieldMapDefault
-			title={text("title", "DataSearch: Meetups")}
-			placeholder={text("placeholder", "Search Venue")}
+			title={text("title", "TextField: Venue Search")}
+			placeholder={text("placeholder", "Type a place name")}
 			defaultSelected={text("defaultSelected", "London")}
 		/>
 	)));
