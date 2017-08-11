@@ -577,21 +577,21 @@ storiesOf("map/SingleRange", module)
 		<SingleRangeMapDefault showFilter={false} />
 	)))
 	.add("With title", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<SingleRangeMapDefault showFilter={false} title={text("title", "SingleRange: Price Filter")} />
+		<SingleRangeMapDefault showFilter={false} title={text("title", "SingleRange: Earthquake Filter")} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<SingleRangeMapDefault defaultSelected={text("defaultSelected", "Cheap")} showFilter={false} />
+		<SingleRangeMapDefault defaultSelected={text("defaultSelected", "Moderate")} showFilter={false} />
 	)))
 	.add("With filterLabel", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<SingleRangeMapDefault filterLabel="Price filter" />
+		<SingleRangeMapDefault filterLabel="Earthquake range filter" />
 	)))
 	.add("Without radio buttons", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<SingleRangeMapDefault showFilter={false} showRadio={boolean("showRadio", false)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<SingleRangeMapDefault
-			title={text("title", "SingleRange: Price Filter")}
-			defaultSelected={text("defaultSelected", "Cheap")}
+			title={text("title", "SingleRange: Earthquake Filter")}
+			defaultSelected={text("defaultSelected", "Moderate")}
 			showRadio={boolean("showRadio", true)}
 		/>
 	)));
@@ -599,16 +599,25 @@ storiesOf("map/SingleRange", module)
 storiesOf("map/MultiRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiRangeReadme), () => (
-		<MultiRangeMapDefault />
+		<MultiRangeMapDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeMapDefault title={text("title", "MultiRange: Earthquake Filter")} showFilter={false} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(MultiRangeReadme), () => (
-		<MultiRangeMapDefault defaultSelected={["Moderate", "Strong"]} />
+		<MultiRangeMapDefault defaultSelected={array("defaultSelected", ["Major", "Moderate"])} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeMapDefault filterLabel="MultiRange filter" />
+	)))
+	.add("Without checkbox", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeMapDefault showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiRangeReadme), () => (
 		<MultiRangeMapDefault
-			title={text("title", "MultiRange: Earthquake Magnitude")}
-			defaultSelected={array("defaultSelected", ["Moderate", "Strong"])}
-			showTags={boolean("showTags", "false")}
+			title={text("title", "MultiRange: Filter")}
+			defaultSelected={array("defaultSelected", ["Major", "Moderate"])}
+			showCheckbox={boolean("showCheckbox", true)}
 		/>
 	)));
 
@@ -617,13 +626,20 @@ storiesOf("map/SingleDropdownRange", module)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeMapDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeMapDefault title={text("title", "SingleDropdownRange: Filter")} />
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeMapDefault placeholder={text("placeholder", "Search places")} />
+	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeMapDefault defaultSelected="Strong" />
+		<SingleDropdownRangeMapDefault defaultSelected={text("defaultSelected", "Moderate")} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeMapDefault
-			title={text("title", "SingleDropdownRange: Earthquake Magnitude")}
-			defaultSelected={text("defaultSelected", "Strong")}
+			title={text("title", "SingleDropdownRange: Filter")}
+			placeholder={text("placeholder", "Search prices")}
+			defaultSelected={text("defaultSelected", "Moderate")}
 		/>
 	)));
 
@@ -632,13 +648,20 @@ storiesOf("map/MultiDropdownRange", module)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeMapDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<MultiDropdownRangeMapDefault title={text("title", "MultiDropdownRange: Earthquake Magnitude")} />
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<MultiDropdownRangeMapDefault placeholder={text("placeholder", "Search places")} />
+	)))
 	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeMapDefault defaultSelected={["Moderate", "Strong"]} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeMapDefault
 			title={text("title", "MultiDropdownRange: Earthquake Magnitude")}
-			defaultSelected={array("defaultSelected", ["Moderate", "Strong"])}
+			defaultSelected={["Moderate", "Strong"]}
+			placeholder={text("placeholder", "Search places")}
 		/>
 	)));
 
@@ -648,28 +671,71 @@ storiesOf("map/DataSearch", module)
 		<DataSearchMapDefault
 			title="DataSearch"
 			placeholder="Search Venue"
+			showFilter={false}
 		/>
 	)))
-	.add("Without Autocomplete", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With title", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title={text("title", "Places Search")}
+			placeholder="Search Places"
+			showFilter={false}
+		/>
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title="DataSearch"
+			placeholder="Search Places"
+			filterLabel="Places filter"
+		/>
+	)))
+	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchMapDefault
 			title="DataSearch"
 			placeholder="Search Venue"
-			autocomplete={false}
+			autoSuggest={boolean("autoSuggest", false)}
+			showFilter={false}
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title="DataSearch"
+			placeholder="Search Places"
+			showFilter={false}
+			defaultSelected={text("defaultSelected", "Songwriting")}
+		/>
+	)))
+	.add("With initialSuggestions", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title="DataSearch"
+			placeholder="Search Places"
+			showFilter={false}
+			initialSuggestions={[{label: "Songwriting", value: "Songwriting"}, {label: "Musicians", value: "Musicians"}]}
 		/>
 	)))
 	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchMapDefault
 			title="DataSearch"
-			placeholder="Search Venue"
+			placeholder="Search Places"
 			weights={[1, 3]}
+			showFilter={false}
+		/>
+	)))
+	.add("With fuzziness", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title="DataSearch"
+			placeholder="Search Places"
+			showFilter={false}
+			fuzziness={number("fuzziness", 1)}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchMapDefault
-			title={text("title", "DataSearch: Meetups")}
-			placeholder={text("placeholder", "Search Venue")}
-			autocomplete={boolean("autocomplete", true)}
+			title={text("title", "DataSearch: Places")}
+			placeholder={text("placeholder", "Search Places")}
+			autoSuggest={boolean("autoSuggest", true)}
+			defaultSelected={text("defaultSelected", "")}
 			weights={array("weights", [1,3])}
+			fuzziness={number("fuzziness", 1)}
 		/>
 	)));
 
