@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	ReactiveMap,
 	NumberBox,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivemaps";
 
@@ -48,6 +49,7 @@ export default class NumberBoxMapDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="GuestsSensor" />
 						<NumberBox
 							componentId="GuestsSensor"
 							appbaseField={this.props.mapping.guests}

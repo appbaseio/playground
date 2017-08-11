@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	ReactiveMap,
 	MultiList,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivemaps";
 
@@ -48,6 +49,7 @@ export default class MultiListMapDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="CitySensor" />
 						<MultiList
 							componentId="CitySensor"
 							appbaseField="group.group_city.raw"

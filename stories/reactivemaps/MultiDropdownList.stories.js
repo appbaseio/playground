@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	ReactiveMap,
 	MultiDropdownList,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivemaps";
 
@@ -48,6 +49,7 @@ export default class MultiDropdownListMapDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="CitySensor" />
 						<MultiDropdownList
 							componentId="CitySensor"
 							appbaseField={this.props.mapping.city}

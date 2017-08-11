@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	SingleList,
 	ReactiveMap,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivemaps";
 
@@ -48,6 +49,7 @@ export default class SingleListMapDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="CitySensor" />
 						<SingleList
 							componentId="CitySensor"
 							appbaseField={this.props.mapping.city}

@@ -2,7 +2,8 @@ import { default as React, Component } from "react";
 import {
 	ReactiveBase,
 	ReactiveMap,
-	PlacesSearch
+	PlacesSearch,
+	SelectedFilters,
 } from "@appbaseio/reactivemaps";
 
 export default class PlacesSearchDefault extends Component {
@@ -62,6 +63,7 @@ export default class PlacesSearchDefault extends Component {
 					<div className="col s12 m6 col-xs-12 col-sm-6">
 						<div className="row h-100">
 							<div className="col s12 col-xs-12">
+								<SelectedFilters componentId={["OriginSensor", "DestinationSensor"]} />
 								<PlacesSearch
 									appbaseField={this.props.mapping.venue}
 									componentId="OriginSensor"
