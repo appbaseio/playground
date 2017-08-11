@@ -425,19 +425,37 @@ storiesOf("map/SingleList", module)
 storiesOf("map/MultiList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListMapDefault showSearch placeholder="Search City" />
+		<MultiListMapDefault showFilter={false} showSearch placeholder="Search City" />
+	)))
+	.add("With title", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showSearch placeholder="Search City" showFilter={false} title={text("title", "MultiList: City Filter")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault filterLabel="MultiList filter" showSearch placeholder="Search City" />
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showSearch placeholder="Search City" queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")} />
+	)))
+	.add("Wihout count", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
 	)))
 	.add("Without Search", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListMapDefault showSearch={false} placeholder="Search City" />
+		<MultiListMapDefault showFilter={false} showSearch={false} placeholder="Search City" />
+	)))
+	.add("Without checkbox", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showSearch placeholder="Search City" showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
 	)))
 	.add("Default Selected", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListMapDefault showSearch defaultSelected={["London", "Sydney"]} placeholder="Search City" />
+		<MultiListMapDefault showFilter={false} showSearch defaultSelected={array("defaultSelected", ["London", "Sydney"])} placeholder="Search City" />
 	)))
 	.add("Custom Sort", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListMapDefault title="MultiList: Ascending Sort" showSearch defaultSelected={["London"]} sortBy="asc" placeholder="Search City" />
+		<MultiListMapDefault showFilter={false} title="MultiList: Ascending Sort" showSearch defaultSelected={["London"]} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")} placeholder="Search City" />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListMapDefault showSearch selectAllLabel="All Cities" placeholder="Search City" />
+		<MultiListMapDefault showFilter={false} showSearch selectAllLabel={text("selectAllLabel", "All cities")} placeholder="Search City" />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListMapDefault
@@ -447,25 +465,44 @@ storiesOf("map/MultiList", module)
 			defaultSelected={array("defaultSelected", ["London", "Sydney"])}
 			showCount={boolean("showCount", true)}
 			showSearch={boolean("showSearch", true)}
+			showCheckbox={boolean("showCheckbox", true)}
 			placeholder={text("placeholder", "Search City")}
 			selectAllLabel={text("selectAllLabel", "All cities")}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 		/>
 	)));
 
 storiesOf("map/SingleDropdownList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-		<SingleDropdownListMapDefault />
+		<SingleDropdownListMapDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault showFilter={false} title={text("title", "City list")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault showFilter={false} size={number("size", 10)} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault filterLabel="Cities filter" />
+	)))
+	.add("With custom sort", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} />
+	)))
+	.add("Without count", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault showFilter={false} showCount={boolean("showCount", false)} />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListMapDefault
-			selectAllLabel="All Cities"
+			selectAllLabel={text("selectAllLabel", "All Cities")}
+			showFilter={false}
 		/>
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListMapDefault
 			selectAllLabel="All Cities"
-			defaultSelected="London"
+			defaultSelected={text("defaultSelected", "London")}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
