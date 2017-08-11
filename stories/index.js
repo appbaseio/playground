@@ -335,7 +335,7 @@ storiesOf("map/ReactiveMap", module)
 	))
 	.add("With Title", () => (
 		<ReactiveMapDefault
-			title="Reactive Maps"
+			title={text("title", "Reactive maps")}
 		/>
 	))
 	.add("With Popover onClick", () => (
