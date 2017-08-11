@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	ReactiveMap,
 	RangeSlider,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivemaps";
 
@@ -48,6 +49,7 @@ export default class RangeSliderMapDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="RangeSensor" />
 						<RangeSlider
 							componentId="RangeSensor"
 							appbaseField={this.props.mapping.guests}

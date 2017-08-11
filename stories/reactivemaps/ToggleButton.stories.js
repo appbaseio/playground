@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	ToggleButton,
 	ReactiveMap,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivemaps";
 
@@ -59,6 +60,7 @@ export default class ToggleButtonMapDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="MeetupTops" />
 						<ToggleButton
 							appbaseField={this.props.mapping.topic}
 							componentId="MeetupTops"

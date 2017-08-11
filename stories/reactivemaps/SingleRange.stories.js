@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	SingleRange,
 	ReactiveMap,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivemaps";
 
@@ -42,6 +43,7 @@ export default class SingleRangeMapDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="EarthquakeSensor" />
 						<SingleRange
 							componentId="EarthquakeSensor"
 							appbaseField={this.props.mapping.mag}

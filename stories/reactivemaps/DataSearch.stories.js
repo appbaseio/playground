@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	DataSearch,
 	ReactiveMap,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivemaps";
 
@@ -48,6 +49,7 @@ export default class DataSearchMapDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="VenueSensor" />
 						<DataSearch
 							appbaseField={[this.props.mapping.venue, this.props.mapping.topic]}
 							componentId="VenueSensor"
