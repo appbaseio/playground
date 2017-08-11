@@ -856,15 +856,58 @@ storiesOf("map/NumberBox", module)
 			labelPosition="left"
 		/>
 	)))
+	.add("With title", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxMapDefault
+			defaultSelected={2}
+			data={{
+				start: 1,
+				end: 16
+			}}
+			labelPosition="left"
+			title={text("title", "Number of Guests")}
+		/>
+	)))
+	.add("With data", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxMapDefault
+			defaultSelected={2}
+			data={object("data", {
+				start: 1,
+				end: 16,
+				label: "Guests"
+			})}
+			labelPosition="right"
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxMapDefault
+			defaultSelected={number("defaultSelected", 2)}
+			data={{
+				start: 1,
+				end: 16
+			}}
+		/>
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxMapDefault
+			defaultSelected={2}
+			data={{
+				start: 1,
+				end: 16
+			}}
+			queryFormat={select("queryFormat", { exact: "exact", gte: "gte", lte: "lte" }, "exact")}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(NumberBoxReadme), () => (
 		<NumberBoxMapDefault
+			title={text("title", "Number of Guests")}
 			defaultSelected={number("defaultSelected", 3)}
 			data={object("data", {
 				start: 1,
-				end: 5,
+				end: 16,
 				label: "Guests"
 			})}
 			labelPosition={select("labelPosition", { bottom: "bottom", top: "top", left: "left", right: "right" }, "right")}
+			queryFormat={select("queryFormat", { exact: "exact", gte: "gte", lte: "lte" }, "exact")}
 		/>
 	)));
 
