@@ -764,10 +764,19 @@ storiesOf("map/TextField", module)
 storiesOf("map/ToggleButton", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleButtonMapDefault />
+		<ToggleButtonMapDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonMapDefault showFilter={false} title={text("title", "ToggleButton: Meetup Categories")} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleButtonMapDefault defaultSelected={["Social"]} />
+		<ToggleButtonMapDefault defaultSelected={array("defaultSelected", ["Social", "Travel"])} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonMapDefault filterLabel="Category filter" />
+	)))
+	.add("Without multiSelect", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonMapDefault showFilter={false} multiSelect={boolean("multiSelect", false)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleButtonMapDefault
@@ -782,18 +791,24 @@ storiesOf("map/RangeSlider", module)
 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderMapDefault />
 	)))
+	.add("With title", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderMapDefault title={text("title", "RangeSlider: Guests")} />
+	)))
 	.add("With Default Selected", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderMapDefault
-			defaultSelected={{
+			defaultSelected={object("defaultSelected", {
 				start: 0,
 				end: 2
-			}}
+			})}
 		/>
 	)))
 	.add("Without histogram", withReadme(removeFirstLine(RangeSliderReadme), () => (
-		<RangeSliderDefault
-			showHistogram={false}
+		<RangeSliderMapDefault
+			showHistogram={boolean("showHistogram", false)}
 		/>
+	)))
+	.add("With custom histogram interval", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderMapDefault interval={number("interval", 5)} />
 	)))
 	.add("With Range Labels", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderMapDefault
@@ -801,10 +816,10 @@ storiesOf("map/RangeSlider", module)
 				start: 0,
 				end: 2
 			}}
-			rangeLabels={{
+			rangeLabels={object("rangeLabels", {
 				start: "Start",
 				end: "End"
-			}}
+			})}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(RangeSliderReadme), () => (
@@ -815,6 +830,7 @@ storiesOf("map/RangeSlider", module)
 				end: 5
 			})}
 			stepValue={number("stepValue", 1)}
+			interval={number("interval", 20)}
 			defaultSelected={object("defaultSelected", {
 				start: 0,
 				end: 2
