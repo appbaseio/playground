@@ -103,6 +103,7 @@ storiesOf("map/GeoDistanceSlider", module)
 			}}
 			unit="mi"
 			placeholder="Search Location"
+			showFilter={false}
 		/>
 	)))
 	.add("With Title", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
@@ -111,8 +112,29 @@ storiesOf("map/GeoDistanceSlider", module)
 				distance: 50
 			}}
 			unit="mi"
-			title="Geo Distance Search"
+			title={text("title", "Geo Distance Slider")}
 			placeholder="Search Location"
+			showFilter={false}
+		/>
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			placeholder={text("placeholder", "Search Location")}
+			showFilter={false}
+		/>
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			placeholder="Search Location"
+			filterLabel="GeoDistance filter"
 		/>
 	)))
 	.add("With Range Labels", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
@@ -127,14 +149,15 @@ storiesOf("map/GeoDistanceSlider", module)
 				start: "Start",
 				end: "End"
 			}}
+			showFilter={false}
 		/>
 	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
 		<GeoDistanceSliderDefault
-			defaultSelected={{
+			defaultSelected={object("defaultSelected", {
 				location: "London",
 				distance: 5
-			}}
+			})}
 			unit="mi"
 			title="Geo Distance Search"
 			placeholder="Search Location"
@@ -142,6 +165,30 @@ storiesOf("map/GeoDistanceSlider", module)
 				start: "Start",
 				end: "End"
 			}}
+			showFilter={false}
+		/>
+	)))
+	.add("With stepValue", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			placeholder="Search Location"
+			showFilter={false}
+			stepValue={number("stepValue", 1)}
+		/>
+	)))
+	.add("With autoLocation off", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			title={text("title", "Geo Distance Slider")}
+			placeholder="Search Location"
+			showFilter={false}
+			autoLocation={boolean("autoLocation", false)}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
@@ -162,6 +209,7 @@ storiesOf("map/GeoDistanceSlider", module)
 				start: "Start",
 				end: "End"
 			})}
+			autoLocation={boolean("autoLocation", true)}
 		/>
 	)));
 

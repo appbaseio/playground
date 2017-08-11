@@ -3,6 +3,7 @@ import {
 	ReactiveBase,
 	ReactiveMap,
 	GeoDistanceSlider,
+	SelectedFilters,
 	AppbaseSensorHelper as helper
 } from "@appbaseio/reactivemaps";
 
@@ -49,6 +50,7 @@ export default class GeoDistanceSliderDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters componentId="GeoDistanceSlider" />
 						<GeoDistanceSlider
 							componentId="GeoDistanceSlider"
 							appbaseField={this.props.mapping.location}
