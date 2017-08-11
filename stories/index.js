@@ -574,15 +574,25 @@ storiesOf("map/MultiDropdownList", module)
 storiesOf("map/SingleRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<SingleRangeMapDefault />
+		<SingleRangeMapDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeMapDefault showFilter={false} title={text("title", "SingleRange: Price Filter")} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<SingleRangeMapDefault defaultSelected="Strong" />
+		<SingleRangeMapDefault defaultSelected={text("defaultSelected", "Cheap")} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeMapDefault filterLabel="Price filter" />
+	)))
+	.add("Without radio buttons", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeMapDefault showFilter={false} showRadio={boolean("showRadio", false)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<SingleRangeMapDefault
-			title={text("title", "SingleRange: Earthquake Magnitude")}
-			defaultSelected={text("defaultSelected", "Strong")}
+			title={text("title", "SingleRange: Price Filter")}
+			defaultSelected={text("defaultSelected", "Cheap")}
+			showRadio={boolean("showRadio", true)}
 		/>
 	)));
 
