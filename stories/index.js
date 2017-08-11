@@ -915,36 +915,57 @@ storiesOf("map/NumberBox", module)
 storiesOf("map/DatePicker", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DatePickerReadme), () => (
-		<DatePickerMapDefault />
+		<DatePickerMapDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault title={text("title", "Date Picker")} showFilter={false} />
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault placeholder={text("placeholder", "Pick date")} showFilter={false} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault filterLabel="Date" />
+	)))
+	.add("Without focus", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault showFilter={false} focused={boolean("focused", false)} />
 	)))
 	.add("Show more than 1 month", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerMapDefault
-			numberOfMonths={2}
+			numberOfMonths={number("numberOfMonths", 2)}
+			showFilter={false}
 		/>
 	)))
 	.add("Default date", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerMapDefault
 			defaultSelected={moment().subtract(1, "day")}
+			showFilter={false}
 		/>
 	)))
 	.add("Enable days from today only", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerMapDefault
-			allowAllDates={false}
+			allowAllDates={boolean("allowAllDates", false)}
+			showFilter={false}
 		/>
 	)))
 	.add("Using extra prop object", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerMapDefault
-			extra={{
+			extra={object("extra", {
 				withFullScreenPortal: true,
 				showClearDate: true
-			}}
+			})}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerMapDefault
 			title={text("title", "Date Picker")}
+			placeholder={text("placeholder", "Pick date")}
 			numberOfMonths={number("numberOfMonths", 1)}
 			allowAllDates={boolean("allowAllDates", true)}
+			extra={object("extra", {
+				withFullScreenPortal: false,
+				showClearDate: false
+			})}
 			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
 		/>
 	)));
@@ -952,15 +973,23 @@ storiesOf("map/DatePicker", module)
 storiesOf("map/DateRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DateRangeReadme), () => (
-		<DateRangeMapDefault />
+		<DateRangeMapDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault showFilter={false} title={text("title", "Date Range")} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault filterLabel="Date range" />
 	)))
 	.add("Show more than 1 month", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeMapDefault
-			numberOfMonths={3}
+			numberOfMonths={number("numberOfMonths", 3)}
+			showFilter={false}
 		/>
 	)))
 	.add("Default date", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeMapDefault
+			showFilter={false}
 			defaultSelected={{
 				start: moment().subtract(7, "days"),
 				end: moment()
@@ -969,15 +998,17 @@ storiesOf("map/DateRange", module)
 	)))
 	.add("Enable days from today only", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeMapDefault
-			allowAllDates={false}
+			allowAllDates={boolean("allowAllDates", false)}
+			showFilter={false}
 		/>
 	)))
 	.add("Using extra prop object", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeMapDefault
-			extra={{
+			showFilter={false}
+			extra={object("extra", {
 				withFullScreenPortal: true,
 				showClearDate: true
-			}}
+			})}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DateRangeReadme), () => (
@@ -985,6 +1016,10 @@ storiesOf("map/DateRange", module)
 			title={text("title", "Date Range")}
 			numberOfMonths={number("numberOfMonths", 2)}
 			allowAllDates={boolean("allowAllDates", true)}
+			extra={object("extra", {
+				withFullScreenPortal: true,
+				showClearDate: true
+			})}
 			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
 		/>
 	)));
