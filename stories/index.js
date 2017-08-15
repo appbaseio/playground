@@ -443,7 +443,7 @@ storiesOf("map/MultiList", module)
 		<MultiListMapDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
 	)))
 	.add("Without Search", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListMapDefault showFilter={false} showSearch={false} placeholder="Search City" />
+		<MultiListMapDefault showFilter={false} showSearch={boolean("showSearch", false)} placeholder="Search City" />
 	)))
 	.add("Without checkbox", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListMapDefault showSearch placeholder="Search City" showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
