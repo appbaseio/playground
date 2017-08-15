@@ -443,7 +443,7 @@ storiesOf("map/MultiList", module)
 		<MultiListMapDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
 	)))
 	.add("Without Search", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListMapDefault showFilter={false} showSearch={false} placeholder="Search City" />
+		<MultiListMapDefault showFilter={false} showSearch={boolean("showSearch", false)} placeholder="Search City" />
 	)))
 	.add("Without checkbox", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListMapDefault showSearch placeholder="Search City" showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
@@ -452,7 +452,7 @@ storiesOf("map/MultiList", module)
 		<MultiListMapDefault showFilter={false} showSearch defaultSelected={array("defaultSelected", ["London", "Sydney"])} placeholder="Search City" />
 	)))
 	.add("Custom Sort", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListMapDefault showFilter={false} title="MultiList: Ascending Sort" showSearch defaultSelected={["London"]} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")} placeholder="Search City" />
+		<MultiListMapDefault showFilter={false} title="MultiList: Ascending Sort" showSearch defaultSelected={["London"]} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} placeholder="Search City" />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListMapDefault showFilter={false} showSearch selectAllLabel={text("selectAllLabel", "All cities")} placeholder="Search City" />
