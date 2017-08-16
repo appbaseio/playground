@@ -1095,6 +1095,9 @@ storiesOf("search/ToggleList", module)
 	.add("With Title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault title={text("title", "Choose category")} showFilter={false} />
 	)))
+	.add("Without multiSelect", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleListDefault showFilter={false} multiSelect={boolean("multiSelect", false)} />
+	)))
 	.add("With Custom filter label", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault filterLabel="Meetup Filter" />
 	)))
