@@ -839,14 +839,20 @@ storiesOf("map/TextField", module)
 	.add("DefaultSelected", withReadme(removeFirstLine(TextFieldReadme), () => (
 		<TextFieldMapDefault defaultSelected={text("defaultSelected", "London")} showFilter={false} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(TextFieldReadme), () => (
-		<TextFieldMapDefault filterLabel="Meetups filter" />
+	.add("With filter", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Meetups filter")} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(TextFieldReadme), () => (
+		<TextFieldMapDefault showFilter={false} URLParams={boolean("URLParams (not visible in storybook)", true)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(TextFieldReadme), () => (
 		<TextFieldMapDefault
 			title={text("title", "TextField: Venue Search")}
 			placeholder={text("placeholder", "Type a place name")}
 			defaultSelected={text("defaultSelected", "London")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Places filter")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
