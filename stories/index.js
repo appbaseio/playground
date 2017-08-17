@@ -1211,7 +1211,14 @@ storiesOf("search/NestedList", module)
 	)))
 	.add("Custom filter", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
-			filterLabel="Cars"
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Cars")}
+		/>
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedListDefault
+			title=""
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
@@ -1223,6 +1230,9 @@ storiesOf("search/NestedList", module)
 			showCount={boolean("showCount", true)}
 			showSearch={boolean("showSearch", true)}
 			placeholder={text("placeholder", "Search Cars")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Cars")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
 		/>
 	)));
 
