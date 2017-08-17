@@ -1002,6 +1002,18 @@ storiesOf("map/NumberBox", module)
 			queryFormat={select("queryFormat", { exact: "exact", gte: "gte", lte: "lte" }, "exact")}
 		/>
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(NumberBoxReadme), () => (
+		<NumberBoxMapDefault
+			defaultSelected={3}
+			data={{
+				label: "Guests",
+				start: 1,
+				end: 5
+			}}
+			labelPosition="left"
+			URLParams={boolean("URLParams (not visible in storybook)", true)}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(NumberBoxReadme), () => (
 		<NumberBoxMapDefault
 			title={text("title", "Number of Guests")}
@@ -1013,6 +1025,7 @@ storiesOf("map/NumberBox", module)
 			})}
 			labelPosition={select("labelPosition", { bottom: "bottom", top: "top", left: "left", right: "right" }, "right")}
 			queryFormat={select("queryFormat", { exact: "exact", gte: "gte", lte: "lte" }, "exact")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
