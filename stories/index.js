@@ -1162,19 +1162,28 @@ storiesOf("map/DataController", module)
 	.add("With UI", withReadme(removeFirstLine(DataControllerReadme), () => (
 		<DataControllerMapDefault
 			title="DataController"
-			showUI={true}
+			visible={boolean("visible", true)}
 			dataLabel={
 				<p>★ A customizable UI widget ★</p>
 			}
 		/>
 	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerMapDefault defaultSelected={text("defaultSelected", "default")} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerMapDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
 	.add("Playground", withReadme(removeFirstLine(DataControllerReadme), () => (
 		<DataControllerMapDefault
 			title={text("title", "DataController")}
-			showUI={boolean("showUI", true)}
+			visible={boolean("visible", true)}
 			dataLabel={text("dataLabel", "★  A customizable UI widget ★")}
 			defaultSelected={text("defaultSelected", "default")}
 			componentStyle={object("componentStyle", { "paddingBottom": "10px" })}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Custom Filter Name")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
 		/>
 	)));
 
