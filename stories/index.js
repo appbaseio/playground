@@ -639,17 +639,23 @@ storiesOf("map/SingleRange", module)
 	.add("With Default Selected", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<SingleRangeMapDefault defaultSelected={text("defaultSelected", "Moderate")} showFilter={false} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(SingleRangeReadme), () => (
-		<SingleRangeMapDefault filterLabel="Earthquake range filter" />
+	.add("With filter", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Earthquake range filter")} />
 	)))
 	.add("Without radio buttons", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<SingleRangeMapDefault showFilter={false} showRadio={boolean("showRadio", false)} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeMapDefault showFilter={false} URLParams={boolean("URLParams (not visible in storybook)", true)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
 		<SingleRangeMapDefault
 			title={text("title", "SingleRange: Earthquake Filter")}
 			defaultSelected={text("defaultSelected", "Moderate")}
 			showRadio={boolean("showRadio", true)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Earthquake range filter")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
@@ -664,17 +670,23 @@ storiesOf("map/MultiRange", module)
 	.add("With Default Selected", withReadme(removeFirstLine(MultiRangeReadme), () => (
 		<MultiRangeMapDefault defaultSelected={array("defaultSelected", ["Major", "Moderate"])} showFilter={false} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(MultiRangeReadme), () => (
-		<MultiRangeMapDefault filterLabel="MultiRange filter" />
+	.add("With filter", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Earthquake range filter")} />
 	)))
 	.add("Without checkbox", withReadme(removeFirstLine(MultiRangeReadme), () => (
 		<MultiRangeMapDefault showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeMapDefault showFilter={false} URLParams={boolean("URLParams (not visible in storybook)", true)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiRangeReadme), () => (
 		<MultiRangeMapDefault
 			title={text("title", "MultiRange: Filter")}
 			defaultSelected={array("defaultSelected", ["Major", "Moderate"])}
 			showCheckbox={boolean("showCheckbox", true)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Earthquake range filter")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
