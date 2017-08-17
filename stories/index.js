@@ -420,8 +420,8 @@ storiesOf("map/SingleList", module)
 	.add("With size", withReadme(removeFirstLine(SingleListReadme), () => (
 		<SingleListMapDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search City" filterLabel="City filter" />
+	.add("With filter", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListMapDefault showSearch placeholder="Search City" showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
 	)))
 	.add("Without count", withReadme(removeFirstLine(SingleListReadme), () => (
 		<SingleListMapDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
@@ -441,6 +441,9 @@ storiesOf("map/SingleList", module)
 	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
 		<SingleListMapDefault showFilter={false} showSearch selectAllLabel={text("selectAllLabel", "All cities")} placeholder="Search City" />
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListMapDefault showFilter={false} showSearch placeholder="Search City" URLParams={boolean("URLParams (not visible in storybook)", true)} />
+	)))
 	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
 		<SingleListMapDefault
 			title={text("title", "SingleList: City Filter")}
@@ -452,6 +455,9 @@ storiesOf("map/SingleList", module)
 			placeholder={text("placeholder", "Search City")}
 			selectAllLabel={text("selectAllLabel", "All cities")}
 			showRadio={boolean("showRadio", true)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "City filter")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
@@ -466,8 +472,8 @@ storiesOf("map/MultiList", module)
 	.add("With size", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListMapDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(MultiListReadme), () => (
-		<MultiListMapDefault filterLabel="MultiList filter" showSearch placeholder="Search City" />
+	.add("With filter", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")}  showSearch placeholder="Search City" />
 	)))
 	.add("With queryFormat", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListMapDefault showSearch placeholder="Search City" queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")} />
@@ -490,6 +496,9 @@ storiesOf("map/MultiList", module)
 	.add("With Select All", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListMapDefault showFilter={false} showSearch selectAllLabel={text("selectAllLabel", "All cities")} placeholder="Search City" />
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListMapDefault showFilter={false} showSearch placeholder="Search City" URLParams={boolean("URLParams (not visible in storybook)", true)} />
+	)))
 	.add("Playground", withReadme(removeFirstLine(MultiListReadme), () => (
 		<MultiListMapDefault
 			title={text("title", "MultiList: City Filter")}
@@ -502,6 +511,9 @@ storiesOf("map/MultiList", module)
 			placeholder={text("placeholder", "Search City")}
 			selectAllLabel={text("selectAllLabel", "All cities")}
 			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "City filter")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
