@@ -704,11 +704,15 @@ storiesOf("map/SingleDropdownRange", module)
 	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeMapDefault defaultSelected={text("defaultSelected", "Moderate")} />
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeMapDefault URLParams={boolean("URLParams (not visible in storybook)", true)} />
+	)))
 	.add("Playground", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeMapDefault
 			title={text("title", "SingleDropdownRange: Filter")}
 			placeholder={text("placeholder", "Search prices")}
 			defaultSelected={text("defaultSelected", "Moderate")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
@@ -726,11 +730,15 @@ storiesOf("map/MultiDropdownRange", module)
 	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeMapDefault defaultSelected={["Moderate", "Strong"]} />
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
+		<MultiDropdownRangeMapDefault URLParams={boolean("URLParams (not visible in storybook)", true)} />
+	)))
 	.add("Playground", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeMapDefault
 			title={text("title", "MultiDropdownRange: Earthquake Magnitude")}
 			defaultSelected={["Moderate", "Strong"]}
 			placeholder={text("placeholder", "Search places")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
