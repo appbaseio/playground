@@ -528,8 +528,8 @@ storiesOf("map/SingleDropdownList", module)
 	.add("With size", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListMapDefault showFilter={false} size={number("size", 10)} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-		<SingleDropdownListMapDefault filterLabel="Cities filter" />
+	.add("With filter", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
 	)))
 	.add("With custom sort", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListMapDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} />
@@ -550,6 +550,9 @@ storiesOf("map/SingleDropdownList", module)
 			showFilter={false}
 		/>
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListMapDefault showFilter={false} URLParams={boolean("URLParams (not visible in storybook)", true)} />
+	)))
 	.add("Playground", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<SingleDropdownListMapDefault
 			title={text("title", "SingleDropdownList")}
@@ -559,6 +562,9 @@ storiesOf("map/SingleDropdownList", module)
 			selectAllLabel={text("selectAllLabel", "All Cities")}
 			defaultSelected={text("defaultSelected", "London")}
 			placeholder={text("placeholder", "Select a City")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "City filter")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
@@ -579,8 +585,8 @@ storiesOf("map/MultiDropdownList", module)
 	.add("With size", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<MultiDropdownListMapDefault showFilter={false} size={number("size", 10)} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-		<MultiDropdownListMapDefault filterLabel="Cities filter" />
+	.add("With filter", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<MultiDropdownListMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
 	)))
 	.add("Without count", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 		<MultiDropdownListMapDefault showFilter={false} showCount={boolean("showCount", false)} />
@@ -604,6 +610,9 @@ storiesOf("map/MultiDropdownList", module)
 			showFilter={false}
 		/>
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+		<MultiDropdownListMapDefault showFilter={false} URLParams={boolean("URLParams (not visible in storybook)", true)} />
+	)))
 	.add("Playground", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 		<MultiDropdownListMapDefault
 			title={text("title", "MultiDropdownList")}
@@ -613,6 +622,9 @@ storiesOf("map/MultiDropdownList", module)
 			selectAllLabel={text("selectAllLabel", "All Cities")}
 			defaultSelected={array("defaultSelected", ["London", "Melbourne"])}
 			placeholder={text("placeholder", "Select Cities")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "City filter")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
