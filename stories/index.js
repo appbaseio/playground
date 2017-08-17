@@ -758,11 +758,12 @@ storiesOf("map/DataSearch", module)
 			showFilter={false}
 		/>
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With filter", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchMapDefault
 			title="DataSearch"
 			placeholder="Search Places"
-			filterLabel="Places filter"
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Places filter")}
 		/>
 	)))
 	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
@@ -805,6 +806,14 @@ storiesOf("map/DataSearch", module)
 			fuzziness={number("fuzziness", 1)}
 		/>
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title="DataSearch"
+			placeholder="Search Venue"
+			showFilter={false}
+			URLParams={boolean("URLParams (not visible in storybook)", true)}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchMapDefault
 			title={text("title", "DataSearch: Places")}
@@ -813,6 +822,9 @@ storiesOf("map/DataSearch", module)
 			defaultSelected={text("defaultSelected", "")}
 			weights={array("weights", [1,3])}
 			fuzziness={number("fuzziness", 1)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Places filter")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
