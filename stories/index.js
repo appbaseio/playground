@@ -867,17 +867,23 @@ storiesOf("map/ToggleButton", module)
 	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleButtonMapDefault defaultSelected={array("defaultSelected", ["Social", "Travel"])} showFilter={false} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleButtonMapDefault filterLabel="Category filter" />
+	.add("With filter", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Category filter")} />
 	)))
 	.add("Without multiSelect", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleButtonMapDefault showFilter={false} multiSelect={boolean("multiSelect", false)} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonMapDefault showFilter={false} URLParams={boolean("URLParams (not visible in storybook)", true)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleButtonMapDefault
 			title={text("title", "ToggleButton: Meetup Categories")}
 			multiSelect={boolean("multiSelect", true)}
 			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Category filter")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
