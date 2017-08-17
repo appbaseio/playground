@@ -127,14 +127,15 @@ storiesOf("map/GeoDistanceSlider", module)
 			showFilter={false}
 		/>
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+	.add("With filter", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
 		<GeoDistanceSliderDefault
 			defaultSelected={{
 				distance: 50
 			}}
 			unit="mi"
 			placeholder="Search Location"
-			filterLabel="GeoDistance filter"
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "GeoDistance filter")}
 		/>
 	)))
 	.add("With Range Labels", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
@@ -191,6 +192,17 @@ storiesOf("map/GeoDistanceSlider", module)
 			autoLocation={boolean("autoLocation", false)}
 		/>
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			placeholder="Search Location"
+			showFilter={false}
+			URLParams={boolean("URLParams (not visible on storybook)", true)}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
 		<GeoDistanceSliderDefault
 			defaultSelected={object("defaultSelected", {
@@ -210,6 +222,9 @@ storiesOf("map/GeoDistanceSlider", module)
 				end: "End"
 			})}
 			autoLocation={boolean("autoLocation", true)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "GeoDistance filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", true)}
 		/>
 	)));
 
@@ -256,7 +271,7 @@ storiesOf("map/GeoDistanceDropdown", module)
 			showFilter={false}
 		/>
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+	.add("With filter", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceDropdownDefault
 			unit="mi"
 			data={
@@ -266,7 +281,8 @@ storiesOf("map/GeoDistanceDropdown", module)
 				{ start: 501, end: 1000, label: "Above 500 miles" }]
 			}
 			placeholder="Search Location"
-			filterLabel="GeoDistance filter"
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "GeoDistance filter")}
 		/>
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
@@ -301,6 +317,20 @@ storiesOf("map/GeoDistanceDropdown", module)
 			autoLocation={boolean("autoLocation", false)}
 		/>
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+				[{ start: 1, end: 100, label: "Less than 100 miles" },
+				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
+				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
+				{ start: 501, end: 1000, label: "Above 500 miles" }]
+			}
+			placeholder="Search Location"
+			showFilter={false}
+			URLParams={boolean("URLParams (not visible in storybook)", true)}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceDropdownDefault
 			data={
@@ -319,6 +349,9 @@ storiesOf("map/GeoDistanceDropdown", module)
 				title={text("title", "Geo Distance Slider")}
 				placeholderDropdown={text("placeholderDropdown", "Select radius")}
 				autoLocation={boolean("autoLocation", true)}
+				showFilter={boolean("showFilter", true)}
+				filterLabel={text("filterLabel", "GeoDistance filter")}
+				URLParams={boolean("URLParams (not visible in storybook)", true)}
 		/>
 	)));
 
