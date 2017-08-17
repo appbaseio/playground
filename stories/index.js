@@ -923,6 +923,9 @@ storiesOf("map/RangeSlider", module)
 			})}
 		/>
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<RangeSliderMapDefault URLParams={boolean("URLParams (not visible in storybook)", true)} />
+	)))
 	.add("Playground", withReadme(removeFirstLine(RangeSliderReadme), () => (
 		<RangeSliderMapDefault
 			title={text("title", "RangeSlider: Guest RSVPs")}
@@ -941,6 +944,7 @@ storiesOf("map/RangeSlider", module)
 				end: "End"
 			})}
 			showHistogram={boolean("showHistogram", true)}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
