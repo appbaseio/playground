@@ -1041,8 +1041,8 @@ storiesOf("map/DatePicker", module)
 	.add("With placeholder", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerMapDefault placeholder={text("placeholder", "Pick date")} showFilter={false} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(DatePickerReadme), () => (
-		<DatePickerMapDefault filterLabel="Date" />
+	.add("With filter", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Date")} />
 	)))
 	.add("Without focus", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerMapDefault showFilter={false} focused={boolean("focused", false)} />
@@ -1074,6 +1074,9 @@ storiesOf("map/DatePicker", module)
 			showFilter={false}
 		/>
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault showFilter={false} URLParams={boolean("URLParams (not visible in storybook)", true)} />
+	)))
 	.add("Playground", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerMapDefault
 			title={text("title", "Date Picker")}
@@ -1085,6 +1088,9 @@ storiesOf("map/DatePicker", module)
 				showClearDate: false
 			})}
 			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Date")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
@@ -1094,10 +1100,10 @@ storiesOf("map/DateRange", module)
 		<DateRangeMapDefault showFilter={false} />
 	)))
 	.add("With title", withReadme(removeFirstLine(DateRangeReadme), () => (
-		<DateRangeMapDefault showFilter={false} title={text("title", "Date Range")} />
+		<DateRangeMapDefault title={text("title", "Date Range")} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(DateRangeReadme), () => (
-		<DateRangeMapDefault filterLabel="Date range" />
+	.add("With filter", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Date Range")} />
 	)))
 	.add("Show more than 1 month", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeMapDefault
@@ -1129,6 +1135,9 @@ storiesOf("map/DateRange", module)
 			})}
 		/>
 	)))
+	.add("With URLParams", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault showFilter={false} URLParams={boolean("URLParams (not visible in storybook)", true)} />
+	)))
 	.add("Playground", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeMapDefault
 			title={text("title", "Date Range")}
@@ -1139,6 +1148,9 @@ storiesOf("map/DateRange", module)
 				showClearDate: true
 			})}
 			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Date range")}
+			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));
 
