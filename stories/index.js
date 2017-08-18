@@ -806,6 +806,14 @@ storiesOf("map/DataSearch", module)
 			fuzziness={number("fuzziness", 1)}
 		/>
 	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title="DataSearch"
+			placeholder="Search Venue"
+			showFilter={false}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
+		/>
+	)))
 	.add("With URLParams", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchMapDefault
 			title="DataSearch"
@@ -822,6 +830,7 @@ storiesOf("map/DataSearch", module)
 			defaultSelected={text("defaultSelected", "")}
 			weights={array("weights", [1,3])}
 			fuzziness={number("fuzziness", 1)}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "Places filter")}
 			URLParams={boolean("URLParams (not visible in storybook)", false)}
@@ -1669,6 +1678,14 @@ storiesOf("search/DataSearch", module)
 			highlight={boolean("highlight", true)}
 		/>
 	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
+		/>
+	)))
 	.add("With URLParams", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title="DataSearch"
@@ -1685,6 +1702,7 @@ storiesOf("search/DataSearch", module)
 			defaultSelected={text("defaultSelected", "")}
 			weights={array("weights", [1, 3])}
 			fuzziness={number("fuzziness", 1)}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "Cars filter")}
 			highlight={boolean("highlight", false)}
