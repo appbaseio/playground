@@ -794,7 +794,7 @@ storiesOf("map/DataSearch", module)
 		<DataSearchMapDefault
 			title="DataSearch"
 			placeholder="Search Places"
-			weights={[1, 3]}
+			weights={array("weights", [1,3])}
 			showFilter={false}
 		/>
 	)))
@@ -804,6 +804,14 @@ storiesOf("map/DataSearch", module)
 			placeholder="Search Places"
 			showFilter={false}
 			fuzziness={number("fuzziness", 1)}
+		/>
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchMapDefault
+			title="DataSearch"
+			placeholder="Search Venue"
+			showFilter={false}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
 		/>
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(DataSearchReadme), () => (
@@ -822,6 +830,7 @@ storiesOf("map/DataSearch", module)
 			defaultSelected={text("defaultSelected", "")}
 			weights={array("weights", [1,3])}
 			fuzziness={number("fuzziness", 1)}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "Places filter")}
 			URLParams={boolean("URLParams (not visible in storybook)", false)}
@@ -1250,9 +1259,16 @@ storiesOf("search/ToggleList", module)
 	.add("With Custom filter label", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Meetup Filter")} />
 	)))
-	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+	.add("With defaultSelected and multiSelect active", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault
 			defaultSelected={array("defaultSelected", ["Social"])}
+			showFilter={false}
+		/>
+	)))
+	.add("With defaultSelected and multiSelect inactive", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleListDefault
+			defaultSelected={text("defaultSelected", "Social")}
+			multiSelect={false}
 			showFilter={false}
 		/>
 	)))
@@ -1262,7 +1278,6 @@ storiesOf("search/ToggleList", module)
 	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault
 			title={text("title", "ToggleList: Meetup Categories")}
-			multiSelect={boolean("multiSelect", true)}
 			data={object("data", [
 				{ label: "Social", value: "Social" },
 				{ label: "Travel", value: "Travel" },
@@ -1663,6 +1678,14 @@ storiesOf("search/DataSearch", module)
 			highlight={boolean("highlight", true)}
 		/>
 	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
+		/>
+	)))
 	.add("With URLParams", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title="DataSearch"
@@ -1679,6 +1702,7 @@ storiesOf("search/DataSearch", module)
 			defaultSelected={text("defaultSelected", "")}
 			weights={array("weights", [1, 3])}
 			fuzziness={number("fuzziness", 1)}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "Cars filter")}
 			highlight={boolean("highlight", false)}
