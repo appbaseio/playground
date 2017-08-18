@@ -1250,13 +1250,13 @@ storiesOf("search/ToggleList", module)
 	.add("With Custom filter label", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Meetup Filter")} />
 	)))
-	.add("With multiSelect and Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+	.add("With defaultSelected and multiSelect active", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault
 			defaultSelected={array("defaultSelected", ["Social"])}
 			showFilter={false}
 		/>
 	)))
-	.add("Without multiSelect and Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+	.add("With defaultSelected and multiSelect inactive", withReadme(removeFirstLine(ToggleButtonReadme), () => (
 		<ToggleListDefault
 			defaultSelected={text("defaultSelected", "Social")}
 			multiSelect={false}
