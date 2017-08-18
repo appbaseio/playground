@@ -794,7 +794,7 @@ storiesOf("map/DataSearch", module)
 		<DataSearchMapDefault
 			title="DataSearch"
 			placeholder="Search Places"
-			weights={[1, 3]}
+			weights={array("weights", [1,3])}
 			showFilter={false}
 		/>
 	)))
