@@ -53,7 +53,6 @@ import DataControllerMapDefault from "./reactivemaps/DataController.stories";
 
 // import reactivesearch components
 import NestedListDefault from "./reactivesearch/NestedList.stories";
-import ToggleListDefault from "./reactivesearch/ToggleList.stories";
 import DynamicRangeSliderDefault from "./reactivesearch/DynamicRangeSlider.stories";
 import TagCloudDefault from "./reactivesearch/TagCloud.stories";
 import RatingsFilterDefault from "./reactivesearch/RatingsFilter.stories";
@@ -1241,51 +1240,6 @@ storiesOf("search/NestedList", module)
 			placeholder={text("placeholder", "Search Cars")}
 			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "Cars")}
-			URLParams={boolean("URLParams (not visible on storybook)", false)}
-		/>
-	)));
-
-storiesOf("search/ToggleList", module)
-	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault showFilter={false} />
-	)))
-	.add("With Title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault title={text("title", "Choose category")} showFilter={false} />
-	)))
-	.add("Without multiSelect", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault showFilter={false} multiSelect={boolean("multiSelect", false)} />
-	)))
-	.add("With Custom filter label", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Meetup Filter")} />
-	)))
-	.add("With defaultSelected and multiSelect active", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault
-			defaultSelected={array("defaultSelected", ["Social"])}
-			showFilter={false}
-		/>
-	)))
-	.add("With defaultSelected and multiSelect inactive", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault
-			defaultSelected={text("defaultSelected", "Social")}
-			multiSelect={false}
-			showFilter={false}
-		/>
-	)))
-	.add("With URLParams", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-	)))
-	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault
-			title={text("title", "ToggleList: Meetup Categories")}
-			data={object("data", [
-				{ label: "Social", value: "Social" },
-				{ label: "Travel", value: "Travel" },
-				{ label: "Outdoors", value: "Outdoors" }
-			])}
-			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
-			showFilter={boolean("showFilter", true)}
-			filterLabel={text("filterLabel", "Meetup Filter")}
 			URLParams={boolean("URLParams (not visible on storybook)", false)}
 		/>
 	)));
