@@ -53,7 +53,6 @@ import DataControllerMapDefault from "./reactivemaps/DataController.stories";
 
 // import reactivesearch components
 import NestedListDefault from "./reactivesearch/NestedList.stories";
-import ToggleListDefault from "./reactivesearch/ToggleList.stories";
 import DynamicRangeSliderDefault from "./reactivesearch/DynamicRangeSlider.stories";
 import TagCloudDefault from "./reactivesearch/TagCloud.stories";
 import RatingsFilterDefault from "./reactivesearch/RatingsFilter.stories";
@@ -62,7 +61,8 @@ import MultiLevelMenuDefault from "./reactivesearch/MultiLevelMenu.stories";
 import ResultCardDefault from "./reactivesearch/ResultCard.stories";
 import ResultListDefault from "./reactivesearch/ResultList.stories";
 import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
-
+import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
+import MultiDataListRSDefault from "./reactivesearch/MultiDataList.stories";
 import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
 import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
@@ -1245,51 +1245,6 @@ storiesOf("search/NestedList", module)
 		/>
 	)));
 
-storiesOf("search/ToggleList", module)
-	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault showFilter={false} />
-	)))
-	.add("With Title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault title={text("title", "Choose category")} showFilter={false} />
-	)))
-	.add("Without multiSelect", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault showFilter={false} multiSelect={boolean("multiSelect", false)} />
-	)))
-	.add("With Custom filter label", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Meetup Filter")} />
-	)))
-	.add("With defaultSelected and multiSelect active", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault
-			defaultSelected={array("defaultSelected", ["Social"])}
-			showFilter={false}
-		/>
-	)))
-	.add("With defaultSelected and multiSelect inactive", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault
-			defaultSelected={text("defaultSelected", "Social")}
-			multiSelect={false}
-			showFilter={false}
-		/>
-	)))
-	.add("With URLParams", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-	)))
-	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-		<ToggleListDefault
-			title={text("title", "ToggleList: Meetup Categories")}
-			data={object("data", [
-				{ label: "Social", value: "Social" },
-				{ label: "Travel", value: "Travel" },
-				{ label: "Outdoors", value: "Outdoors" }
-			])}
-			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
-			showFilter={boolean("showFilter", true)}
-			filterLabel={text("filterLabel", "Meetup Filter")}
-			URLParams={boolean("URLParams (not visible on storybook)", false)}
-		/>
-	)));
-
 storiesOf("search/DynamicRangeSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
@@ -2039,6 +1994,90 @@ storiesOf("search/MultiDropdownList", module)
 			URLParams={boolean("URLParams (not visible on storybook)", false)}
 		/>
 	)));
+
+storiesOf("search/SingleDataList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", () => (
+		<SingleDataListRSDefault />
+	))
+	.add("With title", () => (
+		<SingleDataListRSDefault showFilter={false} title={text("title", "Topics")} />
+	))
+	.add("With defaultSelected", () => (
+		<SingleDataListRSDefault defaultSelected={text("defaultSelected", "Social")} showFilter={false} />
+	))
+	.add("With showSearch", () => (
+		<SingleDataListRSDefault showFilter={false} showSearch={boolean("showSearch", true)} placeholder={text("placeholder", "Search topics")} />
+	))
+	.add("Without Radio", () => (
+		<SingleDataListRSDefault showRadio={boolean("showRadio", false)} showFilter={false} />
+	))
+	.add("With selectAllLabel", () => (
+		<SingleDataListRSDefault showFilter={false} selectAllLabel={text("selectAllLabel", "Select All")} />
+	))
+	.add("With filter", () => (
+		<SingleDataListRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Custom Filter Name")} />
+	))
+	.add("With URLParams", () => (
+		<SingleDataListRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	))
+	.add("Playground", () => (
+		<SingleDataListRSDefault
+			title={text("title", "Topics")}
+			defaultSelected={text("defaultSelected", "Social")}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search topics")}
+			showRadio={boolean("showRadio", true)}
+			selectAllLabel={text("selectAllLabel", "Select All")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Custom Filter Name")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	));
+
+storiesOf("search/MultiDataList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", () => (
+		<MultiDataListRSDefault showFilter={false} />
+	))
+	.add("With title", () => (
+		<MultiDataListRSDefault showFilter={false} title={text("title", "Topics")} />
+	))
+	.add("With defaultSelected", () => (
+		<MultiDataListRSDefault defaultSelected={array("defaultSelected", ["Social", "Travel"])} showFilter={false} />
+	))
+	.add("With showSearch", () => (
+		<MultiDataListRSDefault showFilter={false} showSearch={boolean("showSearch", true)} placeholder={text("placeholder", "Search topics")} />
+	))
+	.add("Without Checkbox", () => (
+		<MultiDataListRSDefault showCheckbox={boolean("showCheckbox", false)} showFilter={false} />
+	))
+	.add("With selectAllLabel", () => (
+		<MultiDataListRSDefault showFilter={false} selectAllLabel={text("selectAllLabel", "Select All")} />
+	))
+	.add("With filter", () => (
+		<MultiDataListRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Custom Filter Name")} />
+	))
+	.add("With queryFormat", () => (
+		<MultiDataListRSDefault showFilter={false} queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")} />
+	))
+	.add("With URLParams", () => (
+		<MultiDataListRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	))
+	.add("Playground", () => (
+		<MultiDataListRSDefault
+			title={text("title", "Topics")}
+			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search topics")}
+			showCheckbox={boolean("showCheckbox", true)}
+			selectAllLabel={text("selectAllLabel", "Select All")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Custom Filter Name")}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	));
 
 storiesOf("search/SingleRange", module)
 	.addDecorator(withKnobs)
