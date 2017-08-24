@@ -61,7 +61,7 @@ import MultiLevelMenuDefault from "./reactivesearch/MultiLevelMenu.stories";
 import ResultCardDefault from "./reactivesearch/ResultCard.stories";
 import ResultListDefault from "./reactivesearch/ResultList.stories";
 import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
-
+import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
 import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
 import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
@@ -1993,6 +1993,46 @@ storiesOf("search/MultiDropdownList", module)
 			URLParams={boolean("URLParams (not visible on storybook)", false)}
 		/>
 	)));
+
+storiesOf("search/SingleDataList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", () => (
+		<SingleDataListRSDefault />
+	))
+	.add("With title", () => (
+		<SingleDataListRSDefault showFilter={false} title={text("title", "Topics")} />
+	))
+	.add("With defaultSelected", () => (
+		<SingleDataListRSDefault defaultSelected={text("defaultSelected", "Social")} showFilter={false} />
+	))
+	.add("With showSearch", () => (
+		<SingleDataListRSDefault showFilter={false} showSearch={boolean("showSearch", true)} placeholder={text("placeholder", "Search topics")} />
+	))
+	.add("Without Radio", () => (
+		<SingleDataListRSDefault showRadio={boolean("showRadio", false)} showFilter={false} />
+	))
+	.add("With selectAllLabel", () => (
+		<SingleDataListRSDefault showFilter={false} selectAllLabel={text("selectAllLabel", "Select All")} />
+	))
+	.add("With filter", () => (
+		<SingleDataListRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Custom Filter Name")} />
+	))
+	.add("With URLParams", () => (
+		<SingleDataListRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	))
+	.add("Playground", () => (
+		<SingleDataListRSDefault
+			title={text("title", "Topics")}
+			defaultSelected={text("defaultSelected", "Social")}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search topics")}
+			showRadio={boolean("showRadio", true)}
+			selectAllLabel={text("selectAllLabel", "Select All")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Custom Filter Name")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	));
 
 storiesOf("search/SingleRange", module)
 	.addDecorator(withKnobs)
