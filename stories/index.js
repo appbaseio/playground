@@ -58,6 +58,7 @@ import TagCloudDefault from "./reactivesearch/TagCloud.stories";
 import RatingsFilterDefault from "./reactivesearch/RatingsFilter.stories";
 import CategorySearchDefault from "./reactivesearch/CategorySearch.stories";
 import MultiLevelMenuDefault from "./reactivesearch/MultiLevelMenu.stories";
+import ReactiveListDefault from "./reactivesearch/ReactiveList.stories";
 import ResultCardDefault from "./reactivesearch/ResultCard.stories";
 import ResultListDefault from "./reactivesearch/ResultList.stories";
 import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
@@ -1498,6 +1499,99 @@ storiesOf("search/MultiLevelMenu", module)
 			maxCategories={number("maxCategories", 10)}
 			maxItems={number("maxItems", 4)}
 			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
+
+storiesOf("search/ReactiveList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault />
+	)))
+	.add("With Title", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault title={text("title", "People")} stream={false} />
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault onAllData={null} stream={false} placeholder={text("placeholder", "Select from list")} />
+	)))
+	.add("Without resultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault onAllData={null} stream={false} showResultStats={boolean("showResultStats", false)} />
+	)))
+	.add("With Streaming Enabled", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault title="Meetups" stream={boolean("stream", true)} />
+	)))
+	.add("With pagination", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			pagination={boolean("pagination", true)}
+			paginationAt={select("paginationAt", { bottom: "bottom", top: "top", both: "both" }, "bottom")}
+			pages={number("pages", 5)}
+			title="Meetups"
+		/>
+	)))
+	.add("With custom sort order", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault onAllData={null} stream={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", default: "default" }, "asc")} />
+	)))
+	.add("With Sort Options", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			title="Meetups"
+			stream={false}
+			sortOptions={[
+				{
+					label: "Most Recent RSVP",
+					appbaseField: "mtime",
+					sortBy: "desc"
+				},
+				{
+					label: "Guests - High to Low",
+					appbaseField: "guests",
+					sortBy: "desc"
+				},
+				{
+					label: "Guests - Low to High",
+					appbaseField: "guests",
+					sortBy: "asc"
+				}
+			]}
+		/>
+	)))
+	.add("With custom messages", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			title="Meetups"
+			stream={false}
+			initialLoader={text("initialLoader", "Loading results..")}
+			noResults={text("noResults", "No results found!")}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			title={text("title", "ReactiveList: Results")}
+			placeholder={text("placeholder", "Select from list")}
+			from={number("from", 0)}
+			size={number("size", 5)}
+			initialLoader={text("initialLoader", "Loading results..")}
+			noResults={text("noResults", "No results found!")}
+			showResultStats={boolean("showResultStats", true)}
+			pagination={boolean("pagination", true)}
+			paginationAt={select("paginationAt", { bottom: "bottom", top: "top", both: "both" }, "bottom")}
+			pages={number("pages", 5)}
+			stream={boolean("stream", false)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", default: "default" }, "default")}
+			sortOptions={[
+				{
+					label: "Most Recent RSVP",
+					appbaseField: "mtime",
+					sortBy: "desc"
+				},
+				{
+					label: "Guests - High to Low",
+					appbaseField: "guests",
+					sortBy: "desc"
+				},
+				{
+					label: "Guests - Low to High",
+					appbaseField: "guests",
+					sortBy: "asc"
+				}
+			]}
 		/>
 	)));
 
