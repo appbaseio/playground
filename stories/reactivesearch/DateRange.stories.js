@@ -20,14 +20,14 @@ export default class DateRangeRSDefault extends Component {
 				{
 					"range": {
 						"date_from": {
-							"lte": moment(value.startDate).format("YYYYMMDD")
+							"gte": moment(value.startDate).format("YYYYMMDD")
 						}
 					}
 				},
 				{
 					"range": {
 						"date_to": {
-							"gte": moment(value.endDate).format("YYYYMMDD")
+							"lte": moment(value.endDate).format("YYYYMMDD")
 						}
 					}
 				}
