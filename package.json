@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/appbaseio/reactive-playground#readme",
   "dependencies": {
-    "@appbaseio/reactivesearch": "^1.0.0-beta03",
+    "@appbaseio/reactivesearch": "^1.0.0-beta04",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
