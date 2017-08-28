@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { ReactiveBase, CategorySearch, ReactiveList, SelectedFilters, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, CategorySearch, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class CategorySearchDefault extends Component {
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(markerData) {

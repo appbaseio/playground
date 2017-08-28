@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	SingleDropdownRange,
-	ResultCard,
-	AppbaseSensorHelper as helper
+	ResultCard
 } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class SingleDropdownRangeRSDefault extends Component {
 	constructor(props) {
@@ -13,7 +13,7 @@ export default class SingleDropdownRangeRSDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(res) {

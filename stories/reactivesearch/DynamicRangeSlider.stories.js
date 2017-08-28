@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	DynamicRangeSlider,
-	ReactiveList,
-	AppbaseSensorHelper as helper
+	ReactiveList
 } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class DynamicRangeSliderDefault extends Component {
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(markerData) {

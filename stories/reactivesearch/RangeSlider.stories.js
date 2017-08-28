@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	RangeSlider,
-	ResultCard,
-	AppbaseSensorHelper as helper
+	ResultCard
 } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class RangeSliderRSDefault extends Component {
 	constructor(props) {
@@ -13,7 +13,7 @@ export default class RangeSliderRSDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(res) {

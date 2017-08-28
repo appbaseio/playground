@@ -3,13 +3,13 @@ import {
 	ReactiveBase,
 	DataController,
 	ResultCard,
-	SelectedFilters,
-	AppbaseSensorHelper as helper
+	SelectedFilters
 } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class DataControllerRSDefault extends Component {
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	customQuery(value) {

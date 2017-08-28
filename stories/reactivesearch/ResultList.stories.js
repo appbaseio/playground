@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { ReactiveBase, RatingsFilter, ResultList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, RatingsFilter, ResultList } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class ResultCardDefault extends Component {
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(res) {

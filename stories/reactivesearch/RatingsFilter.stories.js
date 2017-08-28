@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { ReactiveBase, RatingsFilter, ResultCard, SelectedFilters, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, RatingsFilter, ResultCard, SelectedFilters } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class RatingsFilterDefault extends Component {
 	constructor(props) {
@@ -8,7 +9,7 @@ export default class RatingsFilterDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(res) {

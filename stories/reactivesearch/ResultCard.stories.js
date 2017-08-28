@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { ReactiveBase, RatingsFilter, ResultCard, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, RatingsFilter, ResultCard } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class ResultCardDefault extends Component {
 	constructor(props) {
@@ -8,7 +9,7 @@ export default class ResultCardDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(res) {

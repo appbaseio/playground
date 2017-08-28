@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { ReactiveBase, MultiList, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, MultiList, ReactiveList } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 import { Img } from "./Img";
 
 require("./list.css");
@@ -12,7 +13,7 @@ export default class ReactiveListDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(markerData) {

@@ -3,9 +3,9 @@ import {
 	ReactiveBase,
 	DataController,
 	ReactiveMap,
-	SelectedFilters,
-	AppbaseSensorHelper as helper
+	SelectedFilters
 } from "@appbaseio/reactivemaps";
+import ResponsiveStory from '../reactivesearch/ResponsiveStory';
 
 import { Img } from "./Img.js";
 const historyPin = require("./placeholder.svg");
@@ -18,7 +18,7 @@ export default class DataControllerMapDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	customQuery(value) {

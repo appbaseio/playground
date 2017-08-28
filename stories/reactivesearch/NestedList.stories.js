@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { ReactiveBase, NestedList, ReactiveList, SelectedFilters, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, NestedList, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class NestedListDefault extends Component {
 	constructor(props) {
@@ -7,7 +8,7 @@ export default class NestedListDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(markerData) {

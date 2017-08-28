@@ -3,9 +3,9 @@ import {
 	ReactiveBase,
 	SingleList,
 	ResultList,
-	SelectedFilters,
-	AppbaseSensorHelper as helper
+	SelectedFilters
 } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class SingleListRSDefault extends Component {
 	constructor(props) {
@@ -14,7 +14,7 @@ export default class SingleListRSDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(res) {

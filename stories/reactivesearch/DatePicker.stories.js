@@ -4,13 +4,13 @@ import {
 	ReactiveBase,
 	DatePicker,
 	ResultCard,
-	SelectedFilters,
-	AppbaseSensorHelper as helper
+	SelectedFilters
 } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class DatePickerRSDefault extends Component {
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	dateQuery(value) {

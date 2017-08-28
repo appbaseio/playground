@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	ResultCard,
-	NumberBox,
-	AppbaseSensorHelper as helper
+	NumberBox
 } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class NumberBoxRSDefault extends Component {
 	constructor(props) {
@@ -13,7 +13,7 @@ export default class NumberBoxRSDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(res) {

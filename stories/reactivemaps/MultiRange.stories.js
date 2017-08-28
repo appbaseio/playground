@@ -3,9 +3,9 @@ import {
 	ReactiveBase,
 	ReactiveMap,
 	MultiRange,
-	SelectedFilters,
-	AppbaseSensorHelper as helper
+	SelectedFilters
 } from "@appbaseio/reactivemaps";
+import ResponsiveStory from '../reactivesearch/ResponsiveStory';
 
 import { Img } from "./Img.js";
 const historyPin = require("./placeholder.svg");
@@ -17,7 +17,7 @@ export default class MultiRangeMapDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onPopoverTrigger(marker) {

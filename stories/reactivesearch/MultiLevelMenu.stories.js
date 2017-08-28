@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { ReactiveBase, MultiLevelMenu, ReactiveList, AppbaseSensorHelper as helper } from "@appbaseio/reactivesearch";
+import { ReactiveBase, MultiLevelMenu, ReactiveList } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class MultiLevelMenuDefault extends Component {
 	constructor(props) {
@@ -7,7 +8,7 @@ export default class MultiLevelMenuDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(markerData) {

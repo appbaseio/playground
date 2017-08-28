@@ -3,9 +3,9 @@ import {
 	ReactiveBase,
 	SingleRange,
 	ResultCard,
-	SelectedFilters,
-	AppbaseSensorHelper as helper
+	SelectedFilters
 } from "@appbaseio/reactivesearch";
+import ResponsiveStory from './ResponsiveStory';
 
 export default class SingleRangeRSDefault extends Component {
 	constructor(props) {
@@ -14,7 +14,7 @@ export default class SingleRangeRSDefault extends Component {
 	}
 
 	componentDidMount() {
-		helper.ResponsiveStory();
+		ResponsiveStory();
 	}
 
 	onData(res) {
