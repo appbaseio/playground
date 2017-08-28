@@ -20,9 +20,9 @@ export default class DataSearchRSDefault extends Component {
 	onData(res) {
 		const result = {
 			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
-			title: res.name,
+			title: <span dangerouslySetInnerHTML={{ __html: res.name}} />,
 			rating: res.rating,
-			desc: res.brand,
+			desc: <span dangerouslySetInnerHTML={{ __html: res.brand }} />,
 			url: "#"
 		};
 		return result;
