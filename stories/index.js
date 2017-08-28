@@ -1441,6 +1441,14 @@ storiesOf("search/CategorySearch", module)
 			autoSuggest={boolean("autoSuggest", false)}
 		/>
 	)))
+	.add("With highlight", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			showFilter={false}
+			highlight={boolean("highlight", true)}
+		/>
+	)))
 	.add("With URLParams", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
@@ -1460,6 +1468,7 @@ storiesOf("search/CategorySearch", module)
 			weights={array("weights", [1,3])}
 			fuzziness={number("fuzziness", 1)}
 			autoSuggest={boolean("autoSuggest", true)}
+			highlight={boolean("highlight", false)}
 			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "Cars filter")}
 			URLParams={boolean("URLParams (not visible on storybook)", false)}
