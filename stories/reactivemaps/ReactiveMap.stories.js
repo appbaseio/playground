@@ -44,9 +44,9 @@ export default class ReactiveMapDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="meetup2"
-				credentials="qz4ZD8xq1:a0edfc7f-5611-46f6-8fe1-d4db234631f3"
-				type="meetup"
+				app="reactivemap-demo"
+				credentials="qMzzgez0t:a9138c3f-f246-4cd8-ba3d-0b99f9550c05"
+				type="meetupdata1"
 				theme="rbc-blue"
 			>
 				<div className="row reverse-labels">
