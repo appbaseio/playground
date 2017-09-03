@@ -9,6 +9,7 @@ import MultiListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/componen
 import SingleDropdownListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/SingleDropdownList.md";
 import MultiDropdownListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/MultiDropdownList.md";
 import NestedListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/NestedList.md";
+// import NestedMultiListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/NestedMultiList.md";
 import SingleRangeReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/SingleRange.md";
 import MultiRangeReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/MultiRange.md";
 import SingleDropdownRangeReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/SingleDropdownRange.md";
@@ -53,6 +54,7 @@ import DataControllerMapDefault from "./reactivemaps/DataController.stories";
 
 // import reactivesearch components
 import NestedListDefault from "./reactivesearch/NestedList.stories";
+import NestedMultiListDefault from "./reactivesearch/NestedMultiList.stories";
 import DynamicRangeSliderDefault from "./reactivesearch/DynamicRangeSlider.stories";
 import TagCloudDefault from "./reactivesearch/TagCloud.stories";
 import RatingsFilterDefault from "./reactivesearch/RatingsFilter.stories";
@@ -1234,6 +1236,53 @@ storiesOf("search/NestedList", module)
 	.add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
 		<NestedListDefault
 			title={text("title", "NestedList: Car Filter")}
+			size={number("size", 100)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
+			showCount={boolean("showCount", true)}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search Cars")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Cars")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
+
+storiesOf("search/NestedMultiList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedMultiListDefault
+			title=""
+			showFilter={false}
+		/>
+	)))
+	.add("With Title", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedMultiListDefault
+			title={text("title", "Car Category")}
+			showFilter={false}
+		/>
+	)))
+	.add("Default selection", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedMultiListDefault
+			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
+			showFilter={false}
+		/>
+	)))
+	.add("Custom filter", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedMultiListDefault
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Cars")}
+		/>
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedMultiListDefault
+			title=""
+			showFilter={false}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
+		<NestedMultiListDefault
+			title={text("title", "NestedMultiList: Car Filter")}
 			size={number("size", 100)}
 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
