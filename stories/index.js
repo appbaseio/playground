@@ -2599,3 +2599,22 @@ storiesOf("search/DataController", module)
 			URLParams={boolean("URLParams (not visible on storybook)", true)}
 		/>
 	)));
+
+storiesOf("search/SelectedFilters", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} />
+	)))
+	.add("With no filter", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} showFilter={boolean("showFilter", false)} />
+	)))
+	.add("With filterLabel", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} filterLabel={text("filterLabel", "City filter")} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault
+			defaultSelected={["London"]}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "City filter")}
+		/>
+	)));
