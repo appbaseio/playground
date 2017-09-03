@@ -53,7 +53,7 @@ export default class MultiDataListDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<SelectedFilters componentId="SelectedFilters" />
 						<MultiDataList
-							appbaseField={this.props.mapping.topic}
+							dataField={this.props.mapping.topic}
 							componentId="MeetupTops"
 							title="MultiDataList"
 							data={this.data}
@@ -64,7 +64,7 @@ export default class MultiDataListDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultList
 							componentId="SearchResult"
-							appbaseField="group.group_topics.topic_name_raw"
+							dataField="group.group_topics.topic_name_raw"
 							title="Results"
 							sortBy="asc"
 							from={0}

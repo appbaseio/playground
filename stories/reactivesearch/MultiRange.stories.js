@@ -41,7 +41,7 @@ export default class MultiRangeRSDefault extends Component {
 						<SelectedFilters componentId="PriceSensor" />
 						<MultiRange
 							componentId="PriceSensor"
-							appbaseField="price"
+							dataField="price"
 							title="MultiRange"
 							data={
 								[{"start": 0, "end": 100, "label": "Cheap"},
@@ -56,7 +56,7 @@ export default class MultiRangeRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							title="Results"
 							from={0}
 							size={20}

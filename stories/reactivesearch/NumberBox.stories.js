@@ -43,7 +43,7 @@ export default class NumberBoxRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<NumberBox
 							componentId="GuestSensor"
-							appbaseField="accommodates"
+							dataField="accommodates"
 							title="Guests"
 							{...this.props}
 						/>
@@ -52,7 +52,7 @@ export default class NumberBoxRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							from={0}
 							size={40}
 							onData={this.onData}

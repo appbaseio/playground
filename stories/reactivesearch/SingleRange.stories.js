@@ -41,7 +41,7 @@ export default class SingleRangeRSDefault extends Component {
 						<SelectedFilters componentId="PriceSensor" />
 						<SingleRange
 							componentId="PriceSensor"
-							appbaseField="price"
+							dataField="price"
 							title="SingleRange"
 							data={
 								[{"start": 0, "end": 100, "label": "Cheap"},
@@ -56,7 +56,7 @@ export default class SingleRangeRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							title="Results"
 							from={0}
 							size={20}

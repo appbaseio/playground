@@ -61,7 +61,7 @@ export default class DataControllerMapDefault extends Component {
 						<SelectedFilters componentId="CustomSensor" />
 						<DataController
 							componentId="CustomSensor"
-							appbaseField="mtime"
+							dataField="mtime"
 							customQuery={this.customQuery}
 							{...this.props}
 						/>
@@ -69,7 +69,7 @@ export default class DataControllerMapDefault extends Component {
 
 					<div className="col s6 col-xs-6">
 						<ReactiveMap
-							appbaseField="location"
+							dataField="location"
 							historicalData
 							setMarkerCluster={false}
 							defaultMapStyle="Light Monochrome"

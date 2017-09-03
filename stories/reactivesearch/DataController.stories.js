@@ -42,7 +42,7 @@ export default class DataControllerRSDefault extends Component {
 						<SelectedFilters componentId="CustomSensor" />
 						<DataController
 							componentId="CustomSensor"
-							appbaseField="name"
+							dataField="name"
 							customQuery={this.customQuery}
 							{...this.props}
 						/>
@@ -51,7 +51,7 @@ export default class DataControllerRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							title="Results"
 							from={0}
 							size={20}

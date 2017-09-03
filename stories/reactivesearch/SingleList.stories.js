@@ -43,7 +43,7 @@ export default class SingleListRSDefault extends Component {
 						<SelectedFilters componentId="CitySensor" />
 						<SingleList
 							componentId="CitySensor"
-							appbaseField="group.group_city.raw"
+							dataField="group.group_city.raw"
 							title="SingleList"
 							size={100}
 							{...this.props}
@@ -53,7 +53,7 @@ export default class SingleListRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultList
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							from={0}
 							size={40}
 							onData={this.onData}

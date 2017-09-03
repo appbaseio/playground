@@ -52,7 +52,7 @@ export default class RangeSliderMapDefault extends Component {
 						<SelectedFilters componentId="RangeSensor" />
 						<RangeSlider
 							componentId="RangeSensor"
-							appbaseField={this.props.mapping.guests}
+							dataField={this.props.mapping.guests}
 							stepValue={2}
 							title="RangeSlider"
 							range={{
@@ -65,7 +65,7 @@ export default class RangeSliderMapDefault extends Component {
 
 					<div className="col s6 col-xs-6">
 						<ReactiveMap
-							appbaseField={this.props.mapping.location}
+							dataField={this.props.mapping.location}
 							historicalData
 							setMarkerCluster={false}
 							defaultMapStyle="Light Monochrome"

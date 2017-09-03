@@ -34,7 +34,7 @@ export default class RatingsFilterDefault extends Component {
 						<SelectedFilters componentId="RatingsSensor" />
 						<RatingsFilter
 							componentId="RatingsSensor"
-							appbaseField={this.props.mapping.rating}
+							dataField={this.props.mapping.rating}
 							title="RatingsFilter"
 							data={
 							[{ start: 4, end: 5, label: "4 stars and up" },
@@ -49,7 +49,7 @@ export default class RatingsFilterDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField={this.props.mapping.name}
+							dataField={this.props.mapping.name}
 							title="Results"
 							from={0}
 							size={20}

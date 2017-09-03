@@ -51,7 +51,7 @@ export default class DataSearchMapDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<SelectedFilters componentId="VenueSensor" />
 						<DataSearch
-							appbaseField={[this.props.mapping.venue, this.props.mapping.topic]}
+							dataField={[this.props.mapping.venue, this.props.mapping.topic]}
 							componentId="VenueSensor"
 							placeholder="Search Venue"
 							{...this.props}
@@ -60,7 +60,7 @@ export default class DataSearchMapDefault extends Component {
 
 					<div className="col s6 col-xs-6">
 						<ReactiveMap
-							appbaseField={this.props.mapping.location}
+							dataField={this.props.mapping.location}
 							historicalData
 							setMarkerCluster={false}
 							defaultMapStyle="Light Monochrome"

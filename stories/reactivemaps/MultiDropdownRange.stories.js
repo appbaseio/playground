@@ -46,7 +46,7 @@ export default class MultiDropdownRangeMapDefault extends Component {
 						<SelectedFilters componentId="EarthquakeSensor" />
 						<MultiDropdownRange
 							componentId="EarthquakeSensor"
-							appbaseField={this.props.mapping.mag}
+							dataField={this.props.mapping.mag}
 							title="MultiDropdownRange"
 							data={
 							[{ start: 3, end: 3.9, label: "Minor" },
@@ -62,7 +62,7 @@ export default class MultiDropdownRangeMapDefault extends Component {
 
 					<div className="col s6 col-xs-6">
 						<ReactiveMap
-							appbaseField={this.props.mapping.location}
+							dataField={this.props.mapping.location}
 							historicalData
 							setMarkerCluster={false}
 							defaultMapStyle="Light Monochrome"

@@ -56,7 +56,7 @@ export default class DatePickerRSDefault extends Component {
 						<SelectedFilters componentId="DateSensor" />
 						<DatePicker
 							componentId="DateSensor"
-							appbaseField="date_from"
+							dataField="date_from"
 							title="Housing available from"
 							customQuery={this.dateQuery}
 							{...this.props}
@@ -66,7 +66,7 @@ export default class DatePickerRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							from={0}
 							size={40}
 							onData={this.onData}

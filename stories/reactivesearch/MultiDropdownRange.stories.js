@@ -39,7 +39,7 @@ export default class MultiDropdownRangeRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<MultiDropdownRange
 							componentId="PriceSensor"
-							appbaseField="price"
+							dataField="price"
 							title="MultiDropdownRange"
 							data={
 								[{"start": 0, "end": 100, "label": "Cheap"},
@@ -54,7 +54,7 @@ export default class MultiDropdownRangeRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							title="Results"
 							from={0}
 							size={20}

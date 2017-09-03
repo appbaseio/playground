@@ -69,7 +69,7 @@ export default class ReactiveListDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ReactiveList
 							componentId="SearchResult"
-							appbaseField="group.group_topics.topic_name.topic_name_simple"
+							dataField="group.group_topics.topic_name.topic_name_simple"
 							title="ReactiveList"
 							sortBy="asc"
 							from={0}
@@ -86,7 +86,7 @@ export default class ReactiveListDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<MultiList
 							componentId="CitySensor"
-							appbaseField="group.group_city.group_city_simple"
+							dataField="group.group_city.group_city_simple"
 							showCount={true}
 							size={10}
 							selectAllLabel="All Cities"

@@ -41,7 +41,7 @@ export default class CategorySearchDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<SelectedFilters componentId="CarSensor" />
 						<CategorySearch
-							appbaseField={["name", "vehicleType"]}
+							dataField={["name", "vehicleType"]}
 							categoryField="brand.raw"
 							componentId="CarSensor"
 							title="CategorySearch"
@@ -52,7 +52,7 @@ export default class CategorySearchDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ReactiveList
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							title="Results"
 							sortBy="asc"
 							from={0}

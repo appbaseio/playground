@@ -63,7 +63,7 @@ export default class DateRangeRSDefault extends Component {
 						<SelectedFilters componentId="DateSensor" />
 						<DateRange
 							componentId="DateSensor"
-							appbaseField="date_from"
+							dataField="date_from"
 							title="Housing availability"
 							customQuery={this.dateQuery}
 							{...this.props}
@@ -73,7 +73,7 @@ export default class DateRangeRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							from={0}
 							size={40}
 							onData={this.onData}

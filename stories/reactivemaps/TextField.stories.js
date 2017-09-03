@@ -51,7 +51,7 @@ export default class TextFieldMapDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<SelectedFilters componentId="VenueSensor" />
 						<TextField
-							appbaseField={this.props.mapping.city}
+							dataField={this.props.mapping.city}
 							componentId="VenueSensor"
 							placeholder="Search Venue"
 							{...this.props}
@@ -60,7 +60,7 @@ export default class TextFieldMapDefault extends Component {
 
 					<div className="col s6 col-xs-6">
 						<ReactiveMap
-							appbaseField={this.props.mapping.location}
+							dataField={this.props.mapping.location}
 							historicalData
 							setMarkerCluster={false}
 							defaultMapStyle="Light Monochrome"

@@ -1460,7 +1460,7 @@ storiesOf("search/CategorySearch", module)
 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<CategorySearchDefault
 			title={text("title", "CategorySearch")}
-			appbaseField={array("appbaseField", ["name"])}
+			dataField={array("dataField", ["name"])}
 			categoryField={text("categoryField", "brand.raw")}
 			defaultSelected={text("defaultSelected", "")}
 			placeholder={text("placeholder", "Search Car")}
@@ -1546,17 +1546,17 @@ storiesOf("search/ReactiveList", module)
 			sortOptions={[
 				{
 					label: "Most Recent RSVP",
-					appbaseField: "mtime",
+					dataField: "mtime",
 					sortBy: "desc"
 				},
 				{
 					label: "Guests - High to Low",
-					appbaseField: "guests",
+					dataField: "guests",
 					sortBy: "desc"
 				},
 				{
 					label: "Guests - Low to High",
-					appbaseField: "guests",
+					dataField: "guests",
 					sortBy: "asc"
 				}
 			]}
@@ -1587,17 +1587,17 @@ storiesOf("search/ReactiveList", module)
 			sortOptions={[
 				{
 					label: "Most Recent RSVP",
-					appbaseField: "mtime",
+					dataField: "mtime",
 					sortBy: "desc"
 				},
 				{
 					label: "Guests - High to Low",
-					appbaseField: "guests",
+					dataField: "guests",
 					sortBy: "desc"
 				},
 				{
 					label: "Guests - Low to High",
-					appbaseField: "guests",
+					dataField: "guests",
 					sortBy: "asc"
 				}
 			]}

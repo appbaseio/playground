@@ -62,7 +62,7 @@ export default class ToggleButtonMapDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<SelectedFilters componentId="MeetupTops" />
 						<ToggleButton
-							appbaseField={this.props.mapping.topic}
+							dataField={this.props.mapping.topic}
 							componentId="MeetupTops"
 							title="ToggleButton"
 							data={this.toggleData}
@@ -72,7 +72,7 @@ export default class ToggleButtonMapDefault extends Component {
 
 					<div className="col s6 col-xs-6">
 						<ReactiveMap
-							appbaseField={this.props.mapping.location}
+							dataField={this.props.mapping.location}
 							historicalData
 							setMarkerCluster={false}
 							defaultMapStyle="Light Monochrome"

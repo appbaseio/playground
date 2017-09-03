@@ -42,7 +42,7 @@ export default class RangeSliderRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<RangeSlider
 							componentId="PriceSensor"
-							appbaseField="price"
+							dataField="price"
 							title="Price Range"
 							stepValue={10}
 							range={{
@@ -56,7 +56,7 @@ export default class RangeSliderRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							from={0}
 							size={40}
 							onData={this.onData}

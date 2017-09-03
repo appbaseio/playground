@@ -53,7 +53,7 @@ export default class ToggleButtonDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<SelectedFilters componentId="MeetupTops" />
 						<ToggleButton
-							appbaseField="group.group_topics.topic_name_raw.raw"
+							dataField="group.group_topics.topic_name_raw.raw"
 							componentId="MeetupTops"
 							title="ToggleButton"
 							data={this.toggleData}
@@ -64,7 +64,7 @@ export default class ToggleButtonDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultList
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							from={0}
 							size={40}
 							onData={this.onData}

@@ -52,7 +52,7 @@ export default class MultiDropdownListMapDefault extends Component {
 						<SelectedFilters componentId="CitySensor" />
 						<MultiDropdownList
 							componentId="CitySensor"
-							appbaseField={this.props.mapping.city}
+							dataField={this.props.mapping.city}
 							title="MultiDropdownList"
 							size={100}
 							{...this.props}
@@ -61,7 +61,7 @@ export default class MultiDropdownListMapDefault extends Component {
 
 					<div className="col s6 col-xs-6">
 						<ReactiveMap
-							appbaseField={this.props.mapping.location}
+							dataField={this.props.mapping.location}
 							historicalData
 							setMarkerCluster={false}
 							defaultMapStyle="Light Monochrome"

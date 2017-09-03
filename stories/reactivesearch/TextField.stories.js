@@ -38,7 +38,7 @@ export default class TextFieldRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<SelectedFilters componentId="CarSensor" />
 						<TextField
-							appbaseField="name"
+							dataField="name"
 							componentId="CarSensor"
 							placeholder="Search Cars"
 							{...this.props}
@@ -48,7 +48,7 @@ export default class TextFieldRSDefault extends Component {
 					<div className="col s6 col-xs-6">
 						<ResultCard
 							componentId="SearchResult"
-							appbaseField="name"
+							dataField="name"
 							title="Results"
 							from={0}
 							size={20}
