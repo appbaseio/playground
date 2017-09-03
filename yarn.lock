@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@appbaseio/reactive-manual@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactive-manual/-/reactive-manual-1.0.0.tgz#f6ace01f15b9e58b5b3c6da874226da09695fddd"
+  dependencies:
+    grunt "~0.4.0"
+    serve-static "^1.10.2"
+
 "@appbaseio/reactivebase@1.0.0-beta12":
   version "1.0.0-beta12"
   resolved "https://registry.yarnpkg.com/@appbaseio/reactivebase/-/reactivebase-1.0.0-beta12.tgz#e7bc9ba8870dc7b7b19c83dcd98c1e30f62a9ace"
