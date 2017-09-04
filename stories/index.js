@@ -1086,6 +1086,9 @@ storiesOf("map/DatePicker", module)
 			showFilter={false}
 		/>
 	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerMapDefault showFilter={false} queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")} />
+	)))
 	.add("With URLParams", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerMapDefault showFilter={false} URLParams={boolean("URLParams (not visible in storybook)", true)} />
 	)))
@@ -1146,6 +1149,9 @@ storiesOf("map/DateRange", module)
 				showClearDate: true
 			})}
 		/>
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeMapDefault showFilter={false} queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")} />
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeMapDefault showFilter={false} URLParams={boolean("URLParams (not visible in storybook)", true)} />
@@ -2426,6 +2432,9 @@ storiesOf("search/DatePicker", module)
 			showFilter={false}
 		/>
 	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DatePickerReadme), () => (
+		<DatePickerRSDefault showFilter={false} queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")} />
+	)))
 	.add("With URLParams", withReadme(removeFirstLine(DatePickerReadme), () => (
 		<DatePickerRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
 	)))
@@ -2486,6 +2495,9 @@ storiesOf("search/DateRange", module)
 				showClearDate: true
 			})}
 		/>
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DateRangeReadme), () => (
+		<DateRangeRSDefault showFilter={false} queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")} />
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(DateRangeReadme), () => (
 		<DateRangeRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
