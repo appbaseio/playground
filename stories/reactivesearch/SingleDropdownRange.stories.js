@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	SingleDropdownRange,
+	SelectedFilters,
 	ResultCard
 } from "@appbaseio/reactivesearch";
 import ResponsiveStory from './ResponsiveStory';
@@ -37,6 +38,7 @@ export default class SingleDropdownRangeRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
+						<SelectedFilters />
 						<SingleDropdownRange
 							componentId="PriceSensor"
 							dataField="price"

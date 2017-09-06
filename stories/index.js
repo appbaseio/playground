@@ -696,19 +696,22 @@ storiesOf("map/MultiRange", module)
 storiesOf("map/SingleDropdownRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeMapDefault />
+		<SingleDropdownRangeMapDefault showFilter={false} />
 	)))
 	.add("With title", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeMapDefault title={text("title", "SingleDropdownRange: Filter")} />
+		<SingleDropdownRangeMapDefault title={text("title", "SingleDropdownRange: Filter")} showFilter={false} />
 	)))
 	.add("With placeholder", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeMapDefault placeholder={text("placeholder", "Search places")} />
+		<SingleDropdownRangeMapDefault placeholder={text("placeholder", "Search places")} showFilter={false} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeMapDefault defaultSelected={text("defaultSelected", "Moderate")} />
+		<SingleDropdownRangeMapDefault defaultSelected={text("defaultSelected", "Moderate")} showFilter={false} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Price")} />
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeMapDefault URLParams={boolean("URLParams (not visible in storybook)", true)} />
+		<SingleDropdownRangeMapDefault URLParams={boolean("URLParams (not visible in storybook)", true)} showFilter={false} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeMapDefault
@@ -716,25 +719,30 @@ storiesOf("map/SingleDropdownRange", module)
 			placeholder={text("placeholder", "Search prices")}
 			defaultSelected={text("defaultSelected", "Moderate")}
 			URLParams={boolean("URLParams (not visible in storybook)", false)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Price")}
 		/>
 	)));
 
 storiesOf("map/MultiDropdownRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
-		<MultiDropdownRangeMapDefault />
+		<MultiDropdownRangeMapDefault showFilter={false} />
 	)))
 	.add("With title", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<MultiDropdownRangeMapDefault title={text("title", "MultiDropdownRange: Earthquake Magnitude")} />
+		<MultiDropdownRangeMapDefault title={text("title", "MultiDropdownRange: Earthquake Magnitude")} showFilter={false} />
 	)))
 	.add("With placeholder", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<MultiDropdownRangeMapDefault placeholder={text("placeholder", "Search places")} />
+		<MultiDropdownRangeMapDefault placeholder={text("placeholder", "Search places")} showFilter={false} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
-		<MultiDropdownRangeMapDefault defaultSelected={["Moderate", "Strong"]} />
+		<MultiDropdownRangeMapDefault defaultSelected={["Moderate", "Strong"]} showFilter={false} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
+		<MultiDropdownRangeMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Price")} />
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
-		<MultiDropdownRangeMapDefault URLParams={boolean("URLParams (not visible in storybook)", true)} />
+		<MultiDropdownRangeMapDefault URLParams={boolean("URLParams (not visible in storybook)", true)} showFilter={false} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeMapDefault
@@ -742,6 +750,8 @@ storiesOf("map/MultiDropdownRange", module)
 			defaultSelected={["Moderate", "Strong"]}
 			placeholder={text("placeholder", "Search places")}
 			URLParams={boolean("URLParams (not visible in storybook)", false)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Price")}
 		/>
 	)));
 
@@ -2308,19 +2318,22 @@ storiesOf("search/MultiRange", module)
 storiesOf("search/SingleDropdownRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeRSDefault />
+		<SingleDropdownRangeRSDefault showFilter={false} />
 	)))
 	.add("With title", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeRSDefault title={text("title", "SingleDropdownRange: Price Filter")} />
+		<SingleDropdownRangeRSDefault title={text("title", "SingleDropdownRange: Price Filter")} showFilter={false} />
 	)))
 	.add("With placeholder", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeRSDefault placeholder={text("placeholder", "Search prices")} />
+		<SingleDropdownRangeRSDefault placeholder={text("placeholder", "Search prices")} showFilter={false} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeRSDefault defaultSelected={text("defaultSelected", "Cheap")} />
+		<SingleDropdownRangeRSDefault defaultSelected={text("defaultSelected", "Cheap")} showFilter={false} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
+		<SingleDropdownRangeRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Price")} />
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<SingleDropdownRangeRSDefault URLParams={boolean("URLParams (not visible on storybook)", true)} />
+		<SingleDropdownRangeRSDefault URLParams={boolean("URLParams (not visible on storybook)", true)} showFilter={false} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 		<SingleDropdownRangeRSDefault
@@ -2328,25 +2341,30 @@ storiesOf("search/SingleDropdownRange", module)
 			placeholder={text("placeholder", "Search prices")}
 			defaultSelected={text("defaultSelected", "Cheap")}
 			URLParams={boolean("URLParams (not visible on storybook)", false)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Price")}
 		/>
 	)));
 
 storiesOf("search/MultiDropdownRange", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
-		<MultiDropdownRangeRSDefault />
+		<MultiDropdownRangeRSDefault showFilter={false} />
 	)))
 	.add("With title", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<MultiDropdownRangeRSDefault title={text("title", "SingleDropdownRange: Price Filter")} />
+		<MultiDropdownRangeRSDefault title={text("title", "SingleDropdownRange: Price Filter")} showFilter={false} />
 	)))
 	.add("With placeholder", withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
-		<MultiDropdownRangeRSDefault placeholder={text("placeholder", "Search prices")} />
+		<MultiDropdownRangeRSDefault placeholder={text("placeholder", "Search prices")} showFilter={false} />
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
-		<MultiDropdownRangeRSDefault defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])} />
+		<MultiDropdownRangeRSDefault defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])} showFilter={false} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
+		<MultiDropdownRangeRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Price")} />
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
-		<MultiDropdownRangeRSDefault URLParams={boolean("URLParams (not visible on storybook)", true)} />
+		<MultiDropdownRangeRSDefault URLParams={boolean("URLParams (not visible on storybook)", true)} showFilter={false} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 		<MultiDropdownRangeRSDefault
@@ -2354,6 +2372,8 @@ storiesOf("search/MultiDropdownRange", module)
 			defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
 			placeholder={text("placeholder", "Search prices")}
 			URLParams={boolean("URLParams (not visible on storybook)", false)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Price")}
 		/>
 	)));
 
