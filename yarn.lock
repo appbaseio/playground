@@ -9,9 +9,9 @@
     grunt "~0.4.0"
     serve-static "^1.10.2"
 
-"@appbaseio/reactivebase@1.0.0-beta12":
-  version "1.0.0-beta12"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivebase/-/reactivebase-1.0.0-beta12.tgz#e7bc9ba8870dc7b7b19c83dcd98c1e30f62a9ace"
+"@appbaseio/reactivebase@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivebase/-/reactivebase-1.0.0.tgz#d59f10198d75e1208ecabd76d1ff3254b3869abd"
   dependencies:
     appbase-js "^0.11.0"
     classnames "^2.2.5"
@@ -34,22 +34,22 @@
     grunt "~0.4.0"
     serve-static "^1.10.2"
 
-"@appbaseio/reactivemaps@1.0.0-beta08":
-  version "1.0.0-beta08"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivemaps/-/reactivemaps-1.0.0-beta08.tgz#ffd93208663cbf0604bf1e36b903c3dd707a9aa4"
+"@appbaseio/reactivemaps@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivemaps/-/reactivemaps-1.0.0.tgz#3feeea7974bd955571b6e8f56b4b91ddd1ef7e89"
   dependencies:
-    "@appbaseio/reactivebase" "1.0.0-beta12"
+    "@appbaseio/reactivebase" "1.0.0"
     axios "^0.15.2"
     google-map-react "^0.14.5"
     google-maps "^3.2.1"
     node-sass "^4.5.1"
     react-google-maps "^4.11.0"
 
-"@appbaseio/reactivesearch@^1.0.0-beta05":
-  version "1.0.0-beta05"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-1.0.0-beta05.tgz#c443736c75038dd89e594d8b9b973e2fb22b1547"
+"@appbaseio/reactivesearch@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-1.0.0.tgz#7f0a6ee52d3795bd5ef1869079a942ef51113eae"
   dependencies:
-    "@appbaseio/reactivemaps" "1.0.0-beta08"
+    "@appbaseio/reactivemaps" "1.0.0"
     react-stars "^2.1.0"
 
 "@storybook/addon-actions@^3.2.0":
