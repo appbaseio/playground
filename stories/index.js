@@ -4,30 +4,40 @@ import { withKnobs, text, boolean, number, array, select, object } from "@storyb
 import withReadme from "storybook-readme/with-readme";
 
 // import READMEs for each component
-import SingleListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/SingleList.md";
-import MultiListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/MultiList.md";
-import SingleDropdownListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/SingleDropdownList.md";
-import MultiDropdownListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/MultiDropdownList.md";
-import NestedListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/NestedList.md";
-// import NestedMultiListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/NestedMultiList.md";
-import SingleRangeReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/SingleRange.md";
-import MultiRangeReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/MultiRange.md";
-import SingleDropdownRangeReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/SingleDropdownRange.md";
-import MultiDropdownRangeReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/MultiDropdownRange.md";
-import RangeSliderReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/RangeSlider.md";
-import NumberBoxReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/NumberBox.md";
-import ToggleButtonReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/ToggleButton.md";
-import DatePickerReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/DatePicker.md";
-import DateRangeReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/DateRange.md";
-import TextFieldReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/TextField.md";
-import DataSearchReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/DataSearch.md";
-import DataControllerReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/DataController.md";
-import ReactiveElementReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/ReactiveElement.md";
-import ReactiveListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/ReactiveList.md";
-import ReactivePaginatedListReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/components/ReactivePaginatedList.md";
-import GeoDistanceSliderReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/GeoDistanceSlider.md";
-import GeoDistanceDropdownReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/GeoDistanceDropdown.md";
-import PlacesSearchReadme from "@appbaseio/reactivemaps-manual/docs/v1.0.0/map-components/PlacesSearch.md";
+import SingleListReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/SingleList.md";
+import MultiListReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/MultiList.md";
+import SingleDataListReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/SingleDataList.md";
+import MultiDataListReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/MultiDataList.md";
+import SelectedFiltersReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/SelectedFilters.md";
+import SingleDropdownListReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/SingleDropdownList.md";
+import MultiDropdownListReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/MultiDropdownList.md";
+import NestedListReadme from "@appbaseio/reactive-manual/docs/v1.0.0/search-components/NestedList.md";
+import NestedMultiListReadme from "@appbaseio/reactive-manual/docs/v1.0.0/search-components/NestedMultiList.md";
+import SingleRangeReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/SingleRange.md";
+import MultiRangeReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/MultiRange.md";
+import SingleDropdownRangeReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/SingleDropdownRange.md";
+import MultiDropdownRangeReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/MultiDropdownRange.md";
+import RangeSliderReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/RangeSlider.md";
+import DynamicRangeSliderReadme from "@appbaseio/reactive-manual/docs/v1.0.0/search-components/DynamicRangeSlider.md";
+import TagCloudReadme from "@appbaseio/reactive-manual/docs/v1.0.0/search-components/TagCloud.md";
+import RatingsFilterReadme from "@appbaseio/reactive-manual/docs/v1.0.0/search-components/RatingsFilter.md";
+import CategorySearchReadme from "@appbaseio/reactive-manual/docs/v1.0.0/search-components/CategorySearch.md";
+import MultiLevelMenuReadme from "@appbaseio/reactive-manual/docs/v1.0.0/search-components/MultiLevelMenu.md";
+import ResultCardReadme from "@appbaseio/reactive-manual/docs/v1.0.0/search-components/ResultCard.md";
+import ResultListReadme from "@appbaseio/reactive-manual/docs/v1.0.0/search-components/ResultList.md";
+import NumberBoxReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/NumberBox.md";
+import ToggleButtonReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/ToggleButton.md";
+import DatePickerReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/DatePicker.md";
+import DateRangeReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/DateRange.md";
+import TextFieldReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/TextField.md";
+import DataSearchReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/DataSearch.md";
+import DataControllerReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/DataController.md";
+import ReactiveElementReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/ReactiveElement.md";
+import ReactiveListReadme from "@appbaseio/reactive-manual/docs/v1.0.0/components/ReactiveList.md";
+import GeoDistanceSliderReadme from "@appbaseio/reactive-manual/docs/v1.0.0/map-components/GeoDistanceSlider.md";
+import GeoDistanceDropdownReadme from "@appbaseio/reactive-manual/docs/v1.0.0/map-components/GeoDistanceDropdown.md";
+import PlacesSearchReadme from "@appbaseio/reactive-manual/docs/v1.0.0/map-components/PlacesSearch.md";
+import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1.0.0/map-components/ReactiveMap.md";
 
 // import reactivemaps components
 import GeoDistanceSliderDefault from "./reactivemaps/GeoDistanceSlider.stories";
@@ -94,6 +104,9 @@ function removeFirstLine(str, number=1) {
 	}
 	return str;
 }
+
+// The function removes lines starting with // which crashes storybook
+const removeCommentsLine = (str) => str.replace(/^.*    \/\/.*$/mg, "");
 
 // Reactivemaps components
 
@@ -366,27 +379,27 @@ storiesOf("map/PlacesSearch", module)
 
 storiesOf("map/ReactiveMap", module)
 	.addDecorator(withKnobs)
-	.add("Basic", () => (
+	.add("Basic", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 		<ReactiveMapDefault />
-	))
-	.add("With Title", () => (
+	)))
+	.add("With Title", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 		<ReactiveMapDefault
 			title={text("title", "Reactive maps")}
 		/>
-	))
-	.add("With Popover onClick", () => (
+	)))
+	.add("With Popover onClick", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 		<ReactiveMapDefault
 			title="Reactive Maps"
 			showPopoverOn="click"
 		/>
-	))
-	.add("With Popover onMouseOver", () => (
+	)))
+	.add("With Popover onMouseOver", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 		<ReactiveMapDefault
 			title="Reactive Maps"
 			showPopoverOn="mouseover"
 		/>
-	))
-	.add("Playground", () => (
+	)))
+	.add("Playground", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 		<ReactiveMapDefault
 			title={text("title", "Reactive maps")}
 			showPopoverOn={select("showPopoverOn", { click: "click", mouseover: "mouseover" }, "click")}
@@ -410,7 +423,7 @@ storiesOf("map/ReactiveMap", module)
 			defaultMarkerImage={text("defaultMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/historic-pin.png")}
 			streamMarkerImage={text("streamMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/stream-pin.png")}
 		/>
-	));
+	)));
 
 storiesOf("map/SingleList", module)
 	.addDecorator(withKnobs)
@@ -1266,37 +1279,37 @@ storiesOf("search/NestedList", module)
 
 storiesOf("search/NestedMultiList", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("Basic", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 		<NestedMultiListDefault
 			title=""
 			showFilter={false}
 		/>
 	)))
-	.add("With Title", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("With Title", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 		<NestedMultiListDefault
 			title={text("title", "Car Category")}
 			showFilter={false}
 		/>
 	)))
-	.add("Default selection", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("Default selection", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 		<NestedMultiListDefault
 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
 			showFilter={false}
 		/>
 	)))
-	.add("Custom filter", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("Custom filter", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 		<NestedMultiListDefault
 			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "Cars")}
 		/>
 	)))
-	.add("With URLParams", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("With URLParams", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 		<NestedMultiListDefault
 			title=""
 			showFilter={false}
 		/>
 	)))
-	.add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("Playground", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 		<NestedMultiListDefault
 			title={text("title", "NestedMultiList: Car Filter")}
 			size={number("size", 100)}
@@ -1313,35 +1326,35 @@ storiesOf("search/NestedMultiList", module)
 
 storiesOf("search/DynamicRangeSlider", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
+	.add("Basic", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault />
 	)))
-	.add("With Title", withReadme(removeFirstLine(RangeSliderReadme), () => (
+	.add("With Title", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault title={text("title", "Guests")} />
 	)))
-	.add("With custom stepValue", withReadme(removeFirstLine(RangeSliderReadme), () => (
+	.add("With custom stepValue", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault stepValue={number("stepValue", 1)} />
 	)))
-	.add("Without histogram", withReadme(removeFirstLine(RangeSliderReadme), () => (
+	.add("Without histogram", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			showHistogram={boolean("showHistogram", false)}
 		/>
 	)))
-	.add("With RangeLabels", withReadme(removeFirstLine(RangeSliderReadme), () => (
+	.add("With RangeLabels", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			rangeLabels={(min, max) => ({ start: min, end: max })}
 		/>
 	)))
-	.add("With defaultSelected", withReadme(removeFirstLine(RangeSliderReadme), () => (
+	.add("With defaultSelected", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			rangeLabels={(min, max) => ({ start: min, end: max })}
 			defaultSelected={(min, max) => ({ start: min + 10, end: max - 10 })}
 		/>
 	)))
-	.add("With URLParams", withReadme(removeFirstLine(RangeSliderReadme), () => (
+	.add("With URLParams", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault URLParams={boolean("URLParams (not visible on storybook)", true)} />
 	)))
-	.add("Playground", withReadme(removeFirstLine(RangeSliderReadme), () => (
+	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			title={text("title", "DynamicRangeSlider: Guest RSVPs")}
 			stepValue={number("stepValue", 1)}
@@ -1352,45 +1365,45 @@ storiesOf("search/DynamicRangeSlider", module)
 
 storiesOf("search/TagCloud", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
+	.add("Basic", withReadme(removeFirstLine(TagCloudReadme), () => (
 		<TagCloudDefault showFilter={false} />
 	)))
-	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
+	.add("With title", withReadme(removeFirstLine(TagCloudReadme), () => (
 		<TagCloudDefault title={text("title", "Cities")} showFilter={false} />
 	)))
-	.add("Without showCount", withReadme(removeFirstLine(SingleListReadme), () => (
+	.add("Without showCount", withReadme(removeFirstLine(TagCloudReadme), () => (
 		<TagCloudDefault showCount={boolean("showCount", false)} showFilter={false} />
 	)))
-	.add("With custom filter", withReadme(removeFirstLine(SingleListReadme), () => (
+	.add("With custom filter", withReadme(removeFirstLine(TagCloudReadme), () => (
 		<TagCloudDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Cities filter")} />
 	)))
-	.add("With multiSelect", withReadme(removeFirstLine(SingleListReadme), () => (
+	.add("With multiSelect", withReadme(removeFirstLine(TagCloudReadme), () => (
 		<TagCloudDefault
 			multiSelect={boolean("multiSelect", true)}
 			showFilter={false}
 		/>
 	)))
-	.add("With defaultSelected", withReadme(removeFirstLine(SingleListReadme), () => (
+	.add("With defaultSelected", withReadme(removeFirstLine(TagCloudReadme), () => (
 		<TagCloudDefault
 			defaultSelected={text("defaultSelected", "Auckland")}
 			showFilter={false}
 		/>
 	)))
-	.add("With multiSelect on and defaultSelected", withReadme(removeFirstLine(SingleListReadme), () => (
+	.add("With multiSelect on and defaultSelected", withReadme(removeFirstLine(TagCloudReadme), () => (
 		<TagCloudDefault
 			multiSelect
 			defaultSelected={array("defaultSelected", ["Auckland", "Amsterdam"])}
 		/>
 	)))
-	.add("With multiSelect off and defaultSelected", withReadme(removeFirstLine(SingleListReadme), () => (
+	.add("With multiSelect off and defaultSelected", withReadme(removeFirstLine(TagCloudReadme), () => (
 		<TagCloudDefault
 			defaultSelected={text("defaultSelected", "Auckland")}
 		/>
 	)))
-	.add("With URLParams", withReadme(removeFirstLine(SingleListReadme), () => (
+	.add("With URLParams", withReadme(removeFirstLine(TagCloudReadme), () => (
 		<TagCloudDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
 	)))
-	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
+	.add("Playground", withReadme(removeFirstLine(TagCloudReadme), () => (
 		<TagCloudDefault
 			title={text("title", "TagCloud: City Filter")}
 			size={number("size", 100)}
@@ -1405,25 +1418,25 @@ storiesOf("search/TagCloud", module)
 
 storiesOf("search/RatingsFilter", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
+	.add("Basic", withReadme(removeFirstLine(RatingsFilterReadme), () => (
 		<RatingsFilterDefault showFilter={false} />
 	)))
-	.add("With title", withReadme(removeFirstLine(SingleRangeReadme), () => (
+	.add("With title", withReadme(removeFirstLine(RatingsFilterReadme), () => (
 		<RatingsFilterDefault title={text("title", "Ratings")} showFilter={false} />
 	)))
-	.add("With filter", withReadme(removeFirstLine(SingleRangeReadme), () => (
+	.add("With filter", withReadme(removeFirstLine(RatingsFilterReadme), () => (
 		<RatingsFilterDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Ratings filter")} />
 	)))
-	.add("With defaultSelected", withReadme(removeFirstLine(SingleRangeReadme), () => (
+	.add("With defaultSelected", withReadme(removeFirstLine(RatingsFilterReadme), () => (
 		<RatingsFilterDefault
 			defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
 			showFilter={false}
 		/>
 	)))
-	.add("With URLParams", withReadme(removeFirstLine(SingleRangeReadme), () => (
+	.add("With URLParams", withReadme(removeFirstLine(RatingsFilterReadme), () => (
 		<RatingsFilterDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
 	)))
-	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
+	.add("Playground", withReadme(removeFirstLine(RatingsFilterReadme), () => (
 		<RatingsFilterDefault
 			title={text("title", "RatingsFilter")}
 			data={object("data", [{ start: 4, end: 5, label: "4 stars and up" },
@@ -1439,21 +1452,21 @@ storiesOf("search/RatingsFilter", module)
 
 storiesOf("search/CategorySearch", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("Basic", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
 			placeholder="Search Car"
 			showFilter={false}
 		/>
 	)))
-	.add("With title", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With title", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title={text("title", "Cars")}
 			placeholder="Search Car"
 			showFilter={false}
 		/>
 	)))
-	.add("With filter", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With filter", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
 			placeholder="Search Car"
@@ -1461,7 +1474,7 @@ storiesOf("search/CategorySearch", module)
 			filterLabel={text("filterLabel", "Cars filter")}
 		/>
 	)))
-	.add("With defaultSelected", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With defaultSelected", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
 			placeholder="Search Car"
@@ -1469,7 +1482,7 @@ storiesOf("search/CategorySearch", module)
 			showFilter={false}
 		/>
 	)))
-	.add("With initialSuggestions", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With initialSuggestions", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
 			placeholder="Search Car"
@@ -1477,28 +1490,28 @@ storiesOf("search/CategorySearch", module)
 			showFilter={false}
 		/>
 	)))
-	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With Weights", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
 			weights={array("weights", [1,3])}
 			showFilter={false}
 		/>
 	)))
-	.add("With fuzziness", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With fuzziness", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
 			showFilter={false}
 			fuzziness={number("fuzziness", 1)}
 		/>
 	)))
-	.add("With queryFormat", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With queryFormat", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
 			showFilter={false}
 			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
 		/>
 	)))
-	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("Without autoSuggest", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
 			placeholder="Search Car"
@@ -1506,7 +1519,7 @@ storiesOf("search/CategorySearch", module)
 			autoSuggest={boolean("autoSuggest", false)}
 		/>
 	)))
-	.add("With highlight", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With highlight", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
 			placeholder="Search Car"
@@ -1514,7 +1527,7 @@ storiesOf("search/CategorySearch", module)
 			highlight={boolean("highlight", true)}
 		/>
 	)))
-	.add("With URLParams", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With URLParams", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
 			placeholder="Search Car"
@@ -1522,7 +1535,7 @@ storiesOf("search/CategorySearch", module)
 			URLParams={boolean("URLParams (not visible on storybook)", true)}
 		/>
 	)))
-	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("Playground", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title={text("title", "CategorySearch")}
 			dataField={array("dataField", ["name"])}
@@ -1542,28 +1555,28 @@ storiesOf("search/CategorySearch", module)
 
 storiesOf("search/MultiLevelMenu", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("Basic", withReadme(removeFirstLine(MultiLevelMenuReadme), () => (
 		<MultiLevelMenuDefault />
 	)))
-	.add("With Blacklist", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("With Blacklist", withReadme(removeFirstLine(MultiLevelMenuReadme), () => (
 		<MultiLevelMenuDefault
 			blacklist={array("blacklist", ["golf", "unknown"])}
 		/>
 	)))
-	.add("With maxCategories", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("With maxCategories", withReadme(removeFirstLine(MultiLevelMenuReadme), () => (
 		<MultiLevelMenuDefault
 			maxCategories={number("maxCategories", 6)}
 		/>
 	)))
-	.add("With maxItems", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("With maxItems", withReadme(removeFirstLine(MultiLevelMenuReadme), () => (
 		<MultiLevelMenuDefault
 			maxItems={number("maxItems", 3)}
 		/>
 	)))
-	.add("With URLParams", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("With URLParams", withReadme(removeFirstLine(MultiLevelMenuReadme), () => (
 		<MultiLevelMenuDefault URLParams={boolean("URLParams (not visible on storybook)", true)} />
 	)))
-	.add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
+	.add("Playground", withReadme(removeFirstLine(MultiLevelMenuReadme), () => (
 		<MultiLevelMenuDefault
 			data={object("data", [
 				{ label: "Volkswagen", value: "volkswagen" },
@@ -1671,25 +1684,25 @@ storiesOf("search/ReactiveList", module)
 
 storiesOf("search/ResultCard", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("Basic", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
 		<ResultCardDefault />
 	)))
-	.add("With title", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("With title", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
 		<ResultCardDefault title={text("title", "Cars result")} />
 	)))
-	.add("With size", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("With size", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
 		<ResultCardDefault size={number("size", 5)} />
 	)))
-	.add("Hide resultStats", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("Hide resultStats", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
 		<ResultCardDefault showResultStats={boolean("showResultStats", false)} />
 	)))
-	.add("With infinite loading", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("With infinite loading", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
 		<ResultCardDefault scrollOnTarget={window} />
 	)))
-	.add("With pagination", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("With pagination", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
 		<ResultCardDefault  pagination={boolean("pagination", true)} paginationAt={text("paginationAt", "bottom")} />
 	)))
-	.add("Playground", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("Playground", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
 		<ResultCardDefault
 			title={text("title", "Cars result")}
 			size={number("size", 5)}
@@ -1701,25 +1714,25 @@ storiesOf("search/ResultCard", module)
 
 storiesOf("search/ResultList", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("Basic", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault />
 	)))
-	.add("With title", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("With title", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault title={text("title", "Cars list")} />
 	)))
-	.add("With size", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("With size", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault size={text("size", 5)} />
 	)))
-	.add("Hide resultStats", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("Hide resultStats", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault showResultStats={boolean("showResultStats", false)} />
 	)))
-	.add("With infinite loading", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("With infinite loading", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault scrollOnTarget={window} />
 	)))
-	.add("With pagination", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("With pagination", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault pagination={boolean("pagination", true)} paginationAt={text("paginationAt", "bottom")} />
 	)))
-	.add("Playground", withReadme(removeFirstLine(ReactiveListReadme), () => (
+	.add("Playground", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault
 			title={text("title", "Cars result")}
 			size={number("size", 5)}
@@ -2171,31 +2184,31 @@ storiesOf("search/MultiDropdownList", module)
 
 storiesOf("search/SingleDataList", module)
 	.addDecorator(withKnobs)
-	.add("Basic", () => (
+	.add("Basic", withReadme(removeFirstLine(SingleDataListReadme), () => (
 		<SingleDataListRSDefault />
-	))
-	.add("With title", () => (
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleDataListReadme), () => (
 		<SingleDataListRSDefault showFilter={false} title={text("title", "Topics")} />
-	))
-	.add("With defaultSelected", () => (
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(SingleDataListReadme), () => (
 		<SingleDataListRSDefault defaultSelected={text("defaultSelected", "Social")} showFilter={false} />
-	))
-	.add("With showSearch", () => (
+	)))
+	.add("With showSearch", withReadme(removeFirstLine(SingleDataListReadme), () => (
 		<SingleDataListRSDefault showFilter={false} showSearch={boolean("showSearch", true)} placeholder={text("placeholder", "Search topics")} />
-	))
-	.add("Without Radio", () => (
+	)))
+	.add("Without Radio", withReadme(removeFirstLine(SingleDataListReadme), () => (
 		<SingleDataListRSDefault showRadio={boolean("showRadio", false)} showFilter={false} />
-	))
-	.add("With selectAllLabel", () => (
+	)))
+	.add("With selectAllLabel", withReadme(removeFirstLine(SingleDataListReadme), () => (
 		<SingleDataListRSDefault showFilter={false} selectAllLabel={text("selectAllLabel", "Select All")} />
-	))
-	.add("With filter", () => (
+	)))
+	.add("With filter", withReadme(removeFirstLine(SingleDataListReadme), () => (
 		<SingleDataListRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Custom Filter Name")} />
-	))
-	.add("With URLParams", () => (
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(SingleDataListReadme), () => (
 		<SingleDataListRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-	))
-	.add("Playground", () => (
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleDataListReadme), () => (
 		<SingleDataListRSDefault
 			title={text("title", "Topics")}
 			defaultSelected={text("defaultSelected", "Social")}
@@ -2207,38 +2220,38 @@ storiesOf("search/SingleDataList", module)
 			filterLabel={text("filterLabel", "Custom Filter Name")}
 			URLParams={boolean("URLParams (not visible on storybook)", false)}
 		/>
-	));
+	)));
 
 storiesOf("search/MultiDataList", module)
 	.addDecorator(withKnobs)
-	.add("Basic", () => (
+	.add("Basic", withReadme(removeFirstLine(MultiDataListReadme), () => (
 		<MultiDataListRSDefault showFilter={false} />
-	))
-	.add("With title", () => (
+	)))
+	.add("With title", withReadme(removeFirstLine(MultiDataListReadme), () => (
 		<MultiDataListRSDefault showFilter={false} title={text("title", "Topics")} />
-	))
-	.add("With defaultSelected", () => (
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(MultiDataListReadme), () => (
 		<MultiDataListRSDefault defaultSelected={array("defaultSelected", ["Social", "Travel"])} showFilter={false} />
-	))
-	.add("With showSearch", () => (
+	)))
+	.add("With showSearch", withReadme(removeFirstLine(MultiDataListReadme), () => (
 		<MultiDataListRSDefault showFilter={false} showSearch={boolean("showSearch", true)} placeholder={text("placeholder", "Search topics")} />
-	))
-	.add("Without Checkbox", () => (
+	)))
+	.add("Without Checkbox", withReadme(removeFirstLine(MultiDataListReadme), () => (
 		<MultiDataListRSDefault showCheckbox={boolean("showCheckbox", false)} showFilter={false} />
-	))
-	.add("With selectAllLabel", () => (
+	)))
+	.add("With selectAllLabel", withReadme(removeFirstLine(MultiDataListReadme), () => (
 		<MultiDataListRSDefault showFilter={false} selectAllLabel={text("selectAllLabel", "Select All")} />
-	))
-	.add("With filter", () => (
+	)))
+	.add("With filter", withReadme(removeFirstLine(MultiDataListReadme), () => (
 		<MultiDataListRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Custom Filter Name")} />
-	))
-	.add("With queryFormat", () => (
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(MultiDataListReadme), () => (
 		<MultiDataListRSDefault showFilter={false} queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")} />
-	))
-	.add("With URLParams", () => (
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(MultiDataListReadme), () => (
 		<MultiDataListRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-	))
-	.add("Playground", () => (
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiDataListReadme), () => (
 		<MultiDataListRSDefault
 			title={text("title", "Topics")}
 			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
@@ -2251,7 +2264,7 @@ storiesOf("search/MultiDataList", module)
 			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 			URLParams={boolean("URLParams (not visible on storybook)", false)}
 		/>
-	));
+	)));
 
 storiesOf("search/SingleRange", module)
 	.addDecorator(withKnobs)
@@ -2634,16 +2647,16 @@ storiesOf("search/DataController", module)
 
 storiesOf("search/SelectedFilters", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(MultiListReadme), () => (
+	.add("Basic", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
 		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} />
 	)))
-	.add("With no filter", withReadme(removeFirstLine(MultiListReadme), () => (
+	.add("With no filter", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
 		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} showFilter={boolean("showFilter", false)} />
 	)))
-	.add("With filterLabel", withReadme(removeFirstLine(MultiListReadme), () => (
+	.add("With filterLabel", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
 		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} filterLabel={text("filterLabel", "City filter")} />
 	)))
-	.add("Playground", withReadme(removeFirstLine(MultiListReadme), () => (
+	.add("Playground", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
 		<MultiListRSDefault
 			defaultSelected={["London"]}
 			showFilter={boolean("showFilter", true)}
