@@ -92,6 +92,7 @@ import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
 import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
 import DataControllerRSDefault from "./reactivesearch/DataController.stories";
+import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 const moment = require("moment");
 require("materialize-css/dist/css/materialize.min.css");
@@ -2661,5 +2662,38 @@ storiesOf("search/SelectedFilters", module)
 			defaultSelected={["London"]}
 			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "City filter")}
+		/>
+	)));
+
+storiesOf("search/ReactiveElement", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(ReactiveElementReadme, 3), () => (
+		<ReactiveElement.Basic />
+	)))
+	.add("With title", withReadme(removeFirstLine(ReactiveElementReadme, 3), () => (
+		<ReactiveElement.Basic title={text("title", "ReactiveElement")} />
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(ReactiveElementReadme, 3), () => (
+		<ReactiveElement.Basic placeholder={text("placeholder", "Select city from the list")} />
+	)))
+	.add("Without result stats", withReadme(removeFirstLine(ReactiveElementReadme, 3), () => (
+		<ReactiveElement.Basic showResultStats={boolean("showResultStats", false)} />
+	)))
+	.add("Stream", withReadme(removeFirstLine(ReactiveElementReadme, 3), () => (
+		<ReactiveElement.WithStream />
+	)))
+	.add("Theme", withReadme(removeFirstLine(ReactiveElementReadme, 3), () => (
+		<ReactiveElement.WithTheme />
+	)))
+	.add("Playground", withReadme(removeFirstLine(ReactiveElementReadme, 3), () => (
+		<ReactiveElement.Basic
+			title={text("title", "ReactiveElement")}
+			placeholder={text("placeholder", "Select city from the list")}
+			from={number("from", 0)}
+			size={number("size", 5)}
+			initialLoader={text("initialLoader", "Loading results..")}
+			noResults={text("noResults", "No results found! Try a different filter duh..")}
+			stream={boolean("stream", false)}
+			showResultStats={boolean("showResultStats", true)}
 		/>
 	)));
