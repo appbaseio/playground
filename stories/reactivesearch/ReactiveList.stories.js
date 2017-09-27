@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { ReactiveBase, MultiList, ReactiveList } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
 import { Img } from "./Img";
 
 require("./list.css");
@@ -10,10 +9,6 @@ export default class ReactiveListDefault extends Component {
 		super(props);
 		this.cityQuery = this.cityQuery.bind(this);
 		this.DEFAULT_IMAGE = "http://www.avidog.com/wp-content/uploads/2015/01/BellaHead082712_11-50x65.jpg";
-	}
-
-	componentDidMount() {
-		ResponsiveStory();
 	}
 
 	onData(markerData) {
