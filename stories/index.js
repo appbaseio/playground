@@ -1728,7 +1728,7 @@ storiesOf("search/ResultList", module)
 		<ResultListDefault showResultStats={boolean("showResultStats", false)} />
 	)))
 	.add("With infinite loading", withReadme(removeFirstLine(ResultListReadme, 3), () => (
-		<ResultListDefault scrollOnTarget={window} />
+		<ResultListDefault scrollOnTarget={window} pagination={false} />
 	)))
 	.add("With pagination", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault pagination={boolean("pagination", true)} paginationAt={text("paginationAt", "bottom")} />
