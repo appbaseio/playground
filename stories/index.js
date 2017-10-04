@@ -375,7 +375,7 @@ storiesOf("map/GeoDistanceDropdown", module)
 
 storiesOf("map/PlacesSearch", module)
 	.addDecorator(withKnobs)
-	.add("Basic - Direction Demo", withReadme(removeFirstLine(PlacesSearchReadme), () => (
+	.add("Finding nearby places", withReadme(removeFirstLine(PlacesSearchReadme), () => (
 		<PlacesSearchDefault />
 	)));
 
