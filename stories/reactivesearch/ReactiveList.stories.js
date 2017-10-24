@@ -86,7 +86,6 @@ export default class ReactiveListDefault extends Component {
 							size={10}
 							selectAllLabel="All Cities"
 							title="Input Filter"
-							customQuery={this.cityQuery}
 							searchPlaceholder="Search City"
 							initialLoader={<p>Loading cities...</p>}
 						/>
