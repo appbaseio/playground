@@ -95,7 +95,7 @@ import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 // import DataControllerRSDefault from "./reactivesearch/DataController.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
-// require("./styles.css");
+require("./styles.css");
 
 function removeFirstLine(str, number=1) {
 	while (number--) {
