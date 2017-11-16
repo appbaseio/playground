@@ -5,7 +5,7 @@ import {
 	MultiList,
 	SelectedFilters
 } from "@appbaseio/reactivemaps";
-import ResponsiveStory from '../reactivesearch/ResponsiveStory';
+import ResponsiveStory from "../reactivesearch/ResponsiveStory";
 
 import { Img } from "./Img.js";
 const historyPin = require("./placeholder.svg");

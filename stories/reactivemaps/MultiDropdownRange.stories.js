@@ -5,7 +5,7 @@ import {
 	MultiDropdownRange,
 	SelectedFilters
 } from "@appbaseio/reactivemaps";
-import ResponsiveStory from '../reactivesearch/ResponsiveStory';
+import ResponsiveStory from "../reactivesearch/ResponsiveStory";
 
 import { Img } from "./Img.js";
 const historyPin = require("./placeholder.svg");
@@ -49,12 +49,12 @@ export default class MultiDropdownRangeMapDefault extends Component {
 							dataField={this.props.mapping.mag}
 							title="MultiDropdownRange"
 							data={
-							[{ start: 3, end: 3.9, label: "Minor" },
-								{ start: 4, end: 4.9, label: "Light" },
-								{ start: 5, end: 5.9, label: "Moderate" },
-								{ start: 6, end: 6.9, label: "Strong" },
-								{ start: 7, end: 7.9, label: "Major" },
-								{ start: 8, end: 10, label: "Great" }]
+								[{ start: 3, end: 3.9, label: "Minor" },
+									{ start: 4, end: 4.9, label: "Light" },
+									{ start: 5, end: 5.9, label: "Moderate" },
+									{ start: 6, end: 6.9, label: "Strong" },
+									{ start: 7, end: 7.9, label: "Major" },
+									{ start: 8, end: 10, label: "Great" }]
 							}
 							{...this.props}
 						/>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ReactiveBase, NestedMultiList, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
+import ResponsiveStory from "./ResponsiveStory";
 
 export default class NestedMultiListDefault extends Component {
 	constructor(props) {

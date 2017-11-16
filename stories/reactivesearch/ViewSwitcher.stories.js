@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ReactiveBase, RatingsFilter, ResultCard, ResultList, ViewSwitcher } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
+import ResponsiveStory from "./ResponsiveStory";
 
 export default class ViewSwitcherDefault extends Component {
 	constructor(props) {
@@ -61,9 +61,9 @@ export default class ViewSwitcherDefault extends Component {
 							title="RatingsFilter"
 							data={
 								[{ start: 4, end: 5, label: "4 stars and up" },
-								{ start: 3, end: 5, label: "3 stars and up" },
-								{ start: 2, end: 5, label: "2 stars and up" },
-								{ start: 1, end: 5, label: "> 1 stars" }]
+									{ start: 3, end: 5, label: "3 stars and up" },
+									{ start: 2, end: 5, label: "2 stars and up" },
+									{ start: 1, end: 5, label: "> 1 stars" }]
 							}
 							{...this.props}
 						/>

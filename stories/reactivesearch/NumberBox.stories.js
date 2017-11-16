@@ -4,7 +4,7 @@ import {
 	ResultCard,
 	NumberBox
 } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
+import ResponsiveStory from "./ResponsiveStory";
 
 export default class NumberBoxRSDefault extends Component {
 	constructor(props) {
@@ -23,7 +23,7 @@ export default class NumberBoxRSDefault extends Component {
 			desc: (
 				<div>
 					<div className="price">${res.price}</div>
-					<span className="host" style={{"backgroundImage": `url(${res.host_image})`}}></span>
+					<span className="host" style={{ "backgroundImage": `url(${res.host_image})` }}></span>
 					<p>{res.room_type} · {res.accommodates} guests</p>
 				</div>
 			),

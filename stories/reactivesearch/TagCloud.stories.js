@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ReactiveBase, TagCloud, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
+import ResponsiveStory from "./ResponsiveStory";
 
 export default class TagCloudDefault extends Component {
 	constructor(props) {

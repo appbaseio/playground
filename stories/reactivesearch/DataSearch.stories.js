@@ -5,7 +5,7 @@ import {
 	ResultCard,
 	SelectedFilters
 } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
+import ResponsiveStory from "./ResponsiveStory";
 
 export default class DataSearchRSDefault extends Component {
 	constructor(props) {
@@ -20,7 +20,7 @@ export default class DataSearchRSDefault extends Component {
 	onData(res) {
 		const result = {
 			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
-			title: <span dangerouslySetInnerHTML={{ __html: res.name}} />,
+			title: <span dangerouslySetInnerHTML={{ __html: res.name }} />,
 			rating: res.rating,
 			desc: <span dangerouslySetInnerHTML={{ __html: res.brand }} />,
 			url: "#"

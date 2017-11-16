@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ReactiveBase, MultiLevelMenu, ReactiveList } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
+import ResponsiveStory from "./ResponsiveStory";
 
 export default class MultiLevelMenuDefault extends Component {
 	constructor(props) {

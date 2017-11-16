@@ -5,7 +5,7 @@ import {
 	ResultList,
 	SelectedFilters
 } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
+import ResponsiveStory from "./ResponsiveStory";
 
 export default class MultiDropdownListRSDefault extends Component {
 	constructor(props) {

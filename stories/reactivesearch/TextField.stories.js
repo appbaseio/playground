@@ -4,7 +4,7 @@ import {
 	TextField,
 	ReactiveList
 } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
+import ResponsiveStory from "./ResponsiveStory";
 
 export default class TextFieldRSDefault extends Component {
 	constructor(props) {

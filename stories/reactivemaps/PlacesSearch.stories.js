@@ -3,7 +3,7 @@ import {
 	ReactiveBase,
 	ReactiveMap,
 	PlacesSearch,
-	SelectedFilters,
+	SelectedFilters
 } from "@appbaseio/reactivemaps";
 
 export default class PlacesSearchDefault extends Component {
@@ -20,40 +20,40 @@ export default class PlacesSearchDefault extends Component {
 	render() {
 		return (
 			<div className="row m-0 h-100">
-			  <ReactiveBase
-				app="reactivemap_demo"
-				credentials="y4pVxY2Ok:c92481e2-c07f-4473-8326-082919282c18"
-				type="meetupdata1"
+				<ReactiveBase
+					app="reactivemap_demo"
+					credentials="y4pVxY2Ok:c92481e2-c07f-4473-8326-082919282c18"
+					type="meetupdata1"
 			  >
 					<div className="col s6 col-xs-6">
-					  <SelectedFilters />
-					  <PlacesSearch
-						dataField={this.props.mapping.location}
-						componentId="PlacesSensor"
-						placeholder="Search Place"
-						title="Places Search"
+						<SelectedFilters />
+						<PlacesSearch
+							dataField={this.props.mapping.location}
+							componentId="PlacesSensor"
+							placeholder="Search Place"
+							title="Places Search"
 					  />
 					</div>
-				  <div className="col s6 col-xs-6">
-					<ReactiveMap
-					  dataField={this.props.mapping.location}
-					  react={{
-						and: "PlacesSensor"
+					<div className="col s6 col-xs-6">
+						<ReactiveMap
+							dataField={this.props.mapping.location}
+							react={{
+								and: "PlacesSensor"
 					  }}
-					  historicalData
-					  setMarkerCluster={false}
-					  defaultMapStyle="Light Monochrome"
-					  autoMapRender={false}
-					  autoCenter
-					  showSearchAsMove
-					  showMapStyles
-					  title="Reactive Maps"
-					  onIdle={this.onIdle}
-					  defaultZoom={13}
-					  size={100}
-					/>
-				  </div>
-			  </ReactiveBase>
+							historicalData
+							setMarkerCluster={false}
+							defaultMapStyle="Light Monochrome"
+							autoMapRender={false}
+							autoCenter
+							showSearchAsMove
+							showMapStyles
+							title="Reactive Maps"
+							onIdle={this.onIdle}
+							defaultZoom={13}
+							size={100}
+						/>
+					</div>
+				</ReactiveBase>
 			</div>
 		);
 	}

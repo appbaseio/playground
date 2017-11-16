@@ -1,4 +1,4 @@
-import { default as React, Component } from 'react';
+import { default as React, Component } from "react";
 
 export class Img extends Component {
 	constructor(props) {
@@ -11,7 +11,7 @@ export class Img extends Component {
 
 	componentDidMount() {
 		const self = this;
-		const defaultSrc = 'https://s-media-cache-ak0.pinimg.com/216x146/27/b2/da/27b2da4789262e3b828a8ec6587dd8aa.jpg';
+		const defaultSrc = "https://s-media-cache-ak0.pinimg.com/216x146/27/b2/da/27b2da4789262e3b828a8ec6587dd8aa.jpg";
 		
 		this.img = new Image();
 		

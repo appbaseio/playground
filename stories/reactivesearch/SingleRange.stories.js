@@ -5,7 +5,7 @@ import {
 	ResultCard,
 	SelectedFilters
 } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
+import ResponsiveStory from "./ResponsiveStory";
 
 export default class SingleRangeRSDefault extends Component {
 	constructor(props) {
@@ -44,10 +44,10 @@ export default class SingleRangeRSDefault extends Component {
 							dataField="price"
 							title="SingleRange"
 							data={
-								[{"start": 0, "end": 100, "label": "Cheap"},
-								{"start": 101, "end": 200, "label": "Moderate"},
-								{"start": 201, "end": 500, "label": "Pricey"},
-								{"start": 501, "end": 1000, "label": "First Date"}]
+								[{ "start": 0, "end": 100, "label": "Cheap" },
+									{ "start": 101, "end": 200, "label": "Moderate" },
+									{ "start": 201, "end": 500, "label": "Pricey" },
+									{ "start": 501, "end": 1000, "label": "First Date" }]
 							}
 							{...this.props}
 						/>

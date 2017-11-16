@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ReactiveBase, RatingsFilter, ResultCard, SelectedFilters } from "@appbaseio/reactivesearch";
-import ResponsiveStory from './ResponsiveStory';
+import ResponsiveStory from "./ResponsiveStory";
 
 export default class RatingsFilterDefault extends Component {
 	constructor(props) {
@@ -37,10 +37,10 @@ export default class RatingsFilterDefault extends Component {
 							dataField={this.props.mapping.rating}
 							title="RatingsFilter"
 							data={
-							[{ start: 4, end: 5, label: "4 stars and up" },
-								{ start: 3, end: 5, label: "3 stars and up" },
-								{ start: 2, end: 5, label: "2 stars and up" },
-								{ start: 1, end: 5, label: "> 1 stars" }]
+								[{ start: 4, end: 5, label: "4 stars and up" },
+									{ start: 3, end: 5, label: "3 stars and up" },
+									{ start: 2, end: 5, label: "2 stars and up" },
+									{ start: 1, end: 5, label: "> 1 stars" }]
 							}
 							{...this.props}
 						/>
