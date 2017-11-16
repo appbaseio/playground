@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	TextField,
-	ResultCard,
-	SelectedFilters
+	ReactiveList
 } from "@appbaseio/reactivesearch";
 import ResponsiveStory from './ResponsiveStory';
 
@@ -18,14 +17,11 @@ export default class TextFieldRSDefault extends Component {
 	}
 
 	onData(res) {
-		const result = {
-			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
-			title: res.name,
-			rating: res.rating,
-			desc: res.brand,
-			url: "#"
-		};
-		return result;
+		const data = res._source;
+		return (<div key={res._id}>
+			<h2>{data.name}</h2>
+			<p>{data.price} - {data.rating} stars rated</p>
+		</div>);
 	}
 
 	render() {
@@ -36,7 +32,6 @@ export default class TextFieldRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col s6 col-xs-6">
-						<SelectedFilters componentId="CarSensor" />
 						<TextField
 							dataField="name"
 							componentId="CarSensor"
@@ -46,13 +41,14 @@ export default class TextFieldRSDefault extends Component {
 					</div>
 
 					<div className="col s6 col-xs-6">
-						<ResultCard
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="name"
-							title="Results"
+							title="ReactiveList"
 							from={0}
 							size={20}
 							onData={this.onData}
+							pagination
 							react={{
 								and: "CarSensor"
 							}}

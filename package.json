@@ -20,9 +20,9 @@
   "homepage": "https://github.com/appbaseio/reactive-playground#readme",
   "dependencies": {
     "@appbaseio/reactive-manual": "^1.1.0",
-    "@appbaseio/reactivesearch": "^1.4.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "@appbaseio/reactivesearch": "^2.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "@storybook/addon-info": "^3.1.6",
@@ -35,7 +35,6 @@
     "json-loader": "^0.5.4",
     "materialize-css": "^0.98.1",
     "raw-loader": "^0.5.1",
-    "shebang-loader": "0.0.1",
     "storybook-readme": "^3.0.5",
     "sumoselect": "^3.0.3"
   }
