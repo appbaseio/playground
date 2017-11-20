@@ -48,7 +48,7 @@ export default class NumberBoxMapDefault extends Component {
 				type="meetupdata1"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters componentId="GuestsSensor" />
 						<NumberBox
 							componentId="GuestsSensor"
@@ -58,7 +58,7 @@ export default class NumberBoxMapDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveMap
 							dataField={this.props.mapping.location}
 							historicalData

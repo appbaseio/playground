@@ -25,7 +25,7 @@ export default class PlacesSearchDefault extends Component {
 					credentials="y4pVxY2Ok:c92481e2-c07f-4473-8326-082919282c18"
 					type="meetupdata1"
 			  >
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters />
 						<PlacesSearch
 							dataField={this.props.mapping.location}
@@ -34,7 +34,7 @@ export default class PlacesSearchDefault extends Component {
 							title="Places Search"
 					  />
 					</div>
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveMap
 							dataField={this.props.mapping.location}
 							react={{

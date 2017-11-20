@@ -49,7 +49,7 @@ export default class DynamicRangeSliderDefault extends Component {
 				credentials="y4pVxY2Ok:c92481e2-c07f-4473-8326-082919282c18"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<DynamicRangeSlider
 							componentId="RangeSensor"
 							dataField={this.props.mapping.guests}
@@ -59,7 +59,7 @@ export default class DynamicRangeSliderDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
 							dataField={this.props.mapping.topic}

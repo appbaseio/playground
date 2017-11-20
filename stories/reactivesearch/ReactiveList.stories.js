@@ -61,7 +61,7 @@ export default class ReactiveListDefault extends Component {
 				type="meetup"
 			>
 				<div className="row reverse-labels">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
 							dataField="group.group_topics.topic_name.topic_name_simple"
@@ -78,7 +78,7 @@ export default class ReactiveListDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<MultiList
 							componentId="CitySensor"
 							dataField="group.group_city.group_city_simple"

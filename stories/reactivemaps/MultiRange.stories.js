@@ -42,7 +42,7 @@ export default class MultiRangeMapDefault extends Component {
 				credentials="OrXIHcgHn:d539c6e7-ed14-4407-8214-c227b0600d8e"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters componentId="EarthquakeSensor" />
 						<MultiRange
 							componentId="EarthquakeSensor"
@@ -60,7 +60,7 @@ export default class MultiRangeMapDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveMap
 							dataField={this.props.mapping.location}
 							historicalData

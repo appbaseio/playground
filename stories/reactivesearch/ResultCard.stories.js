@@ -30,7 +30,7 @@ export default class ResultCardDefault extends Component {
 				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
 			>
 				<div className="row reverse-labels">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ResultCard
 							componentId="SearchResult"
 							dataField={this.props.mapping.name}
@@ -61,7 +61,7 @@ export default class ResultCardDefault extends Component {
 							{...this.props}
 						/>
 					</div>
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<RatingsFilter
 							componentId="RatingsSensor"
 							dataField={this.props.mapping.rating}

@@ -32,7 +32,7 @@ export default class Basic extends Component {
 				type="meetup"
 			>
 				<div className="row reverse-labels">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveElement
 							componentId="SearchResult"
 							title="Reactive Element"
@@ -46,7 +46,7 @@ export default class Basic extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<MultiList
 							componentId="CitySensor"
 							dataField="group.group_city.group_city_simple"

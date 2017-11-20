@@ -54,7 +54,7 @@ export default class ViewSwitcherDefault extends Component {
 				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<RatingsFilter
 							componentId="RatingsSensor"
 							dataField={this.props.mapping.rating}
@@ -69,7 +69,7 @@ export default class ViewSwitcherDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<br />
 						<ViewSwitcher
 							data={[

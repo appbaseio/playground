@@ -50,7 +50,7 @@ export default class ReactiveMapDefault extends Component {
 				theme="rbc-blue"
 			>
 				<div className="row reverse-labels">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveMap
 							dataField={this.props.mapping.location}
 							historicalData
@@ -69,7 +69,7 @@ export default class ReactiveMapDefault extends Component {
 							{...this.props}
 						/>
 					</div>
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<div>
 							<DataSearch
 								dataField={this.props.mapping.venue}

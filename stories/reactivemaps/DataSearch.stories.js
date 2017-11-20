@@ -48,7 +48,7 @@ export default class DataSearchMapDefault extends Component {
 				type="meetupdata1"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters componentId="VenueSensor" />
 						<DataSearch
 							dataField={[this.props.mapping.venue, this.props.mapping.topic]}
@@ -58,7 +58,7 @@ export default class DataSearchMapDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveMap
 							dataField={this.props.mapping.location}
 							historicalData

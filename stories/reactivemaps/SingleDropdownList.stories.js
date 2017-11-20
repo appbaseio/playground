@@ -48,7 +48,7 @@ export default class SingleDropdownListMapDefault extends Component {
 				type="meetupdata1"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters componentId="CitySensor" />
 						<SingleDropdownList
 							componentId="CitySensor"
@@ -59,7 +59,7 @@ export default class SingleDropdownListMapDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveMap
 							dataField={this.props.mapping.location}
 							historicalData

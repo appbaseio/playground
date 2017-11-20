@@ -59,7 +59,7 @@ export default class ToggleButtonMapDefault extends Component {
 				credentials="LPpISlEBe:2a8935f5-0f63-4084-bc3e-2b2b4d1a8e02"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters componentId="MeetupTops" />
 						<ToggleButton
 							dataField={this.props.mapping.topic}
@@ -70,7 +70,7 @@ export default class ToggleButtonMapDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveMap
 							dataField={this.props.mapping.location}
 							historicalData

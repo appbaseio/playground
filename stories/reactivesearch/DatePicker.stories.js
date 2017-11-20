@@ -52,7 +52,7 @@ export default class DatePickerRSDefault extends Component {
 				type="listing"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters componentId="DateSensor" />
 						<DatePicker
 							componentId="DateSensor"
@@ -63,7 +63,7 @@ export default class DatePickerRSDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ResultCard
 							componentId="SearchResult"
 							dataField="name"

@@ -76,7 +76,7 @@ export default class WithTheme extends Component {
 				theme="rbc-dark"
 			>
 				<div className="row reverse-labels">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveElement
 							componentId="SearchResult"
 							from={0}
@@ -91,7 +91,7 @@ export default class WithTheme extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<MultiList
 							componentId="CitySensor"
 							dataField="group.group_city.group_city_simple"

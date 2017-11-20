@@ -40,7 +40,7 @@ export default class NumberBoxRSDefault extends Component {
 				theme="rbc-red"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<NumberBox
 							componentId="GuestSensor"
 							dataField="accommodates"
@@ -49,7 +49,7 @@ export default class NumberBoxRSDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ResultCard
 							componentId="SearchResult"
 							dataField="name"

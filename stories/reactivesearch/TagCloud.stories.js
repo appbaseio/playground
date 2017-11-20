@@ -48,7 +48,7 @@ export default class TagCloudDefault extends Component {
 				type="meetupdata1"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters componentId="CitySensor" />
 						<TagCloud
 							componentId="CitySensor"
@@ -59,7 +59,7 @@ export default class TagCloudDefault extends Component {
 							{...this.props}
 						/>
 					</div>
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
 							dataField={this.props.mapping.topic}

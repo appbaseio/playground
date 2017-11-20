@@ -50,7 +50,7 @@ export default class ToggleButtonDefault extends Component {
 				credentials="LPpISlEBe:2a8935f5-0f63-4084-bc3e-2b2b4d1a8e02"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters componentId="MeetupTops" />
 						<ToggleButton
 							dataField="group.group_topics.topic_name_raw.raw"
@@ -61,7 +61,7 @@ export default class ToggleButtonDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ResultList
 							componentId="SearchResult"
 							dataField="name"

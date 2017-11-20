@@ -57,7 +57,7 @@ export default class DataControllerMapDefault extends Component {
 				type="meetupdata1"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters componentId="CustomSensor" />
 						<DataController
 							componentId="CustomSensor"
@@ -67,7 +67,7 @@ export default class DataControllerMapDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ReactiveMap
 							dataField="location"
 							historicalData

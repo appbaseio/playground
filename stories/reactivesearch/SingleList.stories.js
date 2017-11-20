@@ -39,7 +39,7 @@ export default class SingleListRSDefault extends Component {
 				type="meetupdata1"
 			>
 				<div className="row">
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<SelectedFilters componentId="CitySensor" />
 						<SingleList
 							componentId="CitySensor"
@@ -50,7 +50,7 @@ export default class SingleListRSDefault extends Component {
 						/>
 					</div>
 
-					<div className="col s6 col-xs-6">
+					<div className="col">
 						<ResultList
 							componentId="SearchResult"
 							dataField="name"

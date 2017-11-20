@@ -77,7 +77,7 @@ import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components
 // import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
 // import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
 // import MultiDataListRSDefault from "./reactivesearch/MultiDataList.stories";
-// import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
+import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
 import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 // import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
 // import SingleListRSDefault from "./reactivesearch/SingleList.stories";
@@ -807,12 +807,12 @@ const removeCommentsLine = (str) => str.replace(/^.*    \/\/.*$/mg, "");
 // 			defaultSelected={text("defaultSelected", "Songwriting")}
 // 		/>
 // 	)))
-// 	.add("With initialSuggestions", withReadme(removeFirstLine(DataSearchReadme), () => (
+// 	.add("With defaultSuggestions", withReadme(removeFirstLine(DataSearchReadme), () => (
 // 		<DataSearchMapDefault
 // 			title="DataSearch"
 // 			placeholder="Search Places"
 // 			showFilter={false}
-// 			initialSuggestions={[{label: "Songwriting", value: "Songwriting"}, {label: "Musicians", value: "Musicians"}]}
+// 			defaultSuggestions={[{label: "Songwriting", value: "Songwriting"}, {label: "Musicians", value: "Musicians"}]}
 // 		/>
 // 	)))
 // 	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
@@ -1480,11 +1480,11 @@ const removeCommentsLine = (str) => str.replace(/^.*    \/\/.*$/mg, "");
 // 			showFilter={false}
 // 		/>
 // 	)))
-// 	.add("With initialSuggestions", withReadme(removeFirstLine(CategorySearchReadme), () => (
+// 	.add("With defaultSuggestions", withReadme(removeFirstLine(CategorySearchReadme), () => (
 // 		<CategorySearchDefault
 // 			title="CategorySearch"
 // 			placeholder="Search Car"
-// 			initialSuggestions={[{label: "Opel", value: "Opel"}, {label: "VW", value: "VW"}]}
+// 			defaultSuggestions={[{label: "Opel", value: "Opel"}, {label: "VW", value: "VW"}]}
 // 			showFilter={false}
 // 		/>
 // 	)))
@@ -1752,109 +1752,109 @@ const removeCommentsLine = (str) => str.replace(/^.*    \/\/.*$/mg, "");
 // 		<ViewSwitcherDefault />
 // 	)));
 
-// storiesOf("search/DataSearch", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title="DataSearch"
-// 			placeholder="Search Cars"
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title={text("title", "Cars Search")}
-// 			placeholder="Search Cars"
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title="DataSearch"
-// 			placeholder="Search Cars"
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Cars filter")}
-// 		/>
-// 	)))
-// 	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title="DataSearch"
-// 			placeholder="Search Venue"
-// 			autoSuggest={boolean("autoSuggest", false)}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With defaultSelected", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title="DataSearch"
-// 			placeholder="Search Cars"
-// 			showFilter={false}
-// 			defaultSelected={text("defaultSelected", "Audi")}
-// 		/>
-// 	)))
-// 	.add("With initialSuggestions", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title="DataSearch"
-// 			placeholder="Search Cars"
-// 			showFilter={false}
-// 			initialSuggestions={[{label: "Audi", value: "Audi"}, {label: "Hyundai", value: "Hyundai"}]}
-// 		/>
-// 	)))
-// 	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title="DataSearch"
-// 			placeholder="Search Cars"
-// 			weights={[1, 3]}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With fuzziness", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title="DataSearch"
-// 			placeholder="Search Cars"
-// 			showFilter={false}
-// 			fuzziness={number("fuzziness", 1)}
-// 		/>
-// 	)))
-// 	.add("With highlight", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title="DataSearch"
-// 			placeholder="Search Cars"
-// 			showFilter={false}
-// 			highlight={boolean("highlight", true)}
-// 		/>
-// 	)))
-// 	.add("With queryFormat", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title="DataSearch"
-// 			placeholder="Search Cars"
-// 			showFilter={false}
-// 			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
-// 		/>
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title="DataSearch"
-// 			placeholder="Search Cars"
-// 			showFilter={false}
-// 			URLParams={boolean("URLParams (not visible on storybook)", true)}
-// 		/>
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
-// 		<DataSearchRSDefault
-// 			title={text("title", "DataSearch: Cars")}
-// 			placeholder={text("placeholder", "Search Cars")}
-// 			autoSuggest={boolean("autoSuggest", true)}
-// 			defaultSelected={text("defaultSelected", "")}
-// 			weights={array("weights", [1, 3])}
-// 			fuzziness={number("fuzziness", 1)}
-// 			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Cars filter")}
-// 			highlight={boolean("highlight", false)}
-// 			URLParams={boolean("URLParams (not visible on storybook)", true)}
-// 		/>
-// 	)));
+storiesOf("search/DataSearch", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+		/>
+	)))
+	.add("With title", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title={text("title", "Cars Search")}
+			placeholder="Search Cars"
+			showFilter={false}
+		/>
+	)))
+	.add("With filter", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Cars filter")}
+		/>
+	)))
+	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Venue"
+			autoSuggest={boolean("autoSuggest", false)}
+			showFilter={false}
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			defaultSelected={text("defaultSelected", "Audi")}
+		/>
+	)))
+	.add("With defaultSuggestions", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			defaultSuggestions={[{label: "Audi", value: "Audi"}, {label: "Hyundai", value: "Hyundai"}]}
+		/>
+	)))
+	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			weights={[1, 3]}
+			showFilter={false}
+		/>
+	)))
+	.add("With fuzziness", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			fuzziness={number("fuzziness", 1)}
+		/>
+	)))
+	.add("With highlight", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			highlight={boolean("highlight", true)}
+		/>
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
+		/>
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			URLParams={boolean("URLParams (not visible on storybook)", true)}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title={text("title", "DataSearch: Cars")}
+			placeholder={text("placeholder", "Search Cars")}
+			autoSuggest={boolean("autoSuggest", true)}
+			defaultSelected={text("defaultSelected", "")}
+			weights={array("weights", [1, 3])}
+			fuzziness={number("fuzziness", 1)}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Cars filter")}
+			highlight={boolean("highlight", false)}
+			URLParams={boolean("URLParams (not visible on storybook)", true)}
+		/>
+	)));
 
 storiesOf("search/TextField", module)
 	.addDecorator(withKnobs)
