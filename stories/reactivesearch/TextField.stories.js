@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	TextField,
+	SelectedFilters,
 	ReactiveList
 } from "@appbaseio/reactivesearch";
 import ResponsiveStory from "./ResponsiveStory";
@@ -41,6 +42,7 @@ export default class TextFieldRSDefault extends Component {
 					</div>
 
 					<div className="col">
+						<SelectedFilters />
 						<ReactiveList
 							componentId="SearchResult"
 							dataField="name"
