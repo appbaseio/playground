@@ -80,7 +80,7 @@ import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components
 import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
 import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 // import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
-// import SingleListRSDefault from "./reactivesearch/SingleList.stories";
+import SingleListRSDefault from "./reactivesearch/SingleList.stories";
 // import MultiListRSDefault from "./reactivesearch/MultiList.stories";
 // import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
 // import MultiDropdownListRSDefault from "./reactivesearch/MultiDropdownList.stories";
@@ -1963,57 +1963,57 @@ storiesOf("search/TextField", module)
 // 		/>
 // 	)));
 
-// storiesOf("search/SingleList", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} title={text("title", "Cities")} />
-// 	)))
-// 	.add("With size", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
-// 	)))
-// 	.add("Without count", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
-// 	)))
-// 	.add("Without Search", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault showSearch={boolean("showSearch", false)} placeholder="Search City" showFilter={false} />
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault showSearch placeholder="Search City" showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
-// 	)))
-// 	.add("Wihout radio buttons", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} showRadio={boolean("showRadio", false)} />
-// 	)))
-// 	.add("Default Selected", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault showSearch defaultSelected={text("defaultSelected", "London")} placeholder="Search City" showFilter={false} />
-// 	)))
-// 	.add("Custom Sort", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault title="SingleList: Custom Sort" showSearch defaultSelected="London" sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} placeholder="Search City" showFilter={false} />
-// 	)))
-// 	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault showSearch selectAllLabel={text("selectAllLabel", "All Cities")} placeholder="Search City" showFilter={false} />
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListRSDefault
-// 			title={text("title", "SingleList: City Filter")}
-// 			size={number("size", 100)}
-// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
-// 			defaultSelected={text("defaultSelected", "San Francisco")}
-// 			showCount={boolean("showCount", true)}
-// 			showSearch={boolean("showSearch", true)}
-// 			placeholder={text("placeholder", "Search City")}
-// 			selectAllLabel={text("selectAllLabel", "All cities")}
-// 			showRadio={boolean("showRadio", true)}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "City filter")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/SingleList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} title={text("title", "Cities")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
+	)))
+	.add("Without count", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
+	)))
+	.add("Without Search", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch={boolean("showSearch", false)} placeholder="Search City" showFilter={false} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
+	)))
+	.add("Wihout radio buttons", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} showRadio={boolean("showRadio", false)} />
+	)))
+	.add("Default Selected", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch defaultSelected={text("defaultSelected", "London")} placeholder="Search City" showFilter={false} />
+	)))
+	.add("Custom Sort", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault title="SingleList: Custom Sort" showSearch defaultSelected="London" sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} placeholder="Search City" showFilter={false} />
+	)))
+	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch selectAllLabel={text("selectAllLabel", "All Cities")} placeholder="Search City" showFilter={false} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault showSearch placeholder="Search City" showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
+		<SingleListRSDefault
+			title={text("title", "SingleList: City Filter")}
+			size={number("size", 100)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			defaultSelected={text("defaultSelected", "San Francisco")}
+			showCount={boolean("showCount", true)}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search City")}
+			selectAllLabel={text("selectAllLabel", "All cities")}
+			showRadio={boolean("showRadio", true)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "City filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 // storiesOf("search/MultiList", module)
 // 	.addDecorator(withKnobs)
