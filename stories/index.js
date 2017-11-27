@@ -81,7 +81,7 @@ import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
 import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 // import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
 import SingleListRSDefault from "./reactivesearch/SingleList.stories";
-// import MultiListRSDefault from "./reactivesearch/MultiList.stories";
+import MultiListRSDefault from "./reactivesearch/MultiList.stories";
 // import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
 // import MultiDropdownListRSDefault from "./reactivesearch/MultiDropdownList.stories";
 // import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
@@ -2015,61 +2015,61 @@ storiesOf("search/SingleList", module)
 		/>
 	)));
 
-// storiesOf("search/MultiList", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} title={text("title", "MultiList: City Filter")} />
-// 	)))
-// 	.add("With size", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
-// 	)))
-// 	.add("With queryFormat", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")} />
-// 	)))
-// 	.add("Wihout count", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
-// 	)))
-// 	.add("Without Search", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch={boolean("showSearch", false)} placeholder="Search City" showFilter={false} />
-// 	)))
-// 	.add("Without checkbox", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
-// 	)))
-// 	.add("Default Selected", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch defaultSelected={array("defaultSelected", ["London", "Sydney"])} placeholder="Search City" showFilter={false} />
-// 	)))
-// 	.add("Custom Sort", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault title="MultiList: Custom Sort" showSearch defaultSelected={["London"]} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} placeholder="Search City" showFilter={false} />
-// 	)))
-// 	.add("With Select All", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch selectAllLabel={text("selectAllLabel", "All Cities")} placeholder="Search City" showFilter={false} />
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListRSDefault
-// 			title={text("title", "MultiList: City Filter")}
-// 			size={number("size", 10)}
-// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
-// 			defaultSelected={array("defaultSelected", ["London", "Sydney"])}
-// 			showCount={boolean("showCount", true)}
-// 			showSearch={boolean("showSearch", true)}
-// 			showCheckbox={boolean("showCheckbox", true)}
-// 			placeholder={text("placeholder", "Search City")}
-// 			selectAllLabel={text("selectAllLabel", "All cities")}
-// 			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "City filter")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/MultiList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} title={text("title", "MultiList: City Filter")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")} />
+	)))
+	.add("Wihout count", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
+	)))
+	.add("Without Search", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch={boolean("showSearch", false)} placeholder="Search City" showFilter={false} />
+	)))
+	.add("Without checkbox", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
+	)))
+	.add("Default Selected", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch defaultSelected={array("defaultSelected", ["London", "Sydney"])} placeholder="Search City" showFilter={false} />
+	)))
+	.add("Custom Sort", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault title="MultiList: Custom Sort" showSearch defaultSelected={["London"]} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} placeholder="Search City" showFilter={false} />
+	)))
+	.add("With Select All", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch selectAllLabel={text("selectAllLabel", "All Cities")} placeholder="Search City" showFilter={false} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault showSearch placeholder="Search City" showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiListReadme), () => (
+		<MultiListRSDefault
+			title={text("title", "MultiList: City Filter")}
+			size={number("size", 10)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			defaultSelected={array("defaultSelected", ["London", "Sydney"])}
+			showCount={boolean("showCount", true)}
+			showSearch={boolean("showSearch", true)}
+			showCheckbox={boolean("showCheckbox", true)}
+			placeholder={text("placeholder", "Search City")}
+			selectAllLabel={text("selectAllLabel", "All cities")}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "City filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 // storiesOf("search/SingleDropdownList", module)
 // 	.addDecorator(withKnobs)
