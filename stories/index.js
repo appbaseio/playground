@@ -1800,20 +1800,28 @@ storiesOf("search/DataSearch", module)
 			defaultSuggestions={[{label: "Audi", value: "Audi"}, {label: "Hyundai", value: "Hyundai"}]}
 		/>
 	)))
-	.add("With Weights", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With fieldWeights", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title="DataSearch"
 			placeholder="Search Cars"
-			weights={[1, 3]}
+			fieldWeights={array("fieldWeights", [1, 3])}
 			showFilter={false}
 		/>
 	)))
-	.add("With fuzziness", withReadme(removeFirstLine(DataSearchReadme), () => (
+	.add("With fuzziness as a number", withReadme(removeFirstLine(DataSearchReadme), () => (
 		<DataSearchRSDefault
 			title="DataSearch"
 			placeholder="Search Cars"
 			showFilter={false}
 			fuzziness={number("fuzziness", 1)}
+		/>
+	)))
+	.add("With fuzziness as AUTO", withReadme(removeFirstLine(DataSearchReadme), () => (
+		<DataSearchRSDefault
+			title="DataSearch"
+			placeholder="Search Cars"
+			showFilter={false}
+			fuzziness="AUTO"
 		/>
 	)))
 	.add("With highlight", withReadme(removeFirstLine(DataSearchReadme), () => (
@@ -1846,7 +1854,7 @@ storiesOf("search/DataSearch", module)
 			placeholder={text("placeholder", "Search Cars")}
 			autoSuggest={boolean("autoSuggest", true)}
 			defaultSelected={text("defaultSelected", "")}
-			weights={array("weights", [1, 3])}
+			fieldWeights={array("weights", [1, 3])}
 			fuzziness={number("fuzziness", 1)}
 			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 			showFilter={boolean("showFilter", true)}
