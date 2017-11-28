@@ -21,6 +21,7 @@ export default class TextFieldRSDefault extends Component {
 		const data = res._source;
 		return (<div key={res._id}>
 			<h2 dangerouslySetInnerHTML={{__html: data.name}} />
+			<h4 dangerouslySetInnerHTML={{__html: data.brand}} />
 			<p>{data.price} - {data.rating} stars rated</p>
 		</div>);
 	}
