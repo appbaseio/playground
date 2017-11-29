@@ -82,7 +82,7 @@ import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 // import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
 import SingleListRSDefault from "./reactivesearch/SingleList.stories";
 import MultiListRSDefault from "./reactivesearch/MultiList.stories";
-// import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
+import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
 // import MultiDropdownListRSDefault from "./reactivesearch/MultiDropdownList.stories";
 // import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
 // import MultiRangeRSDefault from "./reactivesearch/MultiRange.stories";
@@ -2079,56 +2079,56 @@ storiesOf("search/MultiList", module)
 		/>
 	)));
 
-// storiesOf("search/SingleDropdownList", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListRSDefault showFilter={false} />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListRSDefault showFilter={false} title={text("title", "City list")} />
-// 	)))
-// 	.add("With size", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListRSDefault showFilter={false} size={number("size", 10)} />
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
-// 	)))
-// 	.add("With custom sort", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListRSDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} />
-// 	)))
-// 	.add("Without count", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListRSDefault showFilter={false} showCount={boolean("showCount", false)} />
-// 	)))
-// 	.add("With Select All", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListRSDefault
-// 			selectAllLabel={text("selectAllLabel", "All Cities")}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListRSDefault
-// 			selectAllLabel="All Cities"
-// 			defaultSelected={text("defaultSelected", "London")}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListRSDefault
-// 			title={text("title", "SingleDropdownList")}
-// 			size={number("size", 100)}
-// 			showCount={boolean("showCount", true)}
-// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
-// 			selectAllLabel={text("selectAllLabel", "All Cities")}
-// 			defaultSelected={text("defaultSelected", "London")}
-// 			placeholder={text("placeholder", "Select a City")}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "City filter")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/SingleDropdownList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} title={text("title", "City list")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} size={number("size", 10)} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
+	)))
+	.add("With custom sort", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} />
+	)))
+	.add("Without count", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} showCount={boolean("showCount", false)} />
+	)))
+	.add("With Select All", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault
+			selectAllLabel={text("selectAllLabel", "All Cities")}
+			showFilter={false}
+		/>
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault
+			selectAllLabel="All Cities"
+			defaultSelected={text("defaultSelected", "London")}
+			showFilter={false}
+		/>
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		<SingleDropdownListRSDefault
+			title={text("title", "SingleDropdownList")}
+			size={number("size", 100)}
+			showCount={boolean("showCount", true)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+			selectAllLabel={text("selectAllLabel", "All Cities")}
+			defaultSelected={text("defaultSelected", "London")}
+			placeholder={text("placeholder", "Select a City")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "City filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 // storiesOf("search/MultiDropdownList", module)
 // 	.addDecorator(withKnobs)
