@@ -1830,6 +1830,7 @@ storiesOf("search/DataSearch", module)
 			placeholder="Search Cars"
 			showFilter={false}
 			highlight={boolean("highlight", true)}
+			highlightField={select("highlightField", ["name", "brand"], "name")}
 		/>
 	)))
 	.add("With queryFormat", withReadme(removeFirstLine(DataSearchReadme), () => (
