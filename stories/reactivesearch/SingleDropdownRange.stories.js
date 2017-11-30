@@ -3,7 +3,7 @@ import {
 	ReactiveBase,
 	SingleDropdownRange,
 	SelectedFilters,
-	ResultCard
+	ReactiveList
 } from "@appbaseio/reactivesearch";
 import ResponsiveStory from "./ResponsiveStory";
 
@@ -18,16 +18,12 @@ export default class SingleDropdownRangeRSDefault extends Component {
 	}
 
 	onData(res) {
-		const result = {
-			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
-			title: res.name,
-			rating: res.rating,
-			desc: (<div>
-				{res.brand} - {(res.price === 0) ? "Free Test Drive" : "$" + res.price}
-			</div>),
-			url: "#"
-		};
-		return result;
+		const data = res._source;
+		return (<div key={res._id}>
+			<h2 dangerouslySetInnerHTML={{__html: data.name}} />
+			<h4 dangerouslySetInnerHTML={{__html: data.brand}} />
+			<p>{data.price} - {data.rating} stars rated</p>
+		</div>);
 	}
 
 	render() {
@@ -38,7 +34,6 @@ export default class SingleDropdownRangeRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters />
 						<SingleDropdownRange
 							componentId="PriceSensor"
 							dataField="price"
@@ -54,13 +49,15 @@ export default class SingleDropdownRangeRSDefault extends Component {
 					</div>
 
 					<div className="col">
-						<ResultCard
+						<SelectedFilters />
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="name"
-							title="Results"
+							title="ReactiveList"
 							from={0}
 							size={20}
 							onData={this.onData}
+							pagination
 							react={{
 								and: "PriceSensor"
 							}}
