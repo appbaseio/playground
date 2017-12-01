@@ -85,7 +85,7 @@ import MultiListRSDefault from "./reactivesearch/MultiList.stories";
 import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
 import MultiDropdownListRSDefault from "./reactivesearch/MultiDropdownList.stories";
 import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
-// import MultiRangeRSDefault from "./reactivesearch/MultiRange.stories";
+import MultiRangeRSDefault from "./reactivesearch/MultiRange.stories";
 import SingleDropdownRangeRSDefault from "./reactivesearch/SingleDropdownRange.stories";
 import MultiDropdownRangeRSDefault from "./reactivesearch/MultiDropdownRange.stories";
 // import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
@@ -2310,36 +2310,36 @@ storiesOf("search/SingleRange", module)
 		/>
 	)));
 
-// storiesOf("search/MultiRange", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(MultiRangeReadme), () => (
-// 		<MultiRangeRSDefault showFilter={false} />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(MultiRangeReadme), () => (
-// 		<MultiRangeRSDefault title={text("title", "MultiRange: Price Filter")} showFilter={false} />
-// 	)))
-// 	.add("With Default Selected", withReadme(removeFirstLine(MultiRangeReadme), () => (
-// 		<MultiRangeRSDefault defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])} showFilter={false} />
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(MultiRangeReadme), () => (
-// 		<MultiRangeRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Price filter")} />
-// 	)))
-// 	.add("Without checkbox", withReadme(removeFirstLine(MultiRangeReadme), () => (
-// 		<MultiRangeRSDefault showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(MultiRangeReadme), () => (
-// 		<MultiRangeRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(MultiRangeReadme), () => (
-// 		<MultiRangeRSDefault
-// 			title={text("title", "MultiRange: Price Filter")}
-// 			defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
-// 			showCheckbox={boolean("showCheckbox", true)}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Price filter")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/MultiRange", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault title={text("title", "MultiRange: Price Filter")} showFilter={false} />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])} showFilter={false} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Price filter")} />
+	)))
+	.add("Without checkbox", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault showFilter={false} showCheckbox={boolean("showCheckbox", false)} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<MultiRangeRSDefault
+			title={text("title", "MultiRange: Price Filter")}
+			defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
+			showCheckbox={boolean("showCheckbox", true)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Price filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 storiesOf("search/SingleDropdownRange", module)
 	.addDecorator(withKnobs)
