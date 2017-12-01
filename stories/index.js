@@ -84,7 +84,7 @@ import SingleListRSDefault from "./reactivesearch/SingleList.stories";
 import MultiListRSDefault from "./reactivesearch/MultiList.stories";
 import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
 import MultiDropdownListRSDefault from "./reactivesearch/MultiDropdownList.stories";
-// import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
+import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
 // import MultiRangeRSDefault from "./reactivesearch/MultiRange.stories";
 import SingleDropdownRangeRSDefault from "./reactivesearch/SingleDropdownRange.stories";
 import MultiDropdownRangeRSDefault from "./reactivesearch/MultiDropdownRange.stories";
@@ -2279,36 +2279,36 @@ storiesOf("search/MultiDropdownList", module)
 // 		/>
 // 	)));
 
-// storiesOf("search/SingleRange", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
-// 		<SingleRangeRSDefault showFilter={false} />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(SingleRangeReadme), () => (
-// 		<SingleRangeRSDefault showFilter={false} title={text("title", "SingleRange: Price Filter")} />
-// 	)))
-// 	.add("With Default Selected", withReadme(removeFirstLine(SingleRangeReadme), () => (
-// 		<SingleRangeRSDefault defaultSelected={text("defaultSelected", "Cheap")} showFilter={false} />
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(SingleRangeReadme), () => (
-// 		<SingleRangeRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Price filter")} />
-// 	)))
-// 	.add("Without radio buttons", withReadme(removeFirstLine(SingleRangeReadme), () => (
-// 		<SingleRangeRSDefault showFilter={false} showRadio={boolean("showRadio", false)} />
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(MultiRangeReadme), () => (
-// 		<SingleRangeRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
-// 		<SingleRangeRSDefault
-// 			title={text("title", "SingleRange: Price Filter")}
-// 			defaultSelected={text("defaultSelected", "Cheap")}
-// 			showRadio={boolean("showRadio", true)}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Price filter")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/SingleRange", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault showFilter={false} title={text("title", "SingleRange: Price Filter")} />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault defaultSelected={text("defaultSelected", "Cheap")} showFilter={false} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Price filter")} />
+	)))
+	.add("Without radio buttons", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault showFilter={false} showRadio={boolean("showRadio", false)} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(MultiRangeReadme), () => (
+		<SingleRangeRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleRangeReadme), () => (
+		<SingleRangeRSDefault
+			title={text("title", "SingleRange: Price Filter")}
+			defaultSelected={text("defaultSelected", "Cheap")}
+			showRadio={boolean("showRadio", true)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Price filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 // storiesOf("search/MultiRange", module)
 // 	.addDecorator(withKnobs)
