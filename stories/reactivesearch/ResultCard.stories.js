@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, RatingsFilter, ResultCard } from "@appbaseio/reactivesearch";
+import { ReactiveBase, SingleDropdownRange, ResultCard } from "@appbaseio/reactivesearch";
 import ResponsiveStory from "./ResponsiveStory";
 
 export default class ResultCardDefault extends Component {
@@ -13,11 +13,12 @@ export default class ResultCardDefault extends Component {
 	}
 
 	onData(res) {
+		const source = res._source;
 		const result = {
 			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
-			title: res.name,
-			rating: res.rating,
-			desc: res.brand,
+			title: source.name,
+			rating: source.rating,
+			desc: source.brand,
 			url: "#"
 		};
 		return result;
@@ -31,9 +32,22 @@ export default class ResultCardDefault extends Component {
 			>
 				<div className="row reverse-labels">
 					<div className="col">
+						<SingleDropdownRange
+							componentId="PriceSensor"
+							dataField="price"
+							title="SingleDropdownRange"
+							data={
+								[{ "start": 0, "end": 100, "label": "Cheap" },
+									{ "start": 101, "end": 200, "label": "Moderate" },
+									{ "start": 201, "end": 500, "label": "Pricey" },
+									{ "start": 501, "end": 1000, "label": "First Date" }]
+							}
+						/>
+					</div>
+					<div className="col" style={{backgroundColor: "#fafafa"}}>
 						<ResultCard
 							componentId="SearchResult"
-							dataField={this.props.mapping.name}
+							dataField="name"
 							title="Results"
 							from={0}
 							size={20}
@@ -56,22 +70,9 @@ export default class ResultCardDefault extends Component {
 								}
 							]}
 							react={{
-								and: "RatingsSensor"
+								and: "PriceSensor"
 							}}
 							{...this.props}
-						/>
-					</div>
-					<div className="col">
-						<RatingsFilter
-							componentId="RatingsSensor"
-							dataField={this.props.mapping.rating}
-							title="RatingsFilter"
-							data={
-								[{ start: 4, end: 5, label: "4 stars and up" },
-									{ start: 3, end: 5, label: "3 stars and up" },
-									{ start: 2, end: 5, label: "2 stars and up" },
-									{ start: 1, end: 5, label: "> 1 stars" }]
-							}
 						/>
 					</div>
 				</div>
@@ -79,17 +80,3 @@ export default class ResultCardDefault extends Component {
 		);
 	}
 }
-
-ResultCardDefault.defaultProps = {
-	mapping: {
-		rating: "rating",
-		name: "name"
-	}
-};
-
-ResultCardDefault.propTypes = {
-	mapping: React.PropTypes.shape({
-		rating: React.PropTypes.string,
-		name: React.PropTypes.string
-	})
-};

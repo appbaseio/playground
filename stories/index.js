@@ -72,7 +72,7 @@ import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components
 // import CategorySearchDefault from "./reactivesearch/CategorySearch.stories";
 // import MultiLevelMenuDefault from "./reactivesearch/MultiLevelMenu.stories";
 // import ReactiveListDefault from "./reactivesearch/ReactiveList.stories";
-// import ResultCardDefault from "./reactivesearch/ResultCard.stories";
+import ResultCardDefault from "./reactivesearch/ResultCard.stories";
 // import ResultListDefault from "./reactivesearch/ResultList.stories";
 // import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
 // import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
@@ -1686,35 +1686,35 @@ const removeCommentsLine = (str) => str.replace(/^.*    \/\/.*$/mg, "");
 // 		/>
 // 	)));
 
-// storiesOf("search/ResultCard", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
-// 		<ResultCardDefault />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
-// 		<ResultCardDefault title={text("title", "Cars result")} />
-// 	)))
-// 	.add("With size", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
-// 		<ResultCardDefault size={number("size", 5)} />
-// 	)))
-// 	.add("Hide resultStats", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
-// 		<ResultCardDefault showResultStats={boolean("showResultStats", false)} />
-// 	)))
-// 	.add("With infinite loading", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
-// 		<ResultCardDefault scrollOnTarget={window} pagination={false} />
-// 	)))
-// 	.add("With pagination", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
-// 		<ResultCardDefault  pagination={boolean("pagination", true)} paginationAt={text("paginationAt", "bottom")} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
-// 		<ResultCardDefault
-// 			title={text("title", "Cars result")}
-// 			size={number("size", 5)}
-// 			showResultStats={boolean("showResultStats", true)}
-// 			pagination={boolean("pagination", true)}
-// 			paginationAt={text("paginationAt", "bottom")}
-// 		/>
-// 	)));
+storiesOf("search/ResultCard", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
+		<ResultCardDefault />
+	)))
+	.add("With title", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
+		<ResultCardDefault title={text("title", "Cars result")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
+		<ResultCardDefault size={number("size", 5)} />
+	)))
+	.add("Hide resultStats", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
+		<ResultCardDefault showResultStats={boolean("showResultStats", false)} />
+	)))
+	.add("With infinite loading", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
+		<ResultCardDefault scrollOnTarget={window} pagination={false} />
+	)))
+	.add("With pagination", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
+		<ResultCardDefault  pagination={boolean("pagination", true)} paginationAt={text("paginationAt", "bottom")} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
+		<ResultCardDefault
+			title={text("title", "Cars result")}
+			size={number("size", 5)}
+			showResultStats={boolean("showResultStats", true)}
+			pagination={boolean("pagination", true)}
+			paginationAt={text("paginationAt", "bottom")}
+		/>
+	)));
 
 // storiesOf("search/ResultList", module)
 // 	.addDecorator(withKnobs)
