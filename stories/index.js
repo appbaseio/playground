@@ -88,7 +88,7 @@ import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
 import MultiRangeRSDefault from "./reactivesearch/MultiRange.stories";
 import SingleDropdownRangeRSDefault from "./reactivesearch/SingleDropdownRange.stories";
 import MultiDropdownRangeRSDefault from "./reactivesearch/MultiDropdownRange.stories";
-// import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
+import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
 // import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
 // import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 // import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
@@ -2403,36 +2403,36 @@ storiesOf("search/MultiDropdownRange", module)
 		/>
 	)));
 
-// storiesOf("search/ToggleButton", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-// 		<ToggleButtonRSDefault showFilter={false} />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-// 		<ToggleButtonRSDefault showFilter={false} title={text("title", "ToggleButton: Meetup Categories")} />
-// 	)))
-// 	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-// 		<ToggleButtonRSDefault defaultSelected={array("defaultSelected", ["Social", "Travel"])} showFilter={false} />
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-// 		<ToggleButtonRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Category filter")} />
-// 	)))
-// 	.add("Without multiSelect", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-// 		<ToggleButtonRSDefault showFilter={false} multiSelect={boolean("multiSelect", false)} />
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-// 		<ToggleButtonRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
-// 		<ToggleButtonRSDefault
-// 			title={text("title", "ToggleButton: Meetup Categories")}
-// 			multiSelect={boolean("multiSelect", true)}
-// 			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Category filter")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/ToggleButton", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault showFilter={false} title={text("title", "ToggleButton: Cars")} />
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault defaultSelected={array("defaultSelected", ["audi", "nissan"])} showFilter={false} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Cars filter")} />
+	)))
+	.add("Without multiSelect", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault showFilter={false} multiSelect={boolean("multiSelect", false)} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(ToggleButtonReadme), () => (
+		<ToggleButtonRSDefault
+			title={text("title", "ToggleButton: Cars Categories")}
+			multiSelect={boolean("multiSelect", true)}
+			defaultSelected={array("defaultSelected", ["Social", "Travel"])}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Category filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 // storiesOf("search/DatePicker", module)
 // 	.addDecorator(withKnobs)
