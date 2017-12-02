@@ -1,64 +1,50 @@
 import React, { Component } from "react";
 import {
 	ReactiveBase,
-	ResultCard,
+	ReactiveList,
 	NumberBox
 } from "@appbaseio/reactivesearch";
-import ResponsiveStory from "./ResponsiveStory";
 
 export default class NumberBoxRSDefault extends Component {
-	constructor(props) {
-		super(props);
-		this.onData = this.onData.bind(this);
-	}
-
-	componentDidMount() {
-		ResponsiveStory();
-	}
-
-	onData(res) {
-		return {
-			image: res.image,
-			title: res.name,
-			desc: (
-				<div>
-					<div className="price">${res.price}</div>
-					<span className="host" style={{ "backgroundImage": `url(${res.host_image})` }}></span>
-					<p>{res.room_type} · {res.accommodates} guests</p>
-				</div>
-			),
-			url: res.listing_url
-		};
+	onData = (res) => {
+		const data = res._source;
+		return (<div key={res._id}>
+			<h2>{data.name}</h2>
+			<p>{data.price} - {data.rating} stars rated</p>
+		</div>);
 	}
 
 	render() {
 		return (
 			<ReactiveBase
-				app="housing"
-				credentials="0aL1X5Vts:1ee67be1-9195-4f4b-bd4f-a91cd1b5e4b5"
-				type="listing"
-				theme="rbc-red"
+				app="car-store"
+				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
 			>
 				<div className="row">
 					<div className="col">
 						<NumberBox
-							componentId="GuestSensor"
-							dataField="accommodates"
-							title="Guests"
+							dataField="rating"
+							componentId="CarSensor"
+							data={{
+								label: "Car Ratings",
+								start: 2,
+								end: 5
+							}}
 							{...this.props}
 						/>
 					</div>
 
 					<div className="col">
-						<ResultCard
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="name"
+							title="ReactiveList"
 							from={0}
-							size={40}
+							size={20}
 							onData={this.onData}
-							showPagination={true}
+							pagination
 							react={{
-								and: ["GuestSensor"]
+								and: "CarSensor"
 							}}
 						/>
 					</div>
