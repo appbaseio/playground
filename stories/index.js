@@ -81,6 +81,8 @@ import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components
 // import MultiLevelMenuDefault from "./reactivesearch/MultiLevelMenu.stories";
 // import ReactiveListDefault from "./reactivesearch/ReactiveList.stories";
 import ResultCardDefault from "./reactivesearch/ResultCard.stories";
+import ReactiveListDefault from "./reactivesearch/ReactiveList.stories";
+// import ResultCardDefault from "./reactivesearch/ResultCard.stories";
 // import ResultListDefault from "./reactivesearch/ResultList.stories";
 // import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
 // import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
@@ -99,7 +101,7 @@ import MultiDropdownRangeRSDefault from "./reactivesearch/MultiDropdownRange.sto
 import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
 // import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
 // import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
-// import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
+import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
 // import DataControllerRSDefault from "./reactivesearch/DataController.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
@@ -1595,104 +1597,89 @@ const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
 // 		/>
 // 	)));
 
-// storiesOf("search/ReactiveList", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault />
-// 	)))
-// 	.add("With Title", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault title={text("title", "People")} stream={false} />
-// 	)))
-// 	.add("With placeholder", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault onAllData={null} stream={false} placeholder={text("placeholder", "Select from list")} />
-// 	)))
-// 	.add("Without resultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault onAllData={null} stream={false} showResultStats={boolean("showResultStats", false)} />
-// 	)))
-// 	.add("With Streaming Enabled", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault title="Meetups" stream={boolean("stream", true)} />
-// 	)))
-// 	.add("With pagination", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault
-// 			pagination={boolean("pagination", true)}
-// 			paginationAt={select("paginationAt", { bottom: "bottom", top: "top", both: "both" }, "bottom")}
-// 			pages={number("pages", 5)}
-// 			title="Meetups"
-// 		/>
-// 	)))
-// 	.add("With infinite loading", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault
-// 			pagination={false}
-// 			scrollOnTarget={window}
-// 		/>
-// 	)))
-// 	.add("With custom sort order", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault onAllData={null} stream={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", default: "default" }, "asc")} />
-// 	)))
-// 	.add("With Sort Options", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault
-// 			title="Meetups"
-// 			stream={false}
-// 			sortOptions={[
-// 				{
-// 					label: "Most Recent RSVP",
-// 					dataField: "mtime",
-// 					sortBy: "desc"
-// 				},
-// 				{
-// 					label: "Guests - High to Low",
-// 					dataField: "guests",
-// 					sortBy: "desc"
-// 				},
-// 				{
-// 					label: "Guests - Low to High",
-// 					dataField: "guests",
-// 					sortBy: "asc"
-// 				}
-// 			]}
-// 		/>
-// 	)))
-// 	.add("With custom messages", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault
-// 			title="Meetups"
-// 			stream={false}
-// 			initialLoader={text("initialLoader", "Loading results..")}
-// 			noResults={text("noResults", "No results found!")}
-// 		/>
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-// 		<ReactiveListDefault
-// 			title={text("title", "ReactiveList: Results")}
-// 			placeholder={text("placeholder", "Select from list")}
-// 			from={number("from", 0)}
-// 			size={number("size", 5)}
-// 			initialLoader={text("initialLoader", "Loading results..")}
-// 			noResults={text("noResults", "No results found!")}
-// 			showResultStats={boolean("showResultStats", true)}
-// 			pagination={boolean("pagination", true)}
-// 			paginationAt={select("paginationAt", { bottom: "bottom", top: "top", both: "both" }, "bottom")}
-// 			pages={number("pages", 5)}
-// 			stream={boolean("stream", false)}
-// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", default: "default" }, "default")}
-// 			sortOptions={[
-// 				{
-// 					label: "Most Recent RSVP",
-// 					dataField: "mtime",
-// 					sortBy: "desc"
-// 				},
-// 				{
-// 					label: "Guests - High to Low",
-// 					dataField: "guests",
-// 					sortBy: "desc"
-// 				},
-// 				{
-// 					label: "Guests - Low to High",
-// 					dataField: "guests",
-// 					sortBy: "asc"
-// 				}
-// 			]}
-// 		/>
-// 	)));
+storiesOf("search/ReactiveList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault />
+	)))
+	// .add("Without resultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+	// 	<ReactiveListDefault onAllData={null} stream={false} showResultStats={boolean("showResultStats", false)} />
+	// )))
+	// .add("With Streaming Enabled", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+	// 	<ReactiveListDefault title="Meetups" stream={boolean("stream", true)} />
+	// )))
+	.add("With pagination", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			pagination={boolean("pagination", true)}
+			paginationAt={select("paginationAt", { bottom: "bottom", top: "top", both: "both" }, "bottom")}
+			pages={number("pages", 5)}
+			title="Meetups"
+		/>
+	)))
+	.add("With infinite loading", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			pagination={false}
+		/>
+	)))
+	.add("With custom sort order", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault sortBy={select("sortBy", { asc: "asc", desc: "desc" }, "asc")} />
+	)))
+	// .add("With Sort Options", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+	// 	<ReactiveListDefault
+	// 		title="Meetups"
+	// 		stream={false}
+	// 		sortOptions={[
+	// 			{
+	// 				label: "Most Recent RSVP",
+	// 				dataField: "mtime",
+	// 				sortBy: "desc"
+	// 			},
+	// 			{
+	// 				label: "Guests - High to Low",
+	// 				dataField: "guests",
+	// 				sortBy: "desc"
+	// 			},
+	// 			{
+	// 				label: "Guests - Low to High",
+	// 				dataField: "guests",
+	// 				sortBy: "asc"
+	// 			}
+	// 		]}
+	// 	/>
+	// )))
+	.add("Playground", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			title={text("title", "ReactiveList: Results")}
+			placeholder={text("placeholder", "Select from list")}
+			from={number("from", 0)}
+			size={number("size", 5)}
+			initialLoader={text("initialLoader", "Loading results..")}
+			noResults={text("noResults", "No results found!")}
+			showResultStats={boolean("showResultStats", true)}
+			pagination={boolean("pagination", true)}
+			paginationAt={select("paginationAt", { bottom: "bottom", top: "top", both: "both" }, "bottom")}
+			pages={number("pages", 5)}
+			stream={boolean("stream", false)}
+			sortBy={select("sortBy", { asc: "asc", desc: "desc", default: "default" }, "default")}
+			sortOptions={[
+				{
+					label: "Most Recent RSVP",
+					dataField: "mtime",
+					sortBy: "desc"
+				},
+				{
+					label: "Guests - High to Low",
+					dataField: "guests",
+					sortBy: "desc"
+				},
+				{
+					label: "Guests - Low to High",
+					dataField: "guests",
+					sortBy: "asc"
+				}
+			]}
+		/>
+	)));
 
 storiesOf("search/ResultCard", module)
 	.addDecorator(withKnobs)
@@ -3203,62 +3190,86 @@ storiesOf("search/ToggleButton", module)
 // 		/>
 // 	)));
 
-// storiesOf("search/RangeSlider", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(RangeSliderReadme), () => (
-// 		<RangeSliderRSDefault />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(RangeSliderReadme), () => (
-// 		<RangeSliderRSDefault title={text("title", "RangeSlider: Prices")} />
-// 	)))
-// 	.add("With Default Selected", withReadme(removeFirstLine(RangeSliderReadme), () => (
-// 		<RangeSliderRSDefault
-// 			defaultSelected={object("defaultSelected", {
-// 				start: 10,
-// 				end: 50
-// 			})}
-// 		/>
-// 	)))
-// 	.add("Without histogram", withReadme(removeFirstLine(RangeSliderReadme), () => (
-// 		<RangeSliderRSDefault
-// 			showHistogram={boolean("showHistogram", false)}
-// 		/>
-// 	)))
-// 	.add("With custom histogram interval", withReadme(removeFirstLine(RangeSliderReadme), () => (
-// 		<RangeSliderRSDefault interval={number("interval", 50)} />
-// 	)))
-// 	.add("With Range Labels", withReadme(removeFirstLine(RangeSliderReadme), () => (
-// 		<RangeSliderRSDefault
-// 			rangeLabels={object("rangeLabels", {
-// 				start: "$10",
-// 				end: "$250"
-// 			})}
-// 		/>
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(RangeSliderReadme), () => (
-// 		<RangeSliderRSDefault URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(RangeSliderReadme), () => (
-// 		<RangeSliderRSDefault
-// 			title={text("title", "RangeSlider: Prices")}
-// 			range={object("range", {
-// 				start: 10,
-// 				end: 250
-// 			})}
-// 			stepValue={number("stepValue", 10)}
-// 			interval={number("interval", 20)}
-// 			defaultSelected={object("defaultSelected", {
-// 				start: 10,
-// 				end: 50
-// 			})}
-// 			rangeLabels={object("rangeLabels", {
-// 				start: "$10",
-// 				end: "$250"
-// 			})}
-// 			showHistogram={boolean("showHistogram", true)}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/RangeSlider", module)
+	.addDecorator(withKnobs)
+	.add(
+		"Basic",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault />
+		))
+	)
+	.add(
+		"With title",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault title={text("title", "RangeSlider: Ratings")} />
+		))
+	)
+	.add(
+		"With Default Selected",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault
+				defaultSelected={object("defaultSelected", {
+					start: 3,
+					end: 4
+				})}
+			/>
+		))
+	)
+	.add(
+		"Without histogram",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault showHistogram={boolean("showHistogram", false)} />
+		))
+	)
+	.add(
+		"With custom histogram interval",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault interval={number("interval", 1)} />
+		))
+	)
+	.add(
+		"With Range Labels",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault
+				rangeLabels={object("rangeLabels", {
+					start: "Low",
+					end: "High"
+				})}
+			/>
+		))
+	)
+	.add(
+		"With URLParams",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault
+				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			/>
+		))
+	)
+	.add(
+		"Playground",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault
+				title={text("title", "RangeSlider: Prices")}
+				range={object("range", {
+					start: 1,
+					end: 5
+				})}
+				stepValue={number("stepValue", 1)}
+				interval={number("interval", 20)}
+				defaultSelected={object("defaultSelected", {
+					start: 2,
+					end: 4
+				})}
+				rangeLabels={object("rangeLabels", {
+					start: "Start",
+					end: "End"
+				})}
+				showHistogram={boolean("showHistogram", true)}
+				URLParams={boolean("URLParams (not visible on storybook)", false)}
+			/>
+		))
+	);
 
 // storiesOf("search/DataController", module)
 // 	.addDecorator(withKnobs)
