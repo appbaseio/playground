@@ -1605,9 +1605,9 @@ storiesOf("search/ReactiveList", module)
 	// .add("Without resultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
 	// 	<ReactiveListDefault onAllData={null} stream={false} showResultStats={boolean("showResultStats", false)} />
 	// )))
-	// .add("With Streaming Enabled", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-	// 	<ReactiveListDefault title="Meetups" stream={boolean("stream", true)} />
-	// )))
+	.add("With Streaming Enabled", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault stream={boolean("stream", true)} />
+	)))
 	.add("With pagination", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
 		<ReactiveListDefault
 			pagination={boolean("pagination", true)}
