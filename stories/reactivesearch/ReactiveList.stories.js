@@ -10,24 +10,24 @@ export default class ReactiveListDefault extends Component {
 	onData(res) {
 		const data = res._source;
 		return (<div key={res._id}>
-			<h2>{data.member.member_name}</h2>
-			<p>is going to {data.event.event_name} at {data.venue_name_ngrams}</p>
-			<p>{data.group_city_ngram}</p>
+			<h2 dangerouslySetInnerHTML={{__html: data.name}} />
+			<h4 dangerouslySetInnerHTML={{__html: data.brand}} />
+			<p>{data.price} - {data.rating} stars rated</p>
 		</div>);
 	}
 
 	render() {
 		return (
 			<ReactiveBase
-				app="reactivemap-demo"
-				credentials="qMzzgez0t:a9138c3f-f246-4cd8-ba3d-0b99f9550c05"
-				type="meetupdata1"
+				app="car-store"
+				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				type="cars"
 			>
 				<div className="row">
 					<div className="col">
 						<MultiList
-							componentId="CitySensor"
-							dataField="group.group_city.raw"
+							componentId="CarSensor"
+							dataField="brand.raw"
 							title="MultiList"
 							size={100}
 						/>
@@ -36,13 +36,14 @@ export default class ReactiveListDefault extends Component {
 					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="group.group_city.raw"
+							dataField="name"
 							from={0}
 							size={20}
 							onData={this.onData}
 							pagination
+							stream
 							react={{
-								and: ["CitySensor"]
+								and: ["CarSensor"]
 							}}
 							{...this.props}
 						/>
