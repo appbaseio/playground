@@ -20,18 +20,19 @@ export default class DataControllerRSDefault extends Component {
 		};
 	}
 
-	onData(res) {
+	onData(data) {
+		const res = data._source;
 		const result = {
 			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
 			title: res.name,
 			rating: res.rating,
-			desc: res.brand,
-			url: "#"
+			desc: res.brand
 		};
 		return result;
 	}
 
 	render() {
+		const { children, ...props } = this.props;
 		return (
 			<ReactiveBase
 				app="car-store"
@@ -44,8 +45,10 @@ export default class DataControllerRSDefault extends Component {
 							componentId="CustomSensor"
 							dataField="name"
 							customQuery={this.customQuery}
-							{...this.props}
-						/>
+							{...props}
+						>
+							{children}
+						</DataController>
 					</div>
 
 					<div className="col">

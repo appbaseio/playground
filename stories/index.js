@@ -102,7 +102,7 @@ import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
 // import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
 // import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
-// import DataControllerRSDefault from "./reactivesearch/DataController.stories";
+import DataControllerRSDefault from "./reactivesearch/DataController.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 require("./styles.css");
@@ -3271,42 +3271,42 @@ storiesOf("search/RangeSlider", module)
 		))
 	);
 
-// storiesOf("search/DataController", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(DataControllerReadme), () => (
-// 		<DataControllerRSDefault showFilter={false} />
-// 	)))
-// 	.add("With defaultSelected", withReadme(removeFirstLine(DataControllerReadme), () => (
-// 		<DataControllerRSDefault defaultSelected={text("defaultSelected", "Audi")} />
-// 	)))
-// 	.add("With UI", withReadme(removeFirstLine(DataControllerReadme), () => (
-// 		<DataControllerRSDefault
-// 			title="DataController"
-// 			visible={boolean("visible", true)}
-// 			dataLabel={
-// 				<p>★ A customizable UI widget ★</p>
-// 			}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(DataControllerReadme), () => (
-// 		<DataControllerRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Custom Filter Name")} />
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(DataControllerReadme), () => (
-// 		<DataControllerRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(DataControllerReadme), () => (
-// 		<DataControllerRSDefault
-// 			title={text("title", "DataController")}
-// 			visible={boolean("visible", true)}
-// 			dataLabel={text("dataLabel", "★  A customizable UI widget ★")}
-// 			defaultSelected={text("defaultSelected", "default")}
-// 			componentStyle={object("componentStyle", { "paddingBottom": "10px" })}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Custom Filter Name")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", true)}
-// 		/>
-// 	)));
+storiesOf("search/DataController", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault showFilter={false} />
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault defaultSelected={text("defaultSelected", "Audi")} />
+	)))
+	.add("With UI", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault
+			title="DataController"
+			visible={boolean("visible", true)}
+			showFilter={false}
+		>
+			<p>★ A customizable UI widget ★</p>
+		</DataControllerRSDefault>
+	)))
+	.add("With filter", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Custom Filter Name")} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(DataControllerReadme), () => (
+		<DataControllerRSDefault
+			title={text("title", "DataController")}
+			visible={boolean("visible", true)}
+			defaultSelected={text("defaultSelected", "default")}
+			componentStyle={object("componentStyle", { "paddingBottom": "10px" })}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Custom Filter Name")}
+			URLParams={boolean("URLParams (not visible on storybook)", true)}
+		>
+			<p>{text("dataLabel", "★  A customizable UI widget ★")}</p>
+		</DataControllerRSDefault>
+	)));
 
 // storiesOf("search/SelectedFilters", module)
 // 	.addDecorator(withKnobs)
