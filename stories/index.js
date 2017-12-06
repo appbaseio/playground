@@ -85,7 +85,7 @@ import ReactiveListDefault from "./reactivesearch/ReactiveList.stories";
 // import ResultCardDefault from "./reactivesearch/ResultCard.stories";
 // import ResultListDefault from "./reactivesearch/ResultList.stories";
 // import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
-// import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
+import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
 // import MultiDataListRSDefault from "./reactivesearch/MultiDataList.stories";
 import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
 import TextFieldRSDefault from "./reactivesearch/TextField.stories";
@@ -2641,45 +2641,45 @@ storiesOf("search/MultiDropdownList", module)
 		))
 	);
 
-// storiesOf("search/SingleDataList", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(SingleDataListReadme), () => (
-// 		<SingleDataListRSDefault />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(SingleDataListReadme), () => (
-// 		<SingleDataListRSDefault showFilter={false} title={text("title", "Topics")} />
-// 	)))
-// 	.add("With defaultSelected", withReadme(removeFirstLine(SingleDataListReadme), () => (
-// 		<SingleDataListRSDefault defaultSelected={text("defaultSelected", "Social")} showFilter={false} />
-// 	)))
-// 	.add("With showSearch", withReadme(removeFirstLine(SingleDataListReadme), () => (
-// 		<SingleDataListRSDefault showFilter={false} showSearch={boolean("showSearch", true)} placeholder={text("placeholder", "Search topics")} />
-// 	)))
-// 	.add("Without Radio", withReadme(removeFirstLine(SingleDataListReadme), () => (
-// 		<SingleDataListRSDefault showRadio={boolean("showRadio", false)} showFilter={false} />
-// 	)))
-// 	.add("With selectAllLabel", withReadme(removeFirstLine(SingleDataListReadme), () => (
-// 		<SingleDataListRSDefault showFilter={false} selectAllLabel={text("selectAllLabel", "Select All")} />
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(SingleDataListReadme), () => (
-// 		<SingleDataListRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Custom Filter Name")} />
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(SingleDataListReadme), () => (
-// 		<SingleDataListRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(SingleDataListReadme), () => (
-// 		<SingleDataListRSDefault
-// 			title={text("title", "Topics")}
-// 			defaultSelected={text("defaultSelected", "Social")}
-// 			showSearch={boolean("showSearch", true)}
-// 			placeholder={text("placeholder", "Search topics")}
-// 			showRadio={boolean("showRadio", true)}
-// 			selectAllLabel={text("selectAllLabel", "Select All")}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Custom Filter Name")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/SingleDataList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(SingleDataListReadme), () => (
+		<SingleDataListRSDefault />
+	)))
+	.add("With title", withReadme(removeFirstLine(SingleDataListReadme), () => (
+		<SingleDataListRSDefault showFilter={false} title={text("title", "Topics")} />
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(SingleDataListReadme), () => (
+		<SingleDataListRSDefault defaultSelected={text("defaultSelected", "Social")} showFilter={false} />
+	)))
+	.add("With showSearch", withReadme(removeFirstLine(SingleDataListReadme), () => (
+		<SingleDataListRSDefault showFilter={false} showSearch={boolean("showSearch", true)} placeholder={text("placeholder", "Search topics")} />
+	)))
+	.add("Without Radio", withReadme(removeFirstLine(SingleDataListReadme), () => (
+		<SingleDataListRSDefault showRadio={boolean("showRadio", false)} showFilter={false} />
+	)))
+	.add("With selectAllLabel", withReadme(removeFirstLine(SingleDataListReadme), () => (
+		<SingleDataListRSDefault showFilter={false} selectAllLabel={text("selectAllLabel", "Select All")} />
+	)))
+	.add("With filter", withReadme(removeFirstLine(SingleDataListReadme), () => (
+		<SingleDataListRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Custom Filter Name")} />
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(SingleDataListReadme), () => (
+		<SingleDataListRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(SingleDataListReadme), () => (
+		<SingleDataListRSDefault
+			title={text("title", "Topics")}
+			defaultSelected={text("defaultSelected", "Social")}
+			showSearch={boolean("showSearch", true)}
+			placeholder={text("placeholder", "Search topics")}
+			showRadio={boolean("showRadio", true)}
+			selectAllLabel={text("selectAllLabel", "Select All")}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Custom Filter Name")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 // storiesOf("search/MultiDataList", module)
 // 	.addDecorator(withKnobs)
