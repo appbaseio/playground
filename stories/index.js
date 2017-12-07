@@ -3052,7 +3052,7 @@ storiesOf("search/ToggleButton", module)
 			<ToggleButtonRSDefault
 				title={text("title", "ToggleButton: Cars Categories")}
 				multiSelect={boolean("multiSelect", true)}
-				defaultSelected={array("defaultSelected", ["Social", "Travel"])}
+				defaultSelected={array("defaultSelected", ["audi", "nissan"])}
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Category filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
