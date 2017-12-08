@@ -27,8 +27,12 @@ export default class RangeSliderRSDefault extends Component {
 							dataField="rating"
 							componentId="CarSensor"
 							range={{
-								start: 1,
-								end: 5
+								start: 0,
+								end: 6
+							}}
+							rangeLabels={{
+								start: "0",
+								end: "6"
 							}}
 							{...this.props}
 						/>
