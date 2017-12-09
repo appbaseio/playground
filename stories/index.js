@@ -75,7 +75,7 @@ import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components
 // import NestedListDefault from "./reactivesearch/NestedList.stories";
 // import NestedMultiListDefault from "./reactivesearch/NestedMultiList.stories";
 // import DynamicRangeSliderDefault from "./reactivesearch/DynamicRangeSlider.stories";
-// import TagCloudDefault from "./reactivesearch/TagCloud.stories";
+import TagCloudDefault from "./reactivesearch/TagCloud.stories";
 // import RatingsFilterDefault from "./reactivesearch/RatingsFilter.stories";
 // import CategorySearchDefault from "./reactivesearch/CategorySearch.stories";
 // import MultiLevelMenuDefault from "./reactivesearch/MultiLevelMenu.stories";
@@ -1371,58 +1371,58 @@ const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
 // 		/>
 // 	)));
 
-// storiesOf("search/TagCloud", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(TagCloudReadme), () => (
-// 		<TagCloudDefault showFilter={false} />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(TagCloudReadme), () => (
-// 		<TagCloudDefault title={text("title", "Cities")} showFilter={false} />
-// 	)))
-// 	.add("Without showCount", withReadme(removeFirstLine(TagCloudReadme), () => (
-// 		<TagCloudDefault showCount={boolean("showCount", false)} showFilter={false} />
-// 	)))
-// 	.add("With custom filter", withReadme(removeFirstLine(TagCloudReadme), () => (
-// 		<TagCloudDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Cities filter")} />
-// 	)))
-// 	.add("With multiSelect", withReadme(removeFirstLine(TagCloudReadme), () => (
-// 		<TagCloudDefault
-// 			multiSelect={boolean("multiSelect", true)}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With defaultSelected", withReadme(removeFirstLine(TagCloudReadme), () => (
-// 		<TagCloudDefault
-// 			defaultSelected={text("defaultSelected", "Auckland")}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With multiSelect on and defaultSelected", withReadme(removeFirstLine(TagCloudReadme), () => (
-// 		<TagCloudDefault
-// 			multiSelect
-// 			defaultSelected={array("defaultSelected", ["Auckland", "Amsterdam"])}
-// 		/>
-// 	)))
-// 	.add("With multiSelect off and defaultSelected", withReadme(removeFirstLine(TagCloudReadme), () => (
-// 		<TagCloudDefault
-// 			defaultSelected={text("defaultSelected", "Auckland")}
-// 		/>
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(TagCloudReadme), () => (
-// 		<TagCloudDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(TagCloudReadme), () => (
-// 		<TagCloudDefault
-// 			title={text("title", "TagCloud: City Filter")}
-// 			size={number("size", 100)}
-// 			multiSelect
-// 			defaultSelected={array("defaultSelected", ["Auckland"])}
-// 			showCount={boolean("showCount", true)}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Cities filter")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/TagCloud", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(TagCloudReadme), () => (
+		<TagCloudDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(TagCloudReadme), () => (
+		<TagCloudDefault title={text("title", "Cities")} showFilter={false} />
+	)))
+	.add("Without showCount", withReadme(removeFirstLine(TagCloudReadme), () => (
+		<TagCloudDefault showCount={boolean("showCount", false)} showFilter={false} />
+	)))
+	.add("With custom filter", withReadme(removeFirstLine(TagCloudReadme), () => (
+		<TagCloudDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Cities filter")} />
+	)))
+	.add("With multiSelect", withReadme(removeFirstLine(TagCloudReadme), () => (
+		<TagCloudDefault
+			multiSelect={boolean("multiSelect", true)}
+			showFilter={false}
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(TagCloudReadme), () => (
+		<TagCloudDefault
+			defaultSelected={text("defaultSelected", "Auckland")}
+			showFilter={false}
+		/>
+	)))
+	.add("With multiSelect on and defaultSelected", withReadme(removeFirstLine(TagCloudReadme), () => (
+		<TagCloudDefault
+			multiSelect
+			defaultSelected={array("defaultSelected", ["Auckland", "Amsterdam"])}
+		/>
+	)))
+	.add("With multiSelect off and defaultSelected", withReadme(removeFirstLine(TagCloudReadme), () => (
+		<TagCloudDefault
+			defaultSelected={text("defaultSelected", "Auckland")}
+		/>
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(TagCloudReadme), () => (
+		<TagCloudDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(TagCloudReadme), () => (
+		<TagCloudDefault
+			title={text("title", "TagCloud: City Filter")}
+			size={number("size", 100)}
+			multiSelect
+			defaultSelected={array("defaultSelected", ["Auckland"])}
+			showCount={boolean("showCount", true)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Cities filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 // storiesOf("search/RatingsFilter", module)
 // 	.addDecorator(withKnobs)

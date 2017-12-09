@@ -52,7 +52,7 @@ export default class TagCloudDefault extends Component {
 						<SelectedFilters componentId="CitySensor" />
 						<TagCloud
 							componentId="CitySensor"
-							dataField={this.props.mapping.city}
+							dataField="group.group_city.raw"
 							title="TagCloud"
 							size={100}
 							customQuery={this.customQuery}
@@ -62,7 +62,7 @@ export default class TagCloudDefault extends Component {
 					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
-							dataField={this.props.mapping.topic}
+							dataField="group.group_topics.topic_name_raw"
 							title="Results"
 							sortBy="asc"
 							from={0}
@@ -79,17 +79,3 @@ export default class TagCloudDefault extends Component {
 		);
 	}
 }
-
-TagCloudDefault.defaultProps = {
-	mapping: {
-		city: "group.group_city.raw",
-		topic: "group.group_topics.topic_name_raw"
-	}
-};
-
-TagCloudDefault.propTypes = {
-	mapping: React.PropTypes.shape({
-		city: React.PropTypes.string,
-		topic: React.PropTypes.string
-	})
-};
