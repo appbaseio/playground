@@ -1770,6 +1770,40 @@ storiesOf("search/DataSearch", module)
 		))
 	)
 	.add(
+		"wihout search icon",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				title="DataSearch"
+				placeholder="Search Cars"
+				showFilter={false}
+				showIcon={boolean("showIcon", false)}
+			/>
+		))
+	)
+	.add(
+		"with iconPosition",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				title="DataSearch"
+				placeholder="Search Cars"
+				showFilter={false}
+				iconPosition={select("iconPosition", ["left", "right"], "left")}
+			/>
+		))
+	)
+	.add(
+		"with custom icon",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				title="DataSearch"
+				placeholder="Search Cars"
+				showFilter={false}
+				icon={<div>🎸</div>}
+				iconPosition={select("iconPosition", ["left", "right"], "left")}
+			/>
+		))
+	)
+	.add(
 		"With filter",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
