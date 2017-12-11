@@ -1474,6 +1474,40 @@ storiesOf("search/CategorySearch", module)
 			showFilter={false}
 		/>
 	)))
+	.add(
+		"wihout search icon",
+		withReadme(removeFirstLine(CategorySearchReadme), () => (
+			<CategorySearchDefault
+				title="CategorySearch"
+				placeholder="Search Cars"
+				showFilter={false}
+				showIcon={boolean("showIcon", false)}
+			/>
+		))
+	)
+	.add(
+		"with iconPosition",
+		withReadme(removeFirstLine(CategorySearchReadme), () => (
+			<CategorySearchDefault
+				title="CategorySearch"
+				placeholder="Search Cars"
+				showFilter={false}
+				iconPosition={select("iconPosition", ["left", "right"], "left")}
+			/>
+		))
+	)
+	.add(
+		"with custom icon",
+		withReadme(removeFirstLine(CategorySearchReadme), () => (
+			<CategorySearchDefault
+				title="CategorySearch"
+				placeholder="Search Cars"
+				showFilter={false}
+				icon={<div>🎸</div>}
+				iconPosition={select("iconPosition", ["left", "right"], "left")}
+			/>
+		))
+	)
 	.add("With filter", withReadme(removeFirstLine(CategorySearchReadme), () => (
 		<CategorySearchDefault
 			title="CategorySearch"
