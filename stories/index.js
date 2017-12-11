@@ -1486,7 +1486,7 @@ storiesOf("search/CategorySearch", module)
 		<CategorySearchDefault
 			title="CategorySearch"
 			placeholder="Search Car"
-			defaultSelected={text("defaultSelected", "")}
+			defaultSelected={text("defaultSelected", "nissan")}
 			showFilter={false}
 		/>
 	)))
