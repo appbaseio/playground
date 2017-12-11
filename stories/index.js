@@ -77,7 +77,7 @@ import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components
 // import DynamicRangeSliderDefault from "./reactivesearch/DynamicRangeSlider.stories";
 import TagCloudDefault from "./reactivesearch/TagCloud.stories";
 // import RatingsFilterDefault from "./reactivesearch/RatingsFilter.stories";
-// import CategorySearchDefault from "./reactivesearch/CategorySearch.stories";
+import CategorySearchDefault from "./reactivesearch/CategorySearch.stories";
 // import MultiLevelMenuDefault from "./reactivesearch/MultiLevelMenu.stories";
 // import ReactiveListDefault from "./reactivesearch/ReactiveList.stories";
 import ResultCardDefault from "./reactivesearch/ResultCard.stories";
@@ -1458,108 +1458,108 @@ storiesOf("search/TagCloud", module)
 // 		/>
 // 	)));
 
-// storiesOf("search/CategorySearch", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title="CategorySearch"
-// 			placeholder="Search Car"
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title={text("title", "Cars")}
-// 			placeholder="Search Car"
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title="CategorySearch"
-// 			placeholder="Search Car"
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Cars filter")}
-// 		/>
-// 	)))
-// 	.add("With defaultSelected", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title="CategorySearch"
-// 			placeholder="Search Car"
-// 			defaultSelected={text("defaultSelected", "")}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With defaultSuggestions", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title="CategorySearch"
-// 			placeholder="Search Car"
-// 			defaultSuggestions={[{label: "Opel", value: "Opel"}, {label: "VW", value: "VW"}]}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With Weights", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title="CategorySearch"
-// 			weights={array("weights", [1,3])}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With fuzziness", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title="CategorySearch"
-// 			showFilter={false}
-// 			fuzziness={number("fuzziness", 1)}
-// 		/>
-// 	)))
-// 	.add("With queryFormat", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title="CategorySearch"
-// 			showFilter={false}
-// 			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
-// 		/>
-// 	)))
-// 	.add("Without autoSuggest", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title="CategorySearch"
-// 			placeholder="Search Car"
-// 			showFilter={false}
-// 			autoSuggest={boolean("autoSuggest", false)}
-// 		/>
-// 	)))
-// 	.add("With highlight", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title="CategorySearch"
-// 			placeholder="Search Car"
-// 			showFilter={false}
-// 			highlight={boolean("highlight", true)}
-// 		/>
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title="CategorySearch"
-// 			placeholder="Search Car"
-// 			showFilter={false}
-// 			URLParams={boolean("URLParams (not visible on storybook)", true)}
-// 		/>
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(CategorySearchReadme), () => (
-// 		<CategorySearchDefault
-// 			title={text("title", "CategorySearch")}
-// 			dataField={array("dataField", ["name"])}
-// 			categoryField={text("categoryField", "brand.raw")}
-// 			defaultSelected={text("defaultSelected", "")}
-// 			placeholder={text("placeholder", "Search Car")}
-// 			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
-// 			weights={array("weights", [1,3])}
-// 			fuzziness={number("fuzziness", 1)}
-// 			autoSuggest={boolean("autoSuggest", true)}
-// 			highlight={boolean("highlight", false)}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Cars filter")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/CategorySearch", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			showFilter={false}
+		/>
+	)))
+	.add("With title", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title={text("title", "Cars")}
+			placeholder="Search Car"
+			showFilter={false}
+		/>
+	)))
+	.add("With filter", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Cars filter")}
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			defaultSelected={text("defaultSelected", "")}
+			showFilter={false}
+		/>
+	)))
+	.add("With defaultSuggestions", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			defaultSuggestions={[{label: "Opel", value: "Opel"}, {label: "VW", value: "VW"}]}
+			showFilter={false}
+		/>
+	)))
+	.add("With Weights", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			weights={array("weights", [1,3])}
+			showFilter={false}
+		/>
+	)))
+	.add("With fuzziness", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			showFilter={false}
+			fuzziness={number("fuzziness", 1)}
+		/>
+	)))
+	.add("With queryFormat", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			showFilter={false}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
+		/>
+	)))
+	.add("Without autoSuggest", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			showFilter={false}
+			autoSuggest={boolean("autoSuggest", false)}
+		/>
+	)))
+	.add("With highlight", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			showFilter={false}
+			highlight={boolean("highlight", true)}
+		/>
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title="CategorySearch"
+			placeholder="Search Car"
+			showFilter={false}
+			URLParams={boolean("URLParams (not visible on storybook)", true)}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(CategorySearchReadme), () => (
+		<CategorySearchDefault
+			title={text("title", "CategorySearch")}
+			dataField={array("dataField", ["name"])}
+			categoryField={text("categoryField", "brand.raw")}
+			defaultSelected={text("defaultSelected", "")}
+			placeholder={text("placeholder", "Search Car")}
+			queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
+			weights={array("weights", [1,3])}
+			fuzziness={number("fuzziness", 1)}
+			autoSuggest={boolean("autoSuggest", true)}
+			highlight={boolean("highlight", false)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Cars filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 // storiesOf("search/MultiLevelMenu", module)
 // 	.addDecorator(withKnobs)
