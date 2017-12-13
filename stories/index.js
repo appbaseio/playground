@@ -103,6 +103,7 @@ import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
 // import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
 // import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
+import RangeInputRSDefault from "./reactivesearch/RangeInput.stories";
 import DataControllerRSDefault from "./reactivesearch/DataController.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
@@ -3523,6 +3524,94 @@ storiesOf("search/ToggleButton", module)
 // 			URLParams={boolean("URLParams (not visible on storybook)", false)}
 // 		/>
 // 	)));
+
+storiesOf("search/RangeInput", module)
+	.addDecorator(withKnobs)
+	.add(
+		"Basic",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault />
+		))
+	)
+	.add(
+		"With title",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault title={text("title", "RangeInput: Ratings")} />
+		))
+	)
+	.add(
+		"With Default Selected",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault
+				defaultSelected={object("defaultSelected", {
+					start: 3,
+					end: 4
+				})}
+			/>
+		))
+	)
+	.add(
+		"Without histogram",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault showHistogram={boolean("showHistogram", false)} />
+		))
+	)
+	.add(
+		"Without slider",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault showSlider={boolean("showSlider", false)} />
+		))
+	)
+	.add(
+		"With custom histogram interval",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault interval={number("interval", 1)} />
+		))
+	)
+	.add(
+		"With Range Labels",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault
+				rangeLabels={object("rangeLabels", {
+					start: "Low",
+					end: "High"
+				})}
+			/>
+		))
+	)
+	.add(
+		"With URLParams",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault
+				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			/>
+		))
+	)
+	.add(
+		"Playground",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault
+				title={text("title", "RangeSlider: Prices")}
+				range={object("range", {
+					start: 1,
+					end: 5
+				})}
+				stepValue={number("stepValue", 1)}
+				interval={number("interval", 20)}
+				defaultSelected={object("defaultSelected", {
+					start: 2,
+					end: 4
+				})}
+				rangeLabels={object("rangeLabels", {
+					start: "Start",
+					end: "End"
+				})}
+				showHistogram={boolean("showHistogram", true)}
+				showSlider={boolean("showSlider", true)}
+				URLParams={boolean("URLParams (not visible on storybook)", false)}
+			/>
+		))
+	);
 
 storiesOf("search/RangeSlider", module)
 	.addDecorator(withKnobs)
