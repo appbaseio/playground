@@ -29,14 +29,14 @@ export default class DatePickerRSDefault extends Component {
 		return query;
 	}
 
-	onData(res) {
+	onData({ _source: res }) {
 		return {
 			image: res.image,
 			title: res.name,
 			desc: (
 				<div>
-					<div className="price">${res.price}</div>
-					<span className="host" style={{ "backgroundImage": `url(${res.host_image})` }}></span>
+					<div>${res.price}</div>
+					<span style={{ "backgroundImage": `url(${res.host_image})` }}></span>
 					<p>{res.room_type} · {res.accommodates} guests</p>
 				</div>
 			),
@@ -59,6 +59,7 @@ export default class DatePickerRSDefault extends Component {
 							dataField="date_from"
 							title="Housing available from"
 							customQuery={this.dateQuery}
+							initialMonth={new Date("2017-05-05")}
 							{...this.props}
 						/>
 					</div>

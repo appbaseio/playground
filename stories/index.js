@@ -100,7 +100,7 @@ import MultiRangeRSDefault from "./reactivesearch/MultiRange.stories";
 import SingleDropdownRangeRSDefault from "./reactivesearch/SingleDropdownRange.stories";
 import MultiDropdownRangeRSDefault from "./reactivesearch/MultiDropdownRange.stories";
 import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
-// import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
+import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
 // import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
 import RangeInputRSDefault from "./reactivesearch/RangeInput.stories";
@@ -3395,72 +3395,143 @@ storiesOf("search/ToggleButton", module)
 		))
 	);
 
-// storiesOf("search/DatePicker", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault showFilter={false} />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault title={text("title", "Date Picker")} showFilter={false} />
-// 	)))
-// 	.add("With placeholder", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault placeholder={text("placeholder", "Pick date")} showFilter={false} />
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Date")} />
-// 	)))
-// 	.add("Without focus", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault showFilter={false} focused={boolean("focused", false)} />
-// 	)))
-// 	.add("Show more than 1 month", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault
-// 			numberOfMonths={number("numberOfMonths", 2)}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("Default date", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault
-// 			defaultSelected={moment().subtract(1, "day")}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("Enable days from today only", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault
-// 			allowAllDates={boolean("allowAllDates", false)}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("Using extra prop object", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault
-// 			extra={object("extra", {
-// 				withFullScreenPortal: true,
-// 				showClearDate: true
-// 			})}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With queryFormat", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault showFilter={false} queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")} />
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(DatePickerReadme), () => (
-// 		<DatePickerRSDefault
-// 			title={text("title", "Date Picker")}
-// 			placeholder={text("placeholder", "Pick date")}
-// 			numberOfMonths={number("numberOfMonths", 1)}
-// 			allowAllDates={boolean("allowAllDates", true)}
-// 			extra={object("extra", {
-// 				withFullScreenPortal: false,
-// 				showClearDate: false
-// 			})}
-// 			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Date")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/DatePicker", module)
+	.addDecorator(withKnobs)
+	.add(
+		"Basic",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault showFilter={false} />
+		))
+	)
+	.add(
+		"With title",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				title={text("title", "Date Picker")}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"With placeholder",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				placeholder={text("placeholder", "Pick date")}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"With filter",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				showFilter={boolean("showFilter", true)}
+				filterLabel={text("filterLabel", "Date")}
+			/>
+		))
+	)
+	.add(
+		"With focus",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				showFilter={false}
+				focused={boolean("focused", true)}
+			/>
+		))
+	)
+	.add(
+		"Show more than 1 month",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				numberOfMonths={number("numberOfMonths", 2)}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"Default date",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				defaultSelected={text("defaultSelected", "2017-04-07")}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"Using extra dayPickerInputProps",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				dayPickerInputProps={object("dayPickerInputProps", {
+					clickUnselectsDay: true
+				})}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"With queryFormat",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				showFilter={false}
+				queryFormat={select(
+					"queryFormat",
+					[
+						"date",
+						"basic_date",
+						"basic_date_time",
+						"basic_date_time_no_millis",
+						"date_time_no_millis",
+						"basic_time",
+						"basic_time_no_millis",
+						"epoch_millis",
+						"epoch_seconds"
+					],
+					"epoch_millis"
+				)}
+			/>
+		))
+	)
+	.add(
+		"With URLParams",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				showFilter={false}
+				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			/>
+		))
+	)
+	.add(
+		"Playground",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				title={text("title", "Date Picker")}
+				placeholder={text("placeholder", "Pick date")}
+				numberOfMonths={number("numberOfMonths", 1)}
+				queryFormat={select(
+					"queryFormat",
+					{
+						epoch_millis: "epoch_millis",
+						epoch_seconds: "epoch_seconds",
+						date: "date",
+						date_time: "date_time",
+						date_time_no_millis: "date_time_no_millis",
+						basic_date: "basic_date",
+						basic_date_time: "basic_date_time",
+						basic_date_time_no_millis: "basic_date_time_no_millis",
+						basic_time: "basic_time",
+						basic_time_no_millis: "basic_time_no_millis"
+					},
+					"epoch_millis"
+				)}
+				showFilter={boolean("showFilter", true)}
+				dayPickerInputProps={object("dayPickerInputProps", {
+					clickUnselectsDay: true
+				})}
+				filterLabel={text("filterLabel", "Date")}
+				URLParams={boolean("URLParams (not visible on storybook)", false)}
+			/>
+		))
+	);
 
 // storiesOf("search/DateRange", module)
 // 	.addDecorator(withKnobs)
