@@ -101,7 +101,7 @@ import SingleDropdownRangeRSDefault from "./reactivesearch/SingleDropdownRange.s
 import MultiDropdownRangeRSDefault from "./reactivesearch/MultiDropdownRange.stories";
 import ToggleButtonRSDefault from "./reactivesearch/ToggleButton.stories";
 import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
-// import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
+import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
 import RangeInputRSDefault from "./reactivesearch/RangeInput.stories";
 import DataControllerRSDefault from "./reactivesearch/DataController.stories";
@@ -3509,18 +3509,17 @@ storiesOf("search/DatePicker", module)
 				numberOfMonths={number("numberOfMonths", 1)}
 				queryFormat={select(
 					"queryFormat",
-					{
-						epoch_millis: "epoch_millis",
-						epoch_seconds: "epoch_seconds",
-						date: "date",
-						date_time: "date_time",
-						date_time_no_millis: "date_time_no_millis",
-						basic_date: "basic_date",
-						basic_date_time: "basic_date_time",
-						basic_date_time_no_millis: "basic_date_time_no_millis",
-						basic_time: "basic_time",
-						basic_time_no_millis: "basic_time_no_millis"
-					},
+					[
+						"date",
+						"basic_date",
+						"basic_date_time",
+						"basic_date_time_no_millis",
+						"date_time_no_millis",
+						"basic_time",
+						"basic_time_no_millis",
+						"epoch_millis",
+						"epoch_seconds"
+					],
 					"epoch_millis"
 				)}
 				showFilter={boolean("showFilter", true)}
@@ -3533,68 +3532,126 @@ storiesOf("search/DatePicker", module)
 		))
 	);
 
-// storiesOf("search/DateRange", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(DateRangeReadme), () => (
-// 		<DateRangeRSDefault showFilter={false} />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(DateRangeReadme), () => (
-// 		<DateRangeRSDefault showFilter={false} title={text("title", "Date Range")} />
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(DateRangeReadme), () => (
-// 		<DateRangeRSDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Date range")} />
-// 	)))
-// 	.add("Show more than 1 month", withReadme(removeFirstLine(DateRangeReadme), () => (
-// 		<DateRangeRSDefault
-// 			numberOfMonths={number("numberOfMonths", 3)}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("Default date", withReadme(removeFirstLine(DateRangeReadme), () => (
-// 		<DateRangeRSDefault
-// 			showFilter={false}
-// 			defaultSelected={{
-// 				start: moment().subtract(7, "days"),
-// 				end: moment()
-// 			}}
-// 		/>
-// 	)))
-// 	.add("Enable days from today only", withReadme(removeFirstLine(DateRangeReadme), () => (
-// 		<DateRangeRSDefault
-// 			allowAllDates={boolean("allowAllDates", false)}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("Using extra prop object", withReadme(removeFirstLine(DateRangeReadme), () => (
-// 		<DateRangeRSDefault
-// 			showFilter={false}
-// 			extra={object("extra", {
-// 				withFullScreenPortal: true,
-// 				showClearDate: true
-// 			})}
-// 		/>
-// 	)))
-// 	.add("With queryFormat", withReadme(removeFirstLine(DateRangeReadme), () => (
-// 		<DateRangeRSDefault showFilter={false} queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")} />
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(DateRangeReadme), () => (
-// 		<DateRangeRSDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(DateRangeReadme), () => (
-// 		<DateRangeRSDefault
-// 			title={text("title", "Date Range")}
-// 			numberOfMonths={number("numberOfMonths", 2)}
-// 			allowAllDates={boolean("allowAllDates", true)}
-// 			extra={object("extra", {
-// 				withFullScreenPortal: true,
-// 				showClearDate: true
-// 			})}
-// 			queryFormat={select("queryFormat", {"epoch_millis":"epoch_millis","epoch_seconds":"epoch_seconds","date":"date","date_time":"date_time","date_time_no_millis":"date_time_no_millis","basic_date":"basic_date","basic_date_time":"basic_date_time","basic_date_time_no_millis":"basic_date_time_no_millis","basic_time":"basic_time","basic_time_no_millis":"basic_time_no_millis"}, "epoch_millis")}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Date range")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/DateRange", module)
+	.addDecorator(withKnobs)
+	.add(
+		"Basic",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault showFilter={false} />
+		))
+	)
+	.add(
+		"With title",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault
+				showFilter={false}
+				title={text("title", "Date Range")}
+			/>
+		))
+	)
+	.add(
+		"With filter",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault
+				showFilter={boolean("showFilter", true)}
+				filterLabel={text("filterLabel", "Date range")}
+			/>
+		))
+	)
+	.add(
+		"Show more than 1 month",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault
+				numberOfMonths={number("numberOfMonths", 3)}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"Default date",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault
+				showFilter={false}
+				defaultSelected={{
+					start: new Date("2017-04-07"),
+					end: new Date("2017-04-14")
+				}}
+			/>
+		))
+	)
+	.add(
+		"Using extra dayPickerInputProps",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault
+				showFilter={false}
+				dayPickerInputProps={object("dayPickerInputProps", {
+					clickUnselectsDay: true
+				})}
+			/>
+		))
+	)
+	.add(
+		"With queryFormat",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault
+				showFilter={false}
+				queryFormat={select(
+					"queryFormat",
+					[
+						"date",
+						"basic_date",
+						"basic_date_time",
+						"basic_date_time_no_millis",
+						"date_time_no_millis",
+						"basic_time",
+						"basic_time_no_millis",
+						"epoch_millis",
+						"epoch_seconds"
+					],
+					"epoch_millis"
+				)}
+			/>
+		))
+	)
+	.add(
+		"With URLParams",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault
+				showFilter={false}
+				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			/>
+		))
+	)
+	.add(
+		"Playground",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault
+				title={text("title", "Date Range")}
+				numberOfMonths={number("numberOfMonths", 2)}
+				dayPickerInputProps={object("dayPickerInputProps", {
+					clickUnselectsDay: true
+				})}
+				queryFormat={select(
+					"queryFormat",
+					[
+						"date",
+						"basic_date",
+						"basic_date_time",
+						"basic_date_time_no_millis",
+						"date_time_no_millis",
+						"basic_time",
+						"basic_time_no_millis",
+						"epoch_millis",
+						"epoch_seconds"
+					],
+					"epoch_millis"
+				)}
+				showFilter={boolean("showFilter", true)}
+				filterLabel={text("filterLabel", "Date range")}
+				URLParams={boolean("URLParams (not visible on storybook)", false)}
+			/>
+		))
+	);
 
 storiesOf("search/RangeInput", module)
 	.addDecorator(withKnobs)

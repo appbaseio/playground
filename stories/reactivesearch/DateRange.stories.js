@@ -20,14 +20,14 @@ export default class DateRangeRSDefault extends Component {
 				{
 					"range": {
 						"date_from": {
-							"gte": moment(value.startDate).format("YYYYMMDD")
+							"gte": moment(value.start).format("YYYYMMDD")
 						}
 					}
 				},
 				{
 					"range": {
 						"date_to": {
-							"lte": moment(value.endDate).format("YYYYMMDD")
+							"lte": moment(value.end).format("YYYYMMDD")
 						}
 					}
 				}
@@ -36,14 +36,14 @@ export default class DateRangeRSDefault extends Component {
 		return query;
 	}
 
-	onData(res) {
+	onData({ _source: res }) {
 		return {
 			image: res.image,
 			title: res.name,
 			desc: (
 				<div>
-					<div className="price">${res.price}</div>
-					<span className="host" style={{ "backgroundImage": `url(${res.host_image})` }}></span>
+					<div>${res.price}</div>
+					<span style={{ "backgroundImage": `url(${res.host_image})` }}></span>
 					<p>{res.room_type} · {res.accommodates} guests</p>
 				</div>
 			),
@@ -66,6 +66,7 @@ export default class DateRangeRSDefault extends Component {
 							dataField="date_from"
 							title="Housing availability"
 							customQuery={this.dateQuery}
+							initialMonth={this.props.defaultSelected ? null : new Date("2017-05-05")}
 							{...this.props}
 						/>
 					</div>

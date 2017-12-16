@@ -59,7 +59,7 @@ export default class DatePickerRSDefault extends Component {
 							dataField="date_from"
 							title="Housing available from"
 							customQuery={this.dateQuery}
-							initialMonth={new Date("2017-05-05")}
+							initialMonth={this.props.defaultSelected ? null : new Date("2017-05-05")}
 							{...this.props}
 						/>
 					</div>
