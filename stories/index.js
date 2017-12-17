@@ -75,7 +75,7 @@ import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components
 // import reactivesearch components
 // import NestedListDefault from "./reactivesearch/NestedList.stories";
 // import NestedMultiListDefault from "./reactivesearch/NestedMultiList.stories";
-// import DynamicRangeSliderDefault from "./reactivesearch/DynamicRangeSlider.stories";
+import DynamicRangeSliderDefault from "./reactivesearch/DynamicRangeSlider.stories";
 import TagCloudDefault from "./reactivesearch/TagCloud.stories";
 // import RatingsFilterDefault from "./reactivesearch/RatingsFilter.stories";
 import CategorySearchDefault from "./reactivesearch/CategorySearch.stories";
@@ -1334,44 +1334,45 @@ const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
 // 		/>
 // 	)));
 
-// storiesOf("search/DynamicRangeSlider", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-// 		<DynamicRangeSliderDefault />
-// 	)))
-// 	.add("With Title", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-// 		<DynamicRangeSliderDefault title={text("title", "Guests")} />
-// 	)))
-// 	.add("With custom stepValue", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-// 		<DynamicRangeSliderDefault stepValue={number("stepValue", 1)} />
-// 	)))
-// 	.add("Without histogram", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-// 		<DynamicRangeSliderDefault
-// 			showHistogram={boolean("showHistogram", false)}
-// 		/>
-// 	)))
-// 	.add("With RangeLabels", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-// 		<DynamicRangeSliderDefault
-// 			rangeLabels={(min, max) => ({ start: min, end: max })}
-// 		/>
-// 	)))
-// 	.add("With defaultSelected", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-// 		<DynamicRangeSliderDefault
-// 			rangeLabels={(min, max) => ({ start: min, end: max })}
-// 			defaultSelected={(min, max) => ({ start: min + 10, end: max - 10 })}
-// 		/>
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-// 		<DynamicRangeSliderDefault URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-// 		<DynamicRangeSliderDefault
-// 			title={text("title", "DynamicRangeSlider: Guest RSVPs")}
-// 			stepValue={number("stepValue", 1)}
-// 			showHistogram={boolean("showHistogram", true)}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("search/DynamicRangeSlider", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault />
+	)))
+	.add("With Title", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault title={text("title", "Cars")} />
+	)))
+	.add("With custom stepValue", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault stepValue={number("stepValue", 1)} />
+	)))
+	.add("Without histogram", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault
+			showHistogram={boolean("showHistogram", false)}
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault
+			defaultSelected={object("defaultSelected", {
+				start: 3,
+				end: 4
+			})}
+		/>
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault
+			title={text("title", "DynamicRangeSlider: Cars")}
+			defaultSelected={object("defaultSelected", {
+				start: 3,
+				end: 4
+			})}
+			stepValue={number("stepValue", 1)}
+			showHistogram={boolean("showHistogram", true)}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 storiesOf("search/TagCloud", module)
 	.addDecorator(withKnobs)

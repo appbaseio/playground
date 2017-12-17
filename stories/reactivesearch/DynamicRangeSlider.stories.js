@@ -6,55 +6,26 @@ import {
 } from "@appbaseio/reactivesearch";
 import ResponsiveStory from "./ResponsiveStory";
 
-export default class DynamicRangeSliderDefault extends Component {
-	componentDidMount() {
-		ResponsiveStory();
-	}
-
-	onData(markerData) {
-		const marker = markerData._source;
-		return (
-			<a
-				className="full_row single-record single_record_for_clone"
-				href={marker.event ? marker.event.event_url : ""}
-				target="_blank"
-				rel="noopener noreferrer"
-				key={markerData._id}
-			>
-				<div className="text-container full_row" style={{ paddingLeft: "10px" }}>
-					<div className="text-head text-overflow full_row">
-						<span className="text-head-info text-overflow">
-							{marker.member ? marker.member.member_name : ""} is going to {marker.event ? marker.event.event_name : ""}
-						</span>
-						<span className="text-head-city">{marker.group ? marker.group.group_city : ""}</span>
-					</div>
-					<div className="text-description text-overflow full_row">
-						<ul className="highlight_tags">
-							{
-								marker.group.group_topics.map(tag => (
-									<li key={tag.topic_name}>{tag.topic_name}</li>
-								))
-							}
-						</ul>
-					</div>
-				</div>
-			</a>
-		)
+export default class DynamicRangeSliderRSDefault extends Component {
+	onData = (res) => {
+		const data = res._source;
+		return (<div key={res._id}>
+			<h2>{data.name}</h2>
+			<p>{data.price} - {data.rating} stars rated</p>
+		</div>);
 	}
 
 	render() {
 		return (
 			<ReactiveBase
-				app="reactivemap_demo"
-				credentials="y4pVxY2Ok:c92481e2-c07f-4473-8326-082919282c18"
+				app="car-store"
+				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
 			>
 				<div className="row">
 					<div className="col">
 						<DynamicRangeSlider
-							componentId="RangeSensor"
-							dataField={this.props.mapping.guests}
-							stepValue={2}
-							title="DynamicRangeSlider"
+							dataField="rating"
+							componentId="CarSensor"
 							{...this.props}
 						/>
 					</div>
@@ -62,14 +33,14 @@ export default class DynamicRangeSliderDefault extends Component {
 					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
-							dataField={this.props.mapping.topic}
-							title="Results"
-							sortBy="asc"
+							dataField="name"
+							title="ReactiveList"
 							from={0}
 							size={20}
 							onData={this.onData}
+							pagination
 							react={{
-								and: "RangeSensor"
+								and: "CarSensor"
 							}}
 						/>
 					</div>
@@ -78,17 +49,3 @@ export default class DynamicRangeSliderDefault extends Component {
 		);
 	}
 }
-
-DynamicRangeSliderDefault.defaultProps = {
-	mapping: {
-		guests: "guests",
-		topic: "group.group_topics.topic_name_raw"
-	}
-};
-
-DynamicRangeSliderDefault.propTypes = {
-	mapping: React.PropTypes.shape({
-		guests: React.PropTypes.string,
-		topic: React.PropTypes.string
-	})
-};
