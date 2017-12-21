@@ -3459,12 +3459,19 @@ storiesOf("search/DatePicker", module)
 		))
 	)
 	.add(
-		"Using extra dayPickerInputProps",
+		"Without clear button",
 		withReadme(removeFirstLine(DatePickerReadme), () => (
 			<DatePickerRSDefault
-				dayPickerInputProps={object("dayPickerInputProps", {
-					clickUnselectsDay: true
-				})}
+				showClear={boolean("showClear", false)}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"Without clickUnselectsDay",
+		withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				clickUnselectsDay={boolean("clickUnselectsDay", false)}
 				showFilter={false}
 			/>
 		))
