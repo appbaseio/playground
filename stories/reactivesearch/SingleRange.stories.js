@@ -17,9 +17,8 @@ export default class SingleRangeRSDefault extends Component {
 		ResponsiveStory();
 	}
 
-	onData(res) {
-		const data = res._source;
-		return (<div key={res._id}>
+	onData(data) {
+		return (<div key={data._id}>
 			<h2 dangerouslySetInnerHTML={{__html: data.name}} />
 			<h4 dangerouslySetInnerHTML={{__html: data.brand}} />
 			<p>{data.price} - {data.rating} stars rated</p>
