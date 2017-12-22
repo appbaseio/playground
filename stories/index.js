@@ -3588,14 +3588,9 @@ storiesOf("search/DateRange", module)
 		))
 	)
 	.add(
-		"Using extra dayPickerInputProps",
+		"wihout autoFocusEnd",
 		withReadme(removeFirstLine(DateRangeReadme), () => (
-			<DateRangeRSDefault
-				showFilter={false}
-				dayPickerInputProps={object("dayPickerInputProps", {
-					clickUnselectsDay: true
-				})}
-			/>
+			<DateRangeRSDefault showFilter={false} autoFocusEnd={boolean("autoFocusEnd", false)} />
 		))
 	)
 	.add(
