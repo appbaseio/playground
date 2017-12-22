@@ -29,7 +29,7 @@ export default class DatePickerRSDefault extends Component {
 		return query;
 	}
 
-	onData({ _source: res }) {
+	onData(res) {
 		return {
 			image: res.image,
 			title: res.name,

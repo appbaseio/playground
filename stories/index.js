@@ -3573,6 +3573,12 @@ storiesOf("search/DateRange", module)
 		))
 	)
 	.add(
+		"without showClear",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault showFilter={false} showClear={boolean("showClear", false)} />
+		))
+	)
+	.add(
 		"With filter",
 		withReadme(removeFirstLine(DateRangeReadme), () => (
 			<DateRangeRSDefault
