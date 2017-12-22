@@ -3558,6 +3558,21 @@ storiesOf("search/DateRange", module)
 		))
 	)
 	.add(
+		"With placeholder",
+		withReadme(removeFirstLine(DateRangeReadme), () => (
+			<DateRangeRSDefault
+				showFilter={false}
+				placeholder={object(
+					"placeholder",
+					{
+						start: "Start Date",
+						end: "End Date"
+					}
+				)}
+			/>
+		))
+	)
+	.add(
 		"With filter",
 		withReadme(removeFirstLine(DateRangeReadme), () => (
 			<DateRangeRSDefault
