@@ -7,12 +7,11 @@ export default class CategorySearchDefault extends Component {
 		ResponsiveStory();
 	}
 
-	onData(markerData) {
-		const marker = markerData._source;
+	onData(marker) {
 		return (
 			<a
 				className="full_row single-record single_record_for_clone"
-				key={markerData._id}
+				key={marker._id}
 			>
 				<div className="text-container full_row" style={{ paddingLeft: "10px" }}>
 					<div className="text-head text-overflow full_row">

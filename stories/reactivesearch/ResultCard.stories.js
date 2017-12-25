@@ -12,8 +12,7 @@ export default class ResultCardDefault extends Component {
 		ResponsiveStory();
 	}
 
-	onData(res) {
-		const source = res._source;
+	onData(source) {
 		const result = {
 			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
 			title: source.name,

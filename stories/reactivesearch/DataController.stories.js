@@ -20,8 +20,7 @@ export default class DataControllerRSDefault extends Component {
 		};
 	}
 
-	onData(data) {
-		const res = data._source;
+	onData(res) {
 		const result = {
 			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
 			title: res.name,

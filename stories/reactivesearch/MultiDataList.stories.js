@@ -29,8 +29,7 @@ export default class MultiDataListDefault extends Component {
 		ResponsiveStory();
 	}
 
-	onData(data) {
-		const res = data._source;
+	onData(res) {
 		return ({
 			image: res.member ? res.member.photo : this.DEFAULT_IMAGE,
 			title: res.member.member_name,
