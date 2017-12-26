@@ -2,44 +2,38 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	DynamicRangeSlider,
-	ReactiveList
+	ResultList
 } from "@appbaseio/reactivesearch";
-import ResponsiveStory from "./ResponsiveStory";
+
+import { booksList } from "./resultViews";
 
 export default class DynamicRangeSliderRSDefault extends Component {
-	onData = (data) => {
-		return (<div key={data._id}>
-			<h2>{data.name}</h2>
-			<p>{data.price} - {data.rating} stars rated</p>
-		</div>);
-	}
-
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="good-books-live"
+				credentials="sHZWU7AYJ:d1e2922c-035c-429f-bfe4-62aa38b1c395"
 			>
 				<div className="row">
 					<div className="col">
 						<DynamicRangeSlider
-							dataField="rating"
-							componentId="CarSensor"
+							dataField="books_count"
+							componentId="BookSensor"
 							{...this.props}
 						/>
 					</div>
 
 					<div className="col">
-						<ReactiveList
+						<ResultList
 							componentId="SearchResult"
-							dataField="name"
-							title="ReactiveList"
+							dataField="original_title"
 							from={0}
-							size={20}
-							onData={this.onData}
+							size={3}
+							className="result-list-container"
+							onData={booksList}
 							pagination
 							react={{
-								and: "CarSensor"
+								and: "BookSensor"
 							}}
 						/>
 					</div>

@@ -5,10 +5,59 @@
 }
 
 .col {
-	width: 50%;
+	width: calc(100% - 400px);
 	padding: 15px;
 }
 
 .row > .col:first-child {
 	border-right: 1px solid #ccc;
+	flex-basis: 400px;
+	flex-grow: 0;
+}
+
+.result-list-container {
+	max-width: 800px;
+}
+
+.row > .col:last-child {
+	background: #fafafa;
+}
+
+.flex {
+	display: flex;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.authors-list {
+	color: #9d9d9d;
+	font-weight: bold;
+}
+
+.ratings-list {
+	padding: 10px 0;
+}
+
+.avg-rating {
+	color: #6b6b6b;
+	margin-left: 5px;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.justify-space-between {
+	justify-content: space-between;
+}
+
+.stars {
+	color: gold;
+}
+
+.book-title {
+	white-space: normal;
+	margin-top: 4px;
 }
