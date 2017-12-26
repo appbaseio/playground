@@ -1549,7 +1549,7 @@ storiesOf("search/CategorySearch", module)
 				title="CategorySearch"
 				placeholder="Search Cars"
 				showFilter={false}
-				icon={<div>🎸</div>}
+				icon={<div style={{ padding: 5 }}>🎸</div>}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
 			/>
 		))
@@ -1562,6 +1562,17 @@ storiesOf("search/CategorySearch", module)
 				placeholder="Search Car"
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Cars filter")}
+			/>
+		))
+	)
+	.add(
+		"without debounce",
+		withReadme(removeFirstLine(CategorySearchReadme), () => (
+			<CategorySearchDefault
+				title="CategorySearch"
+				placeholder="Search Car"
+				showFilter={false}
+				debounce={number("debounce", 0)}
 			/>
 		))
 	)
@@ -1982,6 +1993,17 @@ storiesOf("search/DataSearch", module)
 		))
 	)
 	.add(
+		"without debounce",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				title="DataSearch"
+				placeholder="Search Cars"
+				showFilter={false}
+				debounce={number("debounce", 0)}
+			/>
+		))
+	)
+	.add(
 		"Without autoSuggest",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
@@ -2133,6 +2155,12 @@ storiesOf("search/TextField", module)
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Cars filter")}
 			/>
+		))
+	)
+	.add(
+		"without debounce",
+		withReadme(removeFirstLine(TextFieldReadme), () => (
+			<TextFieldRSDefault showFilter={false} debounce={number("debounce", 0)} />
 		))
 	)
 	.add(
