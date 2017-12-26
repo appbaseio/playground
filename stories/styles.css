@@ -27,6 +27,10 @@
 	display: flex;
 }
 
+.wrap {
+	flex-wrap: wrap;
+}
+
 .column {
 	flex-direction: column;
 }
@@ -57,7 +61,41 @@
 	color: gold;
 }
 
+.location {
+	color: salmon;
+	margin-right: 5px;
+}
+
+.meetup-location {
+	margin: 4px 0;
+}
+
 .book-title {
 	white-space: normal;
 	margin-top: 4px;
+}
+
+.meetup-title {
+	white-space: normal;
+}
+
+.meetup-topics {
+	height: 35px;
+	overflow: hidden;
+}
+
+.meetup-topic {
+	background-color: #dedede;
+    color: #555;
+	padding: 5px 10px;
+	margin: 5px;
+	border-radius: 4px;
+}
+
+.meetup-topic:first-child {
+	margin-left: 0;
+}
+
+.col .meetup-list-image {
+	background-size: cover;
 }

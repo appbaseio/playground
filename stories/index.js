@@ -1337,21 +1337,23 @@ const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
 storiesOf("search/DynamicRangeSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault />
+		<DynamicRangeSliderDefault title="Books Count" />
 	)))
 	.add("With Title", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault title={text("title", "Cars")} />
+		<DynamicRangeSliderDefault title={text("title", "Books")} />
 	)))
 	.add("With custom stepValue", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault stepValue={number("stepValue", 1)} />
+		<DynamicRangeSliderDefault title="Books Count" stepValue={number("stepValue", 1)} />
 	)))
 	.add("Without histogram", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
+			title="Books Count"
 			showHistogram={boolean("showHistogram", false)}
 		/>
 	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
+			title="Books Count"
 			defaultSelected={object("defaultSelected", {
 				start: 3,
 				end: 4
@@ -1359,11 +1361,11 @@ storiesOf("search/DynamicRangeSlider", module)
 		/>
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault URLParams={boolean("URLParams (not visible on storybook)", true)} />
+		<DynamicRangeSliderDefault title="Books Count" URLParams={boolean("URLParams (not visible on storybook)", true)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
-			title={text("title", "DynamicRangeSlider: Cars")}
+			title={text("title", "DynamicRangeSlider: Books")}
 			defaultSelected={object("defaultSelected", {
 				start: 3,
 				end: 4

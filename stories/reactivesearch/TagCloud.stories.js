@@ -1,44 +1,9 @@
 import React, { Component } from "react";
-import { ReactiveBase, TagCloud, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
-import ResponsiveStory from "./ResponsiveStory";
+import { ReactiveBase, TagCloud, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
+
+import { meetupList } from "./resultViews";
 
 export default class TagCloudDefault extends Component {
-	constructor(props) {
-		super(props);
-	}
-
-	componentDidMount() {
-		ResponsiveStory();
-	}
-
-	onData(marker) {
-		return (
-			<a
-				className="full_row single-record single_record_for_clone"
-				href={marker.event ? marker.event.event_url : ""}
-				target="_blank"
-				rel="noopener noreferrer"
-				key={marker._id}
-			>
-				<div className="text-container full_row" style={{ paddingLeft: "10px" }}>
-					<div className="text-head text-overflow full_row">
-						<span className="text-head-info text-overflow">
-							{marker.member ? marker.member.member_name : ""} is going to {marker.event ? marker.event.event_name : ""}
-						</span>
-						<span className="text-head-city">{marker.group ? marker.group.group_city : ""}</span>
-					</div>
-					<div className="text-description text-overflow full_row">
-						<ul className="highlight_tags">
-							{
-								marker.group.group_topics.map(tag => (<li key={tag.topic_name}>{tag.topic_name}</li>))
-							}
-						</ul>
-					</div>
-				</div>
-			</a>
-		);
-	}
-
 	render() {
 		return (
 			<ReactiveBase
@@ -53,21 +18,23 @@ export default class TagCloudDefault extends Component {
 							componentId="CitySensor"
 							dataField="group.group_city.raw"
 							title="TagCloud"
-							size={100}
-							customQuery={this.customQuery}
+							size={50}
 							{...this.props}
 						/>
 					</div>
 					<div className="col">
-						<ReactiveList
+						<ResultList
 							componentId="SearchResult"
 							dataField="group.group_topics.topic_name_raw"
 							title="Results"
 							sortBy="asc"
 							from={0}
-							size={20}
-							onData={this.onData}
-							requestOnScroll
+							size={5}
+							onData={meetupList}
+							innerClass={{
+								image: 'meetup-list-image'
+							}}
+							pagination
 							react={{
 								and: ["CitySensor"]
 							}}
