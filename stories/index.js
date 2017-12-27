@@ -3178,7 +3178,7 @@ storiesOf("search/MultiRange", module)
 		"With title",
 		withReadme(removeFirstLine(MultiRangeReadme), () => (
 			<MultiRangeRSDefault
-				title={text("title", "MultiRange: Price Filter")}
+				title={text("title", "MultiRange: Books Filter")}
 				showFilter={false}
 			/>
 		))
@@ -3187,7 +3187,7 @@ storiesOf("search/MultiRange", module)
 		"With Default Selected",
 		withReadme(removeFirstLine(MultiRangeReadme), () => (
 			<MultiRangeRSDefault
-				defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
+				defaultSelected={array("defaultSelected", ["Rating 3 to 4"])}
 				showFilter={false}
 			/>
 		))
@@ -3197,7 +3197,7 @@ storiesOf("search/MultiRange", module)
 		withReadme(removeFirstLine(MultiRangeReadme), () => (
 			<MultiRangeRSDefault
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Price filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 			/>
 		))
 	)
@@ -3223,11 +3223,11 @@ storiesOf("search/MultiRange", module)
 		"Playground",
 		withReadme(removeFirstLine(MultiRangeReadme), () => (
 			<MultiRangeRSDefault
-				title={text("title", "MultiRange: Price Filter")}
-				defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
+				title={text("title", "MultiRange: Books Filter")}
+				defaultSelected={array("defaultSelected", ["Rating 3 to 4"])}
 				showCheckbox={boolean("showCheckbox", true)}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Price filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 			/>
 		))
@@ -3245,7 +3245,7 @@ storiesOf("search/SingleDropdownRange", module)
 		"With title",
 		withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 			<SingleDropdownRangeRSDefault
-				title={text("title", "SingleDropdownRange: Price Filter")}
+				title={text("title", "SingleDropdownRange: Books Filter")}
 				showFilter={false}
 			/>
 		))
@@ -3254,7 +3254,7 @@ storiesOf("search/SingleDropdownRange", module)
 		"With placeholder",
 		withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 			<SingleDropdownRangeRSDefault
-				placeholder={text("placeholder", "Search prices")}
+				placeholder={text("placeholder", "Search books")}
 				showFilter={false}
 			/>
 		))
@@ -3263,7 +3263,7 @@ storiesOf("search/SingleDropdownRange", module)
 		"With Default Selected",
 		withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 			<SingleDropdownRangeRSDefault
-				defaultSelected={text("defaultSelected", "Cheap")}
+				defaultSelected={text("defaultSelected", "Rating 3 to 4")}
 				showFilter={false}
 			/>
 		))
@@ -3273,7 +3273,7 @@ storiesOf("search/SingleDropdownRange", module)
 		withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 			<SingleDropdownRangeRSDefault
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Price")}
+				filterLabel={text("filterLabel", "Books")}
 			/>
 		))
 	)
@@ -3290,12 +3290,12 @@ storiesOf("search/SingleDropdownRange", module)
 		"Playground",
 		withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 			<SingleDropdownRangeRSDefault
-				title={text("title", "SingleDropdownRange: Price Filter")}
-				placeholder={text("placeholder", "Search prices")}
-				defaultSelected={text("defaultSelected", "Cheap")}
+				title={text("title", "SingleDropdownRange: Books Filter")}
+				placeholder={text("placeholder", "Search books")}
+				defaultSelected={text("defaultSelected", "Rating 3 to 4")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Price")}
+				filterLabel={text("filterLabel", "Books")}
 			/>
 		))
 	);

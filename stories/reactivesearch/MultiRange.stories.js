@@ -1,64 +1,39 @@
 import React, { Component } from "react";
-import {
-	ReactiveBase,
-	MultiRange,
-	ReactiveList,
-	SelectedFilters
-} from "@appbaseio/reactivesearch";
-import ResponsiveStory from "./ResponsiveStory";
+import { ReactiveBase, MultiRange, SelectedFilters, ResultCard } from "@appbaseio/reactivesearch";
 
-export default class MultiRangeRSDefault extends Component {
-	constructor(props) {
-		super(props);
-		this.onData = this.onData.bind(this);
-	}
+import { booksCard } from "./resultViews";
 
-	componentDidMount() {
-		ResponsiveStory();
-	}
-
-	onData(data) {
-		return (<div key={data._id}>
-			<h2 dangerouslySetInnerHTML={{__html: data.name}} />
-			<h4 dangerouslySetInnerHTML={{__html: data.brand}} />
-			<p>{data.price} - {data.rating} stars rated</p>
-		</div>);
-	}
-
+export default class MultiRangeDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="good-books-live"
+				credentials="sHZWU7AYJ:d1e2922c-035c-429f-bfe4-62aa38b1c395"
 			>
-				<div className="row">
+				<div className="row reverse-labels">
 					<div className="col">
 						<MultiRange
-							componentId="PriceSensor"
-							dataField="price"
+							componentId="BookSensor"
+							dataField="average_rating"
 							title="MultiRange"
 							data={
-								[{ "start": 0, "end": 100, "label": "Cheap" },
-									{ "start": 101, "end": 200, "label": "Moderate" },
-									{ "start": 201, "end": 500, "label": "Pricey" },
-									{ "start": 501, "end": 1000, "label": "First Date" }]
+								[{ "start": 0, "end": 3, "label": "Rating < 3" },
+									{ "start": 3, "end": 4, "label": "Rating 3 to 4" },
+									{ "start": 4, "end": 5, "label": "Rating > 4" }]
 							}
 							{...this.props}
 						/>
 					</div>
-
-					<div className="col">
+					<div className="col" style={{backgroundColor: "#fafafa"}}>
 						<SelectedFilters />
-						<ReactiveList
+						<ResultCard
 							componentId="SearchResult"
-							dataField="name"
-							title="ReactiveList"
+							dataField="original_title.raw"
 							from={0}
-							size={20}
-							onData={this.onData}
-							pagination
+							size={10}
+							onData={booksCard}
 							react={{
-								and: "PriceSensor"
+								and: "BookSensor"
 							}}
 						/>
 					</div>
