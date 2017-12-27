@@ -3380,7 +3380,7 @@ storiesOf("search/ToggleButton", module)
 		withReadme(removeFirstLine(ToggleButtonReadme), () => (
 			<ToggleButtonRSDefault
 				showFilter={false}
-				title={text("title", "ToggleButton: Cars")}
+				title={text("title", "ToggleButton: Topics")}
 			/>
 		))
 	)
@@ -3388,7 +3388,7 @@ storiesOf("search/ToggleButton", module)
 		"With Default Selected",
 		withReadme(removeFirstLine(ToggleButtonReadme), () => (
 			<ToggleButtonRSDefault
-				defaultSelected={array("defaultSelected", ["audi", "nissan"])}
+				defaultSelected={array("defaultSelected", ["Music"])}
 				showFilter={false}
 			/>
 		))
@@ -3398,7 +3398,7 @@ storiesOf("search/ToggleButton", module)
 		withReadme(removeFirstLine(ToggleButtonReadme), () => (
 			<ToggleButtonRSDefault
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Cars filter")}
+				filterLabel={text("filterLabel", "Topics filter")}
 			/>
 		))
 	)
@@ -3424,9 +3424,9 @@ storiesOf("search/ToggleButton", module)
 		"Playground",
 		withReadme(removeFirstLine(ToggleButtonReadme), () => (
 			<ToggleButtonRSDefault
-				title={text("title", "ToggleButton: Cars Categories")}
+				title={text("title", "ToggleButton: Topics")}
 				multiSelect={boolean("multiSelect", true)}
-				defaultSelected={array("defaultSelected", ["audi", "nissan"])}
+				defaultSelected={array("defaultSelected", ["Social"])}
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Category filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}

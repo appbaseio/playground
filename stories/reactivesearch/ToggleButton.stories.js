@@ -1,53 +1,46 @@
 import React, { Component } from "react";
-import {
-	ReactiveBase,
-	ToggleButton,
-	ReactiveList,
-	SelectedFilters
-} from "@appbaseio/reactivesearch";
-import ResponsiveStory from "./ResponsiveStory";
+import { ReactiveBase, ToggleButton, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
+
+import { meetupList } from "./resultViews";
 
 export default class ToggleButtonDefault extends Component {
-	onData = (data) => {
-		return (<div key={data._id}>
-			<h2>{data.name}</h2>
-			<p>{data.price} - {data.rating} stars rated</p>
-		</div>);
-	}
-
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="meetup_demo"
+				credentials="LPpISlEBe:2a8935f5-0f63-4084-bc3e-2b2b4d1a8e02"
+				type="meetupdata1"
 			>
 				<div className="row">
 					<div className="col">
 						<ToggleButton
-							dataField="brand.raw"
-							componentId="CarSensor"
+							componentId="CitySensor"
+							dataField="group.group_topics.topic_name_raw.raw"
 							data={[
-								{ label: "Audi", value: "audi" },
-								{ label: "Nissan", value: "nissan" },
-								{ label: "Porsche", value: "porsche" },
-								{ label: "BMW", value: "bmw" }
+								{ label: 'Social', value: 'Social' },
+								{ label: 'Adventure', value: 'Adventure' },
+								{ label: 'Music', value: 'Music' },
 							]}
 							{...this.props}
 						/>
 					</div>
-
 					<div className="col">
-						<SelectedFilters />
-						<ReactiveList
+						<SelectedFilters componentId="CitySensor" />
+						<ResultList
 							componentId="SearchResult"
-							dataField="name"
-							title="ReactiveList"
+							dataField="group.group_topics.topic_name_raw"
+							title="Results"
+							sortBy="asc"
+							className="result-list-container"
 							from={0}
-							size={20}
-							onData={this.onData}
+							size={5}
+							onData={meetupList}
+							innerClass={{
+								image: 'meetup-list-image'
+							}}
 							pagination
 							react={{
-								and: "CarSensor"
+								and: ["CitySensor"]
 							}}
 						/>
 					</div>
