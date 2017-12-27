@@ -2338,7 +2338,7 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 			/>
 		))
@@ -2348,9 +2348,9 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
-				title={text("title", "Cities")}
+				title={text("title", "Good Books")}
 			/>
 		))
 	)
@@ -2359,7 +2359,7 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 				size={number("size", 10)}
 			/>
@@ -2370,7 +2370,7 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 				showCount={boolean("showCount", false)}
 			/>
@@ -2381,7 +2381,7 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch={boolean("showSearch", false)}
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 			/>
 		))
@@ -2391,9 +2391,9 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "City filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 			/>
 		))
 	)
@@ -2402,7 +2402,7 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 				showRadio={boolean("showRadio", false)}
 			/>
@@ -2413,8 +2413,8 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
-				defaultSelected={text("defaultSelected", "London")}
-				placeholder="Search City"
+				defaultSelected={text("defaultSelected", "Hercule Poirot")}
+				placeholder="Search Books"
 				showFilter={false}
 			/>
 		))
@@ -2431,7 +2431,7 @@ storiesOf("search/SingleList", module)
 					{ asc: "asc", desc: "desc", count: "count" },
 					"asc"
 				)}
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 			/>
 		))
@@ -2441,8 +2441,8 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
-				selectAllLabel={text("selectAllLabel", "All Cities")}
-				placeholder="Search City"
+				selectAllLabel={text("selectAllLabel", "All Books")}
+				placeholder="Search Books"
 				showFilter={false}
 			/>
 		))
@@ -2452,7 +2452,7 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
 			/>
@@ -2463,7 +2463,7 @@ storiesOf("search/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 				onValueChange={action("SingleList Value Changed")}
 			/>
@@ -2473,21 +2473,21 @@ storiesOf("search/SingleList", module)
 		"Playground",
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
-				title={text("title", "SingleList: City Filter")}
+				title={text("title", "SingleList: Books Filter")}
 				size={number("size", 100)}
 				sortBy={select(
 					"sortBy",
 					{ asc: "asc", desc: "desc", count: "count" },
 					"count"
 				)}
-				defaultSelected={text("defaultSelected", "San Francisco")}
+				defaultSelected={text("defaultSelected", "Artemis Fowl")}
 				showCount={boolean("showCount", true)}
 				showSearch={boolean("showSearch", true)}
-				placeholder={text("placeholder", "Search City")}
-				selectAllLabel={text("selectAllLabel", "All cities")}
+				placeholder={text("placeholder", "Search Books")}
+				selectAllLabel={text("selectAllLabel", "All books")}
 				showRadio={boolean("showRadio", true)}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "City filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 			/>
 		))

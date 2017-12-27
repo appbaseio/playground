@@ -3,7 +3,7 @@ import { ReactiveBase, NumberBox, ResultList } from "@appbaseio/reactivesearch";
 
 import { booksList } from "./resultViews";
 
-export default class ResultListDefault extends Component {
+export default class NumberBoxDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
