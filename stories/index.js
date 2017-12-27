@@ -2500,7 +2500,7 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 			/>
 		))
@@ -2510,9 +2510,9 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
-				title={text("title", "MultiList: City Filter")}
+				title={text("title", "MultiList: Books Filter")}
 			/>
 		))
 	)
@@ -2521,7 +2521,7 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 				size={number("size", 10)}
 			/>
@@ -2532,9 +2532,9 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "City filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 			/>
 		))
 	)
@@ -2543,7 +2543,7 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
 			/>
 		))
@@ -2553,7 +2553,7 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 				showCount={boolean("showCount", false)}
 			/>
@@ -2564,7 +2564,7 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch={boolean("showSearch", false)}
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 			/>
 		))
@@ -2574,7 +2574,7 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 				showCheckbox={boolean("showCheckbox", false)}
 			/>
@@ -2585,8 +2585,8 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				defaultSelected={array("defaultSelected", ["London", "Sydney"])}
-				placeholder="Search City"
+				defaultSelected={array("defaultSelected", ["Hercule Poirot"])}
+				placeholder="Search Books"
 				showFilter={false}
 			/>
 		))
@@ -2603,7 +2603,7 @@ storiesOf("search/MultiList", module)
 					{ asc: "asc", desc: "desc", count: "count" },
 					"asc"
 				)}
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 			/>
 		))
@@ -2613,8 +2613,8 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				selectAllLabel={text("selectAllLabel", "All Cities")}
-				placeholder="Search City"
+				selectAllLabel={text("selectAllLabel", "All Books")}
+				placeholder="Search Books"
 				showFilter={false}
 			/>
 		))
@@ -2624,7 +2624,7 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
 			/>
@@ -2635,7 +2635,7 @@ storiesOf("search/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
-				placeholder="Search City"
+				placeholder="Search Books"
 				showFilter={false}
 				onValueChange={action("MultiList Value Changed")}
 			/>
@@ -2645,22 +2645,22 @@ storiesOf("search/MultiList", module)
 		"Playground",
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
-				title={text("title", "MultiList: City Filter")}
+				title={text("title", "MultiList: Books Filter")}
 				size={number("size", 10)}
 				sortBy={select(
 					"sortBy",
 					{ asc: "asc", desc: "desc", count: "count" },
 					"count"
 				)}
-				defaultSelected={array("defaultSelected", ["London", "Sydney"])}
+				defaultSelected={array("defaultSelected", ["Harry Potter", "Artemis Fowl"])}
 				showCount={boolean("showCount", true)}
 				showSearch={boolean("showSearch", true)}
 				showCheckbox={boolean("showCheckbox", true)}
-				placeholder={text("placeholder", "Search City")}
+				placeholder={text("placeholder", "Search Books")}
 				selectAllLabel={text("selectAllLabel", "All cities")}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "City filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 			/>
 		))
