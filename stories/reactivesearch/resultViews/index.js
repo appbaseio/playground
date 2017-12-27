@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const booksList = (data) => ({
-	title: <div className="book-title">{data.original_title}</div>,
+	title: <div className="book-title" dangerouslySetInnerHTML={{ __html: data.original_title }} />,
 	desc: (
 		<div className="flex column justify-space-between">
 			<div>
