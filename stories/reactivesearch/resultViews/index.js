@@ -22,6 +22,30 @@ export const booksList = (data) => ({
 	image: data.image
 });
 
+export const booksReactiveList = (data) => (
+	<div className="flex" key={data._id}>
+		<img src={data.image} alt="Book Cover" />
+		<div className="flex column">
+			<div className="book-title">{data.original_title}</div>
+			<div className="flex column justify-space-between">
+				<div>
+					<div>by <span className="authors-list">{data.authors}</span></div>
+					<div className="ratings-list flex align-center">
+						<span className="stars">
+						{
+							Array(data.average_rating_rounded).fill('x')
+								.map((item, index) => <i className="fas fa-star" key={index} />)
+						}
+						</span>
+						<span className="avg-rating">({data.average_rating} avg)</span>
+					</div>
+				</div>
+			<span className="pub-year">Pub {data.original_publication_year}</span>
+			</div>
+		</div>
+	</div>
+);
+
 export const meetupList = (data) => ({
 	title: (
 		<div className="meetup-title">

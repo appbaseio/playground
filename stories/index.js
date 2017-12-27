@@ -1796,10 +1796,8 @@ storiesOf("search/ReactiveList", module)
 			<ReactiveListDefault
 				title={text("title", "ReactiveList: Results")}
 				placeholder={text("placeholder", "Select from list")}
-				from={number("from", 0)}
-				size={number("size", 5)}
-				initialLoader={text("initialLoader", "Loading results..")}
-				noResults={text("noResults", "No results found!")}
+				// initialLoader={text("initialLoader", "Loading results..")}
+				// noResults={text("noResults", "No results found!")}
 				showResultStats={boolean("showResultStats", true)}
 				pagination={boolean("pagination", true)}
 				paginationAt={select(
