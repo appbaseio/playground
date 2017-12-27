@@ -3021,7 +3021,7 @@ storiesOf("search/MultiDataList", module)
 		"With defaultSelected",
 		withReadme(removeFirstLine(MultiDataListReadme), () => (
 			<MultiDataListRSDefault
-				defaultSelected={array("defaultSelected", ["Social", "Travel"])}
+				defaultSelected={array("defaultSelected", ["Social", "Music"])}
 				showFilter={false}
 			/>
 		))
@@ -3086,7 +3086,7 @@ storiesOf("search/MultiDataList", module)
 		withReadme(removeFirstLine(MultiDataListReadme), () => (
 			<MultiDataListRSDefault
 				title={text("title", "Topics")}
-				defaultSelected={array("defaultSelected", ["Social", "Travel"])}
+				defaultSelected={array("defaultSelected", ["Social", "Music"])}
 				showSearch={boolean("showSearch", true)}
 				placeholder={text("placeholder", "Search topics")}
 				showCheckbox={boolean("showCheckbox", true)}
