@@ -1,60 +1,36 @@
 import React, { Component } from "react";
-import {
-	ReactiveBase,
-	MultiDropdownList,
-	ReactiveList,
-	SelectedFilters
-} from "@appbaseio/reactivesearch";
-import ResponsiveStory from "./ResponsiveStory";
+import { ReactiveBase, SelectedFilters, MultiDropdownList, ReactiveList } from "@appbaseio/reactivesearch";
 
-export default class MultiDropdownListRSDefault extends Component {
-	constructor(props) {
-		super(props);
-		this.onData = this.onData.bind(this);
-	}
+import { booksReactiveList } from "./resultViews";
 
-	componentDidMount() {
-		ResponsiveStory();
-	}
-
-	onData(data) {
-		return (<div key={data._id}>
-			<h2>{data.member.member_name}</h2>
-			<p>is going to {data.event.event_name} at {data.venue_name_ngrams}</p>
-			<p>{data.group_city_ngram}</p>
-		</div>);
-	}
-
+export default class MultiDropdownListDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="reactivemap-demo"
-				credentials="qMzzgez0t:a9138c3f-f246-4cd8-ba3d-0b99f9550c05"
-				type="meetupdata1"
+				app="good-books-live"
+				credentials="sHZWU7AYJ:d1e2922c-035c-429f-bfe4-62aa38b1c395"
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters componentId="CitySensor" />
 						<MultiDropdownList
-							componentId="CitySensor"
-							dataField="group.group_city.raw"
-							title="MultiDropdownList"
+							componentId="BookSensor"
+							dataField="original_series.raw"
 							size={100}
 							{...this.props}
 						/>
 					</div>
 
 					<div className="col">
+						<SelectedFilters />
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="name"
-							title="ReactiveList"
+							dataField="original_title.raw"
+							className="result-list-container"
 							from={0}
-							size={20}
-							onData={this.onData}
-							pagination
+							size={5}
+							onData={booksReactiveList}
 							react={{
-								and: "CitySensor"
+								and: ["BookSensor"]
 							}}
 						/>
 					</div>

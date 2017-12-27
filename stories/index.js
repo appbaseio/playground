@@ -2786,7 +2786,7 @@ storiesOf("search/MultiDropdownList", module)
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
 				showFilter={false}
-				title={text("title", "City list")}
+				title={text("title", "Books list")}
 			/>
 		))
 	)
@@ -2794,7 +2794,7 @@ storiesOf("search/MultiDropdownList", module)
 		"With Placeholder",
 		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
-				placeholder={text("placeholder", "Select Cities")}
+				placeholder={text("placeholder", "Select Books")}
 				showFilter={false}
 			/>
 		))
@@ -2813,7 +2813,7 @@ storiesOf("search/MultiDropdownList", module)
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "City filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 			/>
 		))
 	)
@@ -2852,8 +2852,8 @@ storiesOf("search/MultiDropdownList", module)
 		"With Select All",
 		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
-				placeholder="Select Cities"
-				selectAllLabel={text("selectAllLabel", "All Cities")}
+				placeholder="Select Books"
+				selectAllLabel={text("selectAllLabel", "All Books")}
 				showFilter={false}
 			/>
 		))
@@ -2862,10 +2862,10 @@ storiesOf("search/MultiDropdownList", module)
 		"With Default Selected",
 		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
-				placeholder="Select Cities"
+				placeholder="Select Books"
 				size={100}
 				sortBy="count"
-				defaultSelected={array("defaultSelected", ["London", "Melbourne"])}
+				defaultSelected={array("defaultSelected", ["Hercule Poirot"])}
 				showFilter={false}
 			/>
 		))
@@ -2901,11 +2901,11 @@ storiesOf("search/MultiDropdownList", module)
 					"count"
 				)}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
-				selectAllLabel={text("selectAllLabel", "All Cities")}
-				defaultSelected={array("defaultSelected", ["London", "Melbourne"])}
-				placeholder={text("placeholder", "Select Cities")}
+				selectAllLabel={text("selectAllLabel", "All Books")}
+				defaultSelected={array("defaultSelected", ["Hercule Poirot"])}
+				placeholder={text("placeholder", "Select Books")}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "City filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 			/>
 		))
