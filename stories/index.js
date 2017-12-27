@@ -2146,14 +2146,14 @@ storiesOf("search/TextField", module)
 	.add(
 		"With title",
 		withReadme(removeFirstLine(TextFieldReadme), () => (
-			<TextFieldRSDefault title={text("title", "Cars")} showFilter={false} />
+			<TextFieldRSDefault title={text("title", "Books")} showFilter={false} />
 		))
 	)
 	.add(
 		"DefaultSelected",
 		withReadme(removeFirstLine(TextFieldReadme), () => (
 			<TextFieldRSDefault
-				defaultSelected={text("defaultSelected", "Nissan")}
+				defaultSelected={text("defaultSelected", "The Murder of Roger Ackroyd")}
 				showFilter={false}
 			/>
 		))
@@ -2163,14 +2163,14 @@ storiesOf("search/TextField", module)
 		withReadme(removeFirstLine(TextFieldReadme), () => (
 			<TextFieldRSDefault
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Cars filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 			/>
 		))
 	)
 	.add(
-		"without debounce",
+		"with debounce",
 		withReadme(removeFirstLine(TextFieldReadme), () => (
-			<TextFieldRSDefault showFilter={false} debounce={number("debounce", 0)} />
+			<TextFieldRSDefault showFilter={false} debounce={number("debounce", 300)} />
 		))
 	)
 	.add(
@@ -2186,11 +2186,11 @@ storiesOf("search/TextField", module)
 		"Playground",
 		withReadme(removeFirstLine(TextFieldReadme), () => (
 			<TextFieldRSDefault
-				title={text("title", "TextField: Car Search")}
-				placeholder={text("placeholder", "Type a car name")}
-				defaultSelected={text("defaultSelected", "nissan")}
+				title={text("title", "TextField: Books Search")}
+				placeholder={text("placeholder", "Search for books...")}
+				defaultSelected={text("defaultSelected", "The Hitchhiker's Guide to the Galaxy")}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Cars filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 			/>
 		))
