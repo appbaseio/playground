@@ -1,58 +1,37 @@
 import React, { Component } from "react";
-import {
-	ReactiveBase,
-	DataSearch,
-	ReactiveList,
-	SelectedFilters
-} from "@appbaseio/reactivesearch";
-import ResponsiveStory from "./ResponsiveStory";
+import { ReactiveBase, DataSearch, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
 
-export default class TextFieldRSDefault extends Component {
-	constructor(props) {
-		super(props);
-		this.onData = this.onData.bind(this);
-	}
+import { booksList } from "./resultViews";
 
-	componentDidMount() {
-		ResponsiveStory();
-	}
-
-	onData(data) {
-		return (<div key={data._id}>
-			<h2 dangerouslySetInnerHTML={{__html: data.name}} />
-			<h4 dangerouslySetInnerHTML={{__html: data.brand}} />
-			<p>{data.price} - {data.rating} stars rated</p>
-		</div>);
-	}
-
+export default class DataSearchDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="good-books-live"
+				credentials="sHZWU7AYJ:d1e2922c-035c-429f-bfe4-62aa38b1c395"
 			>
 				<div className="row">
 					<div className="col">
+						<SelectedFilters componentId="BookSensor" />
 						<DataSearch
-							dataField={["name", "brand"]}
-							componentId="CarSensor"
-							placeholder="Search Cars"
+							dataField={["original_title", "original_title.search"]}
+							categoryField="authors.raw"
+							componentId="BookSensor"
 							{...this.props}
 						/>
 					</div>
 
 					<div className="col">
-						<SelectedFilters />
-						<ReactiveList
+						<ResultList
 							componentId="SearchResult"
-							dataField="name"
-							title="ReactiveList"
+							dataField="original_title"
 							from={0}
-							size={20}
-							onData={this.onData}
+							size={3}
+							onData={booksList}
+							className="result-list-container"
 							pagination
 							react={{
-								and: "CarSensor"
+								and: "BookSensor"
 							}}
 						/>
 					</div>

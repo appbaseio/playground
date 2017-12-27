@@ -1943,7 +1943,7 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
 			/>
 		))
@@ -1952,8 +1952,8 @@ storiesOf("search/DataSearch", module)
 		"With title",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title={text("title", "Cars Search")}
-				placeholder="Search Cars"
+				title={text("title", "Books Search")}
+				placeholder="Search Books..."
 				showFilter={false}
 			/>
 		))
@@ -1963,7 +1963,7 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
 				showIcon={boolean("showIcon", false)}
 			/>
@@ -1974,7 +1974,7 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
 			/>
@@ -1985,9 +1985,9 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
-				icon={<div>🎸</div>}
+				icon={<div style={{ padding: 5 }}>📚</div>}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
 			/>
 		))
@@ -1997,20 +1997,20 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Cars filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 			/>
 		))
 	)
 	.add(
-		"without debounce",
+		"with debounce",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
-				debounce={number("debounce", 0)}
+				debounce={number("debounce", 300)}
 			/>
 		))
 	)
@@ -2019,7 +2019,7 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Venue"
+				placeholder="Search Books..."
 				autoSuggest={boolean("autoSuggest", false)}
 				showFilter={false}
 			/>
@@ -2030,9 +2030,9 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
-				defaultSelected={text("defaultSelected", "Audi")}
+				defaultSelected={text("defaultSelected", "Harry Potter")}
 			/>
 		))
 	)
@@ -2041,11 +2041,11 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
 				defaultSuggestions={[
-					{ label: "Audi", value: "Audi" },
-					{ label: "Hyundai", value: "Hyundai" }
+					{ label: "Sherlock Holmes", value: "Sherlock Holmes" },
+					{ label: "The Lord of the Rings", value: "The Lord of the Rings" }
 				]}
 			/>
 		))
@@ -2055,7 +2055,7 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				fieldWeights={array("fieldWeights", [1, 3])}
 				showFilter={false}
 			/>
@@ -2066,7 +2066,7 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
 				fuzziness={number("fuzziness", 1)}
 			/>
@@ -2077,7 +2077,7 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
 				fuzziness="AUTO"
 			/>
@@ -2088,10 +2088,9 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
 				highlight={boolean("highlight", true)}
-				highlightField={select("highlightField", ["name", "brand"], "name")}
 			/>
 		))
 	)
@@ -2100,7 +2099,7 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
 			/>
@@ -2111,7 +2110,7 @@ storiesOf("search/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
-				placeholder="Search Cars"
+				placeholder="Search Books..."
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
 			/>
@@ -2121,15 +2120,15 @@ storiesOf("search/DataSearch", module)
 		"Playground",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title={text("title", "DataSearch: Cars")}
-				placeholder={text("placeholder", "Search Cars")}
+				title={text("title", "DataSearch: Books...")}
+				placeholder={text("placeholder", "Search Books...")}
 				autoSuggest={boolean("autoSuggest", true)}
 				defaultSelected={text("defaultSelected", "")}
 				fieldWeights={array("weights", [1, 3])}
 				fuzziness={number("fuzziness", 1)}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Cars filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 				highlight={boolean("highlight", false)}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
 			/>
