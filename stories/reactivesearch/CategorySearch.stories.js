@@ -1,64 +1,37 @@
 import React, { Component } from "react";
-import { ReactiveBase, CategorySearch, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
-import ResponsiveStory from "./ResponsiveStory";
+import { ReactiveBase, CategorySearch, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
+
+import { booksList } from "./resultViews";
 
 export default class CategorySearchDefault extends Component {
-	componentDidMount() {
-		ResponsiveStory();
-	}
-
-	onData(marker) {
-		return (
-			<a
-				className="full_row single-record single_record_for_clone"
-				key={marker._id}
-			>
-				<div className="text-container full_row" style={{ paddingLeft: "10px" }}>
-					<div className="text-head text-overflow full_row">
-						<span className="text-head-info text-overflow">
-							<span dangerouslySetInnerHTML={{ __html: marker.name ? marker.name : "" }} /> - {marker.brand ? marker.brand : ""}
-						</span>
-						<span className="text-head-city">{marker.brand ? marker.brand : ""}</span>
-					</div>
-					<div className="text-description text-overflow full_row">
-						<ul className="highlight_tags">
-							{marker.price ? `Priced at $${marker.price}` : "Free Test Drive"}
-						</ul>
-					</div>
-				</div>
-			</a>
-		);
-	}
-
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="good-books-live"
+				credentials="sHZWU7AYJ:d1e2922c-035c-429f-bfe4-62aa38b1c395"
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters componentId="CarSensor" />
+						<SelectedFilters componentId="BookSensor" />
 						<CategorySearch
-							dataField={["name", "vehicleType"]}
-							categoryField="brand.raw"
-							componentId="CarSensor"
+							dataField={["original_title", "original_title.search"]}
+							categoryField="authors.raw"
+							componentId="BookSensor"
 							title="CategorySearch"
 							{...this.props}
 						/>
 					</div>
 
 					<div className="col">
-						<ReactiveList
+						<ResultList
 							componentId="SearchResult"
-							dataField="name"
-							title="Results"
-							sortBy="asc"
+							dataField="original_title"
 							from={0}
-							size={20}
-							onData={this.onData}
+							size={3}
+							onData={booksList}
+							pagination
 							react={{
-								and: "CarSensor"
+								and: "BookSensor"
 							}}
 						/>
 					</div>

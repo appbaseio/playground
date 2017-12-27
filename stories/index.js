@@ -1507,7 +1507,7 @@ storiesOf("search/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Car"
+				placeholder="Search Books by Author"
 				showFilter={false}
 			/>
 		))
@@ -1516,8 +1516,8 @@ storiesOf("search/CategorySearch", module)
 		"With title",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title={text("title", "Cars")}
-				placeholder="Search Car"
+				title={text("title", "Books")}
+				placeholder="Search Books by Author"
 				showFilter={false}
 			/>
 		))
@@ -1527,7 +1527,7 @@ storiesOf("search/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Cars"
+				placeholder="Search Books by Authors"
 				showFilter={false}
 				showIcon={boolean("showIcon", false)}
 			/>
@@ -1538,7 +1538,7 @@ storiesOf("search/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Cars"
+				placeholder="Search Books by Authors"
 				showFilter={false}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
 			/>
@@ -1549,9 +1549,9 @@ storiesOf("search/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Cars"
+				placeholder="Search Books by Authors"
 				showFilter={false}
-				icon={<div style={{ padding: 5 }}>🎸</div>}
+				icon={<div style={{ padding: 5 }}>📚</div>}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
 			/>
 		))
@@ -1561,20 +1561,20 @@ storiesOf("search/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Car"
+				placeholder="Search Books by Author"
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Cars filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 			/>
 		))
 	)
 	.add(
-		"without debounce",
+		"with debounce",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Car"
+				placeholder="Search Books by Author"
 				showFilter={false}
-				debounce={number("debounce", 0)}
+				debounce={number("debounce", 300)}
 			/>
 		))
 	)
@@ -1583,8 +1583,8 @@ storiesOf("search/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Car"
-				defaultSelected={text("defaultSelected", "nissan")}
+				placeholder="Search Books by Author"
+				defaultSelected={text("defaultSelected", "Sherlock Holmes")}
 				showFilter={false}
 			/>
 		))
@@ -1594,10 +1594,10 @@ storiesOf("search/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Car"
+				placeholder="Search Books by Author"
 				defaultSuggestions={[
-					{ label: "Opel", value: "Opel" },
-					{ label: "VW", value: "VW" }
+					{ label: "Sherlock Holmes", value: "Sherlock Holmes" },
+					{ label: "A Song of Ice and Fire", value: "A Song of Ice and Fire" }
 				]}
 				showFilter={false}
 			/>
@@ -1638,7 +1638,7 @@ storiesOf("search/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Car"
+				placeholder="Search Books by Author"
 				showFilter={false}
 				autoSuggest={boolean("autoSuggest", false)}
 			/>
@@ -1649,7 +1649,7 @@ storiesOf("search/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Car"
+				placeholder="Search Books by Author"
 				showFilter={false}
 				highlight={boolean("highlight", true)}
 			/>
@@ -1660,7 +1660,7 @@ storiesOf("search/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
-				placeholder="Search Car"
+				placeholder="Search Books by Author"
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
 			/>
@@ -1674,7 +1674,7 @@ storiesOf("search/CategorySearch", module)
 				dataField={array("dataField", ["name"])}
 				categoryField={text("categoryField", "brand.raw")}
 				defaultSelected={text("defaultSelected", "")}
-				placeholder={text("placeholder", "Search Car")}
+				placeholder={text("placeholder", "Search Books by Author")}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 				weights={array("weights", [1, 3])}
 				fuzziness={number("fuzziness", 1)}
@@ -1734,12 +1734,12 @@ storiesOf("search/ReactiveList", module)
 	// .add("Without resultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
 	// 	<ReactiveListDefault onAllData={null} stream={false} showResultStats={boolean("showResultStats", false)} />
 	// )))
-	.add(
-		"With Streaming Enabled",
-		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-			<ReactiveListDefault stream={boolean("stream", true)} />
-		))
-	)
+	// .add(
+	// 	"With Streaming Enabled",
+	// 	withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+	// 		<ReactiveListDefault stream={boolean("stream", true)} />
+	// 	))
+	// )
 	.add(
 		"With pagination",
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
