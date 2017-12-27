@@ -51,23 +51,6 @@ export default class ResultCardDefault extends Component {
 							from={0}
 							size={20}
 							onData={this.onData}
-							sortOptions={[
-								{
-									label: "Lowest Price First",
-									dataField: "price",
-									sortBy: "asc"
-								},
-								{
-									label: "Highest Price First",
-									dataField: "price",
-									sortBy: "desc"
-								},
-								{
-									label: "Most rated",
-									dataField: "rating",
-									sortBy: "desc"
-								}
-							]}
 							react={{
 								and: "PriceSensor"
 							}}

@@ -1771,8 +1771,6 @@ storiesOf("search/ReactiveList", module)
 	)
 	.add("With Sort Options", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
 		<ReactiveListDefault
-			title="Meetups"
-			stream={false}
 			sortOptions={[
 				{
 					label: "Most Rated",
@@ -1818,18 +1816,18 @@ storiesOf("search/ReactiveList", module)
 				)}
 				sortOptions={[
 					{
-						label: "Most Recent RSVP",
-						dataField: "mtime",
+						label: "Most Rated",
+						dataField: "rating",
 						sortBy: "desc"
 					},
 					{
-						label: "Guests - High to Low",
-						dataField: "guests",
+						label: "Price - High to Low",
+						dataField: "price",
 						sortBy: "desc"
 					},
 					{
-						label: "Guests - Low to High",
-						dataField: "guests",
+						label: "Price - Low to High",
+						dataField: "price",
 						sortBy: "asc"
 					}
 				]}
@@ -1878,6 +1876,27 @@ storiesOf("search/ResultCard", module)
 			/>
 		))
 	)
+	.add("With Sort Options", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
+		<ResultCardDefault
+			sortOptions={[
+				{
+					label: "Most Rated",
+					dataField: "rating",
+					sortBy: "desc"
+				},
+				{
+					label: "Price - High to Low",
+					dataField: "price",
+					sortBy: "desc"
+				},
+				{
+					label: "Price - Low to High",
+					dataField: "price",
+					sortBy: "asc"
+				}
+			]}
+		/>
+	)))
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(ResultCardReadme, 3), () => (
@@ -1887,6 +1906,23 @@ storiesOf("search/ResultCard", module)
 				showResultStats={boolean("showResultStats", true)}
 				pagination={boolean("pagination", true)}
 				paginationAt={text("paginationAt", "bottom")}
+				sortOptions={[
+					{
+						label: "Most Rated",
+						dataField: "rating",
+						sortBy: "desc"
+					},
+					{
+						label: "Price - High to Low",
+						dataField: "price",
+						sortBy: "desc"
+					},
+					{
+						label: "Price - Low to High",
+						dataField: "price",
+						sortBy: "asc"
+					}
+				]}
 			/>
 		))
 	);
