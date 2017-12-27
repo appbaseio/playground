@@ -23,10 +23,10 @@ export default class ReactiveListDefault extends Component {
 					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="original_title"
+							dataField="original_title.raw"
 							className="result-list-container"
 							from={0}
-							size={3}
+							size={5}
 							onData={booksReactiveList}
 							react={{
 								and: ["BookSensor"]

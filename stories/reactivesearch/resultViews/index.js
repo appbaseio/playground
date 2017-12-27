@@ -23,10 +23,10 @@ export const booksList = (data) => ({
 });
 
 export const booksReactiveList = (data) => (
-	<div className="flex" key={data._id}>
-		<img src={data.image} alt="Book Cover" />
-		<div className="flex column">
-			<div className="book-title">{data.original_title}</div>
+	<div className="flex book-content" key={data._id}>
+		<img src={data.image} alt="Book Cover" className="book-image" />
+		<div className="flex column justify-center" style={{ marginLeft: 20 }}>
+			<div className="book-header">{data.original_title}</div>
 			<div className="flex column justify-space-between">
 				<div>
 					<div>by <span className="authors-list">{data.authors}</span></div>

@@ -1772,18 +1772,18 @@ storiesOf("search/ReactiveList", module)
 		<ReactiveListDefault
 			sortOptions={[
 				{
-					label: "Most Rated",
-					dataField: "rating",
+					label: "Rating - High to Low",
+					dataField: "average_rating",
 					sortBy: "desc"
 				},
 				{
-					label: "Price - High to Low",
-					dataField: "price",
+					label: "Published - Most recent first",
+					dataField: "original_publication_year",
 					sortBy: "desc"
 				},
 				{
-					label: "Price - Low to High",
-					dataField: "price",
+					label: "Published - Oldest first",
+					dataField: "original_publication_year",
 					sortBy: "asc"
 				}
 			]}
@@ -1805,12 +1805,8 @@ storiesOf("search/ReactiveList", module)
 					"bottom"
 				)}
 				pages={number("pages", 5)}
-				stream={boolean("stream", false)}
-				sortBy={select(
-					"sortBy",
-					{ asc: "asc", desc: "desc", default: "default" },
-					"default"
-				)}
+				// stream={boolean("stream", false)}
+				sortBy={select("sortBy", { asc: "asc", desc: "desc" }, "asc")}
 			/>
 		))
 	);
