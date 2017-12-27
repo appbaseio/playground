@@ -3905,7 +3905,6 @@ storiesOf("search/DataController", module)
 		withReadme(removeFirstLine(DataControllerReadme), () => (
 			<DataControllerRSDefault
 				title="DataController"
-				visible={boolean("visible", true)}
 				showFilter={false}
 			>
 				<p>★ A customizable UI widget ★</p>
