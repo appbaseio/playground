@@ -83,8 +83,7 @@ import CategorySearchDefault from "./reactivesearch/CategorySearch.stories";
 // import ReactiveListDefault from "./reactivesearch/ReactiveList.stories";
 import ResultCardDefault from "./reactivesearch/ResultCard.stories";
 import ReactiveListDefault from "./reactivesearch/ReactiveList.stories";
-// import ResultCardDefault from "./reactivesearch/ResultCard.stories";
-// import ResultListDefault from "./reactivesearch/ResultList.stories";
+import ResultListDefault from "./reactivesearch/ResultList.stories";
 // import ViewSwitcherDefault from "./reactivesearch/ViewSwitcher.stories";
 import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
 import MultiDataListRSDefault from "./reactivesearch/MultiDataList.stories";
@@ -1812,23 +1811,6 @@ storiesOf("search/ReactiveList", module)
 					{ asc: "asc", desc: "desc", default: "default" },
 					"default"
 				)}
-				sortOptions={[
-					{
-						label: "Most Rated",
-						dataField: "rating",
-						sortBy: "desc"
-					},
-					{
-						label: "Price - High to Low",
-						dataField: "price",
-						sortBy: "desc"
-					},
-					{
-						label: "Price - Low to High",
-						dataField: "price",
-						sortBy: "asc"
-					}
-				]}
 			/>
 		))
 	);
@@ -1904,56 +1886,63 @@ storiesOf("search/ResultCard", module)
 				showResultStats={boolean("showResultStats", true)}
 				pagination={boolean("pagination", true)}
 				paginationAt={text("paginationAt", "bottom")}
-				sortOptions={[
-					{
-						label: "Most Rated",
-						dataField: "rating",
-						sortBy: "desc"
-					},
-					{
-						label: "Price - High to Low",
-						dataField: "price",
-						sortBy: "desc"
-					},
-					{
-						label: "Price - Low to High",
-						dataField: "price",
-						sortBy: "asc"
-					}
-				]}
 			/>
 		))
 	);
 
-// storiesOf("search/ResultList", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(ResultListReadme, 3), () => (
-// 		<ResultListDefault />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(ResultListReadme, 3), () => (
-// 		<ResultListDefault title={text("title", "Cars list")} />
-// 	)))
-// 	.add("With size", withReadme(removeFirstLine(ResultListReadme, 3), () => (
-// 		<ResultListDefault size={text("size", 5)} />
-// 	)))
-// 	.add("Hide resultStats", withReadme(removeFirstLine(ResultListReadme, 3), () => (
-// 		<ResultListDefault showResultStats={boolean("showResultStats", false)} />
-// 	)))
-// 	.add("With infinite loading", withReadme(removeFirstLine(ResultListReadme, 3), () => (
-// 		<ResultListDefault scrollOnTarget={window} pagination={false} />
-// 	)))
-// 	.add("With pagination", withReadme(removeFirstLine(ResultListReadme, 3), () => (
-// 		<ResultListDefault pagination={boolean("pagination", true)} paginationAt={text("paginationAt", "bottom")} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(ResultListReadme, 3), () => (
-// 		<ResultListDefault
-// 			title={text("title", "Cars result")}
-// 			size={number("size", 5)}
-// 			showResultStats={boolean("showResultStats", true)}
-// 			pagination={boolean("pagination", true)}
-// 			paginationAt={text("paginationAt", "bottom")}
-// 		/>
-// 	)));
+storiesOf("search/ResultList", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(ResultListReadme, 3), () => (
+		<ResultListDefault />
+	)))
+	.add("With title", withReadme(removeFirstLine(ResultListReadme, 3), () => (
+		<ResultListDefault title={text("title", "Cars list")} />
+	)))
+	.add("With size", withReadme(removeFirstLine(ResultListReadme, 3), () => (
+		<ResultListDefault size={text("size", 5)} />
+	)))
+	.add("Hide resultStats", withReadme(removeFirstLine(ResultListReadme, 3), () => (
+		<ResultListDefault showResultStats={boolean("showResultStats", false)} />
+	)))
+	.add("With infinite loading", withReadme(removeFirstLine(ResultListReadme, 3), () => (
+		<ResultListDefault scrollOnTarget={window} pagination={false} />
+	)))
+	.add("With pagination", withReadme(removeFirstLine(ResultListReadme, 3), () => (
+		<ResultListDefault
+			pagination={boolean("pagination", true)}
+			paginationAt={text("paginationAt", "bottom")}
+		/>
+	)))
+	.add("With Sort Options", withReadme(removeFirstLine(ResultListReadme, 3), () => (
+		<ResultListDefault
+			sortOptions={[
+				{
+					label: "Most Rated",
+					dataField: "rating",
+					sortBy: "desc"
+				},
+				{
+					label: "Price - High to Low",
+					dataField: "price",
+					sortBy: "desc"
+				},
+				{
+					label: "Price - Low to High",
+					dataField: "price",
+					sortBy: "asc"
+				}
+			]}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(ResultListReadme, 3), () => (
+		<ResultListDefault
+			title={text("title", "Cars result")}
+			size={number("size", 5)}
+			showResultStats={boolean("showResultStats", true)}
+			pagination={boolean("pagination", true)}
+			paginationAt={text("paginationAt", "bottom")}
+		/>
+	)));
 
 // storiesOf("search/ViewSwitcher", module)
 // 	.addDecorator(withKnobs)
