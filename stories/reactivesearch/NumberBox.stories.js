@@ -1,49 +1,34 @@
 import React, { Component } from "react";
-import {
-	ReactiveBase,
-	ReactiveList,
-	NumberBox
-} from "@appbaseio/reactivesearch";
+import { ReactiveBase, NumberBox, ResultList } from "@appbaseio/reactivesearch";
 
-export default class NumberBoxRSDefault extends Component {
-	onData = (data) => {
-		return (<div key={data._id}>
-			<h2>{data.name}</h2>
-			<p>{data.price} - {data.rating} stars rated</p>
-		</div>);
-	}
+import { booksList } from "./resultViews";
 
+export default class ResultListDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="good-books-live"
+				credentials="sHZWU7AYJ:d1e2922c-035c-429f-bfe4-62aa38b1c395"
 			>
-				<div className="row">
+				<div className="row reverse-labels">
 					<div className="col">
 						<NumberBox
-							dataField="rating"
-							componentId="CarSensor"
-							data={{
-								label: "Car Ratings",
-								start: 2,
-								end: 5
-							}}
+							componentId="BookSensor"
+							dataField="average_rating_rounded"
 							{...this.props}
 						/>
 					</div>
-
-					<div className="col">
-						<ReactiveList
+					<div className="col" style={{backgroundColor: "#fafafa"}}>
+						<ResultList
 							componentId="SearchResult"
-							dataField="name"
-							title="ReactiveList"
+							dataField="original_title"
 							from={0}
-							size={20}
-							onData={this.onData}
+							size={3}
+							onData={booksList}
+							className="result-list-container"
 							pagination
 							react={{
-								and: "CarSensor"
+								and: "BookSensor"
 							}}
 						/>
 					</div>

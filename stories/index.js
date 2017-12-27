@@ -2204,7 +2204,7 @@ storiesOf("search/NumberBox", module)
 			<NumberBoxRSDefault
 				defaultSelected={2}
 				data={{
-					label: "Car Ratings",
+					label: "Book Rating",
 					start: 2,
 					end: 5
 				}}
@@ -2218,12 +2218,12 @@ storiesOf("search/NumberBox", module)
 			<NumberBoxRSDefault
 				defaultSelected={2}
 				data={{
-					label: "Car Ratings",
+					label: "Book Rating",
 					start: 2,
 					end: 5
 				}}
 				labelPosition="left"
-				title={text("title", "Number of Guests")}
+				title={text("title", "Average Rating")}
 			/>
 		))
 	)
@@ -2233,7 +2233,7 @@ storiesOf("search/NumberBox", module)
 			<NumberBoxRSDefault
 				defaultSelected={2}
 				data={{
-					label: "Car Ratings",
+					label: "Book Rating",
 					start: 2,
 					end: 5
 				}}
@@ -2251,7 +2251,7 @@ storiesOf("search/NumberBox", module)
 			<NumberBoxRSDefault
 				defaultSelected={2}
 				data={object("data", {
-					label: "Car Ratings",
+					label: "Book Ratings",
 					start: 2,
 					end: 5
 				})}
@@ -2265,7 +2265,7 @@ storiesOf("search/NumberBox", module)
 			<NumberBoxRSDefault
 				defaultSelected={number("defaultSelected", 2)}
 				data={{
-					label: "Car Ratings",
+					label: "Book Rating",
 					start: 2,
 					end: 5
 				}}
@@ -2278,7 +2278,7 @@ storiesOf("search/NumberBox", module)
 			<NumberBoxRSDefault
 				defaultSelected={2}
 				data={{
-					label: "Car Ratings",
+					label: "Book Rating",
 					start: 2,
 					end: 5
 				}}
@@ -2296,7 +2296,7 @@ storiesOf("search/NumberBox", module)
 			<NumberBoxRSDefault
 				defaultSelected={2}
 				data={{
-					label: "Car Ratings",
+					label: "Book Rating",
 					start: 2,
 					end: 5
 				}}
