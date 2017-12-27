@@ -2679,7 +2679,7 @@ storiesOf("search/SingleDropdownList", module)
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<SingleDropdownListRSDefault
 				showFilter={false}
-				title={text("title", "City list")}
+				title={text("title", "Book list")}
 			/>
 		))
 	)
@@ -2697,7 +2697,7 @@ storiesOf("search/SingleDropdownList", module)
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<SingleDropdownListRSDefault
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "City filter")}
+				filterLabel={text("filterLabel", "Book filter")}
 			/>
 		))
 	)
@@ -2727,7 +2727,7 @@ storiesOf("search/SingleDropdownList", module)
 		"With Select All",
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<SingleDropdownListRSDefault
-				selectAllLabel={text("selectAllLabel", "All Cities")}
+				selectAllLabel={text("selectAllLabel", "All Books")}
 				showFilter={false}
 			/>
 		))
@@ -2737,7 +2737,7 @@ storiesOf("search/SingleDropdownList", module)
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<SingleDropdownListRSDefault
 				selectAllLabel="All Cities"
-				defaultSelected={text("defaultSelected", "London")}
+				defaultSelected={text("defaultSelected", "Artemis Fowl")}
 				showFilter={false}
 			/>
 		))
@@ -2763,11 +2763,11 @@ storiesOf("search/SingleDropdownList", module)
 					{ asc: "asc", desc: "desc", count: "count" },
 					"count"
 				)}
-				selectAllLabel={text("selectAllLabel", "All Cities")}
-				defaultSelected={text("defaultSelected", "London")}
-				placeholder={text("placeholder", "Select a City")}
+				selectAllLabel={text("selectAllLabel", "All Books")}
+				defaultSelected={text("defaultSelected", "Harry Potter")}
+				placeholder={text("placeholder", "Select a Book")}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "City filter")}
+				filterLabel={text("filterLabel", "Book filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 			/>
 		))
