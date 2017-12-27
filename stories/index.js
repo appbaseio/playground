@@ -3734,8 +3734,8 @@ storiesOf("search/RangeInput", module)
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeInputRSDefault
 				defaultSelected={object("defaultSelected", {
-					start: 3,
-					end: 4
+					start: 5000,
+					end: 9000
 				})}
 			/>
 		))
@@ -3755,7 +3755,7 @@ storiesOf("search/RangeInput", module)
 	.add(
 		"With custom histogram interval",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
-			<RangeInputRSDefault interval={number("interval", 1)} />
+			<RangeInputRSDefault interval={number("interval", 1000)} />
 		))
 	)
 	.add(
@@ -3781,16 +3781,16 @@ storiesOf("search/RangeInput", module)
 		"Playground",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeInputRSDefault
-				title={text("title", "RangeSlider: Prices")}
+				title={text("title", "RangeSlider: Ratings")}
 				range={object("range", {
-					start: 1,
-					end: 5
+					start: 3000,
+					end: 50000
 				})}
 				stepValue={number("stepValue", 1)}
-				interval={number("interval", 20)}
+				interval={number("interval", 1000)}
 				defaultSelected={object("defaultSelected", {
-					start: 2,
-					end: 4
+					start: 4000,
+					end: 10000
 				})}
 				rangeLabels={object("rangeLabels", {
 					start: "Start",
