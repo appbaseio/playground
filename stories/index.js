@@ -1769,29 +1769,29 @@ storiesOf("search/ReactiveList", module)
 			/>
 		))
 	)
-	// .add("With Sort Options", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-	// 	<ReactiveListDefault
-	// 		title="Meetups"
-	// 		stream={false}
-	// 		sortOptions={[
-	// 			{
-	// 				label: "Most Recent RSVP",
-	// 				dataField: "mtime",
-	// 				sortBy: "desc"
-	// 			},
-	// 			{
-	// 				label: "Guests - High to Low",
-	// 				dataField: "guests",
-	// 				sortBy: "desc"
-	// 			},
-	// 			{
-	// 				label: "Guests - Low to High",
-	// 				dataField: "guests",
-	// 				sortBy: "asc"
-	// 			}
-	// 		]}
-	// 	/>
-	// )))
+	.add("With Sort Options", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			title="Meetups"
+			stream={false}
+			sortOptions={[
+				{
+					label: "Most Rated",
+					dataField: "rating",
+					sortBy: "desc"
+				},
+				{
+					label: "Price - High to Low",
+					dataField: "price",
+					sortBy: "desc"
+				},
+				{
+					label: "Price - Low to High",
+					dataField: "price",
+					sortBy: "asc"
+				}
+			]}
+		/>
+	)))
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
