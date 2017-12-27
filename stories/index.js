@@ -3896,7 +3896,7 @@ storiesOf("search/DataController", module)
 		"With defaultSelected",
 		withReadme(removeFirstLine(DataControllerReadme), () => (
 			<DataControllerRSDefault
-				defaultSelected={text("defaultSelected", "Audi")}
+				defaultSelected={text("defaultSelected", "Harry Potter")}
 			/>
 		))
 	)
@@ -3916,6 +3916,7 @@ storiesOf("search/DataController", module)
 		"With filter",
 		withReadme(removeFirstLine(DataControllerReadme), () => (
 			<DataControllerRSDefault
+				defaultSelected={text("defaultSelected", "Harry Potter")}
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Custom Filter Name")}
 			/>

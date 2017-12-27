@@ -1,65 +1,37 @@
 import React, { Component } from "react";
-import {
-	ReactiveBase,
-	DataController,
-	ResultCard,
-	SelectedFilters
-} from "@appbaseio/reactivesearch";
-import ResponsiveStory from "./ResponsiveStory";
+import { ReactiveBase, SelectedFilters, DataController, ReactiveList } from "@appbaseio/reactivesearch";
 
-export default class DataControllerRSDefault extends Component {
-	componentDidMount() {
-		ResponsiveStory();
-	}
+import { booksReactiveList } from "./resultViews";
 
-	customQuery(value) {
-		return {
-			query: {
-				match_all: {}
-			}
-		};
-	}
-
-	onData(res) {
-		const result = {
-			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
-			title: res.name,
-			rating: res.rating,
-			desc: res.brand
-		};
-		return result;
-	}
-
+export default class DataControllerDefault extends Component {
 	render() {
-		const { children, ...props } = this.props;
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="good-books-live"
+				credentials="sHZWU7AYJ:d1e2922c-035c-429f-bfe4-62aa38b1c395"
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters componentId="CustomSensor" />
 						<DataController
-							componentId="CustomSensor"
-							dataField="name"
-							customQuery={this.customQuery}
-							{...props}
-						>
-							{children}
-						</DataController>
+							componentId="BookSensor"
+							dataField="original_series.raw"
+							customQuery={(book, props) => (book ? { match: { [props.dataField]: book} } : { match_all: {} })}
+							size={100}
+							{...this.props}
+						/>
 					</div>
 
 					<div className="col">
-						<ResultCard
+						<SelectedFilters />
+						<ReactiveList
 							componentId="SearchResult"
-							dataField="name"
-							title="Results"
+							dataField="original_title.raw"
+							className="result-list-container"
 							from={0}
-							size={20}
-							onData={this.onData}
+							size={5}
+							onData={booksReactiveList}
 							react={{
-								and: "CustomSensor"
+								and: ["BookSensor"]
 							}}
 						/>
 					</div>
