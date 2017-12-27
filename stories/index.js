@@ -1884,9 +1884,6 @@ storiesOf("search/ResultList", module)
 	.add("Basic", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault />
 	)))
-	.add("With title", withReadme(removeFirstLine(ResultListReadme, 3), () => (
-		<ResultListDefault title={text("title", "Cars list")} />
-	)))
 	.add("With size", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault size={text("size", 5)} />
 	)))
@@ -1894,7 +1891,7 @@ storiesOf("search/ResultList", module)
 		<ResultListDefault showResultStats={boolean("showResultStats", false)} />
 	)))
 	.add("With infinite loading", withReadme(removeFirstLine(ResultListReadme, 3), () => (
-		<ResultListDefault scrollOnTarget={window} pagination={false} />
+		<ResultListDefault size={10} pagination={false} />
 	)))
 	.add("With pagination", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault
@@ -1906,18 +1903,18 @@ storiesOf("search/ResultList", module)
 		<ResultListDefault
 			sortOptions={[
 				{
-					label: "Most Rated",
-					dataField: "rating",
+					label: "Rating - High to Low",
+					dataField: "average_rating",
 					sortBy: "desc"
 				},
 				{
-					label: "Price - High to Low",
-					dataField: "price",
+					label: "Published - Most recent first",
+					dataField: "original_publication_year",
 					sortBy: "desc"
 				},
 				{
-					label: "Price - Low to High",
-					dataField: "price",
+					label: "Published - Oldest first",
+					dataField: "original_publication_year",
 					sortBy: "asc"
 				}
 			]}
