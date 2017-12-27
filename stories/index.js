@@ -1798,10 +1798,8 @@ storiesOf("search/ReactiveList", module)
 			<ReactiveListDefault
 				title={text("title", "ReactiveList: Results")}
 				placeholder={text("placeholder", "Select from list")}
-				from={number("from", 0)}
-				size={number("size", 5)}
-				initialLoader={text("initialLoader", "Loading results..")}
-				noResults={text("noResults", "No results found!")}
+				// initialLoader={text("initialLoader", "Loading results..")}
+				// noResults={text("noResults", "No results found!")}
 				showResultStats={boolean("showResultStats", true)}
 				pagination={boolean("pagination", true)}
 				paginationAt={select(
@@ -1816,23 +1814,23 @@ storiesOf("search/ReactiveList", module)
 					{ asc: "asc", desc: "desc", default: "default" },
 					"default"
 				)}
-				sortOptions={[
-					{
-						label: "Most Recent RSVP",
-						dataField: "mtime",
-						sortBy: "desc"
-					},
-					{
-						label: "Guests - High to Low",
-						dataField: "guests",
-						sortBy: "desc"
-					},
-					{
-						label: "Guests - Low to High",
-						dataField: "guests",
-						sortBy: "asc"
-					}
-				]}
+				// sortOptions={[
+				// 	{
+				// 		label: "Most Recent RSVP",
+				// 		dataField: "mtime",
+				// 		sortBy: "desc"
+				// 	},
+				// 	{
+				// 		label: "Guests - High to Low",
+				// 		dataField: "guests",
+				// 		sortBy: "desc"
+				// 	},
+				// 	{
+				// 		label: "Guests - Low to High",
+				// 		dataField: "guests",
+				// 		sortBy: "asc"
+				// 	}
+				// ]}
 			/>
 		))
 	);

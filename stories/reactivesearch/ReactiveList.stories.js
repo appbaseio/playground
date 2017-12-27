@@ -1,32 +1,20 @@
 import React, { Component } from "react";
-import { ReactiveBase, MultiList, ReactiveList } from "@appbaseio/reactivesearch";
+import { ReactiveBase, MultiDropdownList, ReactiveList } from "@appbaseio/reactivesearch";
+
+import { booksReactiveList } from "./resultViews";
 
 export default class ReactiveListDefault extends Component {
-	constructor(props) {
-		super(props);
-		this.onData = this.onData.bind(this);
-	}
-
-	onData(data) {
-		return (<div key={data._id}>
-			<h2 dangerouslySetInnerHTML={{__html: data.name}} />
-			<h4 dangerouslySetInnerHTML={{__html: data.brand}} />
-			<p>{data.price} - {data.rating} stars rated</p>
-		</div>);
-	}
-
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
-				type="cars"
+				app="good-books-live"
+				credentials="sHZWU7AYJ:d1e2922c-035c-429f-bfe4-62aa38b1c395"
 			>
 				<div className="row">
 					<div className="col">
-						<MultiList
-							componentId="CarSensor"
-							dataField="brand.raw"
+						<MultiDropdownList
+							componentId="BookSensor"
+							dataField="original_series.raw"
 							title="MultiList"
 							size={100}
 						/>
@@ -35,14 +23,13 @@ export default class ReactiveListDefault extends Component {
 					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="name"
+							dataField="original_title"
+							className="result-list-container"
 							from={0}
-							size={20}
-							onData={this.onData}
-							pagination
-							stream
+							size={3}
+							onData={booksReactiveList}
 							react={{
-								and: ["CarSensor"]
+								and: ["BookSensor"]
 							}}
 							{...this.props}
 						/>

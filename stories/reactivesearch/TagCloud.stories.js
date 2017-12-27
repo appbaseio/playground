@@ -28,6 +28,7 @@ export default class TagCloudDefault extends Component {
 							dataField="group.group_topics.topic_name_raw"
 							title="Results"
 							sortBy="asc"
+							className="result-list-container"
 							from={0}
 							size={5}
 							onData={meetupList}

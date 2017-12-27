@@ -29,6 +29,7 @@ export default class CategorySearchDefault extends Component {
 							from={0}
 							size={3}
 							onData={booksList}
+							className="result-list-container"
 							pagination
 							react={{
 								and: "BookSensor"
