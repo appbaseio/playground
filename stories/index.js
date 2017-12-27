@@ -3112,7 +3112,7 @@ storiesOf("search/SingleRange", module)
 		withReadme(removeFirstLine(SingleRangeReadme), () => (
 			<SingleRangeRSDefault
 				showFilter={false}
-				title={text("title", "SingleRange: Price Filter")}
+				title={text("title", "SingleRange: Books Filter")}
 			/>
 		))
 	)
@@ -3120,7 +3120,7 @@ storiesOf("search/SingleRange", module)
 		"With Default Selected",
 		withReadme(removeFirstLine(SingleRangeReadme), () => (
 			<SingleRangeRSDefault
-				defaultSelected={text("defaultSelected", "Cheap")}
+				defaultSelected={text("defaultSelected", "Rating 3 to 4")}
 				showFilter={false}
 			/>
 		))
@@ -3130,7 +3130,7 @@ storiesOf("search/SingleRange", module)
 		withReadme(removeFirstLine(SingleRangeReadme), () => (
 			<SingleRangeRSDefault
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Price filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 			/>
 		))
 	)
@@ -3156,11 +3156,11 @@ storiesOf("search/SingleRange", module)
 		"Playground",
 		withReadme(removeFirstLine(SingleRangeReadme), () => (
 			<SingleRangeRSDefault
-				title={text("title", "SingleRange: Price Filter")}
+				title={text("title", "SingleRange: Books Filter")}
 				defaultSelected={text("defaultSelected", "Cheap")}
 				showRadio={boolean("showRadio", true)}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Price filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 			/>
 		))
