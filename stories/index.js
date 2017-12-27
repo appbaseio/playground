@@ -1820,15 +1820,9 @@ storiesOf("search/ResultCard", module)
 		))
 	)
 	.add(
-		"With title",
-		withReadme(removeFirstLine(ResultCardReadme, 3), () => (
-			<ResultCardDefault title={text("title", "Cars result")} />
-		))
-	)
-	.add(
 		"With size",
 		withReadme(removeFirstLine(ResultCardReadme, 3), () => (
-			<ResultCardDefault size={number("size", 5)} />
+			<ResultCardDefault size={number("size", 12)} />
 		))
 	)
 	.add(
@@ -1856,18 +1850,18 @@ storiesOf("search/ResultCard", module)
 		<ResultCardDefault
 			sortOptions={[
 				{
-					label: "Most Rated",
-					dataField: "rating",
+					label: "Rating - High to Low",
+					dataField: "average_rating",
 					sortBy: "desc"
 				},
 				{
-					label: "Price - High to Low",
-					dataField: "price",
+					label: "Published - Most recent first",
+					dataField: "original_publication_year",
 					sortBy: "desc"
 				},
 				{
-					label: "Price - Low to High",
-					dataField: "price",
+					label: "Published - Oldest first",
+					dataField: "original_publication_year",
 					sortBy: "asc"
 				}
 			]}
@@ -1877,8 +1871,7 @@ storiesOf("search/ResultCard", module)
 		"Playground",
 		withReadme(removeFirstLine(ResultCardReadme, 3), () => (
 			<ResultCardDefault
-				title={text("title", "Cars result")}
-				size={number("size", 5)}
+				size={number("size", 12)}
 				showResultStats={boolean("showResultStats", true)}
 				pagination={boolean("pagination", true)}
 				paginationAt={text("paginationAt", "bottom")}
