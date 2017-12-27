@@ -15,7 +15,6 @@ export default class SingleDropdownRangeDefault extends Component {
 						<SingleDropdownRange
 							componentId="BookSensor"
 							dataField="average_rating"
-							title="SingleDropdownRange"
 							data={
 								[{ "start": 0, "end": 3, "label": "Rating < 3" },
 									{ "start": 3, "end": 4, "label": "Rating 3 to 4" },

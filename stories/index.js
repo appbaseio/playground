@@ -3312,7 +3312,7 @@ storiesOf("search/MultiDropdownRange", module)
 		"With title",
 		withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 			<MultiDropdownRangeRSDefault
-				title={text("title", "SingleDropdownRange: Price Filter")}
+				title={text("title", "MultiDropdownRange: Books Filter")}
 				showFilter={false}
 			/>
 		))
@@ -3321,7 +3321,7 @@ storiesOf("search/MultiDropdownRange", module)
 		"With placeholder",
 		withReadme(removeFirstLine(SingleDropdownRangeReadme), () => (
 			<MultiDropdownRangeRSDefault
-				placeholder={text("placeholder", "Search prices")}
+				placeholder={text("placeholder", "Search books")}
 				showFilter={false}
 			/>
 		))
@@ -3330,7 +3330,7 @@ storiesOf("search/MultiDropdownRange", module)
 		"With Default Selected",
 		withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 			<MultiDropdownRangeRSDefault
-				defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
+				defaultSelected={array("defaultSelected", ["Rating 3 to 4"])}
 				showFilter={false}
 			/>
 		))
@@ -3340,7 +3340,7 @@ storiesOf("search/MultiDropdownRange", module)
 		withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 			<MultiDropdownRangeRSDefault
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Price")}
+				filterLabel={text("filterLabel", "Books")}
 			/>
 		))
 	)
@@ -3357,12 +3357,12 @@ storiesOf("search/MultiDropdownRange", module)
 		"Playground",
 		withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 			<MultiDropdownRangeRSDefault
-				title={text("title", "MultiDropdownRange: Price Filter")}
-				defaultSelected={array("defaultSelected", ["Cheap", "Moderate"])}
-				placeholder={text("placeholder", "Search prices")}
+				title={text("title", "MultiDropdownRange: Books Filter")}
+				defaultSelected={array("defaultSelected", ["Rating 3 to 4"])}
+				placeholder={text("placeholder", "Search books")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Price")}
+				filterLabel={text("filterLabel", "Books")}
 			/>
 		))
 	);
