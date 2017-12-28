@@ -1614,7 +1614,7 @@ storiesOf("Search components/CategorySearch", module)
 			<CategorySearchDefault
 				placeholder="Search Books by Authors"
 				showFilter={false}
-				icon={<div style={{ padding: 5 }}>📚</div>}
+				icon={<div>📚</div>}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
 			/>
 		))
@@ -2037,7 +2037,7 @@ storiesOf("Search components/DataSearch", module)
 			<DataSearchRSDefault
 				placeholder="Search Books..."
 				showFilter={false}
-				icon={<div style={{ padding: 5 }}>📚</div>}
+				icon={<div>📚</div>}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
 			/>
 		))
