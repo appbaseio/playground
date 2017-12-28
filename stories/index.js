@@ -1391,10 +1391,10 @@ storiesOf("Base components/TagCloud", module)
 		))
 	)
 	.add(
-		"Without showCount",
+		"With showCount",
 		withReadme(removeFirstLine(TagCloudReadme), () => (
 			<TagCloudDefault
-				showCount={boolean("showCount", false)}
+				showCount={boolean("showCount", true)}
 				showFilter={false}
 			/>
 		))
@@ -1439,6 +1439,12 @@ storiesOf("Base components/TagCloud", module)
 		"With multiSelect off and defaultSelected",
 		withReadme(removeFirstLine(TagCloudReadme), () => (
 			<TagCloudDefault defaultSelected={text("defaultSelected", "Auckland")} />
+		))
+	)
+	.add(
+		"With sortBy",
+		withReadme(removeFirstLine(TagCloudReadme), () => (
+			<TagCloudDefault showFilter={false} sortBy={select("sortBy", ["count", "asc", "desc"], "count")} />
 		))
 	)
 	.add(
