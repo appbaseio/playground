@@ -119,6 +119,69 @@ function removeFirstLine(str, number = 1) {
 // The function removes lines starting with // which crashes storybook
 const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
 
+storiesOf("Base components/DataController", module)
+	.addDecorator(withKnobs)
+	.add(
+		"Basic",
+		withReadme(removeFirstLine(DataControllerReadme), () => (
+			<DataControllerRSDefault showFilter={false} />
+		))
+	)
+	.add(
+		"With defaultSelected",
+		withReadme(removeFirstLine(DataControllerReadme), () => (
+			<DataControllerRSDefault
+				defaultSelected={text("defaultSelected", "Harry Potter")}
+			/>
+		))
+	)
+	.add(
+		"With UI",
+		withReadme(removeFirstLine(DataControllerReadme), () => (
+			<DataControllerRSDefault
+				title="DataController"
+				showFilter={false}
+			>
+				<p>★ A customizable UI widget ★</p>
+			</DataControllerRSDefault>
+		))
+	)
+	.add(
+		"With filter",
+		withReadme(removeFirstLine(DataControllerReadme), () => (
+			<DataControllerRSDefault
+				defaultSelected={text("defaultSelected", "Harry Potter")}
+				showFilter={boolean("showFilter", true)}
+				filterLabel={text("filterLabel", "Custom Filter Name")}
+			/>
+		))
+	)
+	.add(
+		"With URLParams",
+		withReadme(removeFirstLine(DataControllerReadme), () => (
+			<DataControllerRSDefault
+				showFilter={false}
+				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			/>
+		))
+	)
+	.add(
+		"Playground",
+		withReadme(removeFirstLine(DataControllerReadme), () => (
+			<DataControllerRSDefault
+				title={text("title", "DataController")}
+				visible={boolean("visible", true)}
+				defaultSelected={text("defaultSelected", "default")}
+				componentStyle={object("componentStyle", { paddingBottom: "10px" })}
+				showFilter={boolean("showFilter", true)}
+				filterLabel={text("filterLabel", "Custom Filter Name")}
+				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			>
+				<p>{text("dataLabel", "★  A customizable UI widget ★")}</p>
+			</DataControllerRSDefault>
+		))
+	);
+
 // Reactivemaps components
 
 // storiesOf("map/GeoDistanceSlider", module)
@@ -3899,69 +3962,6 @@ storiesOf("Range components/RangeSlider", module)
 				showHistogram={boolean("showHistogram", true)}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 			/>
-		))
-	);
-
-storiesOf("Base components/DataController", module)
-	.addDecorator(withKnobs)
-	.add(
-		"Basic",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault showFilter={false} />
-		))
-	)
-	.add(
-		"With defaultSelected",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault
-				defaultSelected={text("defaultSelected", "Harry Potter")}
-			/>
-		))
-	)
-	.add(
-		"With UI",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault
-				title="DataController"
-				showFilter={false}
-			>
-				<p>★ A customizable UI widget ★</p>
-			</DataControllerRSDefault>
-		))
-	)
-	.add(
-		"With filter",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault
-				defaultSelected={text("defaultSelected", "Harry Potter")}
-				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Custom Filter Name")}
-			/>
-		))
-	)
-	.add(
-		"With URLParams",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault
-				showFilter={false}
-				URLParams={boolean("URLParams (not visible on storybook)", true)}
-			/>
-		))
-	)
-	.add(
-		"Playground",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault
-				title={text("title", "DataController")}
-				visible={boolean("visible", true)}
-				defaultSelected={text("defaultSelected", "default")}
-				componentStyle={object("componentStyle", { paddingBottom: "10px" })}
-				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Custom Filter Name")}
-				URLParams={boolean("URLParams (not visible on storybook)", true)}
-			>
-				<p>{text("dataLabel", "★  A customizable UI widget ★")}</p>
-			</DataControllerRSDefault>
 		))
 	);
 
