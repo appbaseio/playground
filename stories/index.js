@@ -11,6 +11,7 @@ import {
 } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import withReadme from "storybook-readme/with-readme";
+import { withInfo } from '@storybook/addon-info';
 
 // import READMEs for each component
 import SingleListReadme from "@appbaseio/reactive-manual/docs/v1/components/SingleList.md";
@@ -3495,6 +3496,17 @@ storiesOf("Range components/DatePicker", module)
 				showFilter={false}
 			/>
 		))
+	)
+	.add(
+		"with initialMonth",
+		withInfo(
+			`initialMonth accepts a JavaScript object. Here it's passed new Date("2017-04-04")`
+		)(withReadme(removeFirstLine(DatePickerReadme), () => (
+			<DatePickerRSDefault
+				initialMonth={new Date("2017-04-04")}
+				showFilter={false}
+			/>
+		)))
 	)
 	.add(
 		"Without clear button",
