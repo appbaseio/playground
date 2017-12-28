@@ -171,7 +171,7 @@ storiesOf("Base components/DataController", module)
 			<DataControllerRSDefault
 				title={text("title", "DataController")}
 				visible={boolean("visible", true)}
-				defaultSelected={text("defaultSelected", "default")}
+				defaultSelected={text("defaultSelected", "Harry Potter")}
 				componentStyle={object("componentStyle", { paddingBottom: "10px" })}
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Custom Filter Name")}
@@ -1400,23 +1400,21 @@ storiesOf("Base components/DataController", module)
 storiesOf("Range components/DynamicRangeSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault title="Books Count" />
+		<DynamicRangeSliderDefault />
 	)))
 	.add("With Title", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault title={text("title", "Books")} />
 	)))
 	.add("With custom stepValue", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault title="Books Count" stepValue={number("stepValue", 1)} />
+		<DynamicRangeSliderDefault stepValue={number("stepValue", 1)} />
 	)))
 	.add("Without histogram", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
-			title="Books Count"
 			showHistogram={boolean("showHistogram", false)}
 		/>
 	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
-			title="Books Count"
 			defaultSelected={object("defaultSelected", {
 				start: 3,
 				end: 4
@@ -1424,7 +1422,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
 		/>
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault title="Books Count" URLParams={boolean("URLParams (not visible on storybook)", true)} />
+		<DynamicRangeSliderDefault URLParams={boolean("URLParams (not visible on storybook)", true)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
@@ -1575,7 +1573,6 @@ storiesOf("Search components/CategorySearch", module)
 		"Basic",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Author"
 				showFilter={false}
 			/>
@@ -1595,7 +1592,6 @@ storiesOf("Search components/CategorySearch", module)
 		"wihout search icon",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Authors"
 				showFilter={false}
 				showIcon={boolean("showIcon", false)}
@@ -1606,7 +1602,6 @@ storiesOf("Search components/CategorySearch", module)
 		"with iconPosition",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Authors"
 				showFilter={false}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
@@ -1617,7 +1612,6 @@ storiesOf("Search components/CategorySearch", module)
 		"with custom icon",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Authors"
 				showFilter={false}
 				icon={<div style={{ padding: 5 }}>📚</div>}
@@ -1629,7 +1623,6 @@ storiesOf("Search components/CategorySearch", module)
 		"With filter",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Author"
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Books filter")}
@@ -1640,7 +1633,6 @@ storiesOf("Search components/CategorySearch", module)
 		"with debounce",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Author"
 				showFilter={false}
 				debounce={number("debounce", 300)}
@@ -1651,7 +1643,6 @@ storiesOf("Search components/CategorySearch", module)
 		"With defaultSelected",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Author"
 				defaultSelected={text("defaultSelected", "Sherlock Holmes")}
 				showFilter={false}
@@ -1662,7 +1653,6 @@ storiesOf("Search components/CategorySearch", module)
 		"With defaultSuggestions",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Author"
 				defaultSuggestions={[
 					{ label: "Sherlock Holmes", value: "Sherlock Holmes" },
@@ -1676,7 +1666,6 @@ storiesOf("Search components/CategorySearch", module)
 		"With Weights",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				weights={array("weights", [1, 3])}
 				showFilter={false}
 			/>
@@ -1686,7 +1675,6 @@ storiesOf("Search components/CategorySearch", module)
 		"With fuzziness",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				showFilter={false}
 				fuzziness={number("fuzziness", 1)}
 			/>
@@ -1696,7 +1684,6 @@ storiesOf("Search components/CategorySearch", module)
 		"With queryFormat",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				showFilter={false}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
 			/>
@@ -1706,7 +1693,6 @@ storiesOf("Search components/CategorySearch", module)
 		"Without autosuggest",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Author"
 				showFilter={false}
 				autosuggest={boolean("autosuggest", false)}
@@ -1717,7 +1703,6 @@ storiesOf("Search components/CategorySearch", module)
 		"With highlight",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Author"
 				showFilter={false}
 				highlight={boolean("highlight", true)}
@@ -1728,7 +1713,6 @@ storiesOf("Search components/CategorySearch", module)
 		"With URLParams",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
-				title="CategorySearch"
 				placeholder="Search Books by Author"
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
@@ -2012,7 +1996,6 @@ storiesOf("Search components/DataSearch", module)
 		"Basic",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 			/>
@@ -2032,7 +2015,6 @@ storiesOf("Search components/DataSearch", module)
 		"wihout search icon",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				showIcon={boolean("showIcon", false)}
@@ -2043,7 +2025,6 @@ storiesOf("Search components/DataSearch", module)
 		"with iconPosition",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
@@ -2054,7 +2035,6 @@ storiesOf("Search components/DataSearch", module)
 		"with custom icon",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				icon={<div style={{ padding: 5 }}>📚</div>}
@@ -2066,7 +2046,6 @@ storiesOf("Search components/DataSearch", module)
 		"With filter",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Books filter")}
@@ -2077,7 +2056,6 @@ storiesOf("Search components/DataSearch", module)
 		"with debounce",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				debounce={number("debounce", 300)}
@@ -2088,7 +2066,6 @@ storiesOf("Search components/DataSearch", module)
 		"Without autosuggest",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				autosuggest={boolean("autosuggest", false)}
 				showFilter={false}
@@ -2099,7 +2076,6 @@ storiesOf("Search components/DataSearch", module)
 		"With defaultSelected",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				defaultSelected={text("defaultSelected", "Harry Potter")}
@@ -2110,7 +2086,6 @@ storiesOf("Search components/DataSearch", module)
 		"With defaultSuggestions",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				defaultSuggestions={[
@@ -2124,7 +2099,6 @@ storiesOf("Search components/DataSearch", module)
 		"With fieldWeights",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				fieldWeights={array("fieldWeights", [1, 3])}
 				showFilter={false}
@@ -2135,7 +2109,6 @@ storiesOf("Search components/DataSearch", module)
 		"With fuzziness as a number",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				fuzziness={number("fuzziness", 1)}
@@ -2146,7 +2119,6 @@ storiesOf("Search components/DataSearch", module)
 		"With fuzziness as AUTO",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				fuzziness="AUTO"
@@ -2157,7 +2129,6 @@ storiesOf("Search components/DataSearch", module)
 		"With highlight",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				highlight={boolean("highlight", true)}
@@ -2168,7 +2139,6 @@ storiesOf("Search components/DataSearch", module)
 		"With queryFormat",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
@@ -2179,7 +2149,6 @@ storiesOf("Search components/DataSearch", module)
 		"With URLParams",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
-				title="DataSearch"
 				placeholder="Search Books..."
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}

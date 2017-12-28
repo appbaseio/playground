@@ -53,11 +53,9 @@ export default class DatePickerRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters componentId="DateSensor" />
 						<DatePicker
 							componentId="DateSensor"
 							dataField="date_from"
-							title="Housing available from"
 							customQuery={this.dateQuery}
 							initialMonth={this.props.defaultSelected ? null : new Date("2017-05-05")}
 							{...this.props}
@@ -65,6 +63,7 @@ export default class DatePickerRSDefault extends Component {
 					</div>
 
 					<div className="col">
+						<SelectedFilters componentId="DateSensor" />
 						<ResultCard
 							componentId="SearchResult"
 							dataField="name"

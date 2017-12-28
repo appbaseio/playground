@@ -17,7 +17,6 @@ export default class CategorySearchDefault extends Component {
 							dataField={["original_title", "original_title.search"]}
 							categoryField="authors.raw"
 							componentId="BookSensor"
-							title="CategorySearch"
 							{...this.props}
 						/>
 					</div>

@@ -60,11 +60,9 @@ export default class DateRangeRSDefault extends Component {
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters componentId="DateSensor" />
 						<DateRange
 							componentId="DateSensor"
 							dataField="date_from"
-							title="Housing availability"
 							customQuery={this.dateQuery}
 							initialMonth={this.props.defaultSelected ? null : new Date("2017-05-05")}
 							{...this.props}
@@ -72,6 +70,7 @@ export default class DateRangeRSDefault extends Component {
 					</div>
 
 					<div className="col">
+						<SelectedFilters componentId="DateSensor" />
 						<ResultCard
 							componentId="SearchResult"
 							dataField="name"

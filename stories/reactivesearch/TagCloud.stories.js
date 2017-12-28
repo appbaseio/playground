@@ -13,16 +13,15 @@ export default class TagCloudDefault extends Component {
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters componentId="CitySensor" />
 						<TagCloud
 							componentId="CitySensor"
 							dataField="group.group_city.raw"
-							title="TagCloud"
 							size={50}
 							{...this.props}
 						/>
 					</div>
 					<div className="col">
+						<SelectedFilters componentId="CitySensor" />
 						<ResultList
 							componentId="SearchResult"
 							dataField="group.group_topics.topic_name_raw"

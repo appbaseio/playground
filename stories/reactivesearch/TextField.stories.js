@@ -12,7 +12,6 @@ export default class DataSearchDefault extends Component {
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters componentId="BookSensor" />
 						<TextField
 							dataField="original_title.search"
 							componentId="BookSensor"
@@ -21,6 +20,7 @@ export default class DataSearchDefault extends Component {
 					</div>
 
 					<div className="col">
+						<SelectedFilters componentId="BookSensor" />
 						<ResultList
 							componentId="SearchResult"
 							dataField="original_title"
