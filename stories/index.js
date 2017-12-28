@@ -1333,7 +1333,7 @@ const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
 // 		/>
 // 	)));
 
-storiesOf("search/DynamicRangeSlider", module)
+storiesOf("Range components/DynamicRangeSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault title="Books Count" />
@@ -1375,7 +1375,7 @@ storiesOf("search/DynamicRangeSlider", module)
 		/>
 	)));
 
-storiesOf("search/TagCloud", module)
+storiesOf("Base components/TagCloud", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -1499,7 +1499,7 @@ storiesOf("search/TagCloud", module)
 // 		/>
 // 	)));
 
-storiesOf("search/CategorySearch", module)
+storiesOf("Search components/CategorySearch", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -1722,7 +1722,7 @@ storiesOf("search/CategorySearch", module)
 // 		/>
 // 	)));
 
-storiesOf("search/ReactiveList", module)
+storiesOf("Result components/ReactiveList", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -1811,7 +1811,7 @@ storiesOf("search/ReactiveList", module)
 		))
 	);
 
-storiesOf("search/ResultCard", module)
+storiesOf("Result components/ResultCard", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -1879,7 +1879,7 @@ storiesOf("search/ResultCard", module)
 		))
 	);
 
-storiesOf("search/ResultList", module)
+storiesOf("Result components/ResultList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault />
@@ -1936,7 +1936,7 @@ storiesOf("search/ResultList", module)
 // 		<ViewSwitcherDefault />
 // 	)));
 
-storiesOf("search/DataSearch", module)
+storiesOf("Search components/DataSearch", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -2135,7 +2135,7 @@ storiesOf("search/DataSearch", module)
 		))
 	);
 
-storiesOf("search/TextField", module)
+storiesOf("Base components/TextField", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -2196,7 +2196,7 @@ storiesOf("search/TextField", module)
 		))
 	);
 
-storiesOf("search/NumberBox", module)
+storiesOf("Base components/NumberBox", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -2331,7 +2331,7 @@ storiesOf("search/NumberBox", module)
 		))
 	);
 
-storiesOf("search/SingleList", module)
+storiesOf("List components/SingleList", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -2493,7 +2493,7 @@ storiesOf("search/SingleList", module)
 		))
 	);
 
-storiesOf("search/MultiList", module)
+storiesOf("List components/MultiList", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -2666,7 +2666,7 @@ storiesOf("search/MultiList", module)
 		))
 	);
 
-storiesOf("search/SingleDropdownList", module)
+storiesOf("List components/SingleDropdownList", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -2773,7 +2773,7 @@ storiesOf("search/SingleDropdownList", module)
 		))
 	);
 
-storiesOf("search/MultiDropdownList", module)
+storiesOf("List components/MultiDropdownList", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -2911,7 +2911,7 @@ storiesOf("search/MultiDropdownList", module)
 		))
 	);
 
-storiesOf("search/SingleDataList", module)
+storiesOf("List components/SingleDataList", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3000,7 +3000,7 @@ storiesOf("search/SingleDataList", module)
 		))
 	);
 
-storiesOf("search/MultiDataList", module)
+storiesOf("List components/MultiDataList", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3099,7 +3099,7 @@ storiesOf("search/MultiDataList", module)
 		))
 	);
 
-storiesOf("search/SingleRange", module)
+storiesOf("Range components/SingleRange", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3166,7 +3166,7 @@ storiesOf("search/SingleRange", module)
 		))
 	);
 
-storiesOf("search/MultiRange", module)
+storiesOf("Range components/MultiRange", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3233,7 +3233,7 @@ storiesOf("search/MultiRange", module)
 		))
 	);
 
-storiesOf("search/SingleDropdownRange", module)
+storiesOf("Range components/SingleDropdownRange", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3300,7 +3300,7 @@ storiesOf("search/SingleDropdownRange", module)
 		))
 	);
 
-storiesOf("search/MultiDropdownRange", module)
+storiesOf("Range components/MultiDropdownRange", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3367,7 +3367,7 @@ storiesOf("search/MultiDropdownRange", module)
 		))
 	);
 
-storiesOf("search/ToggleButton", module)
+storiesOf("Base components/ToggleButton", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3434,7 +3434,7 @@ storiesOf("search/ToggleButton", module)
 		))
 	);
 
-storiesOf("search/DatePicker", module)
+storiesOf("Range components/DatePicker", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3578,7 +3578,7 @@ storiesOf("search/DatePicker", module)
 		))
 	);
 
-storiesOf("search/DateRange", module)
+storiesOf("Range components/DateRange", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3715,7 +3715,7 @@ storiesOf("search/DateRange", module)
 		))
 	);
 
-storiesOf("search/RangeInput", module)
+storiesOf("Range components/RangeInput", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3803,7 +3803,7 @@ storiesOf("search/RangeInput", module)
 		))
 	);
 
-storiesOf("search/RangeSlider", module)
+storiesOf("Range components/RangeSlider", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
@@ -3884,7 +3884,7 @@ storiesOf("search/RangeSlider", module)
 		))
 	);
 
-storiesOf("search/DataController", module)
+storiesOf("Base components/DataController", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",

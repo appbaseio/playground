@@ -9,6 +9,7 @@ setOptions({
 	showDownPanel: true,
 	showSearchBox: false,
 	downPanelInRight: false,
+	sortStoriesByKind: true,
 });
 
 function loadStories() {
