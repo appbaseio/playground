@@ -802,11 +802,11 @@ const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
 // 			filterLabel={text("filterLabel", "Places filter")}
 // 		/>
 // 	)))
-// 	.add("Without autoSuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
+// 	.add("Without autosuggest", withReadme(removeFirstLine(DataSearchReadme), () => (
 // 		<DataSearchMapDefault
 // 			title="DataSearch"
 // 			placeholder="Search Venue"
-// 			autoSuggest={boolean("autoSuggest", false)}
+// 			autosuggest={boolean("autosuggest", false)}
 // 			showFilter={false}
 // 		/>
 // 	)))
@@ -862,7 +862,7 @@ const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
 // 		<DataSearchMapDefault
 // 			title={text("title", "DataSearch: Places")}
 // 			placeholder={text("placeholder", "Search Places")}
-// 			autoSuggest={boolean("autoSuggest", true)}
+// 			autosuggest={boolean("autosuggest", true)}
 // 			defaultSelected={text("defaultSelected", "")}
 // 			weights={array("weights", [1,3])}
 // 			fuzziness={number("fuzziness", 1)}
@@ -1633,13 +1633,13 @@ storiesOf("Search components/CategorySearch", module)
 		))
 	)
 	.add(
-		"Without autoSuggest",
+		"Without autosuggest",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title="CategorySearch"
 				placeholder="Search Books by Author"
 				showFilter={false}
-				autoSuggest={boolean("autoSuggest", false)}
+				autosuggest={boolean("autosuggest", false)}
 			/>
 		))
 	)
@@ -1677,7 +1677,7 @@ storiesOf("Search components/CategorySearch", module)
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 				weights={array("weights", [1, 3])}
 				fuzziness={number("fuzziness", 1)}
-				autoSuggest={boolean("autoSuggest", true)}
+				autosuggest={boolean("autosuggest", true)}
 				highlight={boolean("highlight", false)}
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Cars filter")}
@@ -2015,12 +2015,12 @@ storiesOf("Search components/DataSearch", module)
 		))
 	)
 	.add(
-		"Without autoSuggest",
+		"Without autosuggest",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title="DataSearch"
 				placeholder="Search Books..."
-				autoSuggest={boolean("autoSuggest", false)}
+				autosuggest={boolean("autosuggest", false)}
 				showFilter={false}
 			/>
 		))
@@ -2122,7 +2122,7 @@ storiesOf("Search components/DataSearch", module)
 			<DataSearchRSDefault
 				title={text("title", "DataSearch: Books...")}
 				placeholder={text("placeholder", "Search Books...")}
-				autoSuggest={boolean("autoSuggest", true)}
+				autosuggest={boolean("autosuggest", true)}
 				defaultSelected={text("defaultSelected", "")}
 				fieldWeights={array("weights", [1, 3])}
 				fuzziness={number("fuzziness", 1)}
