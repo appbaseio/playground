@@ -2513,6 +2513,7 @@ storiesOf("List components/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				title={text("title", "SingleList: Books Filter")}
+				dataField={text("dataField", "original_series.raw")}
 				size={number("size", 100)}
 				sortBy={select(
 					"sortBy",
