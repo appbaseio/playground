@@ -2796,6 +2796,7 @@ storiesOf("List components/SingleDropdownList", module)
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<SingleDropdownListRSDefault
 				title={text("title", "SingleDropdownList")}
+				dataField={text("dataField", "original_series.raw")}
 				size={number("size", 100)}
 				showCount={boolean("showCount", true)}
 				sortBy={select(
