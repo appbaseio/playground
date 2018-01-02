@@ -3926,6 +3926,7 @@ storiesOf("Range components/RangeSlider", module)
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeSliderRSDefault
 				title={text("title", "RangeSlider: Prices")}
+				dataField={text("dataField", "ratings_count")}
 				range={object("range", {
 					start: 3000,
 					end: 50000
