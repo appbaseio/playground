@@ -1855,6 +1855,23 @@ storiesOf("Result components/ReactiveList", module)
 				// initialLoader={text("initialLoader", "Loading results..")}
 				// noResults={text("noResults", "No results found!")}
 				showResultStats={boolean("showResultStats", true)}
+				sortOptions={[
+					{
+						label: "Rating - High to Low",
+						dataField: "average_rating",
+						sortBy: "desc"
+					},
+					{
+						label: "Published - Most recent first",
+						dataField: "original_publication_year",
+						sortBy: "desc"
+					},
+					{
+						label: "Published - Oldest first",
+						dataField: "original_publication_year",
+						sortBy: "asc"
+					}
+				]}
 				pagination={boolean("pagination", true)}
 				paginationAt={select(
 					"paginationAt",
@@ -1931,6 +1948,23 @@ storiesOf("Result components/ResultCard", module)
 				size={number("size", 12)}
 				dataField={select("dataField", ["original_title.raw", "authors.raw", "original_series.raw"], "original_title.raw")}
 				showResultStats={boolean("showResultStats", true)}
+				sortOptions={[
+					{
+						label: "Rating - High to Low",
+						dataField: "average_rating",
+						sortBy: "desc"
+					},
+					{
+						label: "Published - Most recent first",
+						dataField: "original_publication_year",
+						sortBy: "desc"
+					},
+					{
+						label: "Published - Oldest first",
+						dataField: "original_publication_year",
+						sortBy: "asc"
+					}
+				]}
 				pagination={boolean("pagination", true)}
 				paginationAt={text("paginationAt", "bottom")}
 			/>
@@ -1984,6 +2018,23 @@ storiesOf("Result components/ResultList", module)
 			dataField={select("dataField", ["original_title.raw", "authors.raw", "original_series.raw"], "original_title.raw")}
 			size={number("size", 5)}
 			showResultStats={boolean("showResultStats", true)}
+			sortOptions={[
+				{
+					label: "Rating - High to Low",
+					dataField: "average_rating",
+					sortBy: "desc"
+				},
+				{
+					label: "Published - Most recent first",
+					dataField: "original_publication_year",
+					sortBy: "desc"
+				},
+				{
+					label: "Published - Oldest first",
+					dataField: "original_publication_year",
+					sortBy: "asc"
+				}
+			]}
 			pagination={boolean("pagination", true)}
 			paginationAt={text("paginationAt", "bottom")}
 		/>
