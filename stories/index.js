@@ -1726,8 +1726,8 @@ storiesOf("Search components/CategorySearch", module)
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				title={text("title", "CategorySearch")}
-				dataField={array("dataField", ["name"])}
-				categoryField={text("categoryField", "brand.raw")}
+				dataField={array("dataField", ["original_title", "original_title.search"])}
+				categoryField={text("categoryField", "authors.raw")}
 				defaultSelected={text("defaultSelected", "")}
 				placeholder={text("placeholder", "Search Books by Author")}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
