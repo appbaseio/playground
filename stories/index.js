@@ -3130,6 +3130,7 @@ storiesOf("List components/MultiDataList", module)
 		withReadme(removeFirstLine(MultiDataListReadme), () => (
 			<MultiDataListRSDefault
 				title={text("title", "Topics")}
+				dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
 				defaultSelected={array("defaultSelected", ["Social", "Music"])}
 				showSearch={boolean("showSearch", true)}
 				placeholder={text("placeholder", "Search topics")}
