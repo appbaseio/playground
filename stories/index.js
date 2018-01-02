@@ -2227,6 +2227,7 @@ storiesOf("Base components/TextField", module)
 		withReadme(removeFirstLine(TextFieldReadme), () => (
 			<TextFieldRSDefault
 				title={text("title", "TextField: Books Search")}
+				dataField={text("dataField", "original_title.search")}
 				placeholder={text("placeholder", "Search for books...")}
 				defaultSelected={text("defaultSelected", "The Hitchhiker's Guide to the Galaxy")}
 				showFilter={boolean("showFilter", true)}
