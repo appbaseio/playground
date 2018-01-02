@@ -2163,6 +2163,7 @@ storiesOf("Search components/DataSearch", module)
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				title={text("title", "DataSearch: Books...")}
+				dataField={array("dataField", ["original_title", "original_title.search"])}
 				placeholder={text("placeholder", "Search Books...")}
 				autosuggest={boolean("autosuggest", true)}
 				defaultSelected={text("defaultSelected", "")}
