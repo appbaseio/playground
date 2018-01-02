@@ -1850,6 +1850,7 @@ storiesOf("Result components/ReactiveList", module)
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
 			<ReactiveListDefault
 				title={text("title", "ReactiveList: Results")}
+				dataField={text("dataField", "original_title.raw")}
 				placeholder={text("placeholder", "Select from list")}
 				// initialLoader={text("initialLoader", "Loading results..")}
 				// noResults={text("noResults", "No results found!")}
