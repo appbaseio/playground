@@ -3407,6 +3407,7 @@ storiesOf("Range components/MultiDropdownRange", module)
 		withReadme(removeFirstLine(MultiDropdownRangeReadme), () => (
 			<MultiDropdownRangeRSDefault
 				title={text("title", "MultiDropdownRange: Books Filter")}
+				dataField={text("dataField", "average_rating")}
 				defaultSelected={array("defaultSelected", ["Rating 3 to 4"])}
 				placeholder={text("placeholder", "Search books")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
