@@ -1427,6 +1427,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
 	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			title={text("title", "DynamicRangeSlider: Books")}
+			dataField={text("dataField", "books_count")}
 			defaultSelected={object("defaultSelected", {
 				start: 3,
 				end: 4
