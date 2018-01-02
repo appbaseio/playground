@@ -2701,7 +2701,7 @@ storiesOf("List components/MultiList", module)
 				showSearch={boolean("showSearch", true)}
 				showCheckbox={boolean("showCheckbox", true)}
 				placeholder={text("placeholder", "Search Books")}
-				selectAllLabel={text("selectAllLabel", "All cities")}
+				selectAllLabel={text("selectAllLabel", "All books")}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Books filter")}
