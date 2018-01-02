@@ -3029,6 +3029,7 @@ storiesOf("List components/SingleDataList", module)
 		withReadme(removeFirstLine(SingleDataListReadme), () => (
 			<SingleDataListRSDefault
 				title={text("title", "Topics")}
+				dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
 				defaultSelected={text("defaultSelected", "Social")}
 				showSearch={boolean("showSearch", true)}
 				placeholder={text("placeholder", "Search topics")}
