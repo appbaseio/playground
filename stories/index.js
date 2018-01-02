@@ -2935,6 +2935,7 @@ storiesOf("List components/MultiDropdownList", module)
 		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
 				title={text("title", "MultiDropdownList")}
+				dataField={text("dataField", "original_series.raw")}
 				size={number("size", 100)}
 				showCount={boolean("showCount", true)}
 				sortBy={select(
