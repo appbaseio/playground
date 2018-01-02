@@ -2350,6 +2350,7 @@ storiesOf("Base components/NumberBox", module)
 		withReadme(removeFirstLine(NumberBoxReadme), () => (
 			<NumberBoxRSDefault
 				title={text("title", "Books")}
+				dataField={text("dataField", "average_rating_rounded")}
 				defaultSelected={number("defaultSelected", 3)}
 				data={object("data", {
 					label: "Car Ratings",
