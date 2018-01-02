@@ -2348,7 +2348,7 @@ storiesOf("Base components/NumberBox", module)
 		"Playground",
 		withReadme(removeFirstLine(NumberBoxReadme), () => (
 			<NumberBoxRSDefault
-				title={text("title", "Number of Guests")}
+				title={text("title", "Books")}
 				defaultSelected={number("defaultSelected", 3)}
 				data={object("data", {
 					label: "Car Ratings",
