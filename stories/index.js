@@ -1427,6 +1427,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
 	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			title={text("title", "DynamicRangeSlider: Books")}
+			dataField={text("dataField", "books_count")}
 			defaultSelected={object("defaultSelected", {
 				start: 3,
 				end: 4
@@ -3473,6 +3474,7 @@ storiesOf("Base components/ToggleButton", module)
 		withReadme(removeFirstLine(ToggleButtonReadme), () => (
 			<ToggleButtonRSDefault
 				title={text("title", "ToggleButton: Topics")}
+				dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
 				multiSelect={boolean("multiSelect", true)}
 				defaultSelected={array("defaultSelected", ["Social"])}
 				showFilter={boolean("showFilter", true)}
