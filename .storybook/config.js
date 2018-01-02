@@ -6,10 +6,10 @@ setOptions({
 	name: "appbase.io",
 	url: "https://github.com/appbaseio/playground",
 	goFullScreen: false,
-	showLeftPanel: true,
-	showDownPanel: true,
+	showStoriesPanel: true,
+	showAddonPanel: true,
 	showSearchBox: false,
-	downPanelInRight: false,
+	addonPanelInRight: false,
 	sortStoriesByKind: true,
 });
 
