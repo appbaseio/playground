@@ -1522,6 +1522,7 @@ storiesOf("Base components/TagCloud", module)
 		withReadme(removeFirstLine(TagCloudReadme), () => (
 			<TagCloudDefault
 				title={text("title", "TagCloud: City Filter")}
+				dataField={text("dataField", "group.group_city.raw")}
 				size={number("size", 100)}
 				multiSelect
 				defaultSelected={array("defaultSelected", ["Auckland"])}
