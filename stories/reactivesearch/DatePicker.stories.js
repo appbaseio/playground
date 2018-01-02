@@ -13,13 +13,13 @@ export default class DatePickerRSDefault extends Component {
 		ResponsiveStory();
 	}
 
-	dateQuery(value) {
+	dateQuery(value, props) {
 		let query = null;
 		if (value) {
 			query = [
 				{
 					"range": {
-						"date_from": {
+						[props.dataField]: {
 							"lte": moment(value).format("YYYYMMDD")
 						}
 					}

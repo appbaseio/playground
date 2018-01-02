@@ -1427,7 +1427,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
 	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			title={text("title", "DynamicRangeSlider: Books")}
-			dataField={text("dataField", "books_count")}
+			dataField={select("dataField", ["books_count", "original_publication_year", "ratings_count"], "books_count")}
 			defaultSelected={object("defaultSelected", {
 				start: 3,
 				end: 4
@@ -1523,7 +1523,7 @@ storiesOf("Base components/TagCloud", module)
 		withReadme(removeFirstLine(TagCloudReadme), () => (
 			<TagCloudDefault
 				title={text("title", "TagCloud: City Filter")}
-				dataField={text("dataField", "group.group_city.raw")}
+				dataField={select("dataField", ["group.group_city.raw", "group.group_topics.topic_name_raw.raw"], "group.group_city.raw")}
 				size={number("size", 100)}
 				multiSelect
 				defaultSelected={array("defaultSelected", ["Auckland"])}
@@ -1850,7 +1850,7 @@ storiesOf("Result components/ReactiveList", module)
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
 			<ReactiveListDefault
 				title={text("title", "ReactiveList: Results")}
-				dataField={text("dataField", "original_title.raw")}
+				dataField={select("dataField", ["original_title.raw", "authors.raw", "original_series.raw"], "original_title.raw")}
 				placeholder={text("placeholder", "Select from list")}
 				// initialLoader={text("initialLoader", "Loading results..")}
 				// noResults={text("noResults", "No results found!")}
@@ -1929,6 +1929,7 @@ storiesOf("Result components/ResultCard", module)
 		withReadme(removeFirstLine(ResultCardReadme, 3), () => (
 			<ResultCardDefault
 				size={number("size", 12)}
+				dataField={select("dataField", ["original_title.raw", "authors.raw", "original_series.raw"], "original_title.raw")}
 				showResultStats={boolean("showResultStats", true)}
 				pagination={boolean("pagination", true)}
 				paginationAt={text("paginationAt", "bottom")}
@@ -1980,6 +1981,7 @@ storiesOf("Result components/ResultList", module)
 	.add("Playground", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault
 			title={text("title", "Cars result")}
+			dataField={select("dataField", ["original_title.raw", "authors.raw", "original_series.raw"], "original_title.raw")}
 			size={number("size", 5)}
 			showResultStats={boolean("showResultStats", true)}
 			pagination={boolean("pagination", true)}
@@ -2230,7 +2232,7 @@ storiesOf("Base components/TextField", module)
 		withReadme(removeFirstLine(TextFieldReadme), () => (
 			<TextFieldRSDefault
 				title={text("title", "TextField: Books Search")}
-				dataField={text("dataField", "original_title.search")}
+				dataField={select("dataField", ["original_title.search", "authors.search", "original_series.search"], "original_title.search")}
 				placeholder={text("placeholder", "Search for books...")}
 				defaultSelected={text("defaultSelected", "The Hitchhiker's Guide to the Galaxy")}
 				showFilter={boolean("showFilter", true)}
@@ -2354,7 +2356,7 @@ storiesOf("Base components/NumberBox", module)
 		withReadme(removeFirstLine(NumberBoxReadme), () => (
 			<NumberBoxRSDefault
 				title={text("title", "Books")}
-				dataField={text("dataField", "average_rating_rounded")}
+				dataField={select("dataField", ["average_rating_rounded", "books_count"], "average_rating_rounded")}
 				defaultSelected={number("defaultSelected", 3)}
 				data={object("data", {
 					label: "Car Ratings",
@@ -2519,7 +2521,7 @@ storiesOf("List components/SingleList", module)
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				title={text("title", "SingleList: Books Filter")}
-				dataField={text("dataField", "original_series.raw")}
+				dataField={select("dataField", ["original_series.raw", "authors.raw", "language_code.raw"], "original_series.raw")}
 				size={number("size", 100)}
 				sortBy={select(
 					"sortBy",
@@ -2692,7 +2694,7 @@ storiesOf("List components/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				title={text("title", "MultiList: Books Filter")}
-				dataField={text("dataField", "original_series.raw")}
+				dataField={select("dataField", ["original_series.raw", "authors.raw", "language_code.raw"], "original_series.raw")}
 				size={number("size", 10)}
 				sortBy={select(
 					"sortBy",
@@ -2803,7 +2805,7 @@ storiesOf("List components/SingleDropdownList", module)
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<SingleDropdownListRSDefault
 				title={text("title", "SingleDropdownList")}
-				dataField={text("dataField", "original_series.raw")}
+				dataField={select("dataField", ["original_series.raw", "authors.raw", "language_code.raw"], "original_series.raw")}
 				size={number("size", 100)}
 				showCount={boolean("showCount", true)}
 				sortBy={select(
@@ -2941,7 +2943,7 @@ storiesOf("List components/MultiDropdownList", module)
 		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
 				title={text("title", "MultiDropdownList")}
-				dataField={text("dataField", "original_series.raw")}
+				dataField={select("dataField", ["original_series.raw", "authors.raw", "language_code.raw"], "original_series.raw")}
 				size={number("size", 100)}
 				showCount={boolean("showCount", true)}
 				sortBy={select(
@@ -3616,7 +3618,7 @@ storiesOf("Range components/DatePicker", module)
 			<DatePickerRSDefault
 				title={text("title", "Date Picker")}
 				placeholder={text("placeholder", "Pick date")}
-				dataField={text("dataField", "date_from")}
+				dataField={select("dataField", ["date_from", "date_to"], "date_from")}
 				numberOfMonths={number("numberOfMonths", 1)}
 				queryFormat={select(
 					"queryFormat",
@@ -3754,7 +3756,7 @@ storiesOf("Range components/DateRange", module)
 		withReadme(removeFirstLine(DateRangeReadme), () => (
 			<DateRangeRSDefault
 				title={text("title", "Date Range")}
-				dataField={text("dataField", "date_from")}
+				dataField={select("dataField", ["date_from", "date_to"], "date_from")}
 				numberOfMonths={number("numberOfMonths", 2)}
 				dayPickerInputProps={object("dayPickerInputProps", {
 					clickUnselectsDay: true
@@ -3848,6 +3850,7 @@ storiesOf("Range components/RangeInput", module)
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeInputRSDefault
 				title={text("title", "RangeSlider: Ratings")}
+				dataField={select("dataField", ["books_count", "original_publication_year", "ratings_count"], "books_count")}
 				range={object("range", {
 					start: 3000,
 					end: 50000
@@ -3930,7 +3933,7 @@ storiesOf("Range components/RangeSlider", module)
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeSliderRSDefault
 				title={text("title", "RangeSlider: Prices")}
-				dataField={text("dataField", "ratings_count")}
+				dataField={select("dataField", ["books_count", "original_publication_year", "ratings_count"], "books_count")}
 				range={object("range", {
 					start: 3000,
 					end: 50000
