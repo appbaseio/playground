@@ -3754,6 +3754,7 @@ storiesOf("Range components/DateRange", module)
 		withReadme(removeFirstLine(DateRangeReadme), () => (
 			<DateRangeRSDefault
 				title={text("title", "Date Range")}
+				dataField={text("dataField", "date_from")}
 				numberOfMonths={number("numberOfMonths", 2)}
 				dayPickerInputProps={object("dayPickerInputProps", {
 					clickUnselectsDay: true
