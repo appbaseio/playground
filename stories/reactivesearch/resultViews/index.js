@@ -2,7 +2,7 @@ import React from 'react';
 
 export const booksList = (data) => ({
 	title: <div className="book-title" dangerouslySetInnerHTML={{ __html: data.original_title }} />,
-	desc: (
+	description: (
 		<div className="flex column justify-space-between">
 			<div>
 				<div>by <span className="authors-list">{data.authors}</span></div>
@@ -24,7 +24,7 @@ export const booksList = (data) => ({
 
 export const booksCard = (data) => ({
 	title: <div className="book-title-card text-center" dangerouslySetInnerHTML={{ __html: data.original_title }} />,
-	desc: (
+	description: (
 		<div className="flex column justify-space-between text-center">
 			<div>
 				<div>by <span className="authors-list">{data.authors}</span></div>
@@ -76,7 +76,7 @@ export const meetupList = (data) => ({
 	),
 	image: data.member.photo,
 	image_size: 'small',
-	desc: (
+	description: (
 		<div className="flex column">
 			<div className="meetup-location">
 				<span className="location"><i className="fas fa-map-marker-alt" /></span>

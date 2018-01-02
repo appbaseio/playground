@@ -526,7 +526,7 @@ storiesOf("Base components/DataController", module)
 // 		<SingleListMapDefault showFilter={false} showSearch defaultSelected={text("defaultSelected", "San Francisco")} placeholder="Search City" />
 // 	)))
 // 	.add("Custom Sort", withReadme(removeFirstLine(SingleListReadme), () => (
-// 		<SingleListMapDefault showFilter={false} title="SingleList: Ascending Sort" showSearch defaultSelected="London" sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} placeholder="Search City" />
+// 		<SingleListMapDefault showFilter={false} title="SingleList: Ascending Sort" showSearch defaultSelected="London" sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "asc")} placeholder="Search City" />
 // 	)))
 // 	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
 // 		<SingleListMapDefault showFilter={false} showSearch selectAllLabel={text("selectAllLabel", "All cities")} placeholder="Search City" />
@@ -538,7 +538,7 @@ storiesOf("Base components/DataController", module)
 // 		<SingleListMapDefault
 // 			title={text("title", "SingleList: City Filter")}
 // 			size={number("size", 100)}
-// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
 // 			defaultSelected={text("defaultSelected", "San Francisco")}
 // 			showCount={boolean("showCount", true)}
 // 			showSearch={boolean("showSearch", true)}
@@ -581,7 +581,7 @@ storiesOf("Base components/DataController", module)
 // 		<MultiListMapDefault showFilter={false} showSearch defaultSelected={array("defaultSelected", ["London", "Sydney"])} placeholder="Search City" />
 // 	)))
 // 	.add("Custom Sort", withReadme(removeFirstLine(MultiListReadme), () => (
-// 		<MultiListMapDefault showFilter={false} title="MultiList: Ascending Sort" showSearch defaultSelected={["London"]} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} placeholder="Search City" />
+// 		<MultiListMapDefault showFilter={false} title="MultiList: Ascending Sort" showSearch defaultSelected={["London"]} sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "asc")} placeholder="Search City" />
 // 	)))
 // 	.add("With Select All", withReadme(removeFirstLine(MultiListReadme), () => (
 // 		<MultiListMapDefault showFilter={false} showSearch selectAllLabel={text("selectAllLabel", "All cities")} placeholder="Search City" />
@@ -593,7 +593,7 @@ storiesOf("Base components/DataController", module)
 // 		<MultiListMapDefault
 // 			title={text("title", "MultiList: City Filter")}
 // 			size={number("size", 10)}
-// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
 // 			defaultSelected={array("defaultSelected", ["London", "Sydney"])}
 // 			showCount={boolean("showCount", true)}
 // 			showSearch={boolean("showSearch", true)}
@@ -622,7 +622,7 @@ storiesOf("Base components/DataController", module)
 // 		<SingleDropdownListMapDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
 // 	)))
 // 	.add("With custom sort", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<SingleDropdownListMapDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} />
+// 		<SingleDropdownListMapDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "asc")} />
 // 	)))
 // 	.add("Without count", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 // 		<SingleDropdownListMapDefault showFilter={false} showCount={boolean("showCount", false)} />
@@ -648,7 +648,7 @@ storiesOf("Base components/DataController", module)
 // 			title={text("title", "SingleDropdownList")}
 // 			size={number("size", 100)}
 // 			showCount={boolean("showCount", true)}
-// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
 // 			selectAllLabel={text("selectAllLabel", "All Cities")}
 // 			defaultSelected={text("defaultSelected", "London")}
 // 			placeholder={text("placeholder", "Select a City")}
@@ -682,7 +682,7 @@ storiesOf("Base components/DataController", module)
 // 		<MultiDropdownListMapDefault showFilter={false} showCount={boolean("showCount", false)} />
 // 	)))
 // 	.add("With custom sort", withReadme(removeFirstLine(SingleDropdownListReadme), () => (
-// 		<MultiDropdownListMapDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "asc")} />
+// 		<MultiDropdownListMapDefault showFilter={false} sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "asc")} />
 // 	)))
 // 	.add("With Select All", withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 // 		<MultiDropdownListMapDefault
@@ -708,7 +708,7 @@ storiesOf("Base components/DataController", module)
 // 			title={text("title", "MultiDropdownList")}
 // 			size={number("size", 100)}
 // 			showCount={boolean("showCount", true)}
-// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
 // 			selectAllLabel={text("selectAllLabel", "All Cities")}
 // 			defaultSelected={array("defaultSelected", ["London", "Melbourne"])}
 // 			placeholder={text("placeholder", "Select Cities")}
@@ -1339,7 +1339,7 @@ storiesOf("Base components/DataController", module)
 // 		<NestedListDefault
 // 			title={text("title", "NestedList: Car Filter")}
 // 			size={number("size", 100)}
-// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
 // 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
 // 			showCount={boolean("showCount", true)}
 // 			showSearch={boolean("showSearch", true)}
@@ -1386,7 +1386,7 @@ storiesOf("Base components/DataController", module)
 // 		<NestedMultiListDefault
 // 			title={text("title", "NestedMultiList: Car Filter")}
 // 			size={number("size", 100)}
-// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
 // 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
 // 			showCount={boolean("showCount", true)}
 // 			showSearch={boolean("showSearch", true)}
@@ -1820,7 +1820,7 @@ storiesOf("Result components/ReactiveList", module)
 		"With custom sort order",
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
 			<ReactiveListDefault
-				sortBy={select("sortBy", { asc: "asc", desc: "desc" }, "asc")}
+				sortBy={select("sortBy", { asc: "asc", description: "desc" }, "asc")}
 			/>
 		))
 	)
@@ -1863,7 +1863,7 @@ storiesOf("Result components/ReactiveList", module)
 				)}
 				pages={number("pages", 5)}
 				// stream={boolean("stream", false)}
-				sortBy={select("sortBy", { asc: "asc", desc: "desc" }, "asc")}
+				sortBy={select("sortBy", { asc: "asc", description: "desc" }, "asc")}
 			/>
 		))
 	);
@@ -2473,7 +2473,7 @@ storiesOf("List components/SingleList", module)
 				defaultSelected="London"
 				sortBy={select(
 					"sortBy",
-					{ asc: "asc", desc: "desc", count: "count" },
+					{ asc: "asc", description: "desc", count: "count" },
 					"asc"
 				)}
 				placeholder="Search Books"
@@ -2523,7 +2523,7 @@ storiesOf("List components/SingleList", module)
 				size={number("size", 100)}
 				sortBy={select(
 					"sortBy",
-					{ asc: "asc", desc: "desc", count: "count" },
+					{ asc: "asc", description: "desc", count: "count" },
 					"count"
 				)}
 				defaultSelected={text("defaultSelected", "Artemis Fowl")}
@@ -2646,7 +2646,7 @@ storiesOf("List components/MultiList", module)
 				defaultSelected={["London"]}
 				sortBy={select(
 					"sortBy",
-					{ asc: "asc", desc: "desc", count: "count" },
+					{ asc: "asc", description: "desc", count: "count" },
 					"asc"
 				)}
 				placeholder="Search Books"
@@ -2696,7 +2696,7 @@ storiesOf("List components/MultiList", module)
 				size={number("size", 10)}
 				sortBy={select(
 					"sortBy",
-					{ asc: "asc", desc: "desc", count: "count" },
+					{ asc: "asc", description: "desc", count: "count" },
 					"count"
 				)}
 				defaultSelected={array("defaultSelected", ["Harry Potter", "Artemis Fowl"])}
@@ -2755,7 +2755,7 @@ storiesOf("List components/SingleDropdownList", module)
 				showFilter={false}
 				sortBy={select(
 					"sortBy",
-					{ asc: "asc", desc: "desc", count: "count" },
+					{ asc: "asc", description: "desc", count: "count" },
 					"asc"
 				)}
 			/>
@@ -2808,7 +2808,7 @@ storiesOf("List components/SingleDropdownList", module)
 				showCount={boolean("showCount", true)}
 				sortBy={select(
 					"sortBy",
-					{ asc: "asc", desc: "desc", count: "count" },
+					{ asc: "asc", description: "desc", count: "count" },
 					"count"
 				)}
 				selectAllLabel={text("selectAllLabel", "All Books")}
@@ -2881,7 +2881,7 @@ storiesOf("List components/MultiDropdownList", module)
 				showFilter={false}
 				sortBy={select(
 					"sortBy",
-					{ asc: "asc", desc: "desc", count: "count" },
+					{ asc: "asc", description: "desc", count: "count" },
 					"asc"
 				)}
 			/>
@@ -2946,7 +2946,7 @@ storiesOf("List components/MultiDropdownList", module)
 				showCount={boolean("showCount", true)}
 				sortBy={select(
 					"sortBy",
-					{ asc: "asc", desc: "desc", count: "count" },
+					{ asc: "asc", description: "desc", count: "count" },
 					"count"
 				)}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}

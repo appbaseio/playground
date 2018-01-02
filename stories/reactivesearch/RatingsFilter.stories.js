@@ -17,7 +17,7 @@ export default class RatingsFilterDefault extends Component {
 			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
 			title: res.name,
 			rating: res.rating,
-			desc: res.brand,
+			description: res.brand,
 			url: "#"
 		};
 		return result;

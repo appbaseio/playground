@@ -40,7 +40,7 @@ export default class DateRangeRSDefault extends Component {
 		return {
 			image: res.image,
 			title: res.name,
-			desc: (
+			description: (
 				<div>
 					<div>${res.price}</div>
 					<span style={{ "backgroundImage": `url(${res.host_image})` }}></span>
