@@ -2686,6 +2686,7 @@ storiesOf("List components/MultiList", module)
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				title={text("title", "MultiList: Books Filter")}
+				dataField={text("dataField", "original_series.raw")}
 				size={number("size", 10)}
 				sortBy={select(
 					"sortBy",
