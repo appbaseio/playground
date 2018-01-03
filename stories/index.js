@@ -30,7 +30,7 @@ import MultiDropdownRangeReadme from "@appbaseio/reactive-manual/docs/v1/compone
 import RangeSliderReadme from "@appbaseio/reactive-manual/docs/v1/components/RangeSlider.md";
 import DynamicRangeSliderReadme from "@appbaseio/reactive-manual/docs/v1/search-components/DynamicRangeSlider.md";
 import TagCloudReadme from "@appbaseio/reactive-manual/docs/v1/search-components/TagCloud.md";
-// import RatingsFilterReadme from "@appbaseio/reactive-manual/docs/v1/search-components/RatingsFilter.md";
+import RatingsFilterReadme from "@appbaseio/reactive-manual/docs/v1/search-components/RatingsFilter.md";
 import CategorySearchReadme from "@appbaseio/reactive-manual/docs/v1/search-components/CategorySearch.md";
 // import MultiLevelMenuReadme from "@appbaseio/reactive-manual/docs/v1/search-components/MultiLevelMenu.md";
 import ResultCardReadme from "@appbaseio/reactive-manual/docs/v1/search-components/ResultCard.md";
@@ -78,7 +78,7 @@ import ReactiveListReadme from "@appbaseio/reactive-manual/docs/v1/components/Re
 // import NestedMultiListDefault from "./reactivesearch/NestedMultiList.stories";
 import DynamicRangeSliderDefault from "./reactivesearch/DynamicRangeSlider.stories";
 import TagCloudDefault from "./reactivesearch/TagCloud.stories";
-// import RatingsFilterDefault from "./reactivesearch/RatingsFilter.stories";
+import RatingsFilterDefault from "./reactivesearch/RatingsFilter.stories";
 import CategorySearchDefault from "./reactivesearch/CategorySearch.stories";
 // import MultiLevelMenuDefault from "./reactivesearch/MultiLevelMenu.stories";
 // import ReactiveListDefault from "./reactivesearch/ReactiveList.stories";
@@ -1535,39 +1535,36 @@ storiesOf("Base components/TagCloud", module)
 		))
 	);
 
-// storiesOf("search/RatingsFilter", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(RatingsFilterReadme), () => (
-// 		<RatingsFilterDefault showFilter={false} />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(RatingsFilterReadme), () => (
-// 		<RatingsFilterDefault title={text("title", "Ratings")} showFilter={false} />
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(RatingsFilterReadme), () => (
-// 		<RatingsFilterDefault showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Ratings filter")} />
-// 	)))
-// 	.add("With defaultSelected", withReadme(removeFirstLine(RatingsFilterReadme), () => (
-// 		<RatingsFilterDefault
-// 			defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(RatingsFilterReadme), () => (
-// 		<RatingsFilterDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(RatingsFilterReadme), () => (
-// 		<RatingsFilterDefault
-// 			title={text("title", "RatingsFilter")}
-// 			data={object("data", [{ start: 4, end: 5, label: "4 stars and up" },
-// 				{ start: 3, end: 5, label: "3 stars and up" },
-// 				{ start: 2, end: 5, label: "2 stars and up" },
-// 				{ start: 1, end: 5, label: "> 1 stars" }])}
-// 			defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "Ratings filter")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", false)}
-// 		/>
-// 	)));
+storiesOf("Range components/RatingsFilter", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(RatingsFilterReadme), () => (
+		<RatingsFilterDefault showFilter={false} />
+	)))
+	.add("With title", withReadme(removeFirstLine(RatingsFilterReadme), () => (
+		<RatingsFilterDefault title={text("title", "Ratings")} showFilter={false} />
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(RatingsFilterReadme), () => (
+		<RatingsFilterDefault
+			defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
+			showFilter={false}
+		/>
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(RatingsFilterReadme), () => (
+		<RatingsFilterDefault showFilter={false} URLParams={boolean("URLParams (not visible on storybook)", true)} />
+	)))
+	.add("Playground", withReadme(removeFirstLine(RatingsFilterReadme), () => (
+		<RatingsFilterDefault
+			title={text("title", "RatingsFilter")}
+			data={object("data", [{ start: 4, end: 5, label: "4 stars and up" },
+				{ start: 3, end: 5, label: "3 stars and up" },
+				{ start: 2, end: 5, label: "2 stars and up" },
+				{ start: 1, end: 5, label: "> 1 stars" }])}
+			defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "Ratings filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", false)}
+		/>
+	)));
 
 storiesOf("Search components/CategorySearch", module)
 	.addDecorator(withKnobs)

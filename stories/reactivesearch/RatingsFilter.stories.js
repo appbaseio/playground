@@ -18,7 +18,6 @@ export default class RatingsFilterDefault extends Component {
 			title: res.name,
 			rating: res.rating,
 			description: res.brand,
-			url: "#"
 		};
 		return result;
 	}
@@ -31,17 +30,17 @@ export default class RatingsFilterDefault extends Component {
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters componentId="RatingsSensor" />
+						<SelectedFilters />
 						<RatingsFilter
 							componentId="RatingsSensor"
-							dataField={this.props.mapping.rating}
+							dataField="rating"
 							title="RatingsFilter"
-							data={
-								[{ start: 4, end: 5, label: "4 stars and up" },
-									{ start: 3, end: 5, label: "3 stars and up" },
-									{ start: 2, end: 5, label: "2 stars and up" },
-									{ start: 1, end: 5, label: "> 1 stars" }]
-							}
+							data={[
+								{ start: 4, end: 5, label: "4 stars and up" },
+								{ start: 3, end: 5, label: "3 stars and up" },
+								{ start: 2, end: 5, label: "2 stars and up" },
+								{ start: 1, end: 5, label: "> 1 stars" }
+							]}
 							{...this.props}
 						/>
 					</div>
@@ -49,7 +48,7 @@ export default class RatingsFilterDefault extends Component {
 					<div className="col">
 						<ResultCard
 							componentId="SearchResult"
-							dataField={this.props.mapping.name}
+							dataField="name"
 							title="Results"
 							from={0}
 							size={20}
@@ -64,17 +63,3 @@ export default class RatingsFilterDefault extends Component {
 		);
 	}
 }
-
-RatingsFilterDefault.defaultProps = {
-	mapping: {
-		rating: "rating",
-		name: "name"
-	}
-};
-
-RatingsFilterDefault.propTypes = {
-	mapping: React.PropTypes.shape({
-		rating: React.PropTypes.string,
-		name: React.PropTypes.string
-	})
-};
