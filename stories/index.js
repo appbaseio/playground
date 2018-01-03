@@ -1732,6 +1732,7 @@ storiesOf("Search components/CategorySearch", module)
 				fuzziness={number("fuzziness", 1)}
 				autosuggest={boolean("autosuggest", true)}
 				highlight={boolean("highlight", false)}
+				iconPosition={select("iconPosition", ["left", "right"], "left")}
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Cars filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
@@ -2221,6 +2222,7 @@ storiesOf("Search components/DataSearch", module)
 				fuzziness={number("fuzziness", 1)}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 				showFilter={boolean("showFilter", true)}
+				iconPosition={select("iconPosition", ["left", "right"], "left")}
 				filterLabel={text("filterLabel", "Books filter")}
 				highlight={boolean("highlight", false)}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
