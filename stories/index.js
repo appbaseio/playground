@@ -1734,7 +1734,7 @@ storiesOf("Search components/CategorySearch", module)
 				highlight={boolean("highlight", false)}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
 				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Cars filter")}
+				filterLabel={text("filterLabel", "Books filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
 			/>
 		))
