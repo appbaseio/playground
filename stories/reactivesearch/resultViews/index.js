@@ -10,7 +10,7 @@ export const booksList = (data) => ({
 					<span className="stars">
 					{
 						Array(data.average_rating_rounded).fill('x')
-							.map((item, index) => <i className="fas fa-star" key={index} />)
+							.map((item, index) => <i className="fas fa-star" key={index} />) // eslint-disable-line
 					}
 					</span>
 					<span className="avg-rating">({data.average_rating} avg)</span>
@@ -32,7 +32,7 @@ export const booksCard = (data) => ({
 					<span className="stars">
 					{
 						Array(data.average_rating_rounded).fill('x')
-							.map((item, index) => <i className="fas fa-star" key={index} />)
+							.map((item, index) => <i className="fas fa-star" key={index} />) // eslint-disable-line
 					}
 					</span>
 					<span className="avg-rating">({data.average_rating} avg)</span>
@@ -56,7 +56,7 @@ export const booksReactiveList = (data) => (
 						<span className="stars">
 						{
 							Array(data.average_rating_rounded).fill('x')
-								.map((item, index) => <i className="fas fa-star" key={index} />)
+								.map((item, index) => <i className="fas fa-star" key={index} />) // eslint-disable-line
 						}
 						</span>
 						<span className="avg-rating">({data.average_rating} avg)</span>
