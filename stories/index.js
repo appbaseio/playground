@@ -2292,7 +2292,7 @@ storiesOf("Base components/TextField", module)
 		))
 	);
 
-storiesOf("Base components/NumberBox", module)
+storiesOf("Range components/NumberBox", module)
 	.addDecorator(withKnobs)
 	.add(
 		"Basic",
