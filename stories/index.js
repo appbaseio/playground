@@ -105,6 +105,7 @@ import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
 import RangeInputRSDefault from "./reactivesearch/RangeInput.stories";
 import DataControllerRSDefault from "./reactivesearch/DataController.stories";
+import ReactiveComponentStory from "./reactivesearch/ReactiveComponent.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 require("./styles.css");
@@ -181,6 +182,15 @@ storiesOf("Base components/DataController", module)
 			</DataControllerRSDefault>
 		))
 	);
+
+storiesOf("Base components/ReactiveComponent", module)
+	.addDecorator(withKnobs)
+	.add(
+		"A custom component",
+		() => (
+			<ReactiveComponentStory />
+		)
+	)
 
 // Reactivemaps components
 
