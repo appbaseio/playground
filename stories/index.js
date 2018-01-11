@@ -1412,11 +1412,24 @@ storiesOf("Range components/DynamicRangeSlider", module)
 	.add("Basic", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault />
 	)))
-	.add("With Title", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault title={text("title", "Books")} />
+	.add("With title", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault
+			title={text("title", "Books")}
+		/>
+	)))
+	.add("With labels", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault
+			title={text("title", "Books")}
+			rangeLabels={(min, max) => ({
+				"start": min + " book",
+				"end": max + " books"
+			})}
+		/>
 	)))
 	.add("With custom stepValue", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault stepValue={number("stepValue", 1)} />
+		<DynamicRangeSliderDefault
+			stepValue={number("stepValue", 1)}
+		/>
 	)))
 	.add("Without histogram", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
@@ -1425,22 +1438,24 @@ storiesOf("Range components/DynamicRangeSlider", module)
 	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
-			defaultSelected={object("defaultSelected", {
-				start: 3,
-				end: 4
+			defaultSelected={() => ({
+				start: 500,
+				end: 2000
 			})}
 		/>
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault URLParams={boolean("URLParams (not visible on storybook)", true)} />
+		<DynamicRangeSliderDefault
+			URLParams={boolean("URLParams (not visible on storybook)", true)}
+		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			title={text("title", "DynamicRangeSlider: Books")}
 			dataField={select("dataField", ["books_count", "original_publication_year", "ratings_count"], "books_count")}
-			defaultSelected={object("defaultSelected", {
-				start: 3,
-				end: 4
+			defaultSelected={(min, max) => ({
+				start: min,
+				end: max
 			})}
 			stepValue={number("stepValue", 1)}
 			showHistogram={boolean("showHistogram", true)}
