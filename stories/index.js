@@ -206,7 +206,7 @@ storiesOf("Base components/ReactiveComponent", module)
 // 			showFilter={false}
 // 		/>
 // 	)))
-// 	.add("With Title", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
+// 	.add("With title", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
 // 		<GeoDistanceSliderDefault
 // 			defaultSelected={{
 // 				distance: 50
@@ -343,7 +343,7 @@ storiesOf("Base components/ReactiveComponent", module)
 // 			showFilter={false}
 // 		/>
 // 	)))
-// 	.add("With Title", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+// 	.add("With title", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 // 		<GeoDistanceDropdownDefault
 // 			unit="mi"
 // 			data={
@@ -466,7 +466,7 @@ storiesOf("Base components/ReactiveComponent", module)
 // 	.add("Basic", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 // 		<ReactiveMapDefault />
 // 	)))
-// 	.add("With Title", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+// 	.add("With title", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 // 		<ReactiveMapDefault
 // 			title={text("title", "Reactive maps")}
 // 		/>
@@ -1321,7 +1321,7 @@ storiesOf("Base components/ReactiveComponent", module)
 // 			showFilter={false}
 // 		/>
 // 	)))
-// 	.add("With Title", withReadme(removeFirstLine(NestedListReadme), () => (
+// 	.add("With title", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title={text("title", "Car Category")}
 // 			showFilter={false}
@@ -1368,7 +1368,7 @@ storiesOf("Base components/ReactiveComponent", module)
 // 			showFilter={false}
 // 		/>
 // 	)))
-// 	.add("With Title", withReadme(removeFirstLine(NestedMultiListReadme), () => (
+// 	.add("With title", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title={text("title", "Car Category")}
 // 			showFilter={false}
