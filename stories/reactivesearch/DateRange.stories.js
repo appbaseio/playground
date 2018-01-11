@@ -8,7 +8,7 @@ import {
 } from "@appbaseio/reactivesearch";
 import ResponsiveStory from "./ResponsiveStory";
 
-export default class DateRangeRSDefault extends Component {
+export default class DateRangeDefault extends Component {
 	componentDidMount() {
 		ResponsiveStory();
 	}
