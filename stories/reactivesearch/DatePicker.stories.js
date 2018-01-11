@@ -8,7 +8,7 @@ import {
 } from "@appbaseio/reactivesearch";
 import ResponsiveStory from "./ResponsiveStory";
 
-export default class DatePickerRSDefault extends Component {
+export default class DatePickerDefault extends Component {
 	componentDidMount() {
 		ResponsiveStory();
 	}
