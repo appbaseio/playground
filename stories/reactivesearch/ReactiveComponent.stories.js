@@ -9,7 +9,7 @@ import {
 	SelectedFilters,
 } from '@appbaseio/reactivesearch';
 
-class Main extends Component {
+export default class ReactiveComponentDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
@@ -90,5 +90,3 @@ class CustomComponent extends Component {
 		return null;
 	}
 }
-
-export default Main;

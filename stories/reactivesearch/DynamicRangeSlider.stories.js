@@ -7,7 +7,7 @@ import {
 
 import { booksList } from "./resultViews";
 
-export default class DynamicRangeSliderRSDefault extends Component {
+export default class DynamicRangeSliderDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
