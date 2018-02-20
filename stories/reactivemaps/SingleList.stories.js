@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	SingleList,
-	ReactiveMap,
 	SelectedFilters
-} from "@appbaseio/reactivemaps";
+} from "@appbaseio/reactivesearch";
+import { ReactiveMap } from "@appbaseio/reactivemaps";
 import ResponsiveStory from "../reactivesearch/ResponsiveStory";
 
 import { Img } from "./Img.js";
@@ -61,17 +61,13 @@ export default class SingleListMapDefault extends Component {
 
 					<div className="col">
 						<ReactiveMap
+							componentId="map"
 							dataField={this.props.mapping.location}
-							historicalData
-							setMarkerCluster={false}
 							defaultMapStyle="Light Monochrome"
 							autoCenter
-							searchAsMoveComponent
-							MapStylesComponent
 							title="Reactive Maps"
 							showPopoverOn="click"
 							historicPin={historyPin}
-							onPopoverTrigger={this.onPopoverTrigger}
 							defaultZoom={13}
 							defaultCenter={{ lat: 37.74, lon: -122.45 }}
 							react={{
