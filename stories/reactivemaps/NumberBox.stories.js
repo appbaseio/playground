@@ -72,7 +72,7 @@ export default class NumberBoxMapDefault extends Component {
 							historicPin={historyPin}
 							onPopoverTrigger={this.onPopoverTrigger}
 							defaultZoom={5}
-							defaultCenter={{ lat: 37.74, lon: -122.45 }}
+							defaultCenter={{ lat: 37.74, lng: -122.45 }}
 							react={{
 								and: "GuestsSensor"
 							}}

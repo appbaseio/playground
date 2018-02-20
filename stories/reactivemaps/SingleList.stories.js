@@ -64,12 +64,11 @@ export default class SingleListMapDefault extends Component {
 							componentId="map"
 							dataField={this.props.mapping.location}
 							defaultMapStyle="Light Monochrome"
-							autoCenter
 							title="Reactive Maps"
 							showPopoverOn="click"
 							historicPin={historyPin}
 							defaultZoom={13}
-							defaultCenter={{ lat: 37.74, lon: -122.45 }}
+							defaultCenter={{ lat: 37.74, lng: -122.45 }}
 							react={{
 								and: ["CitySensor"]
 							}}
