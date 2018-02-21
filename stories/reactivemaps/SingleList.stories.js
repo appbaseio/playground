@@ -66,7 +66,7 @@ export default class SingleListMapDefault extends Component {
 							defaultMapStyle="Light Monochrome"
 							title="Reactive Maps"
 							showPopoverOn="click"
-							historicPin={historyPin}
+							mapPin={historyPin}
 							defaultZoom={13}
 							defaultCenter={{ lat: 37.74, lng: -122.45 }}
 							react={{
