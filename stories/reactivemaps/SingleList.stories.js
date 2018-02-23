@@ -67,7 +67,7 @@ export default class SingleListMapDefault extends Component {
 							title="Reactive Maps"
 							showPopoverOn="click"
 							mapPin={historyPin}
-							defaultZoom={8}
+							defaultZoom={4}
 							defaultCenter={{ lat: 37.74, lng: -122.45 }}
 							react={{
 								and: ["PlaceSensor"]
