@@ -512,51 +512,51 @@ storiesOf("Base components/ReactiveComponent", module)
 storiesOf("Map Components/SingleList", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} showSearch placeholder="Search City" />
+		<SingleListMapDefault showFilter={false} showSearch placeholder="Search Places" />
 	)))
 	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search City" showFilter={false} title={text("title", "Cities")} />
+		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} title={text("title", "Places")} />
 	)))
 	.add("With size", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search City" showFilter={false} size={number("size", 10)} />
+		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} size={number("size", 10)} />
 	)))
 	.add("With filter", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search City" showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "City filter")} />
+		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Places filter")} />
 	)))
 	.add("Without count", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search City" showFilter={false} showCount={boolean("showCount", false)} />
+		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} showCount={boolean("showCount", false)} />
 	)))
 	.add("Without Search", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} showSearch={boolean("showSearch", false)} placeholder="Search City" />
+		<SingleListMapDefault showFilter={false} showSearch={boolean("showSearch", false)} placeholder="Search Places" />
 	)))
 	.add("Wihout radio buttons", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search City" showFilter={false} showRadio={boolean("showRadio", false)} />
+		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} showRadio={boolean("showRadio", false)} />
 	)))
 	.add("Default Selected", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} showSearch defaultSelected={text("defaultSelected", "San Francisco")} placeholder="Search City" />
+		<SingleListMapDefault showFilter={false} showSearch defaultSelected={text("defaultSelected", "San Francisco")} placeholder="Search Places" />
 	)))
 	.add("Custom Sort", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} title="SingleList: Ascending Sort" showSearch defaultSelected="London" sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "asc")} placeholder="Search City" />
+		<SingleListMapDefault showFilter={false} title="SingleList: Ascending Sort" showSearch defaultSelected="London" sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "asc")} placeholder="Search Places" />
 	)))
 	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} showSearch selectAllLabel={text("selectAllLabel", "All cities")} placeholder="Search City" />
+		<SingleListMapDefault showFilter={false} showSearch selectAllLabel={text("selectAllLabel", "All cities")} placeholder="Search Places" />
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} showSearch placeholder="Search City" URLParams={boolean("URLParams (not visible in storybook)", true)} />
+		<SingleListMapDefault showFilter={false} showSearch placeholder="Search Places" URLParams={boolean("URLParams (not visible in storybook)", true)} />
 	)))
 	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
 		<SingleListMapDefault
-			title={text("title", "SingleList: City Filter")}
+			title={text("title", "SingleList: Places Filter")}
 			size={number("size", 100)}
 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
 			defaultSelected={text("defaultSelected", "San Francisco")}
 			showCount={boolean("showCount", true)}
 			showSearch={boolean("showSearch", true)}
-			placeholder={text("placeholder", "Search City")}
+			placeholder={text("placeholder", "Search Places")}
 			selectAllLabel={text("selectAllLabel", "All cities")}
 			showRadio={boolean("showRadio", true)}
 			showFilter={boolean("showFilter", true)}
-			filterLabel={text("filterLabel", "City filter")}
+			filterLabel={text("filterLabel", "Places filter")}
 			URLParams={boolean("URLParams (not visible in storybook)", false)}
 		/>
 	)));

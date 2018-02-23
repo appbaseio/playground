@@ -43,16 +43,16 @@ export default class SingleListMapDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="reactivemap-demo"
-				credentials="qMzzgez0t:a9138c3f-f246-4cd8-ba3d-0b99f9550c05"
-				type="meetupdata1"
+				app="earthquake"
+				credentials="OrXIHcgHn:d539c6e7-ed14-4407-8214-c227b0600d8e"
+				type="places"
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters componentId="CitySensor" />
+						<SelectedFilters />
 						<SingleList
-							componentId="CitySensor"
-							dataField={this.props.mapping.city}
+							componentId="PlaceSensor"
+							dataField="place.raw"
 							title="SingleList"
 							size={100}
 							{...this.props}
@@ -62,15 +62,15 @@ export default class SingleListMapDefault extends Component {
 					<div className="col">
 						<ReactiveMap
 							componentId="map"
-							dataField={this.props.mapping.location}
+							dataField="location"
 							defaultMapStyle="Light Monochrome"
 							title="Reactive Maps"
 							showPopoverOn="click"
 							mapPin={historyPin}
-							defaultZoom={13}
+							defaultZoom={8}
 							defaultCenter={{ lat: 37.74, lng: -122.45 }}
 							react={{
-								and: ["CitySensor"]
+								and: ["PlaceSensor"]
 							}}
 						/>
 					</div>
@@ -80,9 +80,3 @@ export default class SingleListMapDefault extends Component {
 	}
 }
 
-SingleListMapDefault.defaultProps = {
-	mapping: {
-		city: "group.group_city.raw",
-		location: "location"
-	}
-};
