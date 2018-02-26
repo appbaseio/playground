@@ -1585,7 +1585,6 @@ storiesOf("Range components/RatingsFilter", module)
 				{ start: 2, end: 5, label: "2 stars and up" },
 				{ start: 1, end: 5, label: "> 1 stars" }])}
 			defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
-			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "Ratings filter")}
 			URLParams={boolean("URLParams (not visible on storybook)", false)}
 		/>
