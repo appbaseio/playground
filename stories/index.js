@@ -51,7 +51,7 @@ import GeoDistanceDropdownReadme from "@appbaseio/reactive-manual/docs/v1/map-co
 // import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components/ReactiveMap.md";
 
 // import reactivemaps components
-// import GeoDistanceSliderDefault from "./reactivemaps/GeoDistanceSlider.stories";
+import GeoDistanceSliderDefault from "./reactivemaps/GeoDistanceSlider.stories";
 import GeoDistanceDropdownDefault from "./reactivemaps/GeoDistanceDropdown.stories";
 // import PlacesSearchDefault from "./reactivemaps/PlacesSearch.stories";
 // import ReactiveMapDefault from "./reactivemaps/ReactiveMap.stories";
@@ -194,139 +194,139 @@ storiesOf("Base components/ReactiveComponent", module)
 
 // Reactivemaps components
 
-// storiesOf("map/GeoDistanceSlider", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
-// 		<GeoDistanceSliderDefault
-// 			defaultSelected={{
-// 				distance: 50
-// 			}}
-// 			unit="mi"
-// 			placeholder="Search Location"
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
-// 		<GeoDistanceSliderDefault
-// 			defaultSelected={{
-// 				distance: 50
-// 			}}
-// 			unit="mi"
-// 			title={text("title", "Geo Distance Slider")}
-// 			placeholder="Search Location"
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With placeholder", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
-// 		<GeoDistanceSliderDefault
-// 			defaultSelected={{
-// 				distance: 50
-// 			}}
-// 			unit="mi"
-// 			placeholder={text("placeholder", "Search Location")}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
-// 		<GeoDistanceSliderDefault
-// 			defaultSelected={{
-// 				distance: 50
-// 			}}
-// 			unit="mi"
-// 			placeholder="Search Location"
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "GeoDistance filter")}
-// 		/>
-// 	)))
-// 	.add("With Range Labels", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
-// 		<GeoDistanceSliderDefault
-// 			defaultSelected={{
-// 				distance: 50
-// 			}}
-// 			unit="mi"
-// 			title="Geo Distance Search"
-// 			placeholder="Search Location"
-// 			rangeLabels={{
-// 				start: "Start",
-// 				end: "End"
-// 			}}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With defaultSelected", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
-// 		<GeoDistanceSliderDefault
-// 			defaultSelected={object("defaultSelected", {
-// 				location: "London",
-// 				distance: 5
-// 			})}
-// 			unit="mi"
-// 			title="Geo Distance Search"
-// 			placeholder="Search Location"
-// 			rangeLabels={{
-// 				start: "Start",
-// 				end: "End"
-// 			}}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With stepValue", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
-// 		<GeoDistanceSliderDefault
-// 			defaultSelected={{
-// 				distance: 50
-// 			}}
-// 			unit="mi"
-// 			placeholder="Search Location"
-// 			showFilter={false}
-// 			stepValue={number("stepValue", 1)}
-// 		/>
-// 	)))
-// 	.add("With autoLocation off", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
-// 		<GeoDistanceSliderDefault
-// 			defaultSelected={{
-// 				distance: 50
-// 			}}
-// 			unit="mi"
-// 			title={text("title", "Geo Distance Slider")}
-// 			placeholder="Search Location"
-// 			showFilter={false}
-// 			autoLocation={boolean("autoLocation", false)}
-// 		/>
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
-// 		<GeoDistanceSliderDefault
-// 			defaultSelected={{
-// 				distance: 50
-// 			}}
-// 			unit="mi"
-// 			placeholder="Search Location"
-// 			showFilter={false}
-// 			URLParams={boolean("URLParams (not visible on storybook)", true)}
-// 		/>
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(GeoDistanceSliderReadme), () => (
-// 		<GeoDistanceSliderDefault
-// 			defaultSelected={object("defaultSelected", {
-// 				location: "London",
-// 				distance: 5
-// 			})}
-// 			stepValue={number("stepValue", 1)}
-// 			unit={text("unit", "mi")}
-// 			title={text("title", "Geo Distance Slider")}
-// 			placeholder={text("placeholder", "Search Location")}
-// 			range={object("range", {
-// 				start: 0,
-// 				end: 50
-// 			})}
-// 			rangeLabels={object("rangeLabels", {
-// 				start: "Start",
-// 				end: "End"
-// 			})}
-// 			autoLocation={boolean("autoLocation", true)}
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "GeoDistance filter")}
-// 			URLParams={boolean("URLParams (not visible on storybook)", true)}
-// 		/>
-// 	)));
+storiesOf("Map Components/GeoDistanceSlider", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			placeholder="Search Location"
+			showFilter={false}
+		/>
+	)))
+	.add("With title", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			title={text("title", "Geo Distance Slider")}
+			placeholder="Search Location"
+			showFilter={false}
+		/>
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			placeholder={text("placeholder", "Search Location")}
+			showFilter={false}
+		/>
+	)))
+	.add("With filter", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			placeholder="Search Location"
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "GeoDistance filter")}
+		/>
+	)))
+	.add("With Range Labels", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			title="Geo Distance Search"
+			placeholder="Search Location"
+			rangeLabels={{
+				start: "Start",
+				end: "End"
+			}}
+			showFilter={false}
+		/>
+	)))
+	.add("With defaultSelected", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={object("defaultSelected", {
+				location: "London",
+				distance: 5
+			})}
+			unit="mi"
+			title="Geo Distance Search"
+			placeholder="Search Location"
+			rangeLabels={{
+				start: "Start",
+				end: "End"
+			}}
+			showFilter={false}
+		/>
+	)))
+	.add("With stepValue", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			placeholder="Search Location"
+			showFilter={false}
+			stepValue={number("stepValue", 1)}
+		/>
+	)))
+	.add("With autoLocation off", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			title={text("title", "Geo Distance Slider")}
+			placeholder="Search Location"
+			showFilter={false}
+			autoLocation={boolean("autoLocation", false)}
+		/>
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			unit="mi"
+			placeholder="Search Location"
+			showFilter={false}
+			URLParams={boolean("URLParams (not visible on storybook)", true)}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={object("defaultSelected", {
+				location: "London",
+				distance: 5
+			})}
+			stepValue={number("stepValue", 1)}
+			unit={text("unit", "mi")}
+			title={text("title", "Geo Distance Slider")}
+			placeholder={text("placeholder", "Search Location")}
+			range={object("range", {
+				start: 0,
+				end: 50
+			})}
+			rangeLabels={object("rangeLabels", {
+				start: "Start",
+				end: "End"
+			})}
+			autoLocation={boolean("autoLocation", true)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "GeoDistance filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", true)}
+		/>
+	)));
 
 storiesOf("Map Components/GeoDistanceDropdown", module)
 	.addDecorator(withKnobs)
