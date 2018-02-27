@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import {
 	ReactiveBase,
+	SelectedFilters,
+} from '@appbaseio/reactivesearch';
+import {
 	ReactiveMap,
 	GeoDistanceDropdown,
-	SelectedFilters
 } from "@appbaseio/reactivemaps";
-import ResponsiveStory from "../reactivesearch/ResponsiveStory";
 
 import { Img } from "./Img.js";
 const historyPin = require("./placeholder.svg");
@@ -13,11 +14,7 @@ const historyPin = require("./placeholder.svg");
 export default class GeoDistanceDropdownDefault extends Component {
 	constructor(props) {
 		super(props);
-		this.onPopoverTrigger = this.onPopoverTrigger.bind(this);
-	}
-
-	componentDidMount() {
-		ResponsiveStory();
+		// this.onPopoverTrigger = this.onPopoverTrigger.bind(this);
 	}
 
 	onPopoverTrigger(marker) {
@@ -46,31 +43,26 @@ export default class GeoDistanceDropdownDefault extends Component {
 				app="reactivemap_demo"
 				credentials="y4pVxY2Ok:c92481e2-c07f-4473-8326-082919282c18"
 				type="meetupdata1"
-				theme="rbc-blue"
+				mapKey="AIzaSyBQdVcKCe0q_vOBDUvJYpzwGpt_d_uTj4Q"
 			>
 				<div className="row">
-
 					<div className="col">
 						<SelectedFilters componentId="GeoDistanceDropdown" />
 						<GeoDistanceDropdown
 							componentId="GeoDistanceDropdown"
-							dataField={this.props.mapping.location}
+							dataField="location"
 							{...this.props}
 						/>
 					</div>
 					<div className="col">
 						<ReactiveMap
-							dataField={this.props.mapping.location}
-							historicalData
-							setMarkerCluster={false}
+							componentId="map"
+							dataField="location"
 							defaultMapStyle="Light Monochrome"
-							autoCenter
-							searchAsMoveComponent
-							MapStylesComponent
+							autoCenter={false}
 							title="Reactive Maps"
-							showPopoverOn="click"
-							historicPin={historyPin}
-							onPopoverTrigger={this.onPopoverTrigger}
+							mapPin={historyPin}
+							// onPopoverTrigger={this.onPopoverTrigger}
 							defaultZoom={13}
 							defaultCenter={{ lat: 37.74, lng: -122.45 }}
 							react={{
@@ -83,9 +75,3 @@ export default class GeoDistanceDropdownDefault extends Component {
 		);
 	}
 }
-
-GeoDistanceDropdownDefault.defaultProps = {
-	mapping: {
-		location: "location"
-	}
-};

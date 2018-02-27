@@ -46,13 +46,13 @@ import DataControllerReadme from "@appbaseio/reactive-manual/docs/v1/components/
 // import ReactiveElementReadme from "@appbaseio/reactive-manual/docs/v1/components/ReactiveElement.md";
 import ReactiveListReadme from "@appbaseio/reactive-manual/docs/v1/components/ReactiveList.md";
 // import GeoDistanceSliderReadme from "@appbaseio/reactive-manual/docs/v1/map-components/GeoDistanceSlider.md";
-// import GeoDistanceDropdownReadme from "@appbaseio/reactive-manual/docs/v1/map-components/GeoDistanceDropdown.md";
+import GeoDistanceDropdownReadme from "@appbaseio/reactive-manual/docs/v1/map-components/GeoDistanceDropdown.md";
 // import PlacesSearchReadme from "@appbaseio/reactive-manual/docs/v1/map-components/PlacesSearch.md";
 // import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components/ReactiveMap.md";
 
 // import reactivemaps components
 // import GeoDistanceSliderDefault from "./reactivemaps/GeoDistanceSlider.stories";
-// import GeoDistanceDropdownDefault from "./reactivemaps/GeoDistanceDropdown.stories";
+import GeoDistanceDropdownDefault from "./reactivemaps/GeoDistanceDropdown.stories";
 // import PlacesSearchDefault from "./reactivemaps/PlacesSearch.stories";
 // import ReactiveMapDefault from "./reactivemaps/ReactiveMap.stories";
 
@@ -328,132 +328,132 @@ storiesOf("Base components/ReactiveComponent", module)
 // 		/>
 // 	)));
 
-// storiesOf("map/GeoDistanceDropdown", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-// 		<GeoDistanceDropdownDefault
-// 			unit="mi"
-// 			data={
-// 				[{ start: 1, end: 100, label: "Less than 100 miles" },
-// 				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
-// 				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
-// 				{ start: 501, end: 1000, label: "Above 500 miles" }]
-// 			}
-// 			placeholder="Search Location"
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-// 		<GeoDistanceDropdownDefault
-// 			unit="mi"
-// 			data={
-// 				[{ start: 1, end: 100, label: "Less than 100 miles" },
-// 				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
-// 				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
-// 				{ start: 501, end: 1000, label: "Above 500 miles" }]
-// 			}
-// 			title={text("title", "Geo Distance Slider")}
-// 			placeholder="Search Location"
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With placeholder", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-// 		<GeoDistanceDropdownDefault
-// 			unit="mi"
-// 			data={
-// 				[{ start: 1, end: 100, label: "Less than 100 miles" },
-// 				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
-// 				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
-// 				{ start: 501, end: 1000, label: "Above 500 miles" }]
-// 			}
-// 			placeholder={text("placeholder", "Search Location")}
-// 			placeholderDropdown={text("placeholderDropdown", "Select radius")}
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("With filter", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-// 		<GeoDistanceDropdownDefault
-// 			unit="mi"
-// 			data={
-// 				[{ start: 1, end: 100, label: "Less than 100 miles" },
-// 				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
-// 				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
-// 				{ start: 501, end: 1000, label: "Above 500 miles" }]
-// 			}
-// 			placeholder="Search Location"
-// 			showFilter={boolean("showFilter", true)}
-// 			filterLabel={text("filterLabel", "GeoDistance filter")}
-// 		/>
-// 	)))
-// 	.add("With Default Selected", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-// 		<GeoDistanceDropdownDefault
-// 			unit="mi"
-// 			data={
-// 				[{ start: 1, end: 100, label: "Less than 100 miles" },
-// 				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
-// 				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
-// 				{ start: 501, end: 1000, label: "Above 500 miles" }]
-// 			}
-// 			defaultSelected={object("defaultSelected", {
-// 				label: "Less than 100 miles",
-// 				location: "London"
-// 			})}
-// 			title="Geo Distance Search"
-// 			placeholder="Search Location"
-// 			showFilter={false}
-// 		/>
-// 	)))
-// 	.add("Without autoLocation", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-// 		<GeoDistanceDropdownDefault
-// 			unit="mi"
-// 			data={
-// 				[{ start: 1, end: 100, label: "Less than 100 miles" },
-// 				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
-// 				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
-// 				{ start: 501, end: 1000, label: "Above 500 miles" }]
-// 			}
-// 			placeholder="Search Location"
-// 			showFilter={false}
-// 			autoLocation={boolean("autoLocation", false)}
-// 		/>
-// 	)))
-// 	.add("With URLParams", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-// 		<GeoDistanceDropdownDefault
-// 			unit="mi"
-// 			data={
-// 				[{ start: 1, end: 100, label: "Less than 100 miles" },
-// 				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
-// 				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
-// 				{ start: 501, end: 1000, label: "Above 500 miles" }]
-// 			}
-// 			placeholder="Search Location"
-// 			showFilter={false}
-// 			URLParams={boolean("URLParams (not visible in storybook)", true)}
-// 		/>
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-// 		<GeoDistanceDropdownDefault
-// 			data={
-// 				[{ start: 1, end: 100, label: "Less than 100 miles" },
-// 				{ start: 101, end: 200, label: "Between 100 and 200 miles" },
-// 				{ start: 201, end: 500, label: "Between 200 and 500 miles" },
-// 				{ start: 501, end: 1000, label: "Above 500 miles" }]
-// 			}
-// 			unit={select("unit", { mi: "mi", miles: "miles", yd: "yd", yards: "yards", ft: "ft", feet: "feet", in: "in", inch: "inch", km: "km", kilometers: "kilometers", m: "m", meters: "meters", cm: "cm", centimeters: "centimeters", mm: "mm", millimeters: "millimeters", NM: "NM", nmi: "nmi", nauticalmiles: "nauticalmiles" }, "mi")}
-// 				title={text("title", "Geo Distance Slider")}
-// 				defaultSelected={object("defaultSelected", {
-// 					label: "Less than 100 miles",
-// 					location: "London"
-// 				})}
-// 				placeholder={text("placeholder", "Search Location")}
-// 				title={text("title", "Geo Distance Slider")}
-// 				placeholderDropdown={text("placeholderDropdown", "Select radius")}
-// 				autoLocation={boolean("autoLocation", true)}
-// 				showFilter={boolean("showFilter", true)}
-// 				filterLabel={text("filterLabel", "GeoDistance filter")}
-// 				URLParams={boolean("URLParams (not visible in storybook)", true)}
-// 		/>
-// 	)));
+storiesOf("Map Components/GeoDistanceDropdown", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+				[{ distance: 100, label: "Under 100 miles" },
+				{ distance: 200, label: "Under 200 miles" },
+				{ distance: 500, label: "Under 500 miles" },
+				{ distance: 1000, label: "Under 1000 miles" }]
+			}
+			placeholder="Search Location"
+			showFilter={false}
+		/>
+	)))
+	.add("With title", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+				[{ distance: 100, label: "Under 100 miles" },
+				{ distance: 200, label: "Under 200 miles" },
+				{ distance: 500, label: "Under 500 miles" },
+				{ distance: 1000, label: "Under 1000 miles" }]
+			}
+			title={text("title", "Geo Distance Slider")}
+			placeholder="Search Location"
+			showFilter={false}
+		/>
+	)))
+	.add("With placeholder", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+				[{ distance: 100, label: "Under 100 miles" },
+				{ distance: 200, label: "Under 200 miles" },
+				{ distance: 500, label: "Under 500 miles" },
+				{ distance: 1000, label: "Under 1000 miles" }]
+			}
+			placeholder={text("placeholder", "Search Location")}
+			placeholderDropdown={text("placeholderDropdown", "Select radius")}
+			showFilter={false}
+		/>
+	)))
+	.add("With filter", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+				[{ distance: 100, label: "Under 100 miles" },
+				{ distance: 200, label: "Under 200 miles" },
+				{ distance: 500, label: "Under 500 miles" },
+				{ distance: 1000, label: "Under 1000 miles" }]
+			}
+			placeholder="Search Location"
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "GeoDistance filter")}
+		/>
+	)))
+	.add("With Default Selected", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+				[{ distance: 100, label: "Under 100 miles" },
+				{ distance: 200, label: "Under 200 miles" },
+				{ distance: 500, label: "Under 500 miles" },
+				{ distance: 1000, label: "Under 1000 miles" }]
+			}
+			defaultSelected={object("defaultSelected", {
+				label: "Under 100 miles",
+				location: "London"
+			})}
+			title="Geo Distance Search"
+			placeholder="Search Location"
+			showFilter={false}
+		/>
+	)))
+	.add("Without autoLocation", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+				[{ distance: 100, label: "Under 100 miles" },
+				{ distance: 200, label: "Under 200 miles" },
+				{ distance: 500, label: "Under 500 miles" },
+				{ distance: 1000, label: "Under 1000 miles" }]
+			}
+			placeholder="Search Location"
+			showFilter={false}
+			autoLocation={boolean("autoLocation", false)}
+		/>
+	)))
+	.add("With URLParams", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+				[{ distance: 100, label: "Under 100 miles" },
+				{ distance: 200, label: "Under 200 miles" },
+				{ distance: 500, label: "Under 500 miles" },
+				{ distance: 1000, label: "Under 1000 miles" }]
+			}
+			placeholder="Search Location"
+			showFilter={false}
+			URLParams={boolean("URLParams (not visible in storybook)", true)}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			data={
+				[{ distance: 100, label: "Under 100 miles" },
+				{ distance: 200, label: "Under 200 miles" },
+				{ distance: 500, label: "Under 500 miles" },
+				{ distance: 1000, label: "Under 1000 miles" }]
+			}
+			unit={select("unit", { mi: "mi", miles: "miles", yd: "yd", yards: "yards", ft: "ft", feet: "feet", in: "in", inch: "inch", km: "km", kilometers: "kilometers", m: "m", meters: "meters", cm: "cm", centimeters: "centimeters", mm: "mm", millimeters: "millimeters", NM: "NM", nmi: "nmi", nauticalmiles: "nauticalmiles" }, "mi")}
+				title={text("title", "Geo Distance Slider")}
+				defaultSelected={object("defaultSelected", {
+					label: "Under 100 miles",
+					location: "London"
+				})}
+				placeholder={text("placeholder", "Search Location")}
+				title={text("title", "Geo Distance Slider")}
+				placeholderDropdown={text("placeholderDropdown", "Select radius")}
+				autoLocation={boolean("autoLocation", true)}
+				showFilter={boolean("showFilter", true)}
+				filterLabel={text("filterLabel", "GeoDistance filter")}
+				URLParams={boolean("URLParams (not visible in storybook)", true)}
+		/>
+	)));
 
 // storiesOf("map/PlacesSearch", module)
 // 	.addDecorator(withKnobs)
