@@ -269,17 +269,6 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 			showFilter={false}
 		/>
 	)))
-	.add("With stepValue", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
-			defaultSelected={{
-				distance: 50
-			}}
-			unit="mi"
-			placeholder="Search Location"
-			showFilter={false}
-			stepValue={number("stepValue", 1)}
-		/>
-	)))
 	.add("With autoLocation off", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceSliderDefault
 			defaultSelected={{
@@ -309,7 +298,6 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 				location: "London",
 				distance: 5
 			})}
-			stepValue={number("stepValue", 1)}
 			unit={text("unit", "mi")}
 			title={text("title", "Geo Distance Slider")}
 			placeholder={text("placeholder", "Search Location")}
