@@ -3,10 +3,9 @@ import {
 	ReactiveBase,
 	DataSearch,
 	SingleList,
-	ReactiveMap,
-	PlacesSearch
-} from "@appbaseio/reactivemaps";
-import ResponsiveStory from "../reactivesearch/ResponsiveStory";
+} from "@appbaseio/reactivesearch";
+
+import { ReactiveMap } from '@appbaseio/reactivemaps';
 
 import { Img } from "./Img.js";
 const historyPin = require("./placeholder.svg");
@@ -15,10 +14,6 @@ export default class ReactiveMapDefault extends Component {
 	constructor(props) {
 		super(props);
 		this.onPopoverTrigger = this.onPopoverTrigger.bind(this);
-	}
-
-	componentDidMount() {
-		ResponsiveStory();
 	}
 
 	onPopoverTrigger(marker) {
@@ -51,15 +46,30 @@ export default class ReactiveMapDefault extends Component {
 			>
 				<div className="row reverse-labels">
 					<div className="col">
+						<div>
+							<DataSearch
+								dataField={this.props.mapping.venue}
+								componentId="VenueSensor"
+								placeholder="Search Venue"
+								title="Search Venue"
+							/>
+						</div>
+						<br/>
+						<div>
+							<SingleList
+								componentId="CitySensor"
+								dataField={this.props.mapping.city}
+								showCount
+								size={10}
+								title="Input Filter"
+							/>
+						</div>
+					</div>
+					<div className="col">
 						<ReactiveMap
 							dataField={this.props.mapping.location}
-							historicalData
-							setMarkerCluster={false}
 							defaultMapStyle={this.props.mapStyle}
-							autoCenter
-							searchAsMoveComponent
-							MapStylesComponent
-							historicPin={historyPin}
+							mapPin={historyPin}
 							onPopoverTrigger={this.onPopoverTrigger}
 							defaultZoom={13}
 							defaultCenter={{ lat: 37.74, lng: -122.45 }}
@@ -68,26 +78,6 @@ export default class ReactiveMapDefault extends Component {
 							}}
 							{...this.props}
 						/>
-					</div>
-					<div className="col">
-						<div>
-							<DataSearch
-								dataField={this.props.mapping.venue}
-								componentId="VenueSensor"
-								placeholder="Search Venue"
-							/>
-						</div>
-						<div>
-							<SingleList
-								componentId="CitySensor"
-								dataField={this.props.mapping.city}
-								showCount
-								size={10}
-								title="Input Filter"
-								searchPlaceholder="Search City"
-								includeSelectAll
-							/>
-						</div>
 					</div>
 				</div>
 			</ReactiveBase>

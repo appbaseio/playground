@@ -48,15 +48,15 @@ import ReactiveListReadme from "@appbaseio/reactive-manual/docs/v1/components/Re
 // import GeoDistanceSliderReadme from "@appbaseio/reactive-manual/docs/v1/map-components/GeoDistanceSlider.md";
 import GeoDistanceDropdownReadme from "@appbaseio/reactive-manual/docs/v1/map-components/GeoDistanceDropdown.md";
 // import PlacesSearchReadme from "@appbaseio/reactive-manual/docs/v1/map-components/PlacesSearch.md";
-// import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components/ReactiveMap.md";
+import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components/ReactiveMap.md";
 
 // import reactivemaps components
 import GeoDistanceSliderDefault from "./reactivemaps/GeoDistanceSlider.stories";
 import GeoDistanceDropdownDefault from "./reactivemaps/GeoDistanceDropdown.stories";
 // import PlacesSearchDefault from "./reactivemaps/PlacesSearch.stories";
-// import ReactiveMapDefault from "./reactivemaps/ReactiveMap.stories";
+import ReactiveMapDefault from "./reactivemaps/ReactiveMap.stories";
 
-import SingleListMapDefault from "./reactivemaps/SingleList.stories";
+// import SingleListMapDefault from "./reactivemaps/SingleList.stories";
 // import MultiListMapDefault from "./reactivemaps/MultiList.stories";
 // import SingleDropdownListMapDefault from "./reactivemaps/SingleDropdownList.stories";
 // import MultiDropdownListMapDefault from "./reactivemaps/MultiDropdownList.stories";
@@ -443,111 +443,105 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 		/>
 	)));
 
-// storiesOf("map/PlacesSearch", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Finding nearby places", withReadme(removeFirstLine(PlacesSearchReadme), () => (
-// 		<PlacesSearchDefault />
-// 	)));
-
-// storiesOf("map/ReactiveMap", module)
-// 	.addDecorator(withKnobs)
-// 	.add("Basic", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-// 		<ReactiveMapDefault />
-// 	)))
-// 	.add("With title", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-// 		<ReactiveMapDefault
-// 			title={text("title", "Reactive maps")}
-// 		/>
-// 	)))
-// 	.add("With Popover onClick", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-// 		<ReactiveMapDefault
-// 			title="Reactive Maps"
-// 			showPopoverOn="click"
-// 		/>
-// 	)))
-// 	.add("With Popover onMouseOver", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-// 		<ReactiveMapDefault
-// 			title="Reactive Maps"
-// 			showPopoverOn="mouseover"
-// 		/>
-// 	)))
-// 	.add("Playground", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-// 		<ReactiveMapDefault
-// 			title={text("title", "Reactive maps")}
-// 			showPopoverOn={select("showPopoverOn", { click: "click", mouseover: "mouseover" }, "click")}
-// 			setMarkerCluster={boolean("setMarkerCluster", true)}
-// 			autoCenter={boolean("autoCenter", true)}
-// 			showSearchAsMove={boolean("showSearchAsMove", true)}
-// 			setSearchAsMove={boolean("setSearchAsMove", false)}
-// 			showMapStyles={boolean("showMapStyles", false)}
-// 			defaultMapStyle={select("defaultMapStyle", { Standard: "Standard", "Blue Essence": "Blue Essence", "Blue Water": "Blue Water", "Flat Map": "Flat Map", "Light Monochrome": "Light Monochrome", "Midnight Commander": "Midnight Commander", "Unsaturated Browns": "Unsaturated Browns" }, "Standard")}
-// 			size={number("size", 100)}
-// 			streamTTL={number("streamTTL", 5)}
-// 			streamAutoCenter={boolean("streamAutoCenter", true)}
-// 			autoMarkerPosition={boolean("autoMarkerPosition", false)}
-// 			showMarkers={boolean("showMarkers", true)}
-// 			autoMapRender={boolean("autoMapRender", true)}
-// 			defaultZoom={number("defaultZoom", 13)}
-// 			defaultCenter={object("defaultCenter", {
-// 				lat: 37.74,
-// 				lon: -122.45
-// 			})}
-// 			defaultMarkerImage={text("defaultMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/historic-pin.png")}
-// 			streamMarkerImage={text("streamMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/stream-pin.png")}
-// 		/>
-// 	)));
-
-storiesOf("Map Components/SingleList", module)
+storiesOf("Map Components/ReactiveMap", module)
 	.addDecorator(withKnobs)
-	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} showSearch placeholder="Search Places" />
+	.add("Basic", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault />
 	)))
-	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} title={text("title", "Places")} />
+	.add("With title", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			title={text("title", "Reactive maps")}
+		/>
 	)))
-	.add("With size", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} size={number("size", 10)} />
-	)))
-	.add("With filter", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Places filter")} />
-	)))
-	.add("Without count", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} showCount={boolean("showCount", false)} />
-	)))
-	.add("Without Search", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} showSearch={boolean("showSearch", false)} placeholder="Search Places" />
-	)))
-	.add("Wihout radio buttons", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} showRadio={boolean("showRadio", false)} />
-	)))
-	.add("Default Selected", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} showSearch defaultSelected={text("defaultSelected", "San Francisco")} placeholder="Search Places" />
-	)))
-	.add("Custom Sort", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} title="SingleList: Ascending Sort" showSearch defaultSelected="London" sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "asc")} placeholder="Search Places" />
-	)))
-	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} showSearch selectAllLabel={text("selectAllLabel", "All cities")} placeholder="Search Places" />
-	)))
-	.add("With URLParams", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault showFilter={false} showSearch placeholder="Search Places" URLParams={boolean("URLParams (not visible in storybook)", true)} />
-	)))
-	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
-		<SingleListMapDefault
-			title={text("title", "SingleList: Places Filter")}
+	// .add("With Popover onClick", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+	// 	<ReactiveMapDefault
+	// 		title="Reactive Maps"
+	// 		showPopoverOn="click"
+	// 	/>
+	// )))
+	// .add("With Popover onMouseOver", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+	// 	<ReactiveMapDefault
+	// 		title="Reactive Maps"
+	// 		showPopoverOn="mouseover"
+	// 	/>
+	// )))
+	.add("Playground", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			title={text("title", "Reactive maps")}
+			// showPopoverOn={select("showPopoverOn", { click: "click", mouseover: "mouseover" }, "click")}
+			// setMarkerCluster={boolean("setMarkerCluster", true)}
+			autoCenter={boolean("autoCenter", true)}
+			// showSearchAsMove={boolean("showSearchAsMove", true)}
+			// setSearchAsMove={boolean("setSearchAsMove", false)}
+			showMapStyles={boolean("showMapStyles", false)}
+			defaultMapStyle={select("defaultMapStyle", { Standard: "Standard", "Blue Essence": "Blue Essence", "Blue Water": "Blue Water", "Flat Map": "Flat Map", "Light Monochrome": "Light Monochrome", "Midnight Commander": "Midnight Commander", "Unsaturated Browns": "Unsaturated Browns" }, "Standard")}
 			size={number("size", 100)}
-			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
-			defaultSelected={text("defaultSelected", "San Francisco")}
-			showCount={boolean("showCount", true)}
-			showSearch={boolean("showSearch", true)}
-			placeholder={text("placeholder", "Search Places")}
-			selectAllLabel={text("selectAllLabel", "All cities")}
-			showRadio={boolean("showRadio", true)}
-			showFilter={boolean("showFilter", true)}
-			filterLabel={text("filterLabel", "Places filter")}
-			URLParams={boolean("URLParams (not visible in storybook)", false)}
+			// streamTTL={number("streamTTL", 5)}
+			// streamAutoCenter={boolean("streamAutoCenter", true)}
+			// autoMarkerPosition={boolean("autoMarkerPosition", false)}
+			// showMarkers={boolean("showMarkers", true)}
+			// autoMapRender={boolean("autoMapRender", true)}
+			defaultZoom={number("defaultZoom", 13)}
+			defaultCenter={object("defaultCenter", {
+				lat: 37.74,
+				lon: -122.45
+			})}
+			// defaultMarkerImage={text("defaultMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/historic-pin.png")}
+			// streamMarkerImage={text("streamMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/stream-pin.png")}
 		/>
 	)));
+
+// storiesOf("Map Components/SingleList", module)
+// 	.addDecorator(withKnobs)
+// 	.add("Basic", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showFilter={false} showSearch placeholder="Search Places" />
+// 	)))
+// 	.add("With title", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} title={text("title", "Places")} />
+// 	)))
+// 	.add("With size", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} size={number("size", 10)} />
+// 	)))
+// 	.add("With filter", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={boolean("showFilter", true)} filterLabel={text("filterLabel", "Places filter")} />
+// 	)))
+// 	.add("Without count", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} showCount={boolean("showCount", false)} />
+// 	)))
+// 	.add("Without Search", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showFilter={false} showSearch={boolean("showSearch", false)} placeholder="Search Places" />
+// 	)))
+// 	.add("Wihout radio buttons", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showSearch placeholder="Search Places" showFilter={false} showRadio={boolean("showRadio", false)} />
+// 	)))
+// 	.add("Default Selected", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showFilter={false} showSearch defaultSelected={text("defaultSelected", "San Francisco")} placeholder="Search Places" />
+// 	)))
+// 	.add("Custom Sort", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showFilter={false} title="SingleList: Ascending Sort" showSearch defaultSelected="London" sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "asc")} placeholder="Search Places" />
+// 	)))
+// 	.add("With Select All", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showFilter={false} showSearch selectAllLabel={text("selectAllLabel", "All cities")} placeholder="Search Places" />
+// 	)))
+// 	.add("With URLParams", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault showFilter={false} showSearch placeholder="Search Places" URLParams={boolean("URLParams (not visible in storybook)", true)} />
+// 	)))
+// 	.add("Playground", withReadme(removeFirstLine(SingleListReadme), () => (
+// 		<SingleListMapDefault
+// 			title={text("title", "SingleList: Places Filter")}
+// 			size={number("size", 100)}
+// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
+// 			defaultSelected={text("defaultSelected", "San Francisco")}
+// 			showCount={boolean("showCount", true)}
+// 			showSearch={boolean("showSearch", true)}
+// 			placeholder={text("placeholder", "Search Places")}
+// 			selectAllLabel={text("selectAllLabel", "All cities")}
+// 			showRadio={boolean("showRadio", true)}
+// 			showFilter={boolean("showFilter", true)}
+// 			filterLabel={text("filterLabel", "Places filter")}
+// 			URLParams={boolean("URLParams (not visible in storybook)", false)}
+// 		/>
+// 	)));
 
 // storiesOf("map/MultiList", module)
 // 	.addDecorator(withKnobs)
