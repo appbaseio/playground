@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, SelectedFilters, SingleDropdownRange, MultiDropdownRange, ResultCard } from "@appbaseio/reactivesearch";
+import { ReactiveBase, NumberBox, RangeInput, SelectedFilters, SingleDropdownRange, MultiDropdownRange, ResultCard } from "@appbaseio/reactivesearch";
 
 import { booksCard } from "./resultViews";
 
@@ -14,6 +14,31 @@ export default class ResultCardDefault extends Component {
 				<div className={`row reverse-labels ${this.props.themePreset}`}>
 					<div className="col">
 						<SelectedFilters />
+						<br />
+						<NumberBox
+							componentId="BookSensor3"
+							dataField="average_rating_rounded"
+							data={{
+								label: "Book Rating",
+								start: 2,
+								end: 5
+							}}
+							title="NumberBox"
+						/>
+						<br />
+						<RangeInput
+							dataField="ratings_count"
+							componentId="BookSensor4"
+							title="RangeInput"
+							range={{
+								start: 3000,
+								end: 50000
+							}}
+							rangeLabels={{
+								start: '3K',
+								end: '50K'
+							}}
+						/>
 						<br />
 						<SingleDropdownRange
 							componentId="BookSensor"
@@ -50,7 +75,7 @@ export default class ResultCardDefault extends Component {
 							size={10}
 							onData={booksCard}
 							react={{
-								and: ["BookSensor", "BookSensor2"]
+								and: ["BookSensor", "BookSensor2", "BookSensor3", "BookSensor4"]
 							}}
 							pagination
 						/>
