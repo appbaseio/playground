@@ -108,6 +108,8 @@ import DataControllerRSDefault from "./reactivesearch/DataController.stories";
 import ReactiveComponentStory from "./reactivesearch/ReactiveComponent.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
+import DarkStory from "./reactivesearch/Dark.stories";
+
 require("./styles.css");
 
 function removeFirstLine(str, number = 1) {
@@ -4061,3 +4063,12 @@ storiesOf("Range components/RangeSlider", module)
 // 			showResultStats={boolean("showResultStats", true)}
 // 		/>
 // 	)));
+
+storiesOf("theme", module)
+	.addDecorator(withKnobs)
+	.add("Default (Light Preset)", () => (
+		<DarkStory />
+	))
+	.add("Dark Preset", () => (
+		<DarkStory themePreset={select('themePreset', ['light', 'dark'], 'dark')} />
+	))

@@ -4,6 +4,10 @@
 	width: 100%;
 }
 
+.row.dark {
+	background: #303030;
+}
+
 .col {
 	width: calc(100% - 400px);
 	padding: 15px;
@@ -20,6 +24,10 @@
 
 .row > .col:last-child {
 	background: #fafafa;
+}
+
+.row.dark > .col:last-child {
+	background: #303030;
 }
 
 .flex {
@@ -39,6 +47,10 @@
 	font-weight: bold;
 }
 
+.dark .authors-list {
+	color: #fafafa;
+}
+
 .ratings-list {
 	padding: 10px 0;
 }
@@ -46,6 +58,10 @@
 .avg-rating {
 	color: #6b6b6b;
 	margin-left: 5px;
+}
+
+.dark .avg-rating {
+	color: #fafafa;
 }
 
 .align-center {
