@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {
 	ReactiveBase,
-	DataSearch,
 	SingleList,
 } from "@appbaseio/reactivesearch";
 
@@ -39,26 +38,17 @@ export default class ReactiveMapDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="reactivemap-demo"
-				credentials="qMzzgez0t:a9138c3f-f246-4cd8-ba3d-0b99f9550c05"
-				type="meetupdata1"
-				theme="rbc-blue"
+				app="earthquake"
+				credentials="OrXIHcgHn:d539c6e7-ed14-4407-8214-c227b0600d8e"
+				type="places"
+				mapKey="AIzaSyBQdVcKCe0q_vOBDUvJYpzwGpt_d_uTj4Q"
 			>
 				<div className="row reverse-labels">
 					<div className="col">
 						<div>
-							<DataSearch
-								dataField={this.props.mapping.venue}
-								componentId="VenueSensor"
-								placeholder="Search Venue"
-								title="Search Venue"
-							/>
-						</div>
-						<br/>
-						<div>
 							<SingleList
 								componentId="CitySensor"
-								dataField={this.props.mapping.city}
+								dataField="place.raw"
 								showCount
 								size={10}
 								title="Input Filter"
@@ -67,12 +57,16 @@ export default class ReactiveMapDefault extends Component {
 					</div>
 					<div className="col">
 						<ReactiveMap
-							dataField={this.props.mapping.location}
-							defaultMapStyle={this.props.mapStyle}
+							componentId="map"
+							dataField="location"
 							mapPin={historyPin}
 							onPopoverTrigger={this.onPopoverTrigger}
 							defaultZoom={13}
-							defaultCenter={{ lat: 37.74, lng: -122.45 }}
+							showSearchAsMove
+							defaultCenter={{
+								lat: -23.944,
+								lng: -70.093,
+							}}
 							react={{
 								and: ["CitySensor", "VenueSensor"]
 							}}
@@ -84,12 +78,3 @@ export default class ReactiveMapDefault extends Component {
 		);
 	}
 }
-
-ReactiveMapDefault.defaultProps = {
-	mapStyle: "Light Monochrome",
-	mapping: {
-		location: "location",
-		venue: "venue_name_ngrams",
-		city: "group.group_city.raw"
-	}
-};
