@@ -112,6 +112,7 @@ import DarkStory from "./reactivesearch/Dark.stories";
 import DarkCard from "./reactivesearch/DarkCard.stories";
 import TagCloudDark from "./reactivesearch/TagCloudDark.stories";
 import DatePickerDark from "./reactivesearch/DatePickerDark.stories";
+import DateRangeDark from "./reactivesearch/DateRangeDark.stories";
 
 require("./styles.css");
 
@@ -4083,4 +4084,7 @@ storiesOf("theme", module)
 	))
 	.add("Dark Preset with DatePicker", () => (
 		<DatePickerDark themePreset={select('themePreset', ['light', 'dark'], 'dark')} />
+	))
+	.add("Dark Preset with DateRange", () => (
+		<DateRangeDark themePreset={select('themePreset', ['light', 'dark'], 'dark')} />
 	))
