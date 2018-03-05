@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, DataSearch, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
+import { ReactiveBase, DataSearch, CategorySearch, TextField, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
 
 import { booksList } from "./resultViews";
 
@@ -14,11 +14,24 @@ export default class CategorySearchDefault extends Component {
 				<div className={`row ${this.props.themePreset}`}>
 					<div className="col">
 						<SelectedFilters componentId="BookSensor" />
+						<br />
 						<DataSearch
 							dataField={["original_title", "original_title.search"]}
-							categoryField="authors.raw"
 							componentId="BookSensor"
 							title="DataSearch"
+						/>
+						<br />
+						<CategorySearch
+							dataField={["original_title", "original_title.search"]}
+							categoryField="authors.raw"
+							componentId="BookSensor2"
+							title="CategorySearch"
+						/>
+						<br />
+						<TextField
+							dataField="original_title.search"
+							componentId="BookSensor3"
+							title="TextField"
 						/>
 					</div>
 
@@ -32,7 +45,7 @@ export default class CategorySearchDefault extends Component {
 							className="result-list-container"
 							pagination
 							react={{
-								and: "BookSensor"
+								and: ["BookSensor", "BookSensor2", "BookSensor3"]
 							}}
 						/>
 					</div>
