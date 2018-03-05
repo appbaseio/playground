@@ -477,8 +477,8 @@ storiesOf("Map Components/ReactiveMap", module)
 			// showPopoverOn={select("showPopoverOn", { click: "click", mouseover: "mouseover" }, "click")}
 			// setMarkerCluster={boolean("setMarkerCluster", true)}
 			autoCenter={boolean("autoCenter", true)}
-			// showSearchAsMove={boolean("showSearchAsMove", true)}
-			// setSearchAsMove={boolean("setSearchAsMove", false)}
+			showSearchAsMove={boolean("showSearchAsMove", true)}
+			searchAsMove={boolean("searchAsMove", false)}
 			showMapStyles={boolean("showMapStyles", false)}
 			defaultMapStyle={select("defaultMapStyle", { Standard: "Standard", "Blue Essence": "Blue Essence", "Blue Water": "Blue Water", "Flat Map": "Flat Map", "Light Monochrome": "Light Monochrome", "Midnight Commander": "Midnight Commander", "Unsaturated Browns": "Unsaturated Browns" }, "Standard")}
 			size={number("size", 100)}
