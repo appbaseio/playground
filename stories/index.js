@@ -109,6 +109,7 @@ import ReactiveComponentStory from "./reactivesearch/ReactiveComponent.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 import DarkStory from "./reactivesearch/Dark.stories";
+import DarkCard from "./reactivesearch/DarkCard.stories";
 
 require("./styles.css");
 
@@ -4069,6 +4070,9 @@ storiesOf("theme", module)
 	.add("Default (Light Preset)", () => (
 		<DarkStory />
 	))
-	.add("Dark Preset", () => (
+	.add("Dark Preset with ResultList", () => (
 		<DarkStory themePreset={select('themePreset', ['light', 'dark'], 'dark')} />
+	))
+	.add("Dark Preset with ResultCard", () => (
+		<DarkCard themePreset={select('themePreset', ['light', 'dark'], 'dark')} />
 	))
