@@ -8,7 +8,7 @@ import {
 import { ReactiveMap } from '@appbaseio/reactivemaps';
 
 import { Img } from "./Img.js";
-const historyPin = require("./placeholder.svg");
+import historyPin from "./placeholder.png";
 
 export default class ReactiveMapDefault extends Component {
 	constructor(props) {

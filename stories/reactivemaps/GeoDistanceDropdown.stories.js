@@ -9,7 +9,7 @@ import {
 } from "@appbaseio/reactivemaps";
 
 import { Img } from "./Img.js";
-const historyPin = require("./placeholder.svg");
+import historyPin from "./placeholder.png";
 
 export default class GeoDistanceDropdownDefault extends Component {
 	constructor(props) {
