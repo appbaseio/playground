@@ -110,6 +110,7 @@ import ReactiveComponentStory from "./reactivesearch/ReactiveComponent.stories";
 
 import DarkStory from "./reactivesearch/Dark.stories";
 import DarkCard from "./reactivesearch/DarkCard.stories";
+import TagCloudDark from "./reactivesearch/TagCloudDark.stories";
 
 require("./styles.css");
 
@@ -4075,4 +4076,7 @@ storiesOf("theme", module)
 	))
 	.add("Dark Preset with ResultCard", () => (
 		<DarkCard themePreset={select('themePreset', ['light', 'dark'], 'dark')} />
+	))
+	.add("Dark Preset with TagCloud/ToggleButton/Single/MultiDataList", () => (
+		<TagCloudDark themePreset={select('themePreset', ['light', 'dark'], 'dark')} />
 	))
