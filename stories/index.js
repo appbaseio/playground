@@ -51,7 +51,6 @@ import GeoDistanceSliderDefault from "./reactivemaps/GeoDistanceSlider.stories";
 import GeoDistanceDropdownDefault from "./reactivemaps/GeoDistanceDropdown.stories";
 import ReactiveMapDefault from "./reactivemaps/ReactiveMap.stories";
 
-
 // import reactivesearch components
 // import NestedListDefault from "./reactivesearch/NestedList.stories";
 // import NestedMultiListDefault from "./reactivesearch/NestedMultiList.stories";
@@ -435,22 +434,9 @@ storiesOf("Map Components/ReactiveMap", module)
 			title={text("title", "Reactive maps")}
 		/>
 	)))
-	// .add("With Popover onClick", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-	// 	<ReactiveMapDefault
-	// 		title="Reactive Maps"
-	// 		showPopoverOn="click"
-	// 	/>
-	// )))
-	// .add("With Popover onMouseOver", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-	// 	<ReactiveMapDefault
-	// 		title="Reactive Maps"
-	// 		showPopoverOn="mouseover"
-	// 	/>
-	// )))
 	.add("Playground", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 		<ReactiveMapDefault
 			title={text("title", "Reactive maps")}
-			// showPopoverOn={select("showPopoverOn", { click: "click", mouseover: "mouseover" }, "click")}
 			// setMarkerCluster={boolean("setMarkerCluster", true)}
 			autoCenter={boolean("autoCenter", true)}
 			showSearchAsMove={boolean("showSearchAsMove", true)}
@@ -458,18 +444,11 @@ storiesOf("Map Components/ReactiveMap", module)
 			showMapStyles={boolean("showMapStyles", false)}
 			defaultMapStyle={select("defaultMapStyle", { Standard: "Standard", "Blue Essence": "Blue Essence", "Blue Water": "Blue Water", "Flat Map": "Flat Map", "Light Monochrome": "Light Monochrome", "Midnight Commander": "Midnight Commander", "Unsaturated Browns": "Unsaturated Browns" }, "Standard")}
 			size={number("size", 100)}
-			// streamTTL={number("streamTTL", 5)}
-			// streamAutoCenter={boolean("streamAutoCenter", true)}
-			// autoMarkerPosition={boolean("autoMarkerPosition", false)}
-			// showMarkers={boolean("showMarkers", true)}
-			// autoMapRender={boolean("autoMapRender", true)}
 			defaultZoom={number("defaultZoom", 13)}
 			defaultCenter={object("defaultCenter", {
 				lat: 37.74,
 				lng: -122.45
 			})}
-			// defaultMarkerImage={text("defaultMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/historic-pin.png")}
-			// streamMarkerImage={text("streamMarkerImage", "https://cdn.rawgit.com/appbaseio/reactivemaps/6500c73a/dist/images/stream-pin.png")}
 		/>
 	)));
 

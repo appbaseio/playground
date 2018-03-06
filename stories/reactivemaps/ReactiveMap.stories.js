@@ -12,26 +12,15 @@ import historyPin from "./placeholder.png";
 export default class ReactiveMapDefault extends Component {
 	constructor(props) {
 		super(props);
-		this.onPopoverTrigger = this.onPopoverTrigger.bind(this);
+		this.onPopoverClick = this.onPopoverClick.bind(this);
 	}
 
-	onPopoverTrigger(marker) {
-		return (<div className="popoverComponent row" style={{ margin: "0", maxWidth: "300px" }}>
-			<span className="imgContainer col s2" style={{ padding: "0" }}>
-				<Img src={marker._source.member.photo} />
-			</span>
-			<div className="infoContainer col s10">
-				<div className="nameContainer">
-					<strong>{marker._source.member.member_name}</strong>
-				</div>
-				<div className="description">
-					<p style={{ margin: "5px 0", lineHeight: "18px" }}>is going to&nbsp;
-						<a href={marker._source.event.event_url} target="_blank">
-							{marker._source.event.event_name}
-						</a>
-					</p>
-				</div>
-			</div>
+	onPopoverClick(marker) {
+		return (<div style={{ margin: 0, maxWidth: '300px', lineHeight: '18px' }}>
+			<p>
+				Earthquake (at) <strong>{marker.place}</strong>&nbsp;
+				of maginutde: <code>{marker.mag}</code> in the year {marker.time}.
+			</p>
 		</div>);
 	}
 
@@ -60,7 +49,7 @@ export default class ReactiveMapDefault extends Component {
 							componentId="map"
 							dataField="location"
 							mapPin={historyPin}
-							onPopoverTrigger={this.onPopoverTrigger}
+							onPopoverClick={this.onPopoverClick}
 							defaultZoom={13}
 							showSearchAsMove
 							defaultCenter={{
