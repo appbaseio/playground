@@ -437,7 +437,7 @@ storiesOf("Map Components/ReactiveMap", module)
 	.add("Playground", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 		<ReactiveMapDefault
 			title={text("title", "Reactive maps")}
-			// setMarkerCluster={boolean("setMarkerCluster", true)}
+			showMarkerCluster={boolean("showMarkerCluster", true)}
 			autoCenter={boolean("autoCenter", true)}
 			showSearchAsMove={boolean("showSearchAsMove", true)}
 			searchAsMove={boolean("searchAsMove", false)}
