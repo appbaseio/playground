@@ -61,7 +61,7 @@ export default class GeoDistanceDropdownDefault extends Component {
 							defaultMapStyle="Light Monochrome"
 							autoCenter={false}
 							title="Reactive Maps"
-							mapPin={historyPin}
+							defaultPin={historyPin}
 							// onPopoverTrigger={this.onPopoverTrigger}
 							defaultZoom={13}
 							defaultCenter={{ lat: 37.74, lng: -122.45 }}

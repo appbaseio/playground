@@ -48,10 +48,15 @@ export default class ReactiveMapDefault extends Component {
 						<ReactiveMap
 							componentId="map"
 							dataField="location"
-							mapPin={historyPin}
+							defaultPin={historyPin}
 							onPopoverClick={this.onPopoverClick}
-							defaultZoom={13}
+							defaultZoom={6}
 							showSearchAsMove
+							onData={result => ({
+								label: result.mag,
+								// icon: 'https://i.imgur.com/NHR2tYL.png',
+								// custom: (<div>{result.mag}</div>),
+							})}
 							defaultCenter={{
 								lat: -23.944,
 								lng: -70.093,
