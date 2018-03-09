@@ -1597,6 +1597,24 @@ storiesOf("List components/SingleList", module)
 		))
 	)
 	.add(
+		"With renderListItem",
+		withReadme(removeFirstLine(SingleListReadme), () => (
+			<SingleListRSDefault
+				showSearch
+				placeholder="Search Books"
+				showFilter={false}
+				renderListItem={(label, count) => (
+					<div>
+						{label}
+						<span style={{ marginLeft: 5, color: 'dodgerblue' }}>
+							{count}
+						</span>
+					</div>
+				)}
+			/>
+		))
+	)
+	.add(
 		"Without Search",
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
@@ -1770,13 +1788,31 @@ storiesOf("List components/MultiList", module)
 		))
 	)
 	.add(
-		"Wihout count",
+		"Without count",
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
 				placeholder="Search Books"
 				showFilter={false}
 				showCount={boolean("showCount", false)}
+			/>
+		))
+	)
+	.add(
+		"With renderListItem",
+		withReadme(removeFirstLine(MultiListReadme), () => (
+			<MultiListRSDefault
+				showSearch
+				placeholder="Search Books"
+				showFilter={false}
+				renderListItem={(label, count) => (
+					<div>
+						{label}
+						<span style={{ marginLeft: 5, color: 'dodgerblue' }}>
+							{count}
+						</span>
+					</div>
+				)}
 			/>
 		))
 	)
@@ -1946,6 +1982,22 @@ storiesOf("List components/SingleDropdownList", module)
 		))
 	)
 	.add(
+		"With renderListItem",
+		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+			<SingleDropdownListRSDefault
+				showFilter={false}
+				renderListItem={(label, count) => (
+					<div>
+						{label}
+						<span style={{ marginLeft: 5, color: 'dodgerblue' }}>
+							{count}
+						</span>
+					</div>
+				)}
+			/>
+		))
+	)
+	.add(
 		"With Select All",
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<SingleDropdownListRSDefault
@@ -2089,6 +2141,25 @@ storiesOf("List components/MultiDropdownList", module)
 				size={100}
 				sortBy="count"
 				defaultSelected={array("defaultSelected", ["Hercule Poirot"])}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"With renderListItem",
+		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+			<MultiDropdownListRSDefault
+				placeholder="Select Books"
+				size={100}
+				sortBy="count"
+				renderListItem={(label, count) => (
+					<div>
+						{label}
+						<span style={{ marginLeft: 5, color: 'dodgerblue' }}>
+							{count}
+						</span>
+					</div>
+				)}
 				showFilter={false}
 			/>
 		))
