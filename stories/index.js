@@ -585,6 +585,17 @@ storiesOf("Range components/DynamicRangeSlider", module)
 			})}
 		/>
 	)))
+	.add("With onDrag", withReadme(removeFirstLine(RangeSliderReadme), () => (
+		<DynamicRangeSliderDefault
+			defaultSelected={() => ({
+				start: 500,
+				end: 2000
+			})}
+			onDrag={(selected, boundary) => {
+				console.log(selected, boundary);
+			}}
+		/>
+	)))
 	.add("With URLParams", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			URLParams={boolean("URLParams (not visible on storybook)", true)}
@@ -3082,6 +3093,20 @@ storiesOf("Range components/RangeInput", module)
 		))
 	)
 	.add(
+		"With onDrag",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault
+				rangeLabels={object("rangeLabels", {
+					start: "Low",
+					end: "High"
+				})}
+				onDrag={(selected, boundary) => {
+					console.log(selected, boundary);
+				}}
+			/>
+		))
+	)
+	.add(
 		"With URLParams",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeInputRSDefault
@@ -3138,6 +3163,20 @@ storiesOf("Range components/RangeSlider", module)
 					start: 3000,
 					end: 4000
 				})}
+			/>
+		))
+	)
+	.add(
+		"With onDrag",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault
+				defaultSelected={object("defaultSelected", {
+					start: 3000,
+					end: 4000
+				})}
+				onDrag={(selected, boundary) => {
+					console.log(selected, boundary);
+				}}
 			/>
 		))
 	)
