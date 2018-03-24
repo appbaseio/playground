@@ -1017,6 +1017,7 @@ storiesOf("Result components/ReactiveList", module)
 					"bottom"
 				)}
 				pages={number("pages", 5)}
+				currentPage={number("currentPage", 1)}
 				// stream={boolean("stream", false)}
 				sortBy={select("sortBy", { asc: "asc", description: "desc" }, "asc")}
 			/>
@@ -1103,6 +1104,7 @@ storiesOf("Result components/ResultCard", module)
 						sortBy: "asc"
 					}
 				]}
+				currentPage={number("currentPage", 1)}
 				pagination={boolean("pagination", true)}
 				paginationAt={text("paginationAt", "bottom")}
 			/>
@@ -1173,6 +1175,7 @@ storiesOf("Result components/ResultList", module)
 					sortBy: "asc"
 				}
 			]}
+			currentPage={number("currentPage", 1)}
 			pagination={boolean("pagination", true)}
 			paginationAt={text("paginationAt", "bottom")}
 		/>
