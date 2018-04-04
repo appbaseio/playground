@@ -1234,6 +1234,27 @@ storiesOf("Search components/DataSearch", module)
 		))
 	)
 	.add(
+		"with showClear",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				placeholder="Search Books..."
+				showFilter={false}
+				showClear={boolean('showClear', true)}
+			/>
+		))
+	)
+	.add(
+		"with custom clearIcon",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				placeholder="Search Books..."
+				showFilter={false}
+				showClear={boolean('showClear', true)}
+				clearIcon={<div>❌</div>}
+			/>
+		))
+	)
+	.add(
 		"With filter",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
@@ -1358,6 +1379,7 @@ storiesOf("Search components/DataSearch", module)
 				fieldWeights={array("weights", [1, 3])}
 				fuzziness={number("fuzziness", 1)}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
+				showClear={boolean('showClear', true)}
 				showFilter={boolean("showFilter", true)}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
 				filterLabel={text("filterLabel", "Books filter")}
