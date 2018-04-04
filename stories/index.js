@@ -795,6 +795,27 @@ storiesOf("Search components/CategorySearch", module)
 		))
 	)
 	.add(
+		"with showClear",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<CategorySearchDefault
+				placeholder="Search Books..."
+				showFilter={false}
+				showClear={boolean('showClear', true)}
+			/>
+		))
+	)
+	.add(
+		"with custom clearIcon",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<CategorySearchDefault
+				placeholder="Search Books..."
+				showFilter={false}
+				showClear={boolean('showClear', true)}
+				clearIcon={<div>❌</div>}
+			/>
+		))
+	)
+	.add(
 		"With filter",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
@@ -909,6 +930,7 @@ storiesOf("Search components/CategorySearch", module)
 				autosuggest={boolean("autosuggest", true)}
 				highlight={boolean("highlight", false)}
 				iconPosition={select("iconPosition", ["left", "right"], "left")}
+				showClear={boolean('showClear', true)}
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Books filter")}
 				URLParams={boolean("URLParams (not visible on storybook)", false)}
