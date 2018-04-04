@@ -1444,6 +1444,27 @@ storiesOf("Base components/TextField", module)
 		))
 	)
 	.add(
+		"with showClear",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<TextFieldRSDefault
+				placeholder="Search Books..."
+				showFilter={false}
+				showClear={boolean('showClear', true)}
+			/>
+		))
+	)
+	.add(
+		"with custom clearIcon",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<TextFieldRSDefault
+				placeholder="Search Books..."
+				showFilter={false}
+				showClear={boolean('showClear', true)}
+				clearIcon={<div>❌</div>}
+			/>
+		))
+	)
+	.add(
 		"with debounce",
 		withReadme(removeFirstLine(TextFieldReadme), () => (
 			<TextFieldRSDefault showFilter={false} debounce={number("debounce", 300)} />
@@ -1464,6 +1485,7 @@ storiesOf("Base components/TextField", module)
 			<TextFieldRSDefault
 				title={text("title", "TextField: Books Search")}
 				dataField={select("dataField", ["original_title.search", "authors.search", "original_series.search"], "original_title.search")}
+				showClear={boolean('showClear', true)}
 				placeholder={text("placeholder", "Search for books...")}
 				defaultSelected={text("defaultSelected", "The Hitchhiker's Guide to the Galaxy")}
 				showFilter={boolean("showFilter", true)}
