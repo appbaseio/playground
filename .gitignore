@@ -2,3 +2,5 @@ node_modules
 npm-debug.log.*
 .DS_Store
 storybook-static/
+.yarn-error.log
+npm-debug.log*
