@@ -859,6 +859,16 @@ storiesOf("Search components/CategorySearch", module)
 		))
 	)
 	.add(
+		"With onSuggestion",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<CategorySearchDefault
+				placeholder="Search Books..."
+				onSuggestion={(suggestion) => ({label: <div>{suggestion._source.original_title} by<span style={{ color: 'dodgerblue', marginLeft: 5 }}>{suggestion._source.authors}</span></div>, value: suggestion._source.original_title})}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
 		"With Weights",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
@@ -1302,6 +1312,16 @@ storiesOf("Search components/DataSearch", module)
 			<DataSearchRSDefault
 				placeholder="Search Books..."
 				autosuggest={boolean("autosuggest", false)}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"With onSuggestion",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				placeholder="Search Books..."
+				onSuggestion={(suggestion) => ({label: <div>{suggestion._source.original_title} by<span style={{ color: 'dodgerblue', marginLeft: 5 }}>{suggestion._source.authors}</span></div>, value: suggestion._source.original_title})}
 				showFilter={false}
 			/>
 		))
