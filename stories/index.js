@@ -1015,6 +1015,11 @@ storiesOf("Result components/ReactiveList", module)
 			]}
 		/>
 	)))
+	.add("With onQueryChange", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			onQueryChange={action("Query Changed")}
+		/>
+	)))
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
@@ -1091,6 +1096,11 @@ storiesOf("Result components/ResultCard", module)
 			/>
 		))
 	)
+	.add("With onQueryChange", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
+		<ResultCardDefault
+			onQueryChange={action("Query Changed")}
+		/>
+	)))
 	.add("With Sort Options", withReadme(removeFirstLine(ResultCardReadme, 3), () => (
 		<ResultCardDefault
 			sortOptions={[
@@ -1161,6 +1171,11 @@ storiesOf("Result components/ResultList", module)
 		<ResultListDefault
 			pagination={boolean("pagination", true)}
 			paginationAt={text("paginationAt", "bottom")}
+		/>
+	)))
+	.add("With onQueryChange", withReadme(removeFirstLine(ResultListReadme, 3), () => (
+		<ResultListDefault
+			onQueryChange={action("Query Changed")}
 		/>
 	)))
 	.add("With Sort Options", withReadme(removeFirstLine(ResultListReadme, 3), () => (
