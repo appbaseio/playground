@@ -926,6 +926,16 @@ storiesOf("Search components/CategorySearch", module)
 		))
 	)
 	.add(
+		"With onValueSelected",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<CategorySearchDefault
+				placeholder="Search Books by Author"
+				showFilter={false}
+				onValueSelected={action('onValueSelected called with')}
+			/>
+		))
+	)
+	.add(
 		"Playground",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
@@ -1415,6 +1425,16 @@ storiesOf("Search components/DataSearch", module)
 		))
 	)
 	.add(
+		"With onValueSelected",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				placeholder="Search Books..."
+				showFilter={false}
+				onValueSelected={action('onValueSelected called with')}
+			/>
+		))
+	)
+	.add(
 		"With URLParams",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
@@ -1442,6 +1462,7 @@ storiesOf("Search components/DataSearch", module)
 				filterLabel={text("filterLabel", "Books filter")}
 				highlight={boolean("highlight", false)}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
+				onValueSelected={action('onValueSelected called with')}
 			/>
 		))
 	);
