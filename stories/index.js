@@ -434,6 +434,54 @@ storiesOf("Map Components/ReactiveMap", module)
 			title={text("title", "Reactive maps")}
 		/>
 	)))
+	.add("With showMarkerCluster", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			showMarkerCluster={boolean("showMarkerCluster", true)}
+		/>
+	)))
+	.add("With autoCenter", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			autoCenter={boolean("autoCenter", true)}
+		/>
+	)))
+	.add("With showSearchAsMove", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			showSearchAsMove={boolean("showSearchAsMove", true)}
+		/>
+	)))
+	.add("With searchAsMove", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			searchAsMove={boolean("searchAsMove", false)}
+		/>
+	)))
+	.add("With showMapStyles", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			showMapStyles={boolean("showMapStyles", false)}
+		/>
+	)))
+	.add("With defaultMapStyle", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			defaultMapStyle={select("defaultMapStyle", { Standard: "Standard", "Blue Essence": "Blue Essence", "Blue Water": "Blue Water", "Flat Map": "Flat Map", "Light Monochrome": "Light Monochrome", "Midnight Commander": "Midnight Commander", "Unsaturated Browns": "Unsaturated Browns" }, "Standard")}
+		/>
+	)))
+	.add("With size", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			size={number("size", 100)}
+		/>
+	)))
+	.add("With defaultZoom", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			defaultZoom={number("defaultZoom", 13)}
+		/>
+	)))
+	.add("With defaultCenter", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveMapDefault
+			defaultCenter={object("defaultCenter", {
+				lat: 37.74,
+				lng: -122.45
+			})}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 		<ReactiveMapDefault
 			title={text("title", "Reactive maps")}
