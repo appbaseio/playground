@@ -1078,6 +1078,16 @@ storiesOf("Result components/ReactiveList", module)
 			onQueryChange={action("Query Changed")}
 		/>
 	)))
+	.add("With onResultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			onResultStats={action("Results Changed")}
+		/>
+	)))
+	.add("With renderResultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			renderResultStats={action("Render Result Stats")}
+		/>
+	)))
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
