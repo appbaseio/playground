@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	RangeInput,
+	SelectedFilters,
 	ResultList
 } from "@appbaseio/reactivesearch";
 
@@ -32,6 +33,7 @@ export default class RangeInputDefault extends Component {
 					</div>
 
 					<div className="col">
+						<SelectedFilters />
 						<ResultList
 							componentId="SearchResult"
 							dataField="original_title"

@@ -599,16 +599,18 @@ storiesOf("Map Components/ReactiveMap", module)
 storiesOf("Range components/DynamicRangeSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
-		<DynamicRangeSliderDefault />
+		<DynamicRangeSliderDefault showFilter={false} />
 	)))
 	.add("With title", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			title={text("title", "Books")}
+			showFilter={false}
 		/>
 	)))
 	.add("With labels", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			title={text("title", "Books")}
+			showFilter={false}
 			rangeLabels={(min, max) => ({
 				"start": min + " book",
 				"end": max + " books"
@@ -618,11 +620,18 @@ storiesOf("Range components/DynamicRangeSlider", module)
 	.add("With custom stepValue", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			stepValue={number("stepValue", 1)}
+			showFilter={false}
 		/>
 	)))
 	.add("Without histogram", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			showHistogram={boolean("showHistogram", false)}
+			showFilter={false}
+		/>
+	)))
+	.add("With filters", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault
+			showFilter={boolean("showFilter", true)}
 		/>
 	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
@@ -631,6 +640,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
 				start: 500,
 				end: 2000
 			})}
+			showFilter={false}
 		/>
 	)))
 	.add("With onDrag", withReadme(removeFirstLine(RangeSliderReadme), () => (
@@ -642,16 +652,19 @@ storiesOf("Range components/DynamicRangeSlider", module)
 			onDrag={(selected, boundary) => {
 				console.log(selected, boundary);
 			}}
+			showFilter={false}
 		/>
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			URLParams={boolean("URLParams (not visible on storybook)", true)}
+			showFilter={false}
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			title={text("title", "DynamicRangeSlider: Books")}
+			showFilter={boolean("showFilter", true)}
 			dataField={select("dataField", ["books_count", "original_publication_year", "ratings_count"], "books_count")}
 			defaultSelected={(min, max) => ({
 				start: min,
@@ -3216,13 +3229,13 @@ storiesOf("Range components/RangeInput", module)
 	.add(
 		"Basic",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
-			<RangeInputRSDefault />
+			<RangeInputRSDefault showFilter={false} />
 		))
 	)
 	.add(
 		"With title",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
-			<RangeInputRSDefault title={text("title", "RangeInput: Ratings")} />
+			<RangeInputRSDefault title={text("title", "RangeInput: Ratings")} showFilter={false} />
 		))
 	)
 	.add(
@@ -3233,25 +3246,26 @@ storiesOf("Range components/RangeInput", module)
 					start: 5000,
 					end: 9000
 				})}
+				showFilter={false}
 			/>
 		))
 	)
 	.add(
 		"Without histogram",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
-			<RangeInputRSDefault showHistogram={boolean("showHistogram", false)} />
+			<RangeInputRSDefault showHistogram={boolean("showHistogram", false)} showFilter={false} />
 		))
 	)
 	.add(
 		"Without slider",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
-			<RangeInputRSDefault showSlider={boolean("showSlider", false)} />
+			<RangeInputRSDefault showSlider={boolean("showSlider", false)} showFilter={false} />
 		))
 	)
 	.add(
 		"With custom histogram interval",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
-			<RangeInputRSDefault interval={number("interval", 1000)} />
+			<RangeInputRSDefault interval={number("interval", 1000)} showFilter={false} />
 		))
 	)
 	.add(
@@ -3262,6 +3276,15 @@ storiesOf("Range components/RangeInput", module)
 					start: "Low",
 					end: "High"
 				})}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"With filters",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault
+				showFilter={boolean("showFilter", true)}
 			/>
 		))
 	)
@@ -3276,6 +3299,7 @@ storiesOf("Range components/RangeInput", module)
 				onDrag={(selected, boundary) => {
 					console.log(selected, boundary);
 				}}
+				showFilter={false}
 			/>
 		))
 	)
@@ -3284,6 +3308,7 @@ storiesOf("Range components/RangeInput", module)
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeInputRSDefault
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
+				showFilter={false}
 			/>
 		))
 	)
@@ -3297,6 +3322,7 @@ storiesOf("Range components/RangeInput", module)
 					start: 3000,
 					end: 50000
 				})}
+				showFilter={boolean("showFilter", true)}
 				stepValue={number("stepValue", 1)}
 				interval={number("interval", 1000)}
 				defaultSelected={object("defaultSelected", {
@@ -3319,13 +3345,13 @@ storiesOf("Range components/RangeSlider", module)
 	.add(
 		"Basic",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
-			<RangeSliderRSDefault />
+			<RangeSliderRSDefault showFilter={false} />
 		))
 	)
 	.add(
 		"With title",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
-			<RangeSliderRSDefault title={text("title", "RangeSlider: Ratings")} />
+			<RangeSliderRSDefault title={text("title", "RangeSlider: Ratings")} showFilter={false} />
 		))
 	)
 	.add(
@@ -3336,6 +3362,7 @@ storiesOf("Range components/RangeSlider", module)
 					start: 3000,
 					end: 4000
 				})}
+				showFilter={false}
 			/>
 		))
 	)
@@ -3343,6 +3370,7 @@ storiesOf("Range components/RangeSlider", module)
 		"With onDrag",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeSliderRSDefault
+				showFilter={false}
 				defaultSelected={object("defaultSelected", {
 					start: 3000,
 					end: 4000
@@ -3356,19 +3384,32 @@ storiesOf("Range components/RangeSlider", module)
 	.add(
 		"Without histogram",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
-			<RangeSliderRSDefault showHistogram={boolean("showHistogram", false)} />
+			<RangeSliderRSDefault showFilter={false} showHistogram={boolean("showHistogram", false)} />
 		))
 	)
 	.add(
 		"With custom histogram interval",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
-			<RangeSliderRSDefault interval={number("interval", 1000)} />
+			<RangeSliderRSDefault showFilter={false} interval={number("interval", 1000)} />
 		))
 	)
 	.add(
 		"With Range Labels",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeSliderRSDefault
+				showFilter={false}
+				rangeLabels={object("rangeLabels", {
+					start: "Low",
+					end: "High"
+				})}
+			/>
+		))
+	)
+	.add(
+		"With filters",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault
+				showFilter={boolean("showFilter", true)}
 				rangeLabels={object("rangeLabels", {
 					start: "Low",
 					end: "High"
@@ -3380,6 +3421,7 @@ storiesOf("Range components/RangeSlider", module)
 		"With URLParams",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeSliderRSDefault
+				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
 			/>
 		))
@@ -3394,6 +3436,7 @@ storiesOf("Range components/RangeSlider", module)
 					start: 3000,
 					end: 50000
 				})}
+				showFilter={boolean("showFilter", true)}
 				stepValue={number("stepValue", 1)}
 				interval={number("interval", 2000)}
 				defaultSelected={object("defaultSelected", {

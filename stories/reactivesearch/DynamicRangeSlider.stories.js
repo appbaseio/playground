@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
 	ReactiveBase,
 	DynamicRangeSlider,
+	SelectedFilters,
 	ResultList
 } from "@appbaseio/reactivesearch";
 
@@ -24,6 +25,7 @@ export default class DynamicRangeSliderDefault extends Component {
 					</div>
 
 					<div className="col">
+						<SelectedFilters />
 						<ResultList
 							componentId="SearchResult"
 							dataField="original_title"
