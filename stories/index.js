@@ -920,6 +920,16 @@ storiesOf("Search components/CategorySearch", module)
 		))
 	)
 	.add(
+		"With strictSelection",
+		withReadme(removeFirstLine(CategorySearchReadme), () => (
+			<CategorySearchDefault
+				placeholder="Search Books by Author"
+				showFilter={false}
+				strictSelection={boolean("strictSelection", true)}
+			/>
+		))
+	)
+	.add(
 		"With onSuggestion",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<CategorySearchDefault
@@ -1004,6 +1014,7 @@ storiesOf("Search components/CategorySearch", module)
 				dataField={array("dataField", ["original_title", "original_title.search"])}
 				categoryField={text("categoryField", "authors.raw")}
 				defaultSelected={text("defaultSelected", "")}
+				strictSelection={boolean("strictSelection", false)}
 				placeholder={text("placeholder", "Search Books by Author")}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
 				weights={array("weights", [1, 3])}
@@ -1393,6 +1404,16 @@ storiesOf("Search components/DataSearch", module)
 		))
 	)
 	.add(
+		"With strictSelection",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				placeholder="Search Books..."
+				showFilter={false}
+				strictSelection={boolean("strictSelection", true)}
+			/>
+		))
+	)
+	.add(
 		"Without autosuggest",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
@@ -1514,6 +1535,7 @@ storiesOf("Search components/DataSearch", module)
 				placeholder={text("placeholder", "Search Books...")}
 				autosuggest={boolean("autosuggest", true)}
 				defaultSelected={text("defaultSelected", "")}
+				strictSelection={boolean("strictSelection", false)}
 				fieldWeights={array("weights", [1, 3])}
 				fuzziness={number("fuzziness", 1)}
 				queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
