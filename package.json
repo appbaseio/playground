@@ -20,8 +20,8 @@
   "homepage": "https://github.com/appbaseio/reactive-playground#readme",
   "dependencies": {
     "@appbaseio/reactive-manual": "^1.1.0",
-    "@appbaseio/reactivemaps": "^2.0.0-beta-01",
-    "@appbaseio/reactivesearch": "^2.6.10",
+    "@appbaseio/reactivemaps": "^2.0.0-beta-03",
+    "@appbaseio/reactivesearch": "^2.7.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
