@@ -306,6 +306,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "GeoDistance filter")}
 			URLParams={boolean("URLParams (not visible on storybook)", true)}
+			countries={object("countries",["uk"])}
 		/>
 	)));
 
@@ -448,6 +449,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "GeoDistance filter")}
 				URLParams={boolean("URLParams (not visible in storybook)", true)}
+				countries={object("countries",["uk"])}
 		/>
 	)));
 
