@@ -351,7 +351,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 			title= "Geo Distance Slider"
 			placeholder="Search Location"
 			showFilter={false}
-			countries={object('countries',["us"])}
+			countries={object("countries",["us"])}
 		/>
 	)))
 	.add("With placeholder", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
