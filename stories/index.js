@@ -2201,6 +2201,15 @@ storiesOf("List components/SingleDropdownList", module)
 		))
 	)
 	.add(
+		"With search",
+		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+			<SingleDropdownListRSDefault
+				showFilter={false}
+				showSearch={boolean("showSearch", true)}
+			/>
+		))
+	)
+	.add(
 		"With renderListItem",
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<SingleDropdownListRSDefault
@@ -2295,7 +2304,7 @@ storiesOf("List components/MultiDropdownList", module)
 	)
 	.add(
 		"With size",
-		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
 				showFilter={false}
 				size={number("size", 10)}
@@ -2304,7 +2313,7 @@ storiesOf("List components/MultiDropdownList", module)
 	)
 	.add(
 		"With filter",
-		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "Books filter")}
@@ -2313,7 +2322,7 @@ storiesOf("List components/MultiDropdownList", module)
 	)
 	.add(
 		"Without count",
-		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
 				showFilter={false}
 				showCount={boolean("showCount", false)}
@@ -2321,8 +2330,17 @@ storiesOf("List components/MultiDropdownList", module)
 		))
 	)
 	.add(
+		"With search",
+		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+			<MultiDropdownListRSDefault
+				showFilter={false}
+				showSearch={boolean("showSearch", true)}
+			/>
+		))
+	)
+	.add(
 		"With custom sort",
-		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
 				showFilter={false}
 				sortBy={select(
