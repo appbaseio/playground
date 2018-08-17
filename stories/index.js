@@ -234,6 +234,18 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 			showFilter={false}
 		/>
 	)))
+	.add("With Country Restrictions", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			placeholder="Search Location"
+			dataField="location"
+			unit="mi"
+			range={{
+				start: 10,
+				end: 300,
+			}}
+			countries={object("countries",["us"])}
+		/>
+	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceSliderDefault
 			defaultSelected={object("defaultSelected", {
@@ -294,6 +306,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 			showFilter={boolean("showFilter", true)}
 			filterLabel={text("filterLabel", "GeoDistance filter")}
 			URLParams={boolean("URLParams (not visible on storybook)", true)}
+			countries={object("countries",["uk"])}
 		/>
 	)));
 
@@ -324,6 +337,21 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 			title={text("title", "Geo Distance Slider")}
 			placeholder="Search Location"
 			showFilter={false}
+		/>
+	)))
+	.add("With Country Restrictions", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownDefault
+			unit="mi"
+			data={
+				[{ distance: 100, label: "Under 100 miles" },
+				{ distance: 200, label: "Under 200 miles" },
+				{ distance: 500, label: "Under 500 miles" },
+				{ distance: 1000, label: "Under 1000 miles" }]
+			}
+			title= "Geo Distance Slider"
+			placeholder="Search Location"
+			showFilter={false}
+			countries={object("countries",["us"])}
 		/>
 	)))
 	.add("With placeholder", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
@@ -421,6 +449,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 				showFilter={boolean("showFilter", true)}
 				filterLabel={text("filterLabel", "GeoDistance filter")}
 				URLParams={boolean("URLParams (not visible in storybook)", true)}
+				countries={object("countries",["uk"])}
 		/>
 	)));
 
