@@ -969,6 +969,38 @@ storiesOf("Search components/CategorySearch", module)
 		))
 	)
 	.add(
+		"With renderSuggestions",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<CategorySearchDefault
+				placeholder="Search Books..."
+				renderSuggestions={({
+					currentValue,
+					categories,
+					isOpen,
+					getItemProps,
+					highlightedIndex,
+					suggestions,
+					parsedSuggestions,
+				}) => isOpen && Boolean(currentValue.length) && (
+					<div style={{ position: 'absolute', padding: 10, color: '#424242', fontSize: '0.9rem', border: '1px solid #ddd', borderRadius: 4, marginTop: 10, width: '100%' }}>
+						{
+							<div>
+								{parsedSuggestions.slice(0, 5).map((suggestion, index) => (
+									<div style={{ padding: 10, background: index === highlightedIndex ? '#eee' : 'transparent' }} key={suggestion.value} {...getItemProps({ item: suggestion })}>{suggestion.value}</div>
+								))}
+								{categories.slice(0, 3).map((category, index) => (
+									<div style={{ padding: 10, color: 'mediumseagreen', background: highlightedIndex === index + parsedSuggestions.slice(0, 5).length ? '#eee' : 'transparent' }} key={category.key} {...getItemProps({ item: { value: currentValue, category: category.key } })}>{currentValue} in {category.key}</div>
+								))}
+								{Boolean(currentValue.length) && <div style={{ color: 'dodgerblue', padding: 10, cursor: 'pointer', background: highlightedIndex === parsedSuggestions.slice(0, 5).length + categories.slice(0, 3).length ? '#eee' : 'transparent' }} {...getItemProps({ item: { label: currentValue, value: currentValue }})}>Search for "{currentValue}" in all categories</div>}
+							</div>
+						}
+					</div>
+				)}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
 		"With Weights",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
@@ -1458,6 +1490,34 @@ storiesOf("Search components/DataSearch", module)
 			<DataSearchRSDefault
 				placeholder="Search Books..."
 				onSuggestion={(suggestion) => ({label: <div>{suggestion._source.original_title} by<span style={{ color: 'dodgerblue', marginLeft: 5 }}>{suggestion._source.authors}</span></div>, value: suggestion._source.original_title})}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"With renderSuggestions",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				placeholder="Search Books..."
+				renderSuggestions={({
+					currentValue,
+					isOpen,
+					getItemProps,
+					highlightedIndex,
+					suggestions,
+					parsedSuggestions,
+				}) => isOpen && Boolean(currentValue.length) && (
+					<div style={{ position: 'absolute', padding: 10, color: '#424242', fontSize: '0.9rem', border: '1px solid #ddd', borderRadius: 4, marginTop: 10, width: '100%' }}>
+						{
+							<div>
+								{parsedSuggestions.slice(0, 5).map((suggestion, index) => (
+									<div style={{ padding: 10, background: index === highlightedIndex ? '#eee' : 'transparent' }} key={suggestion.value} {...getItemProps({ item: suggestion })}>{suggestion.value}</div>
+								))}
+								{Boolean(currentValue.length) && <div style={{ color: 'dodgerblue', padding: 10, cursor: 'pointer', background: highlightedIndex === parsedSuggestions.slice(0, 5).length ? '#eee' : 'transparent' }} {...getItemProps({ item: { label: currentValue, value: currentValue }})}>Show all results for "{currentValue}"</div>}
+							</div>
+						}
+					</div>
+				)}
 				showFilter={false}
 			/>
 		))
