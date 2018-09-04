@@ -1198,8 +1198,10 @@ storiesOf("Result components/ReactiveList", module)
 				)}
 				pages={number("pages", 5)}
 				currentPage={number("currentPage", 1)}
+				includeFields={array("includeFields", ['*'])}
+				excludeFields={array("excludeFields", [])}
 				// stream={boolean("stream", false)}
-				sortBy={select("sortBy", { asc: "asc", description: "desc" }, "asc")}
+				sortBy={select("sortBy", { asc: "asc", desc: "desc" }, "asc")}
 			/>
 		))
 	);
@@ -1292,6 +1294,8 @@ storiesOf("Result components/ResultCard", module)
 				currentPage={number("currentPage", 1)}
 				pagination={boolean("pagination", true)}
 				paginationAt={text("paginationAt", "bottom")}
+				includeFields={array("includeFields", ['*'])}
+				excludeFields={array("excludeFields", [])}
 			/>
 		))
 	);
@@ -1367,6 +1371,8 @@ storiesOf("Result components/ResultList", module)
 			]}
 			currentPage={number("currentPage", 1)}
 			pagination={boolean("pagination", true)}
+			includeFields={array("includeFields", ['*'])}
+			excludeFields={array("excludeFields", [])}
 			paginationAt={text("paginationAt", "bottom")}
 		/>
 	)));
