@@ -21,7 +21,7 @@
   "dependencies": {
     "@appbaseio/reactive-manual": "^1.1.0",
     "@appbaseio/reactivemaps": "^2.0.0-beta",
-    "@appbaseio/reactivesearch": "^2.8.0",
+    "@appbaseio/reactivesearch": "^2.9.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
