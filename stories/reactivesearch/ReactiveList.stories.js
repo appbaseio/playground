@@ -5,7 +5,8 @@ import { booksReactiveList } from "./resultViews";
 
 export default class ReactiveListDefault extends Component {
 	render() {
-		const scrollStyle = this.props.scrollTargetStory ? ({
+		const {scrollTargetStory, ...otherProps} = this.props;
+		const scrollStyle = scrollTargetStory ? ({
 			overflow : 'scroll',
 			height: '80vh'
 		}) : {};
@@ -35,7 +36,7 @@ export default class ReactiveListDefault extends Component {
 							react={{
 								and: ["BookSensor"]
 							}}
-							{...this.props}
+							{...otherProps}
 						/>
 					</div>
 				</div>
