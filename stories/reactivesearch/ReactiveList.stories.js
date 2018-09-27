@@ -5,6 +5,11 @@ import { booksReactiveList } from "./resultViews";
 
 export default class ReactiveListDefault extends Component {
 	render() {
+		const {scrollTargetStory, ...otherProps} = this.props;
+		const scrollStyle = scrollTargetStory ? ({
+			overflow : 'scroll',
+			height: '80vh'
+		}) : {};
 		return (
 			<ReactiveBase
 				app="good-books-ds"
@@ -20,7 +25,7 @@ export default class ReactiveListDefault extends Component {
 						/>
 					</div>
 
-					<div className="col">
+					<div className="col" style={scrollStyle} id="results">
 						<ReactiveList
 							componentId="SearchResult"
 							dataField="original_title.raw"
@@ -31,7 +36,7 @@ export default class ReactiveListDefault extends Component {
 							react={{
 								and: ["BookSensor"]
 							}}
-							{...this.props}
+							{...otherProps}
 						/>
 					</div>
 				</div>

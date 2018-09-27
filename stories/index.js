@@ -1130,6 +1130,16 @@ storiesOf("Result components/ReactiveList", module)
 		))
 	)
 	.add(
+		"With scrollTarget",
+		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+			<ReactiveListDefault
+				pagination={false}
+				scrollTarget={text("scrollTarget", "results")}
+				scrollTargetStory
+			 />
+		))
+	)
+	.add(
 		"With custom sort order",
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
 			<ReactiveListDefault
