@@ -854,7 +854,7 @@ storiesOf("Search components/CategorySearch", module)
 		))
 	)
 	.add(
-		"wihout search icon",
+		"without search icon",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
 			<CategorySearchDefault
 				placeholder="Search Books by Authors"
