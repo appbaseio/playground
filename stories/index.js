@@ -285,6 +285,18 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 			URLParams={boolean("URLParams (not visible on storybook)", true)}
 		/>
 	)))
+	.add("With tooltipTrigger", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderDefault
+			defaultSelected={{
+				distance: 50
+			}}
+			style={{marginTop: '10px'}}
+			unit="mi"
+			placeholder="Search Location"
+			showFilter={false}
+			tooltipTrigger={text("tooltipTrigger", "focus")}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceSliderDefault
 			defaultSelected={object("defaultSelected", {
@@ -687,6 +699,12 @@ storiesOf("Range components/DynamicRangeSlider", module)
 	.add("With URLParams", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			URLParams={boolean("URLParams (not visible on storybook)", true)}
+			showFilter={false}
+		/>
+	)))
+	.add("With tooltipTrigger", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault
+			tooltipTrigger={text("tooltipTrigger", "always")}
 			showFilter={false}
 		/>
 	)))
@@ -3458,6 +3476,15 @@ storiesOf("Range components/RangeInput", module)
 		))
 	)
 	.add(
+		"With tooltipTrigger",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeInputRSDefault
+				tooltipTrigger={text("tooltipTrigger", "always")}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
 		"Playground",
 		withReadme(removeFirstLine(RangeSliderReadme), () => (
 			<RangeInputRSDefault
@@ -3568,6 +3595,15 @@ storiesOf("Range components/RangeSlider", module)
 			<RangeSliderRSDefault
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			/>
+		))
+	)
+	.add(
+		"With tooltipTrigger",
+		withReadme(removeFirstLine(RangeSliderReadme), () => (
+			<RangeSliderRSDefault
+				showFilter={false}
+				tooltipTrigger={text("tooltipTrigger", "always")}
 			/>
 		))
 	)
