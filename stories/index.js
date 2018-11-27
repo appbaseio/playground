@@ -1085,6 +1085,15 @@ storiesOf("Search components/CategorySearch", module)
 			/>
 		))
 	)
+	.add("With renderNoSuggestion",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<CategorySearchDefault
+				placeholder="Search Books by Author"
+				showFilter={false}
+				renderNoSuggestion="No suggestions found."
+			/>
+		))
+	)
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
@@ -1646,6 +1655,15 @@ storiesOf("Search components/DataSearch", module)
 				placeholder="Search Books..."
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			/>
+		))
+	)
+	.add("With renderNoSuggestion",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+			    placeholder="Search Books..."
+				showFilter={false}
+				renderNoSuggestion="No suggestions found."
 			/>
 		))
 	)
