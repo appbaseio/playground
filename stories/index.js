@@ -1094,6 +1094,15 @@ storiesOf("Search components/CategorySearch", module)
 			/>
 		))
 	)
+	.add("With loader",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<CategorySearchDefault
+				placeholder="Search Books by Author"
+				showFilter={false}
+				loader="Loading suggestions..."
+			/>
+		))
+	)
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(CategorySearchReadme), () => (
@@ -1123,7 +1132,7 @@ storiesOf("Result components/ReactiveList", module)
 	.add(
 		"Basic",
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-			<ReactiveListDefault />
+		<ReactiveListDefault loader={<h2 style={{ color: 'red' }}>loading</h2>}/>
 		))
 	)
 	// .add("Without resultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
@@ -1664,6 +1673,15 @@ storiesOf("Search components/DataSearch", module)
 			    placeholder="Search Books..."
 				showFilter={false}
 				renderNoSuggestion="No suggestions found."
+			/>
+		))
+	)
+	.add("With loader",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+			    placeholder="Search Books..."
+				showFilter={false}
+				loader="Loading suggestions..."
 			/>
 		))
 	)
