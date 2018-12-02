@@ -708,6 +708,12 @@ storiesOf("Range components/DynamicRangeSlider", module)
 			showFilter={false}
 		/>
 	)))
+	.add("With loader", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
+		<DynamicRangeSliderDefault
+			loader="Loading..."
+			showFilter={false}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(DynamicRangeSliderReadme), () => (
 		<DynamicRangeSliderDefault
 			title={text("title", "DynamicRangeSlider: Books")}
