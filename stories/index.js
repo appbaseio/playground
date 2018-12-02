@@ -2081,6 +2081,17 @@ storiesOf("List components/SingleList", module)
 		))
 	)
 	.add(
+		"With loader",
+		withReadme(removeFirstLine(SingleListReadme), () => (
+			<SingleListRSDefault
+				showSearch
+				placeholder="Search Books"
+				showFilter={false}
+				loader="Loading..."
+			/>
+		))
+	)
+	.add(
 		"extending onValueChange",
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
@@ -2283,6 +2294,17 @@ storiesOf("List components/MultiList", module)
 		))
 	)
 	.add(
+		"with loader",
+		withReadme(removeFirstLine(MultiListReadme), () => (
+			<MultiListRSDefault
+				showSearch
+				placeholder="Search Books"
+				showFilter={false}
+				loader="Loading..."
+			/>
+		))
+	)
+	.add(
 		"Playground",
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
@@ -2415,6 +2437,15 @@ storiesOf("List components/SingleDropdownList", module)
 			<SingleDropdownListRSDefault
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			/>
+		))
+	)
+	.add(
+		"With loader",
+		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+			<SingleDropdownListRSDefault
+				showFilter={false}
+				loader="Loading..."
 			/>
 		))
 	)
@@ -2572,6 +2603,15 @@ storiesOf("List components/MultiDropdownList", module)
 			<MultiDropdownListRSDefault
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			/>
+		))
+	)
+	.add(
+		"with loader",
+		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+			<MultiDropdownListRSDefault
+				showFilter={false}
+				loader="Loading..."
 			/>
 		))
 	)
