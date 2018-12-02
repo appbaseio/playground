@@ -810,6 +810,15 @@ storiesOf("Base components/TagCloud", module)
 		))
 	)
 	.add(
+		"With loader",
+		withReadme(removeFirstLine(TagCloudReadme), () => (
+			<TagCloudDefault
+				showFilter={false}
+				loader="Loading..."
+			/>
+		))
+	)
+	.add(
 		"Playground",
 		withReadme(removeFirstLine(TagCloudReadme), () => (
 			<TagCloudDefault
