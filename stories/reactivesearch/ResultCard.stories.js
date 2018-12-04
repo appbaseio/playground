@@ -29,7 +29,7 @@ export default class ResultCardDefault extends Component {
 							dataField="original_title.raw"
 							from={0}
 							size={10}
-							onData={booksCard}
+							renderData={booksCard}
 							react={{
 								and: "BookSensor"
 							}}

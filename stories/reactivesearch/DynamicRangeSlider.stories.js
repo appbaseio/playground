@@ -32,7 +32,7 @@ export default class DynamicRangeSliderDefault extends Component {
 							from={0}
 							size={3}
 							className="result-list-container"
-							onData={booksList}
+							renderData={booksList}
 							pagination
 							react={{
 								and: "BookSensor"

@@ -32,7 +32,7 @@ export default class ReactiveListDefault extends Component {
 							className="result-list-container"
 							from={0}
 							size={5}
-							onData={booksReactiveList}
+							renderData={booksReactiveList}
 							react={{
 								and: ["BookSensor"]
 							}}

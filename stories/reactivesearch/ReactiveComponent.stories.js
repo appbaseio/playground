@@ -46,7 +46,7 @@ export default class ReactiveComponentDefault extends Component {
 							title="ReactiveList"
 							from={0}
 							size={20}
-							onData={this.onData}
+							renderData={this.onData}
 							pagination
 							react={{
 								and: 'CarSensor',
