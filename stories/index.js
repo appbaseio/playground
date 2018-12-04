@@ -1224,6 +1224,11 @@ storiesOf("Result components/ReactiveList", module)
 			onQueryChange={action("Query Changed")}
 		/>
 	)))
+	.add("With onData", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			onData={action("Data Changed")}
+		/>
+	)))
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
@@ -1234,6 +1239,7 @@ storiesOf("Result components/ReactiveList", module)
 				// initialLoader={text("initialLoader", "Loading results..")}
 				// noResults={text("noResults", "No results found!")}
 				showResultStats={boolean("showResultStats", true)}
+				onData={action("Data Changed")}
 				sortOptions={[
 					{
 						label: "Rating - High to Low",
@@ -1328,6 +1334,11 @@ storiesOf("Result components/ResultCard", module)
 			]}
 		/>
 	)))
+	.add("With onData", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ResultCardDefault
+			onData={action("Data Changed")}
+		/>
+	)))
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(ResultCardReadme, 3), () => (
@@ -1335,6 +1346,7 @@ storiesOf("Result components/ResultCard", module)
 				size={number("size", 12)}
 				dataField={select("dataField", ["original_title.raw", "authors.raw", "original_series.raw"], "original_title.raw")}
 				showResultStats={boolean("showResultStats", true)}
+				onData={action("Data Changed")}
 				sortOptions={[
 					{
 						label: "Rating - High to Low",
@@ -1407,12 +1419,18 @@ storiesOf("Result components/ResultList", module)
 			]}
 		/>
 	)))
+	.add("With onData", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ResultCardDefault
+			onData={action("Data Changed")}
+		/>
+	)))
 	.add("Playground", withReadme(removeFirstLine(ResultListReadme, 3), () => (
 		<ResultListDefault
 			title={text("title", "Cars result")}
 			dataField={select("dataField", ["original_title.raw", "authors.raw", "original_series.raw"], "original_title.raw")}
 			size={number("size", 5)}
 			showResultStats={boolean("showResultStats", true)}
+			onData={action("Data Changed")}
 			sortOptions={[
 				{
 					label: "Rating - High to Low",
