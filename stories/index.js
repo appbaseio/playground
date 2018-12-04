@@ -992,21 +992,26 @@ storiesOf("Search components/CategorySearch", module)
 		))
 	)
 	.add(
-		"With onSuggestion",
+		"With renderSuggestion",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<CategorySearchDefault
 				placeholder="Search Books..."
-				onSuggestion={(suggestion) => ({label: <div>{suggestion._source.original_title} by<span style={{ color: 'dodgerblue', marginLeft: 5 }}>{suggestion._source.authors}</span></div>, value: suggestion._source.original_title})}
+				//renderSuggestion={action("Suggestion")}
+				renderSuggestion={(suggestion) => {
+					console.log("THIS @@@@@@@", suggestion);
+					return ({
+						label: <div>{suggestion.source.original_title} by<span style={{ color: 'dodgerblue', marginLeft: 5 }}>{suggestion.source.authors}</span></div>, value: suggestion.source.original_title})
+				}}
 				showFilter={false}
 			/>
 		))
 	)
 	.add(
-		"With renderSuggestions",
+		"With renderAllSuggestion",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<CategorySearchDefault
 				placeholder="Search Books..."
-				renderSuggestions={({
+				renderAllSuggestion={({
 					currentValue,
 					categories,
 					isOpen,
@@ -1030,6 +1035,24 @@ storiesOf("Search components/CategorySearch", module)
 					</div>
 				)}
 				showFilter={false}
+			/>
+		))
+	)
+	.add("With renderNoSuggestion",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<CategorySearchDefault
+				placeholder="Search Books by Author"
+				showFilter={false}
+				renderNoSuggestion="No suggestions found."
+			/>
+		))
+	)
+	.add("With onSuggestion",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<CategorySearchDefault
+				placeholder="Search Books by Author"
+				showFilter={false}
+				onSuggestion={action('New Suggestions')}
 			/>
 		))
 	)
@@ -1097,15 +1120,6 @@ storiesOf("Search components/CategorySearch", module)
 				placeholder="Search Books by Author"
 				showFilter={false}
 				onValueSelected={action('onValueSelected called with')}
-			/>
-		))
-	)
-	.add("With renderNoSuggestion",
-		withReadme(removeFirstLine(DataSearchReadme), () => (
-			<CategorySearchDefault
-				placeholder="Search Books by Author"
-				showFilter={false}
-				renderNoSuggestion="No suggestions found."
 			/>
 		))
 	)
@@ -1570,26 +1584,25 @@ storiesOf("Search components/DataSearch", module)
 		))
 	)
 	.add(
-		"With onSuggestion",
+		"With renderSuggestion",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				placeholder="Search Books..."
-				onSuggestion={(suggestion) => ({label: <div>{suggestion._source.original_title} by<span style={{ color: 'dodgerblue', marginLeft: 5 }}>{suggestion._source.authors}</span></div>, value: suggestion._source.original_title})}
+				renderSuggestion={(suggestion) => ({label: <div>{suggestion.source.original_title} by<span style={{ color: 'dodgerblue', marginLeft: 5 }}>{suggestion.source.authors}</span></div>, value: suggestion.source.original_title})}
 				showFilter={false}
 			/>
 		))
 	)
 	.add(
-		"With renderSuggestions",
+		"With renderAllSuggestions",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				placeholder="Search Books..."
-				renderSuggestions={({
+				renderAllSuggestions={({
 					currentValue,
 					isOpen,
 					getItemProps,
 					highlightedIndex,
-					suggestions,
 					parsedSuggestions,
 				}) => isOpen && Boolean(currentValue.length) && (
 					<div style={{ position: 'absolute', padding: 10, color: '#424242', fontSize: '0.9rem', border: '1px solid #ddd', borderRadius: 4, marginTop: 10, width: '100%' }}>
@@ -1603,6 +1616,16 @@ storiesOf("Search components/DataSearch", module)
 						}
 					</div>
 				)}
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"With onSuggestions",
+		withReadme(removeFirstLine(DataSearchReadme), () => (
+			<DataSearchRSDefault
+				placeholder="Search Books..."
+				onSuggestions={action("New Suggestions")}
 				showFilter={false}
 			/>
 		))
