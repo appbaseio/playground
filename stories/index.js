@@ -2031,13 +2031,13 @@ storiesOf("List components/SingleList", module)
 		))
 	)
 	.add(
-		"With renderListItem",
+		"With renderItem",
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
 				showSearch
 				placeholder="Search Books"
 				showFilter={false}
-				renderListItem={(label, count) => (
+				renderItem={(label, count) => (
 					<div>
 						{label}
 						<span style={{ marginLeft: 5, color: 'dodgerblue' }}>
@@ -2244,13 +2244,13 @@ storiesOf("List components/MultiList", module)
 		))
 	)
 	.add(
-		"With renderListItem",
+		"With renderItem",
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
 				showSearch
 				placeholder="Search Books"
 				showFilter={false}
-				renderListItem={(label, count) => (
+				renderItem={(label, count) => (
 					<div>
 						{label}
 						<span style={{ marginLeft: 5, color: 'dodgerblue' }}>
@@ -2447,11 +2447,11 @@ storiesOf("List components/SingleDropdownList", module)
 		))
 	)
 	.add(
-		"With renderListItem",
+		"With renderItem",
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<SingleDropdownListRSDefault
 				showFilter={false}
-				renderListItem={(label, count) => (
+				renderItem={(label, count) => (
 					<div>
 						{label}
 						<span style={{ marginLeft: 5, color: 'dodgerblue' }}>
@@ -2629,13 +2629,13 @@ storiesOf("List components/MultiDropdownList", module)
 		))
 	)
 	.add(
-		"With renderListItem",
+		"With renderItem",
 		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
 				placeholder="Select Books"
 				size={100}
 				sortBy="count"
-				renderListItem={(label, count) => (
+				renderItem={(label, count) => (
 					<div>
 						{label}
 						<span style={{ marginLeft: 5, color: 'dodgerblue' }}>
