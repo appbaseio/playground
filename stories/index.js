@@ -1161,7 +1161,7 @@ storiesOf("Result components/ReactiveList", module)
 	.add(
 		"Basic",
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-		<ReactiveListDefault loader={<h2 style={{ color: 'red' }}>loading</h2>}/>
+		<ReactiveListDefault />
 		))
 	)
 	// .add("Without resultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
