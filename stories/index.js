@@ -1243,6 +1243,21 @@ storiesOf("Result components/ReactiveList", module)
 			onData={action("Data Changed")}
 		/>
 	)))
+	.add("With onResultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			onResultStats={action("Results Changed")}
+		/>
+	)))
+	.add("With renderResultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
+		<ReactiveListDefault
+			renderResultStats={({
+				totalResults,
+				totalPages,
+				time,
+				currentPage
+			}) => <span><h3 style={{ color: 'green' }}>{totalResults} found in {time}.</h3> <h4>Page {currentPage}/{totalPages}</h4></span>}
+		/>
+	)))
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
