@@ -4,7 +4,7 @@ import {
 	SelectedFilters,
 } from '@appbaseio/reactivesearch';
 import {
-	ReactiveMap,
+	ReactiveGoogleMap,
 	GeoDistanceDropdown,
 } from "@appbaseio/reactivemaps";
 
@@ -40,8 +40,8 @@ export default class GeoDistanceDropdownDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="reactivemap_demo"
-				credentials="y4pVxY2Ok:c92481e2-c07f-4473-8326-082919282c18"
+				app="meetup_app"
+				credentials="lW70IgSjr:87c5ae16-73fb-4559-a29e-0a02760d2181"
 				type="meetupdata1"
 				mapKey="AIzaSyBQdVcKCe0q_vOBDUvJYpzwGpt_d_uTj4Q"
 			>
@@ -55,7 +55,7 @@ export default class GeoDistanceDropdownDefault extends Component {
 						/>
 					</div>
 					<div className="col">
-						<ReactiveMap
+						<ReactiveGoogleMap
 							componentId="map"
 							dataField="location"
 							defaultMapStyle="Light Monochrome"

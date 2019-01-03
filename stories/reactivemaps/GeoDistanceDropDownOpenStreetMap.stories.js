@@ -4,14 +4,14 @@ import {
 	SelectedFilters,
 } from '@appbaseio/reactivesearch';
 import {
-	ReactiveMap,
-	GeoDistanceSlider,
+	ReactiveOpenStreetMap,
+	GeoDistanceDropdown,
 } from "@appbaseio/reactivemaps";
 
 import { Img } from "./Img.js";
 import historyPin from "./placeholder.png";
 
-export default class GeoDistanceSliderDefault extends Component {
+export default class GeoDistanceDropdownDefault extends Component {
 	constructor(props) {
 		super(props);
 		// this.onPopoverTrigger = this.onPopoverTrigger.bind(this);
@@ -40,37 +40,31 @@ export default class GeoDistanceSliderDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="reactivemap_demo"
-				credentials="y4pVxY2Ok:c92481e2-c07f-4473-8326-082919282c18"
+				app="meetup_app"
+				credentials="lW70IgSjr:87c5ae16-73fb-4559-a29e-0a02760d2181"
 				type="meetupdata1"
 				mapKey="AIzaSyBQdVcKCe0q_vOBDUvJYpzwGpt_d_uTj4Q"
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters />
-						<GeoDistanceSlider
-							componentId="GeoDistanceSlider"
+						<SelectedFilters componentId="GeoDistanceDropdown" />
+						<GeoDistanceDropdown
+							componentId="GeoDistanceDropdown"
 							dataField="location"
-							range={{
-								start: 1,
-								end: 60
-							}}
 							{...this.props}
 						/>
 					</div>
 					<div className="col">
-						<ReactiveMap
+						<ReactiveOpenStreetMap
 							componentId="map"
 							dataField="location"
-							defaultMapStyle="Light Monochrome"
 							autoCenter={false}
-							title="Reactive Maps"
+							title="Reactive Openstreet Maps"
 							defaultPin={historyPin}
-							// onPopoverTrigger={this.onPopoverTrigger}
 							defaultZoom={13}
 							defaultCenter={{ lat: 37.74, lng: -122.45 }}
 							react={{
-								and: "GeoDistanceSlider"
+								and: "GeoDistanceDropdown"
 							}}
 						/>
 					</div>
