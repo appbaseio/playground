@@ -47,9 +47,12 @@ import GeoDistanceDropdownReadme from "@appbaseio/reactive-manual/docs/v1/map-co
 import ReactiveMapReadme from "@appbaseio/reactive-manual/docs/v1/map-components/ReactiveMap.md";
 
 // import reactivemaps components
-import GeoDistanceSliderDefault from "./reactivemaps/GeoDistanceSlider.stories";
-import GeoDistanceDropdownDefault from "./reactivemaps/GeoDistanceDropdown.stories";
-import ReactiveMapDefault from "./reactivemaps/ReactiveMap.stories";
+import GeoDistanceSliderGoogleMap from "./reactivemaps/GeoDistanceSliderGoogleMap.stories";
+import GeoDistanceDropdownGoogleMap from "./reactivemaps/GeoDistanceDropdownGoogleMap.stories";
+import ReactiveGoogleMapDefault from "./reactivemaps/ReactiveGoogleMap.stories";
+import ReactiveOpenStreetMapDefault from "./reactivemaps/ReactiveOpenStreetMapDefault.stories";
+import GeoDistanceDropdownOpenStreetMap from "./reactivemaps/GeoDistanceDropDownOpenStreetMap.stories";
+import GeoDistanceSliderOpenStreetMap from "./reactivemaps/GeoDistanceSliderOpenStreetMap.stories";
 
 // import reactivesearch components
 // import NestedListDefault from "./reactivesearch/NestedList.stories";
@@ -178,7 +181,7 @@ storiesOf("Base components/ReactiveComponent", module)
 storiesOf("Map Components/GeoDistanceSlider", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+		<GeoDistanceSliderGoogleMap
 			defaultSelected={{
 				distance: 50
 			}}
@@ -188,7 +191,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 		/>
 	)))
 	.add("With title", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+		<GeoDistanceSliderGoogleMap
 			defaultSelected={{
 				distance: 50
 			}}
@@ -199,7 +202,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 		/>
 	)))
 	.add("With placeholder", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+		<GeoDistanceSliderGoogleMap
 			defaultSelected={{
 				distance: 50
 			}}
@@ -209,7 +212,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 		/>
 	)))
 	.add("With filter", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+		<GeoDistanceSliderGoogleMap
 			defaultSelected={{
 				distance: 50
 			}}
@@ -220,7 +223,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 		/>
 	)))
 	.add("With Range Labels", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+		<GeoDistanceSliderGoogleMap
 			defaultSelected={{
 				distance: 50
 			}}
@@ -235,7 +238,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 		/>
 	)))
 	.add("With Country Restrictions", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+		<GeoDistanceSliderGoogleMap
 			placeholder="Search Location"
 			dataField="location"
 			unit="mi"
@@ -247,7 +250,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 		/>
 	)))
 	.add("With defaultSelected", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+		<GeoDistanceSliderGoogleMap
 			defaultSelected={object("defaultSelected", {
 				location: "London",
 				distance: 5
@@ -263,7 +266,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 		/>
 	)))
 	.add("With autoLocation off", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+		<GeoDistanceSliderGoogleMap
 			defaultSelected={{
 				distance: 50
 			}}
@@ -275,7 +278,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 		/>
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+		<GeoDistanceSliderGoogleMap
 			defaultSelected={{
 				distance: 50
 			}}
@@ -286,7 +289,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 		/>
 	)))
 	.add("With tooltipTrigger", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+		<GeoDistanceSliderGoogleMap
 			defaultSelected={{
 				distance: 50
 			}}
@@ -297,8 +300,32 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 			tooltipTrigger={text("tooltipTrigger", "focus")}
 		/>
 	)))
-	.add("Playground", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceSliderDefault
+	.add("Playground with Google Map", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderGoogleMap
+			defaultSelected={object("defaultSelected", {
+				location: "London",
+				distance: 5
+			})}
+			unit={text("unit", "mi")}
+			title={text("title", "Geo Distance Slider")}
+			placeholder={text("placeholder", "Search Location")}
+			range={object("range", {
+				start: 0,
+				end: 50
+			})}
+			rangeLabels={object("rangeLabels", {
+				start: "Start",
+				end: "End"
+			})}
+			autoLocation={boolean("autoLocation", true)}
+			showFilter={boolean("showFilter", true)}
+			filterLabel={text("filterLabel", "GeoDistance filter")}
+			URLParams={boolean("URLParams (not visible on storybook)", true)}
+			countries={object("countries",["uk"])}
+		/>
+	)))
+	.add("Playground with OpenStreet Map", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceSliderOpenStreetMap
 			defaultSelected={object("defaultSelected", {
 				location: "London",
 				distance: 5
@@ -325,7 +352,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 storiesOf("Map Components/GeoDistanceDropdown", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceDropdownDefault
+		<GeoDistanceDropdownGoogleMap
 			unit="mi"
 			data={
 				[{ distance: 100, label: "Under 100 miles" },
@@ -338,7 +365,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 		/>
 	)))
 	.add("With title", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceDropdownDefault
+		<GeoDistanceDropdownGoogleMap
 			unit="mi"
 			data={
 				[{ distance: 100, label: "Under 100 miles" },
@@ -352,7 +379,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 		/>
 	)))
 	.add("With Country Restrictions", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceDropdownDefault
+		<GeoDistanceDropdownGoogleMap
 			unit="mi"
 			data={
 				[{ distance: 100, label: "Under 100 miles" },
@@ -367,7 +394,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 		/>
 	)))
 	.add("With placeholder", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceDropdownDefault
+		<GeoDistanceDropdownGoogleMap
 			unit="mi"
 			data={
 				[{ distance: 100, label: "Under 100 miles" },
@@ -381,7 +408,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 		/>
 	)))
 	.add("With filter", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceDropdownDefault
+		<GeoDistanceDropdownGoogleMap
 			unit="mi"
 			data={
 				[{ distance: 100, label: "Under 100 miles" },
@@ -395,7 +422,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 		/>
 	)))
 	.add("With Default Selected", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceDropdownDefault
+		<GeoDistanceDropdownGoogleMap
 			unit="mi"
 			data={
 				[{ distance: 100, label: "Under 100 miles" },
@@ -413,7 +440,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 		/>
 	)))
 	.add("Without autoLocation", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceDropdownDefault
+		<GeoDistanceDropdownGoogleMap
 			unit="mi"
 			data={
 				[{ distance: 100, label: "Under 100 miles" },
@@ -427,7 +454,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 		/>
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceDropdownDefault
+		<GeoDistanceDropdownGoogleMap
 			unit="mi"
 			data={
 				[{ distance: 100, label: "Under 100 miles" },
@@ -440,8 +467,32 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 			URLParams={boolean("URLParams (not visible in storybook)", true)}
 		/>
 	)))
-	.add("Playground", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
-		<GeoDistanceDropdownDefault
+	.add("Playground with Google map", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownGoogleMap
+			data={
+				[{ distance: 100, label: "Under 100 miles" },
+				{ distance: 200, label: "Under 200 miles" },
+				{ distance: 500, label: "Under 500 miles" },
+				{ distance: 1000, label: "Under 1000 miles" }]
+			}
+			unit={select("unit", { mi: "mi", miles: "miles", yd: "yd", yards: "yards", ft: "ft", feet: "feet", in: "in", inch: "inch", km: "km", kilometers: "kilometers", m: "m", meters: "meters", cm: "cm", centimeters: "centimeters", mm: "mm", millimeters: "millimeters", NM: "NM", nmi: "nmi", nauticalmiles: "nauticalmiles" }, "mi")}
+				title={text("title", "Geo Distance Slider")}
+				defaultSelected={object("defaultSelected", {
+					label: "Under 100 miles",
+					location: "London"
+				})}
+				placeholder={text("placeholder", "Search Location")}
+				title={text("title", "Geo Distance Slider")}
+				placeholderDropdown={text("placeholderDropdown", "Select radius")}
+				autoLocation={boolean("autoLocation", true)}
+				showFilter={boolean("showFilter", true)}
+				filterLabel={text("filterLabel", "GeoDistance filter")}
+				URLParams={boolean("URLParams (not visible in storybook)", true)}
+				countries={object("countries",["uk"])}
+		/>
+	)))
+	.add("Playground with OpemStreet map", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+		<GeoDistanceDropdownOpenStreetMap
 			data={
 				[{ distance: 100, label: "Under 100 miles" },
 				{ distance: 200, label: "Under 200 miles" },
@@ -465,58 +516,58 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 		/>
 	)));
 
-storiesOf("Map Components/ReactiveMap", module)
+storiesOf("Map Components/ReactiveGoogleMap", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault />
+		<ReactiveGoogleMapDefault />
 	)))
 	.add("With title", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			title={text("title", "Reactive maps")}
 		/>
 	)))
 	.add("With showMarkerCluster", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			showMarkerCluster={boolean("showMarkerCluster", true)}
 		/>
 	)))
 	.add("With autoCenter", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			autoCenter={boolean("autoCenter", true)}
 		/>
 	)))
 	.add("With showSearchAsMove", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			showSearchAsMove={boolean("showSearchAsMove", true)}
 		/>
 	)))
 	.add("With searchAsMove", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			searchAsMove={boolean("searchAsMove", false)}
 		/>
 	)))
 	.add("With showMapStyles", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			showMapStyles={boolean("showMapStyles", false)}
 		/>
 	)))
 	.add("With defaultMapStyle", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			defaultMapStyle={select("defaultMapStyle", { Standard: "Standard", "Blue Essence": "Blue Essence", "Blue Water": "Blue Water", "Flat Map": "Flat Map", "Light Monochrome": "Light Monochrome", "Midnight Commander": "Midnight Commander", "Unsaturated Browns": "Unsaturated Browns" }, "Standard")}
 		/>
 	)))
 	.add("With size", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			size={number("size", 100)}
 		/>
 	)))
 	.add("With defaultZoom", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			defaultZoom={number("defaultZoom", 13)}
 		/>
 	)))
 	.add("With defaultCenter", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			defaultCenter={object("defaultCenter", {
 				lat: 37.74,
 				lng: -122.45
@@ -524,7 +575,7 @@ storiesOf("Map Components/ReactiveMap", module)
 		/>
 	)))
 	.add("Playground", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
-		<ReactiveMapDefault
+		<ReactiveGoogleMapDefault
 			title={text("title", "Reactive maps")}
 			showMarkerCluster={boolean("showMarkerCluster", true)}
 			autoCenter={boolean("autoCenter", true)}
@@ -532,6 +583,59 @@ storiesOf("Map Components/ReactiveMap", module)
 			searchAsMove={boolean("searchAsMove", false)}
 			showMapStyles={boolean("showMapStyles", false)}
 			defaultMapStyle={select("defaultMapStyle", { Standard: "Standard", "Blue Essence": "Blue Essence", "Blue Water": "Blue Water", "Flat Map": "Flat Map", "Light Monochrome": "Light Monochrome", "Midnight Commander": "Midnight Commander", "Unsaturated Browns": "Unsaturated Browns" }, "Standard")}
+			size={number("size", 100)}
+			defaultZoom={number("defaultZoom", 13)}
+			defaultCenter={object("defaultCenter", {
+				lat: 37.74,
+				lng: -122.45
+			})}
+		/>
+	)));
+
+// Stories for OpenStreet Map 
+storiesOf("Map Components/ReactiveOpenStreetMap", module)
+	.addDecorator(withKnobs)
+	.add("Basic", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveOpenStreetMapDefault />
+	)))
+	.add("With title", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveOpenStreetMapDefault
+			title={text("title", "Reactive maps")}
+		/>
+	)))
+	.add("With showMarkerCluster", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveOpenStreetMapDefault
+			showMarkerCluster={boolean("showMarkerCluster", true)}
+		/>
+	)))
+	.add("With autoCenter", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveOpenStreetMapDefault
+			autoCenter={boolean("autoCenter", true)}
+		/>
+	)))
+	.add("With size", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveOpenStreetMapDefault
+			size={number("size", 100)}
+		/>
+	)))
+	.add("With defaultZoom", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveOpenStreetMapDefault
+			defaultZoom={number("defaultZoom", 13)}
+		/>
+	)))
+	.add("With defaultCenter", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveOpenStreetMapDefault
+			defaultCenter={object("defaultCenter", {
+				lat: 37.74,
+				lng: -122.45
+			})}
+		/>
+	)))
+	.add("Playground", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveOpenStreetMapDefault
+			title={text("title", "Reactive maps")}
+			showMarkerCluster={boolean("showMarkerCluster", true)}
+			autoCenter={boolean("autoCenter", true)}
 			size={number("size", 100)}
 			defaultZoom={number("defaultZoom", 13)}
 			defaultCenter={object("defaultCenter", {
