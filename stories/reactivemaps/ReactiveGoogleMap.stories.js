@@ -4,12 +4,12 @@ import {
 	SingleList,
 } from "@appbaseio/reactivesearch";
 
-import { ReactiveMap } from '@appbaseio/reactivemaps';
+import { ReactiveGoogleMap } from '@appbaseio/reactivemaps';
 
 import { Img } from "./Img.js";
 import historyPin from "./placeholder.png";
 
-export default class ReactiveMapDefault extends Component {
+export default class ReactiveGoogleMapDefault extends Component {
 	constructor(props) {
 		super(props);
 		this.onPopoverClick = this.onPopoverClick.bind(this);
@@ -27,9 +27,8 @@ export default class ReactiveMapDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="earthquake"
-				credentials="OrXIHcgHn:d539c6e7-ed14-4407-8214-c227b0600d8e"
-				type="places"
+				app="earthquakes"
+				credentials="dshr057Nz:e18bbbbe-5d55-4234-a17e-4d64fb2222c7"
 				mapKey="AIzaSyBQdVcKCe0q_vOBDUvJYpzwGpt_d_uTj4Q"
 			>
 				<div className="row reverse-labels">
@@ -45,7 +44,7 @@ export default class ReactiveMapDefault extends Component {
 						</div>
 					</div>
 					<div className="col">
-						<ReactiveMap
+						<ReactiveGoogleMap
 							componentId="map"
 							dataField="location"
 							defaultPin={historyPin}
