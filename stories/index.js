@@ -592,7 +592,7 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
 		/>
 	)));
 
-// Stories for OpenStreet Map 
+// Stories for OpenStreet Map
 storiesOf("Map Components/ReactiveOpenStreetMap", module)
 	.addDecorator(withKnobs)
 	.add("Basic", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
@@ -1111,11 +1111,11 @@ storiesOf("Search components/CategorySearch", module)
 		))
 	)
 	.add(
-		"With renderAllSuggestion",
+		"With renderAllSuggestions",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<CategorySearchDefault
 				placeholder="Search Books..."
-				renderAllSuggestion={({
+				renderAllSuggestions={({
 					currentValue,
 					categories,
 					isOpen,
@@ -1713,11 +1713,11 @@ storiesOf("Search components/DataSearch", module)
 		))
 	)
 	.add(
-		"With renderAllSuggestions",
+		"With renderAllSuggestionss",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				placeholder="Search Books..."
-				renderAllSuggestions={({
+				renderAllSuggestionss={({
 					currentValue,
 					isOpen,
 					getItemProps,
