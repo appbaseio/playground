@@ -64,7 +64,7 @@ export default class DateRangeDefault extends Component {
 							componentId="DateSensor"
 							dataField="date_from"
 							customQuery={this.dateQuery}
-							initialMonth={this.props.defaultSelected ? null : new Date("2017-05-05")}
+							initialMonth={this.props.defaultValue ? null : new Date("2017-05-05")}
 							{...this.props}
 						/>
 					</div>
