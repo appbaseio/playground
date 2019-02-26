@@ -38,9 +38,7 @@ import NumberBoxReadme from "@appbaseio/reactive-manual/docs/v1/components/Numbe
 import ToggleButtonReadme from "@appbaseio/reactive-manual/docs/v1/components/ToggleButton.md";
 import DatePickerReadme from "@appbaseio/reactive-manual/docs/v1/components/DatePicker.md";
 import DateRangeReadme from "@appbaseio/reactive-manual/docs/v1/components/DateRange.md";
-import TextFieldReadme from "@appbaseio/reactive-manual/docs/v1/components/TextField.md";
 import DataSearchReadme from "@appbaseio/reactive-manual/docs/v1/components/DataSearch.md";
-import DataControllerReadme from "@appbaseio/reactive-manual/docs/v1/components/DataController.md";
 import ReactiveListReadme from "@appbaseio/reactive-manual/docs/v1/components/ReactiveList.md";
 // import GeoDistanceSliderReadme from "@appbaseio/reactive-manual/docs/v1/map-components/GeoDistanceSlider.md";
 import GeoDistanceDropdownReadme from "@appbaseio/reactive-manual/docs/v1/map-components/GeoDistanceDropdown.md";
@@ -67,7 +65,6 @@ import ResultListDefault from "./reactivesearch/ResultList.stories";
 import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
 import MultiDataListRSDefault from "./reactivesearch/MultiDataList.stories";
 import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
-import TextFieldRSDefault from "./reactivesearch/TextField.stories";
 import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
 import SingleListRSDefault from "./reactivesearch/SingleList.stories";
 import MultiListRSDefault from "./reactivesearch/MultiList.stories";
@@ -82,7 +79,6 @@ import DatePickerRSDefault from "./reactivesearch/DatePicker.stories";
 import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
 import RangeInputRSDefault from "./reactivesearch/RangeInput.stories";
-import DataControllerRSDefault from "./reactivesearch/DataController.stories";
 import ReactiveComponentStory from "./reactivesearch/ReactiveComponent.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
@@ -103,69 +99,6 @@ function removeFirstLine(str, number = 1) {
 
 // The function removes lines starting with // which crashes storybook
 const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
-
-storiesOf("Base components/DataController", module)
-	.addDecorator(withKnobs)
-	.add(
-		"Basic",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault showFilter={false} />
-		))
-	)
-	.add(
-		"With defaultSelected",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault
-				defaultSelected={text("defaultSelected", "Harry Potter")}
-			/>
-		))
-	)
-	.add(
-		"With UI",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault
-				title="DataController"
-				showFilter={false}
-			>
-				<p>★ A customizable UI widget ★</p>
-			</DataControllerRSDefault>
-		))
-	)
-	.add(
-		"With filter",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault
-				defaultSelected={text("defaultSelected", "Harry Potter")}
-				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Custom Filter Name")}
-			/>
-		))
-	)
-	.add(
-		"With URLParams",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault
-				showFilter={false}
-				URLParams={boolean("URLParams (not visible on storybook)", true)}
-			/>
-		))
-	)
-	.add(
-		"Playground",
-		withReadme(removeFirstLine(DataControllerReadme), () => (
-			<DataControllerRSDefault
-				title={text("title", "DataController")}
-				visible={boolean("visible", true)}
-				defaultSelected={text("defaultSelected", "Harry Potter")}
-				componentStyle={object("componentStyle", { paddingBottom: "10px" })}
-				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Custom Filter Name")}
-				URLParams={boolean("URLParams (not visible on storybook)", true)}
-			>
-				<p>{text("dataLabel", "★  A customizable UI widget ★")}</p>
-			</DataControllerRSDefault>
-		))
-	);
 
 storiesOf("Base components/ReactiveComponent", module)
 	.addDecorator(withKnobs)
@@ -1880,90 +1813,6 @@ storiesOf("Search components/DataSearch", module)
 				highlight={boolean("highlight", false)}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
 				onValueSelected={action('onValueSelected called with')}
-			/>
-		))
-	);
-
-storiesOf("Base components/TextField", module)
-	.addDecorator(withKnobs)
-	.add(
-		"Basic",
-		withReadme(removeFirstLine(TextFieldReadme), () => (
-			<TextFieldRSDefault showFilter={false} />
-		))
-	)
-	.add(
-		"With title",
-		withReadme(removeFirstLine(TextFieldReadme), () => (
-			<TextFieldRSDefault title={text("title", "Books")} showFilter={false} />
-		))
-	)
-	.add(
-		"DefaultSelected",
-		withReadme(removeFirstLine(TextFieldReadme), () => (
-			<TextFieldRSDefault
-				defaultSelected={text("defaultSelected", "The Murder of Roger Ackroyd")}
-				showFilter={false}
-			/>
-		))
-	)
-	.add(
-		"With filter",
-		withReadme(removeFirstLine(TextFieldReadme), () => (
-			<TextFieldRSDefault
-				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Books filter")}
-			/>
-		))
-	)
-	.add(
-		"with showClear",
-		withReadme(removeFirstLine(DataSearchReadme), () => (
-			<TextFieldRSDefault
-				placeholder="Search Books..."
-				showFilter={false}
-				showClear={boolean('showClear', true)}
-			/>
-		))
-	)
-	.add(
-		"with custom clearIcon",
-		withReadme(removeFirstLine(DataSearchReadme), () => (
-			<TextFieldRSDefault
-				placeholder="Search Books..."
-				showFilter={false}
-				showClear={boolean('showClear', true)}
-				clearIcon={<div>❌</div>}
-			/>
-		))
-	)
-	.add(
-		"with debounce",
-		withReadme(removeFirstLine(TextFieldReadme), () => (
-			<TextFieldRSDefault showFilter={false} debounce={number("debounce", 300)} />
-		))
-	)
-	.add(
-		"With URLParams",
-		withReadme(removeFirstLine(TextFieldReadme), () => (
-			<TextFieldRSDefault
-				showFilter={false}
-				URLParams={boolean("URLParams (not visible on storybook)", true)}
-			/>
-		))
-	)
-	.add(
-		"Playground",
-		withReadme(removeFirstLine(TextFieldReadme), () => (
-			<TextFieldRSDefault
-				title={text("title", "TextField: Books Search")}
-				dataField={select("dataField", ["original_title.search", "authors.search", "original_series.search"], "original_title.search")}
-				showClear={boolean('showClear', true)}
-				placeholder={text("placeholder", "Search for books...")}
-				defaultSelected={text("defaultSelected", "The Hitchhiker's Guide to the Galaxy")}
-				showFilter={boolean("showFilter", true)}
-				filterLabel={text("filterLabel", "Books filter")}
-				URLParams={boolean("URLParams (not visible on storybook)", false)}
 			/>
 		))
 	);

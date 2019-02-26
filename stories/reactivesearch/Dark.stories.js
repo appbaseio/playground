@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, DataSearch, CategorySearch, TextField, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
+import { ReactiveBase, DataSearch, CategorySearch, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
 
 import { booksList } from "./resultViews";
 
@@ -27,12 +27,7 @@ export default class CategorySearchDefault extends Component {
 							componentId="BookSensor2"
 							title="CategorySearch"
 						/>
-						<br />
-						<TextField
-							dataField="original_title.search"
-							componentId="BookSensor3"
-							title="TextField"
-						/>
+						<br />						
 					</div>
 
 					<div className="col">
