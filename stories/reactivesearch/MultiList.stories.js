@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, SelectedFilters, MultiList, ReactiveList } from "@appbaseio/reactivesearch";
+import { ReactiveBase, SelectedFilters, MultiList, ReactiveList, DataSearch } from "@appbaseio/reactivesearch";
 
 import { booksReactiveList } from "./resultViews";
 
@@ -12,10 +12,32 @@ export default class MultiListDefault extends Component {
 			>
 				<div className="row">
 					<div className="col">
+						<DataSearch
+							dataField={["original_title", "original_title.search"]}
+							categoryField="authors.raw"
+							componentId="BookSensorSEARCH"
+							{...this.props}
+						/>
 						<MultiList
 							componentId="BookSensor"
 							dataField="original_series.raw"
 							size={100}
+							defaultQuery={() => ({
+							query: {
+								bool: {
+								should: [
+									{
+									term: {
+										"original_publication_year": 2014
+									}
+									}
+								]
+								}
+							}
+							})}
+							react={{
+								and: 'BookSensorSEARCH',
+							}}
 							{...this.props}
 						/>
 					</div>
@@ -30,7 +52,7 @@ export default class MultiListDefault extends Component {
 							size={5}
 							renderData={booksReactiveList}
 							react={{
-								and: ["BookSensor"]
+								and: ["BookSensor", "BookSensorSEARCH"]
 							}}
 						/>
 					</div>
