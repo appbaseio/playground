@@ -2739,6 +2739,36 @@ storiesOf("List components/SingleDataList", module)
 		))
 	)
 	.add(
+		"With count",
+		withReadme(removeFirstLine(SingleDataListReadme), () => (
+			<SingleDataListRSDefault
+				showCount
+			/>
+		))
+	)
+	.add(
+		"With renderListItem",
+		withReadme(removeFirstLine(SingleDataListReadme), () => (
+			<SingleDataListRSDefault
+				showCount
+				renderListItem={(label, count) => (
+					<div style={{
+							display: 'flex',
+							justifyContent: 'space-between',
+							width: '100%'
+					}}>
+						<span>{label}</span>
+						{
+							count && (
+								<span>{count}</span>
+							)
+						}
+					</div>
+				)}
+			/>
+		))
+	)
+	.add(
 		"Playground",
 		withReadme(removeFirstLine(SingleDataListReadme), () => (
 			<SingleDataListRSDefault
@@ -2834,6 +2864,38 @@ storiesOf("List components/MultiDataList", module)
 			<MultiDataListRSDefault
 				showFilter={false}
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
+			/>
+		))
+	)
+	.add(
+		"With count",
+		withReadme(removeFirstLine(SingleDataListReadme), () => (
+			<MultiDataListRSDefault
+				showCount
+				showFilter={false}
+			/>
+		))
+	)
+	.add(
+		"With renderListItem",
+		withReadme(removeFirstLine(SingleDataListReadme), () => (
+			<MultiDataListRSDefault
+				showCount
+				showFilter={false}
+				renderListItem={(label, count) => (
+					<div style={{
+							display: 'flex',
+							justifyContent: 'space-between',
+							width: '100%'
+					}}>
+						<span>{label}</span>
+						{
+							count && (
+								<span>{count}</span>
+							)
+						}
+					</div>
+				)}
 			/>
 		))
 	)
