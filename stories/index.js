@@ -1043,29 +1043,30 @@ storiesOf("Search components/CategorySearch", module)
 		))
 	)
 	.add(
-		"With renderAllSuggestions",
+		"With custom renderer",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<CategorySearchDefault
 				placeholder="Search Books..."
-				renderAllSuggestions={({
-					currentValue,
+				render={({
+					value,
 					categories,
-					isOpen,
-					getItemProps,
-					highlightedIndex,
 					suggestions,
-					parsedSuggestions,
-				}) => isOpen && Boolean(currentValue.length) && (
+					downshiftProps: {
+						isOpen,
+						getItemProps,
+						highlightedIndex,
+					},
+				}) => isOpen && Boolean(value.length) && (
 					<div style={{ position: 'absolute', padding: 10, color: '#424242', fontSize: '0.9rem', border: '1px solid #ddd', borderRadius: 4, marginTop: 10, width: '100%' }}>
 						{
 							<div>
-								{parsedSuggestions.slice(0, 5).map((suggestion, index) => (
+								{suggestions.slice(0, 5).map((suggestion, index) => (
 									<div style={{ padding: 10, background: index === highlightedIndex ? '#eee' : 'transparent' }} key={suggestion.value} {...getItemProps({ item: suggestion })}>{suggestion.value}</div>
 								))}
 								{categories.slice(0, 3).map((category, index) => (
-									<div style={{ padding: 10, color: 'mediumseagreen', background: highlightedIndex === index + parsedSuggestions.slice(0, 5).length ? '#eee' : 'transparent' }} key={category.key} {...getItemProps({ item: { value: currentValue, category: category.key } })}>{currentValue} in {category.key}</div>
+									<div style={{ padding: 10, color: 'mediumseagreen', background: highlightedIndex === index + suggestions.slice(0, 5).length ? '#eee' : 'transparent' }} key={category.key} {...getItemProps({ item: { value: value, category: category.key } })}>{value} in {category.key}</div>
 								))}
-								{Boolean(currentValue.length) && <div style={{ color: 'dodgerblue', padding: 10, cursor: 'pointer', background: highlightedIndex === parsedSuggestions.slice(0, 5).length + categories.slice(0, 3).length ? '#eee' : 'transparent' }} {...getItemProps({ item: { label: currentValue, value: currentValue }})}>Search for "{currentValue}" in all categories</div>}
+								{Boolean(value.length) && <div style={{ color: 'dodgerblue', padding: 10, cursor: 'pointer', background: highlightedIndex === suggestions.slice(0, 5).length + categories.slice(0, 3).length ? '#eee' : 'transparent' }} {...getItemProps({ item: { label: value, value: value }})}>Search for "{value}" in all categories</div>}
 							</div>
 						}
 					</div>
@@ -1645,24 +1646,26 @@ storiesOf("Search components/DataSearch", module)
 		))
 	)
 	.add(
-		"With renderAllSuggestionss",
+		"With custom renderer",
 		withReadme(removeFirstLine(DataSearchReadme), () => (
 			<DataSearchRSDefault
 				placeholder="Search Books..."
-				renderAllSuggestionss={({
-					currentValue,
-					isOpen,
-					getItemProps,
-					highlightedIndex,
-					parsedSuggestions,
-				}) => isOpen && Boolean(currentValue.length) && (
+				render={({
+					value,
+					data,
+					downshiftProps: {
+						isOpen,
+						getItemProps,
+						highlightedIndex,
+					}
+				}) => isOpen && Boolean(value.length) && (
 					<div style={{ position: 'absolute', padding: 10, color: '#424242', fontSize: '0.9rem', border: '1px solid #ddd', borderRadius: 4, marginTop: 10, width: '100%' }}>
 						{
 							<div>
-								{parsedSuggestions.slice(0, 5).map((suggestion, index) => (
+								{data.slice(0, 5).map((suggestion, index) => (
 									<div style={{ padding: 10, background: index === highlightedIndex ? '#eee' : 'transparent' }} key={suggestion.value} {...getItemProps({ item: suggestion })}>{suggestion.value}</div>
 								))}
-								{Boolean(currentValue.length) && <div style={{ color: 'dodgerblue', padding: 10, cursor: 'pointer', background: highlightedIndex === parsedSuggestions.slice(0, 5).length ? '#eee' : 'transparent' }} {...getItemProps({ item: { label: currentValue, value: currentValue }})}>Show all results for "{currentValue}"</div>}
+								{Boolean(value.length) && <div style={{ color: 'dodgerblue', padding: 10, cursor: 'pointer', background: highlightedIndex === data.slice(0, 5).length ? '#eee' : 'transparent' }} {...getItemProps({ item: { label: value, value: value }})}>Show all results for "{value}"</div>}
 							</div>
 						}
 					</div>
