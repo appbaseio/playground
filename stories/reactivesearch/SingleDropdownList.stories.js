@@ -28,7 +28,7 @@ export default class SingleDropdownListDefault extends Component {
 							className="result-list-container"
 							from={0}
 							size={5}
-							renderData={booksReactiveList}
+							renderItem={booksReactiveList}
 							react={{
 								and: ["BookSensor"]
 							}}

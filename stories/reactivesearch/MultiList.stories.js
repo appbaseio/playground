@@ -12,12 +12,6 @@ export default class MultiListDefault extends Component {
 			>
 				<div className="row">
 					<div className="col">
-						<DataSearch
-							dataField={["original_title", "original_title.search"]}
-							categoryField="authors.raw"
-							componentId="BookSensorSEARCH"
-							{...this.props}
-						/>
 						<MultiList
 							componentId="BookSensor"
 							dataField="original_series.raw"
@@ -50,7 +44,7 @@ export default class MultiListDefault extends Component {
 							className="result-list-container"
 							from={0}
 							size={5}
-							renderData={booksReactiveList}
+							renderItem={booksReactiveList}
 							react={{
 								and: ["BookSensor", "BookSensorSEARCH"]
 							}}

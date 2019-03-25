@@ -40,7 +40,7 @@ export default class RangeInputDefault extends Component {
 							from={0}
 							size={3}
 							className="result-list-container"
-							renderData={booksList}
+							renderItem={booksList}
 							pagination
 							react={{
 								and: "BookSensor"

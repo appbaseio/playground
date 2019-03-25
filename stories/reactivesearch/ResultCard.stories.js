@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { ReactiveBase, SingleDropdownRange, ResultCard } from "@appbaseio/reactivesearch";
-
-import { booksCard } from "./resultViews";
+import { ReactiveBase, SingleDropdownRange, ResultCard, ReactiveList } from "@appbaseio/reactivesearch";
+import { booksCard as BooksCard } from "./resultViews";
 
 export default class ResultCardDefault extends Component {
 	render() {
@@ -24,17 +23,26 @@ export default class ResultCardDefault extends Component {
 						/>
 					</div>
 					<div className="col" style={{backgroundColor: "#fafafa"}}>
-						<ResultCard
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="original_title.raw"
 							from={0}
 							size={10}
-							renderData={booksCard}
 							react={{
 								and: "BookSensor"
 							}}
 							{...this.props}
-						/>
+						>
+							{
+								({ data }) => (
+									<ReactiveList.ResultsCardWrapper>
+									{
+										data.map(item => <BooksCard {...item}/>)
+									}
+									</ReactiveList.ResultsCardWrapper>
+								)
+							}
+						</ReactiveList>
 					</div>
 				</div>
 			</ReactiveBase>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, SingleDropdownRange, ResultList } from "@appbaseio/reactivesearch";
+import { ReactiveBase, SingleDropdownRange, ResultList, ReactiveList } from "@appbaseio/reactivesearch";
 
-import { booksList } from "./resultViews";
+import { booksList as BooksList } from "./resultViews";
 
 export default class ResultListDefault extends Component {
 	render() {
@@ -24,19 +24,26 @@ export default class ResultListDefault extends Component {
 						/>
 					</div>
 					<div className="col" style={{backgroundColor: "#fafafa"}}>
-						<ResultList
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="original_title"
 							from={0}
 							size={3}
-							renderData={booksList}
 							className="result-list-container"
 							pagination
 							react={{
 								and: "BookSensor"
 							}}
 							{...this.props}
-						/>
+						>
+							{({ data }) => (
+								<ReactiveList.ResultsListWrapper>
+									{
+										data.map(item => <BooksList {...item} />)
+									}
+								</ReactiveList.ResultsListWrapper>
+							)}
+						</ReactiveList>
 					</div>
 				</div>
 			</ReactiveBase>

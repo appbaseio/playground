@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, DataSearch, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
+import { ReactiveBase, DataSearch, SelectedFilters, ReactiveList } from "@appbaseio/reactivesearch";
 
-import { booksList } from "./resultViews";
+import { booksList as BooksList } from "./resultViews";
 
 export default class DataSearchDefault extends Component {
 	render() {
@@ -20,20 +20,27 @@ export default class DataSearchDefault extends Component {
 							{...this.props}
 						/>
 					</div>
-
 					<div className="col">
-						<ResultList
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="original_title"
 							from={0}
 							size={3}
-							renderData={booksList}
 							className="result-list-container"
 							pagination
 							react={{
 								and: "BookSensor"
 							}}
-						/>
+							{...this.props}
+						>
+							{({ data }) => (
+								<ReactiveList.ResultsListWrapper>
+									{
+										data.map(item => <BooksList {...item} />)
+									}
+								</ReactiveList.ResultsListWrapper>
+							)}
+						</ReactiveList>
 					</div>
 				</div>
 			</ReactiveBase>

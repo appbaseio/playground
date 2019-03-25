@@ -1035,7 +1035,6 @@ storiesOf("Search components/CategorySearch", module)
 				placeholder="Search Books..."
 				//renderSuggestion={action("Suggestion")}
 				renderSuggestion={(suggestion) => {
-					console.log("THIS @@@@@@@", suggestion);
 					return ({
 						label: <div>{suggestion.source.original_title} by<span style={{ color: 'dodgerblue', marginLeft: 5 }}>{suggestion.source.authors}</span></div>, value: suggestion.source.original_title})
 				}}

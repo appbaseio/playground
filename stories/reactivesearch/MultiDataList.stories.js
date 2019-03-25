@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, MultiDataList, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
+import { ReactiveBase, MultiDataList, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
 
-import { meetupList } from "./resultViews";
+import { meetupList as MeetupList } from "./resultViews";
 
 export default class MultiDataListDefault extends Component {
 	render() {
@@ -26,7 +26,7 @@ export default class MultiDataListDefault extends Component {
 					</div>
 					<div className="col">
 						<SelectedFilters componentId="CitySensor" />
-						<ResultList
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="group.group_topics.topic_name_raw"
 							title="Results"
@@ -34,15 +34,20 @@ export default class MultiDataListDefault extends Component {
 							className="result-list-container"
 							from={0}
 							size={5}
-							onData={meetupList}
-							innerClass={{
-								image: 'meetup-list-image'
-							}}
 							pagination
 							react={{
 								and: ["CitySensor"]
 							}}
-						/>
+							{...this.props}
+						>
+							{({ data }) => (
+								<ReactiveList.ResultsListWrapper>
+									{
+										data.map(item => <MeetupList {...item} />)
+									}
+								</ReactiveList.ResultsListWrapper>
+							)}
+						</ReactiveList>
 					</div>
 				</div>
 			</ReactiveBase>

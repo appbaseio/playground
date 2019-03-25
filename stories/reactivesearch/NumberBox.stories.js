@@ -24,7 +24,7 @@ export default class NumberBoxDefault extends Component {
 							dataField="original_title"
 							from={0}
 							size={3}
-							renderData={booksList}
+							renderItem={booksList}
 							className="result-list-container"
 							pagination
 							react={{

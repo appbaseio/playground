@@ -27,7 +27,7 @@ export default class CategorySearchDefault extends Component {
 							componentId="BookSensor2"
 							title="CategorySearch"
 						/>
-						<br />						
+						<br />
 					</div>
 
 					<div className="col">
@@ -36,7 +36,7 @@ export default class CategorySearchDefault extends Component {
 							dataField="original_title"
 							from={0}
 							size={3}
-							renderData={booksList}
+							renderItem={booksList}
 							className="result-list-container"
 							pagination
 							react={{

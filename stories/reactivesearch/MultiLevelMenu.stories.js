@@ -64,7 +64,7 @@ export default class MultiLevelMenuDefault extends Component {
 							title="Results"
 							from={0}
 							size={20}
-							renderData={this.onData}
+							renderItem={this.onData}
 							react={{
 								and: "CategorySensor"
 							}}
