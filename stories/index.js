@@ -2019,6 +2019,25 @@ storiesOf("List components/SingleList", module)
 		))
 	)
 	.add(
+		"With custom renderer",
+		withReadme(removeFirstLine(SingleListReadme), () => (
+			<SingleListRSDefault
+				showSearch
+				placeholder="Search Books"
+				showFilter={false}
+			>
+			{({ data, handleChange }) => data.map(item => (
+				<div onClick={() => handleChange(item.key)}>
+					{item.key}
+					<span style={{ marginLeft: 5, color: 'dodgerblue' }}>
+						{item.doc_count}
+					</span>
+				</div>
+			))}
+			</SingleListRSDefault>
+		))
+	)
+	.add(
 		"Without Search",
 		withReadme(removeFirstLine(SingleListReadme), () => (
 			<SingleListRSDefault
@@ -2232,6 +2251,25 @@ storiesOf("List components/MultiList", module)
 		))
 	)
 	.add(
+		"With custom renderer",
+		withReadme(removeFirstLine(MultiListReadme), () => (
+			<MultiListRSDefault
+				showSearch
+				placeholder="Search Books"
+				showFilter={false}
+			>
+			{({ data, handleChange }) => data.map(item => (
+				<div onClick={() => handleChange(item.key)}>
+					{item.key}
+					<span style={{ marginLeft: 5, color: 'dodgerblue' }}>
+						{item.doc_count}
+					</span>
+				</div>
+			))}
+			</MultiListRSDefault>
+		))
+	)
+	.add(
 		"Without Search",
 		withReadme(removeFirstLine(MultiListReadme), () => (
 			<MultiListRSDefault
@@ -2433,6 +2471,31 @@ storiesOf("List components/SingleDropdownList", module)
 		))
 	)
 	.add(
+		"With custom renderer",
+		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
+			<SingleDropdownListRSDefault
+				showCount
+			>
+			{
+				({ data, handleChange }) => data.map(item => (
+					<div onClick={() => handleChange(item.key)} key={item.key} style={{
+						display: 'flex',
+						justifyContent: 'space-between',
+							width: '100%'
+					}}>
+						<span>{item.key}</span>
+						{
+							item.doc_count && (
+								<span>{item.doc_count}</span>
+							)
+						}
+					</div>
+				))
+			}
+			</SingleDropdownListRSDefault>
+		))
+	)
+	.add(
 		"With Select All",
 		withReadme(removeFirstLine(SingleDropdownListReadme), () => (
 			<SingleDropdownListRSDefault
@@ -2618,6 +2681,31 @@ storiesOf("List components/MultiDropdownList", module)
 		))
 	)
 	.add(
+		"With custom renderer",
+		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
+			<MultiDropdownListRSDefault
+				showCount
+			>
+			{
+				({ data, handleChange }) => data.map(item => (
+					<div onClick={() => handleChange(item.key)} key={item.key} style={{
+						display: 'flex',
+						justifyContent: 'space-between',
+							width: '100%'
+					}}>
+						<span>{item.key}</span>
+						{
+							item.doc_count && (
+								<span>{item.doc_count}</span>
+							)
+						}
+					</div>
+				))
+			}
+			</MultiDropdownListRSDefault>
+		))
+	)
+	.add(
 		"With URLParams",
 		withReadme(removeFirstLine(MultiDropdownListReadme), () => (
 			<MultiDropdownListRSDefault
@@ -2749,11 +2837,11 @@ storiesOf("List components/SingleDataList", module)
 		))
 	)
 	.add(
-		"With renderListItem",
+		"With renderItem",
 		withReadme(removeFirstLine(SingleDataListReadme), () => (
 			<SingleDataListRSDefault
 				showCount
-				renderListItem={(label, count) => (
+				renderItem={(label, count) => (
 					<div style={{
 							display: 'flex',
 							justifyContent: 'space-between',
@@ -2768,6 +2856,31 @@ storiesOf("List components/SingleDataList", module)
 					</div>
 				)}
 			/>
+		))
+	)
+	.add(
+		"With custom renderer",
+		withReadme(removeFirstLine(SingleDataListReadme), () => (
+			<SingleDataListRSDefault
+				showCount
+			>
+			{
+				({ data, handleChange }) => data.map(item => (
+					<div onClick={() => handleChange(item.label)} key={item.label} style={{
+						display: 'flex',
+						justifyContent: 'space-between',
+							width: '100%'
+					}}>
+						<span>{item.label}</span>
+						{
+							item.count && (
+								<span>{item.count}</span>
+							)
+						}
+					</div>
+				))
+			}
+			</SingleDataListRSDefault>
 		))
 	)
 	.add(
@@ -2871,7 +2984,7 @@ storiesOf("List components/MultiDataList", module)
 	)
 	.add(
 		"With count",
-		withReadme(removeFirstLine(SingleDataListReadme), () => (
+		withReadme(removeFirstLine(MultiDataListReadme, () => (
 			<MultiDataListRSDefault
 				showCount
 				showFilter={false}
@@ -2879,12 +2992,12 @@ storiesOf("List components/MultiDataList", module)
 		))
 	)
 	.add(
-		"With renderListItem",
-		withReadme(removeFirstLine(SingleDataListReadme), () => (
+		"With renderItem",
+		withReadme(removeFirstLine(MultiDataListReadme, () => (
 			<MultiDataListRSDefault
 				showCount
 				showFilter={false}
-				renderListItem={(label, count) => (
+				renderItem={(label, count) => (
 					<div style={{
 							display: 'flex',
 							justifyContent: 'space-between',
@@ -2899,6 +3012,31 @@ storiesOf("List components/MultiDataList", module)
 					</div>
 				)}
 			/>
+		))
+	)
+	.add(
+		"With custom renderer",
+		withReadme(removeFirstLine(MultiDataListReadme, () => (
+			<MultiDataListRSDefault
+				showCount
+			>
+			{
+				({ data, handleChange }) => data.map(item => (
+					<div onClick={() => handleChange(item.label)} key={item.label} style={{
+						display: 'flex',
+						justifyContent: 'space-between',
+							width: '100%'
+					}}>
+						<span>{item.label}</span>
+						{
+							item.count && (
+								<span>{item.count}</span>
+							)
+						}
+					</div>
+				))
+			}
+			</MultiDataListRSDefault>
 		))
 	)
 	.add(
