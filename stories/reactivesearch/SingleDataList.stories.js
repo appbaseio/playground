@@ -41,11 +41,11 @@ export default class SingleDataListDefault extends Component {
 							{...this.props}
 						>
 							{({ data }) => (
-								<ReactiveList.ResultsListWrapper>
+								<ReactiveList.ResultListWrapper>
 									{
 										data.map(item => <MeetupList {...item} />)
 									}
-								</ReactiveList.ResultsListWrapper>
+								</ReactiveList.ResultListWrapper>
 							)}
 						</ReactiveList>
 					</div>

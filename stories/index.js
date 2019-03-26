@@ -2990,7 +2990,7 @@ storiesOf("List components/MultiDataList", module)
 				showFilter={false}
 			/>
 		))
-	)
+	))
 	.add(
 		"With renderItem",
 		withReadme(removeFirstLine(MultiDataListReadme, () => (
@@ -3013,7 +3013,7 @@ storiesOf("List components/MultiDataList", module)
 				)}
 			/>
 		))
-	)
+	))
 	.add(
 		"With custom renderer",
 		withReadme(removeFirstLine(MultiDataListReadme, () => (
@@ -3038,7 +3038,7 @@ storiesOf("List components/MultiDataList", module)
 			}
 			</MultiDataListRSDefault>
 		))
-	)
+	))
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(MultiDataListReadme), () => (

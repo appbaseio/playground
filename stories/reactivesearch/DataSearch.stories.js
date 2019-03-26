@@ -34,11 +34,11 @@ export default class DataSearchDefault extends Component {
 							{...this.props}
 						>
 							{({ data }) => (
-								<ReactiveList.ResultsListWrapper>
+								<ReactiveList.ResultListWrapper>
 									{
 										data.map(item => <BooksList {...item} />)
 									}
-								</ReactiveList.ResultsListWrapper>
+								</ReactiveList.ResultListWrapper>
 							)}
 						</ReactiveList>
 					</div>

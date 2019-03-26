@@ -35,11 +35,11 @@ export default class ResultCardDefault extends Component {
 						>
 							{
 								({ data }) => (
-									<ReactiveList.ResultsCardWrapper>
+									<ReactiveList.ResultCardsWrapper>
 									{
 										data.map(item => <BooksCard {...item}/>)
 									}
-									</ReactiveList.ResultsCardWrapper>
+									</ReactiveList.ResultCardsWrapper>
 								)
 							}
 						</ReactiveList>
