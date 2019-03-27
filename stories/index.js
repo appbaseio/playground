@@ -2978,24 +2978,24 @@ storiesOf("List components/MultiDataList", module)
 		withReadme(removeFirstLine(MultiDataListReadme), () => (
 			<MultiDataListRSDefault
 				showFilter={false}
+				showCount
 				URLParams={boolean("URLParams (not visible on storybook)", true)}
 			/>
 		))
 	)
 	.add(
 		"With count",
-		withReadme(removeFirstLine(MultiDataListReadme, () => (
+		withReadme(removeFirstLine(MultiDataListReadme), () => (
 			<MultiDataListRSDefault
-				showCount
 				showFilter={false}
+				showCount={boolean("With count", true)}
 			/>
 		))
-	))
+	)
 	.add(
 		"With renderItem",
-		withReadme(removeFirstLine(MultiDataListReadme, () => (
+		withReadme(removeFirstLine(MultiDataListReadme), () => (
 			<MultiDataListRSDefault
-				showCount
 				showFilter={false}
 				renderItem={(label, count) => (
 					<div style={{
@@ -3013,12 +3013,12 @@ storiesOf("List components/MultiDataList", module)
 				)}
 			/>
 		))
-	))
+	)
 	.add(
 		"With custom renderer",
-		withReadme(removeFirstLine(MultiDataListReadme, () => (
+		withReadme(removeFirstLine(MultiDataListReadme), () => (
 			<MultiDataListRSDefault
-				showCount
+				showFilter={false}
 			>
 			{
 				({ data, handleChange }) => data.map(item => (
@@ -3038,7 +3038,7 @@ storiesOf("List components/MultiDataList", module)
 			}
 			</MultiDataListRSDefault>
 		))
-	))
+	)
 	.add(
 		"Playground",
 		withReadme(removeFirstLine(MultiDataListReadme), () => (
