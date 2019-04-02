@@ -10,11 +10,19 @@ import {
 } from '@appbaseio/reactivesearch';
 
 export default class ReactiveComponentDefault extends Component {
+	renderItem(data) {
+		return (
+			<div key={data._id}>
+				<h2>{data.name}</h2>
+				<p>{data.price} - {data.rating} stars rated</p>
+			</div>
+		);
+	}
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="carstore-dataset"
+				credentials="4HWI27QmA:58c731f7-79ab-4f55-a590-7e15c7e36721"
 			>
 				<div className="row">
 					<div className="col">
@@ -23,9 +31,9 @@ export default class ReactiveComponentDefault extends Component {
 							componentId="CarSensor"
 							defaultQuery={() => ({
 								aggs: {
-									'brand.raw': {
+									'brand.keyword': {
 										terms: {
-											field: 'brand.raw',
+											field: 'brand.keyword',
 											order: {
 												_count: 'desc',
 											},
@@ -34,8 +42,9 @@ export default class ReactiveComponentDefault extends Component {
 									},
 								},
 							})}
+							{...this.props}
 						>
-							<CustomComponent />
+							{({ aggregations, setQuery }) => <CustomComponent aggregations={aggregations} setQuery={setQuery} />}
 						</ReactiveComponent>
 					</div>
 
@@ -46,7 +55,7 @@ export default class ReactiveComponentDefault extends Component {
 							title="ReactiveList"
 							from={0}
 							size={20}
-							renderItem={this.onData}
+							renderItem={this.renderItem}
 							pagination
 							react={{
 								and: 'CarSensor',
@@ -57,15 +66,6 @@ export default class ReactiveComponentDefault extends Component {
 			</ReactiveBase>
 		);
 	}
-
-	onData(data) {
-		return (
-			<div key={data._id}>
-				<h2>{data.name}</h2>
-				<p>{data.price} - {data.rating} stars rated</p>
-			</div>
-		);
-	}
 }
 
 class CustomComponent extends Component {
@@ -73,7 +73,7 @@ class CustomComponent extends Component {
 		this.props.setQuery({
 			query: {
 				term: {
-					brand: value,
+					"brand.keyword": value,
 				},
 			},
 			value,
@@ -82,11 +82,10 @@ class CustomComponent extends Component {
 
 	render() {
 		if (this.props.aggregations) {
-			return this.props.aggregations['brand.raw'].buckets.map(item => (
+			return this.props.aggregations['brand.keyword'].buckets.map(item => (
 				<div key={item.key} onClick={() => this.setValue(item.key)}>{item.key}</div>
 			));
 		}
-
 		return null;
 	}
 }

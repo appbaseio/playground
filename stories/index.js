@@ -108,6 +108,12 @@ storiesOf("Base components/ReactiveComponent", module)
 			<ReactiveComponentStory />
 		)
 	)
+	.add(
+		"with onData",
+		() => (
+			<ReactiveComponentStory onData={action("Data Changed")}/>
+		)
+	)
 
 // Reactivemaps components
 
