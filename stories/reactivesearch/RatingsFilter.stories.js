@@ -1,62 +1,61 @@
 import React, { Component } from "react";
-import { ReactiveBase, RatingsFilter, ResultCard, SelectedFilters } from "@appbaseio/reactivesearch";
+import { ReactiveBase, RatingsFilter, ReactiveList, SelectedFilters, ResultCard } from "@appbaseio/reactivesearch";
 import ResponsiveStory from "./ResponsiveStory";
+import { booksCard as BooksCard } from './resultViews';
 
 export default class RatingsFilterDefault extends Component {
-	constructor(props) {
-		super(props);
-		this.onData = this.onData.bind(this);
-	}
 
 	componentDidMount() {
 		ResponsiveStory();
 	}
 
-	onData(res) {
-		const result = {
-			image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
-			title: res.name,
-			rating: res.rating,
-			description: res.brand,
-		};
-		return result;
-	}
-
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="good-books-ds"
+				credentials="nY6NNTZZ6:27b76b9f-18ea-456c-bc5e-3a5263ebc63d"
 			>
 				<div className="row">
 					<div className="col">
 						<SelectedFilters />
 						<RatingsFilter
 							componentId="RatingsSensor"
-							dataField="rating"
+							dataField="average_rating_rounded"
 							title="RatingsFilter"
 							data={[
-								{ start: 4, end: 5, label: "4 stars and up" },
-								{ start: 3, end: 5, label: "3 stars and up" },
-								{ start: 2, end: 5, label: "2 stars and up" },
-								{ start: 1, end: 5, label: "> 1 stars" }
+								{ start: 4, end: 5, label: '4 stars and up' },
+								{ start: 3, end: 5, label: '3 stars and up' },
+								{ start: 2, end: 5, label: '2 stars and up' },
+								{ start: 1, end: 5, label: '> 1 stars' },
 							]}
 							{...this.props}
 						/>
 					</div>
 
 					<div className="col">
-						<ResultCard
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="name"
 							title="Results"
 							from={0}
 							size={20}
-							onData={this.onData}
 							react={{
-								and: "RatingsSensor"
+								and: 'RatingsSensor',
 							}}
-						/>
+							{...this.props}
+						>
+							{
+								({ data }) => (
+									<ReactiveList.ResultCardsWrapper>
+									{
+										data.map(item => (
+											<BooksCard {...item} />
+										))
+									}
+									</ReactiveList.ResultCardsWrapper>
+								)
+							}
+						</ReactiveList>
 					</div>
 				</div>
 			</ReactiveBase>

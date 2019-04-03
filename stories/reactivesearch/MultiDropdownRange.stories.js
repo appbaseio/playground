@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, MultiDropdownRange, SelectedFilters, ResultCard } from "@appbaseio/reactivesearch";
+import { ReactiveBase, MultiDropdownRange, SelectedFilters, ReactiveList } from "@appbaseio/reactivesearch";
 
-import { booksCard } from "./resultViews";
+import { booksCard as BooksCard } from "./resultViews";
 
 export default class MultiDropdownRangeDefault extends Component {
 	render() {
@@ -25,16 +25,26 @@ export default class MultiDropdownRangeDefault extends Component {
 					</div>
 					<div className="col" style={{backgroundColor: "#fafafa"}}>
 						<SelectedFilters />
-						<ResultCard
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="original_title.raw"
 							from={0}
 							size={10}
-							renderItem={booksCard}
 							react={{
 								and: "BookSensor"
 							}}
-						/>
+							{...this.props}
+						>
+							{
+								({ data }) => (
+									<ReactiveList.ResultCardsWrapper>
+									{
+										data.map(item => <BooksCard {...item}/>)
+									}
+									</ReactiveList.ResultCardsWrapper>
+								)
+							}
+						</ReactiveList>
 					</div>
 				</div>
 			</ReactiveBase>

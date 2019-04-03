@@ -3,10 +3,10 @@ import {
 	ReactiveBase,
 	RangeSlider,
 	SelectedFilters,
-	ResultList
+	ReactiveList
 } from "@appbaseio/reactivesearch";
 
-import { booksList } from "./resultViews";
+import { booksList as BooksList } from "./resultViews";
 
 export default class RangeSliderDefault extends Component {
 	render() {
@@ -34,18 +34,26 @@ export default class RangeSliderDefault extends Component {
 
 					<div className="col">
 						<SelectedFilters />
-						<ResultList
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="original_title"
 							from={0}
 							size={3}
 							className="result-list-container"
-							renderItem={booksList}
 							pagination
 							react={{
 								and: "BookSensor"
 							}}
-						/>
+							{...this.props}
+						>
+							{({ data }) => (
+								<ReactiveList.ResultListWrapper>
+									{
+										data.map(item => <BooksList {...item} />)
+									}
+								</ReactiveList.ResultListWrapper>
+							)}
+						</ReactiveList>
 					</div>
 				</div>
 			</ReactiveBase>

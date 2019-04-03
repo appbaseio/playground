@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, NumberBox, RangeInput, SelectedFilters, SingleDropdownRange, MultiDropdownRange, ResultCard } from "@appbaseio/reactivesearch";
+import { ReactiveBase, NumberBox, RangeInput, SelectedFilters, SingleDropdownRange, MultiDropdownRange, ReactiveList } from "@appbaseio/reactivesearch";
 
-import { booksCard } from "./resultViews";
+import { booksCard as BooksCard } from "./resultViews";
 
 export default class ResultCardDefault extends Component {
 	render() {
@@ -68,17 +68,27 @@ export default class ResultCardDefault extends Component {
 							backgroundColor: this.props.themePreset === 'dark' ? '#303030' : '#fafafa'
 						}}
 					>
-						<ResultCard
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="original_title.raw"
 							from={0}
 							size={10}
-							renderItem={booksCard}
 							react={{
 								and: ["BookSensor", "BookSensor2", "BookSensor3", "BookSensor4"]
 							}}
 							pagination
-						/>
+							{...this.props}
+						>
+							{
+								({ data }) => (
+									<ReactiveList.ResultCardsWrapper>
+									{
+										data.map(item => <BooksCard {...item}/>)
+									}
+									</ReactiveList.ResultCardsWrapper>
+								)
+							}
+						</ReactiveList>
 					</div>
 				</div>
 			</ReactiveBase>

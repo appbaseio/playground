@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, NumberBox, ResultList } from "@appbaseio/reactivesearch";
+import { ReactiveBase, NumberBox, ReactiveList } from "@appbaseio/reactivesearch";
 
-import { booksList } from "./resultViews";
+import { booksList as BooksList } from "./resultViews";
 
 export default class NumberBoxDefault extends Component {
 	render() {
@@ -19,18 +19,26 @@ export default class NumberBoxDefault extends Component {
 						/>
 					</div>
 					<div className="col" style={{backgroundColor: "#fafafa"}}>
-						<ResultList
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="original_title"
 							from={0}
 							size={3}
-							renderItem={booksList}
 							className="result-list-container"
 							pagination
 							react={{
 								and: "BookSensor"
 							}}
-						/>
+							{...this.props}
+						>
+							{({ data }) => (
+								<ReactiveList.ResultListWrapper>
+									{
+										data.map(item => <BooksList {...item} />)
+									}
+								</ReactiveList.ResultListWrapper>
+							)}
+						</ReactiveList>
 					</div>
 				</div>
 			</ReactiveBase>

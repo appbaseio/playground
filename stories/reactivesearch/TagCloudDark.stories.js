@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ReactiveBase, TagCloud, SingleDataList, MultiDataList, ToggleButton, ResultList, SelectedFilters } from "@appbaseio/reactivesearch";
+import { ReactiveBase, TagCloud, SingleDataList, MultiDataList, ToggleButton, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
 
-import { meetupList } from "./resultViews";
+import { meetupList as MeetupList } from "./resultViews";
 
 export default class TagCloudDefault extends Component {
 	render() {
@@ -57,7 +57,7 @@ export default class TagCloudDefault extends Component {
 					</div>
 					<div className="col">
 						<SelectedFilters componentId="CitySensor" />
-						<ResultList
+						<ReactiveList
 							componentId="SearchResult"
 							dataField="group.group_topics.topic_name_raw"
 							title="Results"
@@ -65,7 +65,6 @@ export default class TagCloudDefault extends Component {
 							className="result-list-container"
 							from={0}
 							size={5}
-							onData={meetupList}
 							innerClass={{
 								image: 'meetup-list-image'
 							}}
@@ -73,7 +72,16 @@ export default class TagCloudDefault extends Component {
 							react={{
 								and: ["CitySensor", "CitySensor2", "CitySensor3", "CitySensor4"]
 							}}
-						/>
+							{...this.props}
+						>
+							{({ data }) => (
+								<ReactiveList.ResultListWrapper>
+									{
+										data.map(item => <MeetupList {...item} />)
+									}
+								</ReactiveList.ResultListWrapper>
+							)}
+						</ReactiveList>
 					</div>
 				</div>
 			</ReactiveBase>

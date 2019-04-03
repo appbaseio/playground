@@ -2,7 +2,7 @@ import React from 'react';
 import { ResultCard, ResultList } from '@appbaseio/reactivesearch';
 
 export const booksList = (data) => (
-	<ResultList key={data._id}>
+	<ResultList key={data.id}>
 		<ResultList.Image src={data.image}/>
 		<ResultList.Content>
 			<ResultList.Title>
