@@ -27,9 +27,9 @@ export default class ReactiveMapDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="earthquake"
-				credentials="OrXIHcgHn:d539c6e7-ed14-4407-8214-c227b0600d8e"
-				type="places"
+				app="earthquakes"
+				credentials="dshr057Nz:e18bbbbe-5d55-4234-a17e-4d64fb2222c7"
+				type="earthquakes"
 				mapKey="AIzaSyBQdVcKCe0q_vOBDUvJYpzwGpt_d_uTj4Q"
 			>
 				<div className="row reverse-labels">
