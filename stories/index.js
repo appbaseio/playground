@@ -505,6 +505,16 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
 			defaultZoom={number("defaultZoom", 13)}
 		/>
 	)))
+	.add("With onError", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveGoogleMapDefault
+			onError={action('onError')}
+		/>
+	)))
+	.add("With renderError", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveGoogleMapDefault
+			renderError={() => (<div style={{ color: 'red' }}>Something went wrong!</div>)}
+		/>
+	)))
 	.add("With defaultCenter", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 		<ReactiveGoogleMapDefault
 			defaultCenter={object("defaultCenter", {
@@ -550,6 +560,16 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 	.add("With autoCenter", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
 		<ReactiveOpenStreetMapDefault
 			autoCenter={boolean("autoCenter", true)}
+		/>
+	)))
+	.add("With onError", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveOpenStreetMapDefault
+			onError={action('onError')}
+		/>
+	)))
+	.add("With renderError", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
+		<ReactiveOpenStreetMapDefault
+			renderError={() => (<div style={{ color: 'red' }}>Something went wrong!</div>)}
 		/>
 	)))
 	.add("With size", withReadme(removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3), () => (
