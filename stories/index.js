@@ -1306,11 +1306,6 @@ storiesOf("Result components/ReactiveList", module)
 			onData={action("Data Changed")}
 		/>
 	)))
-	.add("With onResultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
-		<ReactiveListDefault
-			onResultStats={action("Results Changed")}
-		/>
-	)))
 	.add("With renderResultStats", withReadme(removeFirstLine(ReactiveListReadme, 3), () => (
 		<ReactiveListDefault
 			renderResultStats={({
