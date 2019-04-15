@@ -188,9 +188,9 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 			countries={object("countries",["us"])}
 		/>
 	)))
-	.add("With defaultSelected", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+	.add("With defaultValue", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceSliderGoogleMap
-			defaultSelected={object("defaultSelected", {
+			defaultValue={object("defaultValue", {
 				location: "London",
 				distance: 5
 			})}
@@ -206,7 +206,8 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 	)))
 	.add("With autoLocation off", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceSliderGoogleMap
-			defaultSelected={{
+			defaultValue={{
+				location: "London",
 				distance: 50
 			}}
 			unit="mi"
@@ -218,7 +219,8 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 	)))
 	.add("With URLParams", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceSliderGoogleMap
-			defaultSelected={{
+			defaultValue={{
+				location: "London",
 				distance: 50
 			}}
 			unit="mi"
@@ -229,7 +231,8 @@ storiesOf("Map Components/GeoDistanceSlider", module)
 	)))
 	.add("With tooltipTrigger", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceSliderGoogleMap
-			defaultSelected={{
+			defaultValue={{
+				location: "London",
 				distance: 50
 			}}
 			style={{marginTop: '10px'}}
@@ -360,7 +363,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 			filterLabel={text("filterLabel", "GeoDistance filter")}
 		/>
 	)))
-	.add("With Default Selected", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
+	.add("With Default Value", withReadme(removeFirstLine(GeoDistanceDropdownReadme), () => (
 		<GeoDistanceDropdownGoogleMap
 			unit="mi"
 			data={
@@ -369,7 +372,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 				{ distance: 500, label: "Under 500 miles" },
 				{ distance: 1000, label: "Under 1000 miles" }]
 			}
-			defaultSelected={object("defaultSelected", {
+			defaultValue={object("defaultValue", {
 				label: "Under 100 miles",
 				location: "London"
 			})}
@@ -416,7 +419,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 			}
 			unit={select("unit", { mi: "mi", miles: "miles", yd: "yd", yards: "yards", ft: "ft", feet: "feet", in: "in", inch: "inch", km: "km", kilometers: "kilometers", m: "m", meters: "meters", cm: "cm", centimeters: "centimeters", mm: "mm", millimeters: "millimeters", NM: "NM", nmi: "nmi", nauticalmiles: "nauticalmiles" }, "mi")}
 				title={text("title", "Geo Distance Slider")}
-				defaultSelected={object("defaultSelected", {
+				defaultValue={object("defaultValue", {
 					label: "Under 100 miles",
 					location: "London"
 				})}
@@ -440,7 +443,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
 			}
 			unit={select("unit", { mi: "mi", miles: "miles", yd: "yd", yards: "yards", ft: "ft", feet: "feet", in: "in", inch: "inch", km: "km", kilometers: "kilometers", m: "m", meters: "meters", cm: "cm", centimeters: "centimeters", mm: "mm", millimeters: "millimeters", NM: "NM", nmi: "nmi", nauticalmiles: "nauticalmiles" }, "mi")}
 				title={text("title", "Geo Distance Slider")}
-				defaultSelected={object("defaultSelected", {
+				defaultValue={object("defaultValue", {
 					label: "Under 100 miles",
 					location: "London"
 				})}
