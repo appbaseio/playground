@@ -9,7 +9,7 @@
     grunt "~0.4.0"
     serve-static "^1.10.2"
 
-"@appbaseio/reactivecore@^8.1.2":
+"@appbaseio/reactivecore@^8.1.3":
   version "8.1.3"
   resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-8.1.3.tgz#72ace25607ee0abb04b69dbe85ad23f51bcfa0da"
   integrity sha512-iirFNCDFLtetKOwn70dEwTvTTImVo+3VS7GmMKW/Z13iZPpiwiO4BfqRS9t2zE0oHYmBEa9TpHvQsa2LXg7tqw==
@@ -33,12 +33,12 @@
     react-leaflet "^2.1.3"
     rheostat "^2.1.1"
 
-"@appbaseio/reactivesearch@^3.0.0-rc.4":
-  version "3.0.0-rc.4"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.0.0-rc.4.tgz#56574c80981c593df7c8d2875b2efcffb964d689"
-  integrity sha512-kVnbfCpqM/2q6gJmEe+JYKaMPByMGN0qWTLZqrgEPXxO81voY9gK36UWva9x/PwGXkbOGQ5RUL9R/63UZhy02g==
+"@appbaseio/reactivesearch@^3.0.0-rc.6":
+  version "3.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.0.0-rc.6.tgz#ed7120d8ea15d1e54d186cf3b995f234cabac44b"
+  integrity sha512-ME3x6wB4AVW37Zj3maQ47CLLik5vpUDo3GXullNBWTfRI2bRfR1LVyAbCwntira/TxTNvBC7Y73iswJ/Oid8WA==
   dependencies:
-    "@appbaseio/reactivecore" "^8.1.2"
+    "@appbaseio/reactivecore" "^8.1.3"
     appbase-js "^4.0.2-beta.05"
     cross-env "^5.2.0"
     downshift "^1.31.2"

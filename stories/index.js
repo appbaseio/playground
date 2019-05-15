@@ -571,13 +571,13 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
     )
   )
   .add(
-    "With showMarkerCluster",
+    "With showMarkerClusters",
     withReadme(
       removeFirstLine(removeCommentsLine(ReactiveMapReadme), 3),
       () => (
         <ReactiveGoogleMapDefault
           showMarkers
-          showMarkerClusters={boolean("showMarkerCluster", true)}
+          showMarkerClusters={boolean("showMarkerClusters", true)}
         />
       )
     )
