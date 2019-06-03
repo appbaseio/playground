@@ -1357,12 +1357,12 @@ storiesOf("Search components/CategorySearch", module)
     ))
   )
   .add(
-    "With renderSuggestion",
+    "With parseSuggestion",
     withReadme(removeFirstLine(DataSearchReadme), () => (
       <CategorySearchDefault
         placeholder="Search Books..."
         //renderSuggestion={action("Suggestion")}
-        renderSuggestion={suggestion => {
+        parseSuggestion={suggestion => {
           return {
             label: (
               <div>
@@ -2083,11 +2083,11 @@ storiesOf("Search components/DataSearch", module)
     ))
   )
   .add(
-    "With renderSuggestion",
+    "With parseSuggestion",
     withReadme(removeFirstLine(DataSearchReadme), () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        renderSuggestion={suggestion => ({
+        parseSuggestion={suggestion => ({
           label: (
             <div>
               {suggestion.source.original_title} by
