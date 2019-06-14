@@ -16,19 +16,6 @@ export default class MultiListDefault extends Component {
 							componentId="BookSensor"
 							dataField="original_series.raw"
 							size={100}
-							defaultQuery={() => ({
-							query: {
-								bool: {
-								should: [
-									{
-									term: {
-										"original_publication_year": 2014
-									}
-									}
-								]
-								}
-							}
-							})}
 							react={{
 								and: 'BookSensorSEARCH',
 							}}
