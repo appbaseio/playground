@@ -19,25 +19,25 @@
     },
     "homepage": "https://github.com/appbaseio/reactive-playground#readme",
     "dependencies": {
-        "@appbaseio/reactive-manual": "^1.1.0",
+        "@appbaseio/reactive-manual-v3": "^0.0.1",
         "@appbaseio/reactivemaps": "^3.0.0-alpha.7",
         "@appbaseio/reactivesearch": "3.0.0-rc.16",
         "react": "^16.0.0",
         "react-dom": "^16.0.0"
     },
     "devDependencies": {
-        "@storybook/addon-actions": "^3.2.17",
-        "@storybook/addon-info": "^3.3.2",
-        "@storybook/addon-knobs": "^3.1.8",
-        "@storybook/addon-options": "^3.1.6",
-        "@storybook/react": "^3.1.6",
-        "@storybook/storybook-deployer": "^2.0.0",
+        "@storybook/addon-actions": "^5.1.9",
+        "@storybook/addon-info": "^5.1.9",
+        "@storybook/addon-knobs": "^5.1.9",
+        "@storybook/addon-options": "^5.1.9",
+        "@storybook/react": "^5.1.9",
+        "@storybook/storybook-deployer": "^2.8.1",
         "css-loader": "^0.27.3",
         "jquery": "^3.2.1",
         "json-loader": "^0.5.4",
         "materialize-css": "^0.98.1",
         "raw-loader": "^0.5.1",
-        "storybook-readme": "^3.0.5",
+        "storybook-readme": "^5.0.5",
         "sumoselect": "^3.0.3"
     }
 }

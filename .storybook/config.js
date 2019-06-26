@@ -1,24 +1,21 @@
-import { configure } from "@storybook/react";
-import { setOptions } from "@storybook/addon-options";
-import { setDefaults } from '@storybook/addon-info';
+import { configure, addDecorator, addParameters } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
+import { create } from '@storybook/theming';
+import { addReadme } from 'storybook-readme';
 
-setOptions({
-	name: "appbase.io",
-	url: "https://github.com/appbaseio/playground",
-	goFullScreen: false,
-	showStoriesPanel: true,
-	showAddonPanel: true,
-	showSearchBox: false,
-	addonPanelInRight: false,
-	sortStoriesByKind: true,
+addParameters({
+  options: {
+    panelPosition: 'right',
+    theme: create({
+      base: 'light',
+      brandTitle: 'ReactiveSearch',
+      brandUrl: 'https://github.com/appbaseio/playground',
+    }),
+  },
 });
 
-setDefaults({
-	header: false, // Toggles display of header with component name and description
-	inline: false, // Displays info inline vs click button to view
-	source: false, // Displays the source of story Component
-	propTables: [/* Components used in story */], // displays Prop Tables with this components
-});
+addDecorator(withKnobs);
+addDecorator(addReadme);
 
 function loadStories() {
 	require("../stories");
