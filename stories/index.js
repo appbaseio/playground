@@ -1092,7 +1092,7 @@ storiesOf("Base components/TagCloud", module)
     "With defaultSelected",
     () => (
       <TagCloudDefault
-        defaultSelected={text("defaultSelected", "Auckland")}
+        defaultSelected={"Auckland"}
         showFilter={false}
       />
     )
@@ -1102,14 +1102,14 @@ storiesOf("Base components/TagCloud", module)
     () => (
       <TagCloudDefault
         multiSelect
-        defaultSelected={array("defaultSelected", ["Auckland", "Amsterdam"])}
+        defaultSelected={["Auckland", "Amsterdam"]}
       />
     )
   )
   .add(
     "With multiSelect off and defaultSelected",
     () => (
-      <TagCloudDefault defaultSelected={text("defaultSelected", "Auckland")} />
+      <TagCloudDefault defaultSelected={"Auckland"} />
     )
   )
   .add(
@@ -1148,7 +1148,7 @@ storiesOf("Base components/TagCloud", module)
         )}
         size={number("size", 100)}
         multiSelect
-        defaultSelected={array("defaultSelected", ["Auckland"])}
+        defaultSelected={["Auckland"]}
         showCount={boolean("showCount", true)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Cities filter")}
@@ -1184,7 +1184,7 @@ storiesOf("Range components/RatingsFilter", module)
     "With defaultSelected",
     () => (
       <RatingsFilterDefault
-        defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
+        defaultSelected={{ start: 2, end: 5 }}
         showFilter={false}
       />
     )
@@ -1209,7 +1209,7 @@ storiesOf("Range components/RatingsFilter", module)
           { start: 2, end: 5, label: "2 stars and up" },
           { start: 1, end: 5, label: "> 1 stars" }
         ])}
-        defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
+        defaultSelected={{ start: 2, end: 5 }}
         filterLabel={text("filterLabel", "Ratings filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
       />
@@ -1320,7 +1320,7 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        defaultSelected={text("defaultSelected", "Sherlock Holmes")}
+        defaultSelected={"Sherlock Holmes"}
         showFilter={false}
       />
     )
@@ -1566,7 +1566,7 @@ storiesOf("Search components/CategorySearch", module)
           "original_title.search"
         ])}
         categoryField={text("categoryField", "authors.raw")}
-        defaultSelected={text("defaultSelected", "")}
+        defaultSelected={""}
         strictSelection={boolean("strictSelection", false)}
         placeholder={text("placeholder", "Search Books by Author")}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
@@ -2199,7 +2199,7 @@ storiesOf("Search components/DataSearch", module)
       <DataSearchRSDefault
         placeholder="Search Books..."
         showFilter={false}
-        defaultSelected={text("defaultSelected", "Harry Potter")}
+        defaultSelected={"Harry Potter"}
       />
     )
   )
@@ -2317,7 +2317,7 @@ storiesOf("Search components/DataSearch", module)
         ])}
         placeholder={text("placeholder", "Search Books...")}
         autosuggest={boolean("autosuggest", true)}
-        defaultSelected={text("defaultSelected", "")}
+        defaultSelected={""}
         strictSelection={boolean("strictSelection", false)}
         fieldWeights={array("weights", [1, 3])}
         fuzziness={number("fuzziness", 1)}
