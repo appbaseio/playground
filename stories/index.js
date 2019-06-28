@@ -15,6 +15,7 @@ import GeoDistanceSliderGoogleMap from "./reactivemaps/GeoDistanceSliderGoogleMa
 import GeoDistanceDropdownGoogleMap from "./reactivemaps/GeoDistanceDropdownGoogleMap.stories";
 import ReactiveGoogleMapDefault from "./reactivemaps/ReactiveGoogleMap.stories";
 import ReactiveOpenStreetMapDefault from "./reactivemaps/ReactiveOpenStreetMapDefault.stories";
+import GeoDistanceSliderOpenStreetMap from "./reactivemaps/GeoDistanceSliderOpenStreetMap.stories";
 
 // import READMEs for each component
 // List Components
