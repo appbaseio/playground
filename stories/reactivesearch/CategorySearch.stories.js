@@ -12,13 +12,13 @@ export default class CategorySearchDefault extends Component {
 			>
 				<div className="row">
 					<div className="col">
-						<SelectedFilters componentId="BookSensor" />
 						<CategorySearch
 							dataField={["original_title", "original_title.search"]}
 							categoryField="authors.raw"
 							componentId="BookSensor"
 							{...this.props}
 						/>
+						<SelectedFilters componentId="BookSensor" />
 					</div>
 
 					<div className="col">

@@ -1347,6 +1347,16 @@ storiesOf("Search components/CategorySearch", module)
         strictSelection={boolean("strictSelection", true)}
       />
     )
+	)
+	.add(
+    "With searchOperators",
+   () => (
+      <CategorySearchDefault
+				showFilter
+        placeholder="Search Books by Author"
+        searchOperators={boolean("searchOperators", true)}
+      />
+    )
   )
   .add(
     "With parseSuggestion",
@@ -2085,6 +2095,12 @@ storiesOf("Search components/DataSearch", module)
         showFilter={false}
         strictSelection={boolean("strictSelection", true)}
       />
+    )
+	)
+	.add(
+    "with searchOperators",
+    () => (
+      <DataSearchRSDefault searchOperators={boolean("searchOperators", true)} placeholder="Search Books..." />
     )
   )
   .add(
