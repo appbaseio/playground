@@ -26,6 +26,7 @@
         "react-dom": "^16.8.6"
     },
     "devDependencies": {
+        "@storybook/addon-a11y": "^5.1.9",
         "@storybook/addon-actions": "^5.1.9",
         "@storybook/addon-info": "^5.1.9",
         "@storybook/addon-knobs": "^5.1.9",

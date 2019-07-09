@@ -2,10 +2,9 @@
 # yarn lockfile v1
 
 
-"@appbaseio/reactive-manual-v3@^0.0.1":
+"@appbaseio/reactive-manual-v3@git://github.com/appbaseio/reactive-manual.git#v3":
   version "0.0.1"
-  resolved "https://registry.npmjs.org/@appbaseio/reactive-manual-v3/-/reactive-manual-v3-0.0.1.tgz#dffebf0e2f3fa0b1e6cfb233fed313a551bee7cb"
-  integrity sha512-YMfatQGDnXbVoxRNH7X6J9qvh8iGL+rcf1l4ZyMzcR5xnquIX34SegBfRxVtM2v1aIaPExhbG8Gv1ixnwUTcQw==
+  resolved "git://github.com/appbaseio/reactive-manual.git#dc5dfa954736c3f1b8f56ee31e9ed605e5ec85f6"
   dependencies:
     "@gaearon/react-live" "1.7.1-with-safari-fix"
     array-from "^2.1.1"
@@ -56,10 +55,10 @@
     string.prototype.repeat "^0.2.0"
     unist-util-visit "^1.1.3"
 
-"@appbaseio/reactivecore@8.2.8":
-  version "8.2.8"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-8.2.8.tgz#2bca2be83d36809e228de32f020bbdca312c3b85"
-  integrity sha512-sIi9zn6mMNPcLPOpIVbAaOSEJHfovaM/7qceuWm9rAGeVDhx5xDXwoluBQE9hSY1npFG2ThvmFV1lSpg9sBwTw==
+"@appbaseio/reactivecore@8.2.9":
+  version "8.2.9"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-8.2.9.tgz#53edddf6cfe3f654a2c6160be6a6db150e80fab4"
+  integrity sha512-6tKjoKj6Xj3PcG8vrEqoA5tU0v0h9XyhN41VqaxgSERkmvSU+EIxkOYIcXhH5E6ersA3DeWvYKZtsU7E7xVgcQ==
   dependencies:
     prop-types "^15.6.0"
     redux "^4.0.0"
@@ -80,12 +79,12 @@
     react-leaflet "^2.1.3"
     rheostat "^2.1.1"
 
-"@appbaseio/reactivesearch@3.0.0-rc.16":
-  version "3.0.0-rc.16"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.0.0-rc.16.tgz#018e6efd3b5aeeabf50e2605c7ae2dbaf6129b05"
-  integrity sha512-+Vtua6fuK8nGs8NcqOAdR+GGLneycGMTvmV40fJdkbKf8lJF0wqedBOJ3IxS4MV6ocmOwa1bc+6U6pYge9qAZg==
+"@appbaseio/reactivesearch@3.0.0-rc.19":
+  version "3.0.0-rc.19"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.0.0-rc.19.tgz#cbbc582089251c0be4d6d7e97e236c28e35774c3"
+  integrity sha512-Tk/HiRyCQy2U9peNv+x4o1/I2SOPD3c53/6q25TmZp4Wef4Wflg0KumucaS7vnz/9lN77gHNtZx+ZFYw7uvBuw==
   dependencies:
-    "@appbaseio/reactivecore" "8.2.8"
+    "@appbaseio/reactivecore" "8.2.9"
     appbase-js "^4.0.2-beta.06"
     cross-env "^5.2.0"
     downshift "^1.31.2"
@@ -97,9 +96,9 @@
     react-day-picker "^7.0.5"
     react-emotion "^9.0.0"
     react-highlight-words "^0.14.0"
-    react-redux "^7.0.3"
+    react-redux "^6.0.1"
     rheostat "^2.1.1"
-    url-search-params "^0.10.0"
+    url-search-params-polyfill "^7.0.0"
     xdate "^0.8.2"
 
 "@babel/code-frame@7.0.0", "@babel/code-frame@^7.0.0":
@@ -1580,6 +1579,29 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@storybook/addon-a11y@^5.1.9":
+  version "5.1.9"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.1.9.tgz#3feea3f49680f6c311cefd1838b82721d59f397e"
+  integrity sha512-5u90lEpJtO1W8unwNy5fKTKQG7Sbe3IZJpiC6rf1MdGk0avSwoxDyblt0NImPDBHTh4LeUcuCn57D7AVNLUplg==
+  dependencies:
+    "@storybook/addons" "5.1.9"
+    "@storybook/api" "5.1.9"
+    "@storybook/client-logger" "5.1.9"
+    "@storybook/components" "5.1.9"
+    "@storybook/core-events" "5.1.9"
+    "@storybook/theming" "5.1.9"
+    axe-core "^3.2.2"
+    common-tags "^1.8.0"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    hoist-non-react-statics "^3.3.0"
+    memoizerific "^1.11.3"
+    react "^16.8.3"
+    react-redux "^7.0.2"
+    react-sizeme "^2.5.2"
+    redux "^4.0.1"
+    util-deprecate "^1.0.2"
+
 "@storybook/addon-actions@^5.1.9":
   version "5.1.9"
   resolved "https://registry.npmjs.org/@storybook/addon-actions/-/addon-actions-5.1.9.tgz#a515b62b109cb886ccd75ef2f5b12f8c27b43dd3"
@@ -2925,6 +2947,11 @@ aws4@^1.8.0:
   resolved "https://registry.npmjs.org/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
   integrity sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==
 
+axe-core@^3.2.2:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.3.0.tgz#3b32d7e54390d89ff4891b20394d33ad7a192776"
+  integrity sha512-54XaTd2VB7A6iBnXMUG2LnBOI7aRbnrVxC5Tz+rVUwYl9MX/cIJc/Ll32YUoFIE/e9UKWMZoQenQu9dFrQyZCg==
+
 axobject-query@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmjs.org/axobject-query/-/axobject-query-2.0.2.tgz#ea187abe5b9002b377f925d8bf7d1c561adf38f9"
@@ -4205,6 +4232,11 @@ bash-path@^1.0.1:
   dependencies:
     arr-union "^3.1.0"
     is-windows "^1.0.1"
+
+batch-processor@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
+  integrity sha1-dclcMrdI4IUNEMKxaPa9vpiRrOg=
 
 batch@0.6.1:
   version "0.6.1"
@@ -6568,6 +6600,13 @@ electron-to-chromium@^1.3.122, electron-to-chromium@^1.3.164:
   version "1.3.176"
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.176.tgz#df54c54386e0f205dc6d1f5582d9e8b0cd30532b"
   integrity sha512-hsQ/BH6x2iCvJ7WOIbNTAlsT39vsVGIVoJJ9i6ZkGXUE2LdzWsNv0xJI2uZ5/Hkqv1oTTLxAYjbtGKVJzqYbjA==
+
+element-resize-detector@^1.1.15:
+  version "1.1.15"
+  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.15.tgz#48eba1a2eaa26969a4c998d972171128c971d8d2"
+  integrity sha512-16/5avDegXlUxytGgaumhjyQoM6hpp5j3+L79sYq5hlXfTNRy5WMMuTVWkZU3egp/CokCmTmvf18P3KeB57Iog==
+  dependencies:
+    batch-processor "^1.0.0"
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -14341,7 +14380,7 @@ react-inspector@^3.0.2:
     is-dom "^1.0.9"
     prop-types "^15.6.1"
 
-react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.3, react-is@^16.8.6:
+react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.2, react-is@^16.8.3, react-is@^16.8.6:
   version "16.8.6"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
@@ -14388,7 +14427,19 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
-react-redux@^7.0.3:
+react-redux@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-6.0.1.tgz#0d423e2c1cb10ada87293d47e7de7c329623ba4d"
+  integrity sha512-T52I52Kxhbqy/6TEfBv85rQSDz6+Y28V/pf52vDWs1YRXG19mcFOGfHnY2HsNFHyhP+ST34Aih98fvt6tqwVcQ==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    hoist-non-react-statics "^3.3.0"
+    invariant "^2.2.4"
+    loose-envify "^1.4.0"
+    prop-types "^15.7.2"
+    react-is "^16.8.2"
+
+react-redux@^7.0.2:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.1.0.tgz#72af7cf490a74acdc516ea9c1dd80e25af9ea0b2"
   integrity sha512-hyu/PoFK3vZgdLTg9ozbt7WF3GgX5+Yn3pZm5/96/o4UueXA+zj08aiSC9Mfj2WtD1bvpIb3C5yvskzZySzzaw==
@@ -14456,6 +14507,16 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
+
+react-sizeme@^2.5.2:
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/react-sizeme/-/react-sizeme-2.6.7.tgz#231339ce8821ac2c26424c791e0027f89dae3e90"
+  integrity sha512-xCjPoBP5jmeW58TxIkcviMZqabZis7tTvDFWf0/Wa5XCgVWQTIe74NQBes2N1Kmp64GRLkpm60BaP0kk+v8aCQ==
+  dependencies:
+    element-resize-detector "^1.1.15"
+    invariant "^2.2.4"
+    shallowequal "^1.1.0"
+    throttle-debounce "^2.1.0"
 
 react-syntax-highlighter@^8.0.1:
   version "8.1.0"
@@ -14780,6 +14841,14 @@ redux@^4.0.0:
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.0.tgz#aa698a92b729315d22b34a0553d7e6533555cc03"
   dependencies:
     loose-envify "^1.1.0"
+    symbol-observable "^1.2.0"
+
+redux@^4.0.1:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.2.tgz#597cc660a99f91412e31c96c3da10ed8ace0715d"
+  integrity sha512-oAiFLWYQhbpSvzjcVfgQ90MlZ0u6uDIHFK41Q0/BnCfjEg96SACzwUFwDVUKz/LP/SwJORGaFY8AM5wOB/zf0A==
+  dependencies:
+    loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
 
 refractor@^2.4.1:
@@ -15782,7 +15851,7 @@ shallow-equal@^1.0.0, shallow-equal@^1.1.0:
   resolved "https://registry.npmjs.org/shallow-equal/-/shallow-equal-1.2.0.tgz#fd828d2029ff4e19569db7e19e535e94e2d1f5cc"
   integrity sha512-Z21pVxR4cXsfwpMKMhCEIO1PCi5sp7KEp+CmOpBQ+E8GpHwKOw2sEzk7sgblM3d/j4z4gakoWEoPcjK0VJQogA==
 
-shallowequal@1.1.0, shallowequal@^1.0.1:
+shallowequal@1.1.0, shallowequal@^1.0.1, shallowequal@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
   integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
@@ -16872,6 +16941,11 @@ text-table@0.2.0, text-table@~0.2.0:
   resolved "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
+throttle-debounce@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-2.1.0.tgz#257e648f0a56bd9e54fe0f132c4ab8611df4e1d5"
+  integrity sha512-AOvyNahXQuU7NN+VVvOOX+uW6FPaWdAOdRP5HfwYxAfCzXTFKRMoIMk+n+po318+ktcChx+F1Dd91G3YHeMKyg==
+
 through2-filter@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/through2-filter/-/through2-filter-2.0.0.tgz#60bc55a0dacb76085db1f9dae99ab43f83d622ec"
@@ -17594,9 +17668,10 @@ url-regex@^3.0.0:
   dependencies:
     ip-regex "^1.0.1"
 
-url-search-params@^0.10.0:
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/url-search-params/-/url-search-params-0.10.2.tgz#e9da69646e48c6140c6732e1f07fb669525f5a4e"
+url-search-params-polyfill@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/url-search-params-polyfill/-/url-search-params-polyfill-7.0.0.tgz#98b56ed29e67710588fdc3c361083b0f78303d95"
+  integrity sha512-0SEH3s+wCNbxEE/rWUalN004ICNi23Q74Ksc0gS2kG8EXnbayxGOrV97JdwnIVPKZ75Xk0hvKXvtIC4xReLMgg==
 
 url-to-options@^1.0.1:
   version "1.0.1"
