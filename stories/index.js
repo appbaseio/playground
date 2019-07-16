@@ -1357,6 +1357,16 @@ storiesOf("Search components/CategorySearch", module)
         searchOperators={boolean("searchOperators", true)}
       />
     )
+	)
+	.add(
+    "With showVoiceSearch",
+   () => (
+      <CategorySearchDefault
+				showFilter
+        placeholder="Search Books by Author"
+        showVoiceSearch={boolean("showVoiceSearch", true)}
+      />
+    )
   )
   .add(
     "With parseSuggestion",
@@ -2101,6 +2111,12 @@ storiesOf("Search components/DataSearch", module)
     "with searchOperators",
     () => (
       <DataSearchRSDefault searchOperators={boolean("searchOperators", true)} placeholder="Search Books..." />
+    )
+	)
+	.add(
+    "with showVoiceSearch",
+    () => (
+      <DataSearchRSDefault showVoiceSearch={boolean("showVoiceSearch", true)} placeholder="Search Books..." />
     )
   )
   .add(
