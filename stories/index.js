@@ -628,6 +628,14 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
           searchAsMove={boolean("searchAsMove", false)}
         />
       )
+	)
+	.add(
+    "With loader",
+      () => (
+        <ReactiveGoogleMapDefault
+          loader={text("loader", "Loading ...")}
+        />
+      )
   )
   .add(
     "With showMapStyles",
@@ -741,6 +749,14 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
       () => (
         <ReactiveOpenStreetMapDefault
           autoCenter={boolean("autoCenter", true)}
+        />
+      )
+	)
+	.add(
+    "With loader",
+      () => (
+        <ReactiveOpenStreetMapDefault
+          loader={text("loader", "Loading ...")}
         />
       )
   )
