@@ -1320,7 +1320,7 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        defaultValue={"Sherlock Holmes"}
+        defaultValue="Sherlock Holmes"
         showFilter={false}
       />
     )
@@ -1566,7 +1566,7 @@ storiesOf("Search components/CategorySearch", module)
           "original_title.search"
         ])}
         categoryField={text("categoryField", "authors.raw")}
-        defaultValue={""}
+        defaultValue=""
         strictSelection={boolean("strictSelection", false)}
         placeholder={text("placeholder", "Search Books by Author")}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
@@ -2199,7 +2199,7 @@ storiesOf("Search components/DataSearch", module)
       <DataSearchRSDefault
         placeholder="Search Books..."
         showFilter={false}
-        defaultValue={"Harry Potter"}
+        defaultValue="Harry Potter"
       />
     )
   )
@@ -2317,7 +2317,7 @@ storiesOf("Search components/DataSearch", module)
         ])}
         placeholder={text("placeholder", "Search Books...")}
         autosuggest={boolean("autosuggest", true)}
-        defaultValue={""}
+        defaultValue=""
         strictSelection={boolean("strictSelection", false)}
         fieldWeights={array("weights", [1, 3])}
         fuzziness={number("fuzziness", 1)}
@@ -2604,7 +2604,7 @@ storiesOf("List components/SingleList", module)
    () => (
       <SingleListRSDefault
         showSearch
-        defaultValue={"Hercule Poirot"}
+        defaultValue="Hercule Poirot"
         placeholder="Search Books"
         showFilter={false}
       />
@@ -2687,7 +2687,7 @@ storiesOf("List components/SingleList", module)
           { asc: "asc", description: "desc", count: "count" },
           "count"
         )}
-        defaultValue={"Artemis Fowl"}
+        defaultValue="Artemis Fowl"
         showCount={boolean("showCount", true)}
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search Books")}
@@ -3058,7 +3058,7 @@ storiesOf("List components/SingleDropdownList", module)
     () => (
       <SingleDropdownListRSDefault
         selectAllLabel="All Cities"
-        defaultValue={"Artemis Fowl"}
+        defaultValue="Artemis Fowl"
         showFilter={false}
       />
     )
@@ -3096,7 +3096,7 @@ storiesOf("List components/SingleDropdownList", module)
           "count"
         )}
         selectAllLabel={text("selectAllLabel", "All Books")}
-        defaultValue={"Harry Potter"}
+        defaultValue="Harry Potter"
         placeholder={text("placeholder", "Select a Book")}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Book filter")}
@@ -3336,7 +3336,7 @@ storiesOf("List components/SingleDataList", module)
     "With defaultValue",
     () => (
       <SingleDataListRSDefault
-        defaultValue={"Social"}
+        defaultValue="Social"
         showFilter={false}
       />
     )
@@ -3442,7 +3442,7 @@ storiesOf("List components/SingleDataList", module)
       <SingleDataListRSDefault
         title={text("title", "Topics")}
         dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
-        defaultValue={"Social"}
+        defaultValue="Social"
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search topics")}
         showRadio={boolean("showRadio", true)}
@@ -3640,7 +3640,7 @@ storiesOf("Range components/SingleRange", module)
     "With Default Selected",
    () => (
       <SingleRangeRSDefault
-        defaultValue={"Rating 3 to 4"}
+        defaultValue="Rating 3 to 4"
         showFilter={false}
       />
     )
@@ -3677,7 +3677,7 @@ storiesOf("Range components/SingleRange", module)
    () => (
       <SingleRangeRSDefault
         title={text("title", "SingleRange: Books Filter")}
-        defaultValue={"Cheap"}
+        defaultValue="Cheap"
         showRadio={boolean("showRadio", true)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
@@ -3795,7 +3795,7 @@ storiesOf("Range components/SingleDropdownRange", module)
     "With Default Selected",
     () => (
       <SingleDropdownRangeRSDefault
-        defaultValue={"Rating 3 to 4"}
+        defaultValue="Rating 3 to 4"
         showFilter={false}
       />
     )
@@ -3824,7 +3824,7 @@ storiesOf("Range components/SingleDropdownRange", module)
       <SingleDropdownRangeRSDefault
         title={text("title", "SingleDropdownRange: Books Filter")}
         placeholder={text("placeholder", "Search books")}
-        defaultValue={"Rating 3 to 4"}
+        defaultValue="Rating 3 to 4"
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books")}
@@ -4043,7 +4043,7 @@ storiesOf("Range components/DatePicker", module)
     "Default date",
     () => (
       <DatePickerRSDefault
-        defaultValue={"2017-04-07"}
+        defaultValue="2017-04-07"
         showFilter={false}
       />
     )
