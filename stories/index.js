@@ -134,7 +134,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "Basic",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
@@ -147,7 +147,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With title",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
@@ -161,7 +161,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With placeholder",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
@@ -174,7 +174,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With filter",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
@@ -188,7 +188,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With Range Labels",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
@@ -218,10 +218,10 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           location: "London",
           distance: 5
         }}
@@ -240,7 +240,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With autoLocation off",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
@@ -255,7 +255,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With URLParams",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
@@ -269,7 +269,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With tooltipTrigger",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         style={{ marginTop: "10px" }}
@@ -284,7 +284,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "Playground with Google Map",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           location: "London",
           distance: 5
         }}
@@ -311,7 +311,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "Playground with OpenStreet Map",
     () => (
       <GeoDistanceSliderOpenStreetMap
-        defaultSelected={{
+        defaultValue={{
           location: "London",
           distance: 5
         }}
@@ -439,7 +439,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           { distance: 500, label: "Under 500 miles" },
           { distance: 1000, label: "Under 1000 miles" }
         ]}
-        defaultSelected={{
+        defaultValue={{
           label: "Under 100 miles",
           location: "London"
         }}
@@ -519,7 +519,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           "mi"
         )}
         title={text("title", "Geo Distance Slider")}
-        defaultSelected={{
+        defaultValue={{
           label: "Under 100 miles",
           location: "London"
         }}
@@ -570,7 +570,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           "mi"
         )}
         title={text("title", "Geo Distance Slider")}
-        defaultSelected={{
+        defaultValue={{
           label: "Under 100 miles",
           location: "London"
         }}
@@ -830,7 +830,7 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	)))
 // 	.add("Default selection", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
-// 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
+// 			defaultValue={array("defaultValue", ["bmw", "x series"])}
 // 			showFilter={false}
 // 		/>
 // 	)))
@@ -851,7 +851,7 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 			title={text("title", "NestedList: Car Filter")}
 // 			size={number("size", 100)}
 // 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
-// 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
+// 			defaultValue={array("defaultValue", ["bmw", "x series"])}
 // 			showCount={boolean("showCount", true)}
 // 			showSearch={boolean("showSearch", true)}
 // 			placeholder={text("placeholder", "Search Cars")}
@@ -877,7 +877,7 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	)))
 // 	.add("Default selection", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
-// 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
+// 			defaultValue={array("defaultValue", ["bmw", "x series"])}
 // 			showFilter={false}
 // 		/>
 // 	)))
@@ -898,7 +898,7 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 			title={text("title", "NestedMultiList: Car Filter")}
 // 			size={number("size", 100)}
 // 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
-// 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
+// 			defaultValue={array("defaultValue", ["bmw", "x series"])}
 // 			showCount={boolean("showCount", true)}
 // 			showSearch={boolean("showSearch", true)}
 // 			placeholder={text("placeholder", "Search Cars")}
@@ -969,10 +969,10 @@ storiesOf("Range components/DynamicRangeSlider", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
    () => (
       <DynamicRangeSliderDefault
-        defaultSelected={() => ({
+        defaultValue={() => ({
           start: 500,
           end: 2000
         })}
@@ -984,7 +984,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
     "With onDrag",
     () => (
       <DynamicRangeSliderDefault
-        defaultSelected={() => ({
+        defaultValue={() => ({
           start: 500,
           end: 2000
         })}
@@ -1030,7 +1030,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
           ["books_count", "original_publication_year", "ratings_count"],
           "books_count"
         )}
-        defaultSelected={(min, max) => ({
+        defaultValue={(min, max) => ({
           start: min,
           end: max
         })}
@@ -1089,27 +1089,27 @@ storiesOf("Base components/TagCloud", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <TagCloudDefault
-        defaultSelected={"Auckland"}
+        defaultValue={"Auckland"}
         showFilter={false}
       />
     )
   )
   .add(
-    "With multiSelect on and defaultSelected",
+    "With multiSelect on and defaultValue",
     () => (
       <TagCloudDefault
         multiSelect
-        defaultSelected={["Auckland", "Amsterdam"]}
+        defaultValue={["Auckland", "Amsterdam"]}
       />
     )
   )
   .add(
-    "With multiSelect off and defaultSelected",
+    "With multiSelect off and defaultValue",
     () => (
-      <TagCloudDefault defaultSelected={"Auckland"} />
+      <TagCloudDefault defaultValue={"Auckland"} />
     )
   )
   .add(
@@ -1148,7 +1148,7 @@ storiesOf("Base components/TagCloud", module)
         )}
         size={number("size", 100)}
         multiSelect
-        defaultSelected={["Auckland"]}
+        defaultValue={["Auckland"]}
         showCount={boolean("showCount", true)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Cities filter")}
@@ -1181,10 +1181,10 @@ storiesOf("Range components/RatingsFilter", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <RatingsFilterDefault
-        defaultSelected={{ start: 2, end: 5 }}
+        defaultValue={{ start: 2, end: 5 }}
         showFilter={false}
       />
     )
@@ -1209,7 +1209,7 @@ storiesOf("Range components/RatingsFilter", module)
           { start: 2, end: 5, label: "2 stars and up" },
           { start: 1, end: 5, label: "> 1 stars" }
         ])}
-        defaultSelected={{ start: 2, end: 5 }}
+        defaultValue={{ start: 2, end: 5 }}
         filterLabel={text("filterLabel", "Ratings filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
       />
@@ -1316,11 +1316,11 @@ storiesOf("Search components/CategorySearch", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        defaultSelected={"Sherlock Holmes"}
+        defaultValue={"Sherlock Holmes"}
         showFilter={false}
       />
     )
@@ -1566,7 +1566,7 @@ storiesOf("Search components/CategorySearch", module)
           "original_title.search"
         ])}
         categoryField={text("categoryField", "authors.raw")}
-        defaultSelected={""}
+        defaultValue={""}
         strictSelection={boolean("strictSelection", false)}
         placeholder={text("placeholder", "Search Books by Author")}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
@@ -2194,12 +2194,12 @@ storiesOf("Search components/DataSearch", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
         showFilter={false}
-        defaultSelected={"Harry Potter"}
+        defaultValue={"Harry Potter"}
       />
     )
   )
@@ -2317,7 +2317,7 @@ storiesOf("Search components/DataSearch", module)
         ])}
         placeholder={text("placeholder", "Search Books...")}
         autosuggest={boolean("autosuggest", true)}
-        defaultSelected={""}
+        defaultValue={""}
         strictSelection={boolean("strictSelection", false)}
         fieldWeights={array("weights", [1, 3])}
         fuzziness={number("fuzziness", 1)}
@@ -2345,7 +2345,7 @@ storiesOf("Range components/NumberBox", module)
     "Basic",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2359,7 +2359,7 @@ storiesOf("Range components/NumberBox", module)
     "With title",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2374,7 +2374,7 @@ storiesOf("Range components/NumberBox", module)
     "With labelPosition",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2392,7 +2392,7 @@ storiesOf("Range components/NumberBox", module)
     "With data",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={object("data", {
           label: "Book Ratings",
           start: 2,
@@ -2403,10 +2403,10 @@ storiesOf("Range components/NumberBox", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2419,7 +2419,7 @@ storiesOf("Range components/NumberBox", module)
     "With queryFormat",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2437,7 +2437,7 @@ storiesOf("Range components/NumberBox", module)
     "With URLParams",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2458,7 +2458,7 @@ storiesOf("Range components/NumberBox", module)
           ["average_rating_rounded", "books_count"],
           "average_rating_rounded"
         )}
-        defaultSelected={3}
+        defaultValue={3}
         data={object("data", {
           label: "Car Ratings",
           start: 2,
@@ -2604,7 +2604,7 @@ storiesOf("List components/SingleList", module)
    () => (
       <SingleListRSDefault
         showSearch
-        defaultSelected={"Hercule Poirot"}
+        defaultValue={"Hercule Poirot"}
         placeholder="Search Books"
         showFilter={false}
       />
@@ -2616,7 +2616,7 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         title="SingleList: Custom Sort"
         showSearch
-        defaultSelected="London"
+        defaultValue="London"
         sortBy={select(
           "sortBy",
           { asc: "asc", description: "desc", count: "count" },
@@ -2687,7 +2687,7 @@ storiesOf("List components/SingleList", module)
           { asc: "asc", description: "desc", count: "count" },
           "count"
         )}
-        defaultSelected={"Artemis Fowl"}
+        defaultValue={"Artemis Fowl"}
         showCount={boolean("showCount", true)}
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search Books")}
@@ -2835,7 +2835,7 @@ storiesOf("List components/MultiList", module)
    () => (
       <MultiListRSDefault
         showSearch
-        defaultSelected={["Hercule Poirot"]}
+        defaultValue={["Hercule Poirot"]}
         placeholder="Search Books"
         showFilter={false}
       />
@@ -2847,7 +2847,7 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         title="MultiList: Custom Sort"
         showSearch
-        defaultSelected={["London"]}
+        defaultValue={["London"]}
         sortBy={select(
           "sortBy",
           { asc: "asc", description: "desc", count: "count" },
@@ -2918,7 +2918,7 @@ storiesOf("List components/MultiList", module)
           { asc: "asc", description: "desc", count: "count" },
           "count"
         )}
-        defaultSelected={[
+        defaultValue={[
           "Harry Potter",
           "Artemis Fowl"
         ]}
@@ -3058,7 +3058,7 @@ storiesOf("List components/SingleDropdownList", module)
     () => (
       <SingleDropdownListRSDefault
         selectAllLabel="All Cities"
-        defaultSelected={"Artemis Fowl"}
+        defaultValue={"Artemis Fowl"}
         showFilter={false}
       />
     )
@@ -3096,7 +3096,7 @@ storiesOf("List components/SingleDropdownList", module)
           "count"
         )}
         selectAllLabel={text("selectAllLabel", "All Books")}
-        defaultSelected={"Harry Potter"}
+        defaultValue={"Harry Potter"}
         placeholder={text("placeholder", "Select a Book")}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Book filter")}
@@ -3212,7 +3212,7 @@ storiesOf("List components/MultiDropdownList", module)
         placeholder="Select Books"
         size={100}
         sortBy="count"
-        defaultSelected={["Hercule Poirot"]}
+        defaultValue={["Hercule Poirot"]}
         showFilter={false}
       />
     )
@@ -3300,7 +3300,7 @@ storiesOf("List components/MultiDropdownList", module)
         )}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
         selectAllLabel={text("selectAllLabel", "All Books")}
-        defaultSelected={["Hercule Poirot"]}
+        defaultValue={["Hercule Poirot"]}
         placeholder={text("placeholder", "Select Books")}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
@@ -3333,10 +3333,10 @@ storiesOf("List components/SingleDataList", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <SingleDataListRSDefault
-        defaultSelected={"Social"}
+        defaultValue={"Social"}
         showFilter={false}
       />
     )
@@ -3442,7 +3442,7 @@ storiesOf("List components/SingleDataList", module)
       <SingleDataListRSDefault
         title={text("title", "Topics")}
         dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
-        defaultSelected={"Social"}
+        defaultValue={"Social"}
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search topics")}
         showRadio={boolean("showRadio", true)}
@@ -3478,10 +3478,10 @@ storiesOf("List components/MultiDataList", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <MultiDataListRSDefault
-        defaultSelected={["Social", "Music"]}
+        defaultValue={["Social", "Music"]}
         showFilter={false}
       />
     )
@@ -3600,7 +3600,7 @@ storiesOf("List components/MultiDataList", module)
       <MultiDataListRSDefault
         title={text("title", "Topics")}
         dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
-        defaultSelected={["Social", "Music"]}
+        defaultValue={["Social", "Music"]}
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search topics")}
         showCheckbox={boolean("showCheckbox", true)}
@@ -3640,7 +3640,7 @@ storiesOf("Range components/SingleRange", module)
     "With Default Selected",
    () => (
       <SingleRangeRSDefault
-        defaultSelected={"Rating 3 to 4"}
+        defaultValue={"Rating 3 to 4"}
         showFilter={false}
       />
     )
@@ -3677,7 +3677,7 @@ storiesOf("Range components/SingleRange", module)
    () => (
       <SingleRangeRSDefault
         title={text("title", "SingleRange: Books Filter")}
-        defaultSelected={"Cheap"}
+        defaultValue={"Cheap"}
         showRadio={boolean("showRadio", true)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
@@ -3713,7 +3713,7 @@ storiesOf("Range components/MultiRange", module)
     "With Default Selected",
     () => (
       <MultiRangeRSDefault
-        defaultSelected={["Rating 3 to 4"]}
+        defaultValue={["Rating 3 to 4"]}
         showFilter={false}
       />
     )
@@ -3750,7 +3750,7 @@ storiesOf("Range components/MultiRange", module)
     () => (
       <MultiRangeRSDefault
         title={text("title", "MultiRange: Books Filter")}
-        defaultSelected={["Rating 3 to 4"]}
+        defaultValue={["Rating 3 to 4"]}
         showCheckbox={boolean("showCheckbox", true)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
@@ -3795,7 +3795,7 @@ storiesOf("Range components/SingleDropdownRange", module)
     "With Default Selected",
     () => (
       <SingleDropdownRangeRSDefault
-        defaultSelected={"Rating 3 to 4"}
+        defaultValue={"Rating 3 to 4"}
         showFilter={false}
       />
     )
@@ -3824,7 +3824,7 @@ storiesOf("Range components/SingleDropdownRange", module)
       <SingleDropdownRangeRSDefault
         title={text("title", "SingleDropdownRange: Books Filter")}
         placeholder={text("placeholder", "Search books")}
-        defaultSelected={"Rating 3 to 4"}
+        defaultValue={"Rating 3 to 4"}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books")}
@@ -3868,7 +3868,7 @@ storiesOf("Range components/MultiDropdownRange", module)
     "With Default Selected",
     () => (
       <MultiDropdownRangeRSDefault
-        defaultSelected={["Rating 3 to 4"]}
+        defaultValue={["Rating 3 to 4"]}
         showFilter={false}
       />
     )
@@ -3897,7 +3897,7 @@ storiesOf("Range components/MultiDropdownRange", module)
       <MultiDropdownRangeRSDefault
         title={text("title", "MultiDropdownRange: Books Filter")}
         dataField={text("dataField", "average_rating")}
-        defaultSelected={["Rating 3 to 4"]}
+        defaultValue={["Rating 3 to 4"]}
         placeholder={text("placeholder", "Search books")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         showFilter={boolean("showFilter", true)}
@@ -3933,7 +3933,7 @@ storiesOf("Base components/ToggleButton", module)
     "With Default Selected",
     () => (
       <ToggleButtonRSDefault
-        defaultSelected={["Music"]}
+        defaultValue={["Music"]}
         showFilter={false}
       />
     )
@@ -3972,7 +3972,7 @@ storiesOf("Base components/ToggleButton", module)
         title={text("title", "ToggleButton: Topics")}
         dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
         multiSelect={boolean("multiSelect", true)}
-        defaultSelected={["Social"]}
+        defaultValue={["Social"]}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Category filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
@@ -4043,7 +4043,7 @@ storiesOf("Range components/DatePicker", module)
     "Default date",
     () => (
       <DatePickerRSDefault
-        defaultSelected={"2017-04-07"}
+        defaultValue={"2017-04-07"}
         showFilter={false}
       />
     )
@@ -4211,7 +4211,7 @@ storiesOf("Range components/DateRange", module)
     () => (
       <DateRangeRSDefault
         showFilter={false}
-        defaultSelected={{
+        defaultValue={{
           start: new Date("2017-04-07"),
           end: new Date("2017-04-14")
         }}
@@ -4318,7 +4318,7 @@ storiesOf("Range components/RangeInput", module)
     "With Default Selected",
     () => (
       <RangeInputRSDefault
-        defaultSelected={{
+        defaultValue={{
           start: 5000,
           end: 9000
         }}
@@ -4421,7 +4421,7 @@ storiesOf("Range components/RangeInput", module)
         showFilter={boolean("showFilter", true)}
         stepValue={number("stepValue", 1)}
         interval={number("interval", 1000)}
-        defaultSelected={{
+        defaultValue={{
           start: 4000,
           end: 10000
         }}
@@ -4463,7 +4463,7 @@ storiesOf("Range components/RangeSlider", module)
     "With Default Selected",
     () => (
       <RangeSliderRSDefault
-        defaultSelected={{
+        defaultValue={{
           start: 3000,
           end: 4000
         }}
@@ -4476,7 +4476,7 @@ storiesOf("Range components/RangeSlider", module)
     () => (
       <RangeSliderRSDefault
         showFilter={false}
-        defaultSelected={{
+        defaultValue={{
           start: 3000,
           end: 4000
         }}
@@ -4563,7 +4563,7 @@ storiesOf("Range components/RangeSlider", module)
         showFilter={boolean("showFilter", true)}
         stepValue={number("stepValue", 1)}
         interval={number("interval", 2000)}
-        defaultSelected={{
+        defaultValue={{
           start: 6000,
           end: 12000
         }}
@@ -4580,17 +4580,17 @@ storiesOf("Range components/RangeSlider", module)
 // storiesOf("search/SelectedFilters", module)
 // 	.addDecorator(withKnobs)
 // 	.add("Basic", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} />
+// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["London"]} />
 // 	)))
 // 	.add("With no filter", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} showFilter={boolean("showFilter", false)} />
+// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["London"]} showFilter={boolean("showFilter", false)} />
 // 	)))
 // 	.add("With filterLabel", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} filterLabel={text("filterLabel", "City filter")} />
+// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["London"]} filterLabel={text("filterLabel", "City filter")} />
 // 	)))
 // 	.add("Playground", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
 // 		<MultiListRSDefault
-// 			defaultSelected={["London"]}
+// 			defaultValue={["London"]}
 // 			showFilter={boolean("showFilter", true)}
 // 			filterLabel={text("filterLabel", "City filter")}
 // 		/>
