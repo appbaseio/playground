@@ -1652,7 +1652,8 @@ storiesOf("Result components/ReactiveList", module)
           { bottom: "bottom", top: "top", both: "both" },
           "bottom"
         )}
-        pages={number("pages", 5)}
+				pages={number("pages", 5)}
+				showEndPage={boolean("showEndPage", false)}
         title="Meetups"
       />
     )
