@@ -43,7 +43,7 @@ export default class GeoDistanceSliderDefault extends Component {
 				app="meetup_app"
 				credentials="lW70IgSjr:87c5ae16-73fb-4559-a29e-0a02760d2181"
 				type="meetupdata1"
-				mapKey="AIzaSyBQdVcKCe0q_vOBDUvJYpzwGpt_d_uTj4Q"
+				mapKey="AIzaSyAKz3UhgSuP872fb-Aw27oPRI7M0eXkA9U"
 			>
 				<div className="row">
 					<div className="col">
