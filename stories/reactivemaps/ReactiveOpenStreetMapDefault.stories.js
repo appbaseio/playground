@@ -29,7 +29,7 @@ export default class ReactiveOpenStreetMapDefault extends Component {
 			<ReactiveBase
 				app="earthquakes"
 				credentials="dshr057Nz:e18bbbbe-5d55-4234-a17e-4d64fb2222c7"
-				mapKey="AIzaSyBQdVcKCe0q_vOBDUvJYpzwGpt_d_uTj4Q"
+				mapKey="AIzaSyAKz3UhgSuP872fb-Aw27oPRI7M0eXkA9U"
 			>
 				<div className="row reverse-labels">
 					<div className="col">
