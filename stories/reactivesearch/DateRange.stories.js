@@ -41,8 +41,8 @@ export default class DateRangeDefault extends Component {
 		return (
 			<ReactiveBase
 				app="airbeds-test-app"
-				credentials="X8RsOu0Lp:9b4fe1a4-58c6-4089-a042-505d86d9da30"
-				type="listing"
+				url="https://xe6N9nDRV:51ea7a8a-6354-4b5f-83e1-12dce3b7ec47@arc-cluster-appbase-demo-ps1pgt.searchbase.io"
+				enableAppbase
 			>
 				<div className="row">
 					<div className="col">
