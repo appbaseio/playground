@@ -8,7 +8,8 @@ export default class CategorySearchDefault extends Component {
 		return (
 			<ReactiveBase
 				app="good-books-ds"
-				credentials="nY6NNTZZ6:27b76b9f-18ea-456c-bc5e-3a5263ebc63d"
+				url="https://xe6N9nDRV:51ea7a8a-6354-4b5f-83e1-12dce3b7ec47@arc-cluster-appbase-demo-ps1pgt.searchbase.io"
+				enableAppbase
 				{...this.props}
 			>
 				<div className={`row ${this.props.themePreset}`}>
