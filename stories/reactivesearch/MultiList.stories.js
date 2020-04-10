@@ -15,7 +15,7 @@ export default class MultiListDefault extends Component {
 					<div className="col">
 						<MultiList
 							componentId="BookSensor"
-							dataField="original_series.raw"
+							dataField="original_series.keyword"
 							size={100}
 							react={{
 								and: 'BookSensorSEARCH',

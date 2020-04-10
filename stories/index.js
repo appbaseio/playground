@@ -820,19 +820,19 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title=""
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("With title", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title={text("title", "Car Category")}
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Default selection", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			defaultValue={array("defaultValue", ["bmw", "x series"])}
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Custom filter", withReadme(removeFirstLine(NestedListReadme), () => (
@@ -844,7 +844,7 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("With URLParams", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title=""
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
@@ -867,19 +867,19 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("Basic", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title=""
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("With title", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title={text("title", "Car Category")}
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Default selection", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			defaultValue={array("defaultValue", ["bmw", "x series"])}
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Custom filter", withReadme(removeFirstLine(NestedMultiListReadme), () => (
@@ -891,7 +891,7 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("With URLParams", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title=""
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Playground", withReadme(removeFirstLine(NestedMultiListReadme), () => (
@@ -1106,7 +1106,7 @@ storiesOf("Base components/TagCloud", module)
     "With sortBy",
     () => (
       <TagCloudDefault
-        sortBy={select("sortBy", ["count", "asc", "desc"], "count")}
+        sortBy={select("sortBy", ["asc", "desc"], "count")}
       />
     )
   )

@@ -15,7 +15,6 @@ export default class DataSearchDefault extends Component {
 					<div className="col">
 						<DataSearch
 							dataField={["original_title", "original_title.search"]}
-							categoryField="authors.raw"
 							componentId="BookSensor"
 							{...this.props}
 						/>
@@ -32,7 +31,6 @@ export default class DataSearchDefault extends Component {
 							react={{
 								and: "BookSensor"
 							}}
-							{...this.props}
 						>
 							{({ data }) => (
 								<ReactiveList.ResultListWrapper>
