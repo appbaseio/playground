@@ -40,8 +40,9 @@ export default class GeoDistanceDropdownDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="meetup_app"
-				credentials="lW70IgSjr:87c5ae16-73fb-4559-a29e-0a02760d2181"
+				app="meetup_dataset"
+				url="https://xe6N9nDRV:51ea7a8a-6354-4b5f-83e1-12dce3b7ec47@arc-cluster-appbase-demo-ps1pgt.searchbase.io"
+				enableAppbase
 				type="meetupdata1"
 				mapKey="AIzaSyAKz3UhgSuP872fb-Aw27oPRI7M0eXkA9U"
 			>
@@ -51,7 +52,6 @@ export default class GeoDistanceDropdownDefault extends Component {
 						<GeoDistanceDropdown
 							componentId="GeoDistanceDropdown"
 							dataField="location"
-							{...this.props}
 						/>
 					</div>
 					<div className="col">
