@@ -15,7 +15,7 @@ export default class MultiDropdownListDefault extends Component {
 					<div className="col">
 						<MultiDropdownList
 							componentId="BookSensor"
-							dataField="original_series.raw"
+							dataField="original_series.keyword"
 							size={100}
 							{...this.props}
 						/>

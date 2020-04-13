@@ -15,7 +15,7 @@ export default class TagCloudDefault extends Component {
 					<div className="col">
 						<TagCloud
 							componentId="CitySensor"
-							dataField="group.group_city.raw"
+							dataField="group.group_city.keyword"
 							size={50}
 							{...this.props}
 						/>
@@ -24,7 +24,7 @@ export default class TagCloudDefault extends Component {
 						<SelectedFilters componentId="CitySensor" />
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="group.group_topics.topic_name_raw"
+							dataField="group.group_topics.topic_name_raw.keyword"
 							title="Results"
 							sortBy="asc"
 							className="result-list-container"

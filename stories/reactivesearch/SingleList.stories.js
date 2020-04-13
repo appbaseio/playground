@@ -15,7 +15,7 @@ export default class SingleListDefault extends Component {
 					<div className="col">
 						<SingleList
 							componentId="BookSensor"
-							dataField="original_series.raw"
+							dataField="original_series.keyword"
 							size={100}
 							{...this.props}
 						/>

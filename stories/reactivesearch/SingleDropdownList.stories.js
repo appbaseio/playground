@@ -15,7 +15,7 @@ export default class SingleDropdownListDefault extends Component {
 					<div className="col">
 						<SingleDropdownList
 							componentId="BookSensor"
-							dataField="original_series.raw"
+							dataField="original_series.keyword"
 							size={100}
 							{...this.props}
 						/>
