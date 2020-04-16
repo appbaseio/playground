@@ -52,6 +52,7 @@ export default class GeoDistanceDropdownDefault extends Component {
 						<GeoDistanceDropdown
 							componentId="GeoDistanceDropdown"
 							dataField="location"
+							{...this.props}
 						/>
 					</div>
 					<div className="col">

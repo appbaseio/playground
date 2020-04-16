@@ -1106,7 +1106,7 @@ storiesOf("Base components/TagCloud", module)
     "With sortBy",
     () => (
       <TagCloudDefault
-        sortBy={select("sortBy", ["asc", "desc"], "count")}
+        sortBy={select("sortBy", ["asc", "desc"], "asc")}
       />
     )
   )
@@ -1297,7 +1297,10 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        defaultValue="Sherlock Holmes"
+        defaultValue={{
+					term: 'Sherlock Holmes',
+					category: '*',
+				}}
       />
     )
   )
