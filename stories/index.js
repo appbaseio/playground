@@ -1083,7 +1083,7 @@ storiesOf("Base components/TagCloud", module)
     "With defaultValue",
     () => (
       <TagCloudDefault
-        defaultValue={"Auckland"}
+        defaultValue={["Auckland"]}
       />
     )
   )
