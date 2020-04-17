@@ -26,7 +26,7 @@ export default class ResultCardDefault extends Component {
 					<div className="col" style={{backgroundColor: "#fafafa"}}>
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="original_title.raw"
+							dataField="original_title.keyword"
 							from={0}
 							size={10}
 							react={{

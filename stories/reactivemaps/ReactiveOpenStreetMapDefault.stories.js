@@ -37,7 +37,7 @@ export default class ReactiveOpenStreetMapDefault extends Component {
 						<div>
 							<SingleList
 								componentId="CitySensor"
-								dataField="place.raw"
+								dataField="place.keyword"
 								showCount
 								size={10}
 								title="Input Filter"
@@ -52,6 +52,7 @@ export default class ReactiveOpenStreetMapDefault extends Component {
 							onPopoverClick={this.onPopoverClick}
 							defaultZoom={6}
 							showSearchAsMove
+							searchAsMove
 							onData={result => ({
 								label: result.mag,
 								// icon: 'https://i.imgur.com/NHR2tYL.png',

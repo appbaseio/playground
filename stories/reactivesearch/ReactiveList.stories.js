@@ -20,7 +20,7 @@ export default class ReactiveListDefault extends Component {
 					<div className="col">
 						<MultiDropdownList
 							componentId="BookSensor"
-							dataField="original_series.raw"
+							dataField="original_series.keyword"
 							title="MultiList"
 							size={100}
 						/>
@@ -29,7 +29,7 @@ export default class ReactiveListDefault extends Component {
 					<div className="col" style={scrollStyle} id="results">
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="original_title.raw"
+							dataField="original_title.keyword"
 							className="result-list-container"
 							from={0}
 							size={5}

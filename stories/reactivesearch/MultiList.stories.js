@@ -28,7 +28,7 @@ export default class MultiListDefault extends Component {
 						<SelectedFilters />
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="original_title.raw"
+							dataField="original_title.keyword"
 							className="result-list-container"
 							from={0}
 							size={5}

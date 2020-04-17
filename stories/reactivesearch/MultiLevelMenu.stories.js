@@ -46,7 +46,7 @@ export default class MultiLevelMenuDefault extends Component {
 					<div className="col">
 						<MultiLevelMenu
 							componentId="CategorySensor"
-							dataField={["brand.raw", "vehicleType.raw", "model.raw"]}
+							dataField={["brand.keyword", "vehicleType.keyword", "model.keyword"]}
 							data={[
 								{ label: "Volkswagen", value: "volkswagen" },
 								{ label: "BMW", value: "bmw" },

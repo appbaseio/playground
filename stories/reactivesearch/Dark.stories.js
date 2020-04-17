@@ -24,7 +24,7 @@ export default class CategorySearchDefault extends Component {
 						<br />
 						<CategorySearch
 							dataField={["original_title", "original_title.search"]}
-							categoryField="authors.raw"
+							categoryField="authors.keyword"
 							componentId="BookSensor2"
 							title="CategorySearch"
 						/>

@@ -74,8 +74,8 @@ export default class NestedMultiListDefault extends Component {
 
 NestedMultiListDefault.defaultProps = {
 	mapping: {
-		brand: "brand.raw",
-		model: "model.raw"
+		brand: "brand.keyword",
+		model: "model.keyword"
 	}
 };
 

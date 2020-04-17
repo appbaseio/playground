@@ -17,7 +17,7 @@ export default class TagCloudDefault extends Component {
 						<ToggleButton
 							componentId="CitySensor"
 							title="ToggleButton"
-							dataField="group.group_topics.topic_name_raw.raw"
+							dataField="group.group_topics.topic_name_raw.keyword"
 							data={[
 								{ label: 'Social', value: 'Social' },
 								{ label: 'Adventure', value: 'Adventure' },
@@ -28,7 +28,7 @@ export default class TagCloudDefault extends Component {
 						<SingleDataList
 							componentId="CitySensor3"
 							title="SingleDataList"
-							dataField="group.group_topics.topic_name_raw.raw"
+							dataField="group.group_topics.topic_name_raw.keyword"
 							data={[
 								{ label: 'Open Source', value: 'Open Source' },
 								{ label: 'Social', value: 'Social' },
@@ -40,7 +40,7 @@ export default class TagCloudDefault extends Component {
 						<MultiDataList
 							componentId="CitySensor4"
 							title="MultiDataList"
-							dataField="group.group_topics.topic_name_raw.raw"
+							dataField="group.group_topics.topic_name_raw.keyword"
 							data={[
 								{ label: 'Open Source', value: 'Open Source' },
 								{ label: 'Social', value: 'Social' },
@@ -52,7 +52,7 @@ export default class TagCloudDefault extends Component {
 						<TagCloud
 							componentId="CitySensor2"
 							title="TagCloud"
-							dataField="group.group_city.raw"
+							dataField="group.group_city.keyword"
 							size={50}
 						/>
 					</div>
@@ -60,7 +60,7 @@ export default class TagCloudDefault extends Component {
 						<SelectedFilters componentId="CitySensor" />
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="group.group_topics.topic_name_raw"
+							dataField="group.group_topics.topic_name_raw.keyword"
 							title="Results"
 							sortBy="asc"
 							className="result-list-container"
