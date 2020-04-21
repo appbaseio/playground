@@ -2802,7 +2802,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         title="MultiList: Custom Sort"
         showSearch
-        defaultValue={["London"]}
         sortBy={select(
           "sortBy",
           { asc: "asc", desc: "desc", count: "count" },
