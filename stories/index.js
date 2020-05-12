@@ -820,19 +820,19 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title=""
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("With title", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title={text("title", "Car Category")}
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Default selection", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			defaultValue={array("defaultValue", ["bmw", "x series"])}
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Custom filter", withReadme(removeFirstLine(NestedListReadme), () => (
@@ -844,14 +844,14 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("With URLParams", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title=""
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title={text("title", "NestedList: Car Filter")}
 // 			size={number("size", 100)}
-// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
+// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
 // 			defaultValue={array("defaultValue", ["bmw", "x series"])}
 // 			showCount={boolean("showCount", true)}
 // 			showSearch={boolean("showSearch", true)}
@@ -867,19 +867,19 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("Basic", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title=""
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("With title", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title={text("title", "Car Category")}
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Default selection", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			defaultValue={array("defaultValue", ["bmw", "x series"])}
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Custom filter", withReadme(removeFirstLine(NestedMultiListReadme), () => (
@@ -891,14 +891,14 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("With URLParams", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title=""
-// 		
+//
 // 		/>
 // 	)))
 // 	.add("Playground", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title={text("title", "NestedMultiList: Car Filter")}
 // 			size={number("size", 100)}
-// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
+// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
 // 			defaultValue={array("defaultValue", ["bmw", "x series"])}
 // 			showCount={boolean("showCount", true)}
 // 			showSearch={boolean("showSearch", true)}
@@ -1083,7 +1083,7 @@ storiesOf("Base components/TagCloud", module)
     "With defaultValue",
     () => (
       <TagCloudDefault
-        defaultValue={"Auckland"}
+        defaultValue={["Auckland"]}
       />
     )
   )
@@ -1106,7 +1106,7 @@ storiesOf("Base components/TagCloud", module)
     "With sortBy",
     () => (
       <TagCloudDefault
-        sortBy={select("sortBy", ["count", "asc", "desc"], "count")}
+        sortBy={select("sortBy", ["asc", "desc"], "asc")}
       />
     )
   )
@@ -1131,8 +1131,8 @@ storiesOf("Base components/TagCloud", module)
         title={text("title", "TagCloud: City Filter")}
         dataField={select(
           "dataField",
-          ["group.group_city.raw", "group.group_topics.topic_name_raw.raw"],
-          "group.group_city.raw"
+          ["group.group_city.keyword", "group.group_topics.topic_name_raw.keyword"],
+          "group.group_city.keyword"
         )}
         size={number("size", 100)}
         multiSelect
@@ -1297,7 +1297,10 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        defaultValue="Sherlock Holmes"
+        defaultValue={{
+					term: 'Sherlock Holmes',
+					category: '*',
+				}}
       />
     )
   )
@@ -1547,7 +1550,7 @@ storiesOf("Search components/CategorySearch", module)
           "original_title",
           "original_title.search"
         ])}
-        categoryField={text("categoryField", "authors.raw")}
+        categoryField={text("categoryField", "authors.keyword")}
         defaultValue=""
         strictSelection={boolean("strictSelection", false)}
         placeholder={text("placeholder", "Search Books by Author")}
@@ -1624,7 +1627,7 @@ storiesOf("Result components/ReactiveList", module)
     "With custom sort order",
    () => (
       <ReactiveListDefault
-        sortBy={select("sortBy", { asc: "asc", description: "desc" }, "asc")}
+        sortBy={select("sortBy", { asc: "asc", desc: "desc" }, "asc")}
       />
     )
   )
@@ -1668,21 +1671,25 @@ storiesOf("Result components/ReactiveList", module)
     "With renderResultStats",
    () => (
       <ReactiveListDefault
+				pagination
         renderResultStats={({
-          totalResults,
-          totalPages,
+          numberOfResults,
+          numberOfPages,
           time,
-          currentPage
-        }) => (
-          <span>
-            <h3 style={{ color: "green" }}>
-              {totalResults} found in {time}.
-            </h3>{" "}
-            <h4>
-              Page {currentPage}/{totalPages}
-            </h4>
-          </span>
-        )}
+          currentPage,
+					...rest
+        }) => {
+					return (
+						<span>
+							<h3 style={{ color: 'green' }}>
+								{numberOfResults} found in {time}.
+							</h3>{' '}
+							<h4>
+								Page {(currentPage+1)}/{numberOfPages}
+							</h4>
+						</span>
+					)
+				}}
       />
     )
   )
@@ -1693,8 +1700,8 @@ storiesOf("Result components/ReactiveList", module)
         title={text("title", "ReactiveList: Results")}
         dataField={select(
           "dataField",
-          ["original_title.raw", "authors.raw", "original_series.raw"],
-          "original_title.raw"
+          ["original_title.keyword", "authors.keyword", "original_series.keyword"],
+          "original_title.keyword"
         )}
         placeholder={text("placeholder", "Select from list")}
         // initialLoader={text("initialLoader", "Loading results..")}
@@ -1932,8 +1939,8 @@ storiesOf("Result components/ResultList", module)
         title={text("title", "Cars result")}
         dataField={select(
           "dataField",
-          ["original_title.raw", "authors.raw", "original_series.raw"],
-          "original_title.raw"
+          ["original_title.keyword", "authors.keyword", "original_series.keyword"],
+          "original_title.keyword"
         )}
         size={number("size", 5)}
         showResultStats={boolean("showResultStats", true)}
@@ -2568,7 +2575,7 @@ storiesOf("List components/SingleList", module)
    () => (
       <SingleListRSDefault
         showSearch
-        defaultValue="Hercule Poirot"
+        defaultValue="A Beautiful Dark"
         placeholder="Search Books"
       />
     )
@@ -2579,10 +2586,9 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         title="SingleList: Custom Sort"
         showSearch
-        defaultValue="London"
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "asc"
         )}
         placeholder="Search Books"
@@ -2636,13 +2642,13 @@ storiesOf("List components/SingleList", module)
         title={text("title", "SingleList: Books Filter")}
         dataField={select(
           "dataField",
-          ["original_series.raw", "authors.raw", "language_code.raw"],
-          "original_series.raw"
+          ["original_series.keyword", "authors.keyword", "language_code.keyword"],
+          "original_series.keyword"
         )}
         size={number("size", 100)}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "count"
         )}
         defaultValue="Artemis Fowl"
@@ -2785,7 +2791,7 @@ storiesOf("List components/MultiList", module)
    () => (
       <MultiListRSDefault
         showSearch
-        defaultValue={["Hercule Poirot"]}
+        defaultValue={["A Beautiful Dark", "44 Scotland Street"]}
         placeholder="Search Books"
       />
     )
@@ -2796,10 +2802,9 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         title="MultiList: Custom Sort"
         showSearch
-        defaultValue={["London"]}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "asc"
         )}
         placeholder="Search Books"
@@ -2853,13 +2858,13 @@ storiesOf("List components/MultiList", module)
         title={text("title", "MultiList: Books Filter")}
         dataField={select(
           "dataField",
-          ["original_series.raw", "authors.raw", "language_code.raw"],
-          "original_series.raw"
+          ["original_series.keyword", "authors.keyword", "language_code.keyword"],
+          "original_series.keyword"
         )}
         size={number("size", 10)}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "count"
         )}
         defaultValue={[
@@ -2924,7 +2929,7 @@ storiesOf("List components/SingleDropdownList", module)
       <SingleDropdownListRSDefault
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "asc"
         )}
       />
@@ -2995,7 +3000,7 @@ storiesOf("List components/SingleDropdownList", module)
     () => (
       <SingleDropdownListRSDefault
         selectAllLabel="All Cities"
-        defaultValue="Artemis Fowl"
+        defaultValue="A Beautiful Dark"
       />
     )
   )
@@ -3020,14 +3025,14 @@ storiesOf("List components/SingleDropdownList", module)
         title={text("title", "SingleDropdownList")}
         dataField={select(
           "dataField",
-          ["original_series.raw", "authors.raw", "language_code.raw"],
-          "original_series.raw"
+          ["original_series.keyword", "authors.keyword", "language_code.keyword"],
+          "original_series.keyword"
         )}
         size={number("size", 100)}
         showCount={boolean("showCount", true)}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "count"
         )}
         selectAllLabel={text("selectAllLabel", "All Books")}
@@ -3109,7 +3114,7 @@ storiesOf("List components/MultiDropdownList", module)
       <MultiDropdownListRSDefault
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "asc"
         )}
       />
@@ -3139,8 +3144,8 @@ storiesOf("List components/MultiDropdownList", module)
         placeholder="Select Books"
         size={100}
         sortBy="count"
-        defaultValue={["Hercule Poirot"]}
-      />
+				defaultValue={["A Beautiful Dark", "44 Scotland Street"]}
+			/>
     )
   )
   .add(
@@ -3211,14 +3216,14 @@ storiesOf("List components/MultiDropdownList", module)
         title={text("title", "MultiDropdownList")}
         dataField={select(
           "dataField",
-          ["original_series.raw", "authors.raw", "language_code.raw"],
-          "original_series.raw"
+          ["original_series.keyword", "authors.keyword", "language_code.keyword"],
+          "original_series.keyword"
         )}
         size={number("size", 100)}
         showCount={boolean("showCount", true)}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "count"
         )}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
@@ -3358,7 +3363,7 @@ storiesOf("List components/SingleDataList", module)
     () => (
       <SingleDataListRSDefault
         title={text("title", "Topics")}
-        dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
+        dataField={text("dataField", "group.group_topics.topic_name_raw.keyword")}
         defaultValue="Social"
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search topics")}
@@ -3507,7 +3512,7 @@ storiesOf("List components/MultiDataList", module)
     () => (
       <MultiDataListRSDefault
         title={text("title", "Topics")}
-        dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
+        dataField={text("dataField", "group.group_topics.topic_name_raw.keyword")}
         defaultValue={["Social", "Music"]}
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search topics")}
@@ -3858,7 +3863,7 @@ storiesOf("Base components/ToggleButton", module)
     () => (
       <ToggleButtonRSDefault
         title={text("title", "ToggleButton: Topics")}
-        dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
+        dataField={text("dataField", "group.group_topics.topic_name_raw.keyword")}
         multiSelect={boolean("multiSelect", true)}
         defaultValue={["Social"]}
         showFilter={boolean("showFilter", true)}

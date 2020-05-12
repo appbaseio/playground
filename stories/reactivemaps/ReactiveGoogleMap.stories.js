@@ -28,7 +28,8 @@ export default class ReactiveGoogleMapDefault extends Component {
 		return (
 			<ReactiveBase
 				app="earthquakes"
-				credentials="dshr057Nz:e18bbbbe-5d55-4234-a17e-4d64fb2222c7"
+				url="https://1e47b838a035:767b5a1a-03cb-4c5f-a536-4f399c24134b@arc-cluster-appbase-tryout-k8dsnj.searchbase.io"
+				enableAppbase
 				mapKey="AIzaSyAKz3UhgSuP872fb-Aw27oPRI7M0eXkA9U"
 			>
 				<div className="row reverse-labels">
@@ -36,7 +37,7 @@ export default class ReactiveGoogleMapDefault extends Component {
 						<div>
 							<SingleList
 								componentId="CitySensor"
-								dataField="place.raw"
+								dataField="place.keyword"
 								showCount
 								size={10}
 								title="Input Filter"
@@ -51,6 +52,7 @@ export default class ReactiveGoogleMapDefault extends Component {
 							onPopoverClick={this.onPopoverClick}
 							defaultZoom={6}
 							showSearchAsMove
+							searchAsMove
 							onData={result => ({
 								label: result.mag,
 								// icon: 'https://i.imgur.com/NHR2tYL.png',

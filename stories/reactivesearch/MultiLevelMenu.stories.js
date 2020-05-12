@@ -38,14 +38,15 @@ export default class MultiLevelMenuDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="carstore-dataset"
+				url="https://1e47b838a035:767b5a1a-03cb-4c5f-a536-4f399c24134b@arc-cluster-appbase-tryout-k8dsnj.searchbase.io"
+				enableAppbase
 			>
 				<div className="row">
 					<div className="col">
 						<MultiLevelMenu
 							componentId="CategorySensor"
-							dataField={["brand.raw", "vehicleType.raw", "model.raw"]}
+							dataField={["brand.keyword", "vehicleType.keyword", "model.keyword"]}
 							data={[
 								{ label: "Volkswagen", value: "volkswagen" },
 								{ label: "BMW", value: "bmw" },

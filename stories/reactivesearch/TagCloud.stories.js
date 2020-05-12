@@ -8,13 +8,14 @@ export default class TagCloudDefault extends Component {
 		return (
 			<ReactiveBase
 				app="meetup_app"
-				credentials="lW70IgSjr:87c5ae16-73fb-4559-a29e-0a02760d2181"
+				url="https://1e47b838a035:767b5a1a-03cb-4c5f-a536-4f399c24134b@arc-cluster-appbase-tryout-k8dsnj.searchbase.io"
+				enableAppbase
 			>
 				<div className="row">
 					<div className="col">
 						<TagCloud
 							componentId="CitySensor"
-							dataField="group.group_city.raw"
+							dataField="group.group_city.keyword"
 							size={50}
 							{...this.props}
 						/>
@@ -23,7 +24,7 @@ export default class TagCloudDefault extends Component {
 						<SelectedFilters componentId="CitySensor" />
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="group.group_topics.topic_name_raw"
+							dataField="group.group_topics.topic_name_raw.keyword"
 							title="Results"
 							sortBy="asc"
 							className="result-list-container"
