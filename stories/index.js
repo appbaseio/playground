@@ -1541,6 +1541,48 @@ storiesOf("Search components/CategorySearch", module)
       />
     )
   )
+		.add(
+		"With enableQuerySuggestions",
+		() => (
+			<CategorySearchDefault
+				enableQuerySuggestions
+			/>
+		)
+	)
+	.add(
+		"With renderQuerySuggestions",
+		() => (
+			<CategorySearchDefault
+				enableQuerySuggestions
+				renderQuerySuggestions={({
+					value,
+					data: suggestions,
+					downshiftProps: { isOpen, getItemProps, highlightedIndex },
+				}) => {
+					return (
+						isOpen &&
+						Boolean(value.length) &&
+						(suggestions || []).map((suggestion, index) => (
+							<li
+								style={{
+									padding: 10,
+									background:
+										index === highlightedIndex
+											? '#eee'
+											: 'transparent',
+									color: 'green',
+								}}
+								key={suggestion.value}
+								{...getItemProps({ item: suggestion })}
+							>
+								{suggestion.value}
+							</li>
+						))
+					);
+				}}
+			/>
+		)
+	)
   .add(
     "Playground",
    () => (
@@ -2285,6 +2327,48 @@ storiesOf("Search components/DataSearch", module)
       />
     )
   )
+	.add(
+		"With enableQuerySuggestions",
+		() => (
+			<DataSearchRSDefault
+				enableQuerySuggestions
+			/>
+		)
+	)
+	.add(
+		"With renderQuerySuggestions",
+		() => (
+			<DataSearchRSDefault
+				enableQuerySuggestions
+				renderQuerySuggestions={({
+					value,
+					data: suggestions,
+					downshiftProps: { isOpen, getItemProps, highlightedIndex },
+				}) => {
+					return (
+						isOpen &&
+						Boolean(value.length) &&
+						(suggestions || []).map((suggestion, index) => (
+							<li
+								style={{
+									padding: 10,
+									background:
+										index === highlightedIndex
+											? '#eee'
+											: 'transparent',
+									color: 'green',
+								}}
+								key={suggestion.value}
+								{...getItemProps({ item: suggestion })}
+							>
+								{suggestion.value}
+							</li>
+						))
+					);
+				}}
+			/>
+		)
+	)
   .add(
     "Playground",
     () => (
