@@ -21,7 +21,7 @@
     "dependencies": {
         "@appbaseio/reactive-manual-v3": "git://github.com/appbaseio/reactive-manual.git#v3",
         "@appbaseio/reactivemaps": "3.0.0-beta.9",
-        "@appbaseio/reactivesearch": "3.9.2",
+        "@appbaseio/reactivesearch": "3.9.3",
         "react": "^16.8.6",
         "react-dom": "^16.8.6"
     },
