@@ -1542,19 +1542,19 @@ storiesOf("Search components/CategorySearch", module)
     )
   )
 		.add(
-		"With enableQuerySuggestions",
+		"With enablePopularSuggestions",
 		() => (
 			<CategorySearchDefault
-				enableQuerySuggestions
+				enablePopularSuggestions
 			/>
 		)
 	)
 	.add(
-		"With renderQuerySuggestions",
+		"With renderPopularSuggestions",
 		() => (
 			<CategorySearchDefault
-				enableQuerySuggestions
-				renderQuerySuggestions={({
+				enablePopularSuggestions
+				renderPopularSuggestions={({
 					value,
 					data: suggestions,
 					downshiftProps: { isOpen, getItemProps, highlightedIndex },
@@ -2328,19 +2328,19 @@ storiesOf("Search components/DataSearch", module)
     )
   )
 	.add(
-		"With enableQuerySuggestions",
+		"With enablePopularSuggestions",
 		() => (
 			<DataSearchRSDefault
-				enableQuerySuggestions
+				enablePopularSuggestions
 			/>
 		)
 	)
 	.add(
-		"With renderQuerySuggestions",
+		"With renderPopularSuggestions",
 		() => (
 			<DataSearchRSDefault
-				enableQuerySuggestions
-				renderQuerySuggestions={({
+				enablePopularSuggestions
+				renderPopularSuggestions={({
 					value,
 					data: suggestions,
 					downshiftProps: { isOpen, getItemProps, highlightedIndex },
