@@ -1317,6 +1317,15 @@ storiesOf("Search components/CategorySearch", module)
     )
   )
   .add(
+    "With enablePredictiveSuggestions",
+    () => (
+      <CategorySearchDefault
+        placeholder="Search Books by Author"
+        enablePredictiveSuggestions={boolean("enablePredictiveSuggestions", true)}
+      />
+    )
+  )
+  .add(
     "With strictSelection",
    () => (
       <CategorySearchDefault
@@ -2148,6 +2157,15 @@ storiesOf("Search components/DataSearch", module)
           ),
           value: suggestion.source.original_title
         })}
+      />
+    )
+  )
+  .add(
+    "With enablePredictiveSuggestions",
+    () => (
+      <DataSearchRSDefault
+        placeholder="Search Books..."
+        enablePredictiveSuggestions={boolean("enablePredictiveSuggestions", true)}
       />
     )
   )
