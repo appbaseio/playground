@@ -2152,6 +2152,15 @@ storiesOf("Search components/DataSearch", module)
     )
   )
   .add(
+    "With enablePredictiveSuggestions",
+    () => (
+      <DataSearchRSDefault
+        placeholder="Search Books..."
+        enablePredictiveSuggestions={boolean("enablePredictiveSuggestions", true)}
+      />
+    )
+  )
+  .add(
     "With custom renderer",
     () => (
       <DataSearchRSDefault
