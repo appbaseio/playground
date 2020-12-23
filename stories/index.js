@@ -1317,6 +1317,15 @@ storiesOf("Search components/CategorySearch", module)
     )
   )
   .add(
+    "With enablePredictiveSuggestions",
+    () => (
+      <CategorySearchDefault
+        placeholder="Search Books by Author"
+        enablePredictiveSuggestions={boolean("enablePredictiveSuggestions", true)}
+      />
+    )
+  )
+  .add(
     "With strictSelection",
    () => (
       <CategorySearchDefault
