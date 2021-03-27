@@ -87,6 +87,8 @@ import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
 import RangeInputRSDefault from "./reactivesearch/RangeInput.stories";
 import ReactiveComponentStory from "./reactivesearch/ReactiveComponent.stories";
+import CustomRecentIcon from './reactivesearch/CustomRecentIcon';
+import CustomPopularIcon from './reactivesearch/CustomPopularIcon';
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 import DarkStory from "./reactivesearch/Dark.stories";
@@ -2089,6 +2091,22 @@ storiesOf("Search components/DataSearch", module)
         placeholder="Search Books..."
         showClear={boolean("showClear", true)}
         clearIcon={<div>❌</div>}
+      />
+    )
+  )
+  .add(
+    "with custom suggestions icon",
+    () => (
+      <DataSearchRSDefault
+        placeholder="Search Books..."
+        enablePopularSuggestions
+        enableRecentSearches
+        innerClass={{
+          'recent-icon': 'recent-icon',
+          'popular-icon': 'popular-icon',
+        }}
+        recentSearchesIcon={<CustomRecentIcon />}
+        popularSearchesIcon={<CustomPopularIcon />}
       />
     )
   )
