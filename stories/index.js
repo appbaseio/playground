@@ -1276,6 +1276,22 @@ storiesOf("Search components/CategorySearch", module)
     )
   )
   .add(
+    "with custom suggestions icon",
+    () => (
+      <CategorySearchDefault
+        placeholder="Search Books..."
+        enablePopularSuggestions
+        enableRecentSearches
+        innerClass={{
+          'recent-search-icon': 'recent-icon',
+          'popular-search-icon': 'popular-icon',
+        }}
+        recentSearchesIcon={<CustomRecentIcon />}
+        popularSearchesIcon={<CustomPopularIcon />}
+      />
+    )
+  )
+  .add(
     "With filter",
    () => (
       <CategorySearchDefault
@@ -2102,8 +2118,8 @@ storiesOf("Search components/DataSearch", module)
         enablePopularSuggestions
         enableRecentSearches
         innerClass={{
-          'recent-icon': 'recent-icon',
-          'popular-icon': 'popular-icon',
+          'recent-search-icon': 'recent-icon',
+          'popular-search-icon': 'popular-icon',
         }}
         recentSearchesIcon={<CustomRecentIcon />}
         popularSearchesIcon={<CustomPopularIcon />}
