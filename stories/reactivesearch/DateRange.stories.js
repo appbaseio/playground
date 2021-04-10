@@ -66,7 +66,6 @@ export default class DateRangeDefault extends Component {
 							react={{
 								and: ["DateSensor"]
 							}}
-							{...this.props}
 						>
 							{
 								({ data }) => (

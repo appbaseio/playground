@@ -13,6 +13,7 @@ import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 import GeoDistanceSliderGoogleMap from "./reactivemaps/GeoDistanceSliderGoogleMap.stories";
 import GeoDistanceDropdownGoogleMap from "./reactivemaps/GeoDistanceDropdownGoogleMap.stories";
+import GeoDistanceDropDownOpenStreetMap from "./reactivemaps/GeoDistanceDropDownOpenStreetMap.stories";
 import ReactiveGoogleMapDefault from "./reactivemaps/ReactiveGoogleMap.stories";
 import ReactiveOpenStreetMapDefault from "./reactivemaps/ReactiveOpenStreetMapDefault.stories";
 import GeoDistanceSliderOpenStreetMap from "./reactivemaps/GeoDistanceSliderOpenStreetMap.stories";
@@ -524,7 +525,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
   .add(
     "Playground with OpenStreet map",
     () => (
-      <GeoDistanceDropdownOpenStreetMap
+      <GeoDistanceDropDownOpenStreetMap
         data={[
           { distance: 100, label: "Under 100 miles" },
           { distance: 200, label: "Under 200 miles" },
@@ -628,7 +629,7 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
     "With showMapStyles",
       () => (
         <ReactiveGoogleMapDefault
-          showMapStyles={boolean("showMapStyles", false)}
+          showMapStyles={boolean("showMapStyles", true)}
         />
       )
   )
@@ -1101,7 +1102,7 @@ storiesOf("Base components/TagCloud", module)
   .add(
     "With multiSelect off and defaultValue",
     () => (
-      <TagCloudDefault defaultValue={"Auckland"} />
+      <TagCloudDefault defaultValue={["Auckland"]} />
     )
   )
   .add(
@@ -1839,7 +1840,7 @@ storiesOf("Result components/ResultCard", module)
   .add(
     "With infinite loading",
     () => (
-      <ResultCardDefault scrollOnTarget={window} pagination={false} />
+      <ResultCardDefault pagination={false} />
     )
   )
   .add(
@@ -1885,7 +1886,7 @@ storiesOf("Result components/ResultCard", module)
     "With onData",
     () => (
       <ResultCardDefault onData={action("Data Changed")} />
-  )
+  ))
   .add(
     "Playground",
     () => (
@@ -1921,7 +1922,7 @@ storiesOf("Result components/ResultCard", module)
         includeFields={array("includeFields", ["*"])}
         excludeFields={array("excludeFields", [])}
       />
-    ))
+    )
   );
 
 storiesOf("Result components/ResultList", module)

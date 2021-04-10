@@ -60,7 +60,6 @@ export default class DatePickerDefault extends Component {
 							react={{
 								and: ["DateSensor"]
 							}}
-							{...this.props}
 						>
 							{
 								({ data }) => (
