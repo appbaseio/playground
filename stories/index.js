@@ -2578,6 +2578,16 @@ storiesOf("List components/SingleList", module)
     )
   )
   .add(
+    "With onData",
+   () => (
+      <SingleListRSDefault
+        showSearch
+        placeholder="Search Books"
+        onData={action("Data changed SingleList")}
+      />
+    )
+  )
+  .add(
     "With title",
    () => (
       <SingleListRSDefault
@@ -2784,6 +2794,16 @@ storiesOf("List components/MultiList", module)
     )
   )
   .add(
+    "With onData",
+   () => (
+      <MultiListRSDefault
+        showSearch
+        placeholder="Search Books"
+        onData={action("Data changed MultiList")}
+      />
+    )
+  )
+  .add(
     "With title",
    () => (
       <MultiListRSDefault
@@ -2799,7 +2819,7 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        size={number("size", 10)}
+        size={number("size", 5)}
       />
     )
   )
@@ -3001,6 +3021,14 @@ storiesOf("List components/SingleDropdownList", module)
     )
   )
   .add(
+    "With onData",
+    () => (
+      <SingleDropdownListRSDefault
+        onData={action("Data changed SingleDropdownList")}
+      />
+    )
+  )
+  .add(
     "With title",
     () => (
       <SingleDropdownListRSDefault
@@ -3159,6 +3187,14 @@ storiesOf("List components/MultiDropdownList", module)
     "Basic",
     () => (
       <MultiDropdownListRSDefault />
+    )
+  )
+  .add(
+    "With onData",
+    () => (
+      <MultiDropdownListRSDefault
+        onData={action("Data changed MultiDropdownList")}
+      />
     )
   )
   .add(
@@ -3354,6 +3390,14 @@ storiesOf("List components/SingleDataList", module)
     )
   )
   .add(
+    "With onData",
+    () => (
+      <SingleDataListRSDefault
+        onData={action("Data changed SingleDataList")}
+      />
+    )
+  )
+  .add(
     "With title",
     () => (
       <SingleDataListRSDefault
@@ -3490,6 +3534,14 @@ storiesOf("List components/MultiDataList", module)
     "Basic",
     () => (
       <MultiDataListRSDefault />
+    )
+  )
+  .add(
+    "With onData",
+    () => (
+      <MultiDataListRSDefault
+        onData={action("Data changed MultiDataList")}
+      />
     )
   )
   .add(
