@@ -39,7 +39,6 @@ export default class MultiDataListDefault extends Component {
 							react={{
 								and: ["CitySensor"]
 							}}
-							{...this.props}
 						>
 							{({ data }) => (
 								<ReactiveList.ResultListWrapper>
