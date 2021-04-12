@@ -1,5 +1,7 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs } from "@storybook/addon-knobs";
+import { withA11y } from "@storybook/addon-a11y";
+
 import { create } from '@storybook/theming';
 import { addReadme } from 'storybook-readme';
 
@@ -16,6 +18,7 @@ addParameters({
 
 addDecorator(withKnobs);
 addDecorator(addReadme);
+addDecorator(withA11y);
 
 function loadStories() {
 	require("../stories");
