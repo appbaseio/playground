@@ -38,8 +38,9 @@ export default class NestedMultiListDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="car-store"
-				credentials="cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c"
+				app="carstore-dataset"
+				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+				enableAppbase
 			>
 				<div className="row">
 					<div className="col">
@@ -73,8 +74,8 @@ export default class NestedMultiListDefault extends Component {
 
 NestedMultiListDefault.defaultProps = {
 	mapping: {
-		brand: "brand.raw",
-		model: "model.raw"
+		brand: "brand.keyword",
+		model: "model.keyword"
 	}
 };
 

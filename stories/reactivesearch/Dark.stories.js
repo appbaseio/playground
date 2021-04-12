@@ -8,7 +8,8 @@ export default class CategorySearchDefault extends Component {
 		return (
 			<ReactiveBase
 				app="good-books-ds"
-				credentials="nY6NNTZZ6:27b76b9f-18ea-456c-bc5e-3a5263ebc63d"
+				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+				enableAppbase
 				{...this.props}
 			>
 				<div className={`row ${this.props.themePreset}`}>
@@ -23,7 +24,7 @@ export default class CategorySearchDefault extends Component {
 						<br />
 						<CategorySearch
 							dataField={["original_title", "original_title.search"]}
-							categoryField="authors.raw"
+							categoryField="authors.keyword"
 							componentId="BookSensor2"
 							title="CategorySearch"
 						/>

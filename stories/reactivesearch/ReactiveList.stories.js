@@ -13,13 +13,14 @@ export default class ReactiveListDefault extends Component {
 		return (
 			<ReactiveBase
 				app="good-books-ds"
-				credentials="nY6NNTZZ6:27b76b9f-18ea-456c-bc5e-3a5263ebc63d"
+				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+				enableAppbase
 			>
 				<div className="row">
 					<div className="col">
 						<MultiDropdownList
 							componentId="BookSensor"
-							dataField="original_series.raw"
+							dataField="original_series.keyword"
 							title="MultiList"
 							size={100}
 						/>
@@ -28,7 +29,7 @@ export default class ReactiveListDefault extends Component {
 					<div className="col" style={scrollStyle} id="results">
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="original_title.raw"
+							dataField="original_title.keyword"
 							className="result-list-container"
 							from={0}
 							size={5}

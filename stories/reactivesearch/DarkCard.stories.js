@@ -8,7 +8,8 @@ export default class ResultCardDefault extends Component {
 		return (
 			<ReactiveBase
 				app="good-books-ds"
-				credentials="nY6NNTZZ6:27b76b9f-18ea-456c-bc5e-3a5263ebc63d"
+				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+				enableAppbase
 				{...this.props}
 			>
 				<div className={`row reverse-labels ${this.props.themePreset}`}>
@@ -70,7 +71,7 @@ export default class ResultCardDefault extends Component {
 					>
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="original_title.raw"
+							dataField="original_title.keyword"
 							from={0}
 							size={10}
 							react={{

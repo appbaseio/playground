@@ -22,7 +22,8 @@ export default class ReactiveComponentDefault extends Component {
 		return (
 			<ReactiveBase
 				app="carstore-dataset"
-				credentials="4HWI27QmA:58c731f7-79ab-4f55-a590-7e15c7e36721"
+				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+				enableAppbase
 			>
 				<div className="row">
 					<div className="col">

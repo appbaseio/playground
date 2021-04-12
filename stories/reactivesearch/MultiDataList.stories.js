@@ -8,13 +8,14 @@ export default class MultiDataListDefault extends Component {
 		return (
 			<ReactiveBase
 				app="meetup_app"
-				credentials="lW70IgSjr:87c5ae16-73fb-4559-a29e-0a02760d2181"
+				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+				enableAppbase
 			>
 				<div className="row">
 					<div className="col">
 						<MultiDataList
 							componentId="CitySensor"
-							dataField="group.group_topics.topic_name_raw.raw"
+							dataField="group.group_topics.topic_name_raw.keyword"
 							data={[
 								{ label: 'Open Source', value: 'Open Source' },
 								{ label: 'Social', value: 'Social' },
@@ -28,7 +29,7 @@ export default class MultiDataListDefault extends Component {
 						<SelectedFilters componentId="CitySensor" />
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="group.group_topics.topic_name_raw"
+							dataField="group.group_topics.topic_name_raw.keyword"
 							title="Results"
 							sortBy="asc"
 							className="result-list-container"

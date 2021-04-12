@@ -145,3 +145,14 @@
 .col .meetup-list-image {
 	background-size: cover;
 }
+
+.recent-icon {
+	height: 20px;
+	width: 20px;
+	fill: royalblue;
+}
+.popular-icon {
+	height: 20px;
+	width: 20px;
+	fill: rgb(253, 44, 16);
+}

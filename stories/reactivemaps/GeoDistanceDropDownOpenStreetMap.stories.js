@@ -40,10 +40,11 @@ export default class GeoDistanceDropdownDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="meetup_app"
-				credentials="lW70IgSjr:87c5ae16-73fb-4559-a29e-0a02760d2181"
+				app="meetup_dataset"
+				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+				enableAppbase
 				type="meetupdata1"
-				mapKey="AIzaSyBQdVcKCe0q_vOBDUvJYpzwGpt_d_uTj4Q"
+				mapKey="AIzaSyAKz3UhgSuP872fb-Aw27oPRI7M0eXkA9U"
 			>
 				<div className="row">
 					<div className="col">

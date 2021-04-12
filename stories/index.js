@@ -13,6 +13,7 @@ import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 import GeoDistanceSliderGoogleMap from "./reactivemaps/GeoDistanceSliderGoogleMap.stories";
 import GeoDistanceDropdownGoogleMap from "./reactivemaps/GeoDistanceDropdownGoogleMap.stories";
+import GeoDistanceDropDownOpenStreetMap from "./reactivemaps/GeoDistanceDropDownOpenStreetMap.stories";
 import ReactiveGoogleMapDefault from "./reactivemaps/ReactiveGoogleMap.stories";
 import ReactiveOpenStreetMapDefault from "./reactivemaps/ReactiveOpenStreetMapDefault.stories";
 import GeoDistanceSliderOpenStreetMap from "./reactivemaps/GeoDistanceSliderOpenStreetMap.stories";
@@ -87,6 +88,8 @@ import DateRangeRSDefault from "./reactivesearch/DateRange.stories";
 import RangeSliderRSDefault from "./reactivesearch/RangeSlider.stories";
 import RangeInputRSDefault from "./reactivesearch/RangeInput.stories";
 import ReactiveComponentStory from "./reactivesearch/ReactiveComponent.stories";
+import CustomRecentIcon from './reactivesearch/CustomRecentIcon';
+import CustomPopularIcon from './reactivesearch/CustomPopularIcon';
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 import DarkStory from "./reactivesearch/Dark.stories";
@@ -134,12 +137,11 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "Basic",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
         placeholder="Search Location"
-        showFilter={false}
       />
     )
   )
@@ -147,13 +149,12 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With title",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
         title={text("title", "Geo Distance Slider")}
         placeholder="Search Location"
-        showFilter={false}
       />
     )
   )
@@ -161,12 +162,11 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With placeholder",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
         placeholder={text("placeholder", "Search Location")}
-        showFilter={false}
       />
     )
   )
@@ -174,7 +174,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With filter",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
@@ -188,7 +188,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With Range Labels",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
@@ -198,7 +198,6 @@ storiesOf("Map Components/GeoDistanceSlider", module)
           start: "Start",
           end: "End"
         }}
-        showFilter={false}
       />
     )
   )
@@ -218,13 +217,13 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           location: "London",
           distance: 5
-        })}
+        }}
         unit="mi"
         title="Geo Distance Search"
         placeholder="Search Location"
@@ -232,7 +231,6 @@ storiesOf("Map Components/GeoDistanceSlider", module)
           start: "Start",
           end: "End"
         }}
-        showFilter={false}
       />
     )
   )
@@ -240,13 +238,12 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With autoLocation off",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
         title={text("title", "Geo Distance Slider")}
         placeholder="Search Location"
-        showFilter={false}
         autoLocation={boolean("autoLocation", false)}
       />
     )
@@ -255,12 +252,11 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With URLParams",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         unit="mi"
         placeholder="Search Location"
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -269,13 +265,12 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "With tooltipTrigger",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={{
+        defaultValue={{
           distance: 50
         }}
         style={{ marginTop: "10px" }}
         unit="mi"
         placeholder="Search Location"
-        showFilter={false}
         tooltipTrigger={text("tooltipTrigger", "focus")}
       />
     )
@@ -284,10 +279,10 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "Playground with Google Map",
     () => (
       <GeoDistanceSliderGoogleMap
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           location: "London",
           distance: 5
-        })}
+        }}
         unit={text("unit", "mi")}
         title={text("title", "Geo Distance Slider")}
         placeholder={text("placeholder", "Search Location")}
@@ -311,10 +306,10 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     "Playground with OpenStreet Map",
     () => (
       <GeoDistanceSliderOpenStreetMap
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           location: "London",
           distance: 5
-        })}
+        }}
         unit={text("unit", "mi")}
         title={text("title", "Geo Distance Slider")}
         placeholder={text("placeholder", "Search Location")}
@@ -355,7 +350,6 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           { distance: 1000, label: "Under 1000 miles" }
         ]}
         placeholder="Search Location"
-        showFilter={false}
       />
     )
   )
@@ -372,7 +366,6 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
         ]}
         title={text("title", "Geo Distance Slider")}
         placeholder="Search Location"
-        showFilter={false}
       />
     )
   )
@@ -389,7 +382,6 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
         ]}
         title="Geo Distance Slider"
         placeholder="Search Location"
-        showFilter={false}
         countries={object("countries", ["us"])}
       />
     )
@@ -407,7 +399,6 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
         ]}
         placeholder={text("placeholder", "Search Location")}
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
-        showFilter={false}
       />
     )
   )
@@ -439,13 +430,12 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           { distance: 500, label: "Under 500 miles" },
           { distance: 1000, label: "Under 1000 miles" }
         ]}
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           label: "Under 100 miles",
           location: "London"
-        })}
+        }}
         title="Geo Distance Search"
         placeholder="Search Location"
-        showFilter={false}
       />
     )
   )
@@ -461,7 +451,6 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           { distance: 1000, label: "Under 1000 miles" }
         ]}
         placeholder="Search Location"
-        showFilter={false}
         autoLocation={boolean("autoLocation", false)}
       />
     )
@@ -478,7 +467,6 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           { distance: 1000, label: "Under 1000 miles" }
         ]}
         placeholder="Search Location"
-        showFilter={false}
         URLParams={boolean("URLParams (not visible in storybook)", true)}
       />
     )
@@ -519,10 +507,10 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           "mi"
         )}
         title={text("title", "Geo Distance Slider")}
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           label: "Under 100 miles",
           location: "London"
-        })}
+        }}
         placeholder={text("placeholder", "Search Location")}
         title={text("title", "Geo Distance Slider")}
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
@@ -537,7 +525,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
   .add(
     "Playground with OpenStreet map",
     () => (
-      <GeoDistanceDropdownOpenStreetMap
+      <GeoDistanceDropDownOpenStreetMap
         data={[
           { distance: 100, label: "Under 100 miles" },
           { distance: 200, label: "Under 200 miles" },
@@ -570,10 +558,10 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           "mi"
         )}
         title={text("title", "Geo Distance Slider")}
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           label: "Under 100 miles",
           location: "London"
-        })}
+        }}
         placeholder={text("placeholder", "Search Location")}
         title={text("title", "Geo Distance Slider")}
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
@@ -628,12 +616,20 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
           searchAsMove={boolean("searchAsMove", false)}
         />
       )
+	)
+	.add(
+    "With loader",
+      () => (
+        <ReactiveGoogleMapDefault
+          loader={text("loader", "Loading ...")}
+        />
+      )
   )
   .add(
     "With showMapStyles",
       () => (
         <ReactiveGoogleMapDefault
-          showMapStyles={boolean("showMapStyles", false)}
+          showMapStyles={boolean("showMapStyles", true)}
         />
       )
   )
@@ -743,6 +739,14 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
           autoCenter={boolean("autoCenter", true)}
         />
       )
+	)
+	.add(
+    "With loader",
+      () => (
+        <ReactiveOpenStreetMapDefault
+          loader={text("loader", "Loading ...")}
+        />
+      )
   )
   .add(
     "With onError",
@@ -819,19 +823,19 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("Basic", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title=""
-// 			showFilter={false}
+//
 // 		/>
 // 	)))
 // 	.add("With title", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title={text("title", "Car Category")}
-// 			showFilter={false}
+//
 // 		/>
 // 	)))
 // 	.add("Default selection", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
-// 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
-// 			showFilter={false}
+// 			defaultValue={array("defaultValue", ["bmw", "x series"])}
+//
 // 		/>
 // 	)))
 // 	.add("Custom filter", withReadme(removeFirstLine(NestedListReadme), () => (
@@ -843,15 +847,15 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("With URLParams", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title=""
-// 			showFilter={false}
+//
 // 		/>
 // 	)))
 // 	.add("Playground", withReadme(removeFirstLine(NestedListReadme), () => (
 // 		<NestedListDefault
 // 			title={text("title", "NestedList: Car Filter")}
 // 			size={number("size", 100)}
-// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
-// 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
+// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+// 			defaultValue={array("defaultValue", ["bmw", "x series"])}
 // 			showCount={boolean("showCount", true)}
 // 			showSearch={boolean("showSearch", true)}
 // 			placeholder={text("placeholder", "Search Cars")}
@@ -866,19 +870,19 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("Basic", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title=""
-// 			showFilter={false}
+//
 // 		/>
 // 	)))
 // 	.add("With title", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title={text("title", "Car Category")}
-// 			showFilter={false}
+//
 // 		/>
 // 	)))
 // 	.add("Default selection", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
-// 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
-// 			showFilter={false}
+// 			defaultValue={array("defaultValue", ["bmw", "x series"])}
+//
 // 		/>
 // 	)))
 // 	.add("Custom filter", withReadme(removeFirstLine(NestedMultiListReadme), () => (
@@ -890,15 +894,15 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	.add("With URLParams", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title=""
-// 			showFilter={false}
+//
 // 		/>
 // 	)))
 // 	.add("Playground", withReadme(removeFirstLine(NestedMultiListReadme), () => (
 // 		<NestedMultiListDefault
 // 			title={text("title", "NestedMultiList: Car Filter")}
 // 			size={number("size", 100)}
-// 			sortBy={select("sortBy", { asc: "asc", description: "desc", count: "count" }, "count")}
-// 			defaultSelected={array("defaultSelected", ["bmw", "x series"])}
+// 			sortBy={select("sortBy", { asc: "asc", desc: "desc", count: "count" }, "count")}
+// 			defaultValue={array("defaultValue", ["bmw", "x series"])}
 // 			showCount={boolean("showCount", true)}
 // 			showSearch={boolean("showSearch", true)}
 // 			placeholder={text("placeholder", "Search Cars")}
@@ -919,7 +923,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
   .add(
     "Basic",
    () => (
-      <DynamicRangeSliderDefault showFilter={false} />
+      <DynamicRangeSliderDefault />
     )
   )
   .add(
@@ -927,7 +931,6 @@ storiesOf("Range components/DynamicRangeSlider", module)
    () => (
       <DynamicRangeSliderDefault
         title={text("title", "Books")}
-        showFilter={false}
       />
     )
   )
@@ -936,7 +939,6 @@ storiesOf("Range components/DynamicRangeSlider", module)
    () => (
       <DynamicRangeSliderDefault
         title={text("title", "Books")}
-        showFilter={false}
         rangeLabels={(min, max) => ({
           start: min + " book",
           end: max + " books"
@@ -949,7 +951,6 @@ storiesOf("Range components/DynamicRangeSlider", module)
    () => (
       <DynamicRangeSliderDefault
         stepValue={number("stepValue", 1)}
-        showFilter={false}
       />
     )
   )
@@ -958,7 +959,6 @@ storiesOf("Range components/DynamicRangeSlider", module)
    () => (
       <DynamicRangeSliderDefault
         showHistogram={boolean("showHistogram", false)}
-        showFilter={false}
       />
     )
   )
@@ -969,14 +969,13 @@ storiesOf("Range components/DynamicRangeSlider", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
    () => (
       <DynamicRangeSliderDefault
-        defaultSelected={() => ({
+        defaultValue={() => ({
           start: 500,
           end: 2000
         })}
-        showFilter={false}
       />
     )
   )
@@ -984,14 +983,13 @@ storiesOf("Range components/DynamicRangeSlider", module)
     "With onDrag",
     () => (
       <DynamicRangeSliderDefault
-        defaultSelected={() => ({
+        defaultValue={() => ({
           start: 500,
           end: 2000
         })}
         onDrag={(selected, boundary) => {
           console.log(selected, boundary);
         }}
-        showFilter={false}
       />
     )
   )
@@ -1000,7 +998,6 @@ storiesOf("Range components/DynamicRangeSlider", module)
    () => (
       <DynamicRangeSliderDefault
         URLParams={boolean("URLParams (not visible on storybook)", true)}
-        showFilter={false}
       />
     )
   )
@@ -1009,14 +1006,13 @@ storiesOf("Range components/DynamicRangeSlider", module)
    () => (
       <DynamicRangeSliderDefault
         tooltipTrigger={text("tooltipTrigger", "always")}
-        showFilter={false}
       />
     )
   )
   .add(
     "With loader",
    () => (
-      <DynamicRangeSliderDefault loader="Loading..." showFilter={false} />
+      <DynamicRangeSliderDefault loader="Loading..." />
     )
   )
   .add(
@@ -1030,7 +1026,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
           ["books_count", "original_publication_year", "ratings_count"],
           "books_count"
         )}
-        defaultSelected={(min, max) => ({
+        defaultValue={(min, max) => ({
           start: min,
           end: max
         })}
@@ -1052,13 +1048,13 @@ storiesOf("Base components/TagCloud", module)
   .add(
     "Basic",
     () => (
-      <TagCloudDefault showFilter={false} />
+      <TagCloudDefault />
     )
   )
   .add(
     "With title",
     () => (
-      <TagCloudDefault title={text("title", "Cities")} showFilter={false} />
+      <TagCloudDefault title={text("title", "Cities")} />
     )
   )
   .add(
@@ -1066,7 +1062,6 @@ storiesOf("Base components/TagCloud", module)
     () => (
       <TagCloudDefault
         showCount={boolean("showCount", true)}
-        showFilter={false}
       />
     )
   )
@@ -1084,40 +1079,37 @@ storiesOf("Base components/TagCloud", module)
     () => (
       <TagCloudDefault
         multiSelect={boolean("multiSelect", true)}
-        showFilter={false}
       />
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <TagCloudDefault
-        defaultSelected={text("defaultSelected", "Auckland")}
-        showFilter={false}
+        defaultValue={["Auckland"]}
       />
     )
   )
   .add(
-    "With multiSelect on and defaultSelected",
+    "With multiSelect on and defaultValue",
     () => (
       <TagCloudDefault
         multiSelect
-        defaultSelected={array("defaultSelected", ["Auckland", "Amsterdam"])}
+        defaultValue={["Auckland", "Amsterdam"]}
       />
     )
   )
   .add(
-    "With multiSelect off and defaultSelected",
+    "With multiSelect off and defaultValue",
     () => (
-      <TagCloudDefault defaultSelected={text("defaultSelected", "Auckland")} />
+      <TagCloudDefault defaultValue={["Auckland"]} />
     )
   )
   .add(
     "With sortBy",
     () => (
       <TagCloudDefault
-        showFilter={false}
-        sortBy={select("sortBy", ["count", "asc", "desc"], "count")}
+        sortBy={select("sortBy", ["asc", "desc"], "asc")}
       />
     )
   )
@@ -1125,7 +1117,6 @@ storiesOf("Base components/TagCloud", module)
     "With URLParams",
     () => (
       <TagCloudDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -1133,7 +1124,7 @@ storiesOf("Base components/TagCloud", module)
   .add(
     "With loader",
     () => (
-      <TagCloudDefault showFilter={false} loader="Loading..." />
+      <TagCloudDefault loader="Loading..." />
     )
   )
   .add(
@@ -1143,12 +1134,12 @@ storiesOf("Base components/TagCloud", module)
         title={text("title", "TagCloud: City Filter")}
         dataField={select(
           "dataField",
-          ["group.group_city.raw", "group.group_topics.topic_name_raw.raw"],
-          "group.group_city.raw"
+          ["group.group_city.keyword", "group.group_topics.topic_name_raw.keyword"],
+          "group.group_city.keyword"
         )}
         size={number("size", 100)}
         multiSelect
-        defaultSelected={array("defaultSelected", ["Auckland"])}
+        defaultValue={["Auckland"]}
         showCount={boolean("showCount", true)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Cities filter")}
@@ -1168,7 +1159,7 @@ storiesOf("Range components/RatingsFilter", module)
   .add(
     "Basic",
     () => (
-      <RatingsFilterDefault showFilter={false} />
+      <RatingsFilterDefault />
     )
   )
   .add(
@@ -1176,16 +1167,14 @@ storiesOf("Range components/RatingsFilter", module)
     () => (
       <RatingsFilterDefault
         title={text("title", "Ratings")}
-        showFilter={false}
       />
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <RatingsFilterDefault
-        defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
-        showFilter={false}
+        defaultValue={{ start: 2, end: 5 }}
       />
     )
   )
@@ -1193,7 +1182,6 @@ storiesOf("Range components/RatingsFilter", module)
     "With URLParams",
     () => (
       <RatingsFilterDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -1209,7 +1197,7 @@ storiesOf("Range components/RatingsFilter", module)
           { start: 2, end: 5, label: "2 stars and up" },
           { start: 1, end: 5, label: "> 1 stars" }
         ])}
-        defaultSelected={object("defaultSelected", { start: 2, end: 5 })}
+        defaultValue={{ start: 2, end: 5 }}
         filterLabel={text("filterLabel", "Ratings filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
       />
@@ -1229,7 +1217,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        showFilter={false}
       />
     )
   )
@@ -1239,7 +1226,6 @@ storiesOf("Search components/CategorySearch", module)
       <CategorySearchDefault
         title={text("title", "Books")}
         placeholder="Search Books by Author"
-        showFilter={false}
       />
     )
   )
@@ -1248,7 +1234,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Authors"
-        showFilter={false}
         showIcon={boolean("showIcon", false)}
       />
     )
@@ -1258,7 +1243,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Authors"
-        showFilter={false}
         iconPosition={select("iconPosition", ["left", "right"], "left")}
       />
     )
@@ -1268,7 +1252,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Authors"
-        showFilter={false}
         icon={<div>📚</div>}
         iconPosition={select("iconPosition", ["left", "right"], "left")}
       />
@@ -1279,7 +1262,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books..."
-        showFilter={false}
         showClear={boolean("showClear", true)}
       />
     )
@@ -1289,9 +1271,24 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books..."
-        showFilter={false}
         showClear={boolean("showClear", true)}
         clearIcon={<div>❌</div>}
+      />
+    )
+  )
+  .add(
+    "with custom suggestions icon",
+    () => (
+      <CategorySearchDefault
+        placeholder="Search Books..."
+        enablePopularSuggestions
+        enableRecentSearches
+        innerClass={{
+          'recent-search-icon': 'recent-icon',
+          'popular-search-icon': 'popular-icon',
+        }}
+        recentSearchesIcon={<CustomRecentIcon />}
+        popularSearchesIcon={<CustomPopularIcon />}
       />
     )
   )
@@ -1310,18 +1307,19 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        showFilter={false}
         debounce={number("debounce", 300)}
       />
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        defaultSelected={text("defaultSelected", "Sherlock Holmes")}
-        showFilter={false}
+        defaultValue={{
+					term: 'Sherlock Holmes',
+					category: '*',
+				}}
       />
     )
   )
@@ -1334,7 +1332,15 @@ storiesOf("Search components/CategorySearch", module)
           { label: "Sherlock Holmes", value: "Sherlock Holmes" },
           { label: "A Song of Ice and Fire", value: "A Song of Ice and Fire" }
         ]}
-        showFilter={false}
+      />
+    )
+  )
+  .add(
+    "With enablePredictiveSuggestions",
+    () => (
+      <CategorySearchDefault
+        placeholder="Search Books by Author"
+        enablePredictiveSuggestions={boolean("enablePredictiveSuggestions", true)}
       />
     )
   )
@@ -1343,7 +1349,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        showFilter={false}
         strictSelection={boolean("strictSelection", true)}
       />
     )
@@ -1355,6 +1360,16 @@ storiesOf("Search components/CategorySearch", module)
 				showFilter
         placeholder="Search Books by Author"
         searchOperators={boolean("searchOperators", true)}
+      />
+    )
+	)
+	.add(
+    "With showVoiceSearch",
+   () => (
+      <CategorySearchDefault
+				showFilter
+        placeholder="Search Books by Author"
+        showVoiceSearch={boolean("showVoiceSearch", true)}
       />
     )
   )
@@ -1377,7 +1392,6 @@ storiesOf("Search components/CategorySearch", module)
             value: suggestion.source.original_title
           };
         }}
-        showFilter={false}
       />
     )
   )
@@ -1465,7 +1479,6 @@ storiesOf("Search components/CategorySearch", module)
             </div>
           )
         }
-        showFilter={false}
       />
     )
   )
@@ -1474,7 +1487,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        showFilter={false}
         renderNoSuggestion="No suggestions found."
       />
     )
@@ -1484,7 +1496,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        showFilter={false}
         onSuggestion={action("New Suggestions")}
       />
     )
@@ -1494,7 +1505,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         weights={array("weights", [1, 3])}
-        showFilter={false}
       />
     )
   )
@@ -1502,7 +1512,6 @@ storiesOf("Search components/CategorySearch", module)
     "With fuzziness",
    () => (
       <CategorySearchDefault
-        showFilter={false}
         fuzziness={number("fuzziness", 1)}
       />
     )
@@ -1511,7 +1520,6 @@ storiesOf("Search components/CategorySearch", module)
     "With queryFormat",
    () => (
       <CategorySearchDefault
-        showFilter={false}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
       />
     )
@@ -1521,7 +1529,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        showFilter={false}
         autosuggest={boolean("autosuggest", false)}
       />
     )
@@ -1531,7 +1538,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        showFilter={false}
         highlight={boolean("highlight", true)}
       />
     )
@@ -1541,7 +1547,6 @@ storiesOf("Search components/CategorySearch", module)
    () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -1551,7 +1556,6 @@ storiesOf("Search components/CategorySearch", module)
     () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        showFilter={false}
         onValueSelected={action("onValueSelected called with")}
       />
     )
@@ -1561,11 +1565,52 @@ storiesOf("Search components/CategorySearch", module)
     () => (
       <CategorySearchDefault
         placeholder="Search Books by Author"
-        showFilter={false}
         loader="Loading suggestions..."
       />
     )
   )
+		.add(
+		"With enablePopularSuggestions",
+		() => (
+			<CategorySearchDefault
+				enablePopularSuggestions
+			/>
+		)
+	)
+	.add(
+		"With renderPopularSuggestions",
+		() => (
+			<CategorySearchDefault
+				enablePopularSuggestions
+				renderPopularSuggestions={({
+					value,
+					data: suggestions,
+					downshiftProps: { isOpen, getItemProps, highlightedIndex },
+				}) => {
+					return (
+						isOpen &&
+						Boolean(value.length) &&
+						(suggestions || []).map((suggestion, index) => (
+							<li
+								style={{
+									padding: 10,
+									background:
+										index === highlightedIndex
+											? '#eee'
+											: 'transparent',
+									color: 'green',
+								}}
+								key={suggestion.value}
+								{...getItemProps({ item: suggestion })}
+							>
+								{suggestion.value}
+							</li>
+						))
+					);
+				}}
+			/>
+		)
+	)
   .add(
     "Playground",
    () => (
@@ -1575,8 +1620,8 @@ storiesOf("Search components/CategorySearch", module)
           "original_title",
           "original_title.search"
         ])}
-        categoryField={text("categoryField", "authors.raw")}
-        defaultSelected={text("defaultSelected", "")}
+        categoryField={text("categoryField", "authors.keyword")}
+        defaultValue=""
         strictSelection={boolean("strictSelection", false)}
         placeholder={text("placeholder", "Search Books by Author")}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
@@ -1626,7 +1671,8 @@ storiesOf("Result components/ReactiveList", module)
           { bottom: "bottom", top: "top", both: "both" },
           "bottom"
         )}
-        pages={number("pages", 5)}
+				pages={number("pages", 5)}
+				showEndPage={boolean("showEndPage", false)}
         title="Meetups"
       />
     )
@@ -1651,7 +1697,7 @@ storiesOf("Result components/ReactiveList", module)
     "With custom sort order",
    () => (
       <ReactiveListDefault
-        sortBy={select("sortBy", { asc: "asc", description: "desc" }, "asc")}
+        sortBy={select("sortBy", { asc: "asc", desc: "desc" }, "asc")}
       />
     )
   )
@@ -1695,21 +1741,25 @@ storiesOf("Result components/ReactiveList", module)
     "With renderResultStats",
    () => (
       <ReactiveListDefault
+				pagination
         renderResultStats={({
-          totalResults,
-          totalPages,
+          numberOfResults,
+          numberOfPages,
           time,
-          currentPage
-        }) => (
-          <span>
-            <h3 style={{ color: "green" }}>
-              {totalResults} found in {time}.
-            </h3>{" "}
-            <h4>
-              Page {currentPage}/{totalPages}
-            </h4>
-          </span>
-        )}
+          currentPage,
+					...rest
+        }) => {
+					return (
+						<span>
+							<h3 style={{ color: 'green' }}>
+								{numberOfResults} found in {time}.
+							</h3>{' '}
+							<h4>
+								Page {(currentPage+1)}/{numberOfPages}
+							</h4>
+						</span>
+					)
+				}}
       />
     )
   )
@@ -1720,8 +1770,8 @@ storiesOf("Result components/ReactiveList", module)
         title={text("title", "ReactiveList: Results")}
         dataField={select(
           "dataField",
-          ["original_title.raw", "authors.raw", "original_series.raw"],
-          "original_title.raw"
+          ["original_title.keyword", "authors.keyword", "original_series.keyword"],
+          "original_title.keyword"
         )}
         placeholder={text("placeholder", "Select from list")}
         // initialLoader={text("initialLoader", "Loading results..")}
@@ -1790,7 +1840,7 @@ storiesOf("Result components/ResultCard", module)
   .add(
     "With infinite loading",
     () => (
-      <ResultCardDefault scrollOnTarget={window} pagination={false} />
+      <ResultCardDefault pagination={false} />
     )
   )
   .add(
@@ -1836,7 +1886,7 @@ storiesOf("Result components/ResultCard", module)
     "With onData",
     () => (
       <ResultCardDefault onData={action("Data Changed")} />
-  )
+  ))
   .add(
     "Playground",
     () => (
@@ -1872,7 +1922,7 @@ storiesOf("Result components/ResultCard", module)
         includeFields={array("includeFields", ["*"])}
         excludeFields={array("excludeFields", [])}
       />
-    ))
+    )
   );
 
 storiesOf("Result components/ResultList", module)
@@ -1959,8 +2009,8 @@ storiesOf("Result components/ResultList", module)
         title={text("title", "Cars result")}
         dataField={select(
           "dataField",
-          ["original_title.raw", "authors.raw", "original_series.raw"],
-          "original_title.raw"
+          ["original_title.keyword", "authors.keyword", "original_series.keyword"],
+          "original_title.keyword"
         )}
         size={number("size", 5)}
         showResultStats={boolean("showResultStats", true)}
@@ -2002,7 +2052,7 @@ storiesOf("Search components/DataSearch", module)
   .add(
     "Basic",
     () => (
-      <DataSearchRSDefault placeholder="Search Books..." showFilter={false} />
+      <DataSearchRSDefault placeholder="Search Books..." />
     )
   )
   .add(
@@ -2011,7 +2061,6 @@ storiesOf("Search components/DataSearch", module)
       <DataSearchRSDefault
         title={text("title", "Books Search")}
         placeholder="Search Books..."
-        showFilter={false}
       />
     )
   )
@@ -2020,7 +2069,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         showIcon={boolean("showIcon", false)}
       />
     )
@@ -2030,7 +2078,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         iconPosition={select("iconPosition", ["left", "right"], "left")}
       />
     )
@@ -2040,7 +2087,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         icon={<div>📚</div>}
         iconPosition={select("iconPosition", ["left", "right"], "left")}
       />
@@ -2051,7 +2097,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         showClear={boolean("showClear", true)}
       />
     )
@@ -2061,9 +2106,24 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         showClear={boolean("showClear", true)}
         clearIcon={<div>❌</div>}
+      />
+    )
+  )
+  .add(
+    "with custom suggestions icon",
+    () => (
+      <DataSearchRSDefault
+        placeholder="Search Books..."
+        enablePopularSuggestions
+        enableRecentSearches
+        innerClass={{
+          'recent-search-icon': 'recent-icon',
+          'popular-search-icon': 'popular-icon',
+        }}
+        recentSearchesIcon={<CustomRecentIcon />}
+        popularSearchesIcon={<CustomPopularIcon />}
       />
     )
   )
@@ -2082,7 +2142,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         debounce={number("debounce", 300)}
       />
     )
@@ -2092,7 +2151,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         strictSelection={boolean("strictSelection", true)}
       />
     )
@@ -2102,6 +2160,12 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault searchOperators={boolean("searchOperators", true)} placeholder="Search Books..." />
     )
+	)
+	.add(
+    "with showVoiceSearch",
+    () => (
+      <DataSearchRSDefault showVoiceSearch={boolean("showVoiceSearch", true)} placeholder="Search Books..." />
+    )
   )
   .add(
     "Without autosuggest",
@@ -2109,7 +2173,6 @@ storiesOf("Search components/DataSearch", module)
       <DataSearchRSDefault
         placeholder="Search Books..."
         autosuggest={boolean("autosuggest", false)}
-        showFilter={false}
       />
     )
   )
@@ -2129,7 +2192,15 @@ storiesOf("Search components/DataSearch", module)
           ),
           value: suggestion.source.original_title
         })}
-        showFilter={false}
+      />
+    )
+  )
+  .add(
+    "With enablePredictiveSuggestions",
+    () => (
+      <DataSearchRSDefault
+        placeholder="Search Books..."
+        enablePredictiveSuggestions={boolean("enablePredictiveSuggestions", true)}
       />
     )
   )
@@ -2195,7 +2266,6 @@ storiesOf("Search components/DataSearch", module)
             </div>
           )
         }
-        showFilter={false}
       />
     )
   )
@@ -2205,17 +2275,15 @@ storiesOf("Search components/DataSearch", module)
       <DataSearchRSDefault
         placeholder="Search Books..."
         onSuggestions={action("New Suggestions")}
-        showFilter={false}
       />
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
-        defaultSelected={text("defaultSelected", "Harry Potter")}
+        defaultValue="Harry Potter"
       />
     )
   )
@@ -2224,7 +2292,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         defaultSuggestions={[
           { label: "Sherlock Holmes", value: "Sherlock Holmes" },
           { label: "The Lord of the Rings", value: "The Lord of the Rings" }
@@ -2238,7 +2305,6 @@ storiesOf("Search components/DataSearch", module)
       <DataSearchRSDefault
         placeholder="Search Books..."
         fieldWeights={array("fieldWeights", [1, 3])}
-        showFilter={false}
       />
     )
   )
@@ -2247,7 +2313,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         fuzziness={number("fuzziness", 1)}
       />
     )
@@ -2257,7 +2322,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         fuzziness="AUTO"
       />
     )
@@ -2267,7 +2331,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         highlight={boolean("highlight", true)}
       />
     )
@@ -2277,7 +2340,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
       />
     )
@@ -2287,7 +2349,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         onValueSelected={action("onValueSelected called with")}
       />
     )
@@ -2297,7 +2358,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -2307,7 +2367,6 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         renderNoSuggestion="No suggestions found."
       />
     )
@@ -2317,11 +2376,52 @@ storiesOf("Search components/DataSearch", module)
     () => (
       <DataSearchRSDefault
         placeholder="Search Books..."
-        showFilter={false}
         loader="Loading suggestions..."
       />
     )
   )
+	.add(
+		"With enablePopularSuggestions",
+		() => (
+			<DataSearchRSDefault
+				enablePopularSuggestions
+			/>
+		)
+	)
+	.add(
+		"With renderPopularSuggestions",
+		() => (
+			<DataSearchRSDefault
+				enablePopularSuggestions
+				renderPopularSuggestions={({
+					value,
+					data: suggestions,
+					downshiftProps: { isOpen, getItemProps, highlightedIndex },
+				}) => {
+					return (
+						isOpen &&
+						Boolean(value.length) &&
+						(suggestions || []).map((suggestion, index) => (
+							<li
+								style={{
+									padding: 10,
+									background:
+										index === highlightedIndex
+											? '#eee'
+											: 'transparent',
+									color: 'green',
+								}}
+								key={suggestion.value}
+								{...getItemProps({ item: suggestion })}
+							>
+								{suggestion.value}
+							</li>
+						))
+					);
+				}}
+			/>
+		)
+	)
   .add(
     "Playground",
     () => (
@@ -2333,7 +2433,7 @@ storiesOf("Search components/DataSearch", module)
         ])}
         placeholder={text("placeholder", "Search Books...")}
         autosuggest={boolean("autosuggest", true)}
-        defaultSelected={text("defaultSelected", "")}
+        defaultValue=""
         strictSelection={boolean("strictSelection", false)}
         fieldWeights={array("weights", [1, 3])}
         fuzziness={number("fuzziness", 1)}
@@ -2361,7 +2461,7 @@ storiesOf("Range components/NumberBox", module)
     "Basic",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2375,7 +2475,7 @@ storiesOf("Range components/NumberBox", module)
     "With title",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2390,7 +2490,7 @@ storiesOf("Range components/NumberBox", module)
     "With labelPosition",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2408,7 +2508,7 @@ storiesOf("Range components/NumberBox", module)
     "With data",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={object("data", {
           label: "Book Ratings",
           start: 2,
@@ -2419,10 +2519,10 @@ storiesOf("Range components/NumberBox", module)
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={number("defaultSelected", 2)}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2435,7 +2535,7 @@ storiesOf("Range components/NumberBox", module)
     "With queryFormat",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2453,7 +2553,7 @@ storiesOf("Range components/NumberBox", module)
     "With URLParams",
     () => (
       <NumberBoxRSDefault
-        defaultSelected={2}
+        defaultValue={2}
         data={{
           label: "Book Rating",
           start: 2,
@@ -2474,7 +2574,7 @@ storiesOf("Range components/NumberBox", module)
           ["average_rating_rounded", "books_count"],
           "average_rating_rounded"
         )}
-        defaultSelected={number("defaultSelected", 3)}
+        defaultValue={3}
         data={object("data", {
           label: "Car Ratings",
           start: 2,
@@ -2509,7 +2609,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
       />
     )
   )
@@ -2519,7 +2618,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         title={text("title", "Good Books")}
       />
     )
@@ -2530,7 +2628,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         size={number("size", 10)}
       />
     )
@@ -2541,7 +2638,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         showCount={boolean("showCount", false)}
       />
     )
@@ -2552,7 +2648,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         renderItem={(label, count) => (
           <div>
             {label}
@@ -2568,7 +2663,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
       >
         {({ data, handleChange }) =>
           data.map(item => (
@@ -2589,7 +2683,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch={boolean("showSearch", false)}
         placeholder="Search Books"
-        showFilter={false}
       />
     )
   )
@@ -2610,7 +2703,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         showRadio={boolean("showRadio", false)}
       />
     )
@@ -2620,9 +2712,8 @@ storiesOf("List components/SingleList", module)
    () => (
       <SingleListRSDefault
         showSearch
-        defaultSelected={text("defaultSelected", "Hercule Poirot")}
+        defaultValue="A Beautiful Dark"
         placeholder="Search Books"
-        showFilter={false}
       />
     )
   )
@@ -2632,14 +2723,12 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         title="SingleList: Custom Sort"
         showSearch
-        defaultSelected="London"
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "asc"
         )}
         placeholder="Search Books"
-        showFilter={false}
       />
     )
   )
@@ -2650,7 +2739,6 @@ storiesOf("List components/SingleList", module)
         showSearch
         selectAllLabel={text("selectAllLabel", "All Books")}
         placeholder="Search Books"
-        showFilter={false}
       />
     )
   )
@@ -2660,7 +2748,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -2671,7 +2758,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         loader="Loading..."
       />
     )
@@ -2682,7 +2768,6 @@ storiesOf("List components/SingleList", module)
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         onValueChange={action("SingleList Value Changed")}
       />
     )
@@ -2694,16 +2779,16 @@ storiesOf("List components/SingleList", module)
         title={text("title", "SingleList: Books Filter")}
         dataField={select(
           "dataField",
-          ["original_series.raw", "authors.raw", "language_code.raw"],
-          "original_series.raw"
+          ["original_series.keyword", "authors.keyword", "language_code.keyword"],
+          "original_series.keyword"
         )}
         size={number("size", 100)}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "count"
         )}
-        defaultSelected={text("defaultSelected", "Artemis Fowl")}
+        defaultValue="Artemis Fowl"
         showCount={boolean("showCount", true)}
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search Books")}
@@ -2730,7 +2815,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
       />
     )
   )
@@ -2740,7 +2824,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         title={text("title", "MultiList: Books Filter")}
       />
     )
@@ -2751,7 +2834,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         size={number("size", 10)}
       />
     )
@@ -2783,7 +2865,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         showCount={boolean("showCount", false)}
       />
     )
@@ -2794,7 +2875,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         renderItem={(label, count) => (
           <div>
             {label}
@@ -2810,7 +2890,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
       >
         {({ data, handleChange }) =>
           data.map(item => (
@@ -2831,7 +2910,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch={boolean("showSearch", false)}
         placeholder="Search Books"
-        showFilter={false}
       />
     )
   )
@@ -2841,7 +2919,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         showCheckbox={boolean("showCheckbox", false)}
       />
     )
@@ -2851,9 +2928,8 @@ storiesOf("List components/MultiList", module)
    () => (
       <MultiListRSDefault
         showSearch
-        defaultSelected={array("defaultSelected", ["Hercule Poirot"])}
+        defaultValue={["A Beautiful Dark", "44 Scotland Street"]}
         placeholder="Search Books"
-        showFilter={false}
       />
     )
   )
@@ -2863,14 +2939,12 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         title="MultiList: Custom Sort"
         showSearch
-        defaultSelected={["London"]}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "asc"
         )}
         placeholder="Search Books"
-        showFilter={false}
       />
     )
   )
@@ -2881,7 +2955,6 @@ storiesOf("List components/MultiList", module)
         showSearch
         selectAllLabel={text("selectAllLabel", "All Books")}
         placeholder="Search Books"
-        showFilter={false}
       />
     )
   )
@@ -2891,7 +2964,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -2902,7 +2974,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         onValueChange={action("MultiList Value Changed")}
       />
     )
@@ -2913,7 +2984,6 @@ storiesOf("List components/MultiList", module)
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
-        showFilter={false}
         loader="Loading..."
       />
     )
@@ -2925,19 +2995,19 @@ storiesOf("List components/MultiList", module)
         title={text("title", "MultiList: Books Filter")}
         dataField={select(
           "dataField",
-          ["original_series.raw", "authors.raw", "language_code.raw"],
-          "original_series.raw"
+          ["original_series.keyword", "authors.keyword", "language_code.keyword"],
+          "original_series.keyword"
         )}
         size={number("size", 10)}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "count"
         )}
-        defaultSelected={array("defaultSelected", [
+        defaultValue={[
           "Harry Potter",
           "Artemis Fowl"
-        ])}
+        ]}
         showCount={boolean("showCount", true)}
         showSearch={boolean("showSearch", true)}
         showCheckbox={boolean("showCheckbox", true)}
@@ -2962,14 +3032,13 @@ storiesOf("List components/SingleDropdownList", module)
   .add(
     "Basic",
     () => (
-      <SingleDropdownListRSDefault showFilter={false} />
+      <SingleDropdownListRSDefault />
     )
   )
   .add(
     "With title",
     () => (
       <SingleDropdownListRSDefault
-        showFilter={false}
         title={text("title", "Book list")}
       />
     )
@@ -2978,7 +3047,6 @@ storiesOf("List components/SingleDropdownList", module)
     "With size",
     () => (
       <SingleDropdownListRSDefault
-        showFilter={false}
         size={number("size", 10)}
       />
     )
@@ -2996,10 +3064,9 @@ storiesOf("List components/SingleDropdownList", module)
     "With custom sort",
     () => (
       <SingleDropdownListRSDefault
-        showFilter={false}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "asc"
         )}
       />
@@ -3009,7 +3076,6 @@ storiesOf("List components/SingleDropdownList", module)
     "Without count",
     () => (
       <SingleDropdownListRSDefault
-        showFilter={false}
         showCount={boolean("showCount", false)}
       />
     )
@@ -3018,7 +3084,6 @@ storiesOf("List components/SingleDropdownList", module)
     "With search",
     () => (
       <SingleDropdownListRSDefault
-        showFilter={false}
         showSearch={boolean("showSearch", true)}
       />
     )
@@ -3027,7 +3092,6 @@ storiesOf("List components/SingleDropdownList", module)
     "With renderItem",
     () => (
       <SingleDropdownListRSDefault
-        showFilter={false}
         renderItem={(label, count) => (
           <div>
             {label}
@@ -3065,7 +3129,6 @@ storiesOf("List components/SingleDropdownList", module)
     () => (
       <SingleDropdownListRSDefault
         selectAllLabel={text("selectAllLabel", "All Books")}
-        showFilter={false}
       />
     )
   )
@@ -3074,8 +3137,7 @@ storiesOf("List components/SingleDropdownList", module)
     () => (
       <SingleDropdownListRSDefault
         selectAllLabel="All Cities"
-        defaultSelected={text("defaultSelected", "Artemis Fowl")}
-        showFilter={false}
+        defaultValue="A Beautiful Dark"
       />
     )
   )
@@ -3083,7 +3145,6 @@ storiesOf("List components/SingleDropdownList", module)
     "With URLParams",
     () => (
       <SingleDropdownListRSDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -3091,7 +3152,7 @@ storiesOf("List components/SingleDropdownList", module)
   .add(
     "With loader",
     () => (
-      <SingleDropdownListRSDefault showFilter={false} loader="Loading..." />
+      <SingleDropdownListRSDefault loader="Loading..." />
     )
   )
   .add(
@@ -3101,18 +3162,18 @@ storiesOf("List components/SingleDropdownList", module)
         title={text("title", "SingleDropdownList")}
         dataField={select(
           "dataField",
-          ["original_series.raw", "authors.raw", "language_code.raw"],
-          "original_series.raw"
+          ["original_series.keyword", "authors.keyword", "language_code.keyword"],
+          "original_series.keyword"
         )}
         size={number("size", 100)}
         showCount={boolean("showCount", true)}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "count"
         )}
         selectAllLabel={text("selectAllLabel", "All Books")}
-        defaultSelected={text("defaultSelected", "Harry Potter")}
+        defaultValue="Harry Potter"
         placeholder={text("placeholder", "Select a Book")}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Book filter")}
@@ -3132,14 +3193,13 @@ storiesOf("List components/MultiDropdownList", module)
   .add(
     "Basic",
     () => (
-      <MultiDropdownListRSDefault showFilter={false} />
+      <MultiDropdownListRSDefault />
     )
   )
   .add(
     "With title",
     () => (
       <MultiDropdownListRSDefault
-        showFilter={false}
         title={text("title", "Books list")}
       />
     )
@@ -3149,7 +3209,6 @@ storiesOf("List components/MultiDropdownList", module)
     () => (
       <MultiDropdownListRSDefault
         placeholder={text("placeholder", "Select Books")}
-        showFilter={false}
       />
     )
   )
@@ -3157,7 +3216,6 @@ storiesOf("List components/MultiDropdownList", module)
     "With size",
     () => (
       <MultiDropdownListRSDefault
-        showFilter={false}
         size={number("size", 10)}
       />
     )
@@ -3175,7 +3233,6 @@ storiesOf("List components/MultiDropdownList", module)
     "Without count",
     () => (
       <MultiDropdownListRSDefault
-        showFilter={false}
         showCount={boolean("showCount", false)}
       />
     )
@@ -3184,7 +3241,6 @@ storiesOf("List components/MultiDropdownList", module)
     "With search",
     () => (
       <MultiDropdownListRSDefault
-        showFilter={false}
         showSearch={boolean("showSearch", true)}
       />
     )
@@ -3193,10 +3249,9 @@ storiesOf("List components/MultiDropdownList", module)
     "With custom sort",
     () => (
       <MultiDropdownListRSDefault
-        showFilter={false}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "asc"
         )}
       />
@@ -3206,7 +3261,6 @@ storiesOf("List components/MultiDropdownList", module)
     "With queryFormat",
     () => (
       <MultiDropdownListRSDefault
-        showFilter={false}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
       />
     )
@@ -3217,7 +3271,6 @@ storiesOf("List components/MultiDropdownList", module)
       <MultiDropdownListRSDefault
         placeholder="Select Books"
         selectAllLabel={text("selectAllLabel", "All Books")}
-        showFilter={false}
       />
     )
   )
@@ -3228,9 +3281,8 @@ storiesOf("List components/MultiDropdownList", module)
         placeholder="Select Books"
         size={100}
         sortBy="count"
-        defaultSelected={array("defaultSelected", ["Hercule Poirot"])}
-        showFilter={false}
-      />
+				defaultValue={["A Beautiful Dark", "44 Scotland Street"]}
+			/>
     )
   )
   .add(
@@ -3246,7 +3298,6 @@ storiesOf("List components/MultiDropdownList", module)
             <span style={{ marginLeft: 5, color: "dodgerblue" }}>{count}</span>
           </div>
         )}
-        showFilter={false}
       />
     )
   )
@@ -3277,7 +3328,6 @@ storiesOf("List components/MultiDropdownList", module)
     "With URLParams",
     () => (
       <MultiDropdownListRSDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -3285,14 +3335,13 @@ storiesOf("List components/MultiDropdownList", module)
   .add(
     "with loader",
     () => (
-      <MultiDropdownListRSDefault showFilter={false} loader="Loading..." />
+      <MultiDropdownListRSDefault loader="Loading..." />
     )
   )
   .add(
     "extending onValueChange",
     () => (
       <MultiDropdownListRSDefault
-        showFilter={false}
         onValueChange={action("MultiDropdownList Value Changed")}
       />
     )
@@ -3304,19 +3353,19 @@ storiesOf("List components/MultiDropdownList", module)
         title={text("title", "MultiDropdownList")}
         dataField={select(
           "dataField",
-          ["original_series.raw", "authors.raw", "language_code.raw"],
-          "original_series.raw"
+          ["original_series.keyword", "authors.keyword", "language_code.keyword"],
+          "original_series.keyword"
         )}
         size={number("size", 100)}
         showCount={boolean("showCount", true)}
         sortBy={select(
           "sortBy",
-          { asc: "asc", description: "desc", count: "count" },
+          { asc: "asc", desc: "desc", count: "count" },
           "count"
         )}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
         selectAllLabel={text("selectAllLabel", "All Books")}
-        defaultSelected={array("defaultSelected", ["Hercule Poirot"])}
+        defaultValue={["Hercule Poirot"]}
         placeholder={text("placeholder", "Select Books")}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
@@ -3343,17 +3392,15 @@ storiesOf("List components/SingleDataList", module)
     "With title",
     () => (
       <SingleDataListRSDefault
-        showFilter={false}
         title={text("title", "Topics")}
       />
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <SingleDataListRSDefault
-        defaultSelected={text("defaultSelected", "Social")}
-        showFilter={false}
+        defaultValue="Social"
       />
     )
   )
@@ -3361,7 +3408,6 @@ storiesOf("List components/SingleDataList", module)
     "With showSearch",
     () => (
       <SingleDataListRSDefault
-        showFilter={false}
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search topics")}
       />
@@ -3372,7 +3418,6 @@ storiesOf("List components/SingleDataList", module)
     () => (
       <SingleDataListRSDefault
         showRadio={boolean("showRadio", false)}
-        showFilter={false}
       />
     )
   )
@@ -3380,7 +3425,6 @@ storiesOf("List components/SingleDataList", module)
     "With selectAllLabel",
     () => (
       <SingleDataListRSDefault
-        showFilter={false}
         selectAllLabel={text("selectAllLabel", "Select All")}
       />
     )
@@ -3398,7 +3442,6 @@ storiesOf("List components/SingleDataList", module)
     "With URLParams",
     () => (
       <SingleDataListRSDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -3457,8 +3500,8 @@ storiesOf("List components/SingleDataList", module)
     () => (
       <SingleDataListRSDefault
         title={text("title", "Topics")}
-        dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
-        defaultSelected={text("defaultSelected", "Social")}
+        dataField={text("dataField", "group.group_topics.topic_name_raw.keyword")}
+        defaultValue="Social"
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search topics")}
         showRadio={boolean("showRadio", true)}
@@ -3481,24 +3524,22 @@ storiesOf("List components/MultiDataList", module)
   .add(
     "Basic",
     () => (
-      <MultiDataListRSDefault showFilter={false} />
+      <MultiDataListRSDefault />
     )
   )
   .add(
     "With title",
     () => (
       <MultiDataListRSDefault
-        showFilter={false}
         title={text("title", "Topics")}
       />
     )
   )
   .add(
-    "With defaultSelected",
+    "With defaultValue",
     () => (
       <MultiDataListRSDefault
-        defaultSelected={array("defaultSelected", ["Social", "Music"])}
-        showFilter={false}
+        defaultValue={["Social", "Music"]}
       />
     )
   )
@@ -3506,7 +3547,6 @@ storiesOf("List components/MultiDataList", module)
     "With showSearch",
     () => (
       <MultiDataListRSDefault
-        showFilter={false}
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search topics")}
       />
@@ -3517,7 +3557,6 @@ storiesOf("List components/MultiDataList", module)
     () => (
       <MultiDataListRSDefault
         showCheckbox={boolean("showCheckbox", false)}
-        showFilter={false}
       />
     )
   )
@@ -3525,7 +3564,6 @@ storiesOf("List components/MultiDataList", module)
     "With selectAllLabel",
     () => (
       <MultiDataListRSDefault
-        showFilter={false}
         selectAllLabel={text("selectAllLabel", "Select All")}
       />
     )
@@ -3543,7 +3581,6 @@ storiesOf("List components/MultiDataList", module)
     "With queryFormat",
     () => (
       <MultiDataListRSDefault
-        showFilter={false}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
       />
     )
@@ -3552,7 +3589,6 @@ storiesOf("List components/MultiDataList", module)
     "With URLParams",
     () => (
       <MultiDataListRSDefault
-        showFilter={false}
         showCount
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
@@ -3562,7 +3598,6 @@ storiesOf("List components/MultiDataList", module)
     "With count",
     () => (
       <MultiDataListRSDefault
-        showFilter={false}
         showCount={boolean("With count", true)}
       />
     )
@@ -3571,7 +3606,6 @@ storiesOf("List components/MultiDataList", module)
     "With renderItem",
     () => (
       <MultiDataListRSDefault
-        showFilter={false}
         renderItem={(label, count) => (
           <div
             style={{
@@ -3590,7 +3624,7 @@ storiesOf("List components/MultiDataList", module)
   .add(
     "With custom renderer",
     () => (
-      <MultiDataListRSDefault showFilter={false}>
+      <MultiDataListRSDefault>
         {({ data, handleChange }) =>
           data.map(item => (
             <div
@@ -3615,8 +3649,8 @@ storiesOf("List components/MultiDataList", module)
     () => (
       <MultiDataListRSDefault
         title={text("title", "Topics")}
-        dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
-        defaultSelected={array("defaultSelected", ["Social", "Music"])}
+        dataField={text("dataField", "group.group_topics.topic_name_raw.keyword")}
+        defaultValue={["Social", "Music"]}
         showSearch={boolean("showSearch", true)}
         placeholder={text("placeholder", "Search topics")}
         showCheckbox={boolean("showCheckbox", true)}
@@ -3640,14 +3674,13 @@ storiesOf("Range components/SingleRange", module)
   .add(
     "Basic",
    () => (
-      <SingleRangeRSDefault showFilter={false} />
+      <SingleRangeRSDefault />
     )
   )
   .add(
     "With title",
    () => (
       <SingleRangeRSDefault
-        showFilter={false}
         title={text("title", "SingleRange: Books Filter")}
       />
     )
@@ -3656,8 +3689,7 @@ storiesOf("Range components/SingleRange", module)
     "With Default Selected",
    () => (
       <SingleRangeRSDefault
-        defaultSelected={text("defaultSelected", "Rating 3 to 4")}
-        showFilter={false}
+        defaultValue="Rating 3 to 4"
       />
     )
   )
@@ -3674,7 +3706,6 @@ storiesOf("Range components/SingleRange", module)
     "Without radio buttons",
    () => (
       <SingleRangeRSDefault
-        showFilter={false}
         showRadio={boolean("showRadio", false)}
       />
     )
@@ -3683,7 +3714,6 @@ storiesOf("Range components/SingleRange", module)
     "With URLParams",
     () => (
       <SingleRangeRSDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -3693,7 +3723,7 @@ storiesOf("Range components/SingleRange", module)
    () => (
       <SingleRangeRSDefault
         title={text("title", "SingleRange: Books Filter")}
-        defaultSelected={text("defaultSelected", "Cheap")}
+        defaultValue="Cheap"
         showRadio={boolean("showRadio", true)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
@@ -3713,7 +3743,7 @@ storiesOf("Range components/MultiRange", module)
   .add(
     "Basic",
     () => (
-      <MultiRangeRSDefault showFilter={false} />
+      <MultiRangeRSDefault />
     )
   )
   .add(
@@ -3721,7 +3751,6 @@ storiesOf("Range components/MultiRange", module)
     () => (
       <MultiRangeRSDefault
         title={text("title", "MultiRange: Books Filter")}
-        showFilter={false}
       />
     )
   )
@@ -3729,8 +3758,7 @@ storiesOf("Range components/MultiRange", module)
     "With Default Selected",
     () => (
       <MultiRangeRSDefault
-        defaultSelected={array("defaultSelected", ["Rating 3 to 4"])}
-        showFilter={false}
+        defaultValue={["Rating 3 to 4"]}
       />
     )
   )
@@ -3747,7 +3775,6 @@ storiesOf("Range components/MultiRange", module)
     "Without checkbox",
     () => (
       <MultiRangeRSDefault
-        showFilter={false}
         showCheckbox={boolean("showCheckbox", false)}
       />
     )
@@ -3756,7 +3783,6 @@ storiesOf("Range components/MultiRange", module)
     "With URLParams",
     () => (
       <MultiRangeRSDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -3766,7 +3792,7 @@ storiesOf("Range components/MultiRange", module)
     () => (
       <MultiRangeRSDefault
         title={text("title", "MultiRange: Books Filter")}
-        defaultSelected={array("defaultSelected", ["Rating 3 to 4"])}
+        defaultValue={["Rating 3 to 4"]}
         showCheckbox={boolean("showCheckbox", true)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
@@ -3786,7 +3812,7 @@ storiesOf("Range components/SingleDropdownRange", module)
   .add(
     "Basic",
     () => (
-      <SingleDropdownRangeRSDefault showFilter={false} />
+      <SingleDropdownRangeRSDefault />
     )
   )
   .add(
@@ -3794,7 +3820,6 @@ storiesOf("Range components/SingleDropdownRange", module)
     () => (
       <SingleDropdownRangeRSDefault
         title={text("title", "SingleDropdownRange: Books Filter")}
-        showFilter={false}
       />
     )
   )
@@ -3803,7 +3828,6 @@ storiesOf("Range components/SingleDropdownRange", module)
     () => (
       <SingleDropdownRangeRSDefault
         placeholder={text("placeholder", "Search books")}
-        showFilter={false}
       />
     )
   )
@@ -3811,8 +3835,7 @@ storiesOf("Range components/SingleDropdownRange", module)
     "With Default Selected",
     () => (
       <SingleDropdownRangeRSDefault
-        defaultSelected={text("defaultSelected", "Rating 3 to 4")}
-        showFilter={false}
+        defaultValue="Rating 3 to 4"
       />
     )
   )
@@ -3830,7 +3853,6 @@ storiesOf("Range components/SingleDropdownRange", module)
     () => (
       <SingleDropdownRangeRSDefault
         URLParams={boolean("URLParams (not visible on storybook)", true)}
-        showFilter={false}
       />
     )
   )
@@ -3840,7 +3862,7 @@ storiesOf("Range components/SingleDropdownRange", module)
       <SingleDropdownRangeRSDefault
         title={text("title", "SingleDropdownRange: Books Filter")}
         placeholder={text("placeholder", "Search books")}
-        defaultSelected={text("defaultSelected", "Rating 3 to 4")}
+        defaultValue="Rating 3 to 4"
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books")}
@@ -3859,7 +3881,7 @@ storiesOf("Range components/MultiDropdownRange", module)
   .add(
     "Basic",
     () => (
-      <MultiDropdownRangeRSDefault showFilter={false} />
+      <MultiDropdownRangeRSDefault />
     )
   )
   .add(
@@ -3867,7 +3889,6 @@ storiesOf("Range components/MultiDropdownRange", module)
     () => (
       <MultiDropdownRangeRSDefault
         title={text("title", "MultiDropdownRange: Books Filter")}
-        showFilter={false}
       />
     )
   )
@@ -3876,7 +3897,6 @@ storiesOf("Range components/MultiDropdownRange", module)
     () => (
       <MultiDropdownRangeRSDefault
         placeholder={text("placeholder", "Search books")}
-        showFilter={false}
       />
     )
   )
@@ -3884,8 +3904,7 @@ storiesOf("Range components/MultiDropdownRange", module)
     "With Default Selected",
     () => (
       <MultiDropdownRangeRSDefault
-        defaultSelected={array("defaultSelected", ["Rating 3 to 4"])}
-        showFilter={false}
+        defaultValue={["Rating 3 to 4"]}
       />
     )
   )
@@ -3903,7 +3922,6 @@ storiesOf("Range components/MultiDropdownRange", module)
     () => (
       <MultiDropdownRangeRSDefault
         URLParams={boolean("URLParams (not visible on storybook)", true)}
-        showFilter={false}
       />
     )
   )
@@ -3913,7 +3931,7 @@ storiesOf("Range components/MultiDropdownRange", module)
       <MultiDropdownRangeRSDefault
         title={text("title", "MultiDropdownRange: Books Filter")}
         dataField={text("dataField", "average_rating")}
-        defaultSelected={array("defaultSelected", ["Rating 3 to 4"])}
+        defaultValue={["Rating 3 to 4"]}
         placeholder={text("placeholder", "Search books")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         showFilter={boolean("showFilter", true)}
@@ -3933,14 +3951,13 @@ storiesOf("Base components/ToggleButton", module)
   .add(
     "Basic",
     () => (
-      <ToggleButtonRSDefault showFilter={false} />
+      <ToggleButtonRSDefault />
     )
   )
   .add(
     "With title",
     () => (
       <ToggleButtonRSDefault
-        showFilter={false}
         title={text("title", "ToggleButton: Topics")}
       />
     )
@@ -3949,8 +3966,7 @@ storiesOf("Base components/ToggleButton", module)
     "With Default Selected",
     () => (
       <ToggleButtonRSDefault
-        defaultSelected={array("defaultSelected", ["Music"])}
-        showFilter={false}
+        defaultValue={["Music"]}
       />
     )
   )
@@ -3967,7 +3983,6 @@ storiesOf("Base components/ToggleButton", module)
     "Without multiSelect",
     () => (
       <ToggleButtonRSDefault
-        showFilter={false}
         multiSelect={boolean("multiSelect", false)}
       />
     )
@@ -3976,7 +3991,6 @@ storiesOf("Base components/ToggleButton", module)
     "With URLParams",
     () => (
       <ToggleButtonRSDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -3986,9 +4000,9 @@ storiesOf("Base components/ToggleButton", module)
     () => (
       <ToggleButtonRSDefault
         title={text("title", "ToggleButton: Topics")}
-        dataField={text("dataField", "group.group_topics.topic_name_raw.raw")}
+        dataField={text("dataField", "group.group_topics.topic_name_raw.keyword")}
         multiSelect={boolean("multiSelect", true)}
-        defaultSelected={array("defaultSelected", ["Social"])}
+        defaultValue={["Social"]}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Category filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
@@ -4007,7 +4021,7 @@ storiesOf("Range components/DatePicker", module)
   .add(
     "Basic",
     () => (
-      <DatePickerRSDefault showFilter={false} />
+      <DatePickerRSDefault />
     )
   )
   .add(
@@ -4015,7 +4029,6 @@ storiesOf("Range components/DatePicker", module)
     () => (
       <DatePickerRSDefault
         title={text("title", "Date Picker")}
-        showFilter={false}
       />
     )
   )
@@ -4024,7 +4037,6 @@ storiesOf("Range components/DatePicker", module)
     () => (
       <DatePickerRSDefault
         placeholder={text("placeholder", "Pick date")}
-        showFilter={false}
       />
     )
   )
@@ -4041,7 +4053,6 @@ storiesOf("Range components/DatePicker", module)
     "With focus",
     () => (
       <DatePickerRSDefault
-        showFilter={false}
         focused={boolean("focused", true)}
       />
     )
@@ -4051,7 +4062,6 @@ storiesOf("Range components/DatePicker", module)
     () => (
       <DatePickerRSDefault
         numberOfMonths={number("numberOfMonths", 2)}
-        showFilter={false}
       />
     )
   )
@@ -4059,8 +4069,7 @@ storiesOf("Range components/DatePicker", module)
     "Default date",
     () => (
       <DatePickerRSDefault
-        defaultSelected={text("defaultSelected", "2017-04-07")}
-        showFilter={false}
+        defaultValue="2017-04-07"
       />
     )
   )
@@ -4072,7 +4081,6 @@ storiesOf("Range components/DatePicker", module)
       () => (
         <DatePickerRSDefault
           initialMonth={new Date("2017-04-04")}
-          showFilter={false}
         />
       )
     )
@@ -4082,7 +4090,6 @@ storiesOf("Range components/DatePicker", module)
     () => (
       <DatePickerRSDefault
         showClear={boolean("showClear", false)}
-        showFilter={false}
       />
     )
   )
@@ -4091,7 +4098,6 @@ storiesOf("Range components/DatePicker", module)
     () => (
       <DatePickerRSDefault
         clickUnselectsDay={boolean("clickUnselectsDay", false)}
-        showFilter={false}
       />
     )
   )
@@ -4099,7 +4105,6 @@ storiesOf("Range components/DatePicker", module)
     "With queryFormat",
     () => (
       <DatePickerRSDefault
-        showFilter={false}
         queryFormat={select(
           "queryFormat",
           [
@@ -4122,7 +4127,6 @@ storiesOf("Range components/DatePicker", module)
     "With URLParams",
     () => (
       <DatePickerRSDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -4171,14 +4175,13 @@ storiesOf("Range components/DateRange", module)
   .add(
     "Basic",
     () => (
-      <DateRangeRSDefault showFilter={false} />
+      <DateRangeRSDefault />
     )
   )
   .add(
     "With title",
     () => (
       <DateRangeRSDefault
-        showFilter={false}
         title={text("title", "Date Range")}
       />
     )
@@ -4187,7 +4190,6 @@ storiesOf("Range components/DateRange", module)
     "With placeholder",
     () => (
       <DateRangeRSDefault
-        showFilter={false}
         placeholder={object("placeholder", {
           start: "Start Date",
           end: "End Date"
@@ -4199,7 +4201,6 @@ storiesOf("Range components/DateRange", module)
     "without showClear",
     () => (
       <DateRangeRSDefault
-        showFilter={false}
         showClear={boolean("showClear", false)}
       />
     )
@@ -4218,7 +4219,6 @@ storiesOf("Range components/DateRange", module)
     () => (
       <DateRangeRSDefault
         numberOfMonths={number("numberOfMonths", 3)}
-        showFilter={false}
       />
     )
   )
@@ -4226,8 +4226,7 @@ storiesOf("Range components/DateRange", module)
     "Default date",
     () => (
       <DateRangeRSDefault
-        showFilter={false}
-        defaultSelected={{
+        defaultValue={{
           start: new Date("2017-04-07"),
           end: new Date("2017-04-14")
         }}
@@ -4238,7 +4237,6 @@ storiesOf("Range components/DateRange", module)
     "wihout autoFocusEnd",
     () => (
       <DateRangeRSDefault
-        showFilter={false}
         autoFocusEnd={boolean("autoFocusEnd", false)}
       />
     )
@@ -4247,7 +4245,6 @@ storiesOf("Range components/DateRange", module)
     "With queryFormat",
     () => (
       <DateRangeRSDefault
-        showFilter={false}
         queryFormat={select(
           "queryFormat",
           [
@@ -4270,7 +4267,6 @@ storiesOf("Range components/DateRange", module)
     "With URLParams",
     () => (
       <DateRangeRSDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -4318,7 +4314,7 @@ storiesOf("Range components/RangeInput", module)
   .add(
     "Basic",
     () => (
-      <RangeInputRSDefault showFilter={false} />
+      <RangeInputRSDefault />
     )
   )
   .add(
@@ -4326,7 +4322,6 @@ storiesOf("Range components/RangeInput", module)
     () => (
       <RangeInputRSDefault
         title={text("title", "RangeInput: Ratings")}
-        showFilter={false}
       />
     )
   )
@@ -4334,11 +4329,10 @@ storiesOf("Range components/RangeInput", module)
     "With Default Selected",
     () => (
       <RangeInputRSDefault
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           start: 5000,
           end: 9000
-        })}
-        showFilter={false}
+        }}
       />
     )
   )
@@ -4347,7 +4341,6 @@ storiesOf("Range components/RangeInput", module)
     () => (
       <RangeInputRSDefault
         showHistogram={boolean("showHistogram", false)}
-        showFilter={false}
       />
     )
   )
@@ -4356,7 +4349,6 @@ storiesOf("Range components/RangeInput", module)
     () => (
       <RangeInputRSDefault
         showSlider={boolean("showSlider", false)}
-        showFilter={false}
       />
     )
   )
@@ -4365,7 +4357,6 @@ storiesOf("Range components/RangeInput", module)
     () => (
       <RangeInputRSDefault
         interval={number("interval", 1000)}
-        showFilter={false}
       />
     )
   )
@@ -4377,7 +4368,6 @@ storiesOf("Range components/RangeInput", module)
           start: "Low",
           end: "High"
         })}
-        showFilter={false}
       />
     )
   )
@@ -4398,7 +4388,6 @@ storiesOf("Range components/RangeInput", module)
         onDrag={(selected, boundary) => {
           console.log(selected, boundary);
         }}
-        showFilter={false}
       />
     )
   )
@@ -4407,7 +4396,6 @@ storiesOf("Range components/RangeInput", module)
     () => (
       <RangeInputRSDefault
         URLParams={boolean("URLParams (not visible on storybook)", true)}
-        showFilter={false}
       />
     )
   )
@@ -4416,7 +4404,6 @@ storiesOf("Range components/RangeInput", module)
     () => (
       <RangeInputRSDefault
         tooltipTrigger={text("tooltipTrigger", "always")}
-        showFilter={false}
       />
     )
   )
@@ -4437,10 +4424,10 @@ storiesOf("Range components/RangeInput", module)
         showFilter={boolean("showFilter", true)}
         stepValue={number("stepValue", 1)}
         interval={number("interval", 1000)}
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           start: 4000,
           end: 10000
-        })}
+        }}
         rangeLabels={object("rangeLabels", {
           start: "Start",
           end: "End"
@@ -4463,7 +4450,7 @@ storiesOf("Range components/RangeSlider", module)
   .add(
     "Basic",
     () => (
-      <RangeSliderRSDefault showFilter={false} />
+      <RangeSliderRSDefault />
     )
   )
   .add(
@@ -4471,7 +4458,6 @@ storiesOf("Range components/RangeSlider", module)
     () => (
       <RangeSliderRSDefault
         title={text("title", "RangeSlider: Ratings")}
-        showFilter={false}
       />
     )
   )
@@ -4479,11 +4465,10 @@ storiesOf("Range components/RangeSlider", module)
     "With Default Selected",
     () => (
       <RangeSliderRSDefault
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           start: 3000,
           end: 4000
-        })}
-        showFilter={false}
+        }}
       />
     )
   )
@@ -4491,11 +4476,10 @@ storiesOf("Range components/RangeSlider", module)
     "With onDrag",
     () => (
       <RangeSliderRSDefault
-        showFilter={false}
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           start: 3000,
           end: 4000
-        })}
+        }}
         onDrag={(selected, boundary) => {
           console.log(selected, boundary);
         }}
@@ -4506,7 +4490,6 @@ storiesOf("Range components/RangeSlider", module)
     "Without histogram",
    () => (
       <RangeSliderRSDefault
-        showFilter={false}
         showHistogram={boolean("showHistogram", false)}
       />
     )
@@ -4515,7 +4498,6 @@ storiesOf("Range components/RangeSlider", module)
     "With custom histogram interval",
    () => (
       <RangeSliderRSDefault
-        showFilter={false}
         interval={number("interval", 1000)}
       />
     )
@@ -4524,7 +4506,6 @@ storiesOf("Range components/RangeSlider", module)
     "With Range Labels",
     () => (
       <RangeSliderRSDefault
-        showFilter={false}
         rangeLabels={object("rangeLabels", {
           start: "Low",
           end: "High"
@@ -4548,7 +4529,6 @@ storiesOf("Range components/RangeSlider", module)
     "With URLParams",
     () => (
       <RangeSliderRSDefault
-        showFilter={false}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
     )
@@ -4557,7 +4537,6 @@ storiesOf("Range components/RangeSlider", module)
     "With tooltipTrigger",
     () => (
       <RangeSliderRSDefault
-        showFilter={false}
         tooltipTrigger={text("tooltipTrigger", "always")}
       />
     )
@@ -4579,10 +4558,10 @@ storiesOf("Range components/RangeSlider", module)
         showFilter={boolean("showFilter", true)}
         stepValue={number("stepValue", 1)}
         interval={number("interval", 2000)}
-        defaultSelected={object("defaultSelected", {
+        defaultValue={{
           start: 6000,
           end: 12000
-        })}
+        }}
         rangeLabels={object("rangeLabels", {
           start: "Start",
           end: "End"
@@ -4596,17 +4575,17 @@ storiesOf("Range components/RangeSlider", module)
 // storiesOf("search/SelectedFilters", module)
 // 	.addDecorator(withKnobs)
 // 	.add("Basic", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} />
+// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["London"]} />
 // 	)))
 // 	.add("With no filter", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} showFilter={boolean("showFilter", false)} />
+// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["London"]} showFilter={boolean("showFilter", false)} />
 // 	)))
 // 	.add("With filterLabel", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" defaultSelected={["London"]} filterLabel={text("filterLabel", "City filter")} />
+// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["London"]} filterLabel={text("filterLabel", "City filter")} />
 // 	)))
 // 	.add("Playground", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
 // 		<MultiListRSDefault
-// 			defaultSelected={["London"]}
+// 			defaultValue={["London"]}
 // 			showFilter={boolean("showFilter", true)}
 // 			filterLabel={text("filterLabel", "City filter")}
 // 		/>
