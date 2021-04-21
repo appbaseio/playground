@@ -90,6 +90,7 @@ import RangeInputRSDefault from "./reactivesearch/RangeInput.stories";
 import ReactiveComponentStory from "./reactivesearch/ReactiveComponent.stories";
 import CustomRecentIcon from './reactivesearch/CustomRecentIcon';
 import CustomPopularIcon from './reactivesearch/CustomPopularIcon';
+import ReactiveComponentWithDistinctFieldProp from './reactivesearch/ReactiveComponentWithDistinctFieldProp';
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 import DarkStory from "./reactivesearch/Dark.stories";
@@ -121,7 +122,13 @@ storiesOf("Base components/ReactiveComponent", module)
   .add("A custom component", () => <ReactiveComponentStory />)
   .add("with onData", () => (
     <ReactiveComponentStory onData={action("Data Changed")} />
-  ));
+  ))
+	.add(
+    "With distinctField prop",
+   () => (
+      <ReactiveComponentWithDistinctFieldProp />
+    )
+  );
 
 // Reactivemaps components
 
@@ -1611,6 +1618,26 @@ storiesOf("Search components/CategorySearch", module)
 			/>
 		)
 	)
+	.add(
+    "With distinctField prop",
+   () => (
+      <CategorySearchDefault
+				title="CategorySearch"
+				dataField={['original_title', 'original_title.search']}
+				distinctField="authors.keyword"
+				distinctFieldConfig={{
+					inner_hits: {
+						name: 'most_recent',
+						size: 5,
+						sort: [{ timestamp: 'asc' }],
+					},
+					max_concurrent_group_searches: 4,
+				}}
+				categoryField="title.keyword"
+				componentId="BookSensor"
+			/>
+    )
+  )
   .add(
     "Playground",
    () => (
@@ -1761,6 +1788,22 @@ storiesOf("Result components/ReactiveList", module)
 					)
 				}}
       />
+    )
+  )
+	.add(
+    "With distinctField prop",
+   () => (
+      <ReactiveListDefault
+				distinctField="authors.keyword"
+				distinctFieldConfig={{
+					inner_hits: {
+						name: 'most_recent',
+						size: 5,
+						sort: [{ timestamp: 'asc' }],
+					},
+					max_concurrent_group_searches: 4,
+				}}
+			/>
     )
   )
   .add(
@@ -2422,6 +2465,25 @@ storiesOf("Search components/DataSearch", module)
 			/>
 		)
 	)
+	.add(
+    "With distinctField prop",
+   () => (
+      <DataSearchRSDefault
+				title="DataSearch"
+				dataField={['original_title', 'original_title.search']}
+				distinctField="authors.keyword"
+				distinctFieldConfig={{
+					inner_hits: {
+						name: 'most_recent',
+						size: 5,
+						sort: [{ timestamp: 'asc' }],
+					},
+					max_concurrent_group_searches: 4,
+				}}
+				componentId="BookSensor"
+			/>
+    )
+  )
   .add(
     "Playground",
     () => (
