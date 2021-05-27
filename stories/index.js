@@ -91,6 +91,8 @@ import ReactiveComponentStory from "./reactivesearch/ReactiveComponent.stories";
 import CustomRecentIcon from './reactivesearch/CustomRecentIcon';
 import CustomPopularIcon from './reactivesearch/CustomPopularIcon';
 import ReactiveComponentWithDistinctFieldProp from './reactivesearch/ReactiveComponentWithDistinctFieldProp';
+import DataSearchWithIndexProp from './reactivesearch/DataSearchWithIndexProp';
+import MultiListWithIndexProp from './reactivesearch/MultiListWithIndexProp';
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 import DarkStory from "./reactivesearch/Dark.stories";
@@ -1865,7 +1867,7 @@ storiesOf("Result components/ResultCard", module)
   .add(
     "Basic",
     () => (
-      <ResultCardDefault />
+      <ResultCardDefault index="good-books-clone" />
     )
   )
   .add(
@@ -2484,6 +2486,12 @@ storiesOf("Search components/DataSearch", module)
 			/>
     )
   )
+	.add(
+    "With index prop",
+   () => (
+      <DataSearchWithIndexProp />
+    )
+  )
   .add(
     "Playground",
     () => (
@@ -3043,7 +3051,13 @@ storiesOf("List components/MultiList", module)
   .add(
     "with loader",
    () => (
-      <MultiListRSDefault
+      <MultiListRSDefault />
+    )
+  )
+	.add(
+    "with index prop",
+   () => (
+      <MultiListWithIndexProp
         showSearch
         placeholder="Search Books"
         loader="Loading..."
