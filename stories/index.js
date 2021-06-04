@@ -2834,6 +2834,16 @@ storiesOf("List components/SingleList", module)
       />
     )
   )
+	.add(
+    "With enableStrictSelection",
+   () => (
+      <SingleListRSDefault
+        showSearch
+        placeholder="Search Books"
+        enableStrictSelection
+      />
+    )
+  )
   .add(
     "Playground",
    () => (
@@ -3555,6 +3565,12 @@ storiesOf("List components/SingleDataList", module)
           ))
         }
       </SingleDataListRSDefault>
+    )
+  )
+	.add(
+    "With enableStrictSelection",
+    () => (
+      <SingleDataListRSDefault enableStrictSelection />
     )
   )
   .add(
