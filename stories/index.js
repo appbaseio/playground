@@ -101,7 +101,7 @@ function removeFirstLine(str, number = 1) {
 }
 
 // The function removes lines starting with // which crashes storybook
-const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, '');
+const removeCommentsLine = str => str.replace(/^.* {4}\/\/.*$/gm, '');
 
 storiesOf('Base components/ReactiveComponent', module)
 	.addDecorator(withKnobs)
@@ -757,8 +757,8 @@ storiesOf('Range components/DynamicRangeSlider', module)
 		<DynamicRangeSliderDefault
 			title={text('title', 'Books')}
 			rangeLabels={(min, max) => ({
-				start: min + ' book',
-				end: max + ' books',
+				start: `${min} book`,
+				end: `${max} books`,
 			})}
 		/>
 	))
@@ -1015,20 +1015,18 @@ storiesOf('Search components/CategorySearch', module)
 	.add('With parseSuggestion', () => (
 		<CategorySearchDefault
 			placeholder="Search Books..."
-			//renderSuggestion={action("Suggestion")}
-			parseSuggestion={suggestion => {
-				return {
-					label: (
-						<div>
-							{suggestion.source.original_title} by
-							<span style={{ color: 'dodgerblue', marginLeft: 5 }}>
-								{suggestion.source.authors}
-							</span>
-						</div>
-					),
-					value: suggestion.source.original_title,
-				};
-			}}
+			// renderSuggestion={action("Suggestion")}
+			parseSuggestion={suggestion => ({
+				label: (
+					<div>
+						{suggestion.source.original_title} by
+						<span style={{ color: 'dodgerblue', marginLeft: 5 }}>
+							{suggestion.source.authors}
+						</span>
+					</div>
+				),
+				value: suggestion.source.original_title,
+			})}
 		/>
 	))
 	.add('With custom renderer', () => (
@@ -1054,62 +1052,60 @@ storiesOf('Search components/CategorySearch', module)
 							width: '100%',
 						}}
 					>
-						{
-							<div>
-								{suggestions.slice(0, 5).map((suggestion, index) => (
-									<div
-										style={{
-											padding: 10,
-											background:
-												index === highlightedIndex ? '#eee' : 'transparent',
-										}}
-										key={suggestion.value}
-										{...getItemProps({ item: suggestion })}
-									>
-										{suggestion.value}
-									</div>
-								))}
-								{categories.slice(0, 3).map((category, index) => (
-									<div
-										style={{
-											padding: 10,
-											color: 'mediumseagreen',
-											background:
-												highlightedIndex ===
-												index + suggestions.slice(0, 5).length
-													? '#eee'
-													: 'transparent',
-										}}
-										key={category.key}
-										{...getItemProps({
-											item: { value: value, category: category.key },
-										})}
-									>
-										{value} in {category.key}
-									</div>
-								))}
-								{Boolean(value.length) && (
-									<div
-										style={{
-											color: 'dodgerblue',
-											padding: 10,
-											cursor: 'pointer',
-											background:
-												highlightedIndex ===
-												suggestions.slice(0, 5).length +
-													categories.slice(0, 3).length
-													? '#eee'
-													: 'transparent',
-										}}
-										{...getItemProps({
-											item: { label: value, value: value },
-										})}
-									>
-										Search for "{value}" in all categories
-									</div>
-								)}
-							</div>
-						}
+						<div>
+							{suggestions.slice(0, 5).map((suggestion, index) => (
+								<div
+									style={{
+										padding: 10,
+										background:
+											index === highlightedIndex ? '#eee' : 'transparent',
+									}}
+									key={suggestion.value}
+									{...getItemProps({ item: suggestion })}
+								>
+									{suggestion.value}
+								</div>
+							))}
+							{categories.slice(0, 3).map((category, index) => (
+								<div
+									style={{
+										padding: 10,
+										color: 'mediumseagreen',
+										background:
+											highlightedIndex ===
+											index + suggestions.slice(0, 5).length
+												? '#eee'
+												: 'transparent',
+									}}
+									key={category.key}
+									{...getItemProps({
+										item: { value, category: category.key },
+									})}
+								>
+									{value} in {category.key}
+								</div>
+							))}
+							{Boolean(value.length) && (
+								<div
+									style={{
+										color: 'dodgerblue',
+										padding: 10,
+										cursor: 'pointer',
+										background:
+											highlightedIndex ===
+											suggestions.slice(0, 5).length +
+												categories.slice(0, 3).length
+												? '#eee'
+												: 'transparent',
+									}}
+									{...getItemProps({
+										item: { label: value, value },
+									})}
+								>
+									Search for "{value}" in all categories
+								</div>
+							)}
+						</div>
 					</div>
 				)
 			}
@@ -1172,25 +1168,23 @@ storiesOf('Search components/CategorySearch', module)
 				value,
 				data: suggestions,
 				downshiftProps: { isOpen, getItemProps, highlightedIndex },
-			}) => {
-				return (
-					isOpen &&
-					Boolean(value.length) &&
-					(suggestions || []).map((suggestion, index) => (
-						<li
-							style={{
-								padding: 10,
-								background: index === highlightedIndex ? '#eee' : 'transparent',
-								color: 'green',
-							}}
-							key={suggestion.value}
-							{...getItemProps({ item: suggestion })}
-						>
-							{suggestion.value}
-						</li>
-					))
-				);
-			}}
+			}) =>
+				isOpen &&
+				Boolean(value.length) &&
+				(suggestions || []).map((suggestion, index) => (
+					<li
+						style={{
+							padding: 10,
+							background: index === highlightedIndex ? '#eee' : 'transparent',
+							color: 'green',
+						}}
+						key={suggestion.value}
+						{...getItemProps({ item: suggestion })}
+					>
+						{suggestion.value}
+					</li>
+				))
+			}
 		/>
 	))
 	.add('With distinctField prop', () => (
@@ -1210,7 +1204,7 @@ storiesOf('Search components/CategorySearch', module)
 			componentId="BookSensor"
 		/>
 	))
-	.add('With autoFocus prop', () => <CategorySearchDefault autoFocus={true} />)
+	.add('With autoFocus prop', () => <CategorySearchDefault autoFocus />)
 	.add('With focusShortcuts prop', () => (
 		<CategorySearchDefault
 			focusShortcuts={['r']}
@@ -1325,18 +1319,16 @@ storiesOf('Result components/ReactiveList', module)
 	.add('With renderResultStats', () => (
 		<ReactiveListDefault
 			pagination
-			renderResultStats={({ numberOfResults, numberOfPages, time, currentPage, ...rest }) => {
-				return (
-					<span>
-						<h3 style={{ color: 'green' }}>
-							{numberOfResults} found in {time}.
-						</h3>{' '}
-						<h4>
-							Page {currentPage + 1}/{numberOfPages}
-						</h4>
-					</span>
-				);
-			}}
+			renderResultStats={({ numberOfResults, numberOfPages, time, currentPage, ...rest }) => (
+				<span>
+					<h3 style={{ color: 'green' }}>
+						{numberOfResults} found in {time}.
+					</h3>{' '}
+					<h4>
+						Page {currentPage + 1}/{numberOfPages}
+					</h4>
+				</span>
+			)}
 		/>
 	))
 	.add('With distinctField prop', () => (
@@ -1679,41 +1671,39 @@ storiesOf('Search components/DataSearch', module)
 							width: '100%',
 						}}
 					>
-						{
-							<div>
-								{data.slice(0, 5).map((suggestion, index) => (
-									<div
-										style={{
-											padding: 10,
-											background:
-												index === highlightedIndex ? '#eee' : 'transparent',
-										}}
-										key={suggestion.value}
-										{...getItemProps({ item: suggestion })}
-									>
-										{suggestion.value}
-									</div>
-								))}
-								{Boolean(value.length) && (
-									<div
-										style={{
-											color: 'dodgerblue',
-											padding: 10,
-											cursor: 'pointer',
-											background:
-												highlightedIndex === data.slice(0, 5).length
-													? '#eee'
-													: 'transparent',
-										}}
-										{...getItemProps({
-											item: { label: value, value: value },
-										})}
-									>
-										Show all results for "{value}"
-									</div>
-								)}
-							</div>
-						}
+						<div>
+							{data.slice(0, 5).map((suggestion, index) => (
+								<div
+									style={{
+										padding: 10,
+										background:
+											index === highlightedIndex ? '#eee' : 'transparent',
+									}}
+									key={suggestion.value}
+									{...getItemProps({ item: suggestion })}
+								>
+									{suggestion.value}
+								</div>
+							))}
+							{Boolean(value.length) && (
+								<div
+									style={{
+										color: 'dodgerblue',
+										padding: 10,
+										cursor: 'pointer',
+										background:
+											highlightedIndex === data.slice(0, 5).length
+												? '#eee'
+												: 'transparent',
+									}}
+									{...getItemProps({
+										item: { label: value, value },
+									})}
+								>
+									Show all results for "{value}"
+								</div>
+							)}
+						</div>
 					</div>
 				)
 			}
@@ -1787,25 +1777,23 @@ storiesOf('Search components/DataSearch', module)
 				value,
 				data: suggestions,
 				downshiftProps: { isOpen, getItemProps, highlightedIndex },
-			}) => {
-				return (
-					isOpen &&
-					Boolean(value.length) &&
-					(suggestions || []).map((suggestion, index) => (
-						<li
-							style={{
-								padding: 10,
-								background: index === highlightedIndex ? '#eee' : 'transparent',
-								color: 'green',
-							}}
-							key={suggestion.value}
-							{...getItemProps({ item: suggestion })}
-						>
-							{suggestion.value}
-						</li>
-					))
-				);
-			}}
+			}) =>
+				isOpen &&
+				Boolean(value.length) &&
+				(suggestions || []).map((suggestion, index) => (
+					<li
+						style={{
+							padding: 10,
+							background: index === highlightedIndex ? '#eee' : 'transparent',
+							color: 'green',
+						}}
+						key={suggestion.value}
+						{...getItemProps({ item: suggestion })}
+					>
+						{suggestion.value}
+					</li>
+				))
+			}
 		/>
 	))
 	.add('With distinctField prop', () => (
@@ -1824,7 +1812,7 @@ storiesOf('Search components/DataSearch', module)
 			componentId="BookSensor"
 		/>
 	))
-	.add('With autoFocus prop', () => <DataSearchRSDefault autoFocus={true} />)
+	.add('With autoFocus prop', () => <DataSearchRSDefault autoFocus />)
 	.add('With focusShortcuts prop', () => (
 		<DataSearchRSDefault
 			focusShortcuts={['r']}
@@ -1910,7 +1898,12 @@ storiesOf('Range components/NumberBox', module)
 			}}
 			labelPosition={select(
 				'labelPosition',
-				{ bottom: 'bottom', top: 'top', left: 'left', right: 'right' },
+				{
+					bottom: 'bottom',
+					top: 'top',
+					left: 'left',
+					right: 'right',
+				},
 				'right',
 			)}
 		/>
@@ -1975,7 +1968,12 @@ storiesOf('Range components/NumberBox', module)
 			})}
 			labelPosition={select(
 				'labelPosition',
-				{ bottom: 'bottom', top: 'top', left: 'left', right: 'right' },
+				{
+					bottom: 'bottom',
+					top: 'top',
+					left: 'left',
+					right: 'right',
+				},
 				'right',
 			)}
 			queryFormat={select('queryFormat', { exact: 'exact', gte: 'gte', lte: 'lte' }, 'exact')}
@@ -2851,7 +2849,7 @@ storiesOf('Range components/DatePicker', module)
 	.add(
 		'with initialMonth',
 		withInfo(
-			`initialMonth accepts a JavaScript object. Here it's passed new Date("2017-04-04")`,
+			'initialMonth accepts a JavaScript object. Here it\'s passed new Date("2017-04-04")',
 		)(() => <DatePickerRSDefault initialMonth={new Date('2017-04-04')} />),
 	)
 	.add('Without clear button', () => (
