@@ -1638,6 +1638,58 @@ storiesOf("Search components/CategorySearch", module)
 			/>
     )
   )
+	.add(
+    "With autoFocus prop",
+   () => (
+      <CategorySearchDefault
+				autoFocus
+			/>
+    )
+  )
+	.add(
+    "With focusShortcuts prop",
+   () => (
+      <CategorySearchDefault
+				focusShortcuts={['r']}
+				placeholder='Press "r" to focus the searchbox'
+			/>
+    )
+  )
+	.add(
+    "With addonBefore prop",
+   () => (
+      <CategorySearchDefault
+				addonBefore={<h3> Before</h3>}
+			/>
+    )
+  )
+	.add(
+    "With addonAfter prop",
+   () => (
+      <CategorySearchDefault
+				addonAfter={<h3> After</h3>}
+			/>
+    )
+  )
+	.add(
+    "With addonBefore & addonAfter prop",
+   () => (
+      <CategorySearchDefault
+	   			addonBefore={<h3> Before</h3>}
+				addonAfter={<h3> After</h3>}
+			/>
+    )
+  )
+	.add(
+    "With expandSuggestionsContainer prop",
+   () => (
+      <CategorySearchDefault
+	   			addonBefore={<h3> Before</h3>}
+				addonAfter={<h3> After</h3>}
+	   			expandSuggestionsContainer={false}
+			/>
+    )
+  )
   .add(
     "Playground",
    () => (
@@ -1661,6 +1713,11 @@ storiesOf("Search components/CategorySearch", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+	autoFocus={boolean('autoFocus', true)}
+	focusShortcuts={array('focusShortcuts', ['/', 'r', 't'])}
+	addonBefore={text('addonBefore', 'Before')}
+	addonAfter={text('addonAfter', 'After')}
+	expandSuggestionsContainer={boolean('expandSuggestionsContainer', true)}
       />
     )
   );
@@ -2484,6 +2541,58 @@ storiesOf("Search components/DataSearch", module)
 			/>
     )
   )
+  	.add(
+    "With autoFocus prop",
+   () => (
+      <DataSearchRSDefault
+				autoFocus
+			/>
+    )
+  )
+  	.add(
+    "With focusShortcuts prop",
+   () => (
+      <DataSearchRSDefault
+				focusShortcuts={['r']}
+				placeholder='Press "r" to focus the searchbox'
+			/>
+    )
+  )
+    	.add(
+    "With addonBefore prop",
+   () => (
+      <DataSearchRSDefault
+				addonBefore={<h3> Before</h3>}
+			/>
+    )
+  )
+    	.add(
+    "With addonAfter prop",
+   () => (
+      <DataSearchRSDefault
+				addonAfter={<h3> After</h3>}
+			/>
+    )
+  )
+    	.add(
+    "With addonBefore & addonAfter prop",
+   () => (
+      <DataSearchRSDefault
+	   			addonBefore={<h3> Before</h3>}
+				addonAfter={<h3> After</h3>}
+			/>
+    )
+  )
+    	.add(
+    "With expandSuggestionsContainer prop",
+   () => (
+      <DataSearchRSDefault
+	   			addonBefore={<h3> Before</h3>}
+				addonAfter={<h3> After</h3>}
+	   			expandSuggestionsContainer={false}
+			/>
+    )
+  )
   .add(
     "Playground",
     () => (
@@ -2507,6 +2616,11 @@ storiesOf("Search components/DataSearch", module)
         highlight={boolean("highlight", false)}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
         onValueSelected={action("onValueSelected called with")}
+	autoFocus={boolean('autoFocus', true)}
+	focusShortcuts={array('focusShortcuts', ['/', 'r', 't'])}
+	addonBefore={text('addonBefore', 'Before')}
+	addonAfter={text('addonAfter', 'After')}
+	expandSuggestionsContainer={boolean('expandSuggestionsContainer', true)}
       />
     )
   );
