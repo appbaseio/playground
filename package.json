@@ -46,5 +46,8 @@
         "raw-loader": "^0.5.1",
         "storybook-readme": "^5.0.5",
         "sumoselect": "^3.0.3"
+    },
+    "engines": {
+        "node": ">=14.17.1"
     }
 }
