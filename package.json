@@ -21,7 +21,7 @@
     "dependencies": {
         "@appbaseio/docs": "git://github.com/appbaseio/Docs",
         "@appbaseio/reactivemaps": "3.0.0-beta.14",
-        "@appbaseio/reactivesearch": "3.25.0",
+        "@appbaseio/reactivesearch": "3.25.1",
         "moment": "^2.29.1",
         "react": "^16.8.6",
         "react-dom": "^16.8.6"
