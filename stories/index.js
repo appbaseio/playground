@@ -4368,7 +4368,7 @@ storiesOf("Range components/DatePicker", module)
             "basic_time",
             "basic_time_no_millis",
             "epoch_millis",
-            "epoch_seconds"
+            "epoch_second"
           ],
           "epoch_millis"
         )}
@@ -4402,7 +4402,7 @@ storiesOf("Range components/DatePicker", module)
             "basic_time",
             "basic_time_no_millis",
             "epoch_millis",
-            "epoch_seconds"
+            "epoch_second"
           ],
           "epoch_millis"
         )}
@@ -4508,7 +4508,7 @@ storiesOf("Range components/DateRange", module)
             "basic_time",
             "basic_time_no_millis",
             "epoch_millis",
-            "epoch_seconds"
+            "epoch_second"
           ],
           "epoch_millis"
         )}
@@ -4544,7 +4544,7 @@ storiesOf("Range components/DateRange", module)
             "basic_time",
             "basic_time_no_millis",
             "epoch_millis",
-            "epoch_seconds"
+            "epoch_second"
           ],
           "epoch_millis"
         )}
