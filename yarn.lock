@@ -73,10 +73,21 @@
     redux-thunk "^2.3.0"
     xdate "^0.8.2"
 
-"@appbaseio/reactivemaps@3.0.0-beta.12":
-  version "3.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivemaps/-/reactivemaps-3.0.0-beta.12.tgz#991823cddd9955a9716ac0bf820f5f9afe3adc1d"
-  integrity sha512-inOkxcuMvLzpTMHw8M8UHI/r3cnRcOaZaBiDTuczNNZTeUc1nX7iBeSyUzLKOZIkzgtsCQ/a3vWDLp6Dkqus7Q==
+"@appbaseio/reactivecore@9.12.7":
+  version "9.12.7"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-9.12.7.tgz#7a4a1303edeb63f7393ac4035910766249cc3b98"
+  integrity sha512-fGdmMhsIHhRv9a8Yt1NrlfRekB8MxjZRZutMRu2c1U48pQc+0zK1svM92CStsA10eM5SLB3GtT5SFwnZYmDRuw==
+  dependencies:
+    cross-fetch "^3.0.4"
+    prop-types "^15.6.0"
+    redux "^4.0.0"
+    redux-thunk "^2.3.0"
+    xdate "^0.8.2"
+
+"@appbaseio/reactivemaps@3.0.0-beta.14":
+  version "3.0.0-beta.14"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivemaps/-/reactivemaps-3.0.0-beta.14.tgz#b51f6bc904ec10f4157628872decc034dccfb842"
+  integrity sha512-BVwZN9BDiS5C9ryeKwtflUhoJf7GdfJtl3Sk5X/F9B8n8dGaD83ztNgp3sLbBbdCeTwwbvEI1mMiqavpQOw9nA==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
@@ -105,7 +116,29 @@
     react-leaflet "^2.1.3"
     rheostat "^2.1.1"
 
-"@appbaseio/reactivesearch@3.19.0", "@appbaseio/reactivesearch@^3.12.2":
+"@appbaseio/reactivesearch@3.25.1":
+  version "3.25.1"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.25.1.tgz#88f2c1318148cff0224898ed32a48cdfaca734b7"
+  integrity sha512-eVP+49TGzWTX22q2EAM+98fdzsp0bcmopftRAa7abXLrQa+YTs6TzzsIqUB+oMu6/dCsaBADDaBtfMmeUuAzGw==
+  dependencies:
+    "@appbaseio/reactivecore" "9.12.7"
+    "@emotion/core" "^10.0.28"
+    "@emotion/styled" "^10.0.27"
+    appbase-js "^4.4.1"
+    cross-env "^5.2.0"
+    downshift "^1.31.2"
+    emotion-theming "^10.0.27"
+    hoist-non-react-statics "^3.2.1"
+    hotkeys-js "^3.8.7"
+    polished "^1.9.3"
+    prop-types "^15.6.0"
+    react-day-picker "^7.0.5"
+    react-redux "^6.0.1"
+    rheostat "^2.1.1"
+    url-search-params-polyfill "^7.0.0"
+    xdate "^0.8.2"
+
+"@appbaseio/reactivesearch@^3.12.2":
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.19.0.tgz#d5b7e15443df2e878754431e1a33264b1249df7d"
   integrity sha512-rytJjF61728A6ycQcPbnhQxiVnsLmhBQvsJgnqu33iTAzjnQGgr/My1QsBYg0aGwkOkGaZpkBse3M3hAn1Ercg==
@@ -3580,6 +3613,15 @@ appbase-js@^4.1.0:
     stream "^0.0.2"
     url-parser-lite "^0.1.0"
     ws "^6.1.2"
+
+appbase-js@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/appbase-js/-/appbase-js-4.4.1.tgz#fd25bce54049229384b45686a74509ea87283c90"
+  integrity sha512-NisyYnH83+4EYaP0uGENebGAKTLUp1G7wucQs+2ojOJdb5ElnTU7/DV+Ts7oyVRjat259CuJz0xsuT1tZ5pk1g==
+  dependencies:
+    cross-fetch "^2.2.2"
+    querystring "^0.2.0"
+    url-parser-lite "^0.1.0"
 
 application-config-path@^0.1.0:
   version "0.1.0"
@@ -11094,6 +11136,11 @@ hosted-git-info@^3.0.6:
   dependencies:
     lru-cache "^6.0.0"
 
+hotkeys-js@^3.8.7:
+  version "3.8.7"
+  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.8.7.tgz#c16cab978b53d7242f860ca3932e976b92399981"
+  integrity sha512-ckAx3EkUr5XjDwjEHDorHxRO2Kb7z6Z2Sxul4MbBkN8Nho7XDslQsgMJT+CiJ5Z4TgRxxvKHEpuLE3imzqy4Lg==
+
 hpack.js@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/hpack.js/-/hpack.js-2.1.6.tgz#87774c0949e513f42e84575b3c45681fade2a0b2"
@@ -14461,9 +14508,9 @@ object-keys@~0.4.0:
   integrity sha1-KKaq50KN0sOpLz2V8hM13SBOAzY=
 
 object-path@^0.11.4:
-  version "0.11.5"
-  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.5.tgz#d4e3cf19601a5140a55a16ad712019a9c50b577a"
-  integrity sha512-jgSbThcoR/s+XumvGMTMf81QVBmah+/Q7K7YduKeKVWL7N111unR2d6pZZarSk6kY/caeNxUDyxOvMWyzoU2eg==
+  version "0.11.8"
+  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.8.tgz#ed002c02bbdd0070b78a27455e8ae01fc14d4742"
+  integrity sha512-YJjNZrlXJFM42wTBn6zgOJVar9KFJvzx6sTWDte8sWZF//cnjl0BxHNpfZx+ZffXX63A9q0b1zsFiBX4g4X5KA==
 
 object-visit@^1.0.0:
   version "1.0.1"
