@@ -1030,7 +1030,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
     () => (
       <DynamicRangeSliderDefault
         dataField="timestamp"
-        title="Date Ranges"
+        title="Date Range Example"
         queryFormat="date"
       />
     )
