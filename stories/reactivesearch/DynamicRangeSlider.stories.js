@@ -37,7 +37,6 @@ export default class DynamicRangeSliderDefault extends Component {
 							react={{
 								and: "BookSensor"
 							}}
-							{...this.props}
 						>
 							{({ data }) => (
 								<ReactiveList.ResultListWrapper>

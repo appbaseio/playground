@@ -1026,6 +1026,49 @@ storiesOf("Range components/DynamicRangeSlider", module)
     )
   )
   .add(
+    "With date support",
+    () => (
+      <DynamicRangeSliderDefault
+        dataField="timestamp"
+        title="Date Ranges"
+        queryFormat="date"
+      />
+    )
+  )
+  .add(
+    "With URLParams (date type)",
+    () => (
+      <DynamicRangeSliderDefault
+        dataField="timestamp"
+        title="Date Ranges"
+        queryFormat="date"
+        URLParams={boolean("URLParams (not visible on storybook)", true)}
+      />
+    )
+  )
+  .add(
+    "With queryFormat (supported for date type)",
+    () => (
+      <DynamicRangeSliderDefault
+        dataField="timestamp"
+        title="Date Ranges"
+        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+      />
+    )
+  )
+  .add(
+    "With calendarInterval (supported for date type)",
+    () => (
+      <DynamicRangeSliderDefault
+        dataField="timestamp"
+        title="Date Ranges"
+        showHistogram={boolean('showHistogram', true)}
+        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+        calendarInterval={select('calendarInterval', ['year','quarter','month', 'week','day','hour','minute'],'month')}
+      />
+    )
+  )
+  .add(
     "Playground",
    () => (
       <DynamicRangeSliderDefault
@@ -1033,7 +1076,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
         showFilter={boolean("showFilter", true)}
         dataField={select(
           "dataField",
-          ["books_count", "original_publication_year", "ratings_count"],
+          ["books_count", "original_publication_year", "ratings_count",'timestamp'],
           "books_count"
         )}
         defaultValue={(min, max) => ({
@@ -1043,6 +1086,8 @@ storiesOf("Range components/DynamicRangeSlider", module)
         stepValue={number("stepValue", 1)}
         showHistogram={boolean("showHistogram", true)}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+        calendarInterval={select('calendarInterval', ['year','quarter','month', 'week','day','hour','minute'],'month')}
       />
     )
   );
