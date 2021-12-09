@@ -1040,7 +1040,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
     () => (
       <DynamicRangeSliderDefault
         dataField="timestamp"
-        title="Date Ranges"
+        title="Date Range Example with URLParams prop"
         queryFormat="date"
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
