@@ -1051,7 +1051,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
     () => (
       <DynamicRangeSliderDefault
         dataField="timestamp"
-        title="Date Ranges"
+        title="Date Range Example with queryFormat prop"
         queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
       />
     )
