@@ -4836,7 +4836,7 @@ storiesOf("Range components/RangeSlider", module)
     () => (
       <RangeSliderRSDefault
         dataField="timestamp"
-        title="Date Ranges"
+        title="Date Range Example with queryFormat prop"
         range={{
           start: new Date('2020-05-05'),
           end: new Date('2021-05-05'),
