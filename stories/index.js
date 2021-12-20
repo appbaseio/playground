@@ -4739,10 +4739,10 @@ storiesOf("Range components/RangeSlider", module)
     )
   )
   .add(
-    "Without histogram",
+    "With histogram",
     () => (
       <RangeSliderRSDefault
-        showHistogram={boolean("showHistogram", false)}
+        showHistogram={boolean("showHistogram", true)}
       />
     )
   )
@@ -4884,7 +4884,7 @@ storiesOf("Range components/RangeSlider", module)
         }}
         showHistogram={boolean('showHistogram', true)}
         queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
-        calendarInterval={select('calendarInterval', ['year','quarter','month', 'week','day','hour','minute'],'month')}
+        calendarInterval={select('calendarInterval', ['year','quarter','month', 'week','day','hour','minute'],'week')}
       />
     )
   )
