@@ -7,7 +7,7 @@ import {
   number,
   array,
   select,
-  object
+  object,
 } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
@@ -46,6 +46,7 @@ import DateRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/rang
 // Search Components
 import CategorySearchReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/categorysearch.md";
 import DataSearchReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/datasearch.md";
+import SearchBoxReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/datasearch.md";
 
 // Result Components
 import ResultCardReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/result/resultcard.md";
@@ -74,6 +75,7 @@ import ResultListDefault from "./reactivesearch/ResultList.stories";
 import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
 import MultiDataListRSDefault from "./reactivesearch/MultiDataList.stories";
 import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
+import SearchBoxRSDefault from "./reactivesearch/SearchBox.stories";
 import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
 import SingleListRSDefault from "./reactivesearch/SingleList.stories";
 import MultiListRSDefault from "./reactivesearch/MultiList.stories";
@@ -93,6 +95,7 @@ import CustomRecentIcon from './reactivesearch/CustomRecentIcon';
 import CustomPopularIcon from './reactivesearch/CustomPopularIcon';
 import ReactiveComponentWithDistinctFieldProp from './reactivesearch/ReactiveComponentWithDistinctFieldProp';
 import DataSearchWithIndexProp from './reactivesearch/DataSearchWithIndexProp';
+import SearchBoxWithIndexProp from './reactivesearch/SearchBoxWithIndexProp';
 import MultiListWithIndexProp from './reactivesearch/MultiListWithIndexProp';
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
@@ -2630,6 +2633,483 @@ storiesOf("Search components/DataSearch", module)
 	addonBefore={text('addonBefore', 'Before')}
 	addonAfter={text('addonAfter', 'After')}
 	expandSuggestionsContainer={boolean('expandSuggestionsContainer', true)}
+      />
+    )
+  );
+
+storiesOf("Search components/SearchBox", module)
+	.addDecorator(withKnobs)
+	.addParameters({
+    readme: {
+      // Show readme at the addons panel
+      sidebar: removeFirstLine(SearchBoxReadme, 15),
+    },
+  })
+  .add(
+    "Basic",
+    () => (
+      <SearchBoxRSDefault placeholder="Search Books..." />
+    )
+  )
+  .add(
+    "With title",
+    () => (
+      <SearchBoxRSDefault
+        title={text("title", "Books Search")}
+        placeholder="Search Books..."
+      />
+    )
+  )
+  .add(
+    "wihout search icon",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        showIcon={boolean("showIcon", false)}
+      />
+    )
+  )
+  .add(
+    "with iconPosition",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        iconPosition={select("iconPosition", ["left", "right"], "left")}
+      />
+    )
+  )
+  .add(
+    "with custom icon",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        icon={<div>📚</div>}
+        iconPosition={select("iconPosition", ["left", "right"], "left")}
+      />
+    )
+  )
+  .add(
+    "with showClear",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        showClear={boolean("showClear", true)}
+      />
+    )
+  )
+  .add(
+    "with custom clearIcon",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        showClear={boolean("showClear", true)}
+        clearIcon={<div>❌</div>}
+      />
+    )
+  )
+  .add(
+    "with custom suggestions icon",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enablePopularSuggestions
+        enableRecentSuggestions
+        innerClass={{
+          'recent-search-icon': 'recent-icon',
+          'popular-search-icon': 'popular-icon',
+        }}
+        recentSearchesIcon={<CustomRecentIcon />}
+        popularSearchesIcon={<CustomPopularIcon />}
+      />
+    )
+  )
+  .add(
+    "With filter",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        showFilter={boolean("showFilter", true)}
+        filterLabel={text("filterLabel", "Books filter")}
+      />
+    )
+  )
+  .add(
+    "with debounce",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        debounce={number("debounce", 300)}
+      />
+    )
+  )
+  .add(
+    "With strictSelection",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        strictSelection={boolean("strictSelection", true)}
+      />
+    )
+	)
+	.add(
+    "with searchOperators",
+    () => (
+      <SearchBoxRSDefault searchOperators={boolean("searchOperators", true)} placeholder="Search Books..." />
+    )
+	)
+	.add(
+    "with showVoiceSearch",
+    () => (
+      <SearchBoxRSDefault showVoiceSearch={boolean("showVoiceSearch", true)} placeholder="Search Books..." />
+    )
+  )
+  .add(
+    "Without autosuggest",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        autosuggest={boolean("autosuggest", false)}
+      />
+    )
+  )
+  .add(
+    "With enablePredictiveSuggestions",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enablePredictiveSuggestions={boolean("enablePredictiveSuggestions", true)}
+      />
+    )
+  )
+  .add(
+    "With custom renderer",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        render={({
+          value,
+          data,
+          downshiftProps: { isOpen, getItemProps, highlightedIndex }
+        }) =>
+          isOpen &&
+          Boolean(value && value.length) && (
+            <div
+              style={{
+                position: "absolute",
+                padding: 10,
+                color: "#424242",
+                fontSize: "0.9rem",
+                border: "1px solid #ddd",
+                borderRadius: 4,
+                marginTop: 10,
+                width: "100%"
+              }}
+            >
+              {
+                <div>
+                  {data.slice(0, 5).map((suggestion, index) => (
+                    <div
+                      style={{
+                        padding: 10,
+                        background:
+                          index === highlightedIndex ? "#eee" : "transparent"
+                      }}
+                      key={suggestion.value}
+                      {...getItemProps({ item: suggestion })}
+                    >
+                      {suggestion.value}
+                    </div>
+                  ))}
+                  {Boolean(value.length) && (
+                    <div
+                      style={{
+                        color: "dodgerblue",
+                        padding: 10,
+                        cursor: "pointer",
+                        background:
+                          highlightedIndex === data.slice(0, 5).length
+                            ? "#eee"
+                            : "transparent"
+                      }}
+                      {...getItemProps({
+                        item: { label: value, value: value }
+                      })}
+                    >
+                      Show all results for "{value}"
+                    </div>
+                  )}
+                </div>
+              }
+            </div>
+          )
+        }
+      />
+    )
+  )
+  .add(
+    "With onData",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        onData={action("Data Updated", (props)=>{console.log(props)})}
+      />
+    )
+  )
+  .add(
+    "With defaultValue",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        defaultValue={text("defaultValue", "Harry Potter")}
+      />
+    )
+  )
+  .add(
+    "With defaultSuggestions",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        defaultSuggestions={[
+          { label: "Sherlock Holmes", value: "Sherlock Holmes" },
+          { label: "The Lord of the Rings", value: "The Lord of the Rings" }
+        ]}
+      />
+    )
+  )
+  .add(
+    "With fuzziness as a number",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        fuzziness={number("fuzziness", 1)}
+      />
+    )
+  )
+  .add(
+    "With fuzziness as AUTO",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        fuzziness="AUTO"
+      />
+    )
+  )
+  .add(
+    "With highlight",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        highlight={boolean("highlight", true)}
+      />
+    )
+  )
+  .add(
+    "With queryFormat",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        queryFormat={select("queryFormat", { and: "and", or: "or" }, "and")}
+      />
+    )
+  )
+  .add(
+    "With onValueSelected",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        onValueSelected={action("onValueSelected", (valueSelected, cause) => { console.log(valueSelected, cause);})}
+      />
+    )
+  )
+  .add(
+    "With URLParams",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        URLParams={boolean("URLParams (not visible on storybook)", true)}
+      />
+    )
+  )
+  .add(
+    "With renderNoSuggestion",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        renderNoSuggestion="No suggestions found."
+      />
+    )
+  )
+  .add(
+    "With loader",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        loader="Loading suggestions..."
+      />
+    )
+  )
+	.add(
+		"With enablePopularSuggestions & popularSuggestionsConfig",
+		() => (
+			<SearchBoxRSDefault
+        enablePopularSuggestions={boolean('enablePopularSuggestions', true)}
+        popularSuggestionsConfig={object("popularSuggestionsConfig", {
+          size: 3,
+					minChars:  3,
+          index: 'good-books-ds',
+          showGlobal: false
+        })}
+			/>
+		)
+  )
+  .add(
+		"With enableRecentSuggestions & recentSuggestionsConfig",
+		() => (
+			<SearchBoxRSDefault
+        enableRecentSuggestions={boolean('enableRecentSuggestions', true)}
+        recentSuggestionsConfig={object("recentSuggestionsConfig", {
+          size: 3,
+          minChars: 3,
+          minHits:  2,
+          index: 'good-books-ds'
+        })}
+			/>
+		)
+  )
+  .add(
+		"With applyStopwords prop",
+		() => (
+			<SearchBoxRSDefault
+        applyStopwords={boolean("applyStopwords", true)}
+			/>
+		)
+  )
+  .add(
+		"With customStopwords prop",
+		() => (
+			<SearchBoxRSDefault
+        customStopwords={array("customStopwords", ['and','the'])}
+			/>
+		)
+	)
+	.add(
+    "With distinctField prop",
+   () => (
+      <SearchBoxRSDefault
+				title="DataSearch"
+				dataField={['original_title', 'original_title.search']}
+				distinctField="authors.keyword"
+				distinctFieldConfig={{
+					inner_hits: {
+						name: 'most_recent',
+						size: 5,
+						sort: [{ timestamp: 'asc' }],
+					},
+					max_concurrent_group_searches: 4,
+				}}
+				componentId="BookSensor"
+			/>
+    )
+  )
+	.add(
+    "With index prop",
+   () => (
+      <SearchBoxWithIndexProp />
+		)
+	)
+  	.add(
+    "With autoFocus prop",
+   () => (
+      <SearchBoxRSDefault
+				autoFocus
+			/>
+    )
+  )
+  	.add(
+    "With focusShortcuts prop",
+   () => (
+      <SearchBoxRSDefault
+				focusShortcuts={['r']}
+				placeholder='Press "r" to focus the searchbox'
+			/>
+    )
+  )
+    	.add(
+    "With addonBefore prop",
+   () => (
+      <SearchBoxRSDefault
+				addonBefore={<h3> Before</h3>}
+			/>
+    )
+  )
+    	.add(
+    "With addonAfter prop",
+   () => (
+      <SearchBoxRSDefault
+				addonAfter={<h3> After</h3>}
+			/>
+    )
+  )
+    	.add(
+    "With addonBefore & addonAfter prop",
+   () => (
+      <SearchBoxRSDefault
+	   			addonBefore={<h3> Before</h3>}
+				addonAfter={<h3> After</h3>}
+			/>
+    )
+  )
+    	.add(
+    "With expandSuggestionsContainer prop",
+   () => (
+      <SearchBoxRSDefault
+	   			addonBefore={<h3> Before</h3>}
+				addonAfter={<h3> After</h3>}
+	   			expandSuggestionsContainer={boolean("expandSuggestionsContainer",false)}
+			/>
+    )
+  )
+  .add(
+    "Playground",
+    () => (
+      <DataSearchRSDefault
+        title={text("title", "DataSearch: Books...")}
+        dataField={array("dataField", [{field:"original_title", weight:3}, {field:"original_title.search", weight:1}])}
+        placeholder={text("placeholder", "Search Books...")}
+        autosuggest={boolean("autosuggest", true)}
+        defaultValue={text("defaultValue", "")}
+        strictSelection={boolean("strictSelection", false)}
+        fuzziness={number("fuzziness", 1)}
+        queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
+        showClear={boolean("showClear", true)}
+        showFilter={boolean("showFilter", true)}
+        iconPosition={select("iconPosition", ["left", "right"], "left")}
+        filterLabel={text("filterLabel", "Books filter")}
+        highlight={boolean("highlight", false)}
+        URLParams={boolean("URLParams (not visible on storybook)", true)}
+        onValueSelected={action("onValueSelected called with", (value, cause)=>{console.log(value,cause)})}
+	      autoFocus={boolean('autoFocus', true)}
+        focusShortcuts={array('focusShortcuts', ['/', 'r', 't'])}
+        addonBefore={text('addonBefore', 'Before')}
+        addonAfter={text('addonAfter', 'After')}
+        expandSuggestionsContainer={boolean('expandSuggestionsContainer', true)}
+        enablePredictiveSuggestions={boolean('enablePredictiveSuggestions', true)}
+        enablePopularSuggestions={boolean('enablePopularSuggestions', true)}
+        popularSuggestionsConfig={object("popularSuggestionsConfig", {
+          size: 3,
+          minChars:  3,
+          index: 'good-books-ds',
+          showGlobal: false
+        })}
+        enableRecentSuggestions={boolean('enableRecentSuggestions', true)}
+        recentSuggestionsConfig={object("recentSuggestionsConfig", {
+          size: 3,
+          minChars: 3,
+          minHits:  2,
+          index: 'good-books-ds'
+        })}
+        applyStopwords={boolean("applyStopwords", true)}
+        customStopwords={array("customStopwords", ['and','the'])}
       />
     )
   );
