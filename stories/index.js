@@ -4658,6 +4658,100 @@ storiesOf("Range components/RangeInput", module)
         tooltipTrigger={text("tooltipTrigger", "always")}
       />
     )
+  )  
+  .add(
+    "With date support",
+    () => (
+      <RangeInputRSDefault
+        dataField="timestamp"
+        title="Date Range Example"
+        range={{
+          start: new Date('2020-05-05'),
+          end: new Date('2021-05-05'),
+        }}
+        rangeLabels={{
+          start: '2020-05-05',
+          end: '2021-05-05'
+        }}
+        queryFormat="date"
+      />
+    )
+  )
+  .add(
+    "With URLParams (date type)",
+    () => (
+      <RangeInputRSDefault
+        dataField="timestamp"
+        title="Date Range Example with URLParams support"
+        range={{
+          start: new Date('2020-05-05'),
+          end: new Date('2021-05-05'),
+        }}
+        rangeLabels={{
+          start: '2020-05-05',
+          end: '2021-05-05'
+        }}
+        queryFormat="date"
+        URLParams={boolean("URLParams (not visible on storybook)", true)}
+      />
+    )
+  )
+  .add(
+    "With queryFormat (supported for date type)",
+    () => (
+      <RangeInputRSDefault
+        dataField="timestamp"
+        title="Date Range Example with queryFormat prop"
+        range={{
+          start: new Date('2020-05-05'),
+          end: new Date('2021-05-05'),
+        }}
+        rangeLabels={{
+          start: '2020-05-05',
+          end: '2021-05-05'
+        }}
+        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+      />
+    )
+  )
+  .add(
+    "With Histogram (date type)",
+    () => (
+      <RangeInputRSDefault
+        dataField="timestamp"
+        title="Date Range Example with showHistogram prop"
+        range={{
+          start: new Date('2020-05-05'),
+          end: new Date('2021-05-05'),
+        }}
+        rangeLabels={{
+          start: '2020-05-05',
+          end: '2021-05-05'
+        }}
+        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+        showHistogram={boolean('showHistogram', true)}
+      />
+    )
+  )
+  .add(
+    "With calendarInterval (supported for date type)",
+    () => (
+      <RangeInputRSDefault
+        dataField="timestamp"
+        title="Date Range Example with calendarInterval prop"
+        range={{
+          start: new Date('2020-05-05'),
+          end: new Date('2021-05-05'),
+        }}
+        rangeLabels={{
+          start: '2020-05-05',
+          end: '2021-05-05'
+        }}
+        showHistogram={boolean('showHistogram', true)}
+        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+        calendarInterval={select('calendarInterval', ['year','quarter','month', 'week','day','hour','minute'],'week')}
+      />
+    )
   )
   .add(
     "Playground",
@@ -4666,7 +4760,7 @@ storiesOf("Range components/RangeInput", module)
         title={text("title", "RangeSlider: Ratings")}
         dataField={select(
           "dataField",
-          ["books_count", "original_publication_year", "ratings_count"],
+          ["books_count", "original_publication_year", "ratings_count",'timestamp'],
           "books_count"
         )}
         range={object("range", {
@@ -4687,6 +4781,8 @@ storiesOf("Range components/RangeInput", module)
         showHistogram={boolean("showHistogram", true)}
         showSlider={boolean("showSlider", true)}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        queryFormat={select('queryFormat (use with date type)', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+        calendarInterval={select('calendarInterval (use with date type)', ['year','quarter','month', 'week','day','hour','minute'],'month')}
       />
     )
   );
