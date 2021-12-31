@@ -45,7 +45,6 @@ export default class RangeSliderDefault extends Component {
 							react={{
 								and: "BookSensor"
 							}}
-							{...this.props}
 						>
 							{({ data }) => (
 								<ReactiveList.ResultListWrapper>
