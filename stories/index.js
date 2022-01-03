@@ -3493,6 +3493,14 @@ storiesOf("List components/SingleList", module)
     )
   )
   .add(
+    "with renderNoResults",
+    () => (
+      <SingleListRSDefault
+        dataField=""
+        renderNoResults={() => <p>No Results Found!</p>} />
+    )
+  )  
+  .add(
     "Playground",
    () => (
       <SingleListRSDefault
