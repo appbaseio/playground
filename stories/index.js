@@ -1914,6 +1914,44 @@ storiesOf("Result components/ReactiveList", module)
 			/>
     )
   )
+	.add(
+    "With renderItem prop",
+   () => (
+      <ReactiveListDefault
+       renderItem={
+        (data) => {
+            return (
+              <div style={{ display: 'flex', flexDirection: "column", width: "250px", padding: "1rem", margin:"5px", boxShadow: "0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)", background: "white" }} key={data._id}>
+                <img src={data.image} alt="Book Cover" style={{ height: "220px", width: "100%", objectFit: 'cover', marginBottom: ".5rem" }} />
+                <div style={{}}>
+                  <h3 style={{ margin: "0" }} className="book-header">{data.original_title}</h3>
+                  <div className="flex column justify-space-between">
+                    <div>
+                      <div>
+                        by <span style={{ color: "#9d9d9d" }} >{data.authors}</span>
+                      </div>
+                      <div style={{ padding: "10px 0" }}>
+                        <span className="stars">
+                          {Array(data.average_rating_rounded)
+                            .fill('x')
+                            .map((item, index) => (
+                              <span>⭐</span>
+                            )) // eslint-disable-line
+                          }
+                        </span>
+                        <span style={{ marginLeft: '5px', color: "#6b6b6b" }}>({data.average_rating} avg)</span>
+                      </div>
+                    </div>
+                    <span>Pub {data.original_publication_year}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+       }
+			/>
+    )
+  )
   .add(
     "Playground",
    () => (
