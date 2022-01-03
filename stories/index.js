@@ -3694,7 +3694,7 @@ storiesOf("List components/MultiList", module)
    () => (
       <MultiListRSDefault
         showSearch
-        defaultValue={["A Beautiful Dark", "44 Scotland Street"]}
+        defaultValue={["Hercule Poirot", "Anita Blake"]}
         placeholder="Search Books"
       />
     )
