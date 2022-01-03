@@ -1787,15 +1787,6 @@ storiesOf("Result components/ReactiveList", module)
       <ReactiveListDefault />
     )
   )
-  // .add("Without resultStats",() => (
-  // 	<ReactiveListDefault onAllData={null} stream={false} showResultStats={boolean("showResultStats", false)} />
-  // )))
-  // .add(
-  // 	"With Streaming Enabled",
-  // 	() => (
-  // 		<ReactiveListDefault stream={boolean("stream", true)} />
-  // 	)
-  // )
   .add(
     "With pagination",
    () => (
@@ -1911,6 +1902,15 @@ storiesOf("Result components/ReactiveList", module)
 					},
 					max_concurrent_group_searches: 4,
 				}}
+			/>
+    )
+  )
+	.add(
+    "With renderNoResults prop",
+   () => (
+      <ReactiveListDefault
+       dataField=""
+       renderNoResults={() => <p>No Results Found!</p>}
 			/>
     )
   )
