@@ -4089,6 +4089,15 @@ storiesOf("List components/MultiDropdownList", module)
     )
   )
   .add(
+    "with  renderNoResults",
+    () => (
+      <MultiDropdownListRSDefault
+        dataField=""
+        renderNoResults={() => <p>No Results Found!</p>}
+      />
+    )
+  )  
+  .add(
     "Playground",
     () => (
       <MultiDropdownListRSDefault
