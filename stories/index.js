@@ -3715,6 +3715,14 @@ storiesOf("List components/MultiList", module)
     )
   )
   .add(
+    "with renderNoResults",
+    () => (
+      <MultiListRSDefault
+        dataField=""
+        renderNoResults={() => <p>No Results Found!</p>} />
+    )
+  )
+  .add(
     "Playground",
    () => (
       <MultiListRSDefault
@@ -5138,7 +5146,7 @@ storiesOf("Range components/RangeInput", module)
         tooltipTrigger={text("tooltipTrigger", "always")}
       />
     )
-  )  
+  )
   .add(
     "With date support",
     () => (
