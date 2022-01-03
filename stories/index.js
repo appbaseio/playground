@@ -3499,7 +3499,7 @@ storiesOf("List components/SingleList", module)
         dataField=""
         renderNoResults={() => <p>No Results Found!</p>} />
     )
-  )  
+  )
   .add(
     "Playground",
    () => (
@@ -3898,6 +3898,15 @@ storiesOf("List components/SingleDropdownList", module)
     )
   )
   .add(
+    "with  renderNoResults",
+    () => (
+      <SingleDropdownListRSDefault
+        dataField=""
+        renderNoResults={() => <p>No Results Found!</p>}
+      />
+    )
+  )
+  .add(
     "Playground",
     () => (
       <SingleDropdownListRSDefault
@@ -4096,7 +4105,7 @@ storiesOf("List components/MultiDropdownList", module)
         renderNoResults={() => <p>No Results Found!</p>}
       />
     )
-  )  
+  )
   .add(
     "Playground",
     () => (
@@ -5497,7 +5506,7 @@ storiesOf("Range components/RangeSlider", module)
         dataField={select(
           "dataField",
           ["books_count", "original_publication_year", "ratings_count",'timestamp'],
-          "books_count"
+          "ratings_count"
         )}
         range={object("range", {
           start: 3000,
@@ -5505,19 +5514,19 @@ storiesOf("Range components/RangeSlider", module)
         })}
         showFilter={boolean("showFilter", true)}
         stepValue={number("stepValue", 1)}
-        interval={number("interval", 2000)}
-        defaultValue={{
-          start: 6000,
-          end: 12000
-        }}
+        interval={number("interval", 1000)}
+        defaultValue={object("defaultValue", {
+          start: 3000,
+          end: 45000
+        })}
         rangeLabels={object("rangeLabels", {
           start: "Start",
           end: "End"
         })}
         showHistogram={boolean("showHistogram", true)}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
-        queryFormat={select('queryFormat (use with date type)', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
-        calendarInterval={select('calendarInterval (use with date type)', ['year','quarter','month', 'week','day','hour','minute'],'month')}
+        queryFormat={select('queryFormat (use with date type)', [undefined,'date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],undefined)}
+        calendarInterval={select('calendarInterval (use with date type)', [undefined,'year','quarter','month', 'week','day','hour','minute'],undefined)}
       />
     )
   );
