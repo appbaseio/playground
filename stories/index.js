@@ -3913,6 +3913,8 @@ storiesOf("List components/SingleDropdownList", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Book filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        showSearch={boolean("showSearch", true)}
+        showClear={boolean("showClear", true)}
       />
     )
   );
@@ -4114,6 +4116,8 @@ storiesOf("List components/MultiDropdownList", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        showSearch={boolean("showSearch", true)}
+        showClear={boolean("showClear", true)}
       />
     )
   );
