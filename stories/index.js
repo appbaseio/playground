@@ -1787,15 +1787,6 @@ storiesOf("Result components/ReactiveList", module)
       <ReactiveListDefault />
     )
   )
-  // .add("Without resultStats",() => (
-  // 	<ReactiveListDefault onAllData={null} stream={false} showResultStats={boolean("showResultStats", false)} />
-  // )))
-  // .add(
-  // 	"With Streaming Enabled",
-  // 	() => (
-  // 		<ReactiveListDefault stream={boolean("stream", true)} />
-  // 	)
-  // )
   .add(
     "With pagination",
    () => (
@@ -1911,6 +1902,53 @@ storiesOf("Result components/ReactiveList", module)
 					},
 					max_concurrent_group_searches: 4,
 				}}
+			/>
+    )
+  )
+	.add(
+    "With renderNoResults prop",
+   () => (
+      <ReactiveListDefault
+       dataField=""
+       renderNoResults={() => <p>No Results Found!</p>}
+			/>
+    )
+  )
+	.add(
+    "With renderItem prop",
+   () => (
+      <ReactiveListDefault
+       renderItem={
+        (data) => {
+            return (
+              <div style={{ display: 'flex', flexDirection: "column", width: "250px", padding: "1rem", margin:"5px", boxShadow: "0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)", background: "white" }} key={data._id}>
+                <img src={data.image} alt="Book Cover" style={{ height: "220px", width: "100%", objectFit: 'cover', marginBottom: ".5rem" }} />
+                <div style={{}}>
+                  <h3 style={{ margin: "0" }} className="book-header">{data.original_title}</h3>
+                  <div className="flex column justify-space-between">
+                    <div>
+                      <div>
+                        by <span style={{ color: "#9d9d9d" }} >{data.authors}</span>
+                      </div>
+                      <div style={{ padding: "10px 0" }}>
+                        <span className="stars">
+                          {Array(data.average_rating_rounded)
+                            .fill('x')
+                            .map((item, index) => (
+                              <span>⭐</span>
+                            )) // eslint-disable-line
+                          }
+                        </span>
+                        <span style={{ marginLeft: '5px', color: "#6b6b6b" }}>({data.average_rating} avg)</span>
+                      </div>
+                    </div>
+                    <span>Pub {data.original_publication_year}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+       }
 			/>
     )
   )
@@ -3493,6 +3531,14 @@ storiesOf("List components/SingleList", module)
     )
   )
   .add(
+    "with renderNoResults",
+    () => (
+      <SingleListRSDefault
+        dataField=""
+        renderNoResults={() => <p>No Results Found!</p>} />
+    )
+  )
+  .add(
     "Playground",
    () => (
       <SingleListRSDefault
@@ -3648,7 +3694,7 @@ storiesOf("List components/MultiList", module)
    () => (
       <MultiListRSDefault
         showSearch
-        defaultValue={["A Beautiful Dark", "44 Scotland Street"]}
+        defaultValue={["Hercule Poirot", "Anita Blake"]}
         placeholder="Search Books"
       />
     )
@@ -3712,6 +3758,14 @@ storiesOf("List components/MultiList", module)
         placeholder="Search Books"
         loader="Loading..."
       />
+    )
+  )
+  .add(
+    "with renderNoResults",
+    () => (
+      <MultiListRSDefault
+        dataField=""
+        renderNoResults={() => <p>No Results Found!</p>} />
     )
   )
   .add(
@@ -3879,6 +3933,15 @@ storiesOf("List components/SingleDropdownList", module)
     "With loader",
     () => (
       <SingleDropdownListRSDefault loader="Loading..." />
+    )
+  )
+  .add(
+    "with  renderNoResults",
+    () => (
+      <SingleDropdownListRSDefault
+        dataField=""
+        renderNoResults={() => <p>No Results Found!</p>}
+      />
     )
   )
   .add(
@@ -4069,6 +4132,15 @@ storiesOf("List components/MultiDropdownList", module)
     () => (
       <MultiDropdownListRSDefault
         onValueChange={action("MultiDropdownList Value Changed")}
+      />
+    )
+  )
+  .add(
+    "with  renderNoResults",
+    () => (
+      <MultiDropdownListRSDefault
+        dataField=""
+        renderNoResults={() => <p>No Results Found!</p>}
       />
     )
   )
@@ -5138,7 +5210,7 @@ storiesOf("Range components/RangeInput", module)
         tooltipTrigger={text("tooltipTrigger", "always")}
       />
     )
-  )  
+  )
   .add(
     "With date support",
     () => (
@@ -5472,7 +5544,7 @@ storiesOf("Range components/RangeSlider", module)
         dataField={select(
           "dataField",
           ["books_count", "original_publication_year", "ratings_count",'timestamp'],
-          "books_count"
+          "ratings_count"
         )}
         range={object("range", {
           start: 3000,
@@ -5480,19 +5552,19 @@ storiesOf("Range components/RangeSlider", module)
         })}
         showFilter={boolean("showFilter", true)}
         stepValue={number("stepValue", 1)}
-        interval={number("interval", 2000)}
-        defaultValue={{
-          start: 6000,
-          end: 12000
-        }}
+        interval={number("interval", 1000)}
+        defaultValue={object("defaultValue", {
+          start: 3000,
+          end: 45000
+        })}
         rangeLabels={object("rangeLabels", {
           start: "Start",
           end: "End"
         })}
         showHistogram={boolean("showHistogram", true)}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
-        queryFormat={select('queryFormat (use with date type)', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
-        calendarInterval={select('calendarInterval (use with date type)', ['year','quarter','month', 'week','day','hour','minute'],'month')}
+        queryFormat={select('queryFormat (use with date type)', [undefined,'date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],undefined)}
+        calendarInterval={select('calendarInterval (use with date type)', [undefined,'year','quarter','month', 'week','day','hour','minute'],undefined)}
       />
     )
   );
