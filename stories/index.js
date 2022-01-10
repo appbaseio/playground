@@ -3869,6 +3869,15 @@ storiesOf("List components/SingleDropdownList", module)
     )
   )
   .add(
+    "With search and clear icon",
+    () => (
+      <SingleDropdownListRSDefault
+        showSearch={boolean("showSearch", true)}
+        showClear={boolean("showClear", true)}
+      />
+    )
+  )
+  .add(
     "With renderItem",
     () => (
       <SingleDropdownListRSDefault
@@ -3967,6 +3976,8 @@ storiesOf("List components/SingleDropdownList", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Book filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        showSearch={boolean("showSearch", true)}
+        showClear={boolean("showClear", true)}
       />
     )
   );
@@ -4031,6 +4042,15 @@ storiesOf("List components/MultiDropdownList", module)
     () => (
       <MultiDropdownListRSDefault
         showSearch={boolean("showSearch", true)}
+      />
+    )
+  )
+  .add(
+    "With search and clear icon",
+    () => (
+      <MultiDropdownListRSDefault
+        showSearch={boolean("showSearch", true)}
+        showClear={boolean("showClear", true)}
       />
     )
   )
@@ -4168,6 +4188,8 @@ storiesOf("List components/MultiDropdownList", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        showSearch={boolean("showSearch", true)}
+        showClear={boolean("showClear", true)}
       />
     )
   );
