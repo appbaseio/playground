@@ -46,7 +46,7 @@ import DateRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/rang
 // Search Components
 import CategorySearchReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/categorysearch.md";
 import DataSearchReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/datasearch.md";
-import SearchBoxReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/datasearch.md";
+import SearchBoxReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/searchbox.md";
 
 // Result Components
 import ResultCardReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/result/resultcard.md";
