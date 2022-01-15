@@ -73,10 +73,10 @@
     redux-thunk "^2.3.0"
     xdate "^0.8.2"
 
-"@appbaseio/reactivecore@9.12.7":
-  version "9.12.7"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-9.12.7.tgz#7a4a1303edeb63f7393ac4035910766249cc3b98"
-  integrity sha512-fGdmMhsIHhRv9a8Yt1NrlfRekB8MxjZRZutMRu2c1U48pQc+0zK1svM92CStsA10eM5SLB3GtT5SFwnZYmDRuw==
+"@appbaseio/reactivecore@9.13.3":
+  version "9.13.3"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-9.13.3.tgz#df80decf802fff45b210eef80db0e717c534bbb4"
+  integrity sha512-E912fZPt3eQGpjg6tY17wwqkTZ3pEipjfRNkOIL8aCIW99G3FRPclMz2968XKEKKuooiEH8+TKzHW2gn1dazMA==
   dependencies:
     cross-fetch "^3.0.4"
     prop-types "^15.6.0"
@@ -84,10 +84,10 @@
     redux-thunk "^2.3.0"
     xdate "^0.8.2"
 
-"@appbaseio/reactivemaps@3.0.0-beta.14":
-  version "3.0.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivemaps/-/reactivemaps-3.0.0-beta.14.tgz#b51f6bc904ec10f4157628872decc034dccfb842"
-  integrity sha512-BVwZN9BDiS5C9ryeKwtflUhoJf7GdfJtl3Sk5X/F9B8n8dGaD83ztNgp3sLbBbdCeTwwbvEI1mMiqavpQOw9nA==
+"@appbaseio/reactivemaps@3.0.0-beta.17":
+  version "3.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivemaps/-/reactivemaps-3.0.0-beta.17.tgz#ff78037126803701d92de95ab95d7ef704b01d3c"
+  integrity sha512-fK8pKPWT5VPhcpN8nMv9v/1xKHy6eJa/ySaFPIoLvQck1V7Iy0BwVzd84zA06V5SAaBMV6A8/N1UKJ/2GdPsDg==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
@@ -116,15 +116,15 @@
     react-leaflet "^2.1.3"
     rheostat "^2.1.1"
 
-"@appbaseio/reactivesearch@3.25.1":
-  version "3.25.1"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.25.1.tgz#88f2c1318148cff0224898ed32a48cdfaca734b7"
-  integrity sha512-eVP+49TGzWTX22q2EAM+98fdzsp0bcmopftRAa7abXLrQa+YTs6TzzsIqUB+oMu6/dCsaBADDaBtfMmeUuAzGw==
+"@appbaseio/reactivesearch@3.28.0":
+  version "3.28.0"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.28.0.tgz#af72656008c9a692772102e6afce4acbfb251704"
+  integrity sha512-C6TW5/FPUQAzKfjQeNkt8ouQnPfr4jLXJVHJ69Q/i/eLUSbTCHuFMIorSXCS60aqiofGpDhO55sYQRec6ePl/Q==
   dependencies:
-    "@appbaseio/reactivecore" "9.12.7"
+    "@appbaseio/reactivecore" "9.13.3"
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
-    appbase-js "^4.4.1"
+    appbase-js "4.5.1"
     cross-env "^5.2.0"
     downshift "^1.31.2"
     emotion-theming "^10.0.27"
@@ -3602,6 +3602,15 @@ app-root-dir@^1.0.2:
   resolved "https://registry.yarnpkg.com/app-root-dir/-/app-root-dir-1.0.2.tgz#38187ec2dea7577fff033ffcb12172692ff6e118"
   integrity sha1-OBh+wt6nV3//Az/8sSFyaS/24Rg=
 
+appbase-js@4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/appbase-js/-/appbase-js-4.5.1.tgz#0b9eb0bcb6fdb8655b38066d3f21ef24427e3b9f"
+  integrity sha512-IYShIL3J9PlyMcTEm35iPFSeQZBUW6pCJEwXKvUVjx89p/npA4UVlmYfEfRWweAJEaercbq3zhRskouEJLw2BA==
+  dependencies:
+    cross-fetch "^2.2.2"
+    querystring "^0.2.0"
+    url-parser-lite "^0.1.0"
+
 appbase-js@^4.1.0:
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/appbase-js/-/appbase-js-4.1.4.tgz#37c02e2b251658927dc3ab8294d47947b0e8a87d"
@@ -3613,15 +3622,6 @@ appbase-js@^4.1.0:
     stream "^0.0.2"
     url-parser-lite "^0.1.0"
     ws "^6.1.2"
-
-appbase-js@^4.4.1:
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/appbase-js/-/appbase-js-4.4.1.tgz#fd25bce54049229384b45686a74509ea87283c90"
-  integrity sha512-NisyYnH83+4EYaP0uGENebGAKTLUp1G7wucQs+2ojOJdb5ElnTU7/DV+Ts7oyVRjat259CuJz0xsuT1tZ5pk1g==
-  dependencies:
-    cross-fetch "^2.2.2"
-    querystring "^0.2.0"
-    url-parser-lite "^0.1.0"
 
 application-config-path@^0.1.0:
   version "0.1.0"
@@ -10465,9 +10465,9 @@ glob@^6.0.1:
     path-is-absolute "^1.0.0"
 
 glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
-  version "7.1.7"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.7.tgz#3b193e9233f01d42d0b3f78294bbeeb418f94a90"
-  integrity sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ==
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.0.tgz#d15535af7732e02e948f4c41628bd910293f6023"
+  integrity sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -11882,6 +11882,13 @@ is-core-module@^2.2.0, is-core-module@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.4.0.tgz#8e9fc8e15027b011418026e98f0e6f4d86305cc1"
   integrity sha512-6A2fkfq1rfeQZjxrZJGerpLCTHRNEBiSgnu0+obeJpEPZRUooHgsizvzv0ZjJwOz3iWIHdJtVWJ/tmPr3D21/A==
+  dependencies:
+    has "^1.0.3"
+
+is-core-module@^2.8.0:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.8.1.tgz#f59fdfca701d5879d0a6b100a40aa1560ce27211"
+  integrity sha512-SdNCUs284hr40hFTFP6l0IfZ/RSrMXF3qgoRHd3/79unUTvrFO/JoXwkGm+5J/Oe3E/b5GsnG330uUNgRpu1PA==
   dependencies:
     has "^1.0.3"
 
@@ -15189,7 +15196,7 @@ path-key@^3.0.0, path-key@^3.1.0:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.1.tgz#581f6ade658cbba65a0d3380de7753295054f375"
   integrity sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
 
-path-parse@^1.0.6:
+path-parse@^1.0.6, path-parse@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
@@ -17708,7 +17715,16 @@ resolve-url@^0.2.1:
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
   integrity sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
 
-resolve@^1.1.6, resolve@^1.10.0, resolve@^1.11.0, resolve@^1.12.0, resolve@^1.13.1, resolve@^1.14.2, resolve@^1.20.0, resolve@^1.3.2:
+resolve@^1.1.6:
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.21.0.tgz#b51adc97f3472e6a5cf4444d34bc9d6b9037591f"
+  integrity sha512-3wCbTpk5WJlyE4mSOtDLhqQmGFi0/TD9VPwmiolnk8U0wRgMEktqCXd3vy5buTO3tljvalNvKrjHEfrd2WpEKA==
+  dependencies:
+    is-core-module "^2.8.0"
+    path-parse "^1.0.7"
+    supports-preserve-symlinks-flag "^1.0.0"
+
+resolve@^1.10.0, resolve@^1.11.0, resolve@^1.12.0, resolve@^1.13.1, resolve@^1.14.2, resolve@^1.20.0, resolve@^1.3.2:
   version "1.20.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.20.0.tgz#629a013fb3f70755d6f0b7935cc1c2c5378b1975"
   integrity sha512-wENBPt4ySzg4ybFQW2TT1zMQucPK95HSh/nq2CFTZVOGut2+pQvSsgtda4d26YrYcr067wjbmzOG8byDPBX63A==
@@ -18261,9 +18277,9 @@ shell-quote@1.7.2:
   integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
 
 shelljs@^0.8.1, shelljs@^0.8.3:
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.4.tgz#de7684feeb767f8716b326078a8a00875890e3c2"
-  integrity sha512-7gk3UZ9kOfPLIAbslLzyWeGiEqx9e3rxwZM0KE6EL8GlGwjym9Mrlx5/p33bWTu9YG6vcS4MBxYZDHYr5lr8BQ==
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.5.tgz#de055408d8361bed66c669d2f000538ced8ee20c"
+  integrity sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
@@ -19196,6 +19212,11 @@ supports-color@^7.0.0, supports-color@^7.1.0:
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
+
+supports-preserve-symlinks-flag@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
+  integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
 svg-parser@^2.0.0:
   version "2.0.4"
