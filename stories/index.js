@@ -37,6 +37,7 @@ import MultiRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/ran
 import SingleDropdownRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/singledropdownrange.md";
 import MultiDropdownRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/multidropdownrange.md";
 import RangeSliderReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/rangeslider.md";
+import RangeInputReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/rangeinput.md";
 import DynamicRangeSliderReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/dynamicrangeslider.md";
 import RatingsFilterReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/ratingsfilter.md";
 import NumberBoxReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/numberbox.md";
@@ -46,7 +47,7 @@ import DateRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/rang
 // Search Components
 import CategorySearchReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/categorysearch.md";
 import DataSearchReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/datasearch.md";
-import SearchBoxReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/datasearch.md";
+import SearchBoxReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/searchbox.md";
 
 // Result Components
 import ResultCardReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/result/resultcard.md";
@@ -592,7 +593,7 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
 	.addParameters({
     readme: {
       // Show readme at the addons panel
-      sidebar: removeFirstLine(ReactiveMapReadme, 10),
+      sidebar: removeFirstLine(ReactiveMapReadme, 12),
     },
   })
   .add(
@@ -738,7 +739,7 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 	.addParameters({
     readme: {
       // Show readme at the addons panel
-      sidebar: removeFirstLine(OpenstreetMapReadme, 10),
+      sidebar: removeFirstLine(OpenstreetMapReadme, 12),
     },
   })
   .add(
@@ -1267,7 +1268,7 @@ storiesOf("Search components/CategorySearch", module)
 	.addParameters({
     readme: {
       // Show readme at the addons panel
-      sidebar: removeFirstLine(CategorySearchReadme, 16),
+      sidebar: removeFirstLine(CategorySearchReadme, 14),
     },
   })
   .add(
@@ -3202,7 +3203,7 @@ storiesOf("Range components/NumberBox", module)
 	.addParameters({
     readme: {
       // Show readme at the addons panel
-      sidebar: removeFirstLine(NumberBoxReadme, 17),
+      sidebar: removeFirstLine(NumberBoxReadme, 15),
     },
   })
   .add(
@@ -5134,7 +5135,7 @@ storiesOf("Range components/RangeInput", module)
 	.addParameters({
     readme: {
       // Show readme at the addons panel
-      sidebar: removeFirstLine(RangeSliderReadme, 15),
+      sidebar: removeFirstLine(RangeInputReadme, 15),
     },
   })
   .add(
@@ -5366,7 +5367,7 @@ storiesOf("Range components/RangeSlider", module)
   .addParameters({
     readme: {
       // Show readme at the addons panel
-      sidebar: removeFirstLine(SingleListReadme, 15),
+      sidebar: removeFirstLine(RangeSliderReadme, 15),
     },
   })
   .add(
