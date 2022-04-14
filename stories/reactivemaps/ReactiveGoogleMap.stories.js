@@ -30,7 +30,7 @@ export default class ReactiveGoogleMapDefault extends Component {
 				app="earthquakes"
 				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
 				enableAppbase
-				mapKey="AIzaSyAKz3UhgSuP872fb-Aw27oPRI7M0eXkA9U"
+				mapKey="AIzaSyA9JzjtHeXg_C_hh_GdTBdLxREWdj3nsOU"
 			>
 				<div className="row reverse-labels">
 					<div className="col">
