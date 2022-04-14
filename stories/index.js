@@ -598,7 +598,7 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
   })
   .add(
     "Basic",
-      () => <ReactiveGoogleMapDefault />
+      () => <ReactiveGoogleMapDefault showMarkerClusters={false} />
   )
   .add(
     "With showMarkerClusters",
