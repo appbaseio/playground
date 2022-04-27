@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, NumberBox, ReactiveList } from "@appbaseio/reactivesearch";
+import { ReactiveBase, NumberBox, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
 
 import { booksList as BooksList } from "./resultViews";
 
@@ -20,6 +20,7 @@ export default class NumberBoxDefault extends Component {
 						/>
 					</div>
 					<div className="col" style={{backgroundColor: "#fafafa"}}>
+						<SelectedFilters/>
 						<ReactiveList
 							componentId="SearchResult"
 							dataField="original_title"
