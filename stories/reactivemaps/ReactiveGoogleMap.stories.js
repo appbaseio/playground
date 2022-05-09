@@ -6,7 +6,6 @@ import {
 
 import { ReactiveGoogleMap } from '@appbaseio/reactivemaps';
 
-import { Img } from "./Img.js";
 import historyPin from "./placeholder.png";
 
 export default class ReactiveGoogleMapDefault extends Component {
