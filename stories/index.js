@@ -412,7 +412,6 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           { distance: 1000, label: "Under 1000 miles" }
         ]}
         placeholder={text("placeholder", "Search Location")}
-        placeholderDropdown={text("placeholderDropdown", "Select radius")}
       />
     )
   )
@@ -598,7 +597,7 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
   })
   .add(
     "Basic",
-      () => <ReactiveGoogleMapDefault />
+      () => <ReactiveGoogleMapDefault showMarkerClusters={false} />
   )
   .add(
     "With showMarkerClusters",
