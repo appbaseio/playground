@@ -147,7 +147,13 @@ storiesOf("Base components/ErrorBoundary", module)
     },
   })
   .add("default with DynamicRangeSlider", () => <ErrorBoundaryDefault />)
-  .add("with renderError", ()=> <ErrorBoundaryDefault renderError={(error)=>"Some error occured: " + error.message}/>)
+  .add("with renderError", ()=> <ErrorBoundaryDefault
+          renderError={error => (
+						<div>
+							<h1>Oops! Error occured.</h1>
+							<p>{error.message}</p>
+						</div>
+					)}/>)
 
 // Reactivemaps components
 
