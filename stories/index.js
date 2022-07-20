@@ -4497,6 +4497,18 @@ storiesOf("List components/TabDataList", module)
       <TabDataListDefault />
     )
   )
+  .add(
+    "With showCount",
+    () => (
+      <TabDataListDefault showCount/>
+    )
+  )
+  .add(
+    "With displayAsVertical",
+    () => (
+      <TabDataListDefault displayAsVertical/>
+    )
+  )
 
 storiesOf("Range components/SingleRange", module)
 	.addDecorator(withKnobs)

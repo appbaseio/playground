@@ -3,7 +3,7 @@ import { ReactiveBase, ReactiveList, SelectedFilters, TabDataList } from "@appba
 
 import { meetupList as MeetupList } from "./resultViews";
 
-export default class SingleDataListDefault extends Component {
+export default class TabDataListDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
@@ -22,7 +22,6 @@ export default class SingleDataListDefault extends Component {
 							{ label: 'Adventure', value: 'Adventure' },
 							{ label: 'Music', value: 'Music' },
 						]}
-						showCount
 						{...this.props}
 					/>
 					<ReactiveList
