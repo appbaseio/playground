@@ -12,7 +12,9 @@
 	width: calc(100% - 400px);
 	padding: 15px;
 }
-
+.container{
+	padding: 1.5rem;
+}
 .row > .col:first-child {
 	border-right: 1px solid #ccc;
 	max-width: 400px;

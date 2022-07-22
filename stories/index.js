@@ -74,6 +74,7 @@ import ResultCardDefault from "./reactivesearch/ResultCard.stories";
 import ReactiveListDefault from "./reactivesearch/ReactiveList.stories";
 import ResultListDefault from "./reactivesearch/ResultList.stories";
 import SingleDataListRSDefault from "./reactivesearch/SingleDataList.stories";
+import TabDataListDefault from "./reactivesearch/TabDataList.stories";
 import MultiDataListRSDefault from "./reactivesearch/MultiDataList.stories";
 import DataSearchRSDefault from "./reactivesearch/DataSearch.stories";
 import SearchBoxRSDefault from "./reactivesearch/SearchBox.stories";
@@ -4488,6 +4489,26 @@ storiesOf("List components/MultiDataList", module)
       />
     )
   );
+storiesOf("List components/TabDataList", module)
+	.addDecorator(withKnobs)
+  .add(
+    "Basic",
+    () => (
+      <TabDataListDefault />
+    )
+  )
+  .add(
+    "With showCount",
+    () => (
+      <TabDataListDefault showCount/>
+    )
+  )
+  .add(
+    "With displayAsVertical",
+    () => (
+      <TabDataListDefault displayAsVertical/>
+    )
+  )
 
 storiesOf("Range components/SingleRange", module)
 	.addDecorator(withKnobs)
