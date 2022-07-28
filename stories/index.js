@@ -4274,6 +4274,12 @@ storiesOf("List components/SingleDataList", module)
     )
   )
   .add(
+    "With vertical display",
+    () => (
+      <SingleDataListRSDefault displayAsVertical />
+    )
+  )
+  .add(
     "With renderItem",
     () => (
       <SingleDataListRSDefault
@@ -4336,6 +4342,7 @@ storiesOf("List components/SingleDataList", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Custom Filter Name")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        displayAsVertical={boolean("displayAsVertical")}
       />
     )
   );
