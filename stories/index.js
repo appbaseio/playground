@@ -4494,31 +4494,56 @@ storiesOf("List components/TabDataList", module)
   .add(
     "Basic",
     () => (
-      <TabDataListDefault />
+      <TabDataListDefault
+        showRadio={boolean("showRadio", false)}
+        showCount={boolean("showCount", false)}
+        showSearch={boolean("showSearch", false)}
+        displayAsVertical={boolean("displayAsVertical", false)}
+      />
     )
   )
   .add(
     "With showCount",
     () => (
-      <TabDataListDefault showCount/>
+      <TabDataListDefault
+        showRadio={boolean("showRadio", false)}
+        showCount={boolean("showCount", true)}
+        showSearch={boolean("showSearch", false)}
+        displayAsVertical={boolean("displayAsVertical", false)}
+      />
     )
     )
   .add(
     "With showRadio",
     () => (
-      <TabDataListDefault showRadio/>
+      <TabDataListDefault
+        showRadio={boolean("showRadio", true)}
+        showCount={boolean("showCount", false)}
+        showSearch={boolean("showSearch", false)}
+        displayAsVertical={boolean("displayAsVertical", false)}
+      />
     )
   )
   .add(
     "With showSearch",
     () => (
-      <TabDataListDefault showSearch/>
+      <TabDataListDefault
+        showRadio={boolean("showRadio", false)}
+        showCount={boolean("showCount", false)}
+        showSearch={boolean("showSearch", true)}
+        displayAsVertical={boolean("displayAsVertical", false)}
+      />
     )
   )
   .add(
     "With displayAsVertical",
     () => (
-      <TabDataListDefault displayAsVertical/>
+      <TabDataListDefault
+        showRadio={boolean("showRadio", false)}
+        showCount={boolean("showCount", false)}
+        showSearch={boolean("showSearch", false)}
+        displayAsVertical={boolean("displayAsVertical", true)}
+      />
     )
   )
 
