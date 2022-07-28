@@ -4502,6 +4502,18 @@ storiesOf("List components/TabDataList", module)
     () => (
       <TabDataListDefault showCount/>
     )
+    )
+  .add(
+    "With showRadio",
+    () => (
+      <TabDataListDefault showRadio/>
+    )
+  )
+  .add(
+    "With showSearch",
+    () => (
+      <TabDataListDefault showSearch/>
+    )
   )
   .add(
     "With displayAsVertical",
@@ -4509,6 +4521,7 @@ storiesOf("List components/TabDataList", module)
       <TabDataListDefault displayAsVertical/>
     )
   )
+
 
 storiesOf("Range components/SingleRange", module)
 	.addDecorator(withKnobs)
