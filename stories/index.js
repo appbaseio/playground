@@ -4288,7 +4288,13 @@ storiesOf("List components/SingleDataList", module)
   .add(
     "With count",
     () => (
-      <SingleDataListRSDefault showCount />
+      <SingleDataListRSDefault showCount={boolean("displayAsVertical", false)} />
+    )
+  )
+  .add(
+    "With vertical display",
+    () => (
+      <SingleDataListRSDefault displayAsVertical={boolean("displayAsVertical", true)} />
     )
   )
   .add(
@@ -4354,6 +4360,7 @@ storiesOf("List components/SingleDataList", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Custom Filter Name")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        displayAsVertical={boolean("displayAsVertical")}
       />
     )
   );
@@ -4512,21 +4519,47 @@ storiesOf("List components/TabDataList", module)
   .add(
     "Basic",
     () => (
-      <TabDataListDefault />
+      <TabDataListDefault
+        showRadio={boolean("showRadio", false)}
+        showCount={boolean("showCount", false)}
+        showSearch={boolean("showSearch", false)}
+        displayAsVertical={boolean("displayAsVertical", false)}
+      />
     )
   )
   .add(
     "With showCount",
     () => (
-      <TabDataListDefault showCount/>
+      <TabDataListDefault
+        showCount={boolean("showCount", true)}
+      />
+    )
+    )
+  .add(
+    "With showRadio",
+    () => (
+      <TabDataListDefault
+        showRadio={boolean("showRadio", true)}
+      />
+    )
+  )
+  .add(
+    "With showSearch",
+    () => (
+      <TabDataListDefault
+        showSearch={boolean("showSearch", true)}
+      />
     )
   )
   .add(
     "With displayAsVertical",
     () => (
-      <TabDataListDefault displayAsVertical/>
+      <TabDataListDefault
+        displayAsVertical={boolean("displayAsVertical", true)}
+      />
     )
   )
+
 
 storiesOf("Range components/SingleRange", module)
 	.addDecorator(withKnobs)
