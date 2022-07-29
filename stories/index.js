@@ -4270,13 +4270,13 @@ storiesOf("List components/SingleDataList", module)
   .add(
     "With count",
     () => (
-      <SingleDataListRSDefault showCount />
+      <SingleDataListRSDefault showCount={boolean("displayAsVertical", false)} />
     )
   )
   .add(
     "With vertical display",
     () => (
-      <SingleDataListRSDefault displayAsVertical />
+      <SingleDataListRSDefault displayAsVertical={boolean("displayAsVertical", true)} />
     )
   )
   .add(
@@ -4513,10 +4513,7 @@ storiesOf("List components/TabDataList", module)
     "With showCount",
     () => (
       <TabDataListDefault
-        showRadio={boolean("showRadio", false)}
         showCount={boolean("showCount", true)}
-        showSearch={boolean("showSearch", false)}
-        displayAsVertical={boolean("displayAsVertical", false)}
       />
     )
     )
@@ -4525,9 +4522,6 @@ storiesOf("List components/TabDataList", module)
     () => (
       <TabDataListDefault
         showRadio={boolean("showRadio", true)}
-        showCount={boolean("showCount", false)}
-        showSearch={boolean("showSearch", false)}
-        displayAsVertical={boolean("displayAsVertical", false)}
       />
     )
   )
@@ -4535,10 +4529,7 @@ storiesOf("List components/TabDataList", module)
     "With showSearch",
     () => (
       <TabDataListDefault
-        showRadio={boolean("showRadio", false)}
-        showCount={boolean("showCount", false)}
         showSearch={boolean("showSearch", true)}
-        displayAsVertical={boolean("displayAsVertical", false)}
       />
     )
   )
@@ -4546,9 +4537,6 @@ storiesOf("List components/TabDataList", module)
     "With displayAsVertical",
     () => (
       <TabDataListDefault
-        showRadio={boolean("showRadio", false)}
-        showCount={boolean("showCount", false)}
-        showSearch={boolean("showSearch", false)}
         displayAsVertical={boolean("displayAsVertical", true)}
       />
     )
