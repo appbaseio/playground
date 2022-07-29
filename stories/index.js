@@ -106,6 +106,7 @@ import DarkCard from "./reactivesearch/DarkCard.stories";
 import TagCloudDark from "./reactivesearch/TagCloudDark.stories";
 import DatePickerDark from "./reactivesearch/DatePickerDark.stories";
 import DateRangeDark from "./reactivesearch/DateRangeDark.stories";
+import ErrorBoundaryDefault from "./reactivesearch/ErrorBoundary.stories";
 
 require("./styles.css");
 
@@ -137,6 +138,23 @@ storiesOf("Base components/ReactiveComponent", module)
       <ReactiveComponentWithDistinctFieldProp />
     )
   );
+
+storiesOf("Base components/ErrorBoundary", module)
+	.addDecorator(withKnobs)
+	.addParameters({
+    readme: {
+      // Show readme at the addons panel
+      sidebar: removeFirstLine(ReactiveComponentReadme, 15),
+    },
+  })
+  .add("default with DynamicRangeSlider", () => <ErrorBoundaryDefault />)
+  .add("with renderError", ()=> <ErrorBoundaryDefault
+          renderError={error => (
+						<div>
+							<h1>Oops! Error occured.</h1>
+							<p>{error.message}</p>
+						</div>
+					)}/>)
 
 // Reactivemaps components
 
