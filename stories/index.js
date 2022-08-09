@@ -4571,6 +4571,12 @@ storiesOf("List components/TreeList", module)
     )
   )
   .add(
+    "with title",
+    () => (
+      <TreeListRSDefault title={text("title", "Tree List ")} />
+    )
+  )
+  .add(
     "Single Select Mode",
     () => (
       <TreeListRSDefault mode={select("mode", { single: "single", multiple: "multiple" }, "single")} />
