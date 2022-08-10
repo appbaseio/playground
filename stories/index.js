@@ -81,6 +81,8 @@ import SearchBoxRSDefault from "./reactivesearch/SearchBox.stories";
 import NumberBoxRSDefault from "./reactivesearch/NumberBox.stories";
 import SingleListRSDefault from "./reactivesearch/SingleList.stories";
 import MultiListRSDefault from "./reactivesearch/MultiList.stories";
+import TreeListRSDefault from "./reactivesearch/TreeList.stories";
+import TreeListCustomRenderer from './reactivesearch/TreeListCustomRenderer.stories';
 import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
 import MultiDropdownListRSDefault from "./reactivesearch/MultiDropdownList.stories";
 import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
@@ -4560,6 +4562,147 @@ storiesOf("List components/TabDataList", module)
     )
   )
 
+storiesOf("List components/TreeList", module)
+  .addDecorator(withKnobs)
+  .add(
+    "Basic",
+    () => (
+      <TreeListRSDefault />
+    )
+  )
+  .add(
+    "with title",
+    () => (
+      <TreeListRSDefault title={text("title", "Tree List ")} />
+    )
+  )
+  .add(
+    "Single Select Mode",
+    () => (
+      <TreeListRSDefault mode={select("mode", { single: "single", multiple: "multiple" }, "single")} />
+    )
+  )
+  .add(
+    "With showCount",
+    () => (
+      <TreeListRSDefault
+        showCount={boolean("showCount", true)}
+      />
+    )
+  )
+  .add(
+    "With showRadio",
+    () => (
+      <TreeListRSDefault
+        showRadio={boolean("showRadio", true)}
+        mode="single"
+      />
+    )
+  )
+  .add(
+    "With showCheckbox",
+    () => (
+      <TreeListRSDefault
+        showCheckbox={boolean("showCheckbox", true)}
+        mode="multiple"
+      />
+    )
+  )
+  .add(
+    "With showIcon",
+    () => (
+      <TreeListRSDefault
+        showIcon={boolean("showIcon", true)}
+      />
+    )
+  )
+  .add(
+    "With showLeafIcon",
+    () => (
+      <TreeListRSDefault
+        showLeafIcon={boolean("showLeafIcon", true)}
+      />
+    )
+  )
+  .add(
+    "With showSwitcherIcon",
+    () => (
+      <TreeListRSDefault
+        showSwitcherIcon={boolean("showSwitcherIcon", true)}
+      />
+    )
+  )
+  .add(
+    "With showLine",
+    () => (
+      <TreeListRSDefault
+        showLine={boolean("showLine", true)}
+      />
+    )
+  )
+  .add(
+    "With showSearch",
+    () => (
+      <TreeListRSDefault
+        showSearch={boolean("showSearch", true)}
+      />
+    )
+  )
+  .add(
+    "With custom icon(non-leaf nodes)",
+    () => (
+      <TreeListRSDefault
+        showIcon
+        icon={
+			  	<span role="img" aria-label="folder-icon">
+			  		🦷
+			  	</span>
+			  }
+      />
+    )
+  )
+  .add(
+    "With custom leafIcon",
+    () => (
+      <TreeListRSDefault
+        showLeafIcon
+			  leafIcon={
+			  	<span role="img" aria-label="leaf-icon">
+			  		☘️
+			  	</span>
+			  }
+      />
+    )
+  )
+  .add(
+    "With custom switcherIcon",
+    () => (
+      <TreeListRSDefault
+        showSwitcherIcon
+			  switcherIcon={bool =>
+					(bool ? <span> &#8592;</span> : <span> &#8598;</span>)
+				}
+      />
+    )
+  )
+  .add(
+    "With renderItem",
+    () => (
+      <TreeListRSDefault
+        renderItem={(label, count, isSelected) => (
+					<span style={isSelected ? { background: 'green' } : {}}>
+						{label} - {count}
+					</span>
+				)}
+      />
+    )
+  )
+  .add(
+    "With custom renderer",
+    () => (
+      <TreeListCustomRenderer />
+    )
+  )
 
 storiesOf("Range components/SingleRange", module)
 	.addDecorator(withKnobs)
