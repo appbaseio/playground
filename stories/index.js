@@ -2266,6 +2266,15 @@ storiesOf("Search components/DataSearch", module)
     )
   )
   .add(
+    "With mode prop",
+    () => (
+      <DataSearchRSDefault
+        mode={select("iconPosition", ["tag", "select"], "tag")}
+        placeholder="Search Books..."
+      />
+    )
+  )    
+  .add(
     "With title",
     () => (
       <DataSearchRSDefault
@@ -2756,6 +2765,15 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add(
+    "With mode prop",
+    () => (
+      <SearchBoxRSDefault
+        mode={select("iconPosition", ["tag", "select"], "tag")}
+        placeholder="Search Books..."
+      />
+    )
+  )  
+  .add(
     "With title",
     () => (
       <SearchBoxRSDefault
@@ -3176,7 +3194,7 @@ storiesOf("Search components/SearchBox", module)
   .add(
     "Playground",
     () => (
-      <DataSearchRSDefault
+      <SearchBoxRSDefault
         title={text("title", "DataSearch: Books...")}
         dataField={array("dataField", [{field:"original_title", weight:3}, {field:"original_title.search", weight:1}])}
         placeholder={text("placeholder", "Search Books...")}
