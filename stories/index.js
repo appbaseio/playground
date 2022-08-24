@@ -2269,11 +2269,11 @@ storiesOf("Search components/DataSearch", module)
     "With mode prop",
     () => (
       <DataSearchRSDefault
-        mode={select("iconPosition", ["tag", "select"], "tag")}
+        mode={select("mode", ["tag", "select"], "tag")}
         placeholder="Search Books..."
       />
     )
-  )    
+  )
   .add(
     "With title",
     () => (
@@ -2768,11 +2768,11 @@ storiesOf("Search components/SearchBox", module)
     "With mode prop",
     () => (
       <SearchBoxRSDefault
-        mode={select("iconPosition", ["tag", "select"], "tag")}
+        mode={select("mode", ["tag", "select"], "tag")}
         placeholder="Search Books..."
       />
     )
-  )  
+  )
   .add(
     "With title",
     () => (
