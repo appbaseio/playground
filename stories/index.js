@@ -83,6 +83,7 @@ import SingleListRSDefault from "./reactivesearch/SingleList.stories";
 import MultiListRSDefault from "./reactivesearch/MultiList.stories";
 import TreeListRSDefault from "./reactivesearch/TreeList.stories";
 import TreeListCustomRenderer from './reactivesearch/TreeListCustomRenderer.stories';
+import TreeListCustomSelectedFilters from './reactivesearch/TreeListCustomSelectedFilters.stories';
 import SingleDropdownListRSDefault from "./reactivesearch/SingleDropdownList.stories";
 import MultiDropdownListRSDefault from "./reactivesearch/MultiDropdownList.stories";
 import SingleRangeRSDefault from "./reactivesearch/SingleRange.stories";
@@ -4719,6 +4720,12 @@ storiesOf("List components/TreeList", module)
     "With custom renderer",
     () => (
       <TreeListCustomRenderer />
+    )
+  )
+  .add(
+    "With custom SelectedFilters",
+    () => (
+      <TreeListCustomSelectedFilters />
     )
   )
 
