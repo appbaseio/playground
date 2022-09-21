@@ -4580,6 +4580,14 @@ storiesOf("List components/TabDataList", module)
       />
     )
   )
+  .add(
+        "With Select All",
+        () => (
+          <TabDataListDefault
+            selectAllLabel={text("selectAllLabel","All")}
+          />
+        )
+  )
 
 storiesOf("List components/TreeList", module)
   .addDecorator(withKnobs)
