@@ -118,10 +118,10 @@
     tocbot "4.5.0"
     yarn "^1.22.18"
 
-"@appbaseio/reactivecore@9.14.12":
-  version "9.14.12"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-9.14.12.tgz#10ea0a246d3f3c7d4b54d08d8645e46910294e43"
-  integrity sha512-O1zyDkZyFg+orXvi5rSXp4cN2CUn/KREKYXEWiihMBZzVLQe57WXrCy7c0+C/dQ/cjWOMZZ3u7yo79ZnKZCVhw==
+"@appbaseio/reactivecore@9.14.28":
+  version "9.14.28"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-9.14.28.tgz#c5d9831f63826c2d768b3628544a8acfc58eab47"
+  integrity sha512-mhTgp6yvEGyDHAy7Tk81lY1jndyo/QGMEDIK70cpBKpVw0v5x4/pCrQBW71AF5fEMJisg9JRSs/+UfFl2YFZAQ==
   dependencies:
     cross-fetch "^3.0.4"
     prop-types "^15.6.0"
@@ -173,15 +173,15 @@
     react-leaflet "^2.1.3"
     rheostat "^2.1.1"
 
-"@appbaseio/reactivesearch@3.34.3":
-  version "3.34.3"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.34.3.tgz#232cc878dbba99dc58a400179666c53bc4dbc660"
-  integrity sha512-uWydMxsftMnpeUu7xS3X8PNIv5AW939uZfmZynXBwcSIdPNZwpIgYhRfU0PKkJICxLLCr0nZFLbcFu+iS+tqVg==
+"@appbaseio/reactivesearch@3.42.0":
+  version "3.42.0"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.42.0.tgz#92ad1a69234c3d7d3ea4f8694024d0bd2c028991"
+  integrity sha512-xJh0laVXNTlMyaLldOypzX/ddp5UohnDZmNG83RjGnMuLhWzMPddjofvoXZJipVDULvzkKqckx03Ccre79A1YA==
   dependencies:
-    "@appbaseio/reactivecore" "9.14.12"
+    "@appbaseio/reactivecore" "9.14.28"
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
-    appbase-js "5.0.0"
+    appbase-js "^5.2.0"
     cross-env "^5.2.0"
     downshift "^1.31.2"
     echarts "^5.3.3"
@@ -5371,6 +5371,15 @@ appbase-js@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/appbase-js/-/appbase-js-5.0.0.tgz#9f3e25ad718251e153593f7559cfac7b4d4ac961"
   integrity sha512-TOvBaXEpRd85Oo118X+NNQq7CMtZE3eyp7zYWZ7LO2o9mrdTQRUk+ADE0P8xFkga2c4WHHRyBhoeJglux12LZg==
+  dependencies:
+    cross-fetch "^3.1.5"
+    querystring "^0.2.0"
+    url-parser-lite "^0.1.0"
+
+appbase-js@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/appbase-js/-/appbase-js-5.2.0.tgz#990da7227ae89cd0a002fdfc85428a001306ac27"
+  integrity sha512-4B/xXivn7i6CATxcRZauDplCL3m9imOmbLH7j+cW4xwkqSN3aHDtj/OuvJDQqaMG0Awon8HUiiuwdh0+yY9DAw==
   dependencies:
     cross-fetch "^3.1.5"
     querystring "^0.2.0"
@@ -13820,9 +13829,9 @@ joi@^17.4.2:
     "@sideway/pinpoint" "^2.0.0"
 
 jpeg-js@^0.4.0:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.4.3.tgz#6158e09f1983ad773813704be80680550eff977b"
-  integrity sha512-ru1HWKek8octvUHFHvE5ZzQ1yAsJmIvRdGWvSoKV52XKyuyYA437QWDttXT8eZXDSbuMpHlLzPDZUPd6idIz+Q==
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.4.4.tgz#a9f1c6f1f9f0fa80cdb3484ed9635054d28936aa"
+  integrity sha512-WZzeDOEtTOBK4Mdsar0IqEU5sMr3vSV2RqkAIzUEV2BHnUfKGyswWFPFwK5EeDo93K3FohSHbLAjj0s1Wzd+dg==
 
 jquery@>=1.6, jquery@^3.4.1:
   version "3.6.0"
@@ -18307,7 +18316,7 @@ react-dom@16.8.4:
     prop-types "^15.6.2"
     scheduler "^0.13.4"
 
-react-dom@^16.8.3, react-dom@^16.8.6:
+react-dom@^16.8.3:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
   integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
@@ -18316,6 +18325,15 @@ react-dom@^16.8.3, react-dom@^16.8.6:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.19.1"
+
+react-dom@^17.0.0:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
+  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    scheduler "^0.20.2"
 
 react-draggable@^4.0.3:
   version "4.4.3"
@@ -18750,7 +18768,7 @@ react@16.8.4:
     prop-types "^15.6.2"
     scheduler "^0.13.4"
 
-react@^16.8.3, react@^16.8.6:
+react@^16.8.3:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
   integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
@@ -18758,6 +18776,14 @@ react@^16.8.3, react@^16.8.6:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
+
+react@^17.0.0:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 reactcss@^1.2.0:
   version "1.2.3"
@@ -19512,6 +19538,14 @@ scheduler@^0.19.1:
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
   integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
+scheduler@^0.20.2:
+  version "0.20.2"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
+  integrity sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
