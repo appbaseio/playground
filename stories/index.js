@@ -546,8 +546,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           label: "Under 100 miles",
           location: "London"
         }}
-        placeholder={text("placeholder", "Search Location")}
-        title={text("title", "Geo Distance Slider")}
+        placeholder={text("placeholder", "Search Location")}        
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
         autoLocation={boolean("autoLocation", true)}
         showFilter={boolean("showFilter", true)}
@@ -597,8 +596,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           label: "Under 100 miles",
           location: "London"
         }}
-        placeholder={text("placeholder", "Search Location")}
-        title={text("title", "Geo Distance Slider")}
+        placeholder={text("placeholder", "Search Location")}        
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
         autoLocation={boolean("autoLocation", true)}
         showFilter={boolean("showFilter", true)}
