@@ -7,4 +7,5 @@ module.exports = {
     "@storybook/addon-actions",
     "@storybook/addon-a11y",
   ],
+  reactOptions: { legacyRootApi: false },
 };
