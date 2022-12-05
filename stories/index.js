@@ -541,8 +541,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           label: "Under 100 miles",
           location: "London"
         }}
-        placeholder={text("placeholder", "Search Location")}
-        title={text("title", "Geo Distance Slider")}
+        placeholder={text("placeholder", "Search Location")}        
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
         autoLocation={boolean("autoLocation", true)}
         showFilter={boolean("showFilter", true)}
@@ -592,8 +591,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           label: "Under 100 miles",
           location: "London"
         }}
-        placeholder={text("placeholder", "Search Location")}
-        title={text("title", "Geo Distance Slider")}
+        placeholder={text("placeholder", "Search Location")}        
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
         autoLocation={boolean("autoLocation", true)}
         showFilter={boolean("showFilter", true)}
@@ -4070,7 +4068,8 @@ storiesOf("Base components/ToggleButton", module)
   );
 
 storiesOf("Range components/DatePicker", module)
-	.addDecorator(withKnobs)
+  .addDecorator(withKnobs)
+  .addDecorator(withInfo)
 	.addParameters({
     readme: {
       // Show readme at the addons panel
@@ -4133,16 +4132,13 @@ storiesOf("Range components/DatePicker", module)
     )
   )
   .add(
-    "with initialMonth",
-    withInfo(
-      `initialMonth accepts a JavaScript object. Here it's passed new Date("2017-04-04")`
-    )(
-      () => (
-        <DatePickerRSDefault
-          initialMonth={new Date("2017-04-04")}
-        />
-      )
-    )
+    "with initialMonth",     
+    () => (
+      <DatePickerRSDefault
+        initialMonth={new Date("2017-04-04")}
+      />
+    ),
+    { info: 'initialMonth accepts a JavaScript object. Here it\'s passed new Date("2017-04-04")' }
   )
   .add(
     "Without clear button",
