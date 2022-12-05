@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, SearchBox, SearchBox, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
+import { ReactiveBase, SearchBox, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
 
 import { booksList as BooksList } from "./resultViews";
 
