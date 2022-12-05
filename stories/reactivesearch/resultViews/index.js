@@ -78,8 +78,8 @@ export const booksReactiveList = (data) => (
 );
 
 export const meetupList = (data) => (
-	<ResultList key={data._id} href={data.event.event_url}>
-		<ResultList.Image small src={data.member.photo}/>
+	<ResultList key={data._id} href={data.event && data.event.event_url}>
+		<ResultList.Image small src={data.member && data.member.photo}/>
 		<ResultList.Content>
 			<ResultList.Title>
 				<div className="meetup-title">
@@ -94,7 +94,7 @@ export const meetupList = (data) => (
 					</div>
 					<div className="flex wrap meetup-topics">
 						{
-							data.group.group_topics.slice(0, 4).map(tag => (
+							data.group && data.group.group_topics.slice(0, 4).map(tag => (
 								<div className="meetup-topic" key={tag.topic_name}>{tag.topic_name}</div>
 							))
 						}
