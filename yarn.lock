@@ -44,6 +44,13 @@
     lodash "^4.17.21"
     resize-observer-polyfill "^1.5.1"
 
+"@appbaseio/analytics@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@appbaseio/analytics/-/analytics-1.1.1.tgz#398ff80ad3d7d20bc0e66efc1c0b2c50bb2a959e"
+  integrity sha512-8ydvIbn9otjldUHKuYg48nqUvpdC4jMUl6BZNxTWniBnFi5ihxWI94cKabu2+L65uNJR3Aioa1FV0t6d4am2oQ==
+  dependencies:
+    cross-fetch "^3.0.4"
+
 "@appbaseio/designkit@^0.13.0":
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/@appbaseio/designkit/-/designkit-0.13.0.tgz#79e184cb7ed283c7a07ccc7c75d8a3236a58b7ea"
@@ -118,17 +125,6 @@
     tocbot "4.5.0"
     yarn "^1.22.18"
 
-"@appbaseio/reactivecore@9.14.25":
-  version "9.14.25"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-9.14.25.tgz#90f081f8b873011481e576dda79e3956a83ef262"
-  integrity sha512-eQlrdcXE9Y8r7emCIGPR7BhPy430VxelyrNKE0WkOM1paq1HuSCH+mw9IyZAqY3vk1+oV2ftXQQyz5YZRY7xYw==
-  dependencies:
-    cross-fetch "^3.0.4"
-    prop-types "^15.6.0"
-    redux "^4.0.0"
-    redux-thunk "^2.3.0"
-    xdate "^0.8.2"
-
 "@appbaseio/reactivecore@9.14.28":
   version "9.14.28"
   resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-9.14.28.tgz#c5d9831f63826c2d768b3628544a8acfc58eab47"
@@ -140,7 +136,35 @@
     redux-thunk "^2.3.0"
     xdate "^0.8.2"
 
-"@appbaseio/reactivemaps@3.0.0", "@appbaseio/reactivemaps@^3.0.0":
+"@appbaseio/reactivecore@9.14.37":
+  version "9.14.37"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-9.14.37.tgz#2fd654e161787f25f7b1b0eb6aa02e2ffc4d6e60"
+  integrity sha512-AF3Dd6RJKRBMeMqjqHVSRQl+wdNn7CUV/JruPyTU0hy3FC9DSYI8Mk4Z49/GIZuBVSEJFnQ5wc33yGrCcsRyOg==
+  dependencies:
+    cross-fetch "^3.0.4"
+    dayjs "^1.11.7"
+    prop-types "^15.6.0"
+    redux "^4.0.0"
+    redux-thunk "^2.3.0"
+
+"@appbaseio/reactivemaps@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivemaps/-/reactivemaps-3.0.2.tgz#5d308938ab4f437919fd956e2510923a981f8b86"
+  integrity sha512-lFZEKOYT5VBpXDEGQz9Xi0uAZu84uceswwd6HtSNW+TLfd3JwzEGzVu0O5RHn1bTs5Y5QuatWnlC6hA1/Yo9xg==
+  dependencies:
+    "@appbaseio/rheostat" "^1.0.0-alpha.2"
+    "@emotion/core" "^10.0.28"
+    "@emotion/styled" "^10.0.27"
+    "@react-google-maps/api" "^2.7.0"
+    downshift "^1.31.2"
+    emotion-theming "^10.0.27"
+    leaflet "^1.3.4"
+    markerwithlabel "^2.0.2"
+    ngeohash "^0.6.3"
+    prop-types "^15.6.0"
+    react-leaflet "^2.1.3"
+
+"@appbaseio/reactivemaps@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@appbaseio/reactivemaps/-/reactivemaps-3.0.0.tgz#71fe187708800b0b7264b0de3edff232443afea9"
   integrity sha512-hMEu5skihuVrMBcjgv7SC05IbbQtlT8w7vgjoNquRRY4Dd2HWIjuHtv3bZz6/cCYR2QsYWVFe0gdEoMKrIAjSg==
@@ -157,17 +181,19 @@
     react-leaflet "^2.1.3"
     rheostat "^2.1.1"
 
-"@appbaseio/reactivesearch@3.42.0-alpha":
-  version "3.42.0-alpha"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.42.0-alpha.tgz#1018b4a689dad0016a73c362e9c7cea6b6f272ae"
-  integrity sha512-Ac8P4tj3HomwDxVsSehKoU+X3KDH9ZhNnD/ff9Pm8pjkJuSaBjYrWCGkrWeoNsqVZokQ0MHR2zAZhjFkTfvbOg==
+"@appbaseio/reactivesearch@3.43.7":
+  version "3.43.7"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-3.43.7.tgz#33e28f3ca20b44499856f3b5f470ab940c187c8d"
+  integrity sha512-xM/BSOZS2XgJq2Ninz5BO4zYOu5JLQ6lw7mAxvT8tIJYx9ZV9u2hbXquAE4EnZMtBdWjPBR2Fs0urJRjyQPxew==
   dependencies:
-    "@appbaseio/reactivecore" "9.14.25"
-    "@appbaseio/rheostat" "^1.0.0-alpha.2"
+    "@appbaseio/analytics" "^1.1.1"
+    "@appbaseio/reactivecore" "9.14.37"
+    "@appbaseio/rheostat" "^1.0.0-alpha.15"
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
-    appbase-js "5.1.0"
+    appbase-js "^5.2.0"
     cross-env "^5.2.0"
+    dayjs "^1.11.7"
     downshift "^1.31.2"
     echarts "^5.3.3"
     echarts-for-react "^3.0.2"
@@ -179,7 +205,6 @@
     react-day-picker "^7.0.5"
     react-redux "^6.0.1"
     url-search-params-polyfill "^7.0.0"
-    xdate "^0.8.2"
     xss "^1.0.11"
 
 "@appbaseio/reactivesearch@^3.30.3":
@@ -206,6 +231,14 @@
     url-search-params-polyfill "^7.0.0"
     xdate "^0.8.2"
     xss "^1.0.11"
+
+"@appbaseio/rheostat@^1.0.0-alpha.15":
+  version "1.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/@appbaseio/rheostat/-/rheostat-1.0.0-alpha.15.tgz#c4db000c7e0adf973aaf95951ab9b4e90d806b26"
+  integrity sha512-dFDWv8SGGLRv5yGcQ5/3zYhVRDq2iIYmmU5v6s4/R0XRj2zCwld5O9DWi8WBZiDQJWQ7/7YUWTzqEgtxbYMOJA==
+  dependencies:
+    object.assign "^4.0.4"
+    prop-types "^15.5.10"
 
 "@appbaseio/rheostat@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
@@ -1623,21 +1656,6 @@
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.14.3.tgz#d7a161cd547be04ad46a1cb176e6c2647f6d74a7"
   integrity sha512-6iIb+qpGgQpgIHmIFO44WhE1rDUxPVHuezNFL30wRJnkvhwFm94tD291UvNg9L05hLDSoL16jd0lbqqmdy4C5g==
-  dependencies:
-    fast-deep-equal "^3.1.3"
-
-"@googlemaps/markerclusterer@2.0.8":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@googlemaps/markerclusterer/-/markerclusterer-2.0.8.tgz#39f037e60a1c62cd9f04d529ea9c4f286af4ec6f"
-  integrity sha512-l/Z3nxTE55iaWDB8NL/HpFdYht2x0khPaJI9pD7KDbfHeZaZyG8yT6xi2cZ0Lb2VvgKFb3OtNKRMpAuS4xm2rg==
-  dependencies:
-    fast-deep-equal "^3.1.3"
-    supercluster "^7.1.3"
-
-"@graphql-tools/batch-execute@^7.1.2":
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-7.1.2.tgz#35ba09a1e0f80f34f1ce111d23c40f039d4403a0"
-  integrity sha512-IuR2SB2MnC2ztA/XeTMTfWcA0Wy7ZH5u+nDkDNLAdX+AaSyDnsQS35sCmHqG0VOGTl7rzoyBWLCKGwSJplgtwg==
   dependencies:
     fast-deep-equal "^3.1.3"
 
@@ -5134,15 +5152,6 @@ app-root-dir@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/app-root-dir/-/app-root-dir-1.0.2.tgz#38187ec2dea7577fff033ffcb12172692ff6e118"
   integrity sha512-jlpIfsOoNoafl92Sz//64uQHGSyMrD2vYG5d8o2a4qGvyNCvXur7bzIsWtAC/6flI2RYAp3kv8rsfBtaLm7w0g==
-
-appbase-js@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/appbase-js/-/appbase-js-5.1.0.tgz#6896fad28376ee4d43ca03042e7c426e767eeed0"
-  integrity sha512-Nekeev62QtboYWtNp7L3GJgkavCYQNFzcDuyMAPgQ6ajr9Kp2xzM/xZT1KmAn97yk7TRcznjpvojMCH4zjv5eQ==
-  dependencies:
-    cross-fetch "^3.1.5"
-    querystring "^0.2.0"
-    url-parser-lite "^0.1.0"
 
 appbase-js@^5.2.0:
   version "5.2.0"
@@ -8655,6 +8664,11 @@ dayjs@1.x:
   version "1.11.6"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.6.tgz#2e79a226314ec3ec904e3ee1dd5a4f5e5b1c7afb"
   integrity sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ==
+
+dayjs@^1.11.7:
+  version "1.11.7"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.7.tgz#4b296922642f70999544d1144a2c25730fce63e2"
+  integrity sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==
 
 debug@2, debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
@@ -13537,11 +13551,6 @@ kdbush@^3.0.0:
   resolved "https://registry.yarnpkg.com/kdbush/-/kdbush-3.0.0.tgz#f8484794d47004cc2d85ed3a79353dbe0abc2bf0"
   integrity sha512-hRkd6/XW4HTsA9vjVpY9tuXJYLSlelnkTmVFu4M9/7MIYQtFcHpbugAU7UbOfjOiVSVYl2fqgBuJ32JUmRo5Ew==
 
-kdbush@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/kdbush/-/kdbush-3.0.0.tgz#f8484794d47004cc2d85ed3a79353dbe0abc2bf0"
-  integrity sha512-hRkd6/XW4HTsA9vjVpY9tuXJYLSlelnkTmVFu4M9/7MIYQtFcHpbugAU7UbOfjOiVSVYl2fqgBuJ32JUmRo5Ew==
-
 keycode@^2.1.9:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.2.1.tgz#09c23b2be0611d26117ea2501c2c391a01f39eff"
@@ -14181,12 +14190,7 @@ marked@^0.7.0:
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.7.0.tgz#b64201f051d271b1edc10a04d1ae9b74bb8e5c0e"
   integrity sha512-c+yYdCZJQrsRjTPhUx7VKkApw9bwDkNbHUKo1ovgcfDjb2kc8rLuRbIFyXL5WOEUwzSSKo3IXpph2K6DqB/KZg==
 
-marker-clusterer-plus@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/marker-clusterer-plus/-/marker-clusterer-plus-2.1.4.tgz#f8eff74d599dab3b7d0e3fed5264ea0e704f5d67"
-  integrity sha1-+O/3TVmdqzt9Dj/tUmTqDnBPXWc=
-
-markerwithlabel@^2.0.1, markerwithlabel@^2.0.2:
+markerwithlabel@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/markerwithlabel/-/markerwithlabel-2.0.2.tgz#fa6aee4abb0ee553e24e2b708226858f58b8729e"
   integrity sha512-C/cbm1A0h/u54gwHk5ZJNdUU3V3+1BbCpRPMsMyFA7vF4yL+aB4rWpxACz29TpQ+cTg6/iQroExh0PMSRGtQFg==
@@ -19511,7 +19515,7 @@ source-map-resolve@^0.5.0, source-map-resolve@^0.5.2:
     source-map-url "^0.4.0"
     urix "^0.1.0"
 
-source-map-support@^0.5.17, source-map-support@^0.5.20, source-map-support@~0.5.12, source-map-support@~0.5.20:
+source-map-support@^0.5.16, source-map-support@~0.5.12, source-map-support@~0.5.20:
   version "0.5.21"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.21.tgz#04fe7c7f9e1ed2d662233c28cb2b35b9f63f6e4f"
   integrity sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==
@@ -20319,7 +20323,7 @@ terser-webpack-plugin@^5.1.3, terser-webpack-plugin@^5.2.4:
     serialize-javascript "^6.0.0"
     terser "^5.14.1"
 
-terser@^4.1.2, terser@^4.6.12, terser@^4.6.3:
+terser@^4.1.2, terser@^4.6.3:
   version "4.8.1"
   resolved "https://registry.yarnpkg.com/terser/-/terser-4.8.1.tgz#a00e5634562de2239fd404c649051bf6fc21144f"
   integrity sha512-4GnLC0x667eJG0ewJTa6z/yXrbLGv80D9Ru6HIpCQmO+Q4PfEtBFi0ObSckqwL6VyQv/7ENJieXHo2ANmdQwgw==
@@ -20613,20 +20617,15 @@ tsconfig-paths@^3.14.1:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@2.3.0, tslib@^2, tslib@^2.0.1, tslib@^2.0.3, tslib@^2.2.0:
+tslib@2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
 
-tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
+tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-
-tslib@~2.0.1:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.3.tgz#8e0741ac45fc0c226e58a17bfc3e64b9bc6ca61c"
-  integrity sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
 
 tslib@^2.0.0, tslib@^2.0.1, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.2.0, tslib@^2.4.0, tslib@~2.4.0:
   version "2.4.0"
@@ -20727,9 +20726,9 @@ typedarray@^0.0.6:
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
 
 ua-parser-js@^0.7.30:
-  version "0.7.32"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.32.tgz#cd8c639cdca949e30fa68c44b7813ef13e36d211"
-  integrity sha512-f9BESNVhzlhEFf2CHMSj40NWOjYPl1YKYbrvIr/hFTDEmLq7SRbWvm7FcdcpCYT95zrOhC7gZSxjdnnTpBcwVw==
+  version "0.7.33"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.33.tgz#1d04acb4ccef9293df6f70f2c3d22f3030d8b532"
+  integrity sha512-s8ax/CeZdK9R/56Sui0WM6y9OFREJarMRHqLB2EwkovemBxNQ+Bqu8GAsUnVcXKgphb++ghr/B2BZx4mahujPw==
 
 uglify-es@^3.3.4:
   version "3.3.9"
