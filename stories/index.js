@@ -20,49 +20,49 @@ import GeoDistanceSliderOpenStreetMap from "./reactivemaps/GeoDistanceSliderOpen
 
 // import READMEs for each component
 // List Components
-import SingleListReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/list/singlelist.md";
-import MultiListReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/list/multilist.md";
-import SingleDataListReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/list/singledatalist.md";
-import MultiDataListReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/list/multidatalist.md";
-import SingleDropdownListReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/list/singledropdownlist.md";
-import MultiDropdownListReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/list/multidropdownlist.md";
-import TagCloudReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/list/tagcloud.md";
-import ToggleButtonReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/list/togglebutton.md";
+import SingleListReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/list/singlelist.md";
+import MultiListReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/list/multilist.md";
+import SingleDataListReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/list/singledatalist.md";
+import MultiDataListReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/list/multidatalist.md";
+import SingleDropdownListReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/list/singledropdownlist.md";
+import MultiDropdownListReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/list/multidropdownlist.md";
+import TagCloudReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/list/tagcloud.md";
+import ToggleButtonReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/list/togglebutton.md";
 
-// import NestedListReadme from "@appbaseio/reactive-manual-v3/content/docs/list-components/NestedList.md";
-// import NestedMultiListReadme from "@appbaseio/reactive-manual-v3/content/docs/list-components/NestedMultiList.md";
+// import NestedListReadme from "@appbaseio/reactive-manual-react/v3/content/docs/list-components/NestedList.md";
+// import NestedMultiListReadme from "@appbaseio/reactive-manual-react/v3/content/docs/list-components/NestedMultiList.md";
 // Range Components
-import SingleRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/singlerange.md";
-import MultiRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/multirange.md";
-import SingleDropdownRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/singledropdownrange.md";
-import MultiDropdownRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/multidropdownrange.md";
-import RangeSliderReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/rangeslider.md";
-import RangeInputReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/rangeinput.md";
-import DynamicRangeSliderReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/dynamicrangeslider.md";
-import RatingsFilterReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/ratingsfilter.md";
-import NumberBoxReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/numberbox.md";
-import DatePickerReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/datepicker.md";
-import DateRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/range/daterange.md";
+import SingleRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/singlerange.md";
+import MultiRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/multirange.md";
+import SingleDropdownRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/singledropdownrange.md";
+import MultiDropdownRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/multidropdownrange.md";
+import RangeSliderReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/rangeslider.md";
+import RangeInputReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/rangeinput.md";
+import DynamicRangeSliderReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/dynamicrangeslider.md";
+import RatingsFilterReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/ratingsfilter.md";
+import NumberBoxReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/numberbox.md";
+import DatePickerReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/datepicker.md";
+import DateRangeReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/range/daterange.md";
 
 // Search Components
-import CategorySearchReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/categorysearch.md";
-import DataSearchReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/datasearch.md";
-import SearchBoxReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/search/searchbox.md";
+import CategorySearchReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/search/categorysearch.md";
+import DataSearchReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/search/datasearch.md";
+import SearchBoxReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/search/searchbox.md";
 
 // Result Components
-import ResultCardReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/result/resultcard.md";
-import ResultListReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/result/resultlist.md";
-import ReactiveListReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/result/reactivelist.md";
+import ResultCardReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/result/resultcard.md";
+import ResultListReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/result/resultlist.md";
+import ReactiveListReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/result/reactivelist.md";
 
 // Map Components
-import GeoDistanceSliderReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/map/geodistanceslider.md";
-import GeoDistanceDropdownReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/map/geodistancedropdown.md";
-import ReactiveMapReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/map/reactivegooglemap.md";
-import OpenstreetMapReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/map/reactiveopenstreetmap.md";
+import GeoDistanceSliderReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/map/geodistanceslider.md";
+import GeoDistanceDropdownReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/map/geodistancedropdown.md";
+import ReactiveMapReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/map/reactivegooglemap.md";
+import OpenstreetMapReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/map/reactiveopenstreetmap.md";
 // base components
-// import SelectedFiltersReadme from "@appbaseio/reactive-manual-v3/content/docs/base-components/SelectedFilters.md";
+// import SelectedFiltersReadme from "@appbaseio/reactive-manual-react/v3/content/docs/base-components/SelectedFilters.md";
 // Advanced components
-import ReactiveComponentReadme from "@appbaseio/docs/content/docs/reactivesearch/v3/advanced/reactivecomponent.md";
+import ReactiveComponentReadme from "@appbaseio/docs/content/docs/reactivesearch/react/v3/advanced/reactivecomponent.md";
 // import reactivesearch components
 // import NestedListDefault from "./reactivesearch/NestedList.stories";
 // import NestedMultiListDefault from "./reactivesearch/NestedMultiList.stories";
@@ -546,7 +546,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           label: "Under 100 miles",
           location: "London"
         }}
-        placeholder={text("placeholder", "Search Location")}        
+        placeholder={text("placeholder", "Search Location")}
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
         autoLocation={boolean("autoLocation", true)}
         showFilter={boolean("showFilter", true)}
@@ -596,7 +596,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           label: "Under 100 miles",
           location: "London"
         }}
-        placeholder={text("placeholder", "Search Location")}        
+        placeholder={text("placeholder", "Search Location")}
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
         autoLocation={boolean("autoLocation", true)}
         showFilter={boolean("showFilter", true)}
@@ -5147,7 +5147,7 @@ storiesOf("Range components/DatePicker", module)
     )
   )
   .add(
-    "with initialMonth",     
+    "with initialMonth",
     () => (
       <DatePickerRSDefault
         initialMonth={new Date("2017-04-04")}
