@@ -97,6 +97,7 @@ import CustomPopularIcon from './reactivesearch/CustomPopularIcon';
 import ReactiveComponentWithDistinctFieldProp from './reactivesearch/ReactiveComponentWithDistinctFieldProp';
 import SearchBoxWithIndexProp from './reactivesearch/SearchBoxWithIndexProp';
 import MultiListWithIndexProp from './reactivesearch/MultiListWithIndexProp';
+import AIAnswerDefault from "./reactivesearch/AIAnswer.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 import DarkStory from "./reactivesearch/Dark.stories";
@@ -1734,6 +1735,58 @@ storiesOf("Result components/ResultList", module)
       />
     )
   );
+
+storiesOf("Search components/AIAnswer", module)
+	.addDecorator(withKnobs)
+	.addParameters({
+    readme: {
+      // Show readme at the addons panel
+      sidebar: removeFirstLine(SearchBoxReadme, 15),
+    },
+  })
+  .add(
+    "Basic",
+    () => (
+      <AIAnswerDefault />
+    )
+  )
+  .add("With showVoiceInput", () => (
+    <AIAnswerDefault showVoiceInput={boolean("showVoiceInput", true)} />
+  ))
+  .add("With showIcon", () => (
+    <AIAnswerDefault showIcon={boolean("showIcon", true)} />
+  ))
+  .add("With iconPosition", () => (
+    <AIAnswerDefault
+      iconPosition={select("iconPosition", ["left", "right"], "left")}
+    />
+  ))
+  .add("With placeholder", () => (
+    <AIAnswerDefault
+      placeholder={text("placeholder", "Ask something...")}
+    />))
+  .add(
+    "with custom icon",
+    () => (
+      <AIAnswerDefault
+        icon={<div>📚</div>}
+      />
+    )
+  )
+  .add("With showInput", () => (
+    <AIAnswerDefault showInput={boolean("showInput", true)} />
+  ))
+  .add("With enterButton", () => (
+    <AIAnswerDefault enterButton={boolean("enterButton", true)} />
+  ))
+  .add("With renderEnterButton", () => (
+    <AIAnswerDefault renderEnterButton={(cb) => <button style={{height: "100%"}} onClick={cb}>📚</button>} />
+  ))
+  .add("With title", () => (
+    <AIAnswerDefault
+      title={text("title", "AI ChatBox")}
+    />))
+
 
 
 storiesOf("Search components/SearchBox", module)
