@@ -1786,6 +1786,10 @@ storiesOf("Search components/AIAnswer", module)
     <AIAnswerDefault
       title={text("title", "AI ChatBox")}
     />))
+  .add("With themePreset", () => (
+    <AIAnswerDefault
+      themePreset={select("themePreset", ["light", "dark"], "dark")}
+    />))
   .add("With render prop", () => (
     <AIAnswerDefault
       render={({ loading, data, error, rawData }) => {
