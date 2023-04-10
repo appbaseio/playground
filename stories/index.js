@@ -97,6 +97,7 @@ import CustomPopularIcon from './reactivesearch/CustomPopularIcon';
 import ReactiveComponentWithDistinctFieldProp from './reactivesearch/ReactiveComponentWithDistinctFieldProp';
 import SearchBoxWithIndexProp from './reactivesearch/SearchBoxWithIndexProp';
 import MultiListWithIndexProp from './reactivesearch/MultiListWithIndexProp';
+import AIAnswerDefault from "./reactivesearch/AIAnswer.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 import DarkStory from "./reactivesearch/Dark.stories";
@@ -1734,6 +1735,108 @@ storiesOf("Result components/ResultList", module)
       />
     )
   );
+
+storiesOf("Search components/AIAnswer", module)
+	.addDecorator(withKnobs)
+	.addParameters({
+    readme: {
+      // Show readme at the addons panel
+      sidebar: removeFirstLine(SearchBoxReadme, 15),
+    },
+  })
+  .add(
+    "Basic",
+    () => (
+      <AIAnswerDefault />
+    )
+  )
+  .add("With showVoiceInput", () => (
+    <AIAnswerDefault showVoiceInput={boolean("showVoiceInput", true)} />
+  ))
+  .add("With showIcon", () => (
+    <AIAnswerDefault showIcon={boolean("showIcon", true)} />
+  ))
+  .add("With iconPosition", () => (
+    <AIAnswerDefault
+      iconPosition={select("iconPosition", ["left", "right"], "left")}
+    />
+  ))
+  .add("With placeholder", () => (
+    <AIAnswerDefault
+      placeholder={text("placeholder", "Ask something...")}
+    />))
+  .add(
+    "with custom icon",
+    () => (
+      <AIAnswerDefault
+        icon={<div>📚</div>}
+      />
+    )
+  )
+  .add("With showInput", () => (
+    <AIAnswerDefault showInput={boolean("showInput", true)} />
+  ))
+  .add("With enterButton", () => (
+    <AIAnswerDefault enterButton={boolean("enterButton", true)} />
+  ))
+  .add("With renderEnterButton", () => (
+    <AIAnswerDefault renderEnterButton={(cb) => <button style={{height: "100%"}} onClick={cb}>📚</button>} />
+  ))
+  .add("With title", () => (
+    <AIAnswerDefault
+      title={text("title", "AI ChatBox")}
+    />))
+  .add("With themePreset", () => (
+    <AIAnswerDefault
+      themePreset={select("themePreset", ["light", "dark"], "dark")}
+    />))
+  .add("With render prop", () => (
+    <AIAnswerDefault
+      render={({ loading, data, error, rawData }) => {
+					if (loading) {
+						return 'loading...';
+					}
+					if (error) {
+						return <div style={{overflowWrap:"anywhere"}}>{JSON.stringify(error)}</div>;
+					}
+					if (data && Array.isArray(data)) {
+						return (
+							<div style={{ width: '80%', margin: '0 auto', padding: '20px' }}>
+								{data.map((message, index) => {
+									const isSender = message.role === 'user';
+									const messageStyle = {
+										backgroundColor: isSender ? '#cce5ff' : '#f8f9fa',
+										padding: '10px',
+										borderRadius: '7px',
+										marginBottom: '10px',
+										maxWidth: '80%',
+										alignSelf: isSender ? 'flex-end' : 'flex-start',
+										display: 'inline-block',
+										border: '1px solid',
+										color: isSender ? '#004085' : '#383d41',
+										position: 'relative',
+										whiteSpace: 'pre-wrap',
+									};
+									return (
+										<div
+											key={index}
+											style={{
+												display: 'flex',
+												justifyContent: isSender
+													? 'flex-end'
+													: 'flex-start',
+											}}
+										>
+											<div style={messageStyle}>{message.content}</div>
+										</div>
+									);
+								})}
+							</div>
+						);
+					}
+	      }}
+    />))
+
 
 
 storiesOf("Search components/SearchBox", module)
