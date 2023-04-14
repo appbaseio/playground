@@ -106,6 +106,7 @@ import TagCloudDark from "./reactivesearch/TagCloudDark.stories";
 import DatePickerDark from "./reactivesearch/DatePickerDark.stories";
 import DateRangeDark from "./reactivesearch/DateRangeDark.stories";
 import ErrorBoundaryDefault from "./reactivesearch/ErrorBoundary.stories";
+import SearchBoxWithCustomAIRender from "./reactivesearch/SearchBoxWithCustomAIRender.stories";
 
 require("./styles.css");
 
@@ -1851,6 +1852,24 @@ storiesOf("Search components/SearchBox", module)
     "Basic",
     () => (
       <SearchBoxRSDefault placeholder="Search Books..." />
+    )
+  )
+  .add(
+    "With enableAI",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+      />
+    )
+  )
+  .add(
+    "With renderAIAnswer prop",
+    () => (
+      <SearchBoxWithCustomAIRender
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+      />
     )
   )
   .add(
