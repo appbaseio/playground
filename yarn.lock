@@ -64,10 +64,10 @@
     react-slick "^0.24.0"
     slick-carousel "^1.8.1"
 
-"@appbaseio/reactivecore@10.0.0-alpha.7":
-  version "10.0.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-10.0.0-alpha.7.tgz#ac204054fe439e2b58c8c5a190bc981ee9a2a62c"
-  integrity sha512-PAxEwhDumK69WP+C/DeMHbUg4yGJ1MyRtGtM42GUNH7JuC6o4+CDH3SeMCYqQMjBkGXq//L9L3MXkaTOZaWXJg==
+"@appbaseio/reactivecore@10.0.0-alpha.10":
+  version "10.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-10.0.0-alpha.10.tgz#595923181a79b8c7a88d4dfd6b8a5951b8d821f7"
+  integrity sha512-cc5fTjsjPio8dzDHtfwh3KKkns3208lv1d+io+dd6qFrDKJsjBMSQUySQu/mj2ffTgJHlpc3J8HMgPQnWKyZ6A==
   dependencies:
     cross-fetch "^3.0.4"
     dayjs "^1.11.7"
@@ -120,13 +120,13 @@
     react-leaflet "^2.1.3"
     rheostat "^2.1.1"
 
-"@appbaseio/reactivesearch@4.0.0-alpha.3":
-  version "4.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-4.0.0-alpha.3.tgz#70dfbb6dbc4e30e57b62dcb1f696701b81a1b46d"
-  integrity sha512-dHtm1fV+qVApV4YzC3vBu6PwZQLlphB0Z1nEgYMkfKe+f2BxT7TG9DQYd8XR5k+ZfbebWTxxwp6tZ4fbmn8c7Q==
+"@appbaseio/reactivesearch@4.0.0-rc.8":
+  version "4.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-4.0.0-rc.8.tgz#476b2a7c3e5b9703e9b709c6dcbb8030aa93ed6e"
+  integrity sha512-bRf8SXdJr1I6Eu5SWejttPVQj1NrSDFtuM96wIlMWtvynsjpUTBLg5hw9j0FGJf+mbhLkX58GMc0Uu45j0pEgw==
   dependencies:
     "@appbaseio/analytics" "^1.1.1"
-    "@appbaseio/reactivecore" "10.0.0-alpha.7"
+    "@appbaseio/reactivecore" "10.0.0-alpha.10"
     "@appbaseio/rheostat" "^1.0.0-alpha.15"
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
@@ -11087,25 +11087,22 @@ gatsby-plugin-remove-serviceworker@1.0.0:
   integrity sha512-8uQ/6PiM718BTZAgmQeEO6ULrJgLugmDVAkUGv5xxF0luBNrbboDgpsG0z1fbsotSDTzLWyULR0zzGNfWZaY7w==
 
 gatsby-plugin-sharp@^4.9.0:
-  version "4.24.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.24.0.tgz#30fa66295105096b476371dfb36062c1dc7456db"
-  integrity sha512-wVs8F9zLeiLf02yLi8vjse1vqSrZsx2u3RsMhoSv1bEinyaI5bcoLZ7mMJCsEeZe2G9mvNrPi4Ymhh/YzgxYCg==
+  version "4.25.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.25.1.tgz#dcc31bdc698511501acc9b95ba277844c15a7576"
+  integrity sha512-cGRb8lmwJkzwT1Qze0R+VL+55BIb9weM17m+dUf6gs5Z++lQltqge+L8a1qWWsGL6KfLQN7+bIqjhmTTscIPMQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
-    "@gatsbyjs/potrace" "^2.3.0"
     async "^3.2.4"
     bluebird "^3.7.2"
     debug "^4.3.4"
     filenamify "^4.3.0"
     fs-extra "^10.1.0"
-    gatsby-core-utils "^3.24.0"
-    gatsby-plugin-utils "^3.18.0"
+    gatsby-core-utils "^3.25.0"
+    gatsby-plugin-utils "^3.19.0"
     lodash "^4.17.21"
-    mini-svg-data-uri "^1.4.4"
     probe-image-size "^7.2.3"
     semver "^7.3.7"
     sharp "^0.30.7"
-    svgo "^2.8.0"
 
 gatsby-plugin-typescript@^4.24.0:
   version "4.24.0"
@@ -11137,6 +11134,21 @@ gatsby-plugin-utils@^3.18.0:
     mime "^3.0.0"
     mini-svg-data-uri "^1.4.4"
     svgo "^2.8.0"
+
+gatsby-plugin-utils@^3.19.0:
+  version "3.19.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.19.0.tgz#f464b02cc51dcdc0c0e094b7352ee4bf660126ea"
+  integrity sha512-EZtvgHSU5NPbEn6a4cfSpEGCQ09SfwbhoybHTJKj1clop86HSwOCV2iH8RbCc+X6jbdgHaSZsfsl7zG1h7DBUw==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    fastq "^1.13.0"
+    fs-extra "^10.1.0"
+    gatsby-core-utils "^3.25.0"
+    gatsby-sharp "^0.19.0"
+    graphql-compose "^9.0.7"
+    import-from "^4.0.0"
+    joi "^17.4.2"
+    mime "^3.0.0"
 
 gatsby-plugin-webpack-bundle-analyser-v2@^1.1.26:
   version "1.1.30"
@@ -11240,6 +11252,14 @@ gatsby-sharp@^0.18.0:
   version "0.18.0"
   resolved "https://registry.yarnpkg.com/gatsby-sharp/-/gatsby-sharp-0.18.0.tgz#bee4bbae079917afec20d005c9aee75ce7fd0755"
   integrity sha512-tnGWupSZc4y3UgcAR2ENma9WGBYkCdPFy5XrTgAmqjfxw6JDcJz+H3ikHz9SuUgQyMnlv2QdossHwdUBcVeVGw==
+  dependencies:
+    "@types/sharp" "^0.30.5"
+    sharp "^0.30.7"
+
+gatsby-sharp@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/gatsby-sharp/-/gatsby-sharp-0.19.0.tgz#c2c35d885103ebf9d2733737db798312897a716c"
+  integrity sha512-EbI3RNBu2+aaxuMUP/INmoj8vcNAG6BgpFvi1tLeU7/gVTNVQ+7pC/ZYtlVCzSw+faaw7r1ZBMi6F66mNIIz5A==
   dependencies:
     "@types/sharp" "^0.30.5"
     sharp "^0.30.7"
