@@ -1864,6 +1864,19 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add(
+    "With enableAI + askButton + enterButton",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={true}
+        AIUIConfig={{
+          askButton: boolean("askButton", true)
+        }}
+        enterButton={ boolean("enterButton", true)}
+      />
+    )
+  )
+  .add(
     "With renderAIAnswer prop",
     () => (
       <SearchBoxWithCustomAIRender
