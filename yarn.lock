@@ -44,10 +44,10 @@
     lodash "^4.17.21"
     resize-observer-polyfill "^1.5.1"
 
-"@appbaseio/analytics@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@appbaseio/analytics/-/analytics-1.1.1.tgz#398ff80ad3d7d20bc0e66efc1c0b2c50bb2a959e"
-  integrity sha512-8ydvIbn9otjldUHKuYg48nqUvpdC4jMUl6BZNxTWniBnFi5ihxWI94cKabu2+L65uNJR3Aioa1FV0t6d4am2oQ==
+"@appbaseio/analytics@^1.2.0-alpha.1":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@appbaseio/analytics/-/analytics-1.2.0.tgz#e48da3fcd4ca78029aa9981d7e4c9689fe9aa078"
+  integrity sha512-uW5sfj8KjrlFtKKkkIMZJgqjNNOgfPUXgdl3lqEDWrdg7J/tMgkYNM3/s2c4LHsD96aHbrfA+DRHk5M45wgqpA==
   dependencies:
     cross-fetch "^3.0.4"
 
@@ -64,10 +64,10 @@
     react-slick "^0.24.0"
     slick-carousel "^1.8.1"
 
-"@appbaseio/reactivecore@10.0.0-alpha.10":
-  version "10.0.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-10.0.0-alpha.10.tgz#595923181a79b8c7a88d4dfd6b8a5951b8d821f7"
-  integrity sha512-cc5fTjsjPio8dzDHtfwh3KKkns3208lv1d+io+dd6qFrDKJsjBMSQUySQu/mj2ffTgJHlpc3J8HMgPQnWKyZ6A==
+"@appbaseio/reactivecore@10.0.0-alpha.24":
+  version "10.0.0-alpha.24"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-10.0.0-alpha.24.tgz#9c635b52cfbce357dd3e45dad1266c602878cdda"
+  integrity sha512-DTO/kmay7NElyqZq/04vwHM4AeoFsg17yLe3jr8A7aIlJ+u2b8G8OJPEUZGidOCEk2ouy63QxLW76qpYLNtITQ==
   dependencies:
     cross-fetch "^3.0.4"
     dayjs "^1.11.7"
@@ -120,13 +120,13 @@
     react-leaflet "^2.1.3"
     rheostat "^2.1.1"
 
-"@appbaseio/reactivesearch@4.0.0-rc.8":
-  version "4.0.0-rc.8"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-4.0.0-rc.8.tgz#476b2a7c3e5b9703e9b709c6dcbb8030aa93ed6e"
-  integrity sha512-bRf8SXdJr1I6Eu5SWejttPVQj1NrSDFtuM96wIlMWtvynsjpUTBLg5hw9j0FGJf+mbhLkX58GMc0Uu45j0pEgw==
+"@appbaseio/reactivesearch@4.0.0-rc.18.1":
+  version "4.0.0-rc.18.1"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-4.0.0-rc.18.1.tgz#256b9bc09f51e63286ea0a65d0b287375bafffe7"
+  integrity sha512-A9FUGO6ZI0YTvQ95baGv4kut0UXVQfSgUmnIpsljfN5LEFF8iKzQYW0xuiwRBU9Gfu7WWD8In5RgTDCtf9E42w==
   dependencies:
-    "@appbaseio/analytics" "^1.1.1"
-    "@appbaseio/reactivecore" "10.0.0-alpha.10"
+    "@appbaseio/analytics" "^1.2.0-alpha.1"
+    "@appbaseio/reactivecore" "10.0.0-alpha.24"
     "@appbaseio/rheostat" "^1.0.0-alpha.15"
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
@@ -8971,7 +8971,6 @@ dir-glob@^3.0.1:
 
 docs@appbaseio/Docs#dev:
   version "0.0.2"
-  uid a2973363fb9175381bef295fe6f1a72222f671a3
   resolved "https://codeload.github.com/appbaseio/Docs/tar.gz/a2973363fb9175381bef295fe6f1a72222f671a3"
   dependencies:
     "@appbaseio/designkit" "^0.13.0"
@@ -19214,7 +19213,6 @@ scroll-into-view-if-needed@^2.2.25:
 
 "searchbox-showcase@https://github.com/awesome-reactivesearch/searchbox-showcase.git#7b2ff98":
   version "0.1.0"
-  uid "7b2ff981da22d43c4b0e01b8a0035541d1c96db9"
   resolved "https://github.com/awesome-reactivesearch/searchbox-showcase.git#7b2ff981da22d43c4b0e01b8a0035541d1c96db9"
   dependencies:
     bootstrap "^5.2.3"
