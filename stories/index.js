@@ -1864,6 +1864,30 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add(
+    "With enableFAQSuggestions",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        searchboxId="rs_docs"
+      />
+    )
+  )
+  .add(
+    "With FAQSuggestionsConfig",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        FAQSuggestionsConfig={{
+          sectionLabel: "FAQ",
+          size: 2
+        }}
+        searchboxId="rs_docs"
+      />
+    )
+  )
+  .add(
     "With renderAIAnswer prop",
     () => (
       <SearchBoxWithCustomAIRender
