@@ -1869,6 +1869,7 @@ storiesOf("Search components/SearchBox", module)
       <SearchBoxRSDefault
         placeholder="Search Books..."
         enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        enableAI={boolean("enableAI", true)}
         searchboxId="rs_docs"
       />
     )
