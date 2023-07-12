@@ -96,6 +96,7 @@ import CustomRecentIcon from './reactivesearch/CustomRecentIcon';
 import CustomPopularIcon from './reactivesearch/CustomPopularIcon';
 import ReactiveComponentWithDistinctFieldProp from './reactivesearch/ReactiveComponentWithDistinctFieldProp';
 import SearchBoxWithIndexProp from './reactivesearch/SearchBoxWithIndexProp';
+import SearchBoxControlledUsage from "./reactivesearch/SearchBoxControlledUsage.stories";
 import MultiListWithIndexProp from './reactivesearch/MultiListWithIndexProp';
 import AIAnswerDefault from "./reactivesearch/AIAnswer.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
@@ -2120,6 +2121,18 @@ storiesOf("Search components/SearchBox", module)
       <SearchBoxRSDefault
         placeholder="Search Books..."
         onData={action("Data Updated", (props)=>{console.log(props)})}
+      />
+    )
+  )
+  .add(
+    "With controlled usage",
+    () => (
+      <SearchBoxControlledUsage
+        placeholder="Search Books..."
+        showVoiceSearch={boolean("showVoiceSearch", true)}
+        enableAI={boolean("enableAI", false)}
+        enablePopularSuggestions={boolean("enablePopularSuggestions", false)}
+        enableRecentSuggestions={boolean("enableRecentSuggestions", false)}
       />
     )
   )
