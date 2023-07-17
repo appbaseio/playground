@@ -1852,14 +1852,14 @@ storiesOf("Search components/AIAnswer", module)
   .add("With triggerOn - manual", () => (
     <AIAnswerDefault
       title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat"/>}
-      triggerOn={"manual"}
+      triggerOn="manual"
       renderTriggerMessage={<div>Click to trigger AI answer!!</div>}
     />
   ))
   .add("With triggerOn - question", () => (
     <AIAnswerDefault
       title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat"/>}
-      triggerOn={"question"}
+      triggerOn="question"
     />
   ))
   .add("With renderTriggerMessage", () => (
