@@ -21,7 +21,7 @@
     "dependencies": {
         "docs": "appbaseio/Docs#dev",
         "@appbaseio/reactivemaps": "4.0.0-rc",
-        "@appbaseio/reactivesearch": "4.0.0-rc.18.1",
+        "@appbaseio/reactivesearch": "4.0.0-rc.25",
         "moment": "^2.29.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
@@ -49,5 +49,5 @@
     },
     "engines": {
         "node": ">=14.17.1 <17"
-      }      
+    }
 }
