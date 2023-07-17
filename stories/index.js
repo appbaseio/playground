@@ -1877,6 +1877,33 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add(
+    "With triggerOn",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={true}
+        AIUIConfig={{
+          triggerOn: select("mode", ["manual", "question"], "manual"),
+          askButton: true
+        }}
+      />
+    )
+  )
+  .add(
+    "With triggerOn + renderTriggerMessage",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={true}
+        AIUIConfig={{
+          triggerOn: select("mode", ["manual", "question"], "manual"),
+          renderTriggerMessage: <div>Click to trigger AIAnswer</div>,
+          askButton: true
+        }}
+      />
+    )
+  )
+  .add(
     "With renderAIAnswer prop",
     () => (
       <SearchBoxWithCustomAIRender
