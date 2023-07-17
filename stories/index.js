@@ -1851,11 +1851,13 @@ storiesOf("Search components/AIAnswer", module)
   ))
   .add("With triggerOn", () => (
     <AIAnswerDefault
+      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat"/>}
       triggerOn={select("themePtriggerOnreset", ["manual", "question", "always"], "manual")}
     />
   ))
   .add("With renderTriggerMessage", () => (
     <AIAnswerDefault
+      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat"/>}
       triggerOn={select("triggerOn", ["manual", "question", "always"], "manual")}
       renderTriggerMessage={<div>Click to trigger AI answer!!</div>}
     />

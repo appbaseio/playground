@@ -17,20 +17,14 @@ export default class AIAnswerxDefault extends Component {
 				}}
 				{...(this.props.themePreset ? {themePreset: this.props.themePreset} : {})}
 			>
+				<SearchBox
+					dataField={[{field:"original_title", weight:3}, {field:"original_title.search", weight:1}]}
+					componentId="BookSensor"
+					defaultValue={"It Ends with Us"}
+				/>
+				<SelectedFilters componentId="BookSensor" />
 				<div className="row">
-					<div className="col">
-						<SearchBox
-							dataField={[{field:"original_title", weight:3}, {field:"original_title.search", weight:1}]}
-							componentId="BookSensor"
-							defaultValue={"It Ends with Us"}
-						/>
-						<AIAnswer
-							componentId="ai-answer"
-							react={{ and: "BookSensor" }}
-							{...this.props}
-						/>
-						<SelectedFilters componentId="BookSensor" />
-					</div>
+
 					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
@@ -51,6 +45,13 @@ export default class AIAnswerxDefault extends Component {
 								</ReactiveList.ResultListWrapper>
 							)}
 						</ReactiveList>
+					</div>
+					<div className="col">
+						<AIAnswer
+							componentId="ai-answer"
+							react={{ and: "BookSensor" }}
+							{...this.props}
+						/>
 					</div>
 				</div>
 			</ReactiveBase>
