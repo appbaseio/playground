@@ -1837,6 +1837,29 @@ storiesOf("Search components/AIAnswer", module)
 					}
 	      }}
     />))
+  .add("With showSourceDocuments", () => (
+    <AIAnswerDefault showSourceDocuments={boolean("showSourceDocuments", true)} />
+  ))
+  .add("With renderSourceDocument", () => (
+    <AIAnswerDefault
+      showSourceDocuments={true}
+      renderSourceDocument={(obj) => {
+        return <span>❤️ {obj.original_title}</span>;
+        }
+      }
+    />
+  ))
+  .add("With triggerOn", () => (
+    <AIAnswerDefault
+      triggerOn={select("themePtriggerOnreset", ["manual", "question", "always"], "manual")}
+    />
+  ))
+  .add("With renderTriggerMessage", () => (
+    <AIAnswerDefault
+      triggerOn={select("triggerOn", ["manual", "question", "always"], "manual")}
+      renderTriggerMessage={<div>Click to trigger AI answer!!</div>}
+    />
+  ))
 
 
 
