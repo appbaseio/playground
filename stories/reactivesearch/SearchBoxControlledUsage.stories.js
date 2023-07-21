@@ -22,7 +22,13 @@ export default function SearchBoxControlledUsage(props) {
 						dataField={[{field:"original_title", weight:3}, {field:"original_title.search", weight:1}]}
 						componentId="BookSensor"
 						value={value}
-						onChange={(v)=>v?setValue(v): setValue("")}
+						onChange={(v, triggerQuery)=>{
+							v?setValue(v): setValue("")
+							if(props.shouldTriggerQueryWhileTyping){
+								triggerQuery()
+							}
+						}}
+						searchboxId={props.enableFAQSuggestions?"rs_docs":undefined}
 						{...props}
 					/>
 					<SelectedFilters componentId="BookSensor" />

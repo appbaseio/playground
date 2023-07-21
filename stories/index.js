@@ -1871,6 +1871,7 @@ storiesOf("Search components/SearchBox", module)
         placeholder="Search Books..."
         enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
         enableAI={boolean("enableAI", true)}
+        showClear
         searchboxId="rs_docs"
       />
     )
@@ -1882,8 +1883,8 @@ storiesOf("Search components/SearchBox", module)
         placeholder="Search Books..."
         enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
         FAQSuggestionsConfig={{
-          sectionLabel: "FAQ",
-          size: 2
+          sectionLabel: text("sectionLabel", "FAQ"),
+          size: number("suggestionSize", 2),
         }}
         searchboxId="rs_docs"
         />
@@ -2130,9 +2131,12 @@ storiesOf("Search components/SearchBox", module)
       <SearchBoxControlledUsage
         placeholder="Search Books..."
         showVoiceSearch={boolean("showVoiceSearch", true)}
+        showClear
         enableAI={boolean("enableAI", false)}
         enablePopularSuggestions={boolean("enablePopularSuggestions", false)}
         enableRecentSuggestions={boolean("enableRecentSuggestions", false)}
+        enableFAQSuggestions={boolean("enableFAQSuggestions", false)}
+        shouldTriggerQueryWhileTyping={boolean("shouldTriggerQueryWhileTyping", true)}
       />
     )
   )
