@@ -4,3 +4,4 @@ npm-debug.log.*
 storybook-static/
 .yarn-error.log
 npm-debug.log*
+yarn-error.log

@@ -96,6 +96,7 @@ import CustomRecentIcon from './reactivesearch/CustomRecentIcon';
 import CustomPopularIcon from './reactivesearch/CustomPopularIcon';
 import ReactiveComponentWithDistinctFieldProp from './reactivesearch/ReactiveComponentWithDistinctFieldProp';
 import SearchBoxWithIndexProp from './reactivesearch/SearchBoxWithIndexProp';
+import SearchBoxControlledUsage from "./reactivesearch/SearchBoxControlledUsage.stories";
 import MultiListWithIndexProp from './reactivesearch/MultiListWithIndexProp';
 import AIAnswerDefault from "./reactivesearch/AIAnswer.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
@@ -1906,6 +1907,32 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add(
+    "With enableFAQSuggestions",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        enableAI={boolean("enableAI", true)}
+        showClear
+        searchboxId="rs_docs"
+      />
+    )
+  )
+  .add(
+    "With FAQSuggestionsConfig",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        FAQSuggestionsConfig={{
+          sectionLabel: text("sectionLabel", "FAQ"),
+          size: number("suggestionSize", 2),
+        }}
+        searchboxId="rs_docs"
+        />
+    )
+  )
+  .add(
     "With enableAI + askButton + enterButton",
     () => (
       <SearchBoxRSDefault
@@ -2165,6 +2192,21 @@ storiesOf("Search components/SearchBox", module)
       <SearchBoxRSDefault
         placeholder="Search Books..."
         onData={action("Data Updated", (props)=>{console.log(props)})}
+      />
+    )
+  )
+  .add(
+    "With controlled usage",
+    () => (
+      <SearchBoxControlledUsage
+        placeholder="Search Books..."
+        showVoiceSearch={boolean("showVoiceSearch", true)}
+        showClear
+        enableAI={boolean("enableAI", false)}
+        enablePopularSuggestions={boolean("enablePopularSuggestions", false)}
+        enableRecentSuggestions={boolean("enableRecentSuggestions", false)}
+        enableFAQSuggestions={boolean("enableFAQSuggestions", false)}
+        shouldTriggerQueryWhileTyping={boolean("shouldTriggerQueryWhileTyping", true)}
       />
     )
   )
