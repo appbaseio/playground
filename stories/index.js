@@ -120,6 +120,7 @@ function removeFirstLine(str, number = 1) {
 
 // The function removes lines starting with // which crashes storybook
 const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
+const compoundClauseSelector = () => select('compoundClause', ['filter', 'must'], 'filter')
 
 storiesOf("Base components/ReactiveComponent", module)
 	.addDecorator(withKnobs)
@@ -129,6 +130,7 @@ storiesOf("Base components/ReactiveComponent", module)
       sidebar: removeFirstLine(ReactiveComponentReadme, 15),
     },
   })
+  .add("with compoundClause", () => <ReactiveComponentStory compoundClause={compoundClauseSelector()} />)
   .add("A custom component", () => <ReactiveComponentStory />)
   .add("with onData", () => (
     <ReactiveComponentStory onData={action("Data Changed")} />
@@ -192,6 +194,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
       />
     )
   )
+  .add('with compoundClause', () => <GeoDistanceSliderGoogleMap compoundClause={compoundClauseSelector()} />)
   .add(
     "With placeholder",
     () => (
@@ -403,6 +406,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
       />
     )
   )
+  .add('with compoundClause', () => <GeoDistanceDropdownGoogleMap compoundClause={compoundClauseSelector()} />)
   .add(
     "With Country Restrictions",
     () => (
@@ -617,6 +621,7 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
     "Basic",
       () => <ReactiveGoogleMapDefault showMarkerClusters={false} />
   )
+  .add('with compoundClause', () => <ReactiveGoogleMapDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With showMarkerClusters",
       () => (
@@ -763,6 +768,7 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
     "Basic",
       () => <ReactiveOpenStreetMapDefault />
   )
+  .add('with compoundClause', () => <ReactiveOpenStreetMapDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With autoCenter",
       () => (
@@ -957,6 +963,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
       <DynamicRangeSliderDefault />
     )
   )
+  .add('with compoundClause', () => <DynamicRangeSliderDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With title",
    () => (
@@ -1133,6 +1140,7 @@ storiesOf("Base components/TagCloud", module)
       <TagCloudDefault title={text("title", "Cities")} />
     )
   )
+  .add('with compoundClause', () => <TagCloudDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With showCount",
     () => (
@@ -1246,6 +1254,7 @@ storiesOf("Range components/RatingsFilter", module)
       />
     )
   )
+  .add('with compoundClause', () => <RatingsFilterDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With defaultValue",
     () => (
@@ -1295,6 +1304,7 @@ storiesOf("Result components/ReactiveList", module)
       <ReactiveListDefault />
     )
   )
+  .add('with compoundClause', () => <ReactiveListDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With pagination",
    () => (
@@ -1838,6 +1848,38 @@ storiesOf("Search components/AIAnswer", module)
 					}
 	      }}
     />))
+  .add("With showSourceDocuments", () => (
+    <AIAnswerDefault showSourceDocuments={boolean("showSourceDocuments", true)} />
+  ))
+  .add("With renderSourceDocument", () => (
+    <AIAnswerDefault
+      showSourceDocuments={true}
+      renderSourceDocument={(obj) => {
+        return <span>❤️ {obj.original_title}</span>;
+        }
+      }
+    />
+  ))
+  .add("With triggerOn - manual", () => (
+    <AIAnswerDefault
+      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat"/>}
+      triggerOn="manual"
+      renderTriggerMessage={<div>Click to trigger AI answer!!</div>}
+    />
+  ))
+  .add("With triggerOn - question", () => (
+    <AIAnswerDefault
+      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat"/>}
+      triggerOn="question"
+    />
+  ))
+  .add("With renderTriggerMessage", () => (
+    <AIAnswerDefault
+      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat"/>}
+      triggerOn={select("triggerOn", ["manual", "question", "always"], "manual")}
+      renderTriggerMessage={<div>Click to trigger AI answer!!</div>}
+    />
+  ))
 
 
 
@@ -1904,6 +1946,33 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add(
+    "With triggerOn",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={true}
+        AIUIConfig={{
+          triggerOn: select("mode", ["manual", "question"], "manual"),
+          askButton: true
+        }}
+      />
+    )
+  )
+  .add(
+    "With triggerOn + renderTriggerMessage",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={true}
+        AIUIConfig={{
+          triggerOn: select("mode", ["manual", "question"], "manual"),
+          renderTriggerMessage: <div>Click to trigger AIAnswer</div>,
+          askButton: true
+        }}
+      />
+    )
+  )
+  .add(
     "With renderAIAnswer prop",
     () => (
       <SearchBoxWithCustomAIRender
@@ -1930,6 +1999,7 @@ storiesOf("Search components/SearchBox", module)
       />
     )
   )
+  .add('with compoundClause', () => <SearchBoxRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "wihout search icon",
     () => (
@@ -2436,6 +2506,7 @@ storiesOf("Range components/NumberBox", module)
       />
     )
   )
+  .add('with compoundClause', () => <NumberBoxRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With labelPosition",
     () => (
@@ -2572,6 +2643,7 @@ storiesOf("List components/SingleList", module)
       />
     )
   )
+  .add('with compoundClause', () => <SingleListRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With size",
    () => (
@@ -2796,6 +2868,7 @@ storiesOf("List components/MultiList", module)
       />
     )
   )
+  .add('with compoundClause', () => <MultiListRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With size",
    () => (
@@ -3025,6 +3098,7 @@ storiesOf("List components/SingleDropdownList", module)
       />
     )
   )
+  .add('with compoundClause', () => <SingleDropdownListRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With size",
     () => (
@@ -3206,6 +3280,7 @@ storiesOf("List components/MultiDropdownList", module)
       />
     )
   )
+  .add('with compoundClause', () => <MultiDropdownListRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With Placeholder",
     () => (
@@ -3418,6 +3493,7 @@ storiesOf("List components/SingleDataList", module)
       />
     )
   )
+  .add('with compoundClause', () => <SingleDataListRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With defaultValue",
     () => (
@@ -3570,6 +3646,7 @@ storiesOf("List components/MultiDataList", module)
       />
     )
   )
+  .add('with compoundClause', () => <MultiDataListRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With defaultValue",
     () => (
@@ -3710,6 +3787,7 @@ storiesOf("List components/TabDataList", module)
       />
     )
   )
+  .add('with compoundClause', () => <TabDataListDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With showCount",
     () => (
@@ -3765,6 +3843,7 @@ storiesOf("List components/TreeList", module)
       <TreeListRSDefault title={text("title", "Tree List ")} />
     )
   )
+  .add('with compoundClause', () => <TreeListRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "Single Select Mode",
     () => (
@@ -3921,6 +4000,7 @@ storiesOf("Range components/SingleRange", module)
       />
     )
   )
+  .add('with compoundClause', () => <SingleRangeRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With Default Selected",
    () => (
@@ -3990,6 +4070,7 @@ storiesOf("Range components/MultiRange", module)
       />
     )
   )
+  .add('with compoundClause', () => <MultiRangeRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With Default Selected",
     () => (
@@ -4059,6 +4140,7 @@ storiesOf("Range components/SingleDropdownRange", module)
       />
     )
   )
+  .add('with compoundClause', () => <SingleDropdownRangeRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With placeholder",
     () => (
@@ -4128,6 +4210,7 @@ storiesOf("Range components/MultiDropdownRange", module)
       />
     )
   )
+  .add('with compoundClause', () => <MultiDropdownRangeRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With placeholder",
     () => (
@@ -4198,6 +4281,7 @@ storiesOf("Base components/ToggleButton", module)
       />
     )
   )
+  .add('with compoundClause', () => <ToggleButtonRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With Default Selected",
     () => (
@@ -4269,6 +4353,7 @@ storiesOf("Range components/DatePicker", module)
       />
     )
   )
+  .add('with compoundClause', () => <DatePickerRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With placeholder",
     () => (
@@ -4420,6 +4505,7 @@ storiesOf("Range components/DateRange", module)
       />
     )
   )
+  .add('with compoundClause', () => <DateRangeRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With placeholder",
     () => (
@@ -4559,6 +4645,7 @@ storiesOf("Range components/RangeInput", module)
       />
     )
   )
+  .add('with compoundClause', () => <RangeInputRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With Default Selected",
     () => (
@@ -4791,6 +4878,7 @@ storiesOf("Range components/RangeSlider", module)
       />
     )
   )
+  .add('with compoundClause', () => <RangeSliderRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With Default Selected",
     () => (
