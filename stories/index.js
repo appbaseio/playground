@@ -123,8 +123,8 @@ const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
 const compoundClauseSelector = () => select('compoundClause', ['filter', 'must'], 'filter')
 
 storiesOf("Base components/ReactiveComponent", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(ReactiveComponentReadme, 15),
@@ -135,35 +135,35 @@ storiesOf("Base components/ReactiveComponent", module)
   .add("with onData", () => (
     <ReactiveComponentStory onData={action("Data Changed")} />
   ))
-	.add(
+  .add(
     "With distinctField prop",
-   () => (
+    () => (
       <ReactiveComponentWithDistinctFieldProp />
     )
   );
 
 storiesOf("Base components/ErrorBoundary", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(ReactiveComponentReadme, 15),
     },
   })
   .add("default with DynamicRangeSlider", () => <ErrorBoundaryDefault />)
-  .add("with renderError", ()=> <ErrorBoundaryDefault
-          renderError={error => (
-						<div>
-							<h1>Oops! Error occured.</h1>
-							<p>{error.message}</p>
-						</div>
-					)}/>)
+  .add("with renderError", () => <ErrorBoundaryDefault
+    renderError={error => (
+      <div>
+        <h1>Oops! Error occured.</h1>
+        <p>{error.message}</p>
+      </div>
+    )} />)
 
 // Reactivemaps components
 
 storiesOf("Map Components/GeoDistanceSlider", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(GeoDistanceSliderReadme, 12),
@@ -368,8 +368,8 @@ storiesOf("Map Components/GeoDistanceSlider", module)
   );
 
 storiesOf("Map Components/GeoDistanceDropdown", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(GeoDistanceDropdownReadme, 12),
@@ -610,8 +610,8 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
   );
 
 storiesOf("Map Components/ReactiveGoogleMap", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(ReactiveMapReadme, 12),
@@ -619,146 +619,146 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
   })
   .add(
     "Basic",
-      () => <ReactiveGoogleMapDefault showMarkerClusters={false} />
+    () => <ReactiveGoogleMapDefault showMarkerClusters={false} />
   )
   .add('with compoundClause', () => <ReactiveGoogleMapDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With showMarkerClusters",
-      () => (
-        <ReactiveGoogleMapDefault
-          showMarkers
-          showMarkerClusters={boolean("showMarkerClusters", true)}
-        />
-      )
+    () => (
+      <ReactiveGoogleMapDefault
+        showMarkers
+        showMarkerClusters={boolean("showMarkerClusters", true)}
+      />
+    )
   )
   .add(
     "With autoCenter",
-      () => (
-        <ReactiveGoogleMapDefault autoCenter={boolean("autoCenter", true)} />
-      )
+    () => (
+      <ReactiveGoogleMapDefault autoCenter={boolean("autoCenter", true)} />
+    )
   )
   .add(
     "With showSearchAsMove",
-      () => (
-        <ReactiveGoogleMapDefault
-          showSearchAsMove={boolean("showSearchAsMove", true)}
-        />
-      )
+    () => (
+      <ReactiveGoogleMapDefault
+        showSearchAsMove={boolean("showSearchAsMove", true)}
+      />
+    )
   )
   .add(
     "With searchAsMove",
-      () => (
-        <ReactiveGoogleMapDefault
-          searchAsMove={boolean("searchAsMove", false)}
-        />
-      )
-	)
-	.add(
+    () => (
+      <ReactiveGoogleMapDefault
+        searchAsMove={boolean("searchAsMove", false)}
+      />
+    )
+  )
+  .add(
     "With loader",
-      () => (
-        <ReactiveGoogleMapDefault
-          loader={text("loader", "Loading ...")}
-        />
-      )
+    () => (
+      <ReactiveGoogleMapDefault
+        loader={text("loader", "Loading ...")}
+      />
+    )
   )
   .add(
     "With showMapStyles",
-      () => (
-        <ReactiveGoogleMapDefault
-          showMapStyles={boolean("showMapStyles", true)}
-        />
-      )
+    () => (
+      <ReactiveGoogleMapDefault
+        showMapStyles={boolean("showMapStyles", true)}
+      />
+    )
   )
   .add(
     "With defaultMapStyle",
-      () => (
-        <ReactiveGoogleMapDefault
-          defaultMapStyle={select(
-            "defaultMapStyle",
-            {
-              Standard: "Standard",
-              "Blue Essence": "Blue Essence",
-              "Blue Water": "Blue Water",
-              "Flat Map": "Flat Map",
-              "Light Monochrome": "Light Monochrome",
-              "Midnight Commander": "Midnight Commander",
-              "Unsaturated Browns": "Unsaturated Browns"
-            },
-            "Standard"
-          )}
-        />
-      )
+    () => (
+      <ReactiveGoogleMapDefault
+        defaultMapStyle={select(
+          "defaultMapStyle",
+          {
+            Standard: "Standard",
+            "Blue Essence": "Blue Essence",
+            "Blue Water": "Blue Water",
+            "Flat Map": "Flat Map",
+            "Light Monochrome": "Light Monochrome",
+            "Midnight Commander": "Midnight Commander",
+            "Unsaturated Browns": "Unsaturated Browns"
+          },
+          "Standard"
+        )}
+      />
+    )
   )
   .add(
     "With size",
-      () => <ReactiveGoogleMapDefault size={number("size", 100)} />
+    () => <ReactiveGoogleMapDefault size={number("size", 100)} />
   )
   .add(
     "With defaultZoom",
-      () => <ReactiveGoogleMapDefault defaultZoom={number("defaultZoom", 13)} />
+    () => <ReactiveGoogleMapDefault defaultZoom={number("defaultZoom", 13)} />
   )
   .add(
     "With onError",
-      () => <ReactiveGoogleMapDefault onError={action("onError")} />
+    () => <ReactiveGoogleMapDefault onError={action("onError")} />
   )
   .add(
     "With renderError",
-      () => (
-        <ReactiveGoogleMapDefault
-          renderError={() => (
-            <div style={{ color: "red" }}>Something went wrong!</div>
-          )}
-        />
-      )
+    () => (
+      <ReactiveGoogleMapDefault
+        renderError={() => (
+          <div style={{ color: "red" }}>Something went wrong!</div>
+        )}
+      />
+    )
   )
   .add(
     "With defaultCenter",
-      () => (
-        <ReactiveGoogleMapDefault
-          defaultCenter={object("defaultCenter", {
-            lat: 37.74,
-            lng: -122.45
-          })}
-        />
+    () => (
+      <ReactiveGoogleMapDefault
+        defaultCenter={object("defaultCenter", {
+          lat: 37.74,
+          lng: -122.45
+        })}
+      />
     )
   )
   .add(
     "Playground",
-      () => (
-        <ReactiveGoogleMapDefault
-          title={text("title", "Reactive maps")}
-          showMarkerCluster={boolean("showMarkerCluster", true)}
-          autoCenter={boolean("autoCenter", true)}
-          showSearchAsMove={boolean("showSearchAsMove", true)}
-          searchAsMove={boolean("searchAsMove", false)}
-          showMapStyles={boolean("showMapStyles", false)}
-          defaultMapStyle={select(
-            "defaultMapStyle",
-            {
-              Standard: "Standard",
-              "Blue Essence": "Blue Essence",
-              "Blue Water": "Blue Water",
-              "Flat Map": "Flat Map",
-              "Light Monochrome": "Light Monochrome",
-              "Midnight Commander": "Midnight Commander",
-              "Unsaturated Browns": "Unsaturated Browns"
-            },
-            "Standard"
-          )}
-          size={number("size", 100)}
-          defaultZoom={number("defaultZoom", 13)}
-          defaultCenter={object("defaultCenter", {
-            lat: 37.74,
-            lng: -122.45
-          })}
-        />
+    () => (
+      <ReactiveGoogleMapDefault
+        title={text("title", "Reactive maps")}
+        showMarkerCluster={boolean("showMarkerCluster", true)}
+        autoCenter={boolean("autoCenter", true)}
+        showSearchAsMove={boolean("showSearchAsMove", true)}
+        searchAsMove={boolean("searchAsMove", false)}
+        showMapStyles={boolean("showMapStyles", false)}
+        defaultMapStyle={select(
+          "defaultMapStyle",
+          {
+            Standard: "Standard",
+            "Blue Essence": "Blue Essence",
+            "Blue Water": "Blue Water",
+            "Flat Map": "Flat Map",
+            "Light Monochrome": "Light Monochrome",
+            "Midnight Commander": "Midnight Commander",
+            "Unsaturated Browns": "Unsaturated Browns"
+          },
+          "Standard"
+        )}
+        size={number("size", 100)}
+        defaultZoom={number("defaultZoom", 13)}
+        defaultCenter={object("defaultCenter", {
+          lat: 37.74,
+          lng: -122.45
+        })}
+      />
     )
   );
 
 // Stories for OpenStreet Map
 storiesOf("Map Components/ReactiveOpenStreetMap", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(OpenstreetMapReadme, 12),
@@ -766,90 +766,90 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
   })
   .add(
     "Basic",
-      () => <ReactiveOpenStreetMapDefault />
+    () => <ReactiveOpenStreetMapDefault />
   )
   .add('with compoundClause', () => <ReactiveOpenStreetMapDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With autoCenter",
-      () => (
-        <ReactiveOpenStreetMapDefault
-          autoCenter={boolean("autoCenter", true)}
-        />
-      )
-	)
-	.add(
+    () => (
+      <ReactiveOpenStreetMapDefault
+        autoCenter={boolean("autoCenter", true)}
+      />
+    )
+  )
+  .add(
     "With loader",
-      () => (
-        <ReactiveOpenStreetMapDefault
-          loader={text("loader", "Loading ...")}
-        />
-      )
+    () => (
+      <ReactiveOpenStreetMapDefault
+        loader={text("loader", "Loading ...")}
+      />
+    )
   )
   .add(
     "With onError",
-      () => <ReactiveOpenStreetMapDefault onError={action("onError")} />
+    () => <ReactiveOpenStreetMapDefault onError={action("onError")} />
   )
   .add(
     "With renderError",
-      () => (
-        <ReactiveOpenStreetMapDefault
-          renderError={() => (
-            <div style={{ color: "red" }}>Something went wrong!</div>
-          )}
-        />
-      )
+    () => (
+      <ReactiveOpenStreetMapDefault
+        renderError={() => (
+          <div style={{ color: "red" }}>Something went wrong!</div>
+        )}
+      />
+    )
   )
   .add(
     "With size",
-      () => <ReactiveOpenStreetMapDefault size={number("size", 100)} />
+    () => <ReactiveOpenStreetMapDefault size={number("size", 100)} />
   )
   .add(
     "With showSearchAsMove",
-      () => (
-        <ReactiveOpenStreetMapDefault
-          showSearchAsMove={boolean("showSearchAsMove", true)}
-        />
-      )
+    () => (
+      <ReactiveOpenStreetMapDefault
+        showSearchAsMove={boolean("showSearchAsMove", true)}
+      />
+    )
   )
   .add(
     "With searchAsMove",
-      () => (
-        <ReactiveOpenStreetMapDefault
-          searchAsMove={boolean("searchAsMove", false)}
-        />
-      )
+    () => (
+      <ReactiveOpenStreetMapDefault
+        searchAsMove={boolean("searchAsMove", false)}
+      />
+    )
   )
   .add(
     "With defaultZoom",
-      () => (
-        <ReactiveOpenStreetMapDefault defaultZoom={number("defaultZoom", 13)} />
-      )
+    () => (
+      <ReactiveOpenStreetMapDefault defaultZoom={number("defaultZoom", 13)} />
+    )
   )
   .add(
     "With defaultCenter",
-      () => (
-        <ReactiveOpenStreetMapDefault
-          defaultCenter={object("defaultCenter", {
-            lat: 37.74,
-            lng: -122.45
-          })}
-        />
+    () => (
+      <ReactiveOpenStreetMapDefault
+        defaultCenter={object("defaultCenter", {
+          lat: 37.74,
+          lng: -122.45
+        })}
+      />
     )
   )
   .add(
     "Playground",
-      () => (
-        <ReactiveOpenStreetMapDefault
-          title={text("title", "Reactive maps")}
-          showMarkerCluster={boolean("showMarkerCluster", true)}
-          autoCenter={boolean("autoCenter", true)}
-          size={number("size", 100)}
-          defaultZoom={number("defaultZoom", 13)}
-          defaultCenter={object("defaultCenter", {
-            lat: 37.74,
-            lng: -122.45
-          })}
-        />
+    () => (
+      <ReactiveOpenStreetMapDefault
+        title={text("title", "Reactive maps")}
+        showMarkerCluster={boolean("showMarkerCluster", true)}
+        autoCenter={boolean("autoCenter", true)}
+        size={number("size", 100)}
+        defaultZoom={number("defaultZoom", 13)}
+        defaultCenter={object("defaultCenter", {
+          lat: 37.74,
+          lng: -122.45
+        })}
+      />
     )
   );
 
@@ -950,8 +950,8 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
 // 	)));
 
 storiesOf("Range components/DynamicRangeSlider", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(DynamicRangeSliderReadme, 15),
@@ -959,14 +959,14 @@ storiesOf("Range components/DynamicRangeSlider", module)
   })
   .add(
     "Basic",
-   () => (
+    () => (
       <DynamicRangeSliderDefault />
     )
   )
   .add('with compoundClause', () => <DynamicRangeSliderDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With title",
-   () => (
+    () => (
       <DynamicRangeSliderDefault
         title={text("title", "Books")}
       />
@@ -974,7 +974,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
   )
   .add(
     "With labels",
-   () => (
+    () => (
       <DynamicRangeSliderDefault
         title={text("title", "Books")}
         rangeLabels={(min, max) => ({
@@ -986,7 +986,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
   )
   .add(
     "With custom stepValue",
-   () => (
+    () => (
       <DynamicRangeSliderDefault
         stepValue={number("stepValue", 1)}
       />
@@ -994,7 +994,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
   )
   .add(
     "Without histogram",
-   () => (
+    () => (
       <DynamicRangeSliderDefault
         showHistogram={boolean("showHistogram", false)}
       />
@@ -1002,13 +1002,13 @@ storiesOf("Range components/DynamicRangeSlider", module)
   )
   .add(
     "With filters",
-   () => (
+    () => (
       <DynamicRangeSliderDefault showFilter={boolean("showFilter", true)} />
     )
   )
   .add(
     "With defaultValue",
-   () => (
+    () => (
       <DynamicRangeSliderDefault
         defaultValue={() => ({
           start: 500,
@@ -1033,7 +1033,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
   )
   .add(
     "With URLParams",
-   () => (
+    () => (
       <DynamicRangeSliderDefault
         URLParams={boolean("URLParams (not visible on storybook)", true)}
       />
@@ -1041,7 +1041,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
   )
   .add(
     "With tooltipTrigger",
-   () => (
+    () => (
       <DynamicRangeSliderDefault
         tooltipTrigger={text("tooltipTrigger", "always")}
       />
@@ -1049,7 +1049,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
   )
   .add(
     "With loader",
-   () => (
+    () => (
       <DynamicRangeSliderDefault loader="Loading..." />
     )
   )
@@ -1080,7 +1080,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
       <DynamicRangeSliderDefault
         dataField="timestamp"
         title="Date Range Example with queryFormat prop"
-        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+        queryFormat={select('queryFormat', ['date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], 'date')}
       />
     )
   )
@@ -1091,20 +1091,20 @@ storiesOf("Range components/DynamicRangeSlider", module)
         dataField="timestamp"
         title="Date Range Example with calendarInterval prop"
         showHistogram={boolean('showHistogram', true)}
-        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
-        calendarInterval={select('calendarInterval', ['year','quarter','month', 'week','day','hour','minute'],'quarter')}
+        queryFormat={select('queryFormat', ['date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], 'date')}
+        calendarInterval={select('calendarInterval', ['year', 'quarter', 'month', 'week', 'day', 'hour', 'minute'], 'quarter')}
       />
     )
   )
   .add(
     "Playground",
-   () => (
+    () => (
       <DynamicRangeSliderDefault
         title={text("title", "DynamicRangeSlider: Books")}
         showFilter={boolean("showFilter", true)}
         dataField={select(
           "dataField",
-          ["books_count", "original_publication_year", "ratings_count",'timestamp'],
+          ["books_count", "original_publication_year", "ratings_count", 'timestamp'],
           "books_count"
         )}
         defaultValue={(min, max) => ({
@@ -1114,15 +1114,15 @@ storiesOf("Range components/DynamicRangeSlider", module)
         stepValue={number("stepValue", 1)}
         showHistogram={boolean("showHistogram", true)}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
-        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
-        calendarInterval={select('calendarInterval', ['year','quarter','month', 'week','day','hour','minute'],'month')}
+        queryFormat={select('queryFormat', ['date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], 'date')}
+        calendarInterval={select('calendarInterval', ['year', 'quarter', 'month', 'week', 'day', 'hour', 'minute'], 'month')}
       />
     )
   );
 
 storiesOf("Base components/TagCloud", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(TagCloudReadme, 15),
@@ -1233,8 +1233,8 @@ storiesOf("Base components/TagCloud", module)
   );
 
 storiesOf("Range components/RatingsFilter", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(RatingsFilterReadme, 15),
@@ -1291,8 +1291,8 @@ storiesOf("Range components/RatingsFilter", module)
 
 
 storiesOf("Result components/ReactiveList", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(ReactiveListReadme, 15),
@@ -1300,14 +1300,14 @@ storiesOf("Result components/ReactiveList", module)
   })
   .add(
     "Basic",
-   () => (
+    () => (
       <ReactiveListDefault />
     )
   )
   .add('with compoundClause', () => <ReactiveListDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With pagination",
-   () => (
+    () => (
       <ReactiveListDefault
         pagination={boolean("pagination", true)}
         paginationAt={select(
@@ -1315,21 +1315,21 @@ storiesOf("Result components/ReactiveList", module)
           { bottom: "bottom", top: "top", both: "both" },
           "bottom"
         )}
-				pages={number("pages", 5)}
-				showEndPage={boolean("showEndPage", false)}
+        pages={number("pages", 5)}
+        showEndPage={boolean("showEndPage", false)}
         title="Meetups"
       />
     )
   )
   .add(
     "With infinite loading",
-   () => (
+    () => (
       <ReactiveListDefault pagination={false} />
     )
   )
   .add(
     "With scrollTarget",
-   () => (
+    () => (
       <ReactiveListDefault
         pagination={false}
         scrollTarget={text("scrollTarget", "results")}
@@ -1339,7 +1339,7 @@ storiesOf("Result components/ReactiveList", module)
   )
   .add(
     "With custom sort order",
-   () => (
+    () => (
       <ReactiveListDefault
         sortBy={select("sortBy", { asc: "asc", desc: "desc" }, "asc")}
       />
@@ -1347,7 +1347,7 @@ storiesOf("Result components/ReactiveList", module)
   )
   .add(
     "With Sort Options",
-   () => (
+    () => (
       <ReactiveListDefault
         sortOptions={[
           {
@@ -1371,75 +1371,75 @@ storiesOf("Result components/ReactiveList", module)
   )
   .add(
     "With onQueryChange",
-   () => (
+    () => (
       <ReactiveListDefault onQueryChange={action("Query Changed")} />
     )
   )
   .add(
     "With onData",
-   () => (
+    () => (
       <ReactiveListDefault onData={action("Data Changed")} />
     )
   )
   .add(
     "With renderResultStats",
-   () => (
+    () => (
       <ReactiveListDefault
-				pagination
+        pagination
         renderResultStats={({
           numberOfResults,
           numberOfPages,
           time,
           currentPage,
-					...rest
+          ...rest
         }) => {
-					return (
-						<span>
-							<h3 style={{ color: 'green' }}>
-								{numberOfResults} found in {time}.
-							</h3>{' '}
-							<h4>
-								Page {(currentPage+1)}/{numberOfPages}
-							</h4>
-						</span>
-					)
-				}}
+          return (
+            <span>
+              <h3 style={{ color: 'green' }}>
+                {numberOfResults} found in {time}.
+              </h3>{' '}
+              <h4>
+                Page {(currentPage + 1)}/{numberOfPages}
+              </h4>
+            </span>
+          )
+        }}
       />
     )
   )
-	.add(
+  .add(
     "With distinctField prop",
-   () => (
+    () => (
       <ReactiveListDefault
-				distinctField="authors.keyword"
-				distinctFieldConfig={{
-					inner_hits: {
-						name: 'most_recent',
-						size: 5,
-						sort: [{ timestamp: 'asc' }],
-					},
-					max_concurrent_group_searches: 4,
-				}}
-			/>
+        distinctField="authors.keyword"
+        distinctFieldConfig={{
+          inner_hits: {
+            name: 'most_recent',
+            size: 5,
+            sort: [{ timestamp: 'asc' }],
+          },
+          max_concurrent_group_searches: 4,
+        }}
+      />
     )
   )
-	.add(
+  .add(
     "With renderNoResults prop",
-   () => (
+    () => (
       <ReactiveListDefault
-       dataField=""
-       renderNoResults={() => <p>No Results Found!</p>}
-			/>
+        dataField=""
+        renderNoResults={() => <p>No Results Found!</p>}
+      />
     )
   )
-	.add(
+  .add(
     "With renderItem prop",
-   () => (
+    () => (
       <ReactiveListDefault
-       renderItem={
-        (data) => {
+        renderItem={
+          (data) => {
             return (
-              <div style={{ display: 'flex', flexDirection: "column", width: "250px", padding: "1rem", margin:"5px", boxShadow: "0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)", background: "white" }} key={data._id}>
+              <div style={{ display: 'flex', flexDirection: "column", width: "250px", padding: "1rem", margin: "5px", boxShadow: "0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)", background: "white" }} key={data._id}>
                 <img src={data.image} alt="Book Cover" style={{ height: "220px", width: "100%", objectFit: 'cover', marginBottom: ".5rem" }} />
                 <div style={{}}>
                   <h3 style={{ margin: "0" }} className="book-header">{data.original_title}</h3>
@@ -1466,13 +1466,13 @@ storiesOf("Result components/ReactiveList", module)
               </div>
             );
           }
-       }
-			/>
+        }
+      />
     )
   )
   .add(
     "Playground",
-   () => (
+    () => (
       <ReactiveListDefault
         title={text("title", "ReactiveList: Results")}
         dataField={select(
@@ -1519,8 +1519,8 @@ storiesOf("Result components/ReactiveList", module)
   );
 
 storiesOf("Result components/ResultCard", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(ResultCardReadme, 15),
@@ -1593,7 +1593,7 @@ storiesOf("Result components/ResultCard", module)
     "With onData",
     () => (
       <ResultCardDefault onData={action("Data Changed")} />
-  ))
+    ))
   .add(
     "Playground",
     () => (
@@ -1633,8 +1633,8 @@ storiesOf("Result components/ResultCard", module)
   );
 
 storiesOf("Result components/ResultList", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(ResultListReadme, 15),
@@ -1642,31 +1642,31 @@ storiesOf("Result components/ResultList", module)
   })
   .add(
     "Basic",
-   () => (
+    () => (
       <ResultListDefault />
     )
   )
   .add(
     "With size",
-   () => (
+    () => (
       <ResultListDefault size={text("size", 5)} />
     )
   )
   .add(
     "Hide resultStats",
-   () => (
+    () => (
       <ResultListDefault showResultStats={boolean("showResultStats", false)} />
     )
   )
   .add(
     "With infinite loading",
-   () => (
+    () => (
       <ResultListDefault size={10} pagination={false} />
     )
   )
   .add(
     "With pagination",
-   () => (
+    () => (
       <ResultListDefault
         pagination={boolean("pagination", true)}
         paginationAt={text("paginationAt", "bottom")}
@@ -1675,13 +1675,13 @@ storiesOf("Result components/ResultList", module)
   )
   .add(
     "With onQueryChange",
-   () => (
+    () => (
       <ResultListDefault onQueryChange={action("Query Changed")} />
     )
   )
   .add(
     "With Sort Options",
-   () => (
+    () => (
       <ResultListDefault
         sortOptions={[
           {
@@ -1711,7 +1711,7 @@ storiesOf("Result components/ResultList", module)
   )
   .add(
     "Playground",
-   () => (
+    () => (
       <ResultListDefault
         title={text("title", "Cars result")}
         dataField={select(
@@ -1749,8 +1749,8 @@ storiesOf("Result components/ResultList", module)
   );
 
 storiesOf("Search components/AIAnswer", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(SearchBoxReadme, 15),
@@ -1792,7 +1792,7 @@ storiesOf("Search components/AIAnswer", module)
     <AIAnswerDefault enterButton={boolean("enterButton", true)} />
   ))
   .add("With renderEnterButton", () => (
-    <AIAnswerDefault renderEnterButton={(cb) => <button style={{height: "100%"}} onClick={cb}>📚</button>} />
+    <AIAnswerDefault renderEnterButton={(cb) => <button style={{ height: "100%" }} onClick={cb}>📚</button>} />
   ))
   .add("With title", () => (
     <AIAnswerDefault
@@ -1805,48 +1805,48 @@ storiesOf("Search components/AIAnswer", module)
   .add("With render prop", () => (
     <AIAnswerDefault
       render={({ loading, data, error, rawData }) => {
-					if (loading) {
-						return 'loading...';
-					}
-					if (error) {
-						return <div style={{overflowWrap:"anywhere"}}>{JSON.stringify(error)}</div>;
-					}
-					if (data && Array.isArray(data)) {
-						return (
-							<div style={{ width: '80%', margin: '0 auto', padding: '20px' }}>
-								{data.map((message, index) => {
-									const isSender = message.role === 'user';
-									const messageStyle = {
-										backgroundColor: isSender ? '#cce5ff' : '#f8f9fa',
-										padding: '10px',
-										borderRadius: '7px',
-										marginBottom: '10px',
-										maxWidth: '80%',
-										alignSelf: isSender ? 'flex-end' : 'flex-start',
-										display: 'inline-block',
-										border: '1px solid',
-										color: isSender ? '#004085' : '#383d41',
-										position: 'relative',
-										whiteSpace: 'pre-wrap',
-									};
-									return (
-										<div
-											key={index}
-											style={{
-												display: 'flex',
-												justifyContent: isSender
-													? 'flex-end'
-													: 'flex-start',
-											}}
-										>
-											<div style={messageStyle}>{message.content}</div>
-										</div>
-									);
-								})}
-							</div>
-						);
-					}
-	      }}
+        if (loading) {
+          return 'loading...';
+        }
+        if (error) {
+          return <div style={{ overflowWrap: "anywhere" }}>{JSON.stringify(error)}</div>;
+        }
+        if (data && Array.isArray(data)) {
+          return (
+            <div style={{ width: '80%', margin: '0 auto', padding: '20px' }}>
+              {data.map((message, index) => {
+                const isSender = message.role === 'user';
+                const messageStyle = {
+                  backgroundColor: isSender ? '#cce5ff' : '#f8f9fa',
+                  padding: '10px',
+                  borderRadius: '7px',
+                  marginBottom: '10px',
+                  maxWidth: '80%',
+                  alignSelf: isSender ? 'flex-end' : 'flex-start',
+                  display: 'inline-block',
+                  border: '1px solid',
+                  color: isSender ? '#004085' : '#383d41',
+                  position: 'relative',
+                  whiteSpace: 'pre-wrap',
+                };
+                return (
+                  <div
+                    key={index}
+                    style={{
+                      display: 'flex',
+                      justifyContent: isSender
+                        ? 'flex-end'
+                        : 'flex-start',
+                    }}
+                  >
+                    <div style={messageStyle}>{message.content}</div>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        }
+      }}
     />))
   .add("With showSourceDocuments", () => (
     <AIAnswerDefault showSourceDocuments={boolean("showSourceDocuments", true)} />
@@ -1856,26 +1856,26 @@ storiesOf("Search components/AIAnswer", module)
       showSourceDocuments={true}
       renderSourceDocument={(obj) => {
         return <span>❤️ {obj.original_title}</span>;
-        }
+      }
       }
     />
   ))
   .add("With triggerOn - manual", () => (
     <AIAnswerDefault
-      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat"/>}
+      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat" />}
       triggerOn="manual"
       renderTriggerMessage={<div>Click to trigger AI answer!!</div>}
     />
   ))
   .add("With triggerOn - question", () => (
     <AIAnswerDefault
-      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat"/>}
+      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat" />}
       triggerOn="question"
     />
   ))
   .add("With renderTriggerMessage", () => (
     <AIAnswerDefault
-      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat"/>}
+      title={<img src="https://w7.pngwing.com/pngs/287/964/png-transparent-computer-icons-information-online-chat-answer-icon-miscellaneous-text-logo-thumbnail.png" height="30px" alt="ai-chat" />}
       triggerOn={select("triggerOn", ["manual", "question", "always"], "manual")}
       renderTriggerMessage={<div>Click to trigger AI answer!!</div>}
     />
@@ -1884,8 +1884,8 @@ storiesOf("Search components/AIAnswer", module)
 
 
 storiesOf("Search components/SearchBox", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(SearchBoxReadme, 15),
@@ -1895,15 +1895,6 @@ storiesOf("Search components/SearchBox", module)
     "Basic",
     () => (
       <SearchBoxRSDefault placeholder="Search Books..." />
-    )
-  )
-  .add(
-    "With enableAI",
-    () => (
-      <SearchBoxRSDefault
-        placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
-      />
     )
   )
   .add(
@@ -1929,55 +1920,6 @@ storiesOf("Search components/SearchBox", module)
           size: number("suggestionSize", 2),
         }}
         searchboxId="rs_docs"
-        />
-    )
-  )
-  .add(
-    "With enableAI + askButton + enterButton",
-    () => (
-      <SearchBoxRSDefault
-        placeholder="Search Books..."
-        enableAI={true}
-        AIUIConfig={{
-          askButton: boolean("askButton", true)
-        }}
-        enterButton={ boolean("enterButton", true)}
-      />
-    )
-  )
-  .add(
-    "With triggerOn",
-    () => (
-      <SearchBoxRSDefault
-        placeholder="Search Books..."
-        enableAI={true}
-        AIUIConfig={{
-          triggerOn: select("mode", ["manual", "question"], "manual"),
-          askButton: true
-        }}
-      />
-    )
-  )
-  .add(
-    "With triggerOn + renderTriggerMessage",
-    () => (
-      <SearchBoxRSDefault
-        placeholder="Search Books..."
-        enableAI={true}
-        AIUIConfig={{
-          triggerOn: select("mode", ["manual", "question"], "manual"),
-          renderTriggerMessage: <div>Click to trigger AIAnswer</div>,
-          askButton: true
-        }}
-      />
-    )
-  )
-  .add(
-    "With renderAIAnswer prop",
-    () => (
-      <SearchBoxWithCustomAIRender
-        placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
       />
     )
   )
@@ -2090,14 +2032,14 @@ storiesOf("Search components/SearchBox", module)
         strictSelection={boolean("strictSelection", true)}
       />
     )
-	)
-	.add(
+  )
+  .add(
     "with searchOperators",
     () => (
       <SearchBoxRSDefault searchOperators={boolean("searchOperators", true)} placeholder="Search Books..." />
     )
-	)
-	.add(
+  )
+  .add(
     "with showVoiceSearch",
     () => (
       <SearchBoxRSDefault showVoiceSearch={boolean("showVoiceSearch", true)} placeholder="Search Books..." />
@@ -2191,7 +2133,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        onData={action("Data Updated", (props)=>{console.log(props)})}
+        onData={action("Data Updated", (props) => { console.log(props) })}
       />
     )
   )
@@ -2272,7 +2214,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        onValueSelected={action("onValueSelected", (valueSelected, cause) => { console.log(valueSelected, cause);})}
+        onValueSelected={action("onValueSelected", (valueSelected, cause) => { console.log(valueSelected, cause); })}
       />
     )
   )
@@ -2303,125 +2245,208 @@ storiesOf("Search components/SearchBox", module)
       />
     )
   )
-	.add(
-		"With enablePopularSuggestions & popularSuggestionsConfig",
-		() => (
-			<SearchBoxRSDefault
+  .add(
+    "With enablePopularSuggestions & popularSuggestionsConfig",
+    () => (
+      <SearchBoxRSDefault
         enablePopularSuggestions={boolean('enablePopularSuggestions', true)}
         popularSuggestionsConfig={object("popularSuggestionsConfig", {
           size: 3,
-					minChars:  3,
+          minChars: 3,
           index: 'good-books-ds',
           showGlobal: false
         })}
-			/>
-		)
+      />
+    )
   )
   .add(
-		"With enableRecentSuggestions & recentSuggestionsConfig",
-		() => (
-			<SearchBoxRSDefault
+    "With enableRecentSuggestions & recentSuggestionsConfig",
+    () => (
+      <SearchBoxRSDefault
         enableRecentSuggestions={boolean('enableRecentSuggestions', true)}
         recentSuggestionsConfig={object("recentSuggestionsConfig", {
           size: 3,
           minChars: 3,
-          minHits:  2,
+          minHits: 2,
           index: 'good-books-ds'
         })}
-			/>
-		)
+      />
+    )
   )
   .add(
-		"With applyStopwords prop",
-		() => (
-			<SearchBoxRSDefault
+    "With applyStopwords prop",
+    () => (
+      <SearchBoxRSDefault
         applyStopwords={boolean("applyStopwords", true)}
-			/>
-		)
+      />
+    )
   )
   .add(
-		"With customStopwords prop",
-		() => (
-			<SearchBoxRSDefault
-        customStopwords={array("customStopwords", ['and','the'])}
-			/>
-		)
-	)
-	.add(
+    "With customStopwords prop",
+    () => (
+      <SearchBoxRSDefault
+        customStopwords={array("customStopwords", ['and', 'the'])}
+      />
+    )
+  )
+  .add(
     "With distinctField prop",
-   () => (
+    () => (
       <SearchBoxRSDefault
-				title="DataSearch"
-				dataField={['original_title', 'original_title.search']}
-				distinctField="authors.keyword"
-				distinctFieldConfig={{
-					inner_hits: {
-						name: 'most_recent',
-						size: 5,
-						sort: [{ timestamp: 'asc' }],
-					},
-					max_concurrent_group_searches: 4,
-				}}
-				componentId="BookSensor"
-			/>
+        title="DataSearch"
+        dataField={['original_title', 'original_title.search']}
+        distinctField="authors.keyword"
+        distinctFieldConfig={{
+          inner_hits: {
+            name: 'most_recent',
+            size: 5,
+            sort: [{ timestamp: 'asc' }],
+          },
+          max_concurrent_group_searches: 4,
+        }}
+        componentId="BookSensor"
+      />
     )
   )
-	.add(
+  .add(
     "With index prop",
-   () => (
+    () => (
       <SearchBoxWithIndexProp />
-		)
-	)
-  	.add(
+    )
+  )
+  .add(
     "With autoFocus prop",
-   () => (
+    () => (
       <SearchBoxRSDefault
-				autoFocus
-			/>
+        autoFocus
+      />
     )
   )
-  	.add(
+  .add(
     "With focusShortcuts prop",
-   () => (
+    () => (
       <SearchBoxRSDefault
-				focusShortcuts={['r']}
-				placeholder='Press "r" to focus the searchbox'
-			/>
+        focusShortcuts={['r']}
+        placeholder='Press "r" to focus the searchbox'
+      />
     )
   )
-    	.add(
+  .add(
     "With addonBefore prop",
-   () => (
+    () => (
       <SearchBoxRSDefault
-				addonBefore={<h3> Before</h3>}
-			/>
+        addonBefore={<h3> Before</h3>}
+      />
     )
   )
-    	.add(
+  .add(
     "With addonAfter prop",
-   () => (
+    () => (
       <SearchBoxRSDefault
-				addonAfter={<h3> After</h3>}
-			/>
+        addonAfter={<h3> After</h3>}
+      />
     )
   )
-    	.add(
+  .add(
     "With addonBefore & addonAfter prop",
-   () => (
+    () => (
       <SearchBoxRSDefault
-	   			addonBefore={<h3> Before</h3>}
-				addonAfter={<h3> After</h3>}
-			/>
+        addonBefore={<h3> Before</h3>}
+        addonAfter={<h3> After</h3>}
+      />
     )
   )
-    	.add(
+  .add(
     "With expandSuggestionsContainer prop",
-   () => (
+    () => (
       <SearchBoxRSDefault
-	   			addonBefore={<h3> Before</h3>}
-				addonAfter={<h3> After</h3>}
-	   			expandSuggestionsContainer={boolean("expandSuggestionsContainer",false)}
-			/>
+        addonBefore={<h3> Before</h3>}
+        addonAfter={<h3> After</h3>}
+        expandSuggestionsContainer={boolean("expandSuggestionsContainer", false)}
+      />
+    )
+  )
+  .add(
+    "With enableAI",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+      />
+    )
+  )
+  .add(
+    "With enableAI & askButton & enterButton",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+        AIUIConfig={{
+          askButton: boolean("askButton", true)
+        }}
+        enterButton={boolean("enterButton", true)}
+      />
+    )
+  ).add(
+    "With enableAI & showSourceDocuments",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+        AIUIConfig={{
+          showSourceDocuments: boolean("showSourceDocuments", true)
+        }}
+      />
+    )
+  ).add(
+    "With enableAI & renderSourceDocument",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+        AIUIConfig={{
+          showSourceDocuments: true,
+          renderSourceDocument: (obj) => {
+            return <span>❤️ {obj.original_title}</span>
+          }
+        }}
+      />
+    )
+  )
+  .add(
+    "With enableAI & triggerOn",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+        AIUIConfig={{
+          triggerOn: select("mode", ["manual", "question"], "manual"),
+          askButton: true
+        }}
+      />
+    )
+  )
+  .add(
+    "With enableAI & triggerOn & renderTriggerMessage",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+        AIUIConfig={{
+          triggerOn: select("mode", ["manual", "question"], "manual"),
+          renderTriggerMessage: text("renderTriggerMessage", "Click to trigger AI 🤖"),
+          askButton: true
+        }}
+      />
+    )
+  )
+  .add(
+    "With enableAI & renderAIAnswer prop",
+    () => (
+      <SearchBoxWithCustomAIRender
+        placeholder="Search Books..."
+        enableAI={true}
+      />
     )
   )
   .add(
@@ -2429,7 +2454,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         title={text("title", "DataSearch: Books...")}
-        dataField={array("dataField", [{field:"original_title", weight:3}, {field:"original_title.search", weight:1}])}
+        dataField={array("dataField", [{ field: "original_title", weight: 3 }, { field: "original_title.search", weight: 1 }])}
         placeholder={text("placeholder", "Search Books...")}
         autosuggest={boolean("autosuggest", true)}
         defaultValue={text("defaultValue", "")}
@@ -2442,8 +2467,8 @@ storiesOf("Search components/SearchBox", module)
         filterLabel={text("filterLabel", "Books filter")}
         highlight={boolean("highlight", false)}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
-        onValueSelected={action("onValueSelected called with", (value, cause)=>{console.log(value,cause)})}
-	      autoFocus={boolean('autoFocus', true)}
+        onValueSelected={action("onValueSelected called with", (value, cause) => { console.log(value, cause) })}
+        autoFocus={boolean('autoFocus', true)}
         focusShortcuts={array('focusShortcuts', ['/', 'r', 't'])}
         addonBefore={text('addonBefore', 'Before')}
         addonAfter={text('addonAfter', 'After')}
@@ -2452,7 +2477,7 @@ storiesOf("Search components/SearchBox", module)
         enablePopularSuggestions={boolean('enablePopularSuggestions', true)}
         popularSuggestionsConfig={object("popularSuggestionsConfig", {
           size: 3,
-          minChars:  3,
+          minChars: 3,
           index: 'good-books-ds',
           showGlobal: false
         })}
@@ -2460,18 +2485,18 @@ storiesOf("Search components/SearchBox", module)
         recentSuggestionsConfig={object("recentSuggestionsConfig", {
           size: 3,
           minChars: 3,
-          minHits:  2,
+          minHits: 2,
           index: 'good-books-ds'
         })}
         applyStopwords={boolean("applyStopwords", true)}
-        customStopwords={array("customStopwords", ['and','the'])}
+        customStopwords={array("customStopwords", ['and', 'the'])}
       />
     )
   );
 
 storiesOf("Range components/NumberBox", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(NumberBoxReadme, 15),
@@ -2617,8 +2642,8 @@ storiesOf("Range components/NumberBox", module)
   );
 
 storiesOf("List components/SingleList", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(SingleListReadme, 15),
@@ -2626,7 +2651,7 @@ storiesOf("List components/SingleList", module)
   })
   .add(
     "Basic",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2635,7 +2660,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "With title",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2646,7 +2671,7 @@ storiesOf("List components/SingleList", module)
   .add('with compoundClause', () => <SingleListRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With size",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2656,7 +2681,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "Without count",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2666,7 +2691,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "With renderItem",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2681,7 +2706,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "With custom renderer",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2701,7 +2726,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "Without Search",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch={boolean("showSearch", false)}
         placeholder="Search Books"
@@ -2710,7 +2735,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "With filter",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2721,7 +2746,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "Wihout radio buttons",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2731,7 +2756,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "Default Selected",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         defaultValue="A Beautiful Dark"
@@ -2741,7 +2766,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "Custom Sort",
-   () => (
+    () => (
       <SingleListRSDefault
         title="SingleList: Custom Sort"
         showSearch
@@ -2756,7 +2781,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "With Select All",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         selectAllLabel={text("selectAllLabel", "All Books")}
@@ -2766,7 +2791,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "With URLParams",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2776,7 +2801,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "With loader",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2786,7 +2811,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "extending onValueChange",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2794,9 +2819,9 @@ storiesOf("List components/SingleList", module)
       />
     )
   )
-	.add(
+  .add(
     "With enableStrictSelection",
-   () => (
+    () => (
       <SingleListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2814,7 +2839,7 @@ storiesOf("List components/SingleList", module)
   )
   .add(
     "Playground",
-   () => (
+    () => (
       <SingleListRSDefault
         title={text("title", "SingleList: Books Filter")}
         dataField={select(
@@ -2842,8 +2867,8 @@ storiesOf("List components/SingleList", module)
   );
 
 storiesOf("List components/MultiList", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(MultiListReadme, 15),
@@ -2851,7 +2876,7 @@ storiesOf("List components/MultiList", module)
   })
   .add(
     "Basic",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2860,7 +2885,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "With title",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2871,7 +2896,7 @@ storiesOf("List components/MultiList", module)
   .add('with compoundClause', () => <MultiListRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With size",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2881,7 +2906,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "With filter",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2892,7 +2917,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "With queryFormat",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2902,7 +2927,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "Without count",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2912,7 +2937,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "With renderItem",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2927,7 +2952,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "With custom renderer",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2947,7 +2972,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "Without Search",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch={boolean("showSearch", false)}
         placeholder="Search Books"
@@ -2956,7 +2981,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "Without checkbox",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -2966,7 +2991,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "Default Selected",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         defaultValue={["Hercule Poirot", "Anita Blake"]}
@@ -2976,7 +3001,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "Custom Sort",
-   () => (
+    () => (
       <MultiListRSDefault
         title="MultiList: Custom Sort"
         showSearch
@@ -2991,7 +3016,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "With Select All",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         selectAllLabel={text("selectAllLabel", "All Books")}
@@ -3001,7 +3026,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "With URLParams",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -3011,7 +3036,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "extending with onValueChange",
-   () => (
+    () => (
       <MultiListRSDefault
         showSearch
         placeholder="Search Books"
@@ -3021,13 +3046,13 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "with loader",
-   () => (
+    () => (
       <MultiListRSDefault />
     )
   )
-	.add(
+  .add(
     "with index prop",
-   () => (
+    () => (
       <MultiListWithIndexProp
         showSearch
         placeholder="Search Books"
@@ -3045,7 +3070,7 @@ storiesOf("List components/MultiList", module)
   )
   .add(
     "Playground",
-   () => (
+    () => (
       <MultiListRSDefault
         title={text("title", "MultiList: Books Filter")}
         dataField={select(
@@ -3077,8 +3102,8 @@ storiesOf("List components/MultiList", module)
   );
 
 storiesOf("List components/SingleDropdownList", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(SingleDropdownListReadme, 15),
@@ -3259,8 +3284,8 @@ storiesOf("List components/SingleDropdownList", module)
   );
 
 storiesOf("List components/MultiDropdownList", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(MultiDropdownListReadme, 15),
@@ -3367,8 +3392,8 @@ storiesOf("List components/MultiDropdownList", module)
         placeholder="Select Books"
         size={100}
         sortBy="count"
-				defaultValue={["A Beautiful Dark", "44 Scotland Street"]}
-			/>
+        defaultValue={["A Beautiful Dark", "44 Scotland Street"]}
+      />
     )
   )
   .add(
@@ -3472,8 +3497,8 @@ storiesOf("List components/MultiDropdownList", module)
   );
 
 storiesOf("List components/SingleDataList", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(SingleDataListReadme, 15),
@@ -3599,7 +3624,7 @@ storiesOf("List components/SingleDataList", module)
       </SingleDataListRSDefault>
     )
   )
-	.add(
+  .add(
     "With enableStrictSelection",
     () => (
       <SingleDataListRSDefault enableStrictSelection />
@@ -3625,8 +3650,8 @@ storiesOf("List components/SingleDataList", module)
   );
 
 storiesOf("List components/MultiDataList", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(MultiDataListReadme, 15),
@@ -3775,7 +3800,7 @@ storiesOf("List components/MultiDataList", module)
     )
   );
 storiesOf("List components/TabDataList", module)
-	.addDecorator(withKnobs)
+  .addDecorator(withKnobs)
   .add(
     "Basic",
     () => (
@@ -3795,7 +3820,7 @@ storiesOf("List components/TabDataList", module)
         showCount={boolean("showCount", true)}
       />
     )
-    )
+  )
   .add(
     "With showRadio",
     () => (
@@ -3821,12 +3846,12 @@ storiesOf("List components/TabDataList", module)
     )
   )
   .add(
-        "With Select All",
-        () => (
-          <TabDataListDefault
-            selectAllLabel={text("selectAllLabel","All")}
-          />
-        )
+    "With Select All",
+    () => (
+      <TabDataListDefault
+        selectAllLabel={text("selectAllLabel", "All")}
+      />
+    )
   )
 
 storiesOf("List components/TreeList", module)
@@ -3922,10 +3947,10 @@ storiesOf("List components/TreeList", module)
       <TreeListRSDefault
         showIcon
         icon={
-			  	<span role="img" aria-label="folder-icon">
-			  		🦷
-			  	</span>
-			  }
+          <span role="img" aria-label="folder-icon">
+            🦷
+          </span>
+        }
       />
     )
   )
@@ -3934,11 +3959,11 @@ storiesOf("List components/TreeList", module)
     () => (
       <TreeListRSDefault
         showLeafIcon
-			  leafIcon={
-			  	<span role="img" aria-label="leaf-icon">
-			  		☘️
-			  	</span>
-			  }
+        leafIcon={
+          <span role="img" aria-label="leaf-icon">
+            ☘️
+          </span>
+        }
       />
     )
   )
@@ -3947,9 +3972,9 @@ storiesOf("List components/TreeList", module)
     () => (
       <TreeListRSDefault
         showSwitcherIcon
-			  switcherIcon={bool =>
-					(bool ? <span> &#8592;</span> : <span> &#8598;</span>)
-				}
+        switcherIcon={bool =>
+          (bool ? <span> &#8592;</span> : <span> &#8598;</span>)
+        }
       />
     )
   )
@@ -3958,10 +3983,10 @@ storiesOf("List components/TreeList", module)
     () => (
       <TreeListRSDefault
         renderItem={(label, count, isSelected) => (
-					<span style={isSelected ? { background: 'green' } : {}}>
-						{label} - {count}
-					</span>
-				)}
+          <span style={isSelected ? { background: 'green' } : {}}>
+            {label} - {count}
+          </span>
+        )}
       />
     )
   )
@@ -3979,8 +4004,8 @@ storiesOf("List components/TreeList", module)
   )
 
 storiesOf("Range components/SingleRange", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(SingleRangeReadme, 15),
@@ -3988,13 +4013,13 @@ storiesOf("Range components/SingleRange", module)
   })
   .add(
     "Basic",
-   () => (
+    () => (
       <SingleRangeRSDefault />
     )
   )
   .add(
     "With title",
-   () => (
+    () => (
       <SingleRangeRSDefault
         title={text("title", "SingleRange: Books Filter")}
       />
@@ -4003,7 +4028,7 @@ storiesOf("Range components/SingleRange", module)
   .add('with compoundClause', () => <SingleRangeRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With Default Selected",
-   () => (
+    () => (
       <SingleRangeRSDefault
         defaultValue="Rating 3 to 4"
       />
@@ -4011,7 +4036,7 @@ storiesOf("Range components/SingleRange", module)
   )
   .add(
     "With filter",
-   () => (
+    () => (
       <SingleRangeRSDefault
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
@@ -4020,7 +4045,7 @@ storiesOf("Range components/SingleRange", module)
   )
   .add(
     "Without radio buttons",
-   () => (
+    () => (
       <SingleRangeRSDefault
         showRadio={boolean("showRadio", false)}
       />
@@ -4036,7 +4061,7 @@ storiesOf("Range components/SingleRange", module)
   )
   .add(
     "Playground",
-   () => (
+    () => (
       <SingleRangeRSDefault
         title={text("title", "SingleRange: Books Filter")}
         defaultValue="Cheap"
@@ -4049,8 +4074,8 @@ storiesOf("Range components/SingleRange", module)
   );
 
 storiesOf("Range components/MultiRange", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(MultiRangeReadme, 15),
@@ -4119,8 +4144,8 @@ storiesOf("Range components/MultiRange", module)
   );
 
 storiesOf("Range components/SingleDropdownRange", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(SingleDropdownRangeReadme, 15),
@@ -4189,8 +4214,8 @@ storiesOf("Range components/SingleDropdownRange", module)
   );
 
 storiesOf("Range components/MultiDropdownRange", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(MultiDropdownRangeReadme, 15),
@@ -4260,8 +4285,8 @@ storiesOf("Range components/MultiDropdownRange", module)
   );
 
 storiesOf("Base components/ToggleButton", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(ToggleButtonReadme, 15),
@@ -4333,7 +4358,7 @@ storiesOf("Base components/ToggleButton", module)
 storiesOf("Range components/DatePicker", module)
   .addDecorator(withKnobs)
   .addDecorator(withInfo)
-	.addParameters({
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(DatePickerReadme, 15),
@@ -4484,8 +4509,8 @@ storiesOf("Range components/DatePicker", module)
   );
 
 storiesOf("Range components/DateRange", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(DateRangeReadme, 15),
@@ -4624,8 +4649,8 @@ storiesOf("Range components/DateRange", module)
   );
 
 storiesOf("Range components/RangeInput", module)
-	.addDecorator(withKnobs)
-	.addParameters({
+  .addDecorator(withKnobs)
+  .addParameters({
     readme: {
       // Show readme at the addons panel
       sidebar: removeFirstLine(RangeInputReadme, 15),
@@ -4779,7 +4804,7 @@ storiesOf("Range components/RangeInput", module)
           start: '2020-05-05',
           end: '2021-05-05'
         }}
-        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+        queryFormat={select('queryFormat', ['date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], 'date')}
       />
     )
   )
@@ -4797,7 +4822,7 @@ storiesOf("Range components/RangeInput", module)
           start: '2020-05-05',
           end: '2021-05-05'
         }}
-        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+        queryFormat={select('queryFormat', ['date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], 'date')}
         showHistogram={boolean('showHistogram', true)}
       />
     )
@@ -4817,8 +4842,8 @@ storiesOf("Range components/RangeInput", module)
           end: '2021-05-05'
         }}
         showHistogram={boolean('showHistogram', true)}
-        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
-        calendarInterval={select('calendarInterval', ['year','quarter','month', 'week','day','hour','minute'],'week')}
+        queryFormat={select('queryFormat', ['date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], 'date')}
+        calendarInterval={select('calendarInterval', ['year', 'quarter', 'month', 'week', 'day', 'hour', 'minute'], 'week')}
       />
     )
   )
@@ -4829,7 +4854,7 @@ storiesOf("Range components/RangeInput", module)
         title={text("title", "RangeSlider: Ratings")}
         dataField={select(
           "dataField",
-          ["books_count", "original_publication_year", "ratings_count",'timestamp'],
+          ["books_count", "original_publication_year", "ratings_count", 'timestamp'],
           "books_count"
         )}
         range={object("range", {
@@ -4850,8 +4875,8 @@ storiesOf("Range components/RangeInput", module)
         showHistogram={boolean("showHistogram", true)}
         showSlider={boolean("showSlider", true)}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
-        queryFormat={select('queryFormat (use with date type)', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
-        calendarInterval={select('calendarInterval (use with date type)', ['year','quarter','month', 'week','day','hour','minute'],'month')}
+        queryFormat={select('queryFormat (use with date type)', ['date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], 'date')}
+        calendarInterval={select('calendarInterval (use with date type)', ['year', 'quarter', 'month', 'week', 'day', 'hour', 'minute'], 'month')}
       />
     )
   );
@@ -5011,7 +5036,7 @@ storiesOf("Range components/RangeSlider", module)
           start: '2020-05-05',
           end: '2021-05-05'
         }}
-        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+        queryFormat={select('queryFormat', ['date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], 'date')}
       />
     )
   )
@@ -5029,7 +5054,7 @@ storiesOf("Range components/RangeSlider", module)
           start: '2020-05-05',
           end: '2021-05-05'
         }}
-        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
+        queryFormat={select('queryFormat', ['date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], 'date')}
         showHistogram={boolean('showHistogram', true)}
       />
     )
@@ -5049,8 +5074,8 @@ storiesOf("Range components/RangeSlider", module)
           end: '2021-05-05'
         }}
         showHistogram={boolean('showHistogram', true)}
-        queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
-        calendarInterval={select('calendarInterval', ['year','quarter','month', 'week','day','hour','minute'],'week')}
+        queryFormat={select('queryFormat', ['date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], 'date')}
+        calendarInterval={select('calendarInterval', ['year', 'quarter', 'month', 'week', 'day', 'hour', 'minute'], 'week')}
       />
     )
   )
@@ -5061,7 +5086,7 @@ storiesOf("Range components/RangeSlider", module)
         title={text("title", "RangeSlider: Prices")}
         dataField={select(
           "dataField",
-          ["books_count", "original_publication_year", "ratings_count",'timestamp'],
+          ["books_count", "original_publication_year", "ratings_count", 'timestamp'],
           "ratings_count"
         )}
         range={object("range", {
@@ -5081,8 +5106,8 @@ storiesOf("Range components/RangeSlider", module)
         })}
         showHistogram={boolean("showHistogram", true)}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
-        queryFormat={select('queryFormat (use with date type)', [undefined,'date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],undefined)}
-        calendarInterval={select('calendarInterval (use with date type)', [undefined,'year','quarter','month', 'week','day','hour','minute'],undefined)}
+        queryFormat={select('queryFormat (use with date type)', [undefined, 'date', 'basic_date', 'basic_date_time', 'basic_date_time_no_millis', 'date_time_no_millis', 'basic_time', 'basic_time_no_millis', 'epoch_millis', 'epoch_second'], undefined)}
+        calendarInterval={select('calendarInterval (use with date type)', [undefined, 'year', 'quarter', 'month', 'week', 'day', 'hour', 'minute'], undefined)}
       />
     )
   );
