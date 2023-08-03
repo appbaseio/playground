@@ -2387,31 +2387,6 @@ storiesOf("Search components/SearchBox", module)
         enterButton={boolean("enterButton", true)}
       />
     )
-  ).add(
-    "With enableAI & showSourceDocuments",
-    () => (
-      <SearchBoxRSDefault
-        placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
-        AIUIConfig={{
-          showSourceDocuments: boolean("showSourceDocuments", true)
-        }}
-      />
-    )
-  ).add(
-    "With enableAI & renderSourceDocument",
-    () => (
-      <SearchBoxRSDefault
-        placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
-        AIUIConfig={{
-          showSourceDocuments: true,
-          renderSourceDocument: (obj) => {
-            return <span>❤️ {obj.original_title}</span>
-          }
-        }}
-      />
-    )
   )
   .add(
     "With enableAI & triggerOn",
@@ -2436,6 +2411,31 @@ storiesOf("Search components/SearchBox", module)
           triggerOn: select("mode", ["manual", "question"], "manual"),
           renderTriggerMessage: text("renderTriggerMessage", "Click to trigger AI 🤖"),
           askButton: true
+        }}
+      />
+    )
+  ).add(
+    "With enableAI & showSourceDocuments",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+        AIUIConfig={{
+          showSourceDocuments: boolean("showSourceDocuments", true)
+        }}
+      />
+    )
+  ).add(
+    "With enableAI & renderSourceDocument",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+        AIUIConfig={{
+          showSourceDocuments: true,
+          renderSourceDocument: (obj) => {
+            return <span>❤️ {obj.original_title}</span>
+          }
         }}
       />
     )
