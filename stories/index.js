@@ -107,7 +107,17 @@ import TagCloudDark from "./reactivesearch/TagCloudDark.stories";
 import DatePickerDark from "./reactivesearch/DatePickerDark.stories";
 import DateRangeDark from "./reactivesearch/DateRangeDark.stories";
 import ErrorBoundaryDefault from "./reactivesearch/ErrorBoundary.stories";
-import SearchBoxWithCustomAIRender from "./reactivesearch/SearchBoxWithCustomAIRender.stories";
+import SearchBoxWithCustomAIRender, { GlobalStyles } from "./reactivesearch/SearchBoxWithCustomAIRender.stories";
+import { Remarkable } from 'remarkable';
+const md = new Remarkable();
+
+md.set({
+	html: true,
+	breaks: true,
+	xhtmlOut: true,
+	linkify: true,
+	linkTarget: '_blank',
+});
 
 require("./styles.css");
 
@@ -1770,7 +1780,7 @@ storiesOf("Search components/AIAnswer", module)
   ))
   .add("With iconPosition", () => (
     <AIAnswerDefault
-      iconPosition={select("iconPosition", ["left", "right"], "left")}
+      iconPosition={select("iconPosition", ["left", "right"], "right")}
     />
   ))
   .add("With placeholder", () => (
@@ -1786,13 +1796,13 @@ storiesOf("Search components/AIAnswer", module)
     )
   )
   .add("With showInput", () => (
-    <AIAnswerDefault showInput={boolean("showInput", true)} />
+    <AIAnswerDefault showInput={boolean("showInput", false)} />
   ))
   .add("With enterButton", () => (
-    <AIAnswerDefault enterButton={boolean("enterButton", true)} />
+    <AIAnswerDefault enterButton={boolean("enterButton", false)} />
   ))
   .add("With renderEnterButton", () => (
-    <AIAnswerDefault renderEnterButton={(cb) => <button style={{ height: "100%" }} onClick={cb}>📚</button>} />
+    <AIAnswerDefault enterButton={boolean("enterButton", true)} renderEnterButton={(cb) => <button style={{ height: "100%" }} onClick={cb}>📚</button>} />
   ))
   .add("With title", () => (
     <AIAnswerDefault
@@ -1828,6 +1838,7 @@ storiesOf("Search components/AIAnswer", module)
                   color: isSender ? '#004085' : '#383d41',
                   position: 'relative',
                   whiteSpace: 'pre-wrap',
+                  overflowWrap: 'anywhere'
                 };
                 return (
                   <div
@@ -1839,7 +1850,11 @@ storiesOf("Search components/AIAnswer", module)
                         : 'flex-start',
                     }}
                   >
-                    <div style={messageStyle}>{message.content}</div>
+                    <GlobalStyles />
+                    <div
+                      style={messageStyle}
+                      dangerouslySetInnerHTML={{__html: md.render(message.content)}}
+                    />
                   </div>
                 );
               })}
@@ -1898,32 +1913,6 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add(
-    "With enableFAQSuggestions",
-    () => (
-      <SearchBoxRSDefault
-        placeholder="Search Books..."
-        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
-        enableAI={boolean("enableAI", true)}
-        showClear
-        searchboxId="rs_docs"
-      />
-    )
-  )
-  .add(
-    "With FAQSuggestionsConfig",
-    () => (
-      <SearchBoxRSDefault
-        placeholder="Search Books..."
-        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
-        FAQSuggestionsConfig={{
-          sectionLabel: text("sectionLabel", "FAQ"),
-          size: number("suggestionSize", 2),
-        }}
-        searchboxId="rs_docs"
-      />
-    )
-  )
-  .add(
     "With mode prop",
     () => (
       <SearchBoxRSDefault
@@ -1941,7 +1930,6 @@ storiesOf("Search components/SearchBox", module)
       />
     )
   )
-  .add('with compoundClause', () => <SearchBoxRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "wihout search icon",
     () => (
@@ -2006,7 +1994,7 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add(
-    "With filter",
+    "set filter label",
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
@@ -2367,6 +2355,32 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add(
+    "With enableFAQSuggestions",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        enableAI={boolean("enableAI", true)}
+        showClear
+        searchboxId="rs_docs"
+      />
+    )
+  )
+  .add(
+    "With FAQSuggestionsConfig",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        FAQSuggestionsConfig={{
+          sectionLabel: text("sectionLabel", "FAQ"),
+          size: number("suggestionSize", 2),
+        }}
+        searchboxId="rs_docs"
+      />
+    )
+  )
+  .add(
     "With enableAI",
     () => (
       <SearchBoxRSDefault
@@ -2449,6 +2463,7 @@ storiesOf("Search components/SearchBox", module)
       />
     )
   )
+  .add('with compoundClause', () => <SearchBoxRSDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "Playground",
     () => (

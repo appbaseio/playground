@@ -168,7 +168,7 @@ const globalStyles = `
   }
 `;
 
-const GlobalStyles = () => (
+export const GlobalStyles = () => (
 	<style dangerouslySetInnerHTML={{ __html: globalStyles }} />
 );
 
