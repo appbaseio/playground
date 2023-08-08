@@ -120,7 +120,7 @@ function removeFirstLine(str, number = 1) {
 
 // The function removes lines starting with // which crashes storybook
 const removeCommentsLine = str => str.replace(/^.*    \/\/.*$/gm, "");
-const compoundClauseSelector = () => select('compoundClause', ['filter', 'must'], 'filter')
+const compoundClauseSelector = () => select('compoundClause(not visible in storybook)', ['filter', 'must'], 'filter')
 
 storiesOf("Base components/ReactiveComponent", module)
 	.addDecorator(withKnobs)
@@ -130,7 +130,6 @@ storiesOf("Base components/ReactiveComponent", module)
       sidebar: removeFirstLine(ReactiveComponentReadme, 15),
     },
   })
-  .add("with compoundClause", () => <ReactiveComponentStory compoundClause={compoundClauseSelector()} />)
   .add("A custom component", () => <ReactiveComponentStory />)
   .add("with onData", () => (
     <ReactiveComponentStory onData={action("Data Changed")} />
@@ -140,7 +139,9 @@ storiesOf("Base components/ReactiveComponent", module)
    () => (
       <ReactiveComponentWithDistinctFieldProp />
     )
-  );
+  )
+  .add("with compoundClause", () => <ReactiveComponentStory compoundClause={compoundClauseSelector()} />)
+  ;
 
 storiesOf("Base components/ErrorBoundary", module)
 	.addDecorator(withKnobs)
@@ -230,6 +231,24 @@ storiesOf("Map Components/GeoDistanceSlider", module)
         unit="mi"
         title="Geo Distance Search"
         placeholder="Search Location"
+        rangeLabels={object({
+          start: "Start",
+          end: "End"
+        })}
+      />
+    )
+  )
+  .add(
+    "With defaultValue",
+    () => (
+      <GeoDistanceSliderGoogleMap
+        defaultValue={{
+          location: "San Francisco",
+          distance: 5
+        }}
+        unit="mi"
+        title="Geo Distance Search"
+        placeholder="Search Location"
         rangeLabels={{
           start: "Start",
           end: "End"
@@ -253,25 +272,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     )
   )
   .add(
-    "With defaultValue",
-    () => (
-      <GeoDistanceSliderGoogleMap
-        defaultValue={{
-          location: "San Francisco",
-          distance: 5
-        }}
-        unit="mi"
-        title="Geo Distance Search"
-        placeholder="Search Location"
-        rangeLabels={{
-          start: "Start",
-          end: "End"
-        }}
-      />
-    )
-  )
-  .add(
-    "With autoLocation off",
+    "With Auto Location",
     () => (
       <GeoDistanceSliderGoogleMap
         defaultValue={{
@@ -280,7 +281,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
         unit="mi"
         title={text("title", "Geo Distance Slider")}
         placeholder="Search Location"
-        autoLocation={boolean("autoLocation", false)}
+        autoLocation={boolean("autoLocation", true)}
       />
     )
   )
@@ -298,7 +299,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     )
   )
   .add(
-    "With tooltipTrigger",
+    "With tooltipTrigger(on slider)",
     () => (
       <GeoDistanceSliderGoogleMap
         defaultValue={{
@@ -307,7 +308,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
         style={{ marginTop: "10px" }}
         unit="mi"
         placeholder="Search Location"
-        tooltipTrigger={text("tooltipTrigger", "focus")}
+        tooltipTrigger={select("tooltipTrigger", {focus: "focus", always: "always", hover: "hover"}, "always")}
       />
     )
   )
@@ -409,23 +410,6 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
     )
   )
   .add(
-    "With Country Restrictions",
-    () => (
-      <GeoDistanceDropdownGoogleMap
-        unit="mi"
-        data={[
-          { distance: 100, label: "Under 100 miles" },
-          { distance: 200, label: "Under 200 miles" },
-          { distance: 500, label: "Under 500 miles" },
-          { distance: 1000, label: "Under 1000 miles" }
-        ]}
-        title="Geo Distance Slider"
-        placeholder="Search Location"
-        countries={object("countries", ["us"])}
-      />
-    )
-  )
-  .add(
     "With placeholder",
     () => (
       <GeoDistanceDropdownGoogleMap
@@ -478,6 +462,23 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
     )
   )
   .add(
+    "With Country Restrictions",
+    () => (
+      <GeoDistanceDropdownGoogleMap
+        unit="mi"
+        data={[
+          { distance: 100, label: "Under 100 miles" },
+          { distance: 200, label: "Under 200 miles" },
+          { distance: 500, label: "Under 500 miles" },
+          { distance: 1000, label: "Under 1000 miles" }
+        ]}
+        title="Geo Distance Slider"
+        placeholder="Search Location"
+        countries={object("countries", ["us"])}
+      />
+    )
+  )
+  .add(
     "Without autoLocation",
     () => (
       <GeoDistanceDropdownGoogleMap
@@ -489,7 +490,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           { distance: 1000, label: "Under 1000 miles" }
         ]}
         placeholder="Search Location"
-        autoLocation={boolean("autoLocation", false)}
+        autoLocation={boolean("autoLocation", true)}
       />
     )
   )
@@ -645,6 +646,7 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
       () => (
         <ReactiveGoogleMapDefault
           showSearchAsMove={boolean("showSearchAsMove", true)}
+          searchAsMove={false}
         />
       )
   )
@@ -652,6 +654,7 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
     "With searchAsMove",
       () => (
         <ReactiveGoogleMapDefault
+          showSearchAsMove={true}
           searchAsMove={boolean("searchAsMove", false)}
         />
       )
