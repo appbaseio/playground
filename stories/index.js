@@ -194,7 +194,6 @@ storiesOf("Map Components/GeoDistanceSlider", module)
       />
     )
   )
-  .add('with compoundClause', () => <GeoDistanceSliderGoogleMap compoundClause={compoundClauseSelector()} />)
   .add(
     "With placeholder",
     () => (
@@ -258,7 +257,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     () => (
       <GeoDistanceSliderGoogleMap
         defaultValue={{
-          location: "London",
+          location: "San Francisco",
           distance: 5
         }}
         unit="mi"
@@ -312,12 +311,13 @@ storiesOf("Map Components/GeoDistanceSlider", module)
       />
     )
   )
+  .add('with compoundClause', () => <GeoDistanceSliderGoogleMap compoundClause={compoundClauseSelector()} />)
   .add(
     "Playground with Google Map",
     () => (
       <GeoDistanceSliderGoogleMap
         defaultValue={{
-          location: "London",
+          location: "San Francisco",
           distance: 5
         }}
         unit={text("unit", "mi")}
@@ -335,7 +335,8 @@ storiesOf("Map Components/GeoDistanceSlider", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "GeoDistance filter")}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
-        countries={object("countries", ["uk"])}
+        countries={object("countries", ["us"])}
+        compoundClause={compoundClauseSelector()}
       />
     )
   )
@@ -344,7 +345,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
     () => (
       <GeoDistanceSliderOpenStreetMap
         defaultValue={{
-          location: "London",
+          location: "San Francisco",
           distance: 5
         }}
         unit={text("unit", "mi")}
@@ -362,7 +363,8 @@ storiesOf("Map Components/GeoDistanceSlider", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "GeoDistance filter")}
         URLParams={boolean("URLParams (not visible on storybook)", true)}
-        countries={object("countries", ["uk"])}
+        countries={object("countries", ["us"])}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -406,7 +408,6 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
       />
     )
   )
-  .add('with compoundClause', () => <GeoDistanceDropdownGoogleMap compoundClause={compoundClauseSelector()} />)
   .add(
     "With Country Restrictions",
     () => (
@@ -469,7 +470,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
         ]}
         defaultValue={{
           label: "Under 100 miles",
-          location: "London"
+          location: "San Francisco"
         }}
         title="Geo Distance Search"
         placeholder="Search Location"
@@ -508,6 +509,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
       />
     )
   )
+  .add('with compoundClause', () => <GeoDistanceDropdownGoogleMap compoundClause={compoundClauseSelector()} />)
   .add(
     "Playground with Google map",
     () => (
@@ -546,7 +548,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
         title={text("title", "Geo Distance Slider")}
         defaultValue={{
           label: "Under 100 miles",
-          location: "London"
+          location: "San Francisco"
         }}
         placeholder={text("placeholder", "Search Location")}
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
@@ -554,7 +556,8 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "GeoDistance filter")}
         URLParams={boolean("URLParams (not visible in storybook)", true)}
-        countries={object("countries", ["uk"])}
+        countries={object("countries", ["us"])}
+        compoundClause={compoundClauseSelector()}
       />
     )
   )
@@ -596,7 +599,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
         title={text("title", "Geo Distance Slider")}
         defaultValue={{
           label: "Under 100 miles",
-          location: "London"
+          location: "San Francisco"
         }}
         placeholder={text("placeholder", "Search Location")}
         placeholderDropdown={text("placeholderDropdown", "Select radius")}
@@ -604,7 +607,8 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "GeoDistance filter")}
         URLParams={boolean("URLParams (not visible in storybook)", true)}
-        countries={object("countries", ["uk"])}
+        countries={object("countries", ["us"])}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -621,7 +625,6 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
     "Basic",
       () => <ReactiveGoogleMapDefault showMarkerClusters={false} />
   )
-  .add('with compoundClause', () => <ReactiveGoogleMapDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With showMarkerClusters",
       () => (
@@ -722,6 +725,7 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
         />
     )
   )
+  .add('with compoundClause', () => <ReactiveGoogleMapDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "Playground",
       () => (
@@ -751,6 +755,7 @@ storiesOf("Map Components/ReactiveGoogleMap", module)
             lat: 37.74,
             lng: -122.45
           })}
+          compoundClause={compoundClauseSelector()}
         />
     )
   );
@@ -768,7 +773,6 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
     "Basic",
       () => <ReactiveOpenStreetMapDefault />
   )
-  .add('with compoundClause', () => <ReactiveOpenStreetMapDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With autoCenter",
       () => (
@@ -836,6 +840,7 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
         />
     )
   )
+  .add('with compoundClause', () => <ReactiveOpenStreetMapDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "Playground",
       () => (
@@ -849,7 +854,9 @@ storiesOf("Map Components/ReactiveOpenStreetMap", module)
             lat: 37.74,
             lng: -122.45
           })}
+          compoundClause={compoundClauseSelector()}
         />
+
     )
   );
 
@@ -963,7 +970,6 @@ storiesOf("Range components/DynamicRangeSlider", module)
       <DynamicRangeSliderDefault />
     )
   )
-  .add('with compoundClause', () => <DynamicRangeSliderDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With title",
    () => (
@@ -1096,6 +1102,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
       />
     )
   )
+  .add('with compoundClause', () => <DynamicRangeSliderDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "Playground",
    () => (
@@ -1116,6 +1123,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         queryFormat={select('queryFormat', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
         calendarInterval={select('calendarInterval', ['year','quarter','month', 'week','day','hour','minute'],'month')}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -1140,7 +1148,6 @@ storiesOf("Base components/TagCloud", module)
       <TagCloudDefault title={text("title", "Cities")} />
     )
   )
-  .add('with compoundClause', () => <TagCloudDefault compoundClause={compoundClauseSelector()} />)
   .add(
     "With showCount",
     () => (
@@ -1211,6 +1218,8 @@ storiesOf("Base components/TagCloud", module)
       <TagCloudDefault loader="Loading..." />
     )
   )
+  .add('with compoundClause', () => <TagCloudDefault compoundClause={compoundClauseSelector()} />)
+
   .add(
     "Playground",
     () => (
@@ -1228,6 +1237,7 @@ storiesOf("Base components/TagCloud", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Cities filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -1285,6 +1295,7 @@ storiesOf("Range components/RatingsFilter", module)
         defaultValue={{ start: 2, end: 5 }}
         filterLabel={text("filterLabel", "Ratings filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -1514,6 +1525,7 @@ storiesOf("Result components/ReactiveList", module)
         excludeFields={array("excludeFields", [])}
         // stream={boolean("stream", false)}
         sortBy={select("sortBy", { asc: "asc", desc: "desc" }, "asc")}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -1628,6 +1640,7 @@ storiesOf("Result components/ResultCard", module)
         paginationAt={text("paginationAt", "bottom")}
         includeFields={array("includeFields", ["*"])}
         excludeFields={array("excludeFields", [])}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -1744,6 +1757,7 @@ storiesOf("Result components/ResultList", module)
         includeFields={array("includeFields", ["*"])}
         excludeFields={array("excludeFields", [])}
         paginationAt={text("paginationAt", "bottom")}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -2465,6 +2479,7 @@ storiesOf("Search components/SearchBox", module)
         })}
         applyStopwords={boolean("applyStopwords", true)}
         customStopwords={array("customStopwords", ['and','the'])}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -2612,6 +2627,7 @@ storiesOf("Range components/NumberBox", module)
           "exact"
         )}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -2837,6 +2853,7 @@ storiesOf("List components/SingleList", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -3072,6 +3089,7 @@ storiesOf("List components/MultiList", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -3254,6 +3272,7 @@ storiesOf("List components/SingleDropdownList", module)
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         showSearch={boolean("showSearch", true)}
         showClear={boolean("showClear", true)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -3467,6 +3486,7 @@ storiesOf("List components/MultiDropdownList", module)
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         showSearch={boolean("showSearch", true)}
         showClear={boolean("showClear", true)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -3620,6 +3640,7 @@ storiesOf("List components/SingleDataList", module)
         filterLabel={text("filterLabel", "Custom Filter Name")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         displayAsVertical={boolean("displayAsVertical")}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -3771,6 +3792,7 @@ storiesOf("List components/MultiDataList", module)
         filterLabel={text("filterLabel", "Custom Filter Name")}
         queryFormat={select("queryFormat", { and: "and", or: "or" }, "or")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -4044,6 +4066,7 @@ storiesOf("Range components/SingleRange", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -4114,6 +4137,7 @@ storiesOf("Range components/MultiRange", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -4184,6 +4208,7 @@ storiesOf("Range components/SingleDropdownRange", module)
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books")}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -4255,6 +4280,7 @@ storiesOf("Range components/MultiDropdownRange", module)
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Books")}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -4326,6 +4352,7 @@ storiesOf("Base components/ToggleButton", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Category filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -4479,6 +4506,7 @@ storiesOf("Range components/DatePicker", module)
         })}
         filterLabel={text("filterLabel", "Date")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -4619,6 +4647,7 @@ storiesOf("Range components/DateRange", module)
         showFilter={boolean("showFilter", true)}
         filterLabel={text("filterLabel", "Date range")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -4852,6 +4881,7 @@ storiesOf("Range components/RangeInput", module)
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         queryFormat={select('queryFormat (use with date type)', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
         calendarInterval={select('calendarInterval (use with date type)', ['year','quarter','month', 'week','day','hour','minute'],'month')}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -5083,6 +5113,7 @@ storiesOf("Range components/RangeSlider", module)
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         queryFormat={select('queryFormat (use with date type)', [undefined,'date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],undefined)}
         calendarInterval={select('calendarInterval (use with date type)', [undefined,'year','quarter','month', 'week','day','hour','minute'],undefined)}
+        compoundClause={compoundClauseSelector()}
       />
     )
   );
@@ -5090,17 +5121,17 @@ storiesOf("Range components/RangeSlider", module)
 // storiesOf("search/SelectedFilters", module)
 // 	.addDecorator(withKnobs)
 // 	.add("Basic", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["London"]} />
+// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["San Francisco"]} />
 // 	)))
 // 	.add("With no filter", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["London"]} showFilter={boolean("showFilter", false)} />
+// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["San Francisco"]} showFilter={boolean("showFilter", false)} />
 // 	)))
 // 	.add("With filterLabel", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
-// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["London"]} filterLabel={text("filterLabel", "City filter")} />
+// 		<MultiListRSDefault showSearch placeholder="Search City" defaultValue={["San Francisco"]} filterLabel={text("filterLabel", "City filter")} />
 // 	)))
 // 	.add("Playground", withReadme(removeFirstLine(SelectedFiltersReadme), () => (
 // 		<MultiListRSDefault
-// 			defaultValue={["London"]}
+// 			defaultValue={["San Francisco"]}
 // 			showFilter={boolean("showFilter", true)}
 // 			filterLabel={text("filterLabel", "City filter")}
 // 		/>
