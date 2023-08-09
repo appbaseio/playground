@@ -404,7 +404,7 @@ storiesOf("Map Components/GeoDistanceDropdown", module)
           { distance: 500, label: "Under 500 miles" },
           { distance: 1000, label: "Under 1000 miles" }
         ]}
-        title={text("title", "Geo Distance Slider")}
+        title={text("title", "Geo Distance Dropdown")}
         placeholder="Search Location"
       />
     )
