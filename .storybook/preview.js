@@ -21,7 +21,7 @@ export const parameters = {
  *
 */
 let currentPath;
-let timeout = 100;
+let timeout = 500;
 
 if (window.parent) {
   const parentWindow = window.parent;
