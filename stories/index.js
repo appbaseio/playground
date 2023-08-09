@@ -231,7 +231,7 @@ storiesOf("Map Components/GeoDistanceSlider", module)
         unit="mi"
         title="Geo Distance Search"
         placeholder="Search Location"
-        rangeLabels={object({
+        rangeLabels={object("rangeLabels",{
           start: "Start",
           end: "End"
         })}
