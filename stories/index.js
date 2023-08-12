@@ -1976,11 +1976,11 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add(
-    "with showClear",
+    "without showClear",
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        showClear={boolean("showClear", true)}
+        showClear={boolean("showClear", false)}
       />
     )
   )
