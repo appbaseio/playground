@@ -18,7 +18,7 @@ export default class SearchBoxDefault extends Component {
 				<div className="row">
 					<div className="col">
 						<SearchBox
-							dataField={[{field:"original_title", weight:3}, {field:"original_title.search", weight:1}]}
+							dataField={[{ field: "original_title", weight: 3 }, { field: "original_title.search", weight: 1 }]}
 							componentId="BookSensor"
 							{...this.props}
 						/>
