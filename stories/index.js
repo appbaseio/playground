@@ -108,6 +108,7 @@ import DatePickerDark from "./reactivesearch/DatePickerDark.stories";
 import DateRangeDark from "./reactivesearch/DateRangeDark.stories";
 import ErrorBoundaryDefault from "./reactivesearch/ErrorBoundary.stories";
 import SearchBoxWithCustomAIRender from "./reactivesearch/SearchBoxWithCustomAIRender.stories";
+import SearchBoxWithDocumentSuggestions from './reactivesearch/SearchBoxWithDocumentSuggestions.stories'
 
 require("./styles.css");
 
@@ -1930,6 +1931,28 @@ storiesOf("Search components/SearchBox", module)
         }}
         searchboxId="rs_docs"
         />
+    )
+  )
+
+  .add(
+    "With document suggestions",
+    () => (
+      <SearchBoxWithDocumentSuggestions
+        placeholder="Search Books..."
+        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
+        documentSuggestionsConfig={{
+          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
+          from: number("from", 0),
+          size: number("size", 5),
+          sectionLabel: text("sectionLabel","Docs")
+        }}
+        includeFields={[
+            "original_title",
+            "original_language",
+            "overview"
+        ]}
+        showClear
+      />
     )
   )
   .add(
