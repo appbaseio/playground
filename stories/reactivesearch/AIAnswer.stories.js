@@ -50,6 +50,7 @@ export default class AIAnswerxDefault extends Component {
 						<AIAnswer
 							componentId="ai-answer"
 							react={{ and: "BookSensor" }}
+							showSourceDocuments={false}
 							{...this.props}
 						/>
 					</div>
