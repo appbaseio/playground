@@ -19,6 +19,11 @@
     },
     "homepage": "https://github.com/appbaseio/reactive-playground#readme",
     "dependencies": {
+<<<<<<< Updated upstream
+=======
+        "@appbaseio/reactivemaps": "4.0.0",
+        "@appbaseio/reactivesearch": "4.0.5",
+>>>>>>> Stashed changes
         "docs": "appbaseio/Docs#dev",
         "@appbaseio/reactivemaps": "4.0.0-rc",
         "@appbaseio/reactivesearch": "4.0.0",
