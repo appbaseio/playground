@@ -1971,12 +1971,13 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxWithDocumentSuggestions
         placeholder="Search Books..."
+        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
         enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
         documentSuggestionsConfig={{
           maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
           from: number("from", 0),
           size: number("size", 5),
-          sectionLabel: text("sectionLabel","Docs")
+          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
         }}
         includeFields={[
             "original_title",
@@ -1992,12 +1993,13 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxWithDocumentSuggestions
         placeholder="Search Books..."
+        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
         enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
         documentSuggestionsConfig={{
           maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
           from: number("from", 0),
           size: number("size", 5),
-          sectionLabel: text("sectionLabel","Docs")
+          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
         }}
         includeFields={[
             "original_title",
@@ -2005,7 +2007,30 @@ storiesOf("Search components/SearchBox", module)
             "overview"
         ]}
         showClear
-        renderItem={(suggestion)=>(<div>{suggestion._source.original_title}</div>)}
+        renderItem={(suggestion)=>(<div>{suggestion._source.original_title} <span style={{color: "slategray"}}>{new Date(Number(suggestion._source._timestamp) * 1000).toDateString()}</span></div>)}
+      />
+    )
+  )
+  .add(
+    "With document suggestions + navigate on click",
+    () => (
+      <SearchBoxWithDocumentSuggestions
+        placeholder="Search Books..."
+        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
+        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
+        documentSuggestionsConfig={{
+          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
+          from: number("from", 0),
+          size: number("size", 5),
+          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
+        }}
+        includeFields={[
+            "original_title",
+            "original_language",
+            "overview"
+        ]}
+        showClear
+        renderItem={(suggestion)=>(<a href={`https://www.google.com/search?q=${suggestion._source.original_title}`} target="_blank" rel="noreferrer">{suggestion._source.original_title}</a>)}
       />
     )
   )
