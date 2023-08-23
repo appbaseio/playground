@@ -20,6 +20,7 @@ export default class SearchBoxDefault extends Component {
 						<SearchBox
 							dataField={[{ field: "original_title", weight: 3 }, { field: "original_title.search", weight: 1 }]}
 							componentId="BookSensor"
+							showDistinctSuggestions
 							{...this.props}
 						/>
 						<SelectedFilters componentId="BookSensor" />

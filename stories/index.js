@@ -1939,6 +1939,12 @@ storiesOf("Search components/SearchBox", module)
       />
     )
   )
+  .add('With showDistinctSuggestions', () => (
+    <SearchBoxRSDefault
+      placeholder="Search Books..."
+      showDistinctSuggestions={boolean("showDistinctSuggestions", true)}
+    />
+  ))
   .add(
     "With enableFAQSuggestions",
     () => (
