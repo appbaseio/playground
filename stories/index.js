@@ -107,7 +107,6 @@ import TagCloudDark from "./reactivesearch/TagCloudDark.stories";
 import DatePickerDark from "./reactivesearch/DatePickerDark.stories";
 import DateRangeDark from "./reactivesearch/DateRangeDark.stories";
 import ErrorBoundaryDefault from "./reactivesearch/ErrorBoundary.stories";
-import SearchBoxWithDocumentSuggestions from './reactivesearch/SearchBoxWithDocumentSuggestions.stories'
 import SearchBoxWithCustomAIRender, { GlobalStyles } from "./reactivesearch/SearchBoxWithCustomAIRender.stories";
 import { Remarkable } from 'remarkable';
 const md = new Remarkable();
@@ -1930,15 +1929,6 @@ storiesOf("Search components/SearchBox", module)
       <SearchBoxRSDefault placeholder="Search Books..." />
     )
   )
-  .add(
-    "With enableAI",
-    () => (
-      <SearchBoxRSDefault
-        placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
-      />
-    )
-  )
   .add('With showDistinctSuggestions', () => (
     <SearchBoxRSDefault
       placeholder="Search Books..."
@@ -1969,75 +1959,6 @@ storiesOf("Search components/SearchBox", module)
         }}
         searchboxId="rs_docs"
         />
-    )
-  )
-
-  .add(
-    "With document suggestions",
-    () => (
-      <SearchBoxWithDocumentSuggestions
-        placeholder="Search Books..."
-        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
-        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
-        documentSuggestionsConfig={{
-          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
-          from: number("from", 0),
-          size: number("size", 5),
-          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
-        }}
-        includeFields={[
-            "original_title",
-            "original_language",
-            "overview"
-        ]}
-        showClear
-      />
-    )
-  )
-  .add(
-    "With document suggestions + renderItem",
-    () => (
-      <SearchBoxWithDocumentSuggestions
-        placeholder="Search Books..."
-        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
-        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
-        documentSuggestionsConfig={{
-          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
-          from: number("from", 0),
-          size: number("size", 5),
-          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
-        }}
-        includeFields={[
-            "original_title",
-            "original_language",
-            "overview"
-        ]}
-        showClear
-        renderItem={(suggestion)=>(<div>{suggestion._source.original_title} <span style={{color: "slategray"}}>{new Date(Number(suggestion._source._timestamp) * 1000).toDateString()}</span></div>)}
-      />
-    )
-  )
-  .add(
-    "With document suggestions + navigate on click",
-    () => (
-      <SearchBoxWithDocumentSuggestions
-        placeholder="Search Books..."
-        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
-        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
-        documentSuggestionsConfig={{
-          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
-          from: number("from", 0),
-          size: number("size", 5),
-          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
-        }}
-        includeFields={[
-            "original_title",
-            "original_language",
-            "overview"
-        ]}
-        showClear
-        renderItem={(suggestion)=>(<a href={`https://www.google.com/search?q=${suggestion._source.original_title}`} target="_blank" rel="noreferrer">{suggestion._source.original_title}</a>)}
-      />
     )
   )
   .add(
@@ -2641,6 +2562,74 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add('with compoundClause', () => <SearchBoxRSDefault compoundClause={compoundClauseSelector()} />)
+  .add(
+    "With document suggestions",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
+        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
+        documentSuggestionsConfig={{
+          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
+          from: number("from", 0),
+          size: number("size", 5),
+          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
+        }}
+        includeFields={[
+            "original_title",
+            "original_language",
+            "overview"
+        ]}
+        showClear
+      />
+    )
+  )
+  .add(
+    "With document suggestions + renderItem",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
+        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
+        documentSuggestionsConfig={{
+          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
+          from: number("from", 0),
+          size: number("size", 5),
+          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
+        }}
+        includeFields={[
+            "original_title",
+            "original_language",
+            "overview"
+        ]}
+        showClear
+        renderItem={(suggestion)=>(<div>{suggestion._source.original_title} <span style={{color: "crimson", backgroundColor: "lightgray", padding: 5, borderRadius: 3}}>{new Date(Number(suggestion._source._timestamp) * 1000).toDateString() || ""}</span></div>)}
+      />
+    )
+  )
+  .add(
+    "With document suggestions + navigate on click",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
+        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
+        documentSuggestionsConfig={{
+          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
+          from: number("from", 0),
+          size: number("size", 5),
+          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
+        }}
+        includeFields={[
+            "original_title",
+            "original_language",
+            "overview"
+        ]}
+        showClear
+        renderItem={(suggestion)=>(<a style={{width:'100%', height: '100%', display: 'block', textDecoration: "none", color: "inherit"}} href={`https://www.google.com/search?q=${suggestion._source.original_title}`} target="_blank" rel="noreferrer">{suggestion._source.original_title}</a>)}
+      />
+    )
+  )
   .add(
     "Playground",
     () => (
