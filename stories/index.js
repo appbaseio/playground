@@ -2481,6 +2481,11 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add('with compoundClause', () => <SearchBoxRSDefault compoundClause={compoundClauseSelector()} />)
+  .add("with image search", () => (
+    <SearchBoxRSDefault
+      showImageSearch={boolean("showImageSearch", true)}
+    />
+  ))
   .add(
     "Playground",
     () => (
