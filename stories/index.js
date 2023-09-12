@@ -2484,6 +2484,7 @@ storiesOf("Search components/SearchBox", module)
   .add("with image search", () => (
     <SearchBoxRSDefault
       showImageSearch={boolean("showImageSearch", true)}
+      vectorDataField={text("vectorDataField", "image")}
     />
   ))
   .add(
