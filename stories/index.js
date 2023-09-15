@@ -1929,6 +1929,87 @@ storiesOf("Search components/SearchBox", module)
       <SearchBoxRSDefault placeholder="Search Books..." />
     )
   )
+  .add('With showDistinctSuggestions', () => (
+    <SearchBoxRSDefault
+      placeholder="Search Books..."
+      showDistinctSuggestions={boolean("showDistinctSuggestions", true)}
+    />
+  ))
+  .add(
+    "With enableFAQSuggestions",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        enableAI={boolean("enableAI", true)}
+        showClear
+        searchboxId="rs_docs"
+      />
+    )
+  )
+  .add(
+    "With FAQSuggestionsConfig",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        FAQSuggestionsConfig={{
+          sectionLabel: text("sectionLabel", "FAQ"),
+          size: number("suggestionSize", 2),
+        }}
+        searchboxId="rs_docs"
+        />
+    )
+  )
+  .add(
+    "With enableAI + askButton + enterButton",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={true}
+        AIUIConfig={{
+          askButton: boolean("askButton", true)
+        }}
+        enterButton={ boolean("enterButton", true)}
+      />
+    )
+  )
+  .add(
+    "With triggerOn",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={true}
+        AIUIConfig={{
+          triggerOn: select("mode", ["manual", "question"], "manual"),
+          askButton: true
+        }}
+      />
+    )
+  )
+  .add(
+    "With triggerOn + renderTriggerMessage",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableAI={true}
+        AIUIConfig={{
+          triggerOn: select("mode", ["manual", "question"], "manual"),
+          renderTriggerMessage: <div>Click to trigger AIAnswer</div>,
+          askButton: true
+        }}
+      />
+    )
+  )
+  .add(
+    "With renderAIAnswer prop",
+    () => (
+      <SearchBoxWithCustomAIRender
+        placeholder="Search Books..."
+        enableAI={boolean("enableAI", true)}
+      />
+    )
+  )
   .add(
     "With mode prop",
     () => (
@@ -2487,6 +2568,74 @@ storiesOf("Search components/SearchBox", module)
       vectorDataField={text("vectorDataField", "image")}
     />
   ))
+  .add(
+    "With document suggestions",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
+        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
+        documentSuggestionsConfig={{
+          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
+          from: number("from", 0),
+          size: number("size", 5),
+          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
+        }}
+        includeFields={[
+            "original_title",
+            "original_language",
+            "overview"
+        ]}
+        showClear
+      />
+    )
+  )
+  .add(
+    "With document suggestions + renderItem",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
+        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
+        documentSuggestionsConfig={{
+          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
+          from: number("from", 0),
+          size: number("size", 5),
+          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
+        }}
+        includeFields={[
+            "original_title",
+            "original_language",
+            "overview"
+        ]}
+        showClear
+        renderItem={(suggestion)=>(<div>{suggestion._source.original_title} <span style={{color: "crimson", backgroundColor: "lightgray", padding: 5, borderRadius: 3}}>{new Date(Number(suggestion._source._timestamp) * 1000).toDateString() || ""}</span></div>)}
+      />
+    )
+  )
+  .add(
+    "With document suggestions + navigate on click",
+    () => (
+      <SearchBoxRSDefault
+        placeholder="Search Books..."
+        enableIndexSuggestions={boolean('enableIndexSuggestions', false)}
+        enableDocumentSuggestions={boolean("enableDocumentSuggestions", true)}
+        documentSuggestionsConfig={{
+          maxChars: number("maxChars", 6), // only return results until value is within maxChars count limit, optional setting where the default value of maxChars is 6
+          from: number("from", 0),
+          size: number("size", 5),
+          sectionLabel: text("sectionLabel","🕝 Recent Document Suggestions")
+        }}
+        includeFields={[
+            "original_title",
+            "original_language",
+            "overview"
+        ]}
+        showClear
+        renderItem={(suggestion)=>(<a style={{width:'100%', height: '100%', display: 'block', textDecoration: "none", color: "inherit"}} href={`https://www.google.com/search?q=${suggestion._source.original_title}`} target="_blank" rel="noreferrer">{suggestion._source.original_title}</a>)}
+      />
+    )
+  )
   .add(
     "Playground",
     () => (
