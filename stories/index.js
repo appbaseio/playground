@@ -2571,6 +2571,7 @@ storiesOf("Search components/SearchBox", module)
         icon: text("icon", ""),
         iconURL: text("iconURL", ""),
       }}
+      themePreset={select("themePreset", ["light", "dark"])}
     />
   ))
   .add(

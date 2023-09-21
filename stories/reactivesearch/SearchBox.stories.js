@@ -13,6 +13,7 @@ export default class SearchBoxDefault extends Component {
 					recordAnalytics: true,
 					"userId": "test",
 				}}
+				themePreset={this.props.themePreset || "light"}
 			>
 				<div className="row">
 					<div className="col">
