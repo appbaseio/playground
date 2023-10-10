@@ -2567,6 +2567,8 @@ storiesOf("Search components/SearchBox", module)
     <SearchBoxRSDefault
       showImageSearch={boolean("showImageSearch", true)}
       vectorDataField={text("vectorDataField", "image")}
+      enableAI={boolean("enableAI", false)}
+      autosuggest={boolean("autosuggest", true)}
       imageSearchConfig={{
         tooltip: text("tooltip", "Search by image"),
         icon: text("icon", ""),
