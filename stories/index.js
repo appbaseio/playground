@@ -109,6 +109,7 @@ import DateRangeDark from "./reactivesearch/DateRangeDark.stories";
 import ErrorBoundaryDefault from "./reactivesearch/ErrorBoundary.stories";
 import SearchBoxWithCustomAIRender, { GlobalStyles } from "./reactivesearch/SearchBoxWithCustomAIRender.stories";
 import { Remarkable } from 'remarkable';
+import { renderBookItemWithDate, renderBookItemWithLink } from "./utils/renderItem";
 const md = new Remarkable();
 
 md.set({
@@ -2562,6 +2563,20 @@ storiesOf("Search components/SearchBox", module)
     )
   )
   .add('with compoundClause', () => <SearchBoxRSDefault compoundClause={compoundClauseSelector()} />)
+  .add("with image search", () => (
+    <SearchBoxRSDefault
+      showImageSearch={boolean("showImageSearch", true)}
+      vectorDataField={text("vectorDataField", "image")}
+      enableAI={boolean("enableAI", false)}
+      autosuggest={boolean("autosuggest", true)}
+      imageSearchConfig={{
+        tooltip: text("tooltip", "Search by image"),
+        icon: text("icon", ""),
+        iconURL: text("iconURL", ""),
+      }}
+      themePreset={select("themePreset", ["light", "dark"])}
+    />
+  ))
   .add(
     "With document suggestions",
     () => (
@@ -2603,7 +2618,7 @@ storiesOf("Search components/SearchBox", module)
             "overview"
         ]}
         showClear
-        renderItem={(suggestion)=>(<div>{suggestion._source.original_title} <span style={{color: "crimson", backgroundColor: "lightgray", padding: 5, borderRadius: 3}}>{new Date(Number(suggestion._source._timestamp) * 1000).toDateString() || ""}</span></div>)}
+        renderItem={renderBookItemWithDate}
       />
     )
   )
@@ -2626,7 +2641,7 @@ storiesOf("Search components/SearchBox", module)
             "overview"
         ]}
         showClear
-        renderItem={(suggestion)=>(<a style={{width:'100%', height: '100%', display: 'block', textDecoration: "none", color: "inherit"}} href={`https://www.google.com/search?q=${suggestion._source.original_title}`} target="_blank" rel="noreferrer">{suggestion._source.original_title}</a>)}
+        renderItem={renderBookItemWithLink}
       />
     )
   )
