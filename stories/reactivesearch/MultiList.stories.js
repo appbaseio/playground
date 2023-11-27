@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactiveBase, SelectedFilters, MultiList, ReactiveList, DataSearch } from "@appbaseio/reactivesearch";
+import { ReactiveBase, SelectedFilters, MultiList, ReactiveList } from "@appbaseio/reactivesearch";
 
 import { booksReactiveList } from "./resultViews";
 
