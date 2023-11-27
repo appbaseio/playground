@@ -2380,7 +2380,7 @@ storiesOf("Search components/SearchBox", module)
     "With distinctField prop",
     () => (
       <SearchBoxRSDefault
-        title="DataSearch"
+        title="SearchBox"
         dataField={['original_title', 'original_title.search']}
         distinctField="authors.keyword"
         distinctFieldConfig={{
@@ -2649,7 +2649,7 @@ storiesOf("Search components/SearchBox", module)
     "Playground",
     () => (
       <SearchBoxRSDefault
-        title={text("title", "DataSearch: Books...")}
+        title={text("title", "SearchBox: Books...")}
         dataField={array("dataField", [{ field: "original_title", weight: 3 }, { field: "original_title.search", weight: 1 }])}
         placeholder={text("placeholder", "Search Books...")}
         autosuggest={boolean("autosuggest", true)}
