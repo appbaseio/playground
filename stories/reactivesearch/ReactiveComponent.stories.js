@@ -17,6 +17,7 @@ export default class ReactiveComponentDefault extends Component {
 			</div>
 		);
 	}
+	triggerRef = React.createRef(null);
 	render() {
 		return (
 			<ReactiveBase
@@ -24,9 +25,21 @@ export default class ReactiveComponentDefault extends Component {
 				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
 				enableAppbase
 			>
+				{this.test}
 				<div className="row">
 					<div className="col">
-						<SelectedFilters />
+						<SelectedFilters onClear={(props) => {
+							if (props === 'CarSensor' && this.triggerRef.current) {
+								this.triggerRef.current({
+									query: {
+										"match_all": {}
+									},
+									value: null
+								});
+							}
+							ref={testRef} // testRef.current would hold the ref of SelectedFitlers
+
+						}} />
 						<ReactiveComponent
 							componentId="CarSensor"
 							defaultQuery={() => ({
@@ -44,7 +57,12 @@ export default class ReactiveComponentDefault extends Component {
 							})}
 							{...this.props}
 						>
-							{({ aggregations, setQuery }) => <CustomComponent aggregations={aggregations} setQuery={setQuery} />}
+							{({ aggregations, setQuery }) => {
+								if (!this.triggerRef.current) {
+									this.triggerRef.current = setQuery;
+								}
+								return <CustomComponent aggregations={aggregations} setQuery={setQuery} />
+							}}
 						</ReactiveComponent>
 					</div>
 
