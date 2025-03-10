@@ -99,6 +99,7 @@ import SearchBoxWithIndexProp from './reactivesearch/SearchBoxWithIndexProp';
 import SearchBoxControlledUsage from "./reactivesearch/SearchBoxControlledUsage.stories";
 import MultiListWithIndexProp from './reactivesearch/MultiListWithIndexProp';
 import AIAnswerDefault from "./reactivesearch/AIAnswer.stories";
+import KNNSearchDefault from "./reactivesearch/KNNSearch.stories";
 // import ReactiveElement from "./reactivesearch/ReactiveElement";
 
 import DarkStory from "./reactivesearch/Dark.stories";
@@ -5089,6 +5090,18 @@ storiesOf("Range components/RangeInput", module)
         queryFormat={select('queryFormat (use with date type)', ['date','basic_date','basic_date_time', 'basic_date_time_no_millis','date_time_no_millis','basic_time','basic_time_no_millis','epoch_millis','epoch_second'],'date')}
         calendarInterval={select('calendarInterval (use with date type)', ['year','quarter','month', 'week','day','hour','minute'],'month')}
         compoundClause={compoundClauseSelector()}
+      />
+    )
+  );
+
+storiesOf("Result components/ReactiveList", module)
+  .addDecorator(withKnobs)
+  .add(
+    "With vectorDataField and candidates",
+    () => (
+      <KNNSearchDefault
+        vectorDataField={text("vectorDataField", "vector_data")}
+        candidates={number("candidates", 20)}
       />
     )
   );
