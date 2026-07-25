@@ -12,29 +12,29 @@ export default class ReactiveComponentDefault extends Component {
 	renderItem(data) {
 		return (
 			<div key={data._id}>
-				<h2>{data.name}</h2>
-				<p>{data.price} - {data.rating} stars rated</p>
+				<h2>{data.original_title}</h2>
+				<p>{data.average_rating} stars rated</p>
 			</div>
 		);
 	}
 	render() {
 		return (
 			<ReactiveBase
-				app="carstore-dataset"
+				app="good-books-ds"
 				url="https://reactivesearch-api-9-4-0.onrender.com"
-			credentials="d03e6f5f33d5:49124674-554e-4343-9ab2-006b2932f5c0"
+				credentials="d03e6f5f33d5:49124674-554e-4343-9ab2-006b2932f5c0"
 				enableAppbase
 			>
 				<div className="row">
 					<div className="col">
 						<SelectedFilters />
 						<ReactiveComponent
-							componentId="CarSensor"
+							componentId="AuthorSensor"
 							defaultQuery={() => ({
 								aggs: {
-									'brand.keyword': {
+									'authors.keyword': {
 										terms: {
-											field: 'brand.keyword',
+											field: 'authors.keyword',
 											order: {
 												_count: 'desc',
 											},
@@ -43,12 +43,12 @@ export default class ReactiveComponentDefault extends Component {
 									},
 								},
 							})}
-							distinctField="brand.keyword"
+							distinctField="authors.keyword"
 							distinctFieldConfig={{
 								inner_hits: {
 									name: 'most_recent',
 									size: 5,
-									sort: [{ timestamp: 'asc' }],
+									sort: [{ original_publication_year: 'desc' }],
 								},
 								max_concurrent_group_searches: 4,
 							}}
@@ -62,14 +62,14 @@ export default class ReactiveComponentDefault extends Component {
 					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="name"
+							dataField="original_title.keyword"
 							title="ReactiveList"
 							from={0}
 							size={20}
 							renderItem={this.renderItem}
 							pagination
 							react={{
-								and: 'CarSensor',
+								and: 'AuthorSensor',
 							}}
 						/>
 					</div>
@@ -84,7 +84,7 @@ class CustomComponent extends Component {
 		this.props.setQuery({
 			query: {
 				term: {
-					"brand.keyword": value,
+					'authors.keyword': value,
 				},
 			},
 			value,
@@ -94,7 +94,7 @@ class CustomComponent extends Component {
 	render() {
 		if (this.props.data) {
 			return this.props.data.map(item => (
-				<div key={item._id} onClick={() => this.setValue(item.brand)}>{item.brand}</div>
+				<div key={item._id} onClick={() => this.setValue(item.authors)}>{item.authors}</div>
 			));
 		}
 		return null;
