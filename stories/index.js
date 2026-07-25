@@ -1942,8 +1942,8 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
-        enableAI={boolean("enableAI", true)}
+        enableFAQSuggestions={boolean("enableFAQSuggestions", false)}
+        enableAI={boolean("enableAI", false)}
         showClear
         searchboxId="rs_docs"
       />
@@ -1954,7 +1954,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        enableFAQSuggestions={boolean("enableFAQSuggestions", false)}
         FAQSuggestionsConfig={{
           sectionLabel: text("sectionLabel", "FAQ"),
           size: number("suggestionSize", 2),
@@ -2008,7 +2008,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxWithCustomAIRender
         placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
+        enableAI={boolean("enableAI", false)}
       />
     )
   )
@@ -2337,7 +2337,7 @@ storiesOf("Search components/SearchBox", module)
     "With enablePopularSuggestions & popularSuggestionsConfig",
     () => (
       <SearchBoxRSDefault
-        enablePopularSuggestions={boolean('enablePopularSuggestions', true)}
+        enablePopularSuggestions={boolean('enablePopularSuggestions', false)}
         popularSuggestionsConfig={object("popularSuggestionsConfig", {
           size: 3,
           minChars: 3,
@@ -2351,7 +2351,7 @@ storiesOf("Search components/SearchBox", module)
     "With enableRecentSuggestions & recentSuggestionsConfig",
     () => (
       <SearchBoxRSDefault
-        enableRecentSuggestions={boolean('enableRecentSuggestions', true)}
+        enableRecentSuggestions={boolean('enableRecentSuggestions', false)}
         recentSuggestionsConfig={object("recentSuggestionsConfig", {
           size: 3,
           minChars: 3,
@@ -2459,8 +2459,8 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
-        enableAI={boolean("enableAI", true)}
+        enableFAQSuggestions={boolean("enableFAQSuggestions", false)}
+        enableAI={boolean("enableAI", false)}
         showClear
         searchboxId="rs_docs"
       />
@@ -2471,7 +2471,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enableFAQSuggestions={boolean("enableFAQSuggestions", true)}
+        enableFAQSuggestions={boolean("enableFAQSuggestions", false)}
         FAQSuggestionsConfig={{
           sectionLabel: text("sectionLabel", "FAQ"),
           size: number("suggestionSize", 2),
@@ -2485,7 +2485,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
+        enableAI={boolean("enableAI", false)}
       />
     )
   )
@@ -2494,7 +2494,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
+        enableAI={boolean("enableAI", false)}
         AIUIConfig={{
           askButton: boolean("askButton", true)
         }}
@@ -2507,7 +2507,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
+        enableAI={boolean("enableAI", false)}
         AIUIConfig={{
           triggerOn: select("mode", ["manual", "question"], "manual"),
           askButton: true
@@ -2520,7 +2520,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
+        enableAI={boolean("enableAI", false)}
         AIUIConfig={{
           triggerOn: select("mode", ["manual", "question"], "manual"),
           renderTriggerMessage: text("renderTriggerMessage", "Click to trigger AI 🤖"),
@@ -2533,7 +2533,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
+        enableAI={boolean("enableAI", false)}
         AIUIConfig={{
           showSourceDocuments: boolean("showSourceDocuments", true)
         }}
@@ -2544,7 +2544,7 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enableAI={boolean("enableAI", true)}
+        enableAI={boolean("enableAI", false)}
         AIUIConfig={{
           showSourceDocuments: true,
           renderSourceDocument: (obj) => {
@@ -2671,14 +2671,14 @@ storiesOf("Search components/SearchBox", module)
         addonAfter={text('addonAfter', 'After')}
         expandSuggestionsContainer={boolean('expandSuggestionsContainer', true)}
         enablePredictiveSuggestions={boolean('enablePredictiveSuggestions', true)}
-        enablePopularSuggestions={boolean('enablePopularSuggestions', true)}
+        enablePopularSuggestions={boolean('enablePopularSuggestions', false)}
         popularSuggestionsConfig={object("popularSuggestionsConfig", {
           size: 3,
           minChars: 3,
           index: 'good-books-ds',
           showGlobal: false
         })}
-        enableRecentSuggestions={boolean('enableRecentSuggestions', true)}
+        enableRecentSuggestions={boolean('enableRecentSuggestions', false)}
         recentSuggestionsConfig={object("recentSuggestionsConfig", {
           size: 3,
           minChars: 3,
