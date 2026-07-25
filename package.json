@@ -21,10 +21,13 @@
     "dependencies": {
         "@appbaseio/reactivemaps": "4.0.0",
         "@appbaseio/reactivesearch": "4.3.0",
+        "@emotion/styled": "^11.11.0",
+        "@emotion/react": "^11.11.0",
         "docs": "appbaseio/Docs#dev",
         "moment": "^2.29.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-icons": "^4.12.0",
         "remarkable": "^2.0.1"
     },
     "devDependencies": {
