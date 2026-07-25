@@ -1,25 +1,27 @@
 import React, { Component } from "react";
 import { ReactiveBase, ReactiveList, SelectedFilters, TabDataList } from "@appbaseio/reactivesearch";
 
-import { meetupList as MeetupList } from "./resultViews";
+import { booksList as BooksList } from "./resultViews";
+
+const languageOptions = [
+	{ label: 'English', value: 'eng' },
+	{ label: 'French', value: 'fre' },
+	{ label: 'Spanish', value: 'spa' },
+];
 
 const HorizontalLayout = (props) =>(
 <div className="container">
 	<SelectedFilters />
 	<TabDataList
-		componentId="CitySensor"
-		dataField="group.group_topics.topic_name_raw.keyword"
-		data={[
-			{ label: 'Open Source', value: 'Open Source' },
-			{ label: 'Social', value: 'Social' },
-			{ label: 'Adventure', value: 'Adventure' },
-			{ label: 'Music', value: 'Music' },
-		]}
+		componentId="LanguageSensor"
+		title="Languages"
+		dataField="language_code.keyword"
+		data={languageOptions}
 		{...props}
 	/>
 	<ReactiveList
 		componentId="SearchResult"
-		dataField="group.group_topics.topic_name_raw.keyword"
+		dataField="original_title.keyword"
 		title="Results"
 		sortBy="asc"
 		className="result-list-container"
@@ -27,14 +29,14 @@ const HorizontalLayout = (props) =>(
 		size={5}
 		pagination
 		react={{
-			and: ["CitySensor"]
+			and: ["LanguageSensor"]
 		}}
 		{...props}
 	>
 		{({ data }) => (
 			<ReactiveList.ResultListWrapper>
 				{
-					data.map(item => <MeetupList {...item} />)
+					data.map(item => <BooksList {...item} />)
 				}
 			</ReactiveList.ResultListWrapper>
 		)}
@@ -48,21 +50,17 @@ const VerticalLayout = (props)=>(
 			<div className="row">
 				<div className="col">
 							<TabDataList
-								componentId="CitySensor"
-								dataField="group.group_topics.topic_name_raw.keyword"
-								data={[
-									{ label: 'Open Source', value: 'Open Source' },
-									{ label: 'Social', value: 'Social' },
-									{ label: 'Adventure', value: 'Adventure' },
-									{ label: 'Music', value: 'Music' },
-								]}
+								componentId="LanguageSensor"
+								title="Languages"
+								dataField="language_code.keyword"
+								data={languageOptions}
 								{...props}
 							/>
 				</div>
 				<div className="col">
 					<ReactiveList
 						componentId="SearchResult"
-						dataField="group.group_topics.topic_name_raw.keyword"
+						dataField="original_title.keyword"
 						title="Results"
 						sortBy="asc"
 						className="result-list-container"
@@ -70,14 +68,14 @@ const VerticalLayout = (props)=>(
 						size={5}
 						pagination
 						react={{
-							and: ["CitySensor"]
+							and: ["LanguageSensor"]
 						}}
 						{...props}
 					>
 						{({ data }) => (
 							<ReactiveList.ResultListWrapper>
 								{
-									data.map(item => <MeetupList {...item} />)
+									data.map(item => <BooksList {...item} />)
 								}
 							</ReactiveList.ResultListWrapper>
 						)}
@@ -91,8 +89,9 @@ export default class TabDataListDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="meetup_app"
-				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+				app="good-books-ds"
+				url="https://reactivesearch-api-9-4-0.onrender.com"
+				credentials="d03e6f5f33d5:49124674-554e-4343-9ab2-006b2932f5c0"
 				enableAppbase
 			>
 				{this.props.displayAsVertical ? <VerticalLayout {...this.props}/>: <HorizontalLayout {...this.props}/>}

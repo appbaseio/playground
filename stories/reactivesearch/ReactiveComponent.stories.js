@@ -12,8 +12,8 @@ export default class ReactiveComponentDefault extends Component {
 	renderItem(data) {
 		return (
 			<div key={data._id}>
-				<h2>{data.name}</h2>
-				<p>{data.price} - {data.rating} stars rated</p>
+				<h2>{data.original_title}</h2>
+				<p>{data.average_rating} stars rated</p>
 			</div>
 		);
 	}
@@ -21,15 +21,16 @@ export default class ReactiveComponentDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="carstore-dataset"
-				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+				app="good-books-ds"
+				url="https://reactivesearch-api-9-4-0.onrender.com"
+				credentials="d03e6f5f33d5:49124674-554e-4343-9ab2-006b2932f5c0"
 				enableAppbase
 			>
 				{this.test}
 				<div className="row">
 					<div className="col">
 						<SelectedFilters onClear={(props) => {
-							if (props === 'CarSensor' && this.triggerRef.current) {
+							if (props === 'LanguageSensor' && this.triggerRef.current) {
 								this.triggerRef.current({
 									query: {
 										"match_all": {}
@@ -41,12 +42,12 @@ export default class ReactiveComponentDefault extends Component {
 
 						}} />
 						<ReactiveComponent
-							componentId="CarSensor"
+							componentId="LanguageSensor"
 							defaultQuery={() => ({
 								aggs: {
-									'brand.keyword': {
+									language_code: {
 										terms: {
-											field: 'brand.keyword',
+											field: 'language_code.keyword',
 											order: {
 												_count: 'desc',
 											},
@@ -69,14 +70,14 @@ export default class ReactiveComponentDefault extends Component {
 					<div className="col">
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="name"
+							dataField="original_title.keyword"
 							title="ReactiveList"
 							from={0}
 							size={20}
 							renderItem={this.renderItem}
 							pagination
 							react={{
-								and: 'CarSensor',
+								and: 'LanguageSensor',
 							}}
 						/>
 					</div>
@@ -91,7 +92,7 @@ class CustomComponent extends Component {
 		this.props.setQuery({
 			query: {
 				term: {
-					"brand.keyword": value,
+					'language_code.keyword': value,
 				},
 			},
 			value,
@@ -100,7 +101,7 @@ class CustomComponent extends Component {
 
 	render() {
 		if (this.props.aggregations) {
-			return this.props.aggregations['brand.keyword'].buckets.map(item => (
+			return this.props.aggregations.language_code.buckets.map(item => (
 				<div key={item.key} onClick={() => this.setValue(item.key)}>{item.key}</div>
 			));
 		}

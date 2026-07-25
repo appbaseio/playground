@@ -1,84 +1,74 @@
 import React, { Component } from "react";
 import { ReactiveBase, TagCloud, SingleDataList, MultiDataList, ToggleButton, ReactiveList, SelectedFilters } from "@appbaseio/reactivesearch";
 
-import { meetupList as MeetupList } from "./resultViews";
+import { booksList as BooksList } from "./resultViews";
+
+const languageOptions = [
+	{ label: 'English', value: 'eng' },
+	{ label: 'French', value: 'fre' },
+	{ label: 'Spanish', value: 'spa' },
+];
 
 export default class TagCloudDefault extends Component {
 	render() {
 		return (
 			<ReactiveBase
-				app="meetup_app"
-				url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+				app="good-books-ds"
+				url="https://reactivesearch-api-9-4-0.onrender.com"
+				credentials="d03e6f5f33d5:49124674-554e-4343-9ab2-006b2932f5c0"
 				enableAppbase
 				{...this.props}
 			>
 				<div className={`row ${this.props.themePreset}`}>
 					<div className="col">
 						<ToggleButton
-							componentId="CitySensor"
-							title="ToggleButton"
-							dataField="group.group_topics.topic_name_raw.keyword"
-							data={[
-								{ label: 'Social', value: 'Social' },
-								{ label: 'Adventure', value: 'Adventure' },
-								{ label: 'Music', value: 'Music' },
-							]}
+							componentId="LanguageSensor"
+							title="Languages"
+							dataField="language_code.keyword"
+							data={languageOptions}
 						/>
 						<br />
 						<SingleDataList
-							componentId="CitySensor3"
-							title="SingleDataList"
-							dataField="group.group_topics.topic_name_raw.keyword"
-							data={[
-								{ label: 'Open Source', value: 'Open Source' },
-								{ label: 'Social', value: 'Social' },
-								{ label: 'Adventure', value: 'Adventure' },
-								{ label: 'Music', value: 'Music' },
-							]}
+							componentId="LanguageSensor3"
+							title="Languages"
+							dataField="language_code.keyword"
+							data={languageOptions}
 						/>
 						<br />
 						<MultiDataList
-							componentId="CitySensor4"
-							title="MultiDataList"
-							dataField="group.group_topics.topic_name_raw.keyword"
-							data={[
-								{ label: 'Open Source', value: 'Open Source' },
-								{ label: 'Social', value: 'Social' },
-								{ label: 'Adventure', value: 'Adventure' },
-								{ label: 'Music', value: 'Music' },
-							]}
+							componentId="LanguageSensor4"
+							title="Languages"
+							dataField="language_code.keyword"
+							data={languageOptions}
 						/>
 						<br />
 						<TagCloud
-							componentId="CitySensor2"
-							title="TagCloud"
-							dataField="group.group_city.keyword"
+							componentId="LanguageSensor2"
+							title="Languages"
+							dataField="language_code.keyword"
 							size={50}
 						/>
 					</div>
 					<div className="col">
-						<SelectedFilters componentId="CitySensor" />
+						<SelectedFilters componentId="LanguageSensor" />
 						<ReactiveList
 							componentId="SearchResult"
-							dataField="group.group_topics.topic_name_raw.keyword"
+							dataField="original_title.keyword"
 							title="Results"
 							sortBy="asc"
 							className="result-list-container"
 							from={0}
 							size={5}
-							innerClass={{
-								image: 'meetup-list-image'
-							}}
 							pagination
 							react={{
-								and: ["CitySensor", "CitySensor2", "CitySensor3", "CitySensor4"]
+								and: ["LanguageSensor", "LanguageSensor2", "LanguageSensor3", "LanguageSensor4"]
 							}}
 							{...this.props}
 						>
 							{({ data }) => (
 								<ReactiveList.ResultListWrapper>
 									{
-										data.map(item => <MeetupList {...item} />)
+										data.map(item => <BooksList {...item} />)
 									}
 								</ReactiveList.ResultListWrapper>
 							)}
