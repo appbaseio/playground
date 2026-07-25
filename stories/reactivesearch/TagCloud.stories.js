@@ -16,6 +16,7 @@ export default class TagCloudDefault extends Component {
 					<div className="col">
 						<TagCloud
 							componentId="LanguageSensor"
+							title="Languages"
 							dataField="language_code.keyword"
 							size={50}
 							{...this.props}

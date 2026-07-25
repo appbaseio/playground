@@ -23,28 +23,28 @@ export default class TagCloudDefault extends Component {
 					<div className="col">
 						<ToggleButton
 							componentId="LanguageSensor"
-							title="ToggleButton"
+							title="Languages"
 							dataField="language_code.keyword"
 							data={languageOptions}
 						/>
 						<br />
 						<SingleDataList
 							componentId="LanguageSensor3"
-							title="SingleDataList"
+							title="Languages"
 							dataField="language_code.keyword"
 							data={languageOptions}
 						/>
 						<br />
 						<MultiDataList
 							componentId="LanguageSensor4"
-							title="MultiDataList"
+							title="Languages"
 							dataField="language_code.keyword"
 							data={languageOptions}
 						/>
 						<br />
 						<TagCloud
 							componentId="LanguageSensor2"
-							title="TagCloud"
+							title="Languages"
 							dataField="language_code.keyword"
 							size={50}
 						/>

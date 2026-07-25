@@ -16,6 +16,7 @@ export default class SingleDataListDefault extends Component {
 					<div className="col">
 						<SingleDataList
 							componentId="LanguageSensor"
+							title="Languages"
 							dataField="language_code.keyword"
 							data={[
 								{ label: 'English', value: 'eng' },

@@ -989,7 +989,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
     "With title",
     () => (
       <DynamicRangeSliderDefault
-        title={text("title", "Books")}
+        title={text("title", "Ratings count")}
       />
     )
   )
@@ -997,10 +997,10 @@ storiesOf("Range components/DynamicRangeSlider", module)
     "With labels",
     () => (
       <DynamicRangeSliderDefault
-        title={text("title", "Books")}
+        title={text("title", "Ratings count")}
         rangeLabels={(min, max) => ({
-          start: min + " book",
-          end: max + " books"
+          start: min >= 1000 ? `${Math.round(min / 1000)}K` : min,
+          end: max >= 1000 ? `${Math.round(max / 1000)}K` : max
         })}
       />
     )
@@ -1122,12 +1122,12 @@ storiesOf("Range components/DynamicRangeSlider", module)
     "Playground",
     () => (
       <DynamicRangeSliderDefault
-        title={text("title", "DynamicRangeSlider: Books")}
+        title={text("title", "DynamicRangeSlider: Ratings")}
         showFilter={boolean("showFilter", true)}
         dataField={select(
           "dataField",
-          ["books_count", "original_publication_year", "ratings_count", 'timestamp'],
-          "books_count"
+          ["ratings_count", "original_publication_year", "average_rating", "timestamp"],
+          "ratings_count"
         )}
         defaultValue={(min, max) => ({
           start: min,
@@ -1160,7 +1160,7 @@ storiesOf("Base components/TagCloud", module)
   .add(
     "With title",
     () => (
-      <TagCloudDefault title={text("title", "Cities")} />
+      <TagCloudDefault title={text("title", "Languages")} />
     )
   )
   .add(
@@ -1176,7 +1176,7 @@ storiesOf("Base components/TagCloud", module)
     () => (
       <TagCloudDefault
         showFilter={boolean("showFilter", true)}
-        filterLabel={text("filterLabel", "Cities filter")}
+        filterLabel={text("filterLabel", "Language filter")}
       />
     )
   )
@@ -1192,7 +1192,7 @@ storiesOf("Base components/TagCloud", module)
     "With defaultValue",
     () => (
       <TagCloudDefault
-        defaultValue={["Auckland"]}
+        defaultValue={["eng"]}
       />
     )
   )
@@ -1201,14 +1201,14 @@ storiesOf("Base components/TagCloud", module)
     () => (
       <TagCloudDefault
         multiSelect
-        defaultValue={["Auckland", "Amsterdam"]}
+        defaultValue={["eng", "fre"]}
       />
     )
   )
   .add(
     "With multiSelect off and defaultValue",
     () => (
-      <TagCloudDefault defaultValue={["Auckland"]} />
+      <TagCloudDefault defaultValue={["eng"]} />
     )
   )
   .add(
@@ -1239,18 +1239,18 @@ storiesOf("Base components/TagCloud", module)
     "Playground",
     () => (
       <TagCloudDefault
-        title={text("title", "TagCloud: City Filter")}
+        title={text("title", "TagCloud: Language Filter")}
         dataField={select(
           "dataField",
-          ["group.group_city.keyword", "group.group_topics.topic_name_raw.keyword"],
-          "group.group_city.keyword"
+          ["language_code.keyword", "authors.keyword"],
+          "language_code.keyword"
         )}
         size={number("size", 100)}
         multiSelect
-        defaultValue={["Auckland"]}
+        defaultValue={["eng"]}
         showCount={boolean("showCount", true)}
         showFilter={boolean("showFilter", true)}
-        filterLabel={text("filterLabel", "Cities filter")}
+        filterLabel={text("filterLabel", "Language filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         compoundClause={compoundClauseSelector()}
       />
@@ -2815,7 +2815,7 @@ storiesOf("Range components/NumberBox", module)
         title={text("title", "Books")}
         dataField={select(
           "dataField",
-          ["average_rating_rounded", "books_count"],
+          ["average_rating_rounded", "ratings_count"],
           "average_rating_rounded"
         )}
         defaultValue={3}
@@ -3717,7 +3717,7 @@ storiesOf("List components/SingleDataList", module)
     "With title",
     () => (
       <SingleDataListRSDefault
-        title={text("title", "Topics")}
+        title={text("title", "Languages")}
       />
     )
   )
@@ -3726,7 +3726,7 @@ storiesOf("List components/SingleDataList", module)
     "With defaultValue",
     () => (
       <SingleDataListRSDefault
-        defaultValue="Social"
+        defaultValue="eng"
       />
     )
   )
@@ -3735,7 +3735,7 @@ storiesOf("List components/SingleDataList", module)
     () => (
       <SingleDataListRSDefault
         showSearch={boolean("showSearch", true)}
-        placeholder={text("placeholder", "Search topics")}
+        placeholder={text("placeholder", "Search languages")}
       />
     )
   )
@@ -3837,11 +3837,11 @@ storiesOf("List components/SingleDataList", module)
     "Playground",
     () => (
       <SingleDataListRSDefault
-        title={text("title", "Topics")}
-        dataField={text("dataField", "group.group_topics.topic_name_raw.keyword")}
-        defaultValue="Social"
+        title={text("title", "Languages")}
+        dataField={text("dataField", "language_code.keyword")}
+        defaultValue="eng"
         showSearch={boolean("showSearch", true)}
-        placeholder={text("placeholder", "Search topics")}
+        placeholder={text("placeholder", "Search languages")}
         showRadio={boolean("showRadio", true)}
         selectAllLabel={text("selectAllLabel", "Select All")}
         showFilter={boolean("showFilter", true)}
@@ -3871,7 +3871,7 @@ storiesOf("List components/MultiDataList", module)
     "With title",
     () => (
       <MultiDataListRSDefault
-        title={text("title", "Topics")}
+        title={text("title", "Languages")}
       />
     )
   )
@@ -3880,7 +3880,7 @@ storiesOf("List components/MultiDataList", module)
     "With defaultValue",
     () => (
       <MultiDataListRSDefault
-        defaultValue={["Social", "Music"]}
+        defaultValue={["eng", "fre"]}
       />
     )
   )
@@ -3889,7 +3889,7 @@ storiesOf("List components/MultiDataList", module)
     () => (
       <MultiDataListRSDefault
         showSearch={boolean("showSearch", true)}
-        placeholder={text("placeholder", "Search topics")}
+        placeholder={text("placeholder", "Search languages")}
       />
     )
   )
@@ -3989,11 +3989,11 @@ storiesOf("List components/MultiDataList", module)
     "Playground",
     () => (
       <MultiDataListRSDefault
-        title={text("title", "Topics")}
-        dataField={text("dataField", "group.group_topics.topic_name_raw.keyword")}
-        defaultValue={["Social", "Music"]}
+        title={text("title", "Languages")}
+        dataField={text("dataField", "language_code.keyword")}
+        defaultValue={["eng", "fre"]}
         showSearch={boolean("showSearch", true)}
-        placeholder={text("placeholder", "Search topics")}
+        placeholder={text("placeholder", "Search languages")}
         showCheckbox={boolean("showCheckbox", true)}
         selectAllLabel={text("selectAllLabel", "Select All")}
         showFilter={boolean("showFilter", true)}
@@ -4511,7 +4511,7 @@ storiesOf("Base components/ToggleButton", module)
     "With title",
     () => (
       <ToggleButtonRSDefault
-        title={text("title", "ToggleButton: Topics")}
+        title={text("title", "ToggleButton: Languages")}
       />
     )
   )
@@ -4520,7 +4520,7 @@ storiesOf("Base components/ToggleButton", module)
     "With Default Selected",
     () => (
       <ToggleButtonRSDefault
-        defaultValue={["Music"]}
+        defaultValue={["eng"]}
       />
     )
   )
@@ -4529,7 +4529,7 @@ storiesOf("Base components/ToggleButton", module)
     () => (
       <ToggleButtonRSDefault
         showFilter={boolean("showFilter", true)}
-        filterLabel={text("filterLabel", "Topics filter")}
+        filterLabel={text("filterLabel", "Language filter")}
       />
     )
   )
@@ -4553,12 +4553,12 @@ storiesOf("Base components/ToggleButton", module)
     "Playground",
     () => (
       <ToggleButtonRSDefault
-        title={text("title", "ToggleButton: Topics")}
-        dataField={text("dataField", "group.group_topics.topic_name_raw.keyword")}
+        title={text("title", "ToggleButton: Languages")}
+        dataField={text("dataField", "language_code.keyword")}
         multiSelect={boolean("multiSelect", true)}
-        defaultValue={["Social"]}
+        defaultValue={["eng"]}
         showFilter={boolean("showFilter", true)}
-        filterLabel={text("filterLabel", "Category filter")}
+        filterLabel={text("filterLabel", "Language filter")}
         URLParams={boolean("URLParams (not visible on storybook)", false)}
         compoundClause={compoundClauseSelector()}
       />
@@ -5066,8 +5066,8 @@ storiesOf("Range components/RangeInput", module)
         title={text("title", "RangeSlider: Ratings")}
         dataField={select(
           "dataField",
-          ["books_count", "original_publication_year", "ratings_count", 'timestamp'],
-          "books_count"
+          ["ratings_count", "original_publication_year", "average_rating", "timestamp"],
+          "ratings_count"
         )}
         range={object("range", {
           start: 3000,
@@ -5311,7 +5311,7 @@ storiesOf("Range components/RangeSlider", module)
         title={text("title", "RangeSlider: Prices")}
         dataField={select(
           "dataField",
-          ["books_count", "original_publication_year", "ratings_count", 'timestamp'],
+          ["ratings_count", "original_publication_year", "average_rating", "timestamp"],
           "ratings_count"
         )}
         range={object("range", {

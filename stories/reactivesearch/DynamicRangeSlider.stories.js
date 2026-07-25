@@ -20,8 +20,13 @@ export default class DynamicRangeSliderDefault extends Component {
 				<div className="row">
 					<div className="col">
 						<DynamicRangeSlider
-							dataField="books_count"
+							dataField="ratings_count"
 							componentId="BookSensor"
+							title="Ratings count"
+							rangeLabels={{
+								start: '3K',
+								end: '50K',
+							}}
 							{...this.props}
 						/>
 					</div>
