@@ -5,85 +5,70 @@ import {
   MultiList,
   ReactiveList,
 } from "@appbaseio/reactivesearch";
-import styled from "@emotion/styled";
-import { FaUsers, FaBuilding } from "react-icons/fa";
 
-const Container = styled.div`
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: Arial, sans-serif;
-`;
-
-const Layout = styled.div`
-  display: flex;
-  gap: 2rem;
-`;
-
-const FacetContainer = styled.div`
-  width: 250px;
-`;
-
-const ResultsContainer = styled.div`
-  flex: 1;
-`;
-
-const ResultItem = styled.div`
-  display: flex;
-  align-items: flex-start;
-  padding: 1rem 0;
-  border-bottom: 1px solid #ddd;
-`;
-
-const Logo = styled.img`
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  margin-right: 1rem;
-`;
-
-const Info = styled.div`
-  flex: 1;
-`;
-
-const CompanyName = styled.h3`
-  margin: 0;
-  font-size: 1.25rem;
-`;
-
-const OneLiner = styled.p`
-  margin: 0.5rem 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-`;
-
-const Meta = styled.div`
-  display: flex;
-  gap: 1rem;
-  font-size: 0.9rem;
-  color: #555;
-`;
-
-const Tags = styled.div`
-  margin: 0.5rem 0;
-`;
-
-const Tag = styled.span`
-  background-color: #f0f0f0;
-  border-radius: 4px;
-  padding: 0.25rem 0.5rem;
-  margin-right: 0.5rem;
-`;
-
-const Link = styled.a`
-  color: #007bff;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
+const styles = {
+  container: {
+    maxWidth: "1000px",
+    margin: "0 auto",
+    padding: "2rem",
+    fontFamily: "Arial, sans-serif",
+  },
+  layout: {
+    display: "flex",
+    gap: "2rem",
+  },
+  facetContainer: {
+    width: "250px",
+  },
+  resultsContainer: {
+    flex: 1,
+  },
+  resultItem: {
+    display: "flex",
+    alignItems: "flex-start",
+    padding: "1rem 0",
+    borderBottom: "1px solid #ddd",
+  },
+  logo: {
+    width: "50px",
+    height: "50px",
+    objectFit: "contain",
+    marginRight: "1rem",
+  },
+  info: {
+    flex: 1,
+  },
+  companyName: {
+    margin: 0,
+    fontSize: "1.25rem",
+  },
+  oneLiner: {
+    margin: "0.5rem 0",
+    display: "-webkit-box",
+    WebkitLineClamp: 2,
+    WebkitBoxOrient: "vertical",
+    overflow: "hidden",
+  },
+  meta: {
+    display: "flex",
+    gap: "1rem",
+    fontSize: "0.9rem",
+    color: "#555",
+  },
+  tags: {
+    margin: "0.5rem 0",
+  },
+  tag: {
+    backgroundColor: "#f0f0f0",
+    borderRadius: "4px",
+    padding: "0.25rem 0.5rem",
+    marginRight: "0.5rem",
+  },
+  link: {
+    color: "#007bff",
+    textDecoration: "none",
+  },
+};
 
 const KNNSearchDefault = (props) => {
   const { candidates, vectorDataField } = props;
@@ -94,7 +79,7 @@ const KNNSearchDefault = (props) => {
       credentials="d03e6f5f33d5:49124674-554e-4343-9ab2-006b2932f5c0"
       {...props}
     >
-      <Container>
+      <div style={styles.container}>
         <h2>K-Nearest Neighbors Search with Facets</h2>
         <SearchBox
           componentId="search"
@@ -105,8 +90,8 @@ const KNNSearchDefault = (props) => {
           style={{ marginBottom: "1rem" }}
           URLParams
         />
-        <Layout>
-          <FacetContainer>
+        <div style={styles.layout}>
+          <div style={styles.facetContainer}>
             <MultiList
               componentId="industries"
               dataField="industries.keyword"
@@ -118,8 +103,8 @@ const KNNSearchDefault = (props) => {
               }}
               style={{ marginBottom: "1rem" }}
             />
-          </FacetContainer>
-          <ResultsContainer>
+          </div>
+          <div style={styles.resultsContainer}>
             <ReactiveList
               componentId="results"
               dataField="_score"
@@ -145,48 +130,48 @@ const KNNSearchDefault = (props) => {
                   {data.map((item) => {
                     const company = item._source || item;
                     return (
-                      <ResultItem key={company._id}>
-                        <Logo
+                      <div key={company._id} style={styles.resultItem}>
+                        <img
                           src={company.small_logo_thumb_url}
                           alt={`${company.name} logo`}
+                          style={styles.logo}
                         />
-                        <Info>
-                          <CompanyName>{company.name}</CompanyName>
-                          <OneLiner>
+                        <div style={styles.info}>
+                          <h3 style={styles.companyName}>{company.name}</h3>
+                          <p style={styles.oneLiner}>
                             {company.one_liner || company.long_description}
-                          </OneLiner>
-                          <Meta>
-                            <span>
-                              <FaUsers /> {company.team_size}
-                            </span>
-                            <span>
-                              <FaBuilding /> {company.stage}
-                            </span>
-                          </Meta>
-                          <Tags>
+                          </p>
+                          <div style={styles.meta}>
+                            <span>Team: {company.team_size}</span>
+                            <span>Stage: {company.stage}</span>
+                          </div>
+                          <div style={styles.tags}>
                             {company.industries &&
                               company.industries.map((ind) => (
-                                <Tag key={ind}>{ind}</Tag>
+                                <span key={ind} style={styles.tag}>
+                                  {ind}
+                                </span>
                               ))}
-                          </Tags>
-                          <Link
+                          </div>
+                          <a
                             href={company.website}
                             target="_blank"
                             rel="noopener noreferrer"
+                            style={styles.link}
                           >
                             Visit website
-                          </Link>
-                        </Info>
-                      </ResultItem>
+                          </a>
+                        </div>
+                      </div>
                     );
                   })}
                 </>
               )}
               renderNoResults={() => <div>No results found</div>}
             />
-          </ResultsContainer>
-        </Layout>
-      </Container>
+          </div>
+        </div>
+      </div>
     </ReactiveBase>
   );
 };
