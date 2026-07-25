@@ -16,7 +16,7 @@ export default class MultiDataListDefault extends Component {
 					<div className="col">
 						<MultiDataList
 							componentId="LanguageSensor"
-							dataField="language_code"
+							dataField="language_code.keyword"
 							data={[
 								{ label: 'English', value: 'eng' },
 								{ label: 'French', value: 'fre' },

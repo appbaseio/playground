@@ -47,7 +47,7 @@ export default class ReactiveComponentDefault extends Component {
 								aggs: {
 									language_code: {
 										terms: {
-											field: 'language_code',
+											field: 'language_code.keyword',
 											order: {
 												_count: 'desc',
 											},
@@ -92,7 +92,7 @@ class CustomComponent extends Component {
 		this.props.setQuery({
 			query: {
 				term: {
-					language_code: value,
+					'language_code.keyword': value,
 				},
 			},
 			value,

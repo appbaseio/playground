@@ -14,7 +14,7 @@ const HorizontalLayout = (props) =>(
 	<SelectedFilters />
 	<TabDataList
 		componentId="LanguageSensor"
-		dataField="language_code"
+		dataField="language_code.keyword"
 		data={languageOptions}
 		{...props}
 	/>
@@ -50,7 +50,7 @@ const VerticalLayout = (props)=>(
 				<div className="col">
 							<TabDataList
 								componentId="LanguageSensor"
-								dataField="language_code"
+								dataField="language_code.keyword"
 								data={languageOptions}
 								{...props}
 							/>
