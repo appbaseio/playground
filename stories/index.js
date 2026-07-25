@@ -2082,8 +2082,8 @@ storiesOf("Search components/SearchBox", module)
     () => (
       <SearchBoxRSDefault
         placeholder="Search Books..."
-        enablePopularSuggestions
-        enableRecentSuggestions
+        enablePopularSuggestions={false}
+        enableRecentSuggestions={false}
         innerClass={{
           'recent-search-icon': 'recent-icon',
           'popular-search-icon': 'popular-icon',
