@@ -989,7 +989,7 @@ storiesOf("Range components/DynamicRangeSlider", module)
     "With title",
     () => (
       <DynamicRangeSliderDefault
-        title={text("title", "Ratings count")}
+        title={text("title", "Average rating")}
       />
     )
   )
@@ -997,10 +997,10 @@ storiesOf("Range components/DynamicRangeSlider", module)
     "With labels",
     () => (
       <DynamicRangeSliderDefault
-        title={text("title", "Ratings count")}
+        title={text("title", "Average rating")}
         rangeLabels={(min, max) => ({
-          start: min >= 1000 ? `${Math.round(min / 1000)}K` : min,
-          end: max >= 1000 ? `${Math.round(max / 1000)}K` : max
+          start: min.toFixed(1),
+          end: max.toFixed(1),
         })}
       />
     )
@@ -1032,8 +1032,8 @@ storiesOf("Range components/DynamicRangeSlider", module)
     () => (
       <DynamicRangeSliderDefault
         defaultValue={() => ({
-          start: 500,
-          end: 2000
+          start: 3,
+          end: 4.5
         })}
       />
     )
@@ -1043,8 +1043,8 @@ storiesOf("Range components/DynamicRangeSlider", module)
     () => (
       <DynamicRangeSliderDefault
         defaultValue={() => ({
-          start: 500,
-          end: 2000
+          start: 3,
+          end: 4.5
         })}
         onDrag={(selected, boundary) => {
           console.log(selected, boundary);
@@ -1126,8 +1126,8 @@ storiesOf("Range components/DynamicRangeSlider", module)
         showFilter={boolean("showFilter", true)}
         dataField={select(
           "dataField",
-          ["ratings_count", "original_publication_year", "average_rating", "timestamp"],
-          "ratings_count"
+          ["average_rating", "original_publication_year", "timestamp"],
+          "average_rating"
         )}
         defaultValue={(min, max) => ({
           start: min,

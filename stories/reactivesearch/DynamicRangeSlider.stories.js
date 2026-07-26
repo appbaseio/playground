@@ -20,13 +20,13 @@ export default class DynamicRangeSliderDefault extends Component {
 				<div className="row">
 					<div className="col">
 						<DynamicRangeSlider
-							dataField="ratings_count"
+							dataField="average_rating"
 							componentId="BookSensor"
-							title="Ratings count"
-							rangeLabels={{
-								start: '3K',
-								end: '50K',
-							}}
+							title="Average rating"
+							rangeLabels={(min, max) => ({
+								start: min.toFixed(1),
+								end: max.toFixed(1),
+							})}
 							{...this.props}
 						/>
 					</div>
