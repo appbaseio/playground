@@ -24,7 +24,7 @@
         "@emotion/styled": "^11.11.0",
         "@emotion/react": "^11.11.0",
         "docs": "appbaseio/Docs#dev",
-        "moment": "^2.29.1",
+        "moment": "^2.31.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-icons": "^4.12.0",
